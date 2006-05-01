@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+ <channel>
+  <title>Pword releases</title>
+  <link>http://pword.sourceforge.net</link>
+  <description>Pword release news</description>
+  <lastBuildDate>Mon, 22 Jan 2006 23:47:50 GMT</lastBuildDate>
+  <item>
+   <title>alpha 0.0.5L Released</title>
+   <link>http://pword.sourceforge.net</link>
+   <description>alpha 0.0.5L Released</description>
+   <pubDate>SAT, 31 Dec 12:29:11 GMT</pubDate>
+  </item>
+  <item>
+   <title>alpha 0.0.5h4 Released</title>
+   <link>http://pword.sourceforge.net</link>
+   <description>alpha 0.0.5h4 Released</description>
+   <pubDate>SAT, 31 Dec 12:29:11 GMT</pubDate>
+  </item>
+ </channel>
+</rss>

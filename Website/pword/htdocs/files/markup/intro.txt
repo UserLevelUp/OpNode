@@ -1,0 +1,6 @@
+ <p>Pword is an application for storing passwords and small bits of information<br />
+    in a secure, easily accessable place.<br />
+    <br />
+    Currently available for Windows with plans for other platforms.<br />
+    <br />
+    It is still in early Alpha development. </p>

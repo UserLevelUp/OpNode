@@ -1,0 +1,13 @@
+<div id="lh-col" align="center" style="height:890px "> 
+  <h4>m e n u</h4>
+  <p> <a href="../../index.php" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Home','','files/images/homeover.png',1)"><img src="files/images/home.png" alt="Home Page" name="Home" width="120" height="30" border="0" id="Home" /></a> 
+  </p>
+  <p><a href="files/markup/docs.php" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Docs','','files/images/docsover.png',1)"><img src="files/images/docs.png" alt="Docs" name="Docs" width="120" height="30" border="0" id="Docs" /></a> 
+  </p>
+  <p> <a href="files/markup/screenshots.php" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Screenshots','','files/images/screenover.png',1)"><img src="files/images/screen.png" alt="Screenshots" name="Screenshots" width="120" height="30" border="0" id="Screenshots" /></a> 
+  </p>
+  <p> <a href="http://sourceforge.net/project/showfiles.php?group_id=153819" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Downloads','','files/images/dlover.png',1)"><img src="files/images/dl.png" alt="Download" name="Downloads" width="120" height="30" border="0" id="Downloads" /></a> 
+  </p>
+  <p><a href="files/markup/rss_feed.xml"><img src="files/images/rss20.gif" border="0" alt="RSS Feed" /></a> 
+  </p>
+</div>

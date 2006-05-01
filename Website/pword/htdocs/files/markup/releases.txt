@@ -1,0 +1,14 @@
+<div id="releases"> 
+    <p><i>16/01/06</i><br />
+      <em>Pword Alpha 0.0.5l Released</em></p>
+	<p><i>31/12/05</i><br />
+      <em>Pword Alpha 0.0.5h4 Released</em></p>
+    <p><i>29/12/05</i><br />
+      <em>Pword Alpha 0.0.5h Released</em></p>
+    <p><i>28/12/05</i><br />
+      <em>Pword Alpha 0.0.5g Released</em></p>
+    <p><i>27/12/05</i><br />
+      <em>Pword Alpha 0.0.5f Released</em></p>
+    <p><i>26/12/05</i><br />
+      <em>Pword Alpha 0.0.5e Released</em></p>
+</div>
