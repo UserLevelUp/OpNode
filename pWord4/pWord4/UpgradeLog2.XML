@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="pWord4">
+</Property><Property Name="Solution File" Value="c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\pWord4.sln">
+</Property><Property Name="Date" Value="Thursday, December 02, 2010">
+</Property><Property Name="Time" Value="10:35:04 AM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="pWordLib" Source="..\pWordLib\pWordLib.csproj" Description="Project file successfully backed up as c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\Backup1\pWordLib.csproj">
+</Event><Event ErrorLevel="0" Project="pWordLib" Source="..\pWordLib\pWordLib.csproj.user" Description="Project user file successfully backed up as c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\Backup1\pWordLib.csproj.user">
+</Event><Event ErrorLevel="0" Project="pWordLib" Source="..\pWordLib\mgr\registryMgr.cs" Description="File successfully backed up as c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\Backup1\mgr\registryMgr.cs">
+</Event><Event ErrorLevel="0" Project="pWordLib" Source="..\pWordLib\mgr\UserActivityHook.cs" Description="File successfully backed up as c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\Backup1\mgr\UserActivityHook.cs">
+</Event><Event ErrorLevel="0" Project="pWordLib" Source="..\pWordLib\mgr\Win32.cs" Description="File successfully backed up as c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\Backup1\mgr\Win32.cs">
+</Event><Event ErrorLevel="0" Project="pWordLib" Source="..\pWordLib\Properties\AssemblyInfo.cs" Description="File successfully backed up as c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\Backup1\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="pWordLib" Source="..\pWordLib\pWordLib.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="pWordLib" Source="..\pWordLib\pWordLib.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="pWordLib" Source="..\pWordLib\pWordLib.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

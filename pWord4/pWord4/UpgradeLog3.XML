@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="pWord4">
+</Property><Property Name="Solution File" Value="c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\pWord4.sln">
+</Property><Property Name="Date" Value="Thursday, December 02, 2010">
+</Property><Property Name="Time" Value="10:35:26 AM">
+</Property><Property Name="Log Number" Value="3">
+</Property></Properties><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\LeftRight.csproj" Description="Project file successfully backed up as c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\Backup2\LeftRight.csproj">
+</Event><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\LeftRight.csproj.user" Description="Project user file successfully backed up as c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\Backup2\LeftRight.csproj.user">
+</Event><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\AssemblyInfo.cs" Description="File successfully backed up as c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\Backup2\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\LeftRight.cs" Description="File successfully backed up as c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\Backup2\LeftRight.cs">
+</Event><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\ICONS\PW.ico" Description="File successfully backed up as c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\Backup2\ICONS\PW.ico">
+</Event><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\LeftRight.resx" Description="File successfully backed up as c:\users\marc\documents\visual studio 2010\Projects\pWord\pWord4\Backup2\LeftRight.resx">
+</Event><Event ErrorLevel="1" Project="LeftRight" Source="..\LeftRight\LeftRight.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\LeftRight.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="LeftRight" Source="..\LeftRight\LeftRight.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\LeftRight.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="myPword">
+</Property><Property Name="Solution File" Value="C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\myPword.sln">
+</Property><Property Name="Date" Value="Thursday, January 07, 2010">
+</Property><Property Name="Time" Value="13:49:52 PM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\LeftRight.csproj" Description="Project file successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup1\LeftRight.csproj">
+</Event><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\LeftRight.csproj.user" Description="Project user file successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup1\LeftRight.csproj.user">
+</Event><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup1\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\LeftRight.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup1\LeftRight.cs">
+</Event><Event ErrorLevel="2" Project="LeftRight" Source="..\LeftRight\ICONS\Left.ico" Description="Failed to backup file as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup1\ICONS\Left.ico">
+</Event><Event ErrorLevel="2" Project="LeftRight" Source="..\LeftRight\ICONS\Right.ico" Description="Failed to backup file as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup1\ICONS\Right.ico">
+</Event><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\LeftRight.resx" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup1\LeftRight.resx">
+</Event><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\LeftRight.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="LeftRight" Source="..\LeftRight\LeftRight.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="LeftRight" Source="..\LeftRight\LeftRight.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

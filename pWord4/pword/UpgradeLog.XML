@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="myPword">
+</Property><Property Name="Solution File" Value="C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\myPword.sln">
+</Property><Property Name="User Options File" Value="C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\myPword.suo">
+</Property><Property Name="Date" Value="Tuesday, January 05, 2010">
+</Property><Property Name="Time" Value="10:52 AM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="myPword.sln" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\myPword.sln">
+</Event><Event ErrorLevel="0" Project="" Source="myPword.suo" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\myPword.suo">
+</Event><Event ErrorLevel="0" Project="myPword" Source="myPword.csproj" Description="Project file successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\myPword.csproj">
+</Event><Event ErrorLevel="0" Project="myPword" Source="myPword.csproj.user" Description="Project user file successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\myPword.csproj.user">
+</Event><Event ErrorLevel="0" Project="myPword" Source="AddItem.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\AddItem.cs">
+</Event><Event ErrorLevel="0" Project="myPword" Source="AddMaster.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\AddMaster.cs">
+</Event><Event ErrorLevel="0" Project="myPword" Source="AssemblyInfo.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="myPword" Source="AYS.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\AYS.cs">
+</Event><Event ErrorLevel="0" Project="myPword" Source="Data.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\Data.cs">
+</Event><Event ErrorLevel="0" Project="myPword" Source="frmAbout.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\frmAbout.cs">
+</Event><Event ErrorLevel="0" Project="myPword" Source="frmHelp.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\frmHelp.cs">
+</Event><Event ErrorLevel="0" Project="myPword" Source="Image.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\Image.cs">
+</Event><Event ErrorLevel="0" Project="myPword" Source="LL.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\LL.cs">
+</Event><Event ErrorLevel="0" Project="myPword" Source="pWord.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\pWord.cs">
+</Event><Event ErrorLevel="0" Project="myPword" Source="UserActivityHook.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\UserActivityHook.cs">
+</Event><Event ErrorLevel="0" Project="myPword" Source="Win32.cs" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\Win32.cs">
+</Event><Event ErrorLevel="0" Project="myPword" Source="app.config" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\app.config">
+</Event><Event ErrorLevel="0" Project="myPword" Source="Data.xsx" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\Data.xsx">
+</Event><Event ErrorLevel="0" Project="myPword" Source="XMLSchema1.xsx" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\XMLSchema1.xsx">
+</Event><Event ErrorLevel="0" Project="myPword" Source="App.ico" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\App.ico">
+</Event><Event ErrorLevel="0" Project="myPword" Source="Data.xml" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\Data.xml">
+</Event><Event ErrorLevel="0" Project="myPword" Source="Data.xsd" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\Data.xsd">
+</Event><Event ErrorLevel="2" Project="myPword" Source="HTMLPage1.htm" Description="Failed to backup file as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\HTMLPage1.htm">
+</Event><Event ErrorLevel="0" Project="myPword" Source="icons\master1.ico" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\icons\master1.ico">
+</Event><Event ErrorLevel="0" Project="myPword" Source="icons\master2.ico" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\icons\master2.ico">
+</Event><Event ErrorLevel="0" Project="myPword" Source="icons\PW.ico" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\icons\PW.ico">
+</Event><Event ErrorLevel="0" Project="myPword" Source="icons\toolbar\AutoHide.ico" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\icons\toolbar\AutoHide.ico">
+</Event><Event ErrorLevel="0" Project="myPword" Source="icons\toolbar\AutoHide2.ico" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\icons\toolbar\AutoHide2.ico">
+</Event><Event ErrorLevel="2" Project="myPword" Source="icons\toolbar\Preview.ico" Description="Failed to backup file as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\icons\toolbar\Preview.ico">
+</Event><Event ErrorLevel="0" Project="myPword" Source="XMLFile1.xml" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\XMLFile1.xml">
+</Event><Event ErrorLevel="0" Project="myPword" Source="XMLSchema1.xsd" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\XMLSchema1.xsd">
+</Event><Event ErrorLevel="0" Project="myPword" Source="AddItem.resx" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\AddItem.resx">
+</Event><Event ErrorLevel="0" Project="myPword" Source="AddMaster.resx" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\AddMaster.resx">
+</Event><Event ErrorLevel="0" Project="myPword" Source="AYS.resx" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\AYS.resx">
+</Event><Event ErrorLevel="0" Project="myPword" Source="frmAbout.resx" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\frmAbout.resx">
+</Event><Event ErrorLevel="0" Project="myPword" Source="frmHelp.resx" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\frmHelp.resx">
+</Event><Event ErrorLevel="0" Project="myPword" Source="pWord.resx" Description="File successfully backed up as C:\Users\marc\Documents\Visual Studio 2008\Projects\pWord\pword\Backup\pWord.resx">
+</Event><Event ErrorLevel="0" Project="myPword" Source="myPword.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="myPword" Source="myPword.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="myPword.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="myPword.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="myPword" Source="app.config" Description="File converted successfully. All &lt;supportedRuntime&gt; and &lt;requiredRuntime&gt; tags were removed to enable the project to build and run with Visual Studio 2005.">
+</Event><Event ErrorLevel="3" Project="myPword" Source="app.config" Description="Converted">
+</Event></UpgradeLog>

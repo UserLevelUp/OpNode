@@ -1,0 +1,1 @@
+Open up pWord 4 directory and launch the Microsoft Visual Studio 2010 Professional Project from that directory.  You should downlaod all directories.
