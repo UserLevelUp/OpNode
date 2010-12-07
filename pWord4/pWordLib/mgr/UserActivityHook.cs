@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace pWordLib.UserActivityHook  {
 	
@@ -95,63 +96,82 @@ namespace pWordLib.UserActivityHook  {
 
 		public void Start()
 		{
-			// install Mouse hook 
-			if(hMouseHook == 0)
-			{
-				// Create an instance of HookProc.
-				MouseHookProcedure = new HookProc(MouseHookProc);
+            Debug.WriteLine("Starting Mouse Hook.");
+            try
+            {
+                // install Mouse hook 
+                if (hMouseHook == 0)
+                {
+                    // Create an instance of HookProc.
+                    MouseHookProcedure = new HookProc(MouseHookProc);
 
-                hMouseHook = SetWindowsHookEx(WH_MOUSE_LL,
-                    MouseHookProcedure,
-                    Marshal.GetHINSTANCE(
+                    hMouseHook = SetWindowsHookEx(WH_MOUSE_LL,
+                        MouseHookProcedure,
+                        Marshal.GetHINSTANCE(
+                            Assembly.GetExecutingAssembly().GetModules()[0]),
+                        0);
+
+                    //If SetWindowsHookEx fails.
+                    if (hMouseHook == 0)
+                    {
+                        Stop();
+                        // TODO: fix this SetWindowsHookEx
+                        Debug.WriteLine("SetWindowsHookEx failed.");
+                        throw new Exception("SetWindowsHookEx failed.");
+                    }
+                }
+
+                // install Keyboard hook 
+                if (hKeyboardHook == 0)
+                {
+                    KeyboardHookProcedure = new HookProc(KeyboardHookProc);
+                    hKeyboardHook = SetWindowsHookEx(WH_KEYBOARD_LL,
+                        KeyboardHookProcedure,
+                        Marshal.GetHINSTANCE(
                         Assembly.GetExecutingAssembly().GetModules()[0]),
-                    0);
+                        0);
 
-				//If SetWindowsHookEx fails.
-				if(hMouseHook == 0 )	{
-					Stop();
-                    // TODO: fix this SetWindowsHookEx
-					throw new Exception("SetWindowsHookEx failed.");
-				}
-			}
-			
-			// install Keyboard hook 
-			if(hKeyboardHook == 0)
-			{
-				KeyboardHookProcedure = new HookProc(KeyboardHookProc);
-                hKeyboardHook = SetWindowsHookEx(WH_KEYBOARD_LL,
-                    KeyboardHookProcedure,
-                    Marshal.GetHINSTANCE(
-                    Assembly.GetExecutingAssembly().GetModules()[0]),
-                    0);
-
-				//If SetWindowsHookEx fails.
-				if(hKeyboardHook == 0 )	{
-					Stop();
-                    // fix Windows hook
-					throw new Exception("SetWindowsHookEx ist failed.");
-				}
-			}
+                    //If SetWindowsHookEx fails.
+                    if (hKeyboardHook == 0)
+                    {
+                        Stop();
+                        // fix Windows hook
+                        Debug.WriteLine("SetWindowsHookEx ist failed.");
+                        throw new Exception("SetWindowsHookEx ist failed.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
 		}
 
 		public void Stop()
 		{
 			bool retMouse =true;
 			bool retKeyboard = true;
+            Debug.WriteLine("Stopping Mouse Hook");
 			if(hMouseHook != 0)
 			{
 				retMouse = UnhookWindowsHookEx(hMouseHook);
 				hMouseHook = 0;
-			} 
-			
+			}
+
+            Debug.WriteLine("Stopping Keyboard Hook");
 			if(hKeyboardHook != 0)
 			{
 				retKeyboard = UnhookWindowsHookEx(hKeyboardHook);
 				hKeyboardHook = 0;
-			} 
-			
+			}
+
+            Debug.WriteLine("Checking if hook fails.");
 			//If UnhookWindowsHookEx fails.
-			if (!(retMouse && retKeyboard)) throw new Exception("UnhookWindowsHookEx failed.");
+            if (!(retMouse && retKeyboard))
+            {
+                Debug.WriteLine("failed retMouse:{0} and retKeyboard:{1}.", retMouse, retKeyboard);
+                throw new Exception("UnhookWindowsHookEx failed."); 
+            }
 		}
 
 
@@ -169,39 +189,48 @@ namespace pWordLib.UserActivityHook  {
 
 		private int MouseHookProc(int nCode, Int32 wParam, IntPtr lParam)
 		{
-			// if ok and someone listens to our events
-			if ((nCode >= 0) && (OnMouseActivity!=null)) {
-				
-				MouseButtons button=MouseButtons.None;
-				switch (wParam)
-				{
-					case WM_LBUTTONDOWN: 
-					//case WM_LBUTTONUP: 
-					//case WM_LBUTTONDBLCLK: 
-						button=MouseButtons.Left; 
-						break;
-					case WM_RBUTTONDOWN: 
-					//case WM_RBUTTONUP: 
-					//case WM_RBUTTONDBLCLK: 
-						button=MouseButtons.Right; 
-						break;
-				}
-				int clickCount=0;
-				if (button!=MouseButtons.None)
-					if (wParam==WM_LBUTTONDBLCLK || wParam==WM_RBUTTONDBLCLK) clickCount=2;
-					else clickCount=1;
-				
-				//Marshall the data from callback.
-				MouseHookStruct MyMouseHookStruct = (MouseHookStruct) Marshal.PtrToStructure(lParam, typeof(MouseHookStruct));
-				MouseEventArgs e=new MouseEventArgs(
-				                                    button, 
-				                                    clickCount, 
-				                                    MyMouseHookStruct.pt.x, 
-				                                    MyMouseHookStruct.pt.y, 
-				                                    0 );
-				OnMouseActivity(this, e);
-			}
-			return CallNextHookEx(hMouseHook, nCode, wParam, lParam); 
+            try
+            {
+                // if ok and someone listens to our events
+                if ((nCode >= 0) && (OnMouseActivity != null))
+                {
+
+                    MouseButtons button = MouseButtons.None;
+                    switch (wParam)
+                    {
+                        case WM_LBUTTONDOWN:
+                            //case WM_LBUTTONUP: 
+                            //case WM_LBUTTONDBLCLK: 
+                            button = MouseButtons.Left;
+                            break;
+                        case WM_RBUTTONDOWN:
+                            //case WM_RBUTTONUP: 
+                            //case WM_RBUTTONDBLCLK: 
+                            button = MouseButtons.Right;
+                            break;
+                    }
+                    int clickCount = 0;
+                    if (button != MouseButtons.None)
+                        if (wParam == WM_LBUTTONDBLCLK || wParam == WM_RBUTTONDBLCLK) clickCount = 2;
+                        else clickCount = 1;
+
+                    //Marshall the data from callback.
+                    MouseHookStruct MyMouseHookStruct = (MouseHookStruct)Marshal.PtrToStructure(lParam, typeof(MouseHookStruct));
+                    MouseEventArgs e = new MouseEventArgs(
+                                                        button,
+                                                        clickCount,
+                                                        MyMouseHookStruct.pt.x,
+                                                        MyMouseHookStruct.pt.y,
+                                                        0);
+                    OnMouseActivity(this, e);
+                }
+                return CallNextHookEx(hMouseHook, nCode, wParam, lParam);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return 0;
 		}
 
 

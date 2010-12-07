@@ -53,13 +53,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dat\NameSpace.cs" />
+    <Compile Include="dat\pNode.cs" />
     <Compile Include="mgr\registryMgr.cs" />
     <Compile Include="mgr\UserActivityHook.cs" />
     <Compile Include="mgr\Win32.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="dat\" />
     <Folder Include="tst\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

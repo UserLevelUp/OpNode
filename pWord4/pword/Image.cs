@@ -93,14 +93,14 @@ return usernamedown;
 
 	public struct TreePics
 	{
-		TreeNode picnode;
+		pNode picnode;
 
 		public TreePics(string name,int img1,int img2)
 		{
-			picnode = new TreeNode(name,img1,img2);
+			picnode = new pNode(name,img1,img2);
 		}
 
-		public TreeNode PicNode
+		public pNode PicNode
 		{
 			get
 			{

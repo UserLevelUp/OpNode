@@ -165,7 +165,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ORMModel1.orm</DependentUpon>
     </Compile>
-    <Compile Include="pNode.cs" />
     <Compile Include="pWord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,21 +182,27 @@
     </Compile>
     <EmbeddedResource Include="AddItem.resx">
       <DependentUpon>AddItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AddMaster.resx">
       <DependentUpon>AddMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AYS.resx">
       <DependentUpon>AYS.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHelp.resx">
       <DependentUpon>frmHelp.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="pWord.resx">
       <DependentUpon>pWord.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Data.xsc">
