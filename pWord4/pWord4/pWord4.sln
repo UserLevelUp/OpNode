@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pWordLib", "..\pWordLib\pWo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeftRight", "..\LeftRight\LeftRight.csproj", "{351681A0-AA94-4BF9-855A-683D5981F90D}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "pWordSetup4", "pWordSetup4\pWordSetup4.vdproj", "{318C9BB1-7FA5-4B89-A57C-C0222A936B52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,12 @@ Global
 		{351681A0-AA94-4BF9-855A-683D5981F90D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{351681A0-AA94-4BF9-855A-683D5981F90D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{351681A0-AA94-4BF9-855A-683D5981F90D}.Release|x86.ActiveCfg = Release|Any CPU
+		{318C9BB1-7FA5-4B89-A57C-C0222A936B52}.Debug|Any CPU.ActiveCfg = Debug
+		{318C9BB1-7FA5-4B89-A57C-C0222A936B52}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{318C9BB1-7FA5-4B89-A57C-C0222A936B52}.Debug|x86.ActiveCfg = Debug
+		{318C9BB1-7FA5-4B89-A57C-C0222A936B52}.Release|Any CPU.ActiveCfg = Release
+		{318C9BB1-7FA5-4B89-A57C-C0222A936B52}.Release|Mixed Platforms.ActiveCfg = Release
+		{318C9BB1-7FA5-4B89-A57C-C0222A936B52}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -156,6 +156,7 @@ namespace myPword
 		private System.Windows.Forms.MenuItem menuItem35;
         private ToolBarButton toolBarXML;
         private NotifyIcon notifyIcon2;
+        private MenuItem menuItem2;
 
 		// Import interop services
 
@@ -264,6 +265,7 @@ namespace myPword
             this.menuItem13 = new System.Windows.Forms.MenuItem();
             this.menuItem29 = new System.Windows.Forms.MenuItem();
             this.menuItem3 = new System.Windows.Forms.MenuItem();
+            this.menuItem2 = new System.Windows.Forms.MenuItem();
             this.menuItem30 = new System.Windows.Forms.MenuItem();
             this.menuItem22 = new System.Windows.Forms.MenuItem();
             this.menuItem32 = new System.Windows.Forms.MenuItem();
@@ -351,7 +353,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 336);
+            this.statusBar1.Location = new System.Drawing.Point(0, 300);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(336, 22);
             this.statusBar1.TabIndex = 0;
@@ -409,6 +411,7 @@ namespace myPword
             this.menuItem13,
             this.menuItem29,
             this.menuItem3,
+            this.menuItem2,
             this.menuItem30,
             this.menuItem22,
             this.menuItem32,
@@ -449,21 +452,27 @@ namespace myPword
             this.menuItem3.Text = "Copy";
             this.menuItem3.Click += new System.EventHandler(this.menuItem3_Click_1);
             // 
+            // menuItem2
+            // 
+            this.menuItem2.Index = 4;
+            this.menuItem2.Text = "A&ttributes";
+            this.menuItem2.Click += new System.EventHandler(this.menuItemAttribute_Click);
+            // 
             // menuItem30
             // 
-            this.menuItem30.Index = 4;
+            this.menuItem30.Index = 5;
             this.menuItem30.Text = "-";
             // 
             // menuItem22
             // 
-            this.menuItem22.Index = 5;
+            this.menuItem22.Index = 6;
             this.menuItem22.Shortcut = System.Windows.Forms.Shortcut.CtrlG;
             this.menuItem22.Text = "Get Node";
             this.menuItem22.Click += new System.EventHandler(this.menuItem22_Click);
             // 
             // menuItem32
             // 
-            this.menuItem32.Index = 6;
+            this.menuItem32.Index = 7;
             this.menuItem32.Shortcut = System.Windows.Forms.Shortcut.CtrlX;
             this.menuItem32.Text = "Cut Node";
             this.menuItem32.Click += new System.EventHandler(this.menuCutNode_Click);
@@ -471,7 +480,7 @@ namespace myPword
             // menuItem21
             // 
             this.menuItem21.Enabled = false;
-            this.menuItem21.Index = 7;
+            this.menuItem21.Index = 8;
             this.menuItem21.Shortcut = System.Windows.Forms.Shortcut.CtrlP;
             this.menuItem21.Text = "Put Node In";
             this.menuItem21.Click += new System.EventHandler(this.menuItem21_Click);
@@ -479,7 +488,7 @@ namespace myPword
             // menuItem31
             // 
             this.menuItem31.Enabled = false;
-            this.menuItem31.Index = 8;
+            this.menuItem31.Index = 9;
             this.menuItem31.Shortcut = System.Windows.Forms.Shortcut.Ins;
             this.menuItem31.Text = "Insert Node";
             this.menuItem31.Click += new System.EventHandler(this.menuItem31_Click);
@@ -487,19 +496,19 @@ namespace myPword
             // menuItem1
             // 
             this.menuItem1.Enabled = false;
-            this.menuItem1.Index = 9;
+            this.menuItem1.Index = 10;
             this.menuItem1.Text = "Encrypt Node";
             // 
             // menuItem14
             // 
-            this.menuItem14.Index = 10;
+            this.menuItem14.Index = 11;
             this.menuItem14.Shortcut = System.Windows.Forms.Shortcut.Del;
             this.menuItem14.Text = "Delete Node";
             this.menuItem14.Click += new System.EventHandler(this.menuItem14_Click);
             // 
             // menuItem34
             // 
-            this.menuItem34.Index = 11;
+            this.menuItem34.Index = 12;
             this.menuItem34.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem35});
             this.menuItem34.Text = "Export Node";
@@ -513,12 +522,12 @@ namespace myPword
             // 
             // menuItem24
             // 
-            this.menuItem24.Index = 12;
+            this.menuItem24.Index = 13;
             this.menuItem24.Text = "-";
             // 
             // menuItem11
             // 
-            this.menuItem11.Index = 13;
+            this.menuItem11.Index = 14;
             this.menuItem11.Text = "Open Link [Dbl Lft Click]";
             this.menuItem11.Click += new System.EventHandler(this.menuItem11_Click);
             // 
@@ -656,7 +665,7 @@ namespace myPword
             this.txtValue.BackColor = System.Drawing.SystemColors.Info;
             this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtValue.Location = new System.Drawing.Point(0, 200);
+            this.txtValue.Location = new System.Drawing.Point(0, 164);
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
             this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -685,7 +694,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 192);
+            this.splitter1.Location = new System.Drawing.Point(0, 156);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(336, 8);
             this.splitter1.TabIndex = 5;
@@ -698,7 +707,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(336, 120);
+            this.panel1.Size = new System.Drawing.Size(336, 84);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -829,7 +838,7 @@ namespace myPword
             this.panel6.Controls.Add(this.treeView1);
             this.panel6.Location = new System.Drawing.Point(0, 104);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(336, 13);
+            this.panel6.Size = new System.Drawing.Size(336, 27);
             this.panel6.TabIndex = 5;
             // 
             // treeView1
@@ -848,7 +857,7 @@ namespace myPword
             this.treeView1.Name = "treeView1";
             this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(336, 13);
+            this.treeView1.Size = new System.Drawing.Size(336, 27);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -891,7 +900,7 @@ namespace myPword
             // pWord
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(336, 358);
+            this.ClientSize = new System.Drawing.Size(336, 322);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.userControl11);
@@ -1301,19 +1310,14 @@ namespace myPword
 				try
 				{
 					// if left mouse is clicked then do this
-					
 					treeView1.DoDragDrop(treeView1.SelectedNode.Tag,DragDropEffects.Copy);
-					
 				}
 				catch(Exception f)
 				{
 
 				}
-
-
 				this.drag_flag = true; // ok I'm down
 			}
-
 		}
 
 		private void treeView1_LocationChanged(object sender, System.EventArgs e)
@@ -1373,24 +1377,19 @@ namespace myPword
 
 				this.openFileDialog1.FileName = filename;
 				this.openFileDialog1.ShowDialog();
-				
 			}
 			catch (Exception f)
 			{
 				MessageBox.Show("You had an error while loading. Please select the proper file. " + f.Message,"OPEN ERROR",System.Windows.Forms.MessageBoxButtons.OK,System.Windows.Forms.MessageBoxIcon.Warning);
-
 			}
-
 		}
 
 		private void menuItem14_Click(object sender, System.EventArgs e)
 		{
-
 			try
 			{
 				// Add the master node to Nodes
 				pNode masterNode;
-
 				if (treeView1.SelectedNode.Parent != null)
 				{
 					treeView1.SelectedNode.Remove();
@@ -1402,25 +1401,20 @@ namespace myPword
 					{
 						autosave();
 					}
-
 				}
 				else 
 					MessageBox.Show("You must not delete the master node.");
 			}
-
 			catch (Exception f)
 			{
 				MessageBox.Show(f.Message);
 			}
 		}
 
-
-
 		private void treeView1_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
 		{
 			if (e.Button == System.Windows.Forms.MouseButtons.Left)
 			this.drag_flag = false;
-			
 		}
 
 		private void toolBar1_ButtonClick(object sender, System.Windows.Forms.ToolBarButtonClickEventArgs e)
@@ -1436,7 +1430,6 @@ namespace myPword
 						this.statusBar1.Text = "AutoHide Inactive";
 						this.toolBarTac.ImageIndex = 1;
 						this.actHook.Stop();
-
 					}
 					else
 					{
@@ -1444,16 +1437,12 @@ namespace myPword
 						this.statusBar1.Text = "AutoHide Active";
 						this.toolBarTac.ImageIndex = 0;
 						this.actHook.Start();
-
 					}
-				
 				}
 				else if (e.Button == this.toolBarView)
 				{
 					if (filenameHTML != null)
 					{
-
-
 						if (exportmode == exportMode.treeview)
 						{
 							xml.Clear();  // clear out contents first.
@@ -1473,10 +1462,8 @@ namespace myPword
 						{
 							swFromFile.Write(xml[i]);
 						}
-
 						swFromFile.Flush();
 						swFromFile.Close();
-					
 						System.Diagnostics.Process.Start(filenameHTML);
 					}
 
@@ -1516,8 +1503,6 @@ namespace myPword
 			{
 				this.VIS = false;
 				this.Visible = false;
-
-				
 			}
 		}
 
@@ -1686,8 +1671,8 @@ namespace myPword
 			}
 			catch(Exception f)
 			{
-				MessageBox.Show("You must use an acceptable link contained in the value field!","DANGER",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-
+				//MessageBox.Show("You must use an acceptable link contained in the value field!","DANGER",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                txtValue.Text = "Value Field is Empty.";
 			}
 		}
 
@@ -1719,6 +1704,7 @@ namespace myPword
                     aNode.Text = this.txtName.Text;
 					treeView1.SelectedNode = tmpNode;
 					treeView1.SelectedNode.Nodes.Add(aNode);
+
 					//tmpNode.Nodes.Add(aNode);
 
 					//Nodes[0] = masterNode;
@@ -1889,44 +1875,51 @@ namespace myPword
 
 		private void treeView1_MouseDown_1(object sender, System.Windows.Forms.MouseEventArgs e)
 		{
-			if (e.Button == System.Windows.Forms.MouseButtons.Left)
-			{
-				if(e.Clicks == 1)
-				{
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                if (e.Clicks == 1)
+                {
 
-					try
-					{
+                    try
+                    {
 
-						this.StartPt.X = e.X;
-						this.StartPt.Y = e.Y;
+                        this.StartPt.X = e.X;
+                        this.StartPt.Y = e.Y;
 
-///
-						/// TODO:Fix Multiple Select Behavior in treeView1
-						/// 
-						/// 
+                        ///
+                        /// TODO:Fix Multiple Select Behavior in treeView1
+                        /// 
+                        /// 
 
-						// if left mouse is clicked then do this
-//					    tmpNode = treeView1.SelectedNode;
+                        // if left mouse is clicked then do this
+                        //					    tmpNode = treeView1.SelectedNode;
 
-						/// TODO: Get rid of DoDragDrop behavior is possible
-						/// Try and save 
-						treeView1.DoDragDrop(treeView1.SelectedNode.Tag,DragDropEffects.Copy);
-						moveNode = (pNode)this.treeView1.SelectedNode;
-					}
-					catch(Exception f)
-					{
+                        /// TODO: Get rid of DoDragDrop behavior is possible
+                        /// Try and save 
+                        treeView1.DoDragDrop(treeView1.SelectedNode.Tag, DragDropEffects.Copy);
+                        moveNode = (pNode)this.treeView1.SelectedNode;
+                    }
+                    catch (Exception f)
+                    {
 
-					}
+                    }
 
 
-					this.drag_flag = true; // ok I'm down
-				}
-				else if (e.Clicks == 2)
-				{
-					System.EventArgs generic = new System.EventArgs();
-					menuItem11_Click(sender, generic);
-				}				
-			}
+                    this.drag_flag = true; // ok I'm down
+                }
+                else if (e.Clicks == 2)
+                {
+                    System.EventArgs generic = new System.EventArgs();
+                    menuItem11_Click(sender, generic);
+                }
+            }
+            else if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                // the context menu is being called... 
+                // now record the node
+                object s = sender;
+                Console.WriteLine("Duh!");
+            }
 
 		}
 		private void treeView1_MouseUp_1(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -2240,7 +2233,32 @@ namespace myPword
 			while (i < Nodes.Count)
 			{
 				userControl11.Masters.Add((string)Nodes[i]);
-				userControl11.MastersValue.Add((pNode)Nodes[++i]);
+                // check Nodes type
+                ++i;
+                if (Nodes[i].GetType() == typeof(pNode))
+                {
+                    userControl11.MastersValue.Add((pNode)Nodes[i]);
+                }
+                else if (Nodes[i].GetType() == typeof(TreeNode))
+                {
+                    // Compatibility with old version 6A
+                    // convert TreeNode to a pNode
+                    TreeNode a = (TreeNode)Nodes[i];
+                    
+                    // p only gets the top node for a master... it doesn't delve in and get everything else
+                    // Todo: get all other nodes in a proper TreeNode to pNode conversion
+                    // I want to perform the conversion indie of the pNode class itself
+                    try
+                    {
+                        pNode p = pNode.TreeNode2pNode(a);
+                        //                    userControl11.MastersValue.Add((TreeNode)Nodes[i]);
+                        userControl11.MastersValue.Add(p);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex.ToString());
+                    }
+                }
 				i++;
 			}
 			userControl11.index = 0;
@@ -2456,6 +2474,12 @@ namespace myPword
         {
             // notify icon mouse click
             Debug.WriteLine("notify icon mouse click.");
+        }
+
+        private void menuItemAttribute_Click(object sender, EventArgs e)
+        {
+            // add an attribute to a node
+
         }
 
 
