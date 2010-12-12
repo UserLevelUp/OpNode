@@ -8,7 +8,6 @@ using System.IO;
 using System.Runtime.InteropServices;
 using Win32;
 using UserActivityHook;
-
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -136,7 +135,7 @@ namespace myPword
 		private System.Windows.Forms.Button btnCancel;
 		private System.Windows.Forms.Panel panel6;
 		private System.Windows.Forms.CheckBox chkClear;
-		private System.Windows.Forms.TreeView treeView1;
+		private pView treeView1;
 		private System.Windows.Forms.MenuItem menuItem13;
 		private System.Windows.Forms.MenuItem menuItem21;
 		private System.Windows.Forms.MenuItem menuItem22;
@@ -201,6 +200,8 @@ namespace myPword
             actHook = new pWordLib.UserActivityHook.UserActivityHook();  // create an instance
 			// hang on events
 			actHook.OnMouseActivity+=new MouseEventHandler(MouseMoved);
+
+            
 			
 		}
 
@@ -314,10 +315,10 @@ namespace myPword
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.saveFileDialogHTML = new System.Windows.Forms.SaveFileDialog();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.userControl11 = new LeftRight.LeftRight();
+            this.treeView1 = new myPword.pView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -353,7 +354,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 300);
+            this.statusBar1.Location = new System.Drawing.Point(0, 453);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(336, 22);
             this.statusBar1.TabIndex = 0;
@@ -665,11 +666,11 @@ namespace myPword
             this.txtValue.BackColor = System.Drawing.SystemColors.Info;
             this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtValue.Location = new System.Drawing.Point(0, 164);
+            this.txtValue.Location = new System.Drawing.Point(0, 419);
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
             this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtValue.Size = new System.Drawing.Size(336, 136);
+            this.txtValue.Size = new System.Drawing.Size(336, 34);
             this.txtValue.TabIndex = 3;
             this.txtValue.TabStop = false;
             // 
@@ -694,7 +695,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 156);
+            this.splitter1.Location = new System.Drawing.Point(0, 411);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(336, 8);
             this.splitter1.TabIndex = 5;
@@ -707,7 +708,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(336, 84);
+            this.panel1.Size = new System.Drawing.Size(336, 339);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -838,37 +839,8 @@ namespace myPword
             this.panel6.Controls.Add(this.treeView1);
             this.panel6.Location = new System.Drawing.Point(0, 104);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(336, 27);
+            this.panel6.Size = new System.Drawing.Size(336, 235);
             this.panel6.TabIndex = 5;
-            // 
-            // treeView1
-            // 
-            this.treeView1.AllowDrop = true;
-            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeView1.ContextMenu = this.cmTree;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.FullRowSelect = true;
-            this.treeView1.HideSelection = false;
-            this.treeView1.HotTracking = true;
-            this.treeView1.ImageIndex = 0;
-            this.treeView1.ImageList = this.imageTree1;
-            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
-            this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(336, 27);
-            this.treeView1.TabIndex = 3;
-            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
-            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
-            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
-            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
-            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
-            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
-            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
-            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
-            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
             // saveFileDialogHTML
             // 
@@ -897,10 +869,40 @@ namespace myPword
             this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
             this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
             // 
+            // treeView1
+            // 
+            this.treeView1.AllowDrop = true;
+            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView1.ContextMenu = this.cmTree;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
+            this.treeView1.FullRowSelect = true;
+            this.treeView1.HideSelection = false;
+            this.treeView1.HotTracking = true;
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageTree1;
+            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
+            this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.Size = new System.Drawing.Size(336, 235);
+            this.treeView1.TabIndex = 3;
+            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
+            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
+            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
+            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
+            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
+            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
+            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
+            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
+            // 
             // pWord
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(336, 322);
+            this.ClientSize = new System.Drawing.Size(336, 475);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.userControl11);
@@ -1654,8 +1656,6 @@ namespace myPword
 			pNode masterNode = (pNode)userControl11.MastersValue[userControl11.index];
 			TreePics apic = new TreePics("masterNode",img.GroupUp,img.GroupDown);
 			this.treeView1.Nodes.Add(masterNode);
-
-
 		}
 
 		private void menuItem16_Click(object sender, System.EventArgs e)
@@ -1691,10 +1691,8 @@ namespace myPword
 		{
 			if (mode == nodeMode.addto)
 			{
-				
 				try
 				{
-
 					// Add the master node to Nodes
                     pNode masterNode = (pNode)treeView1.Nodes[0];
 					pNode aNode;
@@ -1723,6 +1721,8 @@ namespace myPword
 					{
 						autosave();
 					}
+
+
 					this.txtName.Focus();
 				}
 				catch (Exception f)
@@ -2073,7 +2073,7 @@ namespace myPword
 
 
 		// Call the procedure using the TreeView.
-		private void CallRecursive(TreeView treeView)
+		private void CallRecursive(pView treeView)
 		{
 			string [] split = null;
 			string delimStr = " ";
@@ -2096,8 +2096,6 @@ namespace myPword
 
 		private void CallRecursive(pNode pNode)
 		{
-
-
 			string [] split = null;
 			string delimStr = " ";
 			char [] delimiter = delimStr.ToCharArray();
@@ -2458,6 +2456,8 @@ namespace myPword
 
         }
 
+
+        // Notify Icon2 is is the one that goes on the task bar not the notification area
         private void notifyIcon2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             // Notify icon mouse double click
@@ -2466,20 +2466,33 @@ namespace myPword
 
         private void notifyIcon2_DoubleClick(object sender, EventArgs e)
         {
+            // comment this doesn't really work.  When you click on this icon on the 
+            // windows bar task bar, it basically does nothing when you double click it
             // notify icon double click
-            Debug.WriteLine("notify icon double click.");
+            // this moves it into the notification area.  Does exactly what the 
+            // autohide + minimize does
+            this.autoHide_flag = true;
+            this.statusBar1.Text = "AutoHide Active";
+            this.toolBarTac.ImageIndex = 0;
+            this.actHook.Start();
+            this.VIS = false;
+            this.Visible = false;
+            notifyIcon2.Visible = false;
+            notifyIcon1.Visible = true;
         }
 
         private void notifyIcon2_MouseClick(object sender, MouseEventArgs e)
         {
             // notify icon mouse click
-            Debug.WriteLine("notify icon mouse click.");
+            // this event does nothing.  All the logic for controlling a window opening back
+            // up appears to be coming from the windows taskbar and not this event
+
         }
 
         private void menuItemAttribute_Click(object sender, EventArgs e)
         {
             // add an attribute to a node
-
+            Debug.WriteLine(e.ToString());
         }
 
 

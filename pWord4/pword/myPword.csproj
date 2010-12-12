@@ -165,6 +165,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ORMModel1.orm</DependentUpon>
     </Compile>
+    <Compile Include="pView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="pWord.cs">
       <SubType>Form</SubType>
     </Compile>
