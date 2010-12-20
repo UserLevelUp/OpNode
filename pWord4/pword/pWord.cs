@@ -160,7 +160,7 @@ namespace myPword
 		// Import interop services
 
 		pWordLib.UserActivityHook.UserActivityHook actHook;
-
+        pWordLib.mgr.registryMgr rm = null;
 		public pWord()
 		{
             
@@ -169,7 +169,8 @@ namespace myPword
 			//
 			InitializeComponent();
             // always check registry when starting pWord
-            pWordLib.mgr.registryMgr rm = new pWordLib.mgr.registryMgr(pWordSettings.Default.version.ToString());
+            // be sure to check the Default version
+             rm = new pWordLib.mgr.registryMgr(pWordSettings.Default.version.ToString());
 
 
 			//
@@ -354,7 +355,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 453);
+            this.statusBar1.Location = new System.Drawing.Point(0, 313);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(336, 22);
             this.statusBar1.TabIndex = 0;
@@ -391,6 +392,7 @@ namespace myPword
             // 
             // toolBarXML
             // 
+            this.toolBarXML.Enabled = false;
             this.toolBarXML.ImageIndex = 4;
             this.toolBarXML.Name = "toolBarXML";
             // 
@@ -666,11 +668,11 @@ namespace myPword
             this.txtValue.BackColor = System.Drawing.SystemColors.Info;
             this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtValue.Location = new System.Drawing.Point(0, 419);
+            this.txtValue.Location = new System.Drawing.Point(0, 205);
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
             this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtValue.Size = new System.Drawing.Size(336, 34);
+            this.txtValue.Size = new System.Drawing.Size(336, 108);
             this.txtValue.TabIndex = 3;
             this.txtValue.TabStop = false;
             // 
@@ -695,7 +697,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 411);
+            this.splitter1.Location = new System.Drawing.Point(0, 197);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(336, 8);
             this.splitter1.TabIndex = 5;
@@ -708,7 +710,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(336, 339);
+            this.panel1.Size = new System.Drawing.Size(336, 125);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -802,18 +804,18 @@ namespace myPword
             this.chkClear.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkClear.Location = new System.Drawing.Point(88, 0);
             this.chkClear.Name = "chkClear";
-            this.chkClear.Size = new System.Drawing.Size(96, 24);
+            this.chkClear.Size = new System.Drawing.Size(120, 24);
             this.chkClear.TabIndex = 2;
             this.chkClear.TabStop = false;
             this.chkClear.Text = "Clear Text?";
-            this.chkClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkClear.ThreeState = true;
             this.chkClear.CheckedChanged += new System.EventHandler(this.chkClear_CheckedChanged);
+            this.chkClear.CheckStateChanged += new System.EventHandler(this.chkClear_CheckStateChanged);
             // 
             // btnCancel
             // 
             this.btnCancel.Enabled = false;
-            this.btnCancel.Location = new System.Drawing.Point(197, 0);
+            this.btnCancel.Location = new System.Drawing.Point(223, 0);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 24);
             this.btnCancel.TabIndex = 1;
@@ -839,7 +841,7 @@ namespace myPword
             this.panel6.Controls.Add(this.treeView1);
             this.panel6.Location = new System.Drawing.Point(0, 104);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(336, 235);
+            this.panel6.Size = new System.Drawing.Size(336, 21);
             this.panel6.TabIndex = 5;
             // 
             // saveFileDialogHTML
@@ -886,7 +888,7 @@ namespace myPword
             this.treeView1.Name = "treeView1";
             this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(336, 235);
+            this.treeView1.Size = new System.Drawing.Size(336, 21);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -902,7 +904,7 @@ namespace myPword
             // pWord
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(336, 475);
+            this.ClientSize = new System.Drawing.Size(336, 335);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.userControl11);
@@ -1331,20 +1333,11 @@ namespace myPword
 		{
 			int a = 1;
 			int b = a;
-
-
 		}
 
 		private void menuSave_Click(object sender, System.EventArgs e)
 		{
-			
-//			AYS ays = new AYS();
-//			ays.label1.Text="Saving may delete your previous work.  Are you sure?";
-//			ays.ShowDialog();
-//			
-//			if (ays.DialogResult == DialogResult.OK)
-//			{
-
+            
 				try
 				{
 					//	Nodes[0] = userControl11;
@@ -1358,6 +1351,8 @@ namespace myPword
 						Nodes.Add((pNode)userControl11.MastersValue[i]);
 					}
 					this.saveFileDialog1.FileName = filename;
+                    rm.FileName = filename;
+                    String path = rm.AutoSavePathFromRegistry(pWordSettings.Default.version.ToString());
 					this.saveFileDialog1.ShowDialog();
 
 				}
@@ -1689,12 +1684,11 @@ namespace myPword
 
 		private void btnAdd_Click(object sender, System.EventArgs e)
 		{
+            pNode masterNode = (pNode)treeView1.Nodes[0];
 			if (mode == nodeMode.addto)
 			{
 				try
 				{
-					// Add the master node to Nodes
-                    pNode masterNode = (pNode)treeView1.Nodes[0];
 					pNode aNode;
 					aNode = new pNode(this.txtName.Text);
 					TreePics apic = new TreePics("aNode",img.GroupUp,img.GroupDown);
@@ -1702,28 +1696,32 @@ namespace myPword
                     aNode.Text = this.txtName.Text;
 					treeView1.SelectedNode = tmpNode;
 					treeView1.SelectedNode.Nodes.Add(aNode);
-
-					//tmpNode.Nodes.Add(aNode);
-
-					//Nodes[0] = masterNode;
-					userControl11.MastersValue[userControl11.index] = masterNode;
+                    // after adding the new node, be sure the index is updated as well... this is not necessary
+    				userControl11.MastersValue[userControl11.index] = masterNode;
 
 					// Change from Add Dialog to local members for adding name and value
 
 					// check box
-					if (this.chkClear.Checked == true)
-					{
-						this.txtName.Clear();
-						this.txtObject.Clear();
-					}
+                    if (this.chkClear.CheckState == CheckState.Checked)
+                    {
+                        this.txtName.Clear();
+                        this.txtObject.Clear();
+                        this.txtName.Focus();
+                    }
+                    else if (this.chkClear.CheckState == CheckState.Indeterminate)
+                    {
+                        this.txtObject.Clear();
+                        this.txtObject.Focus();
+                    }
+                    else
+                    {
+                        this.btnAdd.Focus();
+                    }
 
 					if (flag_file == true)
 					{
 						autosave();
 					}
-
-
-					this.txtName.Focus();
 				}
 				catch (Exception f)
 				{
@@ -1736,7 +1734,6 @@ namespace myPword
 				{
 					// EDIT MODE
 					// Only edit the current node
-                    pNode masterNode = (pNode)treeView1.Nodes[0];
 					pNode aNode;
 					aNode = new pNode(this.txtName.Text);
 					TreePics apic = new TreePics("aNode",img.GroupUp,img.GroupDown);
@@ -1744,15 +1741,13 @@ namespace myPword
 					treeView1.SelectedNode = this.tmpNode;
 					treeView1.SelectedNode.Text = aNode.Text;
 					treeView1.SelectedNode.Tag = aNode.Tag;
-					//treeView1.SelectedNode.Nodes[this.modeIndex] = aNode;
-					//tmpNode.Nodes.Add(aNode);
 
-					//Nodes[0] = masterNode;
+                    // This is not necessary, when a save is committed this can be performed at that juncture
+                    // However, it may be beneficial to know whether or not a node change was successfully saved
+                    // at the iteration the event occurred.  This will prevent loss of work
 					userControl11.MastersValue[userControl11.index] = masterNode;
 
 					// Change from Add Dialog to local members for adding name and value
-
-					// check box
 					if (this.chkClear.Checked == true)
 					{
 						this.txtName.Clear();
@@ -1771,20 +1766,21 @@ namespace myPword
 			}
 			else if (mode == nodeMode.insert)
 			{
+                if (treeView1.SelectedNode.Parent == null)
+                {
+                    MessageBox.Show("You can not insert a sibling of the master node.");
+                    return;
+                }
 				try
 				{
 					// Insert Mode
 					// Only edit the current node
-                    pNode masterNode = (pNode)treeView1.Nodes[0];
 					pNode aNode;
 					aNode = new pNode(this.txtName.Text);
 					TreePics apic = new TreePics("aNode",img.GroupUp,img.GroupDown);
 					aNode.Tag = this.txtObject.Text;
 					treeView1.SelectedNode = tmpNode;
 					treeView1.SelectedNode.Nodes.Insert(modeIndex,aNode);
-					//tmpNode.Nodes.Add(aNode);
-
-					//Nodes[0] = masterNode;
 					userControl11.MastersValue[userControl11.index] = masterNode;
 
 					// Change from Add Dialog to local members for adding name and value
@@ -2211,8 +2207,29 @@ namespace myPword
 
 		private void chkClear_CheckedChanged(object sender, System.EventArgs e)
 		{
-		
+
 		}
+
+        private void chkClear_CheckStateChanged(object sender, EventArgs e)
+        {
+            // FIND OUT THE STATE...  
+            // CHECKED: Clear the key and value fields.
+            // CHECK-Disabled: Clear only the value field
+            // Not Check: Clear no fields
+            if (chkClear.CheckState == CheckState.Checked)
+            {
+                chkClear.Text = "Clear All Text";
+            }
+            else if (chkClear.CheckState == CheckState.Indeterminate)
+            {
+                chkClear.Text = "Clear Value Only";
+            }
+            else if (chkClear.CheckState == CheckState.Unchecked)
+            {
+                chkClear.Text = "Clear Off";
+            }
+        }
+
 
 		private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
 		{
@@ -2375,7 +2392,6 @@ namespace myPword
 					swFromFile.Write(xml[i]);
 					//						formatter.Serialize(stream, xml[i].ToString());
 				}
-
 				swFromFile.Flush();
 				swFromFile.Close();
 			}
@@ -2494,6 +2510,7 @@ namespace myPword
             // add an attribute to a node
             Debug.WriteLine(e.ToString());
         }
+
 
 
 

@@ -51,7 +51,7 @@ namespace pWordLib.mgr
                     }
                     else
                     {
-                        // it doesn't exists, so go ahead and create just the part that is missing ie... the key Version0_0_06B
+                        // it doesn't exists, so go ahead and create just the part that is missing ie... the key Version# whatever it may be
                         // Note: the current user only cares about where his pWord file is located.  Multiple users can access multiple version of pWord
                         string user = "";
                         try
@@ -85,6 +85,155 @@ namespace pWordLib.mgr
 
             }
         }
+
+        // When saving be sure to update the value in the registry
+        public String AutoSavePathFromRegistry(String version)
+        {
+            // get the current user
+            RegistryKey key = Registry.CurrentUser;
+            int hash = key.GetHashCode();
+            RegistryKey HKEYCU_SoftwareKey = key.OpenSubKey("Software");
+            RegistryKey HKEYCU_SourceForgeKey = HKEYCU_SoftwareKey.OpenSubKey("SourceForge");
+            if (HKEYCU_SourceForgeKey != null)
+            {
+                RegistryKey HKEYCU_pWordKey = HKEYCU_SourceForgeKey.OpenSubKey("pWord");
+                if (HKEYCU_pWordKey != null)
+                {
+                    RegistryKey pwordVersionKey = HKEYCU_pWordKey.OpenSubKey(version);
+                    if ((pwordVersionKey != null) && (pwordVersionKey.SubKeyCount <= 0))
+                    {
+                        String[] names = pwordVersionKey.GetValueNames();
+                        if (names.Length > 0)
+                        {
+                            foreach (String name in names)
+                            {
+                                pwordVersionKey.GetValue(name, "empty", RegistryValueOptions.None);
+                            }
+                        }
+                        else
+                        {
+                            // Nothing is there so continue 
+                        }
+                    }
+                    else
+                    {
+                        // it doesn't exists, so go ahead and create just the part that is missing ie... the key Version0_0_06B
+                        // Note: the current user only cares about where his pWord file is located.  Multiple users can access multiple version of pWord
+                        string user = "";
+                        try
+                        {
+                            user = Environment.UserDomainName + @"\" + Environment.UserName;
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+
+                        HKEYCU_pWordKey = HKEYCU_SourceForgeKey.OpenSubKey("pWord");
+                        RegistryKey HKEYCU_V6B = HKEYCU_pWordKey.OpenSubKey("Version" + version, false);
+                        RegistryKey HKeyCU_FN = HKEYCU_pWordKey.OpenSubKey("FileName", true);
+                        try
+                        {
+                            String PWordVersion = (String)HKEYCU_V6B.GetValue("Version");
+                            String PWordPath = "";
+                            if ((HKEYCU_V6B.GetValue("Version") != null) && (HKEYCU_V6B.GetValue("Version") != ""))
+                            {
+
+                                PWordPath = (String)HKeyCU_FN.GetValue("FileName");
+                                return PWordPath;
+                            }
+
+
+                        }
+                        catch (
+                            Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                            Console.WriteLine(ex.StackTrace);
+                        }
+
+
+                    }
+
+                }
+
+
+            }
+            return null;
+        }
+
+        // When saving be sure to update the value in the registry
+        public void SavePathInRegistry(String version, String path)
+        {
+            // get the current user
+            RegistryKey key = Registry.CurrentUser;
+            int hash = key.GetHashCode();
+            RegistryKey HKEYCU_SoftwareKey = key.OpenSubKey("Software");
+            RegistryKey HKEYCU_SourceForgeKey = HKEYCU_SoftwareKey.OpenSubKey("SourceForge");
+            if (HKEYCU_SourceForgeKey != null)
+            {
+                RegistryKey HKEYCU_pWordKey = HKEYCU_SourceForgeKey.OpenSubKey("pWord");
+                if (HKEYCU_pWordKey != null)
+                {
+                    RegistryKey pwordVersionKey = HKEYCU_pWordKey.OpenSubKey(version);
+                    if ((pwordVersionKey != null) && (pwordVersionKey.SubKeyCount <= 0))
+                    {
+                        String[] names = pwordVersionKey.GetValueNames();
+                        if (names.Length > 0)
+                        {
+                            foreach (String name in names)
+                            {
+                                pwordVersionKey.GetValue(name, "empty", RegistryValueOptions.None);
+                            }
+                        }
+                        else
+                        {
+                            // Nothing is there so continue 
+                        }
+                    }
+                    else
+                    {
+                        // it doesn't exists, so go ahead and create just the part that is missing ie... the key Version0_0_06B
+                        // Note: the current user only cares about where his pWord file is located.  Multiple users can access multiple version of pWord
+                        string user = "";
+                        try
+                        {
+                            user = Environment.UserDomainName + @"\" + Environment.UserName;
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+
+                        HKEYCU_pWordKey = HKEYCU_SourceForgeKey.OpenSubKey("pWord");
+
+                        try
+                        {
+                            RegistryKey HKEYCU_V6B = HKEYCU_pWordKey.OpenSubKey("Version" + version, false);
+                            RegistryKey HKeyCU_FN = HKEYCU_pWordKey.OpenSubKey("FileName", true);
+                            String PWordVersion = (String)HKEYCU_V6B.GetValue("Version");
+                            String PWordPath = (String)HKeyCU_FN.GetValue("FileName");
+                            HKeyCU_FN.SetValue("FileName", path); // this attempts to set the new path
+                            HKEYCU_pWordKey.Close();
+                            HKeyCU_FN.Close();
+                            HKEYCU_V6B.Close();
+                        }
+                        catch (
+                            Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                            Console.WriteLine(ex.StackTrace);
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+
 
         private static void ShowSecurity(RegistrySecurity security)
         {

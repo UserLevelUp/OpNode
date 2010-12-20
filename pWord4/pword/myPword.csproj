@@ -177,6 +177,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>pWordSettings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserActivityHook.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -207,6 +212,10 @@
       <DependentUpon>pWord.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Data.xsc">
       <DependentUpon>Data.xsd</DependentUpon>
@@ -234,11 +243,16 @@
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Data.Designer.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\ExpandedLink.ico" />
     <Content Include="icons\master1.ico" />
     <Content Include="icons\master2.ico" />
     <Content Include="icons\PW.ico" />
     <Content Include="icons\toolbar\AutoHide.ico" />
     <Content Include="icons\toolbar\AutoHide2.ico" />
+    <None Include="Resources\Plus.ico" />
+    <None Include="Resources\Minus.ico" />
+    <None Include="Resources\Empty.ico" />
+    <None Include="Resources\SubMinus.ico" />
     <Content Include="XMLFile1.xml" />
     <Content Include="XMLSchema1.xsd" />
   </ItemGroup>
