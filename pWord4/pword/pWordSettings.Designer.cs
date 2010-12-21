@@ -31,5 +31,161 @@ namespace myPword {
                 return ((string)(this["version"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color TreeBackground {
+            get {
+                return ((global::System.Drawing.Color)(this["TreeBackground"]));
+            }
+            set {
+                this["TreeBackground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("120, 70, 50")]
+        public global::System.Drawing.Color SelectedNodeBackground {
+            get {
+                return ((global::System.Drawing.Color)(this["SelectedNodeBackground"]));
+            }
+            set {
+                this["SelectedNodeBackground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Beige")]
+        public global::System.Drawing.Color SelectedNodeForeground {
+            get {
+                return ((global::System.Drawing.Color)(this["SelectedNodeForeground"]));
+            }
+            set {
+                this["SelectedNodeForeground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color TreeviewBackground {
+            get {
+                return ((global::System.Drawing.Color)(this["TreeviewBackground"]));
+            }
+            set {
+                this["TreeviewBackground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color TreeviewForeground {
+            get {
+                return ((global::System.Drawing.Color)(this["TreeviewForeground"]));
+            }
+            set {
+                this["TreeviewForeground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 255, 192")]
+        public global::System.Drawing.Color ValueTextViewer {
+            get {
+                return ((global::System.Drawing.Color)(this["ValueTextViewer"]));
+            }
+            set {
+                this["ValueTextViewer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TreeViewLinesVisible {
+            get {
+                return ((bool)(this["TreeViewLinesVisible"]));
+            }
+            set {
+                this["TreeViewLinesVisible"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowPrefix {
+            get {
+                return ((bool)(this["ShowPrefix"]));
+            }
+            set {
+                this["ShowPrefix"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowSuffix {
+            get {
+                return ((bool)(this["ShowSuffix"]));
+            }
+            set {
+                this["ShowSuffix"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool RabitHolePrefix {
+            get {
+                return ((bool)(this["RabitHolePrefix"]));
+            }
+            set {
+                this["RabitHolePrefix"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool RabitHoleSuffix {
+            get {
+                return ((bool)(this["RabitHoleSuffix"]));
+            }
+            set {
+                this["RabitHoleSuffix"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowAttributes {
+            get {
+                return ((bool)(this["ShowAttributes"]));
+            }
+            set {
+                this["ShowAttributes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowNamespace {
+            get {
+                return ((bool)(this["ShowNamespace"]));
+            }
+            set {
+                this["ShowNamespace"] = value;
+            }
+        }
     }
 }

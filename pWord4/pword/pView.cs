@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Diagnostics;
 
 namespace myPword
 {
@@ -25,69 +26,108 @@ namespace myPword
             base.DrawNode += new DrawTreeNodeEventHandler(pView_DrawNode);
         }
 
-        void getExpandedLink(DrawTreeNodeEventArgs e, Rectangle b)
-        {
-            Rectangle b3 = new Rectangle(b.Left - 19, b.Top, 16, 16);
-            if (e.Node.Parent != null)
-            {
-                if (e.Node.Parent.IsExpanded)
-                {
-                    DrawTreeNodeEventArgs e3 = new DrawTreeNodeEventArgs(e.Graphics, e.Node.Parent, e.Bounds, e.State);
-                    getExpandedLink(e3, b3);
-                }
-                
 
-                e.Graphics.DrawIcon(Resource1.ExpandedLink, b3);
+
+        void parentNodeReference(DrawTreeNodeEventArgs e, Rectangle b)
+        {
+            if (e.Node.Text == "viper")
+            {
+                Debug.WriteLine("Viper caught.");
+            }
+            DrawTreeNodeEventArgs eParent = new DrawTreeNodeEventArgs(e.Graphics, e.Node.Parent, e.Bounds, e.State);
+            Rectangle b2 = new Rectangle(b.Left - 19, b.Top, 16, 16);
+            if (e.Node.NextNode != null)
+            {
+                try
+                {
+
+                    parentNodeReference(eParent, b2);
+                    e.Graphics.DrawIcon(Resource1.Empty, b);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.ToString());
+                }
+            }
+            else if (e.Node.Parent != null)
+            {
+                parentNodeReference(eParent, b2);
             }
             
+
         }
 
         void pView_DrawNode(object sender, DrawTreeNodeEventArgs e)
         {
-
             if (e.Node.IsVisible)
             {
-                if (e.Node.Parent == null)
+                //if (e.Node.Parent == null)
+                //{
+                //    e.Graphics.Clear(Color.White);
+                //}
+                //else
+                //{
+
+                //}
+                Rectangle r = NodeBounds(e.Node);
+                Rectangle b = new Rectangle(r.Left - 38, r.Top, 16, 16);
+                Rectangle b2 = new Rectangle(r.Left - 19, r.Top, 16, 16);
+
+                if (e.Node.Parent != null)
                 {
-                    e.Graphics.Clear(Color.White);
-                }
-                else
-                {
+                    // start a loop
+                    DrawTreeNodeEventArgs eParent = new DrawTreeNodeEventArgs(e.Graphics, e.Node.Parent, e.Bounds, e.State);
+                    parentNodeReference(eParent, b);
+                    if (e.Node.Index == 0)
+                    {
+                        e.Graphics.DrawIcon(Resource1.ExpandedLink, b);
+                    }
 
                 }
-                Rectangle r = NodeBounds(e.Node);
-                Rectangle b = new Rectangle(r.Left - 40, r.Top, 16, 16);
-                Rectangle b2 = new Rectangle(r.Left - 17, r.Top, 16, 16);
-                
-                if ((e.Node.Nodes != null) && (e.Node.Nodes.Count > 0))
+                if (e.Node.Nodes.Count > 0)
                 {
                     if (e.Node.IsExpanded)
                     {
-                        if (e.Node.Parent == null)
-                        {
-                            getExpandedLink(e, b);
-                            e.Graphics.DrawIcon(Resource1.Minus, b);
-                        }
-                        else if (e.Node.Parent != null)
-                        {
-                            getExpandedLink(e, b);
-                            e.Graphics.DrawIcon(Resource1.SubMinus, b);
-                        }
-
+                        e.Graphics.DrawIcon(Resource1.Minus, b);
                     }
                     else
                     {
-
-                        // draw a plus sign
                         e.Graphics.DrawIcon(Resource1.Plus, b);
                     }
                 }
-                else
-                {
-                    getExpandedLink(e, b);
-                    e.Graphics.DrawIcon(Resource1.Empty, b);
+                //if ((e.Node.Nodes != null) && (e.Node.Nodes.Count > 0))
+                //{
+                //    if (e.Node.IsExpanded)
+                //    {
+                //        if (e.Node.Parent == null)
+                //        {
+                //            e.Graphics.DrawIcon(Resource1.Minus, b);
+                //            getExpandedLink(e, b);
 
-                }
+                //        }
+                //        else if (e.Node.Parent != null)
+                //        {
+                //            e.Graphics.DrawIcon(Resource1.SubMinus, b);
+                //            getExpandedLink(e, b);
+
+                //        }
+
+                //    }
+                //    else
+                //    {
+
+                //        // draw a plus sign
+                //        getExpandedLink(e, b);
+                //        e.Graphics.DrawIcon(Resource1.Plus, b);
+                //    }
+                //}
+                //else
+                //{
+                //    Debug.WriteLine("Do nothing.");
+                //    getExpandedLink(e, b2);
+                //    //e.Graphics.DrawIcon(Resource1.ExpandedLink, b);
+
+                //}
                 e.Graphics.DrawImage(this.ImageList.Images[0], b2);
                 // Draw the background and node text for a selected node.
                 if ((e.State & TreeNodeStates.Selected) != 0)
@@ -96,14 +136,16 @@ namespace myPword
                     // Draw the background of the selected node. The NodeBounds
                     // method makes the highlight rectangle large enough to
                     // include the text of a node tag, if one is present.
-                    e.Graphics.FillRectangle(Brushes.Beige, r );
+                    SolidBrush sbBackground = new SolidBrush(pWordSettings.Default.SelectedNodeBackground);
+                    e.Graphics.FillRectangle(sbBackground, r );
                     // Retrieve the node font. If the node font has not been set,
                     // use the TreeView font.
                     Font nodeFont = e.Node.NodeFont;
                     if (nodeFont == null) nodeFont = ((TreeView)sender).Font;
 
+                    SolidBrush sbForeground = new SolidBrush(pWordSettings.Default.SelectedNodeForeground);
                     // Draw the node text.
-                    e.Graphics.DrawString(e.Node.Text, nodeFont, Brushes.SaddleBrown,
+                    e.Graphics.DrawString(e.Node.Text, nodeFont, sbForeground,
                         Rectangle.Inflate(r, -5, 0));
                 }
 

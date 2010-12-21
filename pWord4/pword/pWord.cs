@@ -80,12 +80,15 @@ namespace myPword
 
 
 
-		public enum nodeMode
-		{
-			addto = 1,
-			insert = 2,
-			edit = 3
-		}
+        public enum nodeMode
+        {
+            addto = 1,
+            insert = 2,
+            edit = 3,
+            addAttributeTo = 4,
+            addNamespacePrefix = 5,
+            addNamespaceSuffix = 6
+        }
 
 		nodeMode mode = nodeMode.addto;  // see above
 		int modeIndex = 0;  // this represents the index of interest depending on the mode
@@ -125,7 +128,7 @@ namespace myPword
 		private System.Windows.Forms.MenuItem menuItem12;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblName;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.TextBox txtObject;
 		private System.Windows.Forms.Label lblValue;
@@ -160,6 +163,10 @@ namespace myPword
 		// Import interop services
 
 		pWordLib.UserActivityHook.UserActivityHook actHook;
+        private MenuItem menuItem5;
+        private MenuItem menuItem6;
+        private MenuItem menuItem36;
+        private MenuItem menuItem37;
         pWordLib.mgr.registryMgr rm = null;
 		public pWord()
 		{
@@ -268,6 +275,10 @@ namespace myPword
             this.menuItem29 = new System.Windows.Forms.MenuItem();
             this.menuItem3 = new System.Windows.Forms.MenuItem();
             this.menuItem2 = new System.Windows.Forms.MenuItem();
+            this.menuItem5 = new System.Windows.Forms.MenuItem();
+            this.menuItem6 = new System.Windows.Forms.MenuItem();
+            this.menuItem36 = new System.Windows.Forms.MenuItem();
+            this.menuItem37 = new System.Windows.Forms.MenuItem();
             this.menuItem30 = new System.Windows.Forms.MenuItem();
             this.menuItem22 = new System.Windows.Forms.MenuItem();
             this.menuItem32 = new System.Windows.Forms.MenuItem();
@@ -310,12 +321,12 @@ namespace myPword
             this.lblValue = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.chkClear = new System.Windows.Forms.CheckBox();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.saveFileDialogHTML = new System.Windows.Forms.SaveFileDialog();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.userControl11 = new LeftRight.LeftRight();
@@ -355,9 +366,9 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 313);
+            this.statusBar1.Location = new System.Drawing.Point(0, 208);
             this.statusBar1.Name = "statusBar1";
-            this.statusBar1.Size = new System.Drawing.Size(336, 22);
+            this.statusBar1.Size = new System.Drawing.Size(284, 22);
             this.statusBar1.TabIndex = 0;
             this.statusBar1.Text = "statusBar1";
             // 
@@ -372,7 +383,7 @@ namespace myPword
             this.toolBar1.Location = new System.Drawing.Point(0, 0);
             this.toolBar1.Name = "toolBar1";
             this.toolBar1.ShowToolTips = true;
-            this.toolBar1.Size = new System.Drawing.Size(336, 48);
+            this.toolBar1.Size = new System.Drawing.Size(284, 48);
             this.toolBar1.TabIndex = 1;
             this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
             // 
@@ -415,6 +426,7 @@ namespace myPword
             this.menuItem29,
             this.menuItem3,
             this.menuItem2,
+            this.menuItem6,
             this.menuItem30,
             this.menuItem22,
             this.menuItem32,
@@ -458,24 +470,52 @@ namespace myPword
             // menuItem2
             // 
             this.menuItem2.Index = 4;
+            this.menuItem2.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem5});
             this.menuItem2.Text = "A&ttributes";
             this.menuItem2.Click += new System.EventHandler(this.menuItemAttribute_Click);
             // 
+            // menuItem5
+            // 
+            this.menuItem5.Index = 0;
+            this.menuItem5.Text = "Add";
+            this.menuItem5.Click += new System.EventHandler(this.menuItemAttributeAdd_Click);
+            // 
+            // menuItem6
+            // 
+            this.menuItem6.Index = 5;
+            this.menuItem6.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem36,
+            this.menuItem37});
+            this.menuItem6.Text = "Namespace";
+            // 
+            // menuItem36
+            // 
+            this.menuItem36.Index = 0;
+            this.menuItem36.Text = "Set Prefix";
+            this.menuItem36.Click += new System.EventHandler(this.menuItemNamespaceAddPrefix_Click);
+            // 
+            // menuItem37
+            // 
+            this.menuItem37.Index = 1;
+            this.menuItem37.Text = "Set Suffix";
+            this.menuItem37.Click += new System.EventHandler(this.menuItemNamespaceAddSuffix_Click);
+            // 
             // menuItem30
             // 
-            this.menuItem30.Index = 5;
+            this.menuItem30.Index = 6;
             this.menuItem30.Text = "-";
             // 
             // menuItem22
             // 
-            this.menuItem22.Index = 6;
+            this.menuItem22.Index = 7;
             this.menuItem22.Shortcut = System.Windows.Forms.Shortcut.CtrlG;
             this.menuItem22.Text = "Get Node";
             this.menuItem22.Click += new System.EventHandler(this.menuItem22_Click);
             // 
             // menuItem32
             // 
-            this.menuItem32.Index = 7;
+            this.menuItem32.Index = 8;
             this.menuItem32.Shortcut = System.Windows.Forms.Shortcut.CtrlX;
             this.menuItem32.Text = "Cut Node";
             this.menuItem32.Click += new System.EventHandler(this.menuCutNode_Click);
@@ -483,7 +523,7 @@ namespace myPword
             // menuItem21
             // 
             this.menuItem21.Enabled = false;
-            this.menuItem21.Index = 8;
+            this.menuItem21.Index = 9;
             this.menuItem21.Shortcut = System.Windows.Forms.Shortcut.CtrlP;
             this.menuItem21.Text = "Put Node In";
             this.menuItem21.Click += new System.EventHandler(this.menuItem21_Click);
@@ -491,7 +531,7 @@ namespace myPword
             // menuItem31
             // 
             this.menuItem31.Enabled = false;
-            this.menuItem31.Index = 9;
+            this.menuItem31.Index = 10;
             this.menuItem31.Shortcut = System.Windows.Forms.Shortcut.Ins;
             this.menuItem31.Text = "Insert Node";
             this.menuItem31.Click += new System.EventHandler(this.menuItem31_Click);
@@ -499,19 +539,19 @@ namespace myPword
             // menuItem1
             // 
             this.menuItem1.Enabled = false;
-            this.menuItem1.Index = 10;
+            this.menuItem1.Index = 11;
             this.menuItem1.Text = "Encrypt Node";
             // 
             // menuItem14
             // 
-            this.menuItem14.Index = 11;
+            this.menuItem14.Index = 12;
             this.menuItem14.Shortcut = System.Windows.Forms.Shortcut.Del;
             this.menuItem14.Text = "Delete Node";
             this.menuItem14.Click += new System.EventHandler(this.menuItem14_Click);
             // 
             // menuItem34
             // 
-            this.menuItem34.Index = 12;
+            this.menuItem34.Index = 13;
             this.menuItem34.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem35});
             this.menuItem34.Text = "Export Node";
@@ -525,12 +565,12 @@ namespace myPword
             // 
             // menuItem24
             // 
-            this.menuItem24.Index = 13;
+            this.menuItem24.Index = 14;
             this.menuItem24.Text = "-";
             // 
             // menuItem11
             // 
-            this.menuItem11.Index = 14;
+            this.menuItem11.Index = 15;
             this.menuItem11.Text = "Open Link [Dbl Lft Click]";
             this.menuItem11.Click += new System.EventHandler(this.menuItem11_Click);
             // 
@@ -668,11 +708,11 @@ namespace myPword
             this.txtValue.BackColor = System.Drawing.SystemColors.Info;
             this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtValue.Location = new System.Drawing.Point(0, 205);
+            this.txtValue.Location = new System.Drawing.Point(0, 100);
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
             this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtValue.Size = new System.Drawing.Size(336, 108);
+            this.txtValue.Size = new System.Drawing.Size(284, 108);
             this.txtValue.TabIndex = 3;
             this.txtValue.TabStop = false;
             // 
@@ -697,9 +737,9 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 197);
+            this.splitter1.Location = new System.Drawing.Point(0, 92);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(336, 8);
+            this.splitter1.Size = new System.Drawing.Size(284, 8);
             this.splitter1.TabIndex = 5;
             this.splitter1.TabStop = false;
             // 
@@ -710,7 +750,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(336, 125);
+            this.panel1.Size = new System.Drawing.Size(284, 20);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -723,7 +763,7 @@ namespace myPword
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(336, 104);
+            this.panel2.Size = new System.Drawing.Size(284, 104);
             this.panel2.TabIndex = 3;
             this.panel2.VisibleChanged += new System.EventHandler(this.panel2_VisibleChanged);
             // 
@@ -734,7 +774,7 @@ namespace myPword
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 24);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(332, 40);
+            this.panel4.Size = new System.Drawing.Size(280, 40);
             this.panel4.TabIndex = 2;
             // 
             // txtObject
@@ -746,7 +786,7 @@ namespace myPword
             this.txtObject.Multiline = true;
             this.txtObject.Name = "txtObject";
             this.txtObject.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtObject.Size = new System.Drawing.Size(276, 40);
+            this.txtObject.Size = new System.Drawing.Size(224, 40);
             this.txtObject.TabIndex = 1;
             // 
             // lblValue
@@ -761,11 +801,11 @@ namespace myPword
             // panel3
             // 
             this.panel3.Controls.Add(this.txtName);
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.lblName);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(332, 24);
+            this.panel3.Size = new System.Drawing.Size(280, 24);
             this.panel3.TabIndex = 0;
             // 
             // txtName
@@ -773,29 +813,28 @@ namespace myPword
             this.txtName.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtName.Location = new System.Drawing.Point(56, 0);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(276, 20);
+            this.txtName.Size = new System.Drawing.Size(224, 20);
             this.txtName.TabIndex = 1;
             this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
             // 
-            // label1
+            // lblName
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name:";
+            this.lblName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblName.Location = new System.Drawing.Point(0, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(56, 24);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Name:";
             // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.chkClear);
-            this.panel5.Controls.Add(this.btnCancel);
             this.panel5.Controls.Add(this.btnAdd);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 68);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(332, 32);
+            this.panel5.Size = new System.Drawing.Size(280, 32);
             this.panel5.TabIndex = 4;
             // 
             // chkClear
@@ -804,25 +843,13 @@ namespace myPword
             this.chkClear.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkClear.Location = new System.Drawing.Point(88, 0);
             this.chkClear.Name = "chkClear";
-            this.chkClear.Size = new System.Drawing.Size(120, 24);
+            this.chkClear.Size = new System.Drawing.Size(258, 24);
             this.chkClear.TabIndex = 2;
             this.chkClear.TabStop = false;
-            this.chkClear.Text = "Clear Text?";
+            this.chkClear.Text = "Clear Name and Value fields?";
             this.chkClear.ThreeState = true;
             this.chkClear.CheckedChanged += new System.EventHandler(this.chkClear_CheckedChanged);
             this.chkClear.CheckStateChanged += new System.EventHandler(this.chkClear_CheckStateChanged);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Enabled = false;
-            this.btnCancel.Location = new System.Drawing.Point(223, 0);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 24);
-            this.btnCancel.TabIndex = 1;
-            this.btnCancel.TabStop = false;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
             // 
@@ -839,10 +866,23 @@ namespace myPword
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.treeView1);
+            this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 104);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(336, 21);
+            this.panel6.Size = new System.Drawing.Size(284, 0);
             this.panel6.TabIndex = 5;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Location = new System.Drawing.Point(12, -13);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 24);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // saveFileDialogHTML
             // 
@@ -864,7 +904,7 @@ namespace myPword
             this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
             this.userControl11.Location = new System.Drawing.Point(0, 48);
             this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(336, 24);
+            this.userControl11.Size = new System.Drawing.Size(284, 24);
             this.userControl11.TabIndex = 4;
             this.userControl11.TabStop = false;
             this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
@@ -888,7 +928,7 @@ namespace myPword
             this.treeView1.Name = "treeView1";
             this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(336, 21);
+            this.treeView1.Size = new System.Drawing.Size(284, 0);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -904,7 +944,7 @@ namespace myPword
             // pWord
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(336, 335);
+            this.ClientSize = new System.Drawing.Size(284, 230);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.userControl11);
@@ -1251,9 +1291,10 @@ namespace myPword
 //					}
 			//	this.tmpNode.Nodes.Clear();
 				this.tmpNode = (pNode)treeView1.SelectedNode;
-
+                lblName.Text = "Name:";
+                lblValue.Text = "Value:";
 				this.txtName.Focus();
-				this.statusBar1.Text = "Add to Mode";
+				this.statusBar1.Text = "Add to Node";
 				if (this.chkClear.Checked == true)
 				{
 					this.txtName.Clear();
@@ -1515,7 +1556,8 @@ namespace myPword
 
 		private void menuItem3_Click_1(object sender, System.EventArgs e)
 		{
-
+            lblName.Text = "Name:";
+            lblValue.Text = "Value:";
 
 			Clipboard.SetDataObject(this.treeView1.SelectedNode.Tag,true);
 			this.statusBar1.Text = "Copy Value Text Mode";
@@ -1694,6 +1736,10 @@ namespace myPword
 					TreePics apic = new TreePics("aNode",img.GroupUp,img.GroupDown);
 					aNode.Tag = this.txtObject.Text;
                     aNode.Text = this.txtName.Text;
+                    if (tmpNode.Namespace != null)
+                    {
+                        aNode.Namespace = tmpNode.Namespace;
+                    }
 					treeView1.SelectedNode = tmpNode;
 					treeView1.SelectedNode.Nodes.Add(aNode);
                     // after adding the new node, be sure the index is updated as well... this is not necessary
@@ -1779,6 +1825,10 @@ namespace myPword
 					aNode = new pNode(this.txtName.Text);
 					TreePics apic = new TreePics("aNode",img.GroupUp,img.GroupDown);
 					aNode.Tag = this.txtObject.Text;
+                    if (tmpNode.Namespace != null)
+                    {
+                        aNode.Namespace = tmpNode.Namespace;
+                    }
 					treeView1.SelectedNode = tmpNode;
 					treeView1.SelectedNode.Nodes.Insert(modeIndex,aNode);
 					userControl11.MastersValue[userControl11.index] = masterNode;
@@ -1802,6 +1852,109 @@ namespace myPword
 					MessageBox.Show(f.Message);
 				}
 			}
+            else if (mode == nodeMode.addAttributeTo)
+            {
+                try
+                {
+                    // Add attribute to the selected treeNode
+                    // Only edit the current node
+                    //pNode aNode;
+                    //aNode = new pNode(this.txtName.Text);
+                    //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
+                    //aNode.Tag = this.txtObject.Text;
+                    tmpNode.AddAttribute(txtName.Text, txtObject.Text);
+                    treeView1.SelectedNode = tmpNode;
+                    userControl11.MastersValue[userControl11.index] = masterNode;
+
+                    // Change from Add Dialog to local members for adding name and value
+
+                    // check box
+                    if (this.chkClear.Checked == true)
+                    {
+                        this.txtName.Clear();
+                        this.txtObject.Clear();
+                    }
+
+                    if (flag_file == true)
+                    {
+                        autosave();
+                    }
+                }
+                catch (Exception f)
+                {
+                    MessageBox.Show(f.Message);
+                }
+            }
+            else if (mode == nodeMode.addNamespacePrefix)
+            {
+                try
+                {
+                    // Add attribute to the selected treeNode
+                    // Only edit the current node
+                    //pNode aNode;
+                    //aNode = new pNode(this.txtName.Text);
+                    //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
+                    //aNode.Tag = this.txtObject.Text;
+                    tmpNode.Namespace = new pWordLib.dat.NameSpace();
+                    tmpNode.Namespace.Prefix = txtName.Text;
+                    tmpNode.Namespace.URI_PREFIX = txtObject.Text;
+                    treeView1.SelectedNode = tmpNode;
+                    userControl11.MastersValue[userControl11.index] = masterNode;
+
+                    // Change from Add Dialog to local members for adding name and value
+
+                    // check box
+                    if (this.chkClear.Checked == true)
+                    {
+                        this.txtName.Clear();
+                        this.txtObject.Clear();
+                    }
+
+                    if (flag_file == true)
+                    {
+                        autosave();
+                    }
+                }
+                catch (Exception f)
+                {
+                    MessageBox.Show(f.Message);
+                }
+            }
+            else if (mode == nodeMode.addNamespaceSuffix)
+            {
+                try
+                {
+                    // Add attribute to the selected treeNode
+                    // Only edit the current node
+                    //pNode aNode;
+                    //aNode = new pNode(this.txtName.Text);
+                    //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
+                    //aNode.Tag = this.txtObject.Text;
+                    tmpNode.Namespace = new pWordLib.dat.NameSpace();
+                    tmpNode.Namespace.Suffix = txtName.Text;
+                    tmpNode.Namespace.URI_SUFFIX = txtObject.Text;
+                    treeView1.SelectedNode = tmpNode;
+                    userControl11.MastersValue[userControl11.index] = masterNode;
+
+                    // Change from Add Dialog to local members for adding name and value
+
+                    // check box
+                    if (this.chkClear.Checked == true)
+                    {
+                        this.txtName.Clear();
+                        this.txtObject.Clear();
+                    }
+
+                    if (flag_file == true)
+                    {
+                        autosave();
+                    }
+                }
+                catch (Exception f)
+                {
+                    MessageBox.Show(f.Message);
+                }
+            }
 
 		}
 
@@ -1936,6 +2089,8 @@ namespace myPword
 			
 			try
 			{
+                lblName.Text = "Name:";
+                lblValue.Text = "Value:";
 				this.modeIndex=treeView1.SelectedNode.Index;
 //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
 //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
@@ -2136,6 +2291,8 @@ namespace myPword
 
 		private void menuItem29_Click(object sender, System.EventArgs e)
 		{
+            lblName.Text = "Name:";
+            lblValue.Text = "Value:";
 			mode = nodeMode.insert;
 			if (this.chkClear.Checked == true)
 			{
@@ -2226,7 +2383,7 @@ namespace myPword
             }
             else if (chkClear.CheckState == CheckState.Unchecked)
             {
-                chkClear.Text = "Clear Off";
+                chkClear.Text = "Clear Disabled";
             }
         }
 
@@ -2511,8 +2668,107 @@ namespace myPword
             Debug.WriteLine(e.ToString());
         }
 
+        private void menuItemAttributeAdd_Click(object sender, EventArgs e)
+        {
+            mode = nodeMode.addNamespacePrefix;
+            try
+            {
+                lblName.Text = "Attribute:";
+                lblValue.Text = "Value:";
+                this.modeIndex = treeView1.SelectedNode.Index;
+                //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                this.tmpNode = (pNode)treeView1.SelectedNode;
+                this.statusBar1.Text = "Add Attribute to Node";
+                if (this.chkClear.CheckState == CheckState.Checked)
+                {
+                    this.txtName.Clear();
+                    this.txtObject.Clear();
+                    this.txtName.Focus();
+                }
+                else if (this.chkClear.CheckState == CheckState.Indeterminate)
+                {
+                    this.txtObject.Clear();
+                    this.txtObject.Focus();
+                }
+                else
+                {
+                    this.btnAdd.Focus();
+                }
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
+        }
 
 
+        private void menuItemNamespaceAddPrefix_Click(object sender, EventArgs e)
+        {
+            mode = nodeMode.addNamespacePrefix;
+            try
+            {
+                lblName.Text = "Prefix:";
+                lblValue.Text = "URI:";
+                this.modeIndex = treeView1.SelectedNode.Index;
+                //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                this.tmpNode = (pNode)treeView1.SelectedNode;
+                this.statusBar1.Text = "Add Prefix to Node";
+                if (this.chkClear.CheckState == CheckState.Checked)
+                {
+                    this.txtName.Clear();
+                    this.txtObject.Clear();
+                    this.txtName.Focus();
+                }
+                else if (this.chkClear.CheckState == CheckState.Indeterminate)
+                {
+                    this.txtObject.Clear();
+                    this.txtObject.Focus();
+                }
+                else
+                {
+                    this.btnAdd.Focus();
+                }
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
+        }
 
+        private void menuItemNamespaceAddSuffix_Click(object sender, EventArgs e)
+        {
+            mode = nodeMode.addNamespaceSuffix;
+            try
+            {
+                lblName.Text = "Suffix:";
+                lblValue.Text = "URI:";
+                this.modeIndex = treeView1.SelectedNode.Index;
+                //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                this.tmpNode = (pNode)treeView1.SelectedNode;
+                this.statusBar1.Text = "Add Suffix to Node";
+                if (this.chkClear.CheckState == CheckState.Checked)
+                {
+                    this.txtName.Clear();
+                    this.txtObject.Clear();
+                    this.txtName.Focus();
+                }
+                else if (this.chkClear.CheckState == CheckState.Indeterminate)
+                {
+                    this.txtObject.Clear();
+                    this.txtObject.Focus();
+                }
+                else
+                {
+                    this.btnAdd.Focus();
+                }
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
+        }
 	}
 }

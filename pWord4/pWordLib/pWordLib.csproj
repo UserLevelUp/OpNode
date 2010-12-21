@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="dat\NameSpace.cs" />
     <Compile Include="dat\pNode.cs" />
+    <Compile Include="dat\pNodeMode.cs" />
     <Compile Include="mgr\registryMgr.cs" />
     <Compile Include="mgr\UserActivityHook.cs" />
     <Compile Include="mgr\Win32.cs" />
