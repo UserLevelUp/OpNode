@@ -236,13 +236,24 @@
       <DependentUpon>XMLSchema1.xsd</DependentUpon>
     </None>
     <Content Include="App.ico" />
-    <Content Include="bin\Debug\PW.ico" />
-    <Content Include="bin\Release\PW.ico" />
+    <Content Include="bin\Debug\icons\master1.ico" />
+    <Content Include="bin\Debug\icons\master2.ico" />
+    <Content Include="bin\Debug\icons\PW.ico" />
+    <Content Include="bin\Debug\icons\toolbar\AutoHide.ico" />
+    <Content Include="bin\Debug\icons\toolbar\AutoHide2.ico" />
+    <Content Include="bin\Release\icons\master1.ico" />
+    <Content Include="bin\Release\icons\master2.ico" />
+    <Content Include="bin\Release\icons\PW.ico" />
+    <Content Include="bin\Release\icons\toolbar\AutoHide.ico" />
+    <Content Include="bin\Release\icons\toolbar\AutoHide2.ico" />
     <Content Include="Data.xml" />
     <Content Include="Data.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Data.Designer.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\%24this.Icon.ico" />
+    <Content Include="icons\Sum.ico" />
+    <None Include="Resources\Division.ico" />
     <Content Include="Resources\ExpandedLink.ico" />
     <Content Include="icons\master1.ico" />
     <Content Include="icons\master2.ico" />
@@ -253,6 +264,9 @@
     <None Include="Resources\Minus.ico" />
     <None Include="Resources\Empty.ico" />
     <None Include="Resources\SubMinus.ico" />
+    <None Include="Resources\Multiplication.ico" />
+    <None Include="Resources\Subtraction.ico" />
+    <Content Include="Resources\Sum.ico" />
     <Content Include="XMLFile1.xml" />
     <Content Include="XMLSchema1.xsd" />
   </ItemGroup>
@@ -326,6 +340,7 @@
       <ORMGenerator>DDILtoSQLStandard</ORMGenerator>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

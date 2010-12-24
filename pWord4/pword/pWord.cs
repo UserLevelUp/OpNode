@@ -16,6 +16,9 @@ using pWordLib;
 using System.Xml.Serialization;
 using System.Xml;
 using System.Diagnostics;
+using myPword.dat;
+using myPword.dat.Math;
+using pWordLib.dat.math;
 
 namespace myPword
 {
@@ -87,7 +90,10 @@ namespace myPword
             edit = 3,
             addAttributeTo = 4,
             addNamespacePrefix = 5,
-            addNamespaceSuffix = 6
+            addNamespaceSuffix = 6,
+            sum = 7,
+            multiply = 8,
+            divide = 9,
         }
 
 		nodeMode mode = nodeMode.addto;  // see above
@@ -167,6 +173,15 @@ namespace myPword
         private MenuItem menuItem6;
         private MenuItem menuItem36;
         private MenuItem menuItem37;
+        private MenuItem menuItem40;
+        private MenuItem menuItem39;
+        private MenuItem menuItem41;
+        private MenuItem menuItem38;
+        private MenuItem menuItem42;
+        private MenuItem menuItem43;
+        private MenuItem menuItem44;
+        private MenuItem menuItem45;
+        private MenuItem menuItem46;
         pWordLib.mgr.registryMgr rm = null;
 		public pWord()
 		{
@@ -175,9 +190,6 @@ namespace myPword
 			// Required for Windows Form Designer support
 			//
 			InitializeComponent();
-            // always check registry when starting pWord
-            // be sure to check the Default version
-             rm = new pWordLib.mgr.registryMgr(pWordSettings.Default.version.ToString());
 
 
 			//
@@ -288,6 +300,15 @@ namespace myPword
             this.menuItem14 = new System.Windows.Forms.MenuItem();
             this.menuItem34 = new System.Windows.Forms.MenuItem();
             this.menuItem35 = new System.Windows.Forms.MenuItem();
+            this.menuItem40 = new System.Windows.Forms.MenuItem();
+            this.menuItem39 = new System.Windows.Forms.MenuItem();
+            this.menuItem46 = new System.Windows.Forms.MenuItem();
+            this.menuItem42 = new System.Windows.Forms.MenuItem();
+            this.menuItem41 = new System.Windows.Forms.MenuItem();
+            this.menuItem43 = new System.Windows.Forms.MenuItem();
+            this.menuItem44 = new System.Windows.Forms.MenuItem();
+            this.menuItem45 = new System.Windows.Forms.MenuItem();
+            this.menuItem38 = new System.Windows.Forms.MenuItem();
             this.menuItem24 = new System.Windows.Forms.MenuItem();
             this.menuItem11 = new System.Windows.Forms.MenuItem();
             this.imageTree1 = new System.Windows.Forms.ImageList(this.components);
@@ -329,8 +350,8 @@ namespace myPword
             this.btnCancel = new System.Windows.Forms.Button();
             this.saveFileDialogHTML = new System.Windows.Forms.SaveFileDialog();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.userControl11 = new LeftRight.LeftRight();
             this.treeView1 = new myPword.pView();
+            this.userControl11 = new LeftRight.LeftRight();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -366,7 +387,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 208);
+            this.statusBar1.Location = new System.Drawing.Point(0, 140);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(284, 22);
             this.statusBar1.TabIndex = 0;
@@ -435,6 +456,9 @@ namespace myPword
             this.menuItem1,
             this.menuItem14,
             this.menuItem34,
+            this.menuItem40,
+            this.menuItem39,
+            this.menuItem38,
             this.menuItem24,
             this.menuItem11});
             this.cmTree.Popup += new System.EventHandler(this.cmTree_Popup);
@@ -563,14 +587,72 @@ namespace myPword
             this.menuItem35.Text = "to XML/HTML";
             this.menuItem35.Click += new System.EventHandler(this.menuItem35_Click);
             // 
+            // menuItem40
+            // 
+            this.menuItem40.Index = 14;
+            this.menuItem40.Text = "-";
+            // 
+            // menuItem39
+            // 
+            this.menuItem39.Index = 15;
+            this.menuItem39.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem46,
+            this.menuItem42});
+            this.menuItem39.Text = "Operations";
+            // 
+            // menuItem46
+            // 
+            this.menuItem46.Index = 0;
+            this.menuItem46.Text = "Clear Operations";
+            this.menuItem46.Click += new System.EventHandler(this.menuItemOperationsClear_Click);
+            // 
+            // menuItem42
+            // 
+            this.menuItem42.Index = 1;
+            this.menuItem42.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem41,
+            this.menuItem43,
+            this.menuItem44,
+            this.menuItem45});
+            this.menuItem42.Text = "Math";
+            // 
+            // menuItem41
+            // 
+            this.menuItem41.Index = 0;
+            this.menuItem41.Text = "Sum";
+            this.menuItem41.Click += new System.EventHandler(this.menuItemMathSum_Click);
+            // 
+            // menuItem43
+            // 
+            this.menuItem43.Index = 1;
+            this.menuItem43.Text = "Multiply";
+            this.menuItem43.Click += new System.EventHandler(this.menuItemMathMultiple_Click);
+            // 
+            // menuItem44
+            // 
+            this.menuItem44.Index = 2;
+            this.menuItem44.Text = "Divide";
+            this.menuItem44.Click += new System.EventHandler(this.menuItemMathDivide_Click);
+            // 
+            // menuItem45
+            // 
+            this.menuItem45.Index = 3;
+            this.menuItem45.Text = "Subtract";
+            this.menuItem45.Click += new System.EventHandler(this.menuItemMathSubtract_Click);
+            // 
+            // menuItem38
+            // 
+            this.menuItem38.Index = 16;
+            this.menuItem38.Text = "";
+            // 
             // menuItem24
             // 
-            this.menuItem24.Index = 14;
+            this.menuItem24.Index = 17;
             this.menuItem24.Text = "-";
             // 
             // menuItem11
             // 
-            this.menuItem11.Index = 15;
+            this.menuItem11.Index = 18;
             this.menuItem11.Text = "Open Link [Dbl Lft Click]";
             this.menuItem11.Click += new System.EventHandler(this.menuItem11_Click);
             // 
@@ -580,6 +662,7 @@ namespace myPword
             this.imageTree1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageTree1.Images.SetKeyName(0, "");
             this.imageTree1.Images.SetKeyName(1, "");
+            this.imageTree1.Images.SetKeyName(2, "Sum.ico");
             // 
             // mainMenu1
             // 
@@ -708,7 +791,7 @@ namespace myPword
             this.txtValue.BackColor = System.Drawing.SystemColors.Info;
             this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtValue.Location = new System.Drawing.Point(0, 100);
+            this.txtValue.Location = new System.Drawing.Point(0, 32);
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
             this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -737,7 +820,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 92);
+            this.splitter1.Location = new System.Drawing.Point(0, 24);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(284, 8);
             this.splitter1.TabIndex = 5;
@@ -750,7 +833,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 20);
+            this.panel1.Size = new System.Drawing.Size(284, 0);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -898,19 +981,6 @@ namespace myPword
             this.notifyIcon2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseClick);
             this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseDoubleClick);
             // 
-            // userControl11
-            // 
-            this.userControl11.ContextMenu = this.cmMasters;
-            this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.userControl11.Location = new System.Drawing.Point(0, 48);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(284, 24);
-            this.userControl11.TabIndex = 4;
-            this.userControl11.TabStop = false;
-            this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
-            this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
-            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
-            // 
             // treeView1
             // 
             this.treeView1.AllowDrop = true;
@@ -941,10 +1011,23 @@ namespace myPword
             this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
             this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
+            // userControl11
+            // 
+            this.userControl11.ContextMenu = this.cmMasters;
+            this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userControl11.Location = new System.Drawing.Point(0, 48);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(284, 24);
+            this.userControl11.TabIndex = 4;
+            this.userControl11.TabStop = false;
+            this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
+            this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
+            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
+            // 
             // pWord
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(284, 230);
+            this.ClientSize = new System.Drawing.Size(284, 162);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.userControl11);
@@ -1014,7 +1097,6 @@ namespace myPword
 			this.WindowState = FormWindowState.Normal;
 			this.DockRight(sender,e);
 			this.actHook.Stop();
-
 		}
 
 		struct Masters
@@ -1378,7 +1460,6 @@ namespace myPword
 
 		private void menuSave_Click(object sender, System.EventArgs e)
 		{
-            
 				try
 				{
 					//	Nodes[0] = userControl11;
@@ -1391,11 +1472,18 @@ namespace myPword
 						Nodes.Add((string)userControl11.Masters[i]);
 						Nodes.Add((pNode)userControl11.MastersValue[i]);
 					}
-					this.saveFileDialog1.FileName = filename;
-                    rm.FileName = filename;
-                    String path = rm.AutoSavePathFromRegistry(pWordSettings.Default.version.ToString());
+					
+                    // save the registry entry for the current user
+                    // the current user should save to his/her documents folder if multiple users on same computer or server
+                    // or the current user should save to his/her personal network location on a share set up for only that person
+                    // right now conflicts can occur which will not allow for a good user experience if multiple users share the same file
+                    // but, if the users use different files on the same server, it saves the registry settings for each and every user.
+                    
+                    //if (rm._pRegistry.Filename != null)
+                    //{
+                    //    this.saveFileDialog1.FileName = rm._pRegistry.Filename;
+                    //}
 					this.saveFileDialog1.ShowDialog();
-
 				}
 				catch(Exception f)
 				{
@@ -1406,12 +1494,11 @@ namespace myPword
 
 		private void menuItem9_Click(object sender, System.EventArgs e)
 		{
-
+            this.Nodes.Clear();
+            this.userControl11.MastersValue.Clear();
+            this.userControl11.Masters.Clear();
 			try
 			{
-				this.Nodes.Clear();
-				this.userControl11.MastersValue.Clear();
-				this.userControl11.Masters.Clear();
 
 				this.openFileDialog1.FileName = filename;
 				this.openFileDialog1.ShowDialog();
@@ -1630,16 +1717,29 @@ namespace myPword
 
 		private void userControl11_Load(object sender, System.EventArgs e)
 		{
-			pNode masterNode;
-			masterNode = new pNode("MASTER");
-			TreePics apic = new TreePics("Master",img.GroupUp,img.GroupDown);
-			masterNode.Tag = "MASTER";
+            // Load what in registry else just show a new master
+            // always check registry when starting pWord
+            // be sure to check the Default version
+            rm = new pWordLib.mgr.registryMgr(pWordSettings.Default.version.ToString());
 
-			this.treeView1.Nodes.Add(masterNode);
+            openFileDialog1.FileName = rm.AutoSavePathFromRegistry(pWordSettings.Default.version.ToString());
+            if (rm.FileExist())
+            {
+                openFileDialog1_FileOk(null, null);
+            }
+            else
+            {
+                pNode masterNode;
+                masterNode = new pNode("MASTER");
+                TreePics apic = new TreePics("Master", img.GroupUp, img.GroupDown);
+                masterNode.Tag = "MASTER";
 
-			userControl11.Masters.Add("MASTER");
-			userControl11.MastersValue.Add(masterNode);
-			userControl11.txtMaster.Text = (string)userControl11.Masters[userControl11.index];
+                this.treeView1.Nodes.Add(masterNode);
+
+                userControl11.Masters.Add("MASTER");
+                userControl11.MastersValue.Add(masterNode);
+                userControl11.txtMaster.Text = (string)userControl11.Masters[userControl11.index];
+            }
 			this.tmpNode = (pNode)treeView1.Nodes[0];
 			// master node should be called by Nodes[0]...
 		}			// Add the master node to Nodes
@@ -2390,6 +2490,10 @@ namespace myPword
 
 		private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
 		{
+
+            this.Nodes.Clear();
+            this.userControl11.MastersValue.Clear();
+            this.userControl11.Masters.Clear();
 			filename = this.openFileDialog1.FileName;
 			IFormatter formatter = new BinaryFormatter();
 			Stream stream = new FileStream(filename,FileMode.Open,FileAccess.Read,FileShare.Read);
@@ -2531,7 +2635,17 @@ namespace myPword
 				Stream stream = new FileStream(this.saveFileDialog1.FileName,FileMode.Create,FileAccess.Write,FileShare.ReadWrite);
 				formatter.Serialize(stream, Nodes);
 				this.filename = this.saveFileDialog1.FileName;
+
+                // use rm manager to set file name
+                rm.SavePathInRegistry(pWordSettings.Default.version, filename);
+
 				stream.Close();
+                String path = rm.AutoSavePathFromRegistry(pWordSettings.Default.version.ToString());
+                if (this.saveFileDialog1.FileName != path)
+                {
+                    // save the path to the registry
+                    rm.SavePathInRegistry(pWordSettings.Default.version, this.saveFileDialog1.FileName);
+                }
 			}
 			flag_file = true;
 		}
@@ -2770,5 +2884,107 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
+
+        private void menuItemMathSum_Click(object sender, EventArgs e)
+        {
+            mode = nodeMode.sum;
+            try
+            {
+                lblName.Text = "Name:";
+                lblValue.Text = "Value:";
+                this.modeIndex = treeView1.SelectedNode.Index;
+                //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                Sum sum = new Sum();
+                tmpNode = (pNode)treeView1.SelectedNode;
+                tmpNode.AddOperation(new Sum(Resource1.Sum));
+                treeView1.SelectedNode = tmpNode;
+                this.statusBar1.Text = "Summation";
+                this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
+
+                this.txtName.Focus();
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
+        }
+
+        private void menuItemMathMultiple_Click(object sender, EventArgs e)
+        {
+            mode = nodeMode.multiply;
+            try
+            {
+                lblName.Text = "Name:";
+                lblValue.Text = "Value:";
+                this.modeIndex = treeView1.SelectedNode.Index;
+                //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                tmpNode = (pNode)treeView1.SelectedNode;
+                tmpNode.AddOperation(new Multiply(Resource1.Multiplication));
+                treeView1.SelectedNode = tmpNode;
+                this.statusBar1.Text = "Mutliple";
+                this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
+
+                this.txtName.Focus();
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
+        }
+
+        private void menuItemMathDivide_Click(object sender, EventArgs e)
+        {
+            mode = nodeMode.divide;
+            try
+            {
+                lblName.Text = "Name:";
+                lblValue.Text = "Value:";
+                this.modeIndex = treeView1.SelectedNode.Index;
+                //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                tmpNode = (pNode)treeView1.SelectedNode;
+                tmpNode.AddOperation(new Divide(Resource1.Division));
+                treeView1.SelectedNode = tmpNode;
+                this.statusBar1.Text = "Divide";
+                this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
+                this.txtName.Focus();
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
+        }
+
+        private void menuItemMathSubtract_Click(object sender, EventArgs e)
+        {
+            mode = nodeMode.divide;
+            try
+            {
+                lblName.Text = "Name:";
+                lblValue.Text = "Value:";
+                this.modeIndex = treeView1.SelectedNode.Index;
+                //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                tmpNode = (pNode)treeView1.SelectedNode;
+                tmpNode.AddOperation(new Subtract(Resource1.Subtraction));
+                treeView1.SelectedNode = tmpNode;
+                this.statusBar1.Text = "Subtract";
+                this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
+                this.txtName.Focus();
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
+        }
+
+        private void menuItemOperationsClear_Click(object sender, EventArgs e)
+        {
+            ((pNode)treeView1.SelectedNode).ClearOperations();
+        }
+
+
 	}
 }

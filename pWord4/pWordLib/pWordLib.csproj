@@ -53,15 +53,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dat\IOperate.cs" />
+    <Compile Include="dat\math\Divide.cs" />
+    <Compile Include="dat\math\Multiply.cs" />
+    <Compile Include="dat\math\Subtract.cs" />
+    <Compile Include="dat\math\Sum.cs" />
     <Compile Include="dat\NameSpace.cs" />
     <Compile Include="dat\pNode.cs" />
     <Compile Include="dat\pNodeMode.cs" />
+    <Compile Include="dat\registry\pRegistry.cs" />
     <Compile Include="mgr\registryMgr.cs" />
     <Compile Include="mgr\UserActivityHook.cs" />
     <Compile Include="mgr\Win32.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="dat\encryption\" />
+    <Folder Include="dat\export\" />
+    <Folder Include="dat\images\" />
+    <Folder Include="dat\language\" />
+    <Folder Include="dat\search\" />
+    <Folder Include="dat\video\" />
     <Folder Include="tst\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

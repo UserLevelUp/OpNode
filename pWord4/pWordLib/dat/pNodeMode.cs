@@ -10,8 +10,12 @@ namespace pWordLib.dat
         xml,
         xsd,
         xslt,
-        xquery
-
-
+        xquery,
+        html,
+        xhtml,
+        xop,
+        xaml,
+        orm,
+        unknown
     }
 }

@@ -60,6 +60,13 @@ namespace myPword {
             }
         }
         
+        internal static System.Drawing.Icon Division {
+            get {
+                object obj = ResourceManager.GetObject("Division", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
         internal static System.Drawing.Icon Empty {
             get {
                 object obj = ResourceManager.GetObject("Empty", resourceCulture);
@@ -81,6 +88,13 @@ namespace myPword {
             }
         }
         
+        internal static System.Drawing.Icon Multiplication {
+            get {
+                object obj = ResourceManager.GetObject("Multiplication", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
         internal static System.Drawing.Icon Plus {
             get {
                 object obj = ResourceManager.GetObject("Plus", resourceCulture);
@@ -91,6 +105,20 @@ namespace myPword {
         internal static System.Drawing.Icon SubMinus {
             get {
                 object obj = ResourceManager.GetObject("SubMinus", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Icon Subtraction {
+            get {
+                object obj = ResourceManager.GetObject("Subtraction", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Icon Sum {
+            get {
+                object obj = ResourceManager.GetObject("Sum", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

@@ -8,8 +8,10 @@ using System.Xml.Resolvers;
 using pWordLib.dat;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
+using pWordLib.dat.math;
+using System.Drawing;
 
-namespace myPword
+namespace myPword.dat
 {
     // I want to be able to go between the treenode in the treeview and the pNode which implements XmlNode
     // and XmlDocument seemlessly.  The way to do this, is to also add an attribute control which is just a label for each 
@@ -26,12 +28,12 @@ namespace myPword
     [Serializable()]
     public class pNode : TreeNode, ISerializable
     {
-        public pNode()
+        public pNode() : base()
         {
             
         }
 
-        public pNode(SerializationInfo info, StreamingContext context)
+        protected pNode(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
             // my deserialization code
@@ -61,6 +63,25 @@ namespace myPword
             attributes.Add(key, value);
         }
 
+        private List<IOperate> operations = new List<IOperate>();
+
+        public void AddOperation(IOperate operation)
+        {
+            this.ClearOperations();  //  clearing for now ...
+                                     //  as more operations are added, make this optional
+            operations.Add(operation);
+            operation.Operate(this);
+        }
+
+        public void PerformOperations()
+        {
+            foreach (IOperate operation in operations)
+            {
+                operation.Operate(this); // usually it performs the actual operation on its child elements, and stores the result in its tag field or value field.
+            }
+        }
+
+
         public void DeleteAttribute(String key)
         {
             attributes.Remove(key);
@@ -84,7 +105,6 @@ namespace myPword
 
         public static TreeNode pNode2TreeNode(pNode _pNode)
         {
-
             return null;
         }
 
@@ -99,5 +119,25 @@ namespace myPword
         }
 
         #endregion
+
+        public void ClearOperations()
+        {
+            operations.Clear();
+        }
+
+        public int OperationsCount()
+        {
+            return operations.Count;
+        }
+
+        public List<Icon> OperationIcons()
+        {
+            List<Icon> icons = new List<Icon>();
+            foreach (IOperate operation in operations)
+            {
+                icons.Add(operation.Symbol);
+            }
+            return icons;
+        }
     }
 }
