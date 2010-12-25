@@ -11,6 +11,8 @@ using System.Security.Permissions;
 using System.Diagnostics;
 using pWordLib.dat.math;
 using System.Drawing;
+using System.ComponentModel;
+using pWordLib.mgr;
 
 namespace myPword.dat.Math
 {
@@ -31,23 +33,24 @@ namespace myPword.dat.Math
     /// A Summation of All children of the selected node 
     /// The total goes in the SelectedNode's value field
     /// </summary>
+
     [Serializable()]
-    public class Sum : IOperate
+    public class Sum : Operator
     {
 
-        public Sum()
+        public Sum() 
         {
             //Symbol = new Icon(Icon, 
         }
 
-        public Sum(Icon symbol)
+        public Sum(Icon symbol) : base(symbol)
         {
-            this.symbol = symbol;
+            
         }
 
         #region IOperate Members
 
-        public pNode Operate(pNode _pNode)
+        public override pNode Operate(pNode _pNode)
         {
             // perform a summation on only child pNode elements
             // i.e.  this.Tag = total.ToString();
@@ -65,7 +68,7 @@ namespace myPword.dat.Math
                 {
                     Debug.WriteLine("A Node failed to Sum");
                 }
-                
+
                 //note: eventially I want to add advanced summation on (n^2+n)/2 with i=1 etc... but for now it just totallys up the values
             }
             _pNode.Tag = total.ToString();
@@ -73,12 +76,8 @@ namespace myPword.dat.Math
         }
 
 
-        private Icon symbol;
-        public Icon Symbol
-        {
-            get { return symbol; }
-        }
 
         #endregion
+
     }
 }

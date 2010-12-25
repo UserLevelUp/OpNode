@@ -7,23 +7,25 @@ using myPword;
 using myPword.dat;
 using System.Diagnostics;
 using System.Drawing;
+using System.ComponentModel;
+using pWordLib.mgr;
 
 namespace pWordLib.dat.math
 {
-    public class Multiply : IOperate
+    [Serializable()]
+    public class Multiply :  Operator
     {
-        private Icon symbol;
 
-        public Multiply(Icon symbol)
+        public Multiply(Icon symbol) : base(symbol)
         {
-            this.symbol = symbol;
+            
         }
 
 
         #region IOperate Members
 
 
-        public pNode Operate(pNode _pNode)
+        public override pNode Operate(pNode _pNode)
         {
             // perform a summation on only child pNode elements
             // i.e.  this.Tag = total.ToString();
@@ -58,10 +60,7 @@ namespace pWordLib.dat.math
             _pNode.Tag = total.ToString();
             return _pNode;  // not yet implemented
         }
-        public Icon Symbol
-        {
-            get { return symbol; }
-        }
+
 
         #endregion
 

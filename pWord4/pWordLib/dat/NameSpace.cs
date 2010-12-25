@@ -5,6 +5,7 @@ using System.Text;
 
 namespace pWordLib.dat
 {
+    [Serializable()]
     public class NameSpace
     {
         public string Prefix { get; set; }

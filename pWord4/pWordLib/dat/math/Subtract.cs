@@ -11,6 +11,8 @@ using System.Security.Permissions;
 using System.Diagnostics;
 using pWordLib.dat.math;
 using System.Drawing;
+using System.ComponentModel;
+using pWordLib.mgr;
 
 namespace myPword.dat.Math
 {
@@ -32,7 +34,7 @@ namespace myPword.dat.Math
     /// The total goes in the SelectedNode's value field
     /// </summary>
     [Serializable()]
-    public class Subtract : IOperate
+    public class Subtract : Operator
     {
 
         public Subtract()
@@ -40,14 +42,13 @@ namespace myPword.dat.Math
             //Symbol = new Icon(Icon, 
         }
 
-        public Subtract(Icon symbol)
+        public Subtract(Icon symbol) : base(symbol)
         {
-            this.symbol = symbol;
         }
 
         #region IOperate Members
 
-        public pNode Operate(pNode _pNode)
+        public override pNode Operate(pNode _pNode)
         {
             // perform a summation on only child pNode elements
             // i.e.  this.Tag = total.ToString();
@@ -75,11 +76,6 @@ namespace myPword.dat.Math
         }
 
 
-        private Icon symbol;
-        public Icon Symbol
-        {
-            get { return symbol; }
-        }
 
         #endregion
     }

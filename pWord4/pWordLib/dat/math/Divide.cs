@@ -7,27 +7,26 @@ using myPword;
 using myPword.dat;
 using System.Diagnostics;
 using System.Drawing;
+using System.ComponentModel;
+using pWordLib.mgr;
 
 namespace pWordLib.dat.math
 {
-    public class Divide : IOperate
+    [Serializable()]
+    public class Divide : Operator
     {
-        public Divide()
+
+
+
+        public Divide(Icon symbol) : base(symbol)
         {
 
-        }
-
-        private Icon symbol;
-
-        public Divide(Icon symbol)
-        {
-            this.symbol = symbol;
         }
 
         #region IOperate Members
 
 
-        public pNode Operate(pNode _pNode)
+        public override pNode Operate(pNode _pNode)
         {
             // perform a summation on only child pNode elements
             // i.e.  this.Tag = total.ToString();
@@ -52,8 +51,6 @@ namespace pWordLib.dat.math
                     }
                 }
 
-            
-
                 // note: to make this a little more clear, if it is an operations field this current pNode has child nodes under it, it
                 // will then process all child nodes under it based on whatever type of operaiton it is performing
 
@@ -76,11 +73,6 @@ namespace pWordLib.dat.math
             }
             _pNode.Tag = total.ToString();
             return _pNode;  // not yet implemented
-        }
-        public Icon Symbol
-        {
-            get { return symbol; }
-            
         }
 
         #endregion

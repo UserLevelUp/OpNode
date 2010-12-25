@@ -145,6 +145,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Data.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DrawpNodeEventArgs.cs" />
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>

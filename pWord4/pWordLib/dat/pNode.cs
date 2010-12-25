@@ -30,25 +30,45 @@ namespace myPword.dat
     {
         public pNode() : base()
         {
-            
+            if (this.attributes == null)
+            {
+                this.attributes = new SortedList<string, string>();
+            }
+            if (this.operations == null)
+            {
+                this.operations = new List<IOperate>();
+            }
         }
 
-        protected pNode(SerializationInfo info, StreamingContext context)
-            : base(info, context)
+        public pNode Parent {
+
+            get { return this.Parent; }
+
+         }
+
+        protected pNode(SerializationInfo info, StreamingContext context) : this()
+            
         {
-            // my deserialization code
-            info.FullTypeName = "pNode";
+            // my deserialization code ... don't forget that the info returns something
+            // battled this for a little while hoping that the info would do it all on its own
+            this.operations = (List<IOperate>)info.GetValue("operations", typeof(List<IOperate>));
+            this.Namespace = (NameSpace)info.GetValue("namespace", typeof(NameSpace));
+            this.attributes = (SortedList<String, String>)info.GetValue("attributes", typeof(SortedList<String, String>));
+            base.Deserialize(info, context);
+
         }
         
 
-        public pNode(String name)
+        public pNode(String name) : this()
         {
+
             this.Name = name;
             this.Text = name;
         }
 
-        public pNode(String name, int img1, int img2)
+        public pNode(String name, int img1, int img2) : this()
         {
+
             this.Name = name;
             this.ImageIndex = img1;
             this.SelectedImageIndex = img2;
@@ -56,14 +76,14 @@ namespace myPword.dat
 
         public NameSpace Namespace { get; set; }
 
-        private SortedList<String, String> attributes = new SortedList<string, string>();
+        private SortedList<String, String> attributes = null;
 
         public void AddAttribute(String key, String value)
         {
             attributes.Add(key, value);
         }
 
-        private List<IOperate> operations = new List<IOperate>();
+        private List<IOperate> operations = null;
 
         public void AddOperation(IOperate operation)
         {
@@ -75,9 +95,16 @@ namespace myPword.dat
 
         public void PerformOperations()
         {
-            foreach (IOperate operation in operations)
+            if (operations == null)
             {
-                operation.Operate(this); // usually it performs the actual operation on its child elements, and stores the result in its tag field or value field.
+                return;
+                }
+            else
+            {
+                foreach (IOperate operation in operations)
+                {
+                    operation.Operate(this); // usually it performs the actual operation on its child elements, and stores the result in its tag field or value field.
+                }
             }
         }
 
@@ -115,6 +142,9 @@ namespace myPword.dat
         [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
         void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
         {
+            info.AddValue("operations", operations);
+            info.AddValue("namespace", Namespace);
+            info.AddValue("attributes", attributes);
             base.Serialize(info, context);
         }
 
@@ -122,12 +152,22 @@ namespace myPword.dat
 
         public void ClearOperations()
         {
-            operations.Clear();
+            if (operations != null)
+            {
+                operations.Clear();
+            }
         }
 
         public int OperationsCount()
         {
-            return operations.Count;
+            if (operations != null)
+            {
+                return operations.Count;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public List<Icon> OperationIcons()

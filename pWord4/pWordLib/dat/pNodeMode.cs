@@ -5,6 +5,7 @@ using System.Text;
 
 namespace pWordLib.dat
 {
+    
     public enum pNodeMode
     {
         xml,

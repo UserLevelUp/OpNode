@@ -5,8 +5,9 @@ using System.Text;
 using myPword.dat;
 using System.Drawing;
 
-namespace pWordLib.dat.math
+namespace pWordLib.dat
 {
+    
     public interface IOperate
     {
         Icon Symbol { get; }

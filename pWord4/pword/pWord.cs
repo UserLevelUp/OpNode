@@ -13,6 +13,7 @@ using System.Runtime.Serialization.Formatters;
 using System.Runtime.Serialization.Formatters.Binary;
 using LeftRight;
 using pWordLib;
+using pWordLib.dat;
 using System.Xml.Serialization;
 using System.Xml;
 using System.Diagnostics;
@@ -63,7 +64,7 @@ namespace myPword
 			///   Add my VARIABLES HERE
 			/// </summary>
 			//
-		bool VIS = false;
+		bool VIS = true;
 		
 		// The master list for all views
 		LL.List masterList = new LL.List();
@@ -350,8 +351,8 @@ namespace myPword
             this.btnCancel = new System.Windows.Forms.Button();
             this.saveFileDialogHTML = new System.Windows.Forms.SaveFileDialog();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.treeView1 = new myPword.pView();
             this.userControl11 = new LeftRight.LeftRight();
+            this.treeView1 = new myPword.pView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -387,7 +388,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 140);
+            this.statusBar1.Location = new System.Drawing.Point(0, 371);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(284, 22);
             this.statusBar1.TabIndex = 0;
@@ -427,6 +428,7 @@ namespace myPword
             this.toolBarXML.Enabled = false;
             this.toolBarXML.ImageIndex = 4;
             this.toolBarXML.Name = "toolBarXML";
+            this.toolBarXML.Visible = false;
             // 
             // imgToolbar1
             // 
@@ -791,7 +793,7 @@ namespace myPword
             this.txtValue.BackColor = System.Drawing.SystemColors.Info;
             this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtValue.Location = new System.Drawing.Point(0, 32);
+            this.txtValue.Location = new System.Drawing.Point(0, 263);
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
             this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -820,7 +822,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 24);
+            this.splitter1.Location = new System.Drawing.Point(0, 255);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(284, 8);
             this.splitter1.TabIndex = 5;
@@ -833,7 +835,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 0);
+            this.panel1.Size = new System.Drawing.Size(284, 183);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -952,7 +954,7 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 104);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(284, 0);
+            this.panel6.Size = new System.Drawing.Size(284, 79);
             this.panel6.TabIndex = 5;
             // 
             // btnCancel
@@ -981,6 +983,19 @@ namespace myPword
             this.notifyIcon2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseClick);
             this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseDoubleClick);
             // 
+            // userControl11
+            // 
+            this.userControl11.ContextMenu = this.cmMasters;
+            this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userControl11.Location = new System.Drawing.Point(0, 48);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(284, 24);
+            this.userControl11.TabIndex = 4;
+            this.userControl11.TabStop = false;
+            this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
+            this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
+            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
+            // 
             // treeView1
             // 
             this.treeView1.AllowDrop = true;
@@ -998,7 +1013,7 @@ namespace myPword
             this.treeView1.Name = "treeView1";
             this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(284, 0);
+            this.treeView1.Size = new System.Drawing.Size(284, 79);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1011,23 +1026,10 @@ namespace myPword
             this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
             this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
-            // userControl11
-            // 
-            this.userControl11.ContextMenu = this.cmMasters;
-            this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.userControl11.Location = new System.Drawing.Point(0, 48);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(284, 24);
-            this.userControl11.TabIndex = 4;
-            this.userControl11.TabStop = false;
-            this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
-            this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
-            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
-            // 
             // pWord
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(284, 162);
+            this.ClientSize = new System.Drawing.Size(284, 393);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.userControl11);
@@ -2495,6 +2497,7 @@ namespace myPword
             this.userControl11.MastersValue.Clear();
             this.userControl11.Masters.Clear();
 			filename = this.openFileDialog1.FileName;
+            
 			IFormatter formatter = new BinaryFormatter();
 			Stream stream = new FileStream(filename,FileMode.Open,FileAccess.Read,FileShare.Read);
 			Nodes = (ArrayList) formatter.Deserialize(stream);
@@ -2540,6 +2543,9 @@ namespace myPword
 			userControl11.index = 0;
 			this.treeView1.Nodes.Add((pNode)userControl11.MastersValue[userControl11.index]);
 			flag_file = true;
+
+            // successful?  go ahead and make the open stick
+            rm.SavePathInRegistry(pWordSettings.Default.version, filename);
 
 		}
 
