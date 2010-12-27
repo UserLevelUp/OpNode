@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using pWordLib.dat;
-using myPword;
-using myPword.dat;
 using System.Diagnostics;
 using System.Drawing;
 using System.ComponentModel;
@@ -57,16 +55,40 @@ namespace pWordLib.dat.math
                 // attempt to convert to decimal and place it in num and perform the multiplication operation
                 if (Decimal.TryParse((String)node.Tag, out num))
                 {
+                    _pNode.ErrorString = "";
                     if (num == 0)
                     {
                         _pNode.Tag = "Infinity";
                         return _pNode;
-                    }    
-                    total /= num; // perform the basic summation
+                    }
+
+                    try
+                    {
+                        total /= num; // perform the basic division; 
+                    }
+                    catch (OverflowException ex)
+                    {
+                        // overflow occurred... can't go any hire
+                        total = Decimal.MaxValue;
+                        _pNode.ErrorString = "OverflowException occurred. " + ex.ToString();
+                    }
+                    catch (DivideByZeroException ex)
+                    {
+                        // overflow occurred... can't go any hire
+                        total = Decimal.MaxValue;
+                        _pNode.ErrorString = "DivideByZeroException occurred. " + ex.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        // max value reached
+                        _pNode.ErrorString = "Unknown problem occurred. " + ex.ToString();
+                    }
+                    
                 }
                 else
                 {
-                    Debug.WriteLine("A Node failed to Sum");
+                    _pNode.ErrorString = "A Node failed to Divide.";
+                    Debug.WriteLine("A Node failed to Divide.");
                 }
 
                 //note: eventially I want to add advanced summation on (n^2+n)/2 with i=1 etc... but for now it just totallys up the values

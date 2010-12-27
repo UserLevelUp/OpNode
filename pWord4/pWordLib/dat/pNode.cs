@@ -11,7 +11,7 @@ using System.Security.Permissions;
 using pWordLib.dat.math;
 using System.Drawing;
 
-namespace myPword.dat
+namespace pWordLib.dat
 {
     // I want to be able to go between the treenode in the treeview and the pNode which implements XmlNode
     // and XmlDocument seemlessly.  The way to do this, is to also add an attribute control which is just a label for each 
@@ -91,6 +91,16 @@ namespace myPword.dat
                                      //  as more operations are added, make this optional
             operations.Add(operation);
             operation.Operate(this);
+        }
+
+        public String ListOperations()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (IOperate operation in operations)
+            {
+                sb.Append(operation.GetType().ToString() + " ");
+            }
+            return sb.ToString();
         }
 
         public void PerformOperations()
@@ -179,5 +189,7 @@ namespace myPword.dat
             }
             return icons;
         }
+
+        public String ErrorString { get; set; }
     }
 }

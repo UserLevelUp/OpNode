@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Configuration.Internal;
 
-namespace myPword
+namespace pWordLib
 {
 	/// <summary>
 	/// Summary description for frmAbout.

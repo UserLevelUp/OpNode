@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using LL;
 
-namespace myPword
+namespace pWordLib
 {
 	/// <summary>
 	/// Summary description for AddItem.

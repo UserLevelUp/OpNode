@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace myPword {
+namespace pWordLib {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

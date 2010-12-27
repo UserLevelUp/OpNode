@@ -14,7 +14,7 @@ using System.Drawing;
 using System.ComponentModel;
 using pWordLib.mgr;
 
-namespace myPword.dat.Math
+namespace pWordLib.dat.Math
 {
     // I want to be able to go between the treenode in the treeview and the pNode which implements XmlNode
     // and XmlDocument seemlessly.  The way to do this, is to also add an attribute control which is just a label for each 
@@ -52,6 +52,7 @@ namespace myPword.dat.Math
 
         public override pNode Operate(pNode _pNode)
         {
+            _pNode.ErrorString = "";
             // perform a summation on only child pNode elements
             // i.e.  this.Tag = total.ToString();
             decimal total = 0.0M;  // start off with 0
@@ -62,10 +63,27 @@ namespace myPword.dat.Math
                 // attempt to convert to decimal
                 if (Decimal.TryParse((String)node.Tag, out num))
                 {
-                    total += num; // perform the basic summation
+
+                    try
+                    {
+                        total += num; // perform the basic summation
+                    }
+                    catch (OverflowException ex)
+                    {
+                        // overflow occurred... can't go any hire
+                        total = Decimal.MaxValue;
+                        _pNode.ErrorString = "OverflowException occurred. " + ex.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        // max value reached
+                        _pNode.ErrorString = "Unknown problem occurred. " + ex.ToString();
+                    }
+                    
                 }
                 else
                 {
+                    _pNode.ErrorString = "A Node failed to Sum";
                     Debug.WriteLine("A Node failed to Sum");
                 }
 

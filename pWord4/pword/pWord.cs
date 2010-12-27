@@ -17,9 +17,9 @@ using pWordLib.dat;
 using System.Xml.Serialization;
 using System.Xml;
 using System.Diagnostics;
-using myPword.dat;
-using myPword.dat.Math;
+using pWordLib.dat;
 using pWordLib.dat.math;
+using pWordLib.dat.Math;
 
 namespace myPword
 {
@@ -95,6 +95,7 @@ namespace myPword
             sum = 7,
             multiply = 8,
             divide = 9,
+            viewErrors = 10
         }
 
 		nodeMode mode = nodeMode.addto;  // see above
@@ -117,7 +118,7 @@ namespace myPword
 		// TODO: Add TREE Stuff here
 		//			pNode rootNode = new pNode("Master"
 
-		private Image img;
+		private pWordLib.Image img;
 		private ArrayList Nodes = new ArrayList();
 
         // TODO: decide if drag_flag needs to be used or not.
@@ -183,6 +184,7 @@ namespace myPword
         private MenuItem menuItem44;
         private MenuItem menuItem45;
         private MenuItem menuItem46;
+        private MenuItem menuItemViewErrors;
         pWordLib.mgr.registryMgr rm = null;
 		public pWord()
 		{
@@ -309,6 +311,7 @@ namespace myPword
             this.menuItem43 = new System.Windows.Forms.MenuItem();
             this.menuItem44 = new System.Windows.Forms.MenuItem();
             this.menuItem45 = new System.Windows.Forms.MenuItem();
+            this.menuItemViewErrors = new System.Windows.Forms.MenuItem();
             this.menuItem38 = new System.Windows.Forms.MenuItem();
             this.menuItem24 = new System.Windows.Forms.MenuItem();
             this.menuItem11 = new System.Windows.Forms.MenuItem();
@@ -351,8 +354,8 @@ namespace myPword
             this.btnCancel = new System.Windows.Forms.Button();
             this.saveFileDialogHTML = new System.Windows.Forms.SaveFileDialog();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.userControl11 = new LeftRight.LeftRight();
             this.treeView1 = new myPword.pView();
+            this.userControl11 = new LeftRight.LeftRight();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -388,7 +391,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 371);
+            this.statusBar1.Location = new System.Drawing.Point(0, 376);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(284, 22);
             this.statusBar1.TabIndex = 0;
@@ -599,7 +602,8 @@ namespace myPword
             this.menuItem39.Index = 15;
             this.menuItem39.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem46,
-            this.menuItem42});
+            this.menuItem42,
+            this.menuItemViewErrors});
             this.menuItem39.Text = "Operations";
             // 
             // menuItem46
@@ -641,6 +645,12 @@ namespace myPword
             this.menuItem45.Index = 3;
             this.menuItem45.Text = "Subtract";
             this.menuItem45.Click += new System.EventHandler(this.menuItemMathSubtract_Click);
+            // 
+            // menuItemViewErrors
+            // 
+            this.menuItemViewErrors.Index = 2;
+            this.menuItemViewErrors.Text = "View Errors";
+            this.menuItemViewErrors.Click += new System.EventHandler(this.menuItemViewErrors_Click);
             // 
             // menuItem38
             // 
@@ -793,7 +803,7 @@ namespace myPword
             this.txtValue.BackColor = System.Drawing.SystemColors.Info;
             this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtValue.Location = new System.Drawing.Point(0, 263);
+            this.txtValue.Location = new System.Drawing.Point(0, 268);
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
             this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -822,7 +832,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 255);
+            this.splitter1.Location = new System.Drawing.Point(0, 260);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(284, 8);
             this.splitter1.TabIndex = 5;
@@ -835,7 +845,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 183);
+            this.panel1.Size = new System.Drawing.Size(284, 188);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -954,7 +964,7 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 104);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(284, 79);
+            this.panel6.Size = new System.Drawing.Size(284, 84);
             this.panel6.TabIndex = 5;
             // 
             // btnCancel
@@ -983,19 +993,6 @@ namespace myPword
             this.notifyIcon2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseClick);
             this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseDoubleClick);
             // 
-            // userControl11
-            // 
-            this.userControl11.ContextMenu = this.cmMasters;
-            this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.userControl11.Location = new System.Drawing.Point(0, 48);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(284, 24);
-            this.userControl11.TabIndex = 4;
-            this.userControl11.TabStop = false;
-            this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
-            this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
-            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
-            // 
             // treeView1
             // 
             this.treeView1.AllowDrop = true;
@@ -1013,7 +1010,7 @@ namespace myPword
             this.treeView1.Name = "treeView1";
             this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(284, 79);
+            this.treeView1.Size = new System.Drawing.Size(284, 84);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1026,10 +1023,23 @@ namespace myPword
             this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
             this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
+            // userControl11
+            // 
+            this.userControl11.ContextMenu = this.cmMasters;
+            this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userControl11.Location = new System.Drawing.Point(0, 48);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(284, 24);
+            this.userControl11.TabIndex = 4;
+            this.userControl11.TabStop = false;
+            this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
+            this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
+            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
+            // 
             // pWord
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(284, 393);
+            this.ClientSize = new System.Drawing.Size(284, 398);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.userControl11);
@@ -1272,7 +1282,7 @@ namespace myPword
 			//masterNode = new pNode();
 			//	subNode = new pNode();
 
-			img = new Image();  // contains number's representing the items contained
+			img = new pWordLib.Image();  // contains number's representing the items contained
 			// in the image list.
 
 		}
@@ -1986,6 +1996,10 @@ namespace myPword
                 {
                     MessageBox.Show(f.Message);
                 }
+            }
+            else if (mode == nodeMode.viewErrors)
+            {
+                // do nothing at all
             }
             else if (mode == nodeMode.addNamespacePrefix)
             {
@@ -2909,6 +2923,7 @@ namespace myPword
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
 
                 this.txtName.Focus();
+                autosave();  // may need to hook up an event to save when ever new nodes are added or removed???
             }
             catch (Exception f)
             {
@@ -2933,6 +2948,8 @@ namespace myPword
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
 
                 this.txtName.Focus();
+                autosave();  // may need to hook up an event to save when ever new nodes are added or removed???
+
             }
             catch (Exception f)
             {
@@ -2956,6 +2973,8 @@ namespace myPword
                 this.statusBar1.Text = "Divide";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
                 this.txtName.Focus();
+                autosave();  // may need to hook up an event to save when ever new nodes are added or removed???
+
             }
             catch (Exception f)
             {
@@ -2979,6 +2998,8 @@ namespace myPword
                 this.statusBar1.Text = "Subtract";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
                 this.txtName.Focus();
+                autosave();  // may need to hook up an event to save when ever new nodes are added or removed???
+
             }
             catch (Exception f)
             {
@@ -2989,6 +3010,16 @@ namespace myPword
         private void menuItemOperationsClear_Click(object sender, EventArgs e)
         {
             ((pNode)treeView1.SelectedNode).ClearOperations();
+        }
+
+        private void menuItemViewErrors_Click(object sender, EventArgs e)
+        {
+            // 
+            lblName.Text = "Operations:";
+            lblValue.Text = "Error Info:";
+
+            txtName.Text = ((pNode)treeView1.SelectedNode).ListOperations();
+            txtObject.Text = ((pNode)treeView1.SelectedNode).ErrorString;
         }
 
 

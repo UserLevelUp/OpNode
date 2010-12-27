@@ -4,7 +4,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace myPword
+namespace pWordLib
 {
 	/// <summary>
 	/// Summary description for AYS.

@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
-using myPword.dat;
-namespace myPword
+using pWordLib.dat;
+namespace pWordLib
 {
 	/// <summary>
 	/// Summary description for Images.

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using pWordLib.dat;
 using System.Drawing;
-using myPword.dat;
+using pWordLib.dat;
 using System.Diagnostics;
 
 namespace pWordLib.mgr

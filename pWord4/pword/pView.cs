@@ -5,7 +5,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Diagnostics;
-using myPword.dat;
+using pWordLib.dat;
+using pWordLib;
 
 namespace myPword
 {
@@ -106,11 +107,16 @@ namespace myPword
                     if ( ((pNode)e.Node).OperationsCount() > 0)
                     {
                         //e.Graphics.DrawIcon(
+                        int step = 16;
                         foreach (Icon icon in ((pNode)e.Node).OperationIcons())
                         {
-                            Rectangle rIcon = new Rectangle(r.Left, r.Top, 25, 16);
+                            Rectangle rIcon = new Rectangle(r.Left, r.Top, 16, 16);
                             e.Graphics.DrawIcon(icon, rIcon);
                         }
+                        Rectangle rText = new Rectangle(r.Left + step, r.Top, r.Width, 16); 
+                        e.Graphics.DrawString(e.Node.Text, nodeFont, sbForeground,
+                        Rectangle.Inflate(rText, -5, 0));
+                        step -= 16;
                     }
                     else
                     {
@@ -137,16 +143,28 @@ namespace myPword
                     if (((pNode)e.Node).OperationsCount() > 0)
                     {
                         //e.Graphics.DrawIcon(
+                        int step = 21;
                         foreach (Icon icon in ((pNode)e.Node).OperationIcons())
                         {
-                            Rectangle rIcon = new Rectangle(r.Left, r.Top, 25, 16);
+                            Rectangle rIcon = new Rectangle(r.Left, r.Top, 16, 16);
                             e.Graphics.DrawIcon(icon, rIcon);
+
+                            Rectangle rText = new Rectangle(r.Left + step, r.Top, r.Width, 16);
+                            e.Graphics.DrawString(e.Node.Text, nodeFont, Brushes.Black,
+                            Rectangle.Inflate(rText, -5, 0));
+                            step -= 16;
                         }
                     }
                     else
                     {
                         e.Graphics.DrawString(e.Node.Text, nodeFont, Brushes.Black,
                             Rectangle.Inflate(NodeBounds(e.Node), 2, 0));
+                    }
+
+                    if ( (((pNode)e.Node).ErrorString != null) && (((pNode)e.Node).ErrorString.Length > 0) )
+                    {
+                        Pen p = new Pen(Brushes.DeepPink);
+                        e.Graphics.DrawRectangle(p, e.Bounds.Left, e.Bounds.Top, e.Bounds.Width -2, e.Bounds.Height - 2);
                     }
                 }
 
