@@ -6,7 +6,7 @@ using System.Text;
 namespace pWordLib.dat
 {
     [Serializable()]
-    public class NameSpace
+    public class NameSpace : ICloneable
     {
         public string Prefix { get; set; }
         public string Suffix { get; set; }
@@ -14,5 +14,19 @@ namespace pWordLib.dat
         public string URI_PREFIX { get; set; }
         public string URI_SUFFIX { get; set; }
 
+
+        #region ICloneable Members
+
+        public object Clone()
+        {
+            NameSpace ns = new NameSpace();
+            ns.Prefix = (ns.Prefix != null) ? (String)this.Prefix.Clone() : null;
+            ns.Suffix = (ns.Suffix != null) ? (String)this.Suffix.Clone() : null;
+            ns.URI_PREFIX = (ns.URI_PREFIX != null) ? (String)this.URI_PREFIX.Clone() : null;
+            ns.URI_SUFFIX = (ns.URI_SUFFIX != null) ? (String)this.URI_SUFFIX.Clone() : null;
+            return ns;
+        }
+
+        #endregion
     }
 }

@@ -143,6 +143,7 @@ namespace pWordLib.UserActivityHook  {
             }
             catch (Exception ex)
             {
+                Stop();
                 Debug.WriteLine(ex.Message);
             }
 		}

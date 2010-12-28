@@ -40,11 +40,14 @@ namespace pWordLib.dat
             }
         }
 
-        public pNode Parent {
+        //public pNode Parent {
 
-            get { return this.Parent; }
+        //    get {
+        //        base.Parent;
+        //        return this.Parent; 
+        //    }
 
-         }
+        // }
 
         protected pNode(SerializationInfo info, StreamingContext context) : this()
             
@@ -191,5 +194,33 @@ namespace pWordLib.dat
         }
 
         public String ErrorString { get; set; }
+
+        public override object Clone()
+        {
+            pNode pClone = new pNode();
+
+            pClone.Name = this.Name;
+            pClone.Text = this.Text;
+            pClone.Tag = this.Tag;
+
+            pClone.operations = new List<IOperate>();
+            foreach (IOperate operation in operations)
+            {
+                pClone.operations.Add(operation);
+            }
+            pClone.attributes = new SortedList<string, string>();
+            foreach (KeyValuePair<string, string> attribute in attributes)
+            {
+                pClone.attributes.Add(attribute.Key, attribute.Value);
+            }
+            pClone.Namespace = (Namespace != null) ? (NameSpace)Namespace.Clone() : null;
+
+            foreach(pNode pn in this.Nodes)
+            {
+                pClone.Nodes.Add((pNode)pn.Clone());
+            }
+
+            return pClone;
+        }
     }
 }

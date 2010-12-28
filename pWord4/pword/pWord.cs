@@ -95,7 +95,8 @@ namespace myPword
             sum = 7,
             multiply = 8,
             divide = 9,
-            viewErrors = 10
+            viewErrors = 10,
+            cut = 11
         }
 
 		nodeMode mode = nodeMode.addto;  // see above
@@ -391,7 +392,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 376);
+            this.statusBar1.Location = new System.Drawing.Point(0, 335);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(284, 22);
             this.statusBar1.TabIndex = 0;
@@ -540,7 +541,7 @@ namespace myPword
             this.menuItem22.Index = 7;
             this.menuItem22.Shortcut = System.Windows.Forms.Shortcut.CtrlG;
             this.menuItem22.Text = "Get Node";
-            this.menuItem22.Click += new System.EventHandler(this.menuItem22_Click);
+            this.menuItem22.Click += new System.EventHandler(this.menuItemGetNode_Click);
             // 
             // menuItem32
             // 
@@ -803,7 +804,7 @@ namespace myPword
             this.txtValue.BackColor = System.Drawing.SystemColors.Info;
             this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtValue.Location = new System.Drawing.Point(0, 268);
+            this.txtValue.Location = new System.Drawing.Point(0, 227);
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
             this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -832,7 +833,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 260);
+            this.splitter1.Location = new System.Drawing.Point(0, 219);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(284, 8);
             this.splitter1.TabIndex = 5;
@@ -845,7 +846,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 188);
+            this.panel1.Size = new System.Drawing.Size(284, 147);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -964,7 +965,7 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 104);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(284, 84);
+            this.panel6.Size = new System.Drawing.Size(284, 45);
             this.panel6.TabIndex = 5;
             // 
             // btnCancel
@@ -1010,7 +1011,7 @@ namespace myPword
             this.treeView1.Name = "treeView1";
             this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(284, 84);
+            this.treeView1.Size = new System.Drawing.Size(284, 45);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1039,7 +1040,7 @@ namespace myPword
             // pWord
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(284, 398);
+            this.ClientSize = new System.Drawing.Size(284, 357);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.userControl11);
@@ -1080,6 +1081,10 @@ namespace myPword
 		static void Main() 
 		{
 			Application.Run(new pWord());
+#if debug
+            MessageBox.Show("pWord has terminated itself.");
+            Application.Exit();
+#endif
 		}
 
 		private void menuItem5_Click(object sender, System.EventArgs e)
@@ -1178,12 +1183,17 @@ namespace myPword
 
 		private void pWord_VisibleChanged(object sender, System.EventArgs e)
 		{
-			
-			invisible(VIS);
-			this.Activate();
-			this.treeView1.Focus();
-			this.DockRight(sender,e);
-			
+            try
+            {
+                invisible(VIS);
+                this.Activate();
+                this.treeView1.Focus();
+                this.DockRight(sender, e);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Something bad happened. " + ex.ToString());
+            }
 		}
 		
 		private void invisible(bool vis)
@@ -2247,7 +2257,7 @@ namespace myPword
 
 		}
 
-		private void menuItem22_Click(object sender, System.EventArgs e)
+		private void menuItemGetNode_Click(object sender, System.EventArgs e)
 		{
 			
 			// get
@@ -2625,17 +2635,18 @@ namespace myPword
 			try
 			{
 
-				this.getNode = (pNode)treeView1.SelectedNode.Clone();
-                if (this.getNode.Parent != null)
+				this.getNode = (pNode)((pNode)treeView1.SelectedNode).Clone();
+                if (treeView1.SelectedNode.Parent != null)
                 {
                     this.menuItem21.Enabled = true;
                     this.menuItem31.Enabled = true;
                     this.nodeIndex = treeView1.SelectedNode.Index;
-                    if (this.treeView1.SelectedNode.Text != "MASTER")
+                    if (this.treeView1.SelectedNode.Parent != null)
                     {
                         this.treeView1.SelectedNode.Remove();
                     }
                     this.statusBar1.Text = "CUT Node Mode";
+                    this.mode = nodeMode.cut;
                 }
                 else
                     MessageBox.Show("Cutting master node not allowed.", "Operation Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);

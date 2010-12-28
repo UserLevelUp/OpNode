@@ -8,21 +8,18 @@ using System.Drawing;
 using System.ComponentModel;
 using pWordLib.mgr;
 
+
 namespace pWordLib.dat.math
 {
     [Serializable()]
     public class Divide : Operator
     {
-
-
-
         public Divide(Icon symbol) : base(symbol)
         {
 
         }
 
         #region IOperate Members
-
 
         public override pNode Operate(pNode _pNode)
         {
