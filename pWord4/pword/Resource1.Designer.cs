@@ -102,6 +102,13 @@ namespace myPword {
             }
         }
         
+        internal static System.Drawing.Icon Sin {
+            get {
+                object obj = ResourceManager.GetObject("Sin", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
         internal static System.Drawing.Icon SubMinus {
             get {
                 object obj = ResourceManager.GetObject("SubMinus", resourceCulture);

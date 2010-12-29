@@ -264,6 +264,7 @@
     <None Include="Resources\SubMinus.ico" />
     <None Include="Resources\Multiplication.ico" />
     <None Include="Resources\Subtraction.ico" />
+    <None Include="Resources\Sin.ico" />
     <Content Include="Resources\Sum.ico" />
     <Content Include="XMLFile1.xml" />
     <Content Include="XMLSchema1.xsd" />

@@ -186,6 +186,25 @@ namespace myPword
         private MenuItem menuItem45;
         private MenuItem menuItem46;
         private MenuItem menuItemViewErrors;
+        private MenuItem menuItem50;
+        private MenuItem menuItem47;
+        private MenuItem menuItem48;
+        private MenuItem menuItem49;
+        private MenuItem menuItem51;
+        private MenuItem menuItem52;
+        private MenuItem menuItem53;
+        private MenuItem menuItem54;
+        private MenuItem menuItem55;
+        private MenuItem menuItem56;
+        private MenuItem menuItem57;
+        private MenuItem menuItem58;
+        private MenuItem menuItem59;
+        private MenuItem menuItem60;
+        private MenuItem menuItem61;
+        private MenuItem menuItem62;
+        private MenuItem menuItem63;
+        private MenuItem menuItem64;
+        private MenuItem menuItem65;
         pWordLib.mgr.registryMgr rm = null;
 		public pWord()
 		{
@@ -312,6 +331,25 @@ namespace myPword
             this.menuItem43 = new System.Windows.Forms.MenuItem();
             this.menuItem44 = new System.Windows.Forms.MenuItem();
             this.menuItem45 = new System.Windows.Forms.MenuItem();
+            this.menuItem50 = new System.Windows.Forms.MenuItem();
+            this.menuItem47 = new System.Windows.Forms.MenuItem();
+            this.menuItem48 = new System.Windows.Forms.MenuItem();
+            this.menuItem49 = new System.Windows.Forms.MenuItem();
+            this.menuItem51 = new System.Windows.Forms.MenuItem();
+            this.menuItem52 = new System.Windows.Forms.MenuItem();
+            this.menuItem53 = new System.Windows.Forms.MenuItem();
+            this.menuItem54 = new System.Windows.Forms.MenuItem();
+            this.menuItem55 = new System.Windows.Forms.MenuItem();
+            this.menuItem56 = new System.Windows.Forms.MenuItem();
+            this.menuItem57 = new System.Windows.Forms.MenuItem();
+            this.menuItem58 = new System.Windows.Forms.MenuItem();
+            this.menuItem59 = new System.Windows.Forms.MenuItem();
+            this.menuItem60 = new System.Windows.Forms.MenuItem();
+            this.menuItem61 = new System.Windows.Forms.MenuItem();
+            this.menuItem62 = new System.Windows.Forms.MenuItem();
+            this.menuItem63 = new System.Windows.Forms.MenuItem();
+            this.menuItem64 = new System.Windows.Forms.MenuItem();
+            this.menuItem65 = new System.Windows.Forms.MenuItem();
             this.menuItemViewErrors = new System.Windows.Forms.MenuItem();
             this.menuItem38 = new System.Windows.Forms.MenuItem();
             this.menuItem24 = new System.Windows.Forms.MenuItem();
@@ -352,10 +390,10 @@ namespace myPword
             this.chkClear = new System.Windows.Forms.CheckBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.treeView1 = new myPword.pView();
             this.btnCancel = new System.Windows.Forms.Button();
             this.saveFileDialogHTML = new System.Windows.Forms.SaveFileDialog();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.treeView1 = new myPword.pView();
             this.userControl11 = new LeftRight.LeftRight();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -392,7 +430,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 335);
+            this.statusBar1.Location = new System.Drawing.Point(0, 407);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(284, 22);
             this.statusBar1.TabIndex = 0;
@@ -620,7 +658,12 @@ namespace myPword
             this.menuItem41,
             this.menuItem43,
             this.menuItem44,
-            this.menuItem45});
+            this.menuItem45,
+            this.menuItem50,
+            this.menuItem54,
+            this.menuItem57,
+            this.menuItem60,
+            this.menuItem63});
             this.menuItem42.Text = "Math";
             // 
             // menuItem41
@@ -646,6 +689,121 @@ namespace myPword
             this.menuItem45.Index = 3;
             this.menuItem45.Text = "Subtract";
             this.menuItem45.Click += new System.EventHandler(this.menuItemMathSubtract_Click);
+            // 
+            // menuItem50
+            // 
+            this.menuItem50.Index = 4;
+            this.menuItem50.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem47,
+            this.menuItem48,
+            this.menuItem49,
+            this.menuItem51,
+            this.menuItem52,
+            this.menuItem53});
+            this.menuItem50.Text = "Trig";
+            // 
+            // menuItem47
+            // 
+            this.menuItem47.Index = 0;
+            this.menuItem47.Text = "Sin";
+            this.menuItem47.Click += new System.EventHandler(this.menuItemMathTrigSign_Click);
+            // 
+            // menuItem48
+            // 
+            this.menuItem48.Index = 1;
+            this.menuItem48.Text = "Cos";
+            // 
+            // menuItem49
+            // 
+            this.menuItem49.Index = 2;
+            this.menuItem49.Text = "Tan";
+            // 
+            // menuItem51
+            // 
+            this.menuItem51.Index = 3;
+            this.menuItem51.Text = "Arcsine";
+            // 
+            // menuItem52
+            // 
+            this.menuItem52.Index = 4;
+            this.menuItem52.Text = "Arccos";
+            // 
+            // menuItem53
+            // 
+            this.menuItem53.Index = 5;
+            this.menuItem53.Text = "Arctan";
+            // 
+            // menuItem54
+            // 
+            this.menuItem54.Index = 5;
+            this.menuItem54.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem55,
+            this.menuItem56});
+            this.menuItem54.Text = "Log";
+            // 
+            // menuItem55
+            // 
+            this.menuItem55.Index = 0;
+            this.menuItem55.Text = "ln";
+            // 
+            // menuItem56
+            // 
+            this.menuItem56.Index = 1;
+            this.menuItem56.Text = "log10";
+            // 
+            // menuItem57
+            // 
+            this.menuItem57.Index = 6;
+            this.menuItem57.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem58,
+            this.menuItem59});
+            this.menuItem57.Text = "Exponent";
+            // 
+            // menuItem58
+            // 
+            this.menuItem58.Index = 0;
+            this.menuItem58.Text = "x^n";
+            // 
+            // menuItem59
+            // 
+            this.menuItem59.Index = 1;
+            this.menuItem59.Text = "Sqrt";
+            // 
+            // menuItem60
+            // 
+            this.menuItem60.Index = 7;
+            this.menuItem60.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem61,
+            this.menuItem62});
+            this.menuItem60.Text = "Calculus";
+            // 
+            // menuItem61
+            // 
+            this.menuItem61.Index = 0;
+            this.menuItem61.Text = "d/dx";
+            // 
+            // menuItem62
+            // 
+            this.menuItem62.Index = 1;
+            this.menuItem62.Text = "Integral";
+            // 
+            // menuItem63
+            // 
+            this.menuItem63.Index = 8;
+            this.menuItem63.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem64,
+            this.menuItem65});
+            this.menuItem63.Text = "Statistics";
+            // 
+            // menuItem64
+            // 
+            this.menuItem64.Index = 0;
+            this.menuItem64.Text = "Avg";
+            // 
+            // menuItem65
+            // 
+            this.menuItem65.Index = 1;
+            this.menuItem65.Text = "Median";
             // 
             // menuItemViewErrors
             // 
@@ -804,7 +962,7 @@ namespace myPword
             this.txtValue.BackColor = System.Drawing.SystemColors.Info;
             this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtValue.Location = new System.Drawing.Point(0, 227);
+            this.txtValue.Location = new System.Drawing.Point(0, 299);
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
             this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -833,7 +991,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 219);
+            this.splitter1.Location = new System.Drawing.Point(0, 291);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(284, 8);
             this.splitter1.TabIndex = 5;
@@ -846,7 +1004,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 147);
+            this.panel1.Size = new System.Drawing.Size(284, 219);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -965,8 +1123,38 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 104);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(284, 45);
+            this.panel6.Size = new System.Drawing.Size(284, 117);
             this.panel6.TabIndex = 5;
+            // 
+            // treeView1
+            // 
+            this.treeView1.AllowDrop = true;
+            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView1.ContextMenu = this.cmTree;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
+            this.treeView1.FullRowSelect = true;
+            this.treeView1.HideSelection = false;
+            this.treeView1.HotTracking = true;
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageTree1;
+            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
+            this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.Size = new System.Drawing.Size(284, 117);
+            this.treeView1.TabIndex = 3;
+            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
+            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
+            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
+            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
+            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
+            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
+            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
+            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
             // btnCancel
             // 
@@ -994,36 +1182,6 @@ namespace myPword
             this.notifyIcon2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseClick);
             this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseDoubleClick);
             // 
-            // treeView1
-            // 
-            this.treeView1.AllowDrop = true;
-            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeView1.ContextMenu = this.cmTree;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-            this.treeView1.FullRowSelect = true;
-            this.treeView1.HideSelection = false;
-            this.treeView1.HotTracking = true;
-            this.treeView1.ImageIndex = 0;
-            this.treeView1.ImageList = this.imageTree1;
-            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
-            this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(284, 45);
-            this.treeView1.TabIndex = 3;
-            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
-            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
-            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
-            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
-            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
-            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
-            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
-            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
-            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
-            // 
             // userControl11
             // 
             this.userControl11.ContextMenu = this.cmMasters;
@@ -1040,7 +1198,7 @@ namespace myPword
             // pWord
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(284, 357);
+            this.ClientSize = new System.Drawing.Size(284, 429);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.userControl11);
@@ -3031,6 +3189,31 @@ namespace myPword
 
             txtName.Text = ((pNode)treeView1.SelectedNode).ListOperations();
             txtObject.Text = ((pNode)treeView1.SelectedNode).ErrorString;
+        }
+
+        private void menuItemMathTrigSign_Click(object sender, EventArgs e)
+        {
+            mode = nodeMode.divide;
+            try
+            {
+                lblName.Text = "Name:";
+                lblValue.Text = "Value:";
+                this.modeIndex = treeView1.SelectedNode.Index;
+                //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                tmpNode = (pNode)treeView1.SelectedNode;
+                tmpNode.AddOperation(new Sin(Resource1.Sin));  // add new sin operation ... trying to make this a plug in.
+                treeView1.SelectedNode = tmpNode;
+                this.statusBar1.Text = "Sin";
+                this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
+                this.txtName.Focus();
+                autosave();  // may need to hook up an event to save when ever new nodes are added or removed???
+
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
         }
 
 

@@ -58,6 +58,7 @@
     <Compile Include="dat\math\Multiply.cs" />
     <Compile Include="dat\math\Subtract.cs" />
     <Compile Include="dat\math\Sum.cs" />
+    <Compile Include="dat\math\Trig\Sin.cs" />
     <Compile Include="dat\NameSpace.cs" />
     <Compile Include="dat\pNode.cs" />
     <Compile Include="dat\pNodeMode.cs" />
