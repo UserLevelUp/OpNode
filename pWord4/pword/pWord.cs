@@ -96,7 +96,8 @@ namespace myPword
             multiply = 8,
             divide = 9,
             viewErrors = 10,
-            cut = 11
+            cut = 11,
+            trig
         }
 
 		nodeMode mode = nodeMode.addto;  // see above
@@ -430,7 +431,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 407);
+            this.statusBar1.Location = new System.Drawing.Point(0, 285);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(284, 22);
             this.statusBar1.TabIndex = 0;
@@ -712,11 +713,13 @@ namespace myPword
             // 
             this.menuItem48.Index = 1;
             this.menuItem48.Text = "Cos";
+            this.menuItem48.Click += new System.EventHandler(this.menuItemMathTrigCos_Click);
             // 
             // menuItem49
             // 
             this.menuItem49.Index = 2;
             this.menuItem49.Text = "Tan";
+            this.menuItem49.Click += new System.EventHandler(this.menuItemMathTrigTan_Click);
             // 
             // menuItem51
             // 
@@ -962,7 +965,7 @@ namespace myPword
             this.txtValue.BackColor = System.Drawing.SystemColors.Info;
             this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtValue.Location = new System.Drawing.Point(0, 299);
+            this.txtValue.Location = new System.Drawing.Point(0, 177);
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
             this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -991,7 +994,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 291);
+            this.splitter1.Location = new System.Drawing.Point(0, 169);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(284, 8);
             this.splitter1.TabIndex = 5;
@@ -1004,7 +1007,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 219);
+            this.panel1.Size = new System.Drawing.Size(284, 97);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1123,7 +1126,7 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 104);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(284, 117);
+            this.panel6.Size = new System.Drawing.Size(284, 0);
             this.panel6.TabIndex = 5;
             // 
             // treeView1
@@ -1143,7 +1146,7 @@ namespace myPword
             this.treeView1.Name = "treeView1";
             this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(284, 117);
+            this.treeView1.Size = new System.Drawing.Size(284, 0);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1198,7 +1201,7 @@ namespace myPword
             // pWord
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(284, 429);
+            this.ClientSize = new System.Drawing.Size(284, 307);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.userControl11);
@@ -3193,7 +3196,7 @@ namespace myPword
 
         private void menuItemMathTrigSign_Click(object sender, EventArgs e)
         {
-            mode = nodeMode.divide;
+            mode = nodeMode.trig;
             try
             {
                 lblName.Text = "Name:";
@@ -3205,6 +3208,56 @@ namespace myPword
                 tmpNode.AddOperation(new Sin(Resource1.Sin));  // add new sin operation ... trying to make this a plug in.
                 treeView1.SelectedNode = tmpNode;
                 this.statusBar1.Text = "Sin";
+                this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
+                this.txtName.Focus();
+                autosave();  // may need to hook up an event to save when ever new nodes are added or removed???
+
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
+        }
+
+        private void menuItemMathTrigCos_Click(object sender, EventArgs e)
+        {
+            mode = nodeMode.trig;
+            try
+            {
+                lblName.Text = "Name:";
+                lblValue.Text = "Value:";
+                this.modeIndex = treeView1.SelectedNode.Index;
+                //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                tmpNode = (pNode)treeView1.SelectedNode;
+                tmpNode.AddOperation(new Cos(Resource1.Cos));  // add new sin operation ... trying to make this a plug in.
+                treeView1.SelectedNode = tmpNode;
+                this.statusBar1.Text = "Cos";
+                this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
+                this.txtName.Focus();
+                autosave();  // may need to hook up an event to save when ever new nodes are added or removed???
+
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
+        }
+
+        private void menuItemMathTrigTan_Click(object sender, EventArgs e)
+        {
+            mode = nodeMode.trig;
+            try
+            {
+                lblName.Text = "Name:";
+                lblValue.Text = "Value:";
+                this.modeIndex = treeView1.SelectedNode.Index;
+                //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                tmpNode = (pNode)treeView1.SelectedNode;
+                tmpNode.AddOperation(new Tan(Resource1.Tan));  // add new sin operation ... trying to make this a plug in.
+                treeView1.SelectedNode = tmpNode;
+                this.statusBar1.Text = "Tan";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
                 this.txtName.Focus();
                 autosave();  // may need to hook up an event to save when ever new nodes are added or removed???

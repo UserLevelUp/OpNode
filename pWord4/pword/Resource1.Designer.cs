@@ -60,6 +60,20 @@ namespace myPword {
             }
         }
         
+        internal static System.Drawing.Icon _ {
+            get {
+                object obj = ResourceManager.GetObject("_", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Icon Cos {
+            get {
+                object obj = ResourceManager.GetObject("Cos", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
         internal static System.Drawing.Icon Division {
             get {
                 object obj = ResourceManager.GetObject("Division", resourceCulture);
@@ -126,6 +140,13 @@ namespace myPword {
         internal static System.Drawing.Icon Sum {
             get {
                 object obj = ResourceManager.GetObject("Sum", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Icon Tan {
+            get {
+                object obj = ResourceManager.GetObject("Tan", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

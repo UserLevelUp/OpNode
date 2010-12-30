@@ -252,6 +252,7 @@
     <None Include="Resources\%24this.Icon.ico" />
     <Content Include="icons\Sum.ico" />
     <None Include="Resources\Division.ico" />
+    <None Include="Resources\Cos.ico" />
     <Content Include="Resources\ExpandedLink.ico" />
     <Content Include="icons\master1.ico" />
     <Content Include="icons\master2.ico" />
@@ -266,6 +267,8 @@
     <None Include="Resources\Subtraction.ico" />
     <None Include="Resources\Sin.ico" />
     <Content Include="Resources\Sum.ico" />
+    <None Include="Resources\_.ico" />
+    <None Include="Resources\Tan.ico" />
     <Content Include="XMLFile1.xml" />
     <Content Include="XMLSchema1.xsd" />
   </ItemGroup>
