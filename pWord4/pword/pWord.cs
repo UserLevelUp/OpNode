@@ -180,7 +180,6 @@ namespace myPword
         private MenuItem menuItem40;
         private MenuItem menuItem39;
         private MenuItem menuItem41;
-        private MenuItem menuItem38;
         private MenuItem menuItem42;
         private MenuItem menuItem43;
         private MenuItem menuItem44;
@@ -206,6 +205,16 @@ namespace myPword
         private MenuItem menuItem63;
         private MenuItem menuItem64;
         private MenuItem menuItem65;
+        private MenuItem menuItem66;
+        private MenuItem menuItem67;
+        private MenuItem menuItem68;
+        private MenuItem menuItem69;
+        private MenuItem menuItem70;
+        private MenuItem menuItem71;
+        private MenuItem menuItem72;
+        private MenuItem menuItem73;
+        private MenuItem menuItem74;
+        private MenuItem menuItem75;
         pWordLib.mgr.registryMgr rm = null;
 		public pWord()
 		{
@@ -351,8 +360,15 @@ namespace myPword
             this.menuItem63 = new System.Windows.Forms.MenuItem();
             this.menuItem64 = new System.Windows.Forms.MenuItem();
             this.menuItem65 = new System.Windows.Forms.MenuItem();
+            this.menuItem66 = new System.Windows.Forms.MenuItem();
+            this.menuItem67 = new System.Windows.Forms.MenuItem();
+            this.menuItem68 = new System.Windows.Forms.MenuItem();
+            this.menuItem69 = new System.Windows.Forms.MenuItem();
+            this.menuItem70 = new System.Windows.Forms.MenuItem();
+            this.menuItem71 = new System.Windows.Forms.MenuItem();
+            this.menuItem72 = new System.Windows.Forms.MenuItem();
+            this.menuItem73 = new System.Windows.Forms.MenuItem();
             this.menuItemViewErrors = new System.Windows.Forms.MenuItem();
-            this.menuItem38 = new System.Windows.Forms.MenuItem();
             this.menuItem24 = new System.Windows.Forms.MenuItem();
             this.menuItem11 = new System.Windows.Forms.MenuItem();
             this.imageTree1 = new System.Windows.Forms.ImageList(this.components);
@@ -391,10 +407,12 @@ namespace myPword
             this.chkClear = new System.Windows.Forms.CheckBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.treeView1 = new myPword.pView();
             this.btnCancel = new System.Windows.Forms.Button();
             this.saveFileDialogHTML = new System.Windows.Forms.SaveFileDialog();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.menuItem74 = new System.Windows.Forms.MenuItem();
+            this.menuItem75 = new System.Windows.Forms.MenuItem();
+            this.treeView1 = new myPword.pView();
             this.userControl11 = new LeftRight.LeftRight();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -431,7 +449,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 285);
+            this.statusBar1.Location = new System.Drawing.Point(0, 351);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(284, 22);
             this.statusBar1.TabIndex = 0;
@@ -503,7 +521,6 @@ namespace myPword
             this.menuItem34,
             this.menuItem40,
             this.menuItem39,
-            this.menuItem38,
             this.menuItem24,
             this.menuItem11});
             this.cmTree.Popup += new System.EventHandler(this.cmTree_Popup);
@@ -642,6 +659,7 @@ namespace myPword
             this.menuItem39.Index = 15;
             this.menuItem39.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem46,
+            this.menuItem74,
             this.menuItem42,
             this.menuItemViewErrors});
             this.menuItem39.Text = "Operations";
@@ -654,22 +672,23 @@ namespace myPword
             // 
             // menuItem42
             // 
-            this.menuItem42.Index = 1;
+            this.menuItem42.Index = 2;
             this.menuItem42.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem41,
-            this.menuItem43,
             this.menuItem44,
+            this.menuItem43,
             this.menuItem45,
-            this.menuItem50,
-            this.menuItem54,
-            this.menuItem57,
+            this.menuItem41,
             this.menuItem60,
-            this.menuItem63});
+            this.menuItem57,
+            this.menuItem54,
+            this.menuItem69,
+            this.menuItem63,
+            this.menuItem50});
             this.menuItem42.Text = "Math";
             // 
             // menuItem41
             // 
-            this.menuItem41.Index = 0;
+            this.menuItem41.Index = 3;
             this.menuItem41.Text = "Sum";
             this.menuItem41.Click += new System.EventHandler(this.menuItemMathSum_Click);
             // 
@@ -681,19 +700,19 @@ namespace myPword
             // 
             // menuItem44
             // 
-            this.menuItem44.Index = 2;
+            this.menuItem44.Index = 0;
             this.menuItem44.Text = "Divide";
             this.menuItem44.Click += new System.EventHandler(this.menuItemMathDivide_Click);
             // 
             // menuItem45
             // 
-            this.menuItem45.Index = 3;
+            this.menuItem45.Index = 2;
             this.menuItem45.Text = "Subtract";
             this.menuItem45.Click += new System.EventHandler(this.menuItemMathSubtract_Click);
             // 
             // menuItem50
             // 
-            this.menuItem50.Index = 4;
+            this.menuItem50.Index = 9;
             this.menuItem50.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem47,
             this.menuItem48,
@@ -738,7 +757,7 @@ namespace myPword
             // 
             // menuItem54
             // 
-            this.menuItem54.Index = 5;
+            this.menuItem54.Index = 6;
             this.menuItem54.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem55,
             this.menuItem56});
@@ -756,7 +775,7 @@ namespace myPword
             // 
             // menuItem57
             // 
-            this.menuItem57.Index = 6;
+            this.menuItem57.Index = 5;
             this.menuItem57.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem58,
             this.menuItem59});
@@ -765,7 +784,7 @@ namespace myPword
             // menuItem58
             // 
             this.menuItem58.Index = 0;
-            this.menuItem58.Text = "x^n";
+            this.menuItem58.Text = "x^y";
             // 
             // menuItem59
             // 
@@ -774,7 +793,7 @@ namespace myPword
             // 
             // menuItem60
             // 
-            this.menuItem60.Index = 7;
+            this.menuItem60.Index = 4;
             this.menuItem60.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem61,
             this.menuItem62});
@@ -795,7 +814,10 @@ namespace myPword
             this.menuItem63.Index = 8;
             this.menuItem63.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem64,
-            this.menuItem65});
+            this.menuItem65,
+            this.menuItem66,
+            this.menuItem67,
+            this.menuItem68});
             this.menuItem63.Text = "Statistics";
             // 
             // menuItem64
@@ -808,25 +830,65 @@ namespace myPword
             this.menuItem65.Index = 1;
             this.menuItem65.Text = "Median";
             // 
+            // menuItem66
+            // 
+            this.menuItem66.Index = 2;
+            this.menuItem66.Text = "Min";
+            // 
+            // menuItem67
+            // 
+            this.menuItem67.Index = 3;
+            this.menuItem67.Text = "Max";
+            // 
+            // menuItem68
+            // 
+            this.menuItem68.Index = 4;
+            this.menuItem68.Text = "Union";
+            // 
+            // menuItem69
+            // 
+            this.menuItem69.Index = 7;
+            this.menuItem69.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem70,
+            this.menuItem71,
+            this.menuItem72,
+            this.menuItem73});
+            this.menuItem69.Text = "Logic";
+            // 
+            // menuItem70
+            // 
+            this.menuItem70.Index = 0;
+            this.menuItem70.Text = "Not";
+            // 
+            // menuItem71
+            // 
+            this.menuItem71.Index = 1;
+            this.menuItem71.Text = "And";
+            // 
+            // menuItem72
+            // 
+            this.menuItem72.Index = 2;
+            this.menuItem72.Text = "Or";
+            // 
+            // menuItem73
+            // 
+            this.menuItem73.Index = 3;
+            this.menuItem73.Text = "Xor";
+            // 
             // menuItemViewErrors
             // 
-            this.menuItemViewErrors.Index = 2;
+            this.menuItemViewErrors.Index = 3;
             this.menuItemViewErrors.Text = "View Errors";
             this.menuItemViewErrors.Click += new System.EventHandler(this.menuItemViewErrors_Click);
             // 
-            // menuItem38
-            // 
-            this.menuItem38.Index = 16;
-            this.menuItem38.Text = "";
-            // 
             // menuItem24
             // 
-            this.menuItem24.Index = 17;
+            this.menuItem24.Index = 16;
             this.menuItem24.Text = "-";
             // 
             // menuItem11
             // 
-            this.menuItem11.Index = 18;
+            this.menuItem11.Index = 17;
             this.menuItem11.Text = "Open Link [Dbl Lft Click]";
             this.menuItem11.Click += new System.EventHandler(this.menuItem11_Click);
             // 
@@ -965,7 +1027,7 @@ namespace myPword
             this.txtValue.BackColor = System.Drawing.SystemColors.Info;
             this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtValue.Location = new System.Drawing.Point(0, 177);
+            this.txtValue.Location = new System.Drawing.Point(0, 243);
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
             this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -994,7 +1056,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 169);
+            this.splitter1.Location = new System.Drawing.Point(0, 235);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(284, 8);
             this.splitter1.TabIndex = 5;
@@ -1007,7 +1069,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 97);
+            this.panel1.Size = new System.Drawing.Size(284, 163);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1126,38 +1188,8 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 104);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(284, 0);
+            this.panel6.Size = new System.Drawing.Size(284, 59);
             this.panel6.TabIndex = 5;
-            // 
-            // treeView1
-            // 
-            this.treeView1.AllowDrop = true;
-            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeView1.ContextMenu = this.cmTree;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-            this.treeView1.FullRowSelect = true;
-            this.treeView1.HideSelection = false;
-            this.treeView1.HotTracking = true;
-            this.treeView1.ImageIndex = 0;
-            this.treeView1.ImageList = this.imageTree1;
-            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
-            this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(284, 0);
-            this.treeView1.TabIndex = 3;
-            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
-            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
-            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
-            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
-            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
-            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
-            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
-            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
-            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
             // btnCancel
             // 
@@ -1185,6 +1217,48 @@ namespace myPword
             this.notifyIcon2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseClick);
             this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseDoubleClick);
             // 
+            // menuItem74
+            // 
+            this.menuItem74.Index = 1;
+            this.menuItem74.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem75});
+            this.menuItem74.Text = "Language";
+            // 
+            // menuItem75
+            // 
+            this.menuItem75.Index = 0;
+            this.menuItem75.Text = "To Latin";
+            // 
+            // treeView1
+            // 
+            this.treeView1.AllowDrop = true;
+            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView1.ContextMenu = this.cmTree;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
+            this.treeView1.FullRowSelect = true;
+            this.treeView1.HideSelection = false;
+            this.treeView1.HotTracking = true;
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageTree1;
+            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
+            this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.Size = new System.Drawing.Size(284, 59);
+            this.treeView1.TabIndex = 3;
+            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
+            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
+            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
+            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
+            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
+            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
+            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
+            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
+            // 
             // userControl11
             // 
             this.userControl11.ContextMenu = this.cmMasters;
@@ -1201,7 +1275,7 @@ namespace myPword
             // pWord
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(284, 307);
+            this.ClientSize = new System.Drawing.Size(284, 373);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.userControl11);

@@ -56,6 +56,9 @@
     <Compile Include="dat\IOperate.cs" />
     <Compile Include="dat\math\Divide.cs" />
     <Compile Include="dat\math\Multiply.cs" />
+    <Compile Include="dat\math\statistics\Avgerage.cs" />
+    <Compile Include="dat\math\statistics\Min.cs" />
+    <Compile Include="dat\math\statistics\Max.cs" />
     <Compile Include="dat\math\Subtract.cs" />
     <Compile Include="dat\math\Sum.cs" />
     <Compile Include="dat\math\Trig\Tan.cs" />
