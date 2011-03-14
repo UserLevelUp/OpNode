@@ -81,9 +81,29 @@ namespace pWordLib.dat
 
         private SortedList<String, String> attributes = null;
 
+
+        public IList<String> getKeys()
+        {
+            return attributes.Keys;
+        }
+
+        public String getValue(String key)
+        {
+            String value;
+            if (attributes.TryGetValue(key, out value) == true)
+            {
+                return value;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public void AddAttribute(String key, String value)
         {
             attributes.Add(key, value);
+            
         }
 
         private List<IOperate> operations = null;

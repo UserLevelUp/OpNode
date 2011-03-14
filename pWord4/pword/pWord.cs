@@ -12,14 +12,14 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters;
 using System.Runtime.Serialization.Formatters.Binary;
 using LeftRight;
-using pWordLib;
-using pWordLib.dat;
 using System.Xml.Serialization;
 using System.Xml;
 using System.Diagnostics;
+using pWordLib;
 using pWordLib.dat;
 using pWordLib.dat.math;
 using pWordLib.dat.Math;
+using System.Collections.Generic;
 
 namespace myPword
 {
@@ -97,7 +97,8 @@ namespace myPword
             divide = 9,
             viewErrors = 10,
             cut = 11,
-            trig
+            trig,
+            find
         }
 
 		nodeMode mode = nodeMode.addto;  // see above
@@ -215,6 +216,28 @@ namespace myPword
         private MenuItem menuItem73;
         private MenuItem menuItem74;
         private MenuItem menuItem75;
+        private MenuItem menuItem38;
+        private MenuItem menuItem76;
+        private MenuItem menuItem77;
+        private MenuItem menuItem78;
+        private MenuItem menuItem79;
+        private MenuItem menuItem81;
+        private MenuItem menuItem80;
+        private MenuItem menuItem82;
+        private MenuItem menuItem83;
+        private MenuItem menuItem84;
+        private MenuItem mnuNamespaces;
+        private MenuItem mnuAttributes;
+        private TabControl tabs;
+        private TabPage tabValue;
+        private TabPage tabNamespaces;
+        private TabPage tabAttributes;
+        private ListView lstNamespaces;
+        private ListView lstAttributes;
+        private ColumnHeader columnPrefix;
+        private ColumnHeader columnPrefixURI;
+        private ColumnHeader columnAttributeName;
+        private ColumnHeader columnAttributeValue;
         pWordLib.mgr.registryMgr rm = null;
 		public pWord()
 		{
@@ -324,6 +347,7 @@ namespace myPword
             this.menuItem6 = new System.Windows.Forms.MenuItem();
             this.menuItem36 = new System.Windows.Forms.MenuItem();
             this.menuItem37 = new System.Windows.Forms.MenuItem();
+            this.menuItem83 = new System.Windows.Forms.MenuItem();
             this.menuItem30 = new System.Windows.Forms.MenuItem();
             this.menuItem22 = new System.Windows.Forms.MenuItem();
             this.menuItem32 = new System.Windows.Forms.MenuItem();
@@ -336,11 +360,33 @@ namespace myPword
             this.menuItem40 = new System.Windows.Forms.MenuItem();
             this.menuItem39 = new System.Windows.Forms.MenuItem();
             this.menuItem46 = new System.Windows.Forms.MenuItem();
+            this.menuItem74 = new System.Windows.Forms.MenuItem();
+            this.menuItem75 = new System.Windows.Forms.MenuItem();
             this.menuItem42 = new System.Windows.Forms.MenuItem();
-            this.menuItem41 = new System.Windows.Forms.MenuItem();
-            this.menuItem43 = new System.Windows.Forms.MenuItem();
             this.menuItem44 = new System.Windows.Forms.MenuItem();
+            this.menuItem43 = new System.Windows.Forms.MenuItem();
             this.menuItem45 = new System.Windows.Forms.MenuItem();
+            this.menuItem41 = new System.Windows.Forms.MenuItem();
+            this.menuItem60 = new System.Windows.Forms.MenuItem();
+            this.menuItem61 = new System.Windows.Forms.MenuItem();
+            this.menuItem62 = new System.Windows.Forms.MenuItem();
+            this.menuItem57 = new System.Windows.Forms.MenuItem();
+            this.menuItem58 = new System.Windows.Forms.MenuItem();
+            this.menuItem59 = new System.Windows.Forms.MenuItem();
+            this.menuItem54 = new System.Windows.Forms.MenuItem();
+            this.menuItem55 = new System.Windows.Forms.MenuItem();
+            this.menuItem56 = new System.Windows.Forms.MenuItem();
+            this.menuItem69 = new System.Windows.Forms.MenuItem();
+            this.menuItem70 = new System.Windows.Forms.MenuItem();
+            this.menuItem71 = new System.Windows.Forms.MenuItem();
+            this.menuItem72 = new System.Windows.Forms.MenuItem();
+            this.menuItem73 = new System.Windows.Forms.MenuItem();
+            this.menuItem63 = new System.Windows.Forms.MenuItem();
+            this.menuItem64 = new System.Windows.Forms.MenuItem();
+            this.menuItem65 = new System.Windows.Forms.MenuItem();
+            this.menuItem66 = new System.Windows.Forms.MenuItem();
+            this.menuItem67 = new System.Windows.Forms.MenuItem();
+            this.menuItem68 = new System.Windows.Forms.MenuItem();
             this.menuItem50 = new System.Windows.Forms.MenuItem();
             this.menuItem47 = new System.Windows.Forms.MenuItem();
             this.menuItem48 = new System.Windows.Forms.MenuItem();
@@ -348,26 +394,14 @@ namespace myPword
             this.menuItem51 = new System.Windows.Forms.MenuItem();
             this.menuItem52 = new System.Windows.Forms.MenuItem();
             this.menuItem53 = new System.Windows.Forms.MenuItem();
-            this.menuItem54 = new System.Windows.Forms.MenuItem();
-            this.menuItem55 = new System.Windows.Forms.MenuItem();
-            this.menuItem56 = new System.Windows.Forms.MenuItem();
-            this.menuItem57 = new System.Windows.Forms.MenuItem();
-            this.menuItem58 = new System.Windows.Forms.MenuItem();
-            this.menuItem59 = new System.Windows.Forms.MenuItem();
-            this.menuItem60 = new System.Windows.Forms.MenuItem();
-            this.menuItem61 = new System.Windows.Forms.MenuItem();
-            this.menuItem62 = new System.Windows.Forms.MenuItem();
-            this.menuItem63 = new System.Windows.Forms.MenuItem();
-            this.menuItem64 = new System.Windows.Forms.MenuItem();
-            this.menuItem65 = new System.Windows.Forms.MenuItem();
-            this.menuItem66 = new System.Windows.Forms.MenuItem();
-            this.menuItem67 = new System.Windows.Forms.MenuItem();
-            this.menuItem68 = new System.Windows.Forms.MenuItem();
-            this.menuItem69 = new System.Windows.Forms.MenuItem();
-            this.menuItem70 = new System.Windows.Forms.MenuItem();
-            this.menuItem71 = new System.Windows.Forms.MenuItem();
-            this.menuItem72 = new System.Windows.Forms.MenuItem();
-            this.menuItem73 = new System.Windows.Forms.MenuItem();
+            this.menuItem38 = new System.Windows.Forms.MenuItem();
+            this.menuItem76 = new System.Windows.Forms.MenuItem();
+            this.menuItem77 = new System.Windows.Forms.MenuItem();
+            this.menuItem80 = new System.Windows.Forms.MenuItem();
+            this.menuItem78 = new System.Windows.Forms.MenuItem();
+            this.menuItem81 = new System.Windows.Forms.MenuItem();
+            this.menuItem82 = new System.Windows.Forms.MenuItem();
+            this.menuItem79 = new System.Windows.Forms.MenuItem();
             this.menuItemViewErrors = new System.Windows.Forms.MenuItem();
             this.menuItem24 = new System.Windows.Forms.MenuItem();
             this.menuItem11 = new System.Windows.Forms.MenuItem();
@@ -384,6 +418,9 @@ namespace myPword
             this.menuItem26 = new System.Windows.Forms.MenuItem();
             this.menuItem27 = new System.Windows.Forms.MenuItem();
             this.menuItem28 = new System.Windows.Forms.MenuItem();
+            this.menuItem84 = new System.Windows.Forms.MenuItem();
+            this.mnuNamespaces = new System.Windows.Forms.MenuItem();
+            this.mnuAttributes = new System.Windows.Forms.MenuItem();
             this.menuItem33 = new System.Windows.Forms.MenuItem();
             this.menuItem17 = new System.Windows.Forms.MenuItem();
             this.menuItem12 = new System.Windows.Forms.MenuItem();
@@ -407,19 +444,31 @@ namespace myPword
             this.chkClear = new System.Windows.Forms.CheckBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.tabs = new System.Windows.Forms.TabControl();
+            this.tabValue = new System.Windows.Forms.TabPage();
+            this.tabNamespaces = new System.Windows.Forms.TabPage();
+            this.lstNamespaces = new System.Windows.Forms.ListView();
+            this.columnPrefix = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPrefixURI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabAttributes = new System.Windows.Forms.TabPage();
+            this.lstAttributes = new System.Windows.Forms.ListView();
+            this.columnAttributeName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnAttributeValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCancel = new System.Windows.Forms.Button();
             this.saveFileDialogHTML = new System.Windows.Forms.SaveFileDialog();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.menuItem74 = new System.Windows.Forms.MenuItem();
-            this.menuItem75 = new System.Windows.Forms.MenuItem();
-            this.treeView1 = new myPword.pView();
             this.userControl11 = new LeftRight.LeftRight();
+            this.treeView1 = new myPword.pView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.tabs.SuspendLayout();
+            this.tabValue.SuspendLayout();
+            this.tabNamespaces.SuspendLayout();
+            this.tabAttributes.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuNotify
@@ -449,7 +498,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 351);
+            this.statusBar1.Location = new System.Drawing.Point(0, 234);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(284, 22);
             this.statusBar1.TabIndex = 0;
@@ -511,6 +560,7 @@ namespace myPword
             this.menuItem3,
             this.menuItem2,
             this.menuItem6,
+            this.menuItem83,
             this.menuItem30,
             this.menuItem22,
             this.menuItem32,
@@ -536,14 +586,14 @@ namespace myPword
             // 
             this.menuItem13.Index = 1;
             this.menuItem13.Shortcut = System.Windows.Forms.Shortcut.CtrlE;
-            this.menuItem13.Text = "&Edit";
+            this.menuItem13.Text = "Edit";
             this.menuItem13.Click += new System.EventHandler(this.menuItem13_Click);
             // 
             // menuItem29
             // 
             this.menuItem29.Index = 2;
             this.menuItem29.Shortcut = System.Windows.Forms.Shortcut.CtrlI;
-            this.menuItem29.Text = "&Insert";
+            this.menuItem29.Text = "Insert";
             this.menuItem29.Click += new System.EventHandler(this.menuItem29_Click);
             // 
             // menuItem3
@@ -564,6 +614,7 @@ namespace myPword
             // menuItem5
             // 
             this.menuItem5.Index = 0;
+            this.menuItem5.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftA;
             this.menuItem5.Text = "Add";
             this.menuItem5.Click += new System.EventHandler(this.menuItemAttributeAdd_Click);
             // 
@@ -578,30 +629,38 @@ namespace myPword
             // menuItem36
             // 
             this.menuItem36.Index = 0;
+            this.menuItem36.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftP;
             this.menuItem36.Text = "Set Prefix";
             this.menuItem36.Click += new System.EventHandler(this.menuItemNamespaceAddPrefix_Click);
             // 
             // menuItem37
             // 
             this.menuItem37.Index = 1;
+            this.menuItem37.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftS;
             this.menuItem37.Text = "Set Suffix";
             this.menuItem37.Click += new System.EventHandler(this.menuItemNamespaceAddSuffix_Click);
             // 
+            // menuItem83
+            // 
+            this.menuItem83.Index = 6;
+            this.menuItem83.Text = "Find";
+            this.menuItem83.Click += new System.EventHandler(this.menuItemFind_Click);
+            // 
             // menuItem30
             // 
-            this.menuItem30.Index = 6;
+            this.menuItem30.Index = 7;
             this.menuItem30.Text = "-";
             // 
             // menuItem22
             // 
-            this.menuItem22.Index = 7;
+            this.menuItem22.Index = 8;
             this.menuItem22.Shortcut = System.Windows.Forms.Shortcut.CtrlG;
             this.menuItem22.Text = "Get Node";
             this.menuItem22.Click += new System.EventHandler(this.menuItemGetNode_Click);
             // 
             // menuItem32
             // 
-            this.menuItem32.Index = 8;
+            this.menuItem32.Index = 9;
             this.menuItem32.Shortcut = System.Windows.Forms.Shortcut.CtrlX;
             this.menuItem32.Text = "Cut Node";
             this.menuItem32.Click += new System.EventHandler(this.menuCutNode_Click);
@@ -609,7 +668,7 @@ namespace myPword
             // menuItem21
             // 
             this.menuItem21.Enabled = false;
-            this.menuItem21.Index = 9;
+            this.menuItem21.Index = 10;
             this.menuItem21.Shortcut = System.Windows.Forms.Shortcut.CtrlP;
             this.menuItem21.Text = "Put Node In";
             this.menuItem21.Click += new System.EventHandler(this.menuItem21_Click);
@@ -617,7 +676,7 @@ namespace myPword
             // menuItem31
             // 
             this.menuItem31.Enabled = false;
-            this.menuItem31.Index = 10;
+            this.menuItem31.Index = 11;
             this.menuItem31.Shortcut = System.Windows.Forms.Shortcut.Ins;
             this.menuItem31.Text = "Insert Node";
             this.menuItem31.Click += new System.EventHandler(this.menuItem31_Click);
@@ -625,19 +684,19 @@ namespace myPword
             // menuItem1
             // 
             this.menuItem1.Enabled = false;
-            this.menuItem1.Index = 11;
+            this.menuItem1.Index = 12;
             this.menuItem1.Text = "Encrypt Node";
             // 
             // menuItem14
             // 
-            this.menuItem14.Index = 12;
+            this.menuItem14.Index = 13;
             this.menuItem14.Shortcut = System.Windows.Forms.Shortcut.Del;
             this.menuItem14.Text = "Delete Node";
             this.menuItem14.Click += new System.EventHandler(this.menuItem14_Click);
             // 
             // menuItem34
             // 
-            this.menuItem34.Index = 13;
+            this.menuItem34.Index = 14;
             this.menuItem34.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem35});
             this.menuItem34.Text = "Export Node";
@@ -651,16 +710,17 @@ namespace myPword
             // 
             // menuItem40
             // 
-            this.menuItem40.Index = 14;
+            this.menuItem40.Index = 15;
             this.menuItem40.Text = "-";
             // 
             // menuItem39
             // 
-            this.menuItem39.Index = 15;
+            this.menuItem39.Index = 16;
             this.menuItem39.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem46,
             this.menuItem74,
             this.menuItem42,
+            this.menuItem38,
             this.menuItemViewErrors});
             this.menuItem39.Text = "Operations";
             // 
@@ -669,6 +729,18 @@ namespace myPword
             this.menuItem46.Index = 0;
             this.menuItem46.Text = "Clear Operations";
             this.menuItem46.Click += new System.EventHandler(this.menuItemOperationsClear_Click);
+            // 
+            // menuItem74
+            // 
+            this.menuItem74.Index = 1;
+            this.menuItem74.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem75});
+            this.menuItem74.Text = "Language";
+            // 
+            // menuItem75
+            // 
+            this.menuItem75.Index = 0;
+            this.menuItem75.Text = "To Latin";
             // 
             // menuItem42
             // 
@@ -686,29 +758,168 @@ namespace myPword
             this.menuItem50});
             this.menuItem42.Text = "Math";
             // 
-            // menuItem41
+            // menuItem44
             // 
-            this.menuItem41.Index = 3;
-            this.menuItem41.Text = "Sum";
-            this.menuItem41.Click += new System.EventHandler(this.menuItemMathSum_Click);
+            this.menuItem44.Index = 0;
+            this.menuItem44.Shortcut = System.Windows.Forms.Shortcut.CtrlD;
+            this.menuItem44.Text = "Divide";
+            this.menuItem44.Click += new System.EventHandler(this.menuItemMathDivide_Click);
             // 
             // menuItem43
             // 
             this.menuItem43.Index = 1;
+            this.menuItem43.Shortcut = System.Windows.Forms.Shortcut.CtrlM;
             this.menuItem43.Text = "Multiply";
             this.menuItem43.Click += new System.EventHandler(this.menuItemMathMultiple_Click);
-            // 
-            // menuItem44
-            // 
-            this.menuItem44.Index = 0;
-            this.menuItem44.Text = "Divide";
-            this.menuItem44.Click += new System.EventHandler(this.menuItemMathDivide_Click);
             // 
             // menuItem45
             // 
             this.menuItem45.Index = 2;
+            this.menuItem45.Shortcut = System.Windows.Forms.Shortcut.CtrlS;
             this.menuItem45.Text = "Subtract";
             this.menuItem45.Click += new System.EventHandler(this.menuItemMathSubtract_Click);
+            // 
+            // menuItem41
+            // 
+            this.menuItem41.Index = 3;
+            this.menuItem41.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftS;
+            this.menuItem41.Text = "Sum";
+            this.menuItem41.Click += new System.EventHandler(this.menuItemMathSum_Click);
+            // 
+            // menuItem60
+            // 
+            this.menuItem60.Index = 4;
+            this.menuItem60.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem61,
+            this.menuItem62});
+            this.menuItem60.Text = "Calculus";
+            // 
+            // menuItem61
+            // 
+            this.menuItem61.Index = 0;
+            this.menuItem61.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftD;
+            this.menuItem61.Text = "d/dx";
+            // 
+            // menuItem62
+            // 
+            this.menuItem62.Index = 1;
+            this.menuItem62.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftI;
+            this.menuItem62.Text = "Integral";
+            // 
+            // menuItem57
+            // 
+            this.menuItem57.Index = 5;
+            this.menuItem57.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem58,
+            this.menuItem59});
+            this.menuItem57.Text = "Exponent";
+            // 
+            // menuItem58
+            // 
+            this.menuItem58.Index = 0;
+            this.menuItem58.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftE;
+            this.menuItem58.Text = "x^y";
+            // 
+            // menuItem59
+            // 
+            this.menuItem59.Index = 1;
+            this.menuItem59.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftQ;
+            this.menuItem59.Text = "Sqrt";
+            // 
+            // menuItem54
+            // 
+            this.menuItem54.Index = 6;
+            this.menuItem54.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem55,
+            this.menuItem56});
+            this.menuItem54.Text = "Log";
+            // 
+            // menuItem55
+            // 
+            this.menuItem55.Index = 0;
+            this.menuItem55.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftN;
+            this.menuItem55.Text = "ln";
+            // 
+            // menuItem56
+            // 
+            this.menuItem56.Index = 1;
+            this.menuItem56.Shortcut = System.Windows.Forms.Shortcut.CtrlL;
+            this.menuItem56.Text = "log10";
+            // 
+            // menuItem69
+            // 
+            this.menuItem69.Index = 7;
+            this.menuItem69.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem70,
+            this.menuItem71,
+            this.menuItem72,
+            this.menuItem73});
+            this.menuItem69.Text = "Logic";
+            // 
+            // menuItem70
+            // 
+            this.menuItem70.Index = 0;
+            this.menuItem70.Shortcut = System.Windows.Forms.Shortcut.Alt0;
+            this.menuItem70.Text = "Not";
+            // 
+            // menuItem71
+            // 
+            this.menuItem71.Index = 1;
+            this.menuItem71.Shortcut = System.Windows.Forms.Shortcut.Alt1;
+            this.menuItem71.Text = "And";
+            // 
+            // menuItem72
+            // 
+            this.menuItem72.Index = 2;
+            this.menuItem72.Shortcut = System.Windows.Forms.Shortcut.Alt2;
+            this.menuItem72.Text = "Or";
+            // 
+            // menuItem73
+            // 
+            this.menuItem73.Index = 3;
+            this.menuItem73.Shortcut = System.Windows.Forms.Shortcut.Alt3;
+            this.menuItem73.Text = "Xor";
+            // 
+            // menuItem63
+            // 
+            this.menuItem63.Index = 8;
+            this.menuItem63.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem64,
+            this.menuItem65,
+            this.menuItem66,
+            this.menuItem67,
+            this.menuItem68});
+            this.menuItem63.Text = "Statistics";
+            // 
+            // menuItem64
+            // 
+            this.menuItem64.Index = 0;
+            this.menuItem64.Shortcut = System.Windows.Forms.Shortcut.Ctrl0;
+            this.menuItem64.Text = "Avg";
+            // 
+            // menuItem65
+            // 
+            this.menuItem65.Index = 1;
+            this.menuItem65.Shortcut = System.Windows.Forms.Shortcut.Ctrl1;
+            this.menuItem65.Text = "Median";
+            // 
+            // menuItem66
+            // 
+            this.menuItem66.Index = 2;
+            this.menuItem66.Shortcut = System.Windows.Forms.Shortcut.Ctrl2;
+            this.menuItem66.Text = "Min";
+            // 
+            // menuItem67
+            // 
+            this.menuItem67.Index = 3;
+            this.menuItem67.Shortcut = System.Windows.Forms.Shortcut.Ctrl3;
+            this.menuItem67.Text = "Max";
+            // 
+            // menuItem68
+            // 
+            this.menuItem68.Index = 4;
+            this.menuItem68.Shortcut = System.Windows.Forms.Shortcut.Ctrl4;
+            this.menuItem68.Text = "Union";
             // 
             // menuItem50
             // 
@@ -755,140 +966,69 @@ namespace myPword
             this.menuItem53.Index = 5;
             this.menuItem53.Text = "Arctan";
             // 
-            // menuItem54
+            // menuItem38
             // 
-            this.menuItem54.Index = 6;
-            this.menuItem54.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem55,
-            this.menuItem56});
-            this.menuItem54.Text = "Log";
+            this.menuItem38.Index = 3;
+            this.menuItem38.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem76,
+            this.menuItem77,
+            this.menuItem80,
+            this.menuItem78,
+            this.menuItem81,
+            this.menuItem82,
+            this.menuItem79});
+            this.menuItem38.Text = "RecordIP";
             // 
-            // menuItem55
+            // menuItem76
             // 
-            this.menuItem55.Index = 0;
-            this.menuItem55.Text = "ln";
+            this.menuItem76.Index = 0;
+            this.menuItem76.Text = "Mouse";
             // 
-            // menuItem56
+            // menuItem77
             // 
-            this.menuItem56.Index = 1;
-            this.menuItem56.Text = "log10";
+            this.menuItem77.Index = 1;
+            this.menuItem77.Text = "Keyboard";
             // 
-            // menuItem57
+            // menuItem80
             // 
-            this.menuItem57.Index = 5;
-            this.menuItem57.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem58,
-            this.menuItem59});
-            this.menuItem57.Text = "Exponent";
+            this.menuItem80.Index = 2;
+            this.menuItem80.Text = "M and K";
             // 
-            // menuItem58
+            // menuItem78
             // 
-            this.menuItem58.Index = 0;
-            this.menuItem58.Text = "x^y";
+            this.menuItem78.Index = 3;
+            this.menuItem78.Text = "Audio";
             // 
-            // menuItem59
+            // menuItem81
             // 
-            this.menuItem59.Index = 1;
-            this.menuItem59.Text = "Sqrt";
+            this.menuItem81.Index = 4;
+            this.menuItem81.Text = "Video";
             // 
-            // menuItem60
+            // menuItem82
             // 
-            this.menuItem60.Index = 4;
-            this.menuItem60.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem61,
-            this.menuItem62});
-            this.menuItem60.Text = "Calculus";
+            this.menuItem82.Index = 5;
+            this.menuItem82.Text = "A and V";
             // 
-            // menuItem61
+            // menuItem79
             // 
-            this.menuItem61.Index = 0;
-            this.menuItem61.Text = "d/dx";
-            // 
-            // menuItem62
-            // 
-            this.menuItem62.Index = 1;
-            this.menuItem62.Text = "Integral";
-            // 
-            // menuItem63
-            // 
-            this.menuItem63.Index = 8;
-            this.menuItem63.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem64,
-            this.menuItem65,
-            this.menuItem66,
-            this.menuItem67,
-            this.menuItem68});
-            this.menuItem63.Text = "Statistics";
-            // 
-            // menuItem64
-            // 
-            this.menuItem64.Index = 0;
-            this.menuItem64.Text = "Avg";
-            // 
-            // menuItem65
-            // 
-            this.menuItem65.Index = 1;
-            this.menuItem65.Text = "Median";
-            // 
-            // menuItem66
-            // 
-            this.menuItem66.Index = 2;
-            this.menuItem66.Text = "Min";
-            // 
-            // menuItem67
-            // 
-            this.menuItem67.Index = 3;
-            this.menuItem67.Text = "Max";
-            // 
-            // menuItem68
-            // 
-            this.menuItem68.Index = 4;
-            this.menuItem68.Text = "Union";
-            // 
-            // menuItem69
-            // 
-            this.menuItem69.Index = 7;
-            this.menuItem69.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem70,
-            this.menuItem71,
-            this.menuItem72,
-            this.menuItem73});
-            this.menuItem69.Text = "Logic";
-            // 
-            // menuItem70
-            // 
-            this.menuItem70.Index = 0;
-            this.menuItem70.Text = "Not";
-            // 
-            // menuItem71
-            // 
-            this.menuItem71.Index = 1;
-            this.menuItem71.Text = "And";
-            // 
-            // menuItem72
-            // 
-            this.menuItem72.Index = 2;
-            this.menuItem72.Text = "Or";
-            // 
-            // menuItem73
-            // 
-            this.menuItem73.Index = 3;
-            this.menuItem73.Text = "Xor";
+            this.menuItem79.Enabled = false;
+            this.menuItem79.Index = 6;
+            this.menuItem79.Text = "Click to Stop";
             // 
             // menuItemViewErrors
             // 
-            this.menuItemViewErrors.Index = 3;
+            this.menuItemViewErrors.Index = 4;
             this.menuItemViewErrors.Text = "View Errors";
             this.menuItemViewErrors.Click += new System.EventHandler(this.menuItemViewErrors_Click);
             // 
             // menuItem24
             // 
-            this.menuItem24.Index = 16;
+            this.menuItem24.Index = 17;
             this.menuItem24.Text = "-";
             // 
             // menuItem11
             // 
-            this.menuItem11.Index = 17;
+            this.menuItem11.Index = 18;
             this.menuItem11.Text = "Open Link [Dbl Lft Click]";
             this.menuItem11.Click += new System.EventHandler(this.menuItem11_Click);
             // 
@@ -967,7 +1107,10 @@ namespace myPword
             this.menuItem26.Index = 1;
             this.menuItem26.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem27,
-            this.menuItem28});
+            this.menuItem28,
+            this.menuItem84,
+            this.mnuNamespaces,
+            this.mnuAttributes});
             this.menuItem26.Text = "&View";
             // 
             // menuItem27
@@ -981,6 +1124,23 @@ namespace myPword
             this.menuItem28.Index = 1;
             this.menuItem28.Text = "Alphabetize &Off";
             this.menuItem28.Click += new System.EventHandler(this.menuItem28_Click);
+            // 
+            // menuItem84
+            // 
+            this.menuItem84.Index = 2;
+            this.menuItem84.Text = "-";
+            // 
+            // mnuNamespaces
+            // 
+            this.mnuNamespaces.Checked = true;
+            this.mnuNamespaces.Index = 3;
+            this.mnuNamespaces.Text = "Namespaces";
+            // 
+            // mnuAttributes
+            // 
+            this.mnuAttributes.Checked = true;
+            this.mnuAttributes.Index = 4;
+            this.mnuAttributes.Text = "Attributes";
             // 
             // menuItem33
             // 
@@ -1026,12 +1186,12 @@ namespace myPword
             // 
             this.txtValue.BackColor = System.Drawing.SystemColors.Info;
             this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtValue.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtValue.Location = new System.Drawing.Point(0, 243);
+            this.txtValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtValue.Location = new System.Drawing.Point(3, 3);
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
             this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtValue.Size = new System.Drawing.Size(284, 108);
+            this.txtValue.Size = new System.Drawing.Size(270, 68);
             this.txtValue.TabIndex = 3;
             this.txtValue.TabStop = false;
             // 
@@ -1056,7 +1216,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 235);
+            this.splitter1.Location = new System.Drawing.Point(0, -36);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(284, 8);
             this.splitter1.TabIndex = 5;
@@ -1069,7 +1229,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 163);
+            this.panel1.Size = new System.Drawing.Size(284, 162);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1185,16 +1345,110 @@ namespace myPword
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.treeView1);
+            this.panel6.Controls.Add(this.splitter1);
+            this.panel6.Controls.Add(this.tabs);
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 104);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(284, 59);
+            this.panel6.Size = new System.Drawing.Size(284, 72);
             this.panel6.TabIndex = 5;
+            // 
+            // tabs
+            // 
+            this.tabs.Controls.Add(this.tabValue);
+            this.tabs.Controls.Add(this.tabNamespaces);
+            this.tabs.Controls.Add(this.tabAttributes);
+            this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabs.Location = new System.Drawing.Point(0, -28);
+            this.tabs.Name = "tabs";
+            this.tabs.SelectedIndex = 0;
+            this.tabs.Size = new System.Drawing.Size(284, 100);
+            this.tabs.TabIndex = 7;
+            // 
+            // tabValue
+            // 
+            this.tabValue.AllowDrop = true;
+            this.tabValue.Controls.Add(this.txtValue);
+            this.tabValue.Location = new System.Drawing.Point(4, 22);
+            this.tabValue.Name = "tabValue";
+            this.tabValue.Padding = new System.Windows.Forms.Padding(3);
+            this.tabValue.Size = new System.Drawing.Size(276, 74);
+            this.tabValue.TabIndex = 0;
+            this.tabValue.Text = "Value";
+            this.tabValue.UseVisualStyleBackColor = true;
+            // 
+            // tabNamespaces
+            // 
+            this.tabNamespaces.Controls.Add(this.lstNamespaces);
+            this.tabNamespaces.Location = new System.Drawing.Point(4, 22);
+            this.tabNamespaces.Name = "tabNamespaces";
+            this.tabNamespaces.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNamespaces.Size = new System.Drawing.Size(276, 74);
+            this.tabNamespaces.TabIndex = 1;
+            this.tabNamespaces.Text = "Namespaces";
+            this.tabNamespaces.UseVisualStyleBackColor = true;
+            // 
+            // lstNamespaces
+            // 
+            this.lstNamespaces.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnPrefix,
+            this.columnPrefixURI});
+            this.lstNamespaces.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstNamespaces.Location = new System.Drawing.Point(3, 3);
+            this.lstNamespaces.Name = "lstNamespaces";
+            this.lstNamespaces.Size = new System.Drawing.Size(270, 68);
+            this.lstNamespaces.TabIndex = 0;
+            this.lstNamespaces.UseCompatibleStateImageBehavior = false;
+            this.lstNamespaces.View = System.Windows.Forms.View.Details;
+            // 
+            // columnPrefix
+            // 
+            this.columnPrefix.Text = "Prefix";
+            this.columnPrefix.Width = 69;
+            // 
+            // columnPrefixURI
+            // 
+            this.columnPrefixURI.Text = "URI";
+            this.columnPrefixURI.Width = 205;
+            // 
+            // tabAttributes
+            // 
+            this.tabAttributes.Controls.Add(this.lstAttributes);
+            this.tabAttributes.Location = new System.Drawing.Point(4, 22);
+            this.tabAttributes.Name = "tabAttributes";
+            this.tabAttributes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAttributes.Size = new System.Drawing.Size(276, 74);
+            this.tabAttributes.TabIndex = 2;
+            this.tabAttributes.Text = "Attributes";
+            this.tabAttributes.UseVisualStyleBackColor = true;
+            // 
+            // lstAttributes
+            // 
+            this.lstAttributes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnAttributeName,
+            this.columnAttributeValue});
+            this.lstAttributes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstAttributes.Location = new System.Drawing.Point(3, 3);
+            this.lstAttributes.Name = "lstAttributes";
+            this.lstAttributes.Size = new System.Drawing.Size(270, 68);
+            this.lstAttributes.TabIndex = 1;
+            this.lstAttributes.UseCompatibleStateImageBehavior = false;
+            this.lstAttributes.View = System.Windows.Forms.View.Details;
+            // 
+            // columnAttributeName
+            // 
+            this.columnAttributeName.Text = "Attribute";
+            this.columnAttributeName.Width = 91;
+            // 
+            // columnAttributeValue
+            // 
+            this.columnAttributeValue.Text = "Value";
+            this.columnAttributeValue.Width = 198;
             // 
             // btnCancel
             // 
             this.btnCancel.Enabled = false;
-            this.btnCancel.Location = new System.Drawing.Point(12, -13);
+            this.btnCancel.Location = new System.Drawing.Point(2, -2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 24);
             this.btnCancel.TabIndex = 1;
@@ -1217,17 +1471,18 @@ namespace myPword
             this.notifyIcon2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseClick);
             this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseDoubleClick);
             // 
-            // menuItem74
+            // userControl11
             // 
-            this.menuItem74.Index = 1;
-            this.menuItem74.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem75});
-            this.menuItem74.Text = "Language";
-            // 
-            // menuItem75
-            // 
-            this.menuItem75.Index = 0;
-            this.menuItem75.Text = "To Latin";
+            this.userControl11.ContextMenu = this.cmMasters;
+            this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userControl11.Location = new System.Drawing.Point(0, 48);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(284, 24);
+            this.userControl11.TabIndex = 4;
+            this.userControl11.TabStop = false;
+            this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
+            this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
+            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
             // 
             // treeView1
             // 
@@ -1246,7 +1501,7 @@ namespace myPword
             this.treeView1.Name = "treeView1";
             this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(284, 59);
+            this.treeView1.Size = new System.Drawing.Size(284, 0);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1259,27 +1514,12 @@ namespace myPword
             this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
             this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
-            // userControl11
-            // 
-            this.userControl11.ContextMenu = this.cmMasters;
-            this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.userControl11.Location = new System.Drawing.Point(0, 48);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(284, 24);
-            this.userControl11.TabIndex = 4;
-            this.userControl11.TabStop = false;
-            this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
-            this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
-            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
-            // 
             // pWord
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(284, 373);
+            this.ClientSize = new System.Drawing.Size(284, 256);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.userControl11);
-            this.Controls.Add(this.txtValue);
             this.Controls.Add(this.toolBar1);
             this.Controls.Add(this.statusBar1);
             this.Enabled = ((bool)(configurationAppSettings.GetValue("pWord.Enabled", typeof(bool))));
@@ -1304,6 +1544,11 @@ namespace myPword
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.tabs.ResumeLayout(false);
+            this.tabValue.ResumeLayout(false);
+            this.tabValue.PerformLayout();
+            this.tabNamespaces.ResumeLayout(false);
+            this.tabAttributes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2161,6 +2406,7 @@ namespace myPword
 					{
 						autosave();
 					}
+                    this.Refresh();
 				}
 				catch(Exception f)
 				{
@@ -2345,12 +2591,44 @@ namespace myPword
 			{
 				treeView1.SelectedNode = a;
 
-				if (a.Text == "password")
-				{
-					this.txtValue.Text="password";	
-				}
-				else
-				this.txtValue.Text = (string)a.Tag;
+                if (a.Text == "password")
+                {
+                    this.txtValue.Text = "password";
+                }
+                else
+                {
+                    this.txtValue.Text = (string)a.Tag;
+                    this.lstNamespaces.Items.Clear();
+                    this.lstAttributes.Items.Clear();
+                    // for each namespace that exists at this node
+                    pNode aParent = a;
+                    do
+                    {
+                        if (aParent.Namespace == null)
+                        {
+                            aParent = (pNode)aParent.Parent;
+                        }
+                        else
+                        {
+                            // show only prefixes for now
+                            ListViewItem item = new ListViewItem(aParent.Namespace.Prefix);
+                            item.SubItems.Add(aParent.Namespace.URI_PREFIX);
+                            lstNamespaces.Items.Add(item);
+                            lstNamespaces.Refresh();
+                            break;
+                        }
+                    } while (aParent != null);
+
+
+                    // for each attribut that exists at this node
+                    IList<String> keys = a.getKeys();
+                    foreach (String key in keys)
+                    {
+                        ListViewItem item = new ListViewItem(key);
+                        item.SubItems.Add(a.getValue(key));
+                        lstAttributes.Items.Add(item);
+                    }
+                }
 			}
 		}
 
@@ -3050,7 +3328,7 @@ namespace myPword
 
         private void menuItemAttributeAdd_Click(object sender, EventArgs e)
         {
-            mode = nodeMode.addNamespacePrefix;
+            mode = nodeMode.addAttributeTo;
             try
             {
                 lblName.Text = "Attribute:";
@@ -3341,6 +3619,22 @@ namespace myPword
             {
                 MessageBox.Show(f.Message);
             }
+        }
+
+        private void menuItemFind_Click(object sender, EventArgs e)
+        {
+               mode = nodeMode.find;
+               try
+               {
+                   lblName.Text = "Find Name:";
+                   lblValue.Text = "Find Value:";
+                   this.modeIndex = treeView1.SelectedNode.Index;
+                   tmpNode = (pNode)treeView1.SelectedNode;
+               }
+               catch (Exception ex)
+               {
+                   
+               }
         }
 
 
