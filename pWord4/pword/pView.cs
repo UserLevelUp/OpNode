@@ -10,8 +10,24 @@ using pWordLib;
 
 namespace myPword
 {
+    
+
+
     public class pView : TreeView
     {
+           private Icon emptyIcon;
+           private Icon plusIcon;
+           private Icon minusIcon; 
+           private Icon multIcon;
+           private Icon subIcon;
+           private Icon subMinusIcon;
+           private Icon sumIcon;
+           private Icon sinIcon; 
+           private Icon cosIcon; 
+           private Icon tanIcon; 
+           private Icon expandIcon;
+           private Icon _Icon;
+    
         public event DrawTreeNodeEventHandler DrawNode;
 
         // Create a Font object for the node tags.
@@ -26,8 +42,20 @@ namespace myPword
             //this.CheckBoxes = true;
             base.DrawMode = TreeViewDrawMode.OwnerDrawAll;
             base.DrawNode += new DrawTreeNodeEventHandler(pView_DrawNode);
-        }
+            emptyIcon =    Resource1.Empty;
+            plusIcon =     Resource1.Plus;
+            minusIcon =    Resource1.Minus;
+            multIcon =     Resource1.Multiplication;
+            subIcon =      Resource1.Subtraction;
+            subMinusIcon = Resource1.SubMinus;
+            sumIcon =      Resource1.Sum;
+            sinIcon =      Resource1.Sin;
+            cosIcon =      Resource1.Cos;
+            tanIcon =      Resource1.Tan;
+            expandIcon =   Resource1.ExpandedLink;
+            _Icon =        Resource1._;
 
+        }
 
 
         void parentNodeReference(DrawTreeNodeEventArgs e, Rectangle b)
@@ -38,9 +66,9 @@ namespace myPword
             {
                 try
                 {
-
+                    
                     parentNodeReference(eParent, b2);
-                    e.Graphics.DrawIcon(Resource1.Empty, b);
+                    e.Graphics.DrawIcon(emptyIcon, b);
                 }
                 catch (Exception ex)
                 {
@@ -71,7 +99,7 @@ namespace myPword
                     parentNodeReference(eParent, b);
                     if (e.Node.Index == 0)
                     {
-                        e.Graphics.DrawIcon(Resource1.ExpandedLink, b);
+                        e.Graphics.DrawIcon( expandIcon, b);
                     }
 
                 }
@@ -79,11 +107,11 @@ namespace myPword
                 {
                     if (e.Node.IsExpanded)
                     {
-                        e.Graphics.DrawIcon(Resource1.Minus, b);
+                        e.Graphics.DrawIcon(minusIcon, b);
                     }
                     else
                     {
-                        e.Graphics.DrawIcon(Resource1.Plus, b);
+                        e.Graphics.DrawIcon(plusIcon, b);
                     }
                 }
 

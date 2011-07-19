@@ -129,12 +129,12 @@ namespace LeftRight
             this.ctxChangeName.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctxItemChangeName});
             this.ctxChangeName.Name = "ctxChangeName";
-            this.ctxChangeName.Size = new System.Drawing.Size(153, 48);
+            this.ctxChangeName.Size = new System.Drawing.Size(151, 26);
             // 
             // ctxItemChangeName
             // 
             this.ctxItemChangeName.Name = "ctxItemChangeName";
-            this.ctxItemChangeName.Size = new System.Drawing.Size(152, 22);
+            this.ctxItemChangeName.Size = new System.Drawing.Size(150, 22);
             this.ctxItemChangeName.Text = "Change Name";
             this.ctxItemChangeName.Click += new System.EventHandler(this.ctxItemChangeName_Click);
             // 

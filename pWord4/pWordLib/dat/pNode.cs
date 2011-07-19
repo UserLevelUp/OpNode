@@ -49,8 +49,8 @@ namespace pWordLib.dat
 
         // }
 
+        
         protected pNode(SerializationInfo info, StreamingContext context) : this()
-            
         {
             // my deserialization code ... don't forget that the info returns something
             // battled this for a little while hoping that the info would do it all on its own
@@ -58,9 +58,37 @@ namespace pWordLib.dat
             this.Namespace = (NameSpace)info.GetValue("namespace", typeof(NameSpace));
             this.attributes = (SortedList<String, String>)info.GetValue("attributes", typeof(SortedList<String, String>));
             base.Deserialize(info, context);
-
         }
-        
+
+        public String getXmlName()
+        {
+            if ((base.Text == null) || (base.Text == ""))
+            {
+                return Guid.NewGuid().ToString();
+            }
+            else
+            {
+                // exceptions here
+                base.Text = base.Text.Replace(@"#", "");
+                base.Text = base.Text.Replace(@"/", "");
+                base.Text = base.Text.Replace(@"\", "");
+                base.Text = base.Text.Replace(@"@", "");
+                base.Text = base.Text.Replace(@"(", "");
+                base.Text = base.Text.Replace(@")", "");
+                base.Text = base.Text.Replace(@"*", "");
+                base.Text = base.Text.Replace(@"%", "");
+                base.Text = base.Text.Replace(@" ", "");
+                base.Text = base.Text.Replace(@"+", "");
+                base.Text = base.Text.Replace(@";", "");
+                base.Text = base.Text.Replace(@":", "");
+                base.Text = base.Text.Replace(@"&", "");
+                if (base.Text == "")
+                {
+                    return Guid.NewGuid().ToString();
+                }
+            }
+            return base.Text;
+        }
 
         public pNode(String name) : this()
         {
