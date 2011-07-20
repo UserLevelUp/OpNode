@@ -256,8 +256,6 @@ namespace myPword
             // Required for Windows Form Designer support
             //
             InitializeComponent();
-
-
             //
             // DONE: Add any constructor code after InitializeComponent call
             //
@@ -456,7 +454,6 @@ namespace myPword
             this.chkClear = new System.Windows.Forms.CheckBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.treeView1 = new myPword.pView();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabValue = new System.Windows.Forms.TabPage();
             this.tabNamespaces = new System.Windows.Forms.TabPage();
@@ -472,6 +469,7 @@ namespace myPword
             this.saveFileDialogHTML = new System.Windows.Forms.SaveFileDialog();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.treeView1 = new myPword.pView();
             this.userControl11 = new LeftRight.LeftRight();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -512,7 +510,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 326);
+            this.statusBar1.Location = new System.Drawing.Point(0, 305);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(344, 22);
             this.statusBar1.TabIndex = 0;
@@ -1245,7 +1243,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 72);
+            this.splitter1.Location = new System.Drawing.Point(0, 51);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(344, 8);
             this.splitter1.TabIndex = 5;
@@ -1258,7 +1256,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 254);
+            this.panel1.Size = new System.Drawing.Size(344, 233);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1287,8 +1285,8 @@ namespace myPword
             // 
             // txtObject
             // 
-            this.txtObject.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txtObject.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtObject.Location = new System.Drawing.Point(56, 0);
             this.txtObject.Multiline = true;
@@ -1370,8 +1368,8 @@ namespace myPword
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.treeView1);
             this.panel6.Controls.Add(this.splitter1);
@@ -1379,38 +1377,8 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 104);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(344, 181);
+            this.panel6.Size = new System.Drawing.Size(344, 160);
             this.panel6.TabIndex = 5;
-            // 
-            // treeView1
-            // 
-            this.treeView1.AllowDrop = true;
-            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeView1.ContextMenu = this.cmTree;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-            this.treeView1.FullRowSelect = true;
-            this.treeView1.HideSelection = false;
-            this.treeView1.HotTracking = true;
-            this.treeView1.ImageIndex = 0;
-            this.treeView1.ImageList = this.imageTree1;
-            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
-            this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(344, 72);
-            this.treeView1.TabIndex = 3;
-            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
-            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
-            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
-            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
-            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
-            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
-            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
-            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
-            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
             // tabs
             // 
@@ -1418,7 +1386,7 @@ namespace myPword
             this.tabs.Controls.Add(this.tabNamespaces);
             this.tabs.Controls.Add(this.tabAttributes);
             this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabs.Location = new System.Drawing.Point(0, 80);
+            this.tabs.Location = new System.Drawing.Point(0, 59);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(344, 101);
@@ -1540,6 +1508,36 @@ namespace myPword
             // 
             this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
             // 
+            // treeView1
+            // 
+            this.treeView1.AllowDrop = true;
+            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView1.ContextMenu = this.cmTree;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
+            this.treeView1.FullRowSelect = true;
+            this.treeView1.HideSelection = false;
+            this.treeView1.HotTracking = true;
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageTree1;
+            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
+            this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.Size = new System.Drawing.Size(344, 51);
+            this.treeView1.TabIndex = 3;
+            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
+            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
+            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
+            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
+            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
+            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
+            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
+            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
+            // 
             // userControl11
             // 
             this.userControl11.ContextMenu = this.cmMasters;
@@ -1556,7 +1554,7 @@ namespace myPword
             // pWord
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(344, 348);
+            this.ClientSize = new System.Drawing.Size(344, 327);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.toolBar1);
@@ -2683,7 +2681,6 @@ namespace myPword
         {
             if (treeView1.SelectedNode != null)
                 treeView1.SelectedNode.SelectedImageIndex = 1;
-
         }
 
         private void treeView1_AfterSelect_1(object sender, System.Windows.Forms.TreeViewEventArgs e)
@@ -3807,52 +3804,19 @@ namespace myPword
                     xdoc = new XmlDocument();
                     xdoc.Load(stream);
                 }
-
+                pNode masterNode = (pNode)treeView1.Nodes[0];
                 // now that we have the xdoc... now we need to stick it in the getNode
                 //                pNode pn = new pNode(xdoc.ChildNodes[1].Name);
                 //                pn.AddAttribute(xdoc.ch
                 //                getNode.Nodes.Add(
-                AddChildNodes(xdoc.ChildNodes);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error occurred during xml document load.");
-            }
-        }
-
-        private void AddChildNodes(XmlNodeList children)
-        {
-            pNode masterNode = (pNode)treeView1.Nodes[0];
-            try
-            {
-                treeView1.SelectedNode = getNode;
-                //pNode aNode = new pNode();
-                //aNode = new pNode(this.txtName.Text);
-                //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
-                //aNode.Tag = this.txtObject.Text;
-                //aNode.Text = this.txtName.Text;
-                //if (tmpNode.Namespace != null)
-                //{
-                //    aNode.Namespace = tmpNode.Namespace;  // trickle down namespaces
-                //}
-
-                treeView1.SelectedNode = tmpNode;
-                pNode pn = new pNode();
-                foreach (XmlNode xn in children)
-                {
-                    //AddChildNodes(xn.ChildNodes, ref pn);
-                    if (!( xn.Name == "xml"))   // any tag except xml ... add to selected node
-                    {
-                        pNode aNode = new pNode(xn.Name);
-                        aNode.Tag = xn.Value;
-                        treeView1.SelectedNode.Nodes.Add(aNode);
-
-                    }
-                }
-
-
-                //treeView1.SelectedNode.Nodes.Add(aNode);
+                pNode pn = (pNode)treeView1.SelectedNode;
+                if (treeView1.SelectedNode.Tag == null)
+                    treeView1.SelectedNode.Tag = "";
+                pn.Tag = treeView1.SelectedNode.Tag;
+                AddChildNodes(xdoc.ChildNodes, ref pn);
+                treeView1.SelectedNode = pn;
+//                .Nodes.Add(pn);
+                                //treeView1.SelectedNode.Nodes.Add(aNode);
                 // after adding the new node, be sure the index is updated as well... this is not necessary
                 userControl11.MastersValue[userControl11.index] = masterNode;
 
@@ -3880,10 +3844,67 @@ namespace myPword
                     //autosave();
                 }
             }
-            catch (Exception f)
+            catch (Exception ex)
             {
-                MessageBox.Show(f.Message);
+                MessageBox.Show("Error occurred during xml document load.");
             }
+        }
+
+        private void AddChildNodes(XmlNodeList children, ref pNode pn)
+        {
+
+
+                treeView1.SelectedNode = getNode;
+                //pNode aNode = new pNode();
+                //aNode = new pNode(this.txtName.Text);
+                //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
+                //aNode.Tag = this.txtObject.Text;
+                //aNode.Text = this.txtName.Text;
+                //if (tmpNode.Namespace != null)
+                //{
+                //    aNode.Namespace = tmpNode.Namespace;  // trickle down namespaces
+                //}
+
+                treeView1.SelectedNode = tmpNode;
+                foreach (XmlNode xn in children)
+                {
+                    //AddChildNodes(xn.ChildNodes, ref pn);
+                    if (!( xn.Name == "xml"))   // any tag except xml ... add to selected node
+                    {
+                        pNode aNode = new pNode();
+                        if (xn.NodeType == XmlNodeType.Text)
+                        {
+                            // skip for now
+                            continue;
+                                
+                            // pn.Tag = xn.Value;
+                        }
+                        else if (xn.NodeType == XmlNodeType.Element)
+                        {
+                            aNode.Text = xn.LocalName;
+                            // check first child to see if text
+                            if ((xn.FirstChild != null) && (xn.FirstChild.NodeType == XmlNodeType.Text))
+                            {
+                                aNode.Tag = xn.InnerText;
+                            }
+                        }
+                        else if (xn.NodeType == XmlNodeType.Attribute)
+                        {
+                            aNode.AddAttribute(xn.Name, xn.Value);
+                        }
+                        else if (xn.NodeType == XmlNodeType.Entity)
+                        {
+                            aNode.Name = xn.Name;
+                        }
+                        else
+                        {
+                            MessageBox.Show("TypeOf: " + xn.NodeType.ToString());
+                        }
+
+                        AddChildNodes(xn.ChildNodes, ref aNode);
+                        pn.Nodes.Add(aNode);
+                    }
+                }
         }
 
         private void openFileDialog2_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
