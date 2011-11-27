@@ -6,7 +6,7 @@
       <Value Profile="(Default)">0_0_6B</Value>
     </Setting>
     <Setting Name="TreeBackground" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">White</Value>
+      <Value Profile="(Default)">Window</Value>
     </Setting>
     <Setting Name="SelectedNodeBackground" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">120, 70, 50</Value>
@@ -15,13 +15,13 @@
       <Value Profile="(Default)">Beige</Value>
     </Setting>
     <Setting Name="TreeviewBackground" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">White</Value>
+      <Value Profile="(Default)">ControlLightLight</Value>
     </Setting>
     <Setting Name="TreeviewForeground" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Black</Value>
+      <Value Profile="(Default)">ControlText</Value>
     </Setting>
     <Setting Name="ValueTextViewer" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">255, 255, 192</Value>
+      <Value Profile="(Default)">Info</Value>
     </Setting>
     <Setting Name="TreeViewLinesVisible" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

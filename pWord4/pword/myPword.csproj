@@ -199,6 +199,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>pWordSettings.settings</DependentUpon>
     </Compile>
+    <Compile Include="pWordSettings1.cs" />
     <Compile Include="Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -269,11 +270,13 @@
     <Content Include="bin\Debug\icons\master1.ico" />
     <Content Include="bin\Debug\icons\master2.ico" />
     <Content Include="bin\Debug\icons\PW.ico" />
+    <Content Include="bin\Debug\icons\Sum.ico" />
     <Content Include="bin\Debug\icons\toolbar\AutoHide.ico" />
     <Content Include="bin\Debug\icons\toolbar\AutoHide2.ico" />
     <Content Include="bin\Release\icons\master1.ico" />
     <Content Include="bin\Release\icons\master2.ico" />
     <Content Include="bin\Release\icons\PW.ico" />
+    <Content Include="bin\Release\icons\Sum.ico" />
     <Content Include="bin\Release\icons\toolbar\AutoHide.ico" />
     <Content Include="bin\Release\icons\toolbar\AutoHide2.ico" />
     <Content Include="Data.xml" />

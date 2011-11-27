@@ -68,4 +68,7 @@
     </StartWorkingDirectory>
     <StartWithIE>false</StartWithIE>
   </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+  </PropertyGroup>
 </Project>

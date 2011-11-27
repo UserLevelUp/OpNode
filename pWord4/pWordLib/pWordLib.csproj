@@ -88,6 +88,10 @@
     <Compile Include="dat\pNode.cs" />
     <Compile Include="dat\pNodeMode.cs" />
     <Compile Include="dat\registry\pRegistry.cs" />
+    <Compile Include="mdl\SSC._ORMCustomToolReport.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SSC.orm</DependentUpon>
+    </Compile>
     <Compile Include="mgr\Operator.cs" />
     <Compile Include="mgr\registryMgr.cs" />
     <Compile Include="mgr\UserActivityHook.cs" />
@@ -103,6 +107,30 @@
     <Folder Include="dat\video\" />
     <Folder Include="tst\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="mdl\SSC.orm">
+      <Generator>ORMCustomTool</Generator>
+      <LastGenOutput>SSC._ORMCustomToolReport.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup Condition="Exists('mdl/SSC.orm')">
+    <None Include="mdl\SSC.DCIL.xml">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SSC.orm</DependentUpon>
+      <ORMGenerator>ConceptualDBtoDCL</ORMGenerator>
+    </None>
+    <None Include="mdl\SSC.DDIL.xml">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SSC.orm</DependentUpon>
+      <ORMGenerator>DCILtoDDIL</ORMGenerator>
+    </None>
+    <None Include="mdl\SSC.SQLServer.sql">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SSC.orm</DependentUpon>
+      <ORMGenerator>DDILtoSQLServer</ORMGenerator>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

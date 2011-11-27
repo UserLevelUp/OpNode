@@ -160,7 +160,7 @@ namespace myPword
                     // Draw the background of the selected node. The NodeBounds
                     // method makes the highlight rectangle large enough to
                     // include the text of a node tag, if one is present.
-                    e.Graphics.FillRectangle(Brushes.White, NodeBounds(e.Node));
+                    e.Graphics.FillRectangle(SystemBrushes.Window, NodeBounds(e.Node));
 
                     // Retrieve the node font. If the node font has not been set,
                     // use the TreeView font.
@@ -178,14 +178,14 @@ namespace myPword
                             e.Graphics.DrawIcon(icon, rIcon);
 
                             Rectangle rText = new Rectangle(r.Left + step, r.Top, r.Width, 16);
-                            e.Graphics.DrawString(e.Node.Text, nodeFont, Brushes.Black,
+                            e.Graphics.DrawString(e.Node.Text, nodeFont, SystemBrushes.ControlText,
                             Rectangle.Inflate(rText, -5, 0));
                             step -= 16;
                         }
                     }
                     else
                     {
-                        e.Graphics.DrawString(e.Node.Text, nodeFont, Brushes.Black,
+                        e.Graphics.DrawString(e.Node.Text, nodeFont, SystemBrushes.ControlText,
                             Rectangle.Inflate(NodeBounds(e.Node), 2, 0));
                     }
 
@@ -208,7 +208,7 @@ namespace myPword
                 // it large enough to include the text of the node tag, if present.
                 if ((e.State & TreeNodeStates.Focused) != 0)
                 {
-                    using (Pen focusPen = new Pen(Color.Black))
+                    using (Pen focusPen = new Pen(Color.Red))
                     {
                         focusPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
                         Rectangle focusBounds = NodeBounds(e.Node);

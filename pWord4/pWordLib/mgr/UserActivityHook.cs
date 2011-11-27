@@ -96,6 +96,7 @@ namespace pWordLib.UserActivityHook  {
 
 		public void Start()
 		{
+            
             Debug.WriteLine("Starting Mouse Hook.");
             try
             {
