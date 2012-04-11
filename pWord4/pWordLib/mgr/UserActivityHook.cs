@@ -118,7 +118,7 @@ namespace pWordLib.UserActivityHook  {
                         Stop();
                         // TODO: fix this SetWindowsHookEx
                         Debug.WriteLine("SetWindowsHookEx failed.");
-                        throw new Exception("SetWindowsHookEx failed.");
+                        //throw new Exception("SetWindowsHookEx failed.");
                     }
                 }
 
@@ -138,7 +138,7 @@ namespace pWordLib.UserActivityHook  {
                         Stop();
                         // fix Windows hook
                         Debug.WriteLine("SetWindowsHookEx ist failed.");
-                        throw new Exception("SetWindowsHookEx ist failed.");
+                       // throw new Exception("SetWindowsHookEx ist failed.");
                     }
                 }
             }
@@ -172,7 +172,7 @@ namespace pWordLib.UserActivityHook  {
             if (!(retMouse && retKeyboard))
             {
                 Debug.WriteLine("failed retMouse:{0} and retKeyboard:{1}.", retMouse, retKeyboard);
-                throw new Exception("UnhookWindowsHookEx failed."); 
+               // throw new Exception("UnhookWindowsHookEx failed."); 
             }
 		}
 
