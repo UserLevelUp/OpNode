@@ -175,9 +175,7 @@ namespace pWordLib.UserActivityHook  {
                // throw new Exception("UnhookWindowsHookEx failed."); 
             }
 		}
-
-
-
+        
       	private const int WM_MOUSEMOVE = 0x200;
       	private const int WM_LBUTTONDOWN = 0x201;
       	private const int WM_RBUTTONDOWN = 0x204;

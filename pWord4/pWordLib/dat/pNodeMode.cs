@@ -9,6 +9,7 @@ namespace pWordLib.dat
     public enum pNodeMode
     {
         xml,
+        xmlUpdate,
         xsd,
         xslt,
         xquery,
