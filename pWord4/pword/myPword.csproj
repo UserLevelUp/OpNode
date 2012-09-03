@@ -27,7 +27,7 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
     <SignAssembly>false</SignAssembly>
     <TargetZone>LocalIntranet</TargetZone>
     <GenerateManifests>true</GenerateManifests>
@@ -35,7 +35,8 @@
     <ExcludedPermissions>
     </ExcludedPermissions>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <PublishUrl>publish\</PublishUrl>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\tmp\pword\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -45,11 +46,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -123,6 +124,12 @@
     <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>1907EFF02E5E85481B128DE9637224A1E4DD6DAD</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>myPword_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
       <Name>System</Name>
@@ -135,12 +142,8 @@
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
-    <Reference Include="System.Runtime.Serialization, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms">
       <Name>System.Windows.Forms</Name>
     </Reference>
@@ -179,14 +182,6 @@
     <Compile Include="LL.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ORMModel1.LinqToSqlAttributeMapping.PLiX.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ORMModel1.LinqToSqlAttributeMapping.PLiX.xml</DependentUpon>
-    </Compile>
-    <Compile Include="ORMModel1._ORMCustomToolReport.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ORMModel1.orm</DependentUpon>
-    </Compile>
     <Compile Include="pView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -205,16 +200,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\ORMModel1._ORMCustomToolReport.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ORMModel1.orm</DependentUpon>
-    </Compile>
     <Compile Include="UserActivityHook.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Win32.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Content Include="x\xout\ani.html" />
+    <Content Include="x\xout\img\Marc.jpg" />
+    <Content Include="x\xsl\marc.xslt">
+      <SubType>Designer</SubType>
+    </Content>
     <EmbeddedResource Include="AddItem.resx">
       <DependentUpon>AddItem.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -250,18 +246,11 @@
     <None Include="Data.xsx">
       <DependentUpon>Data.xsd</DependentUpon>
     </None>
-    <None Include="ORMModel1.orm">
-      <Generator>ORMCustomTool</Generator>
-      <LastGenOutput>ORMModel1._ORMCustomToolReport.cs</LastGenOutput>
-    </None>
+    <None Include="myPword_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="pWordSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>pWordSettings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Resources\ORMModel1.orm">
-      <Generator>ORMCustomTool</Generator>
-      <LastGenOutput>ORMModel1._ORMCustomToolReport.cs</LastGenOutput>
     </None>
     <None Include="XMLSchema1.xsx">
       <DependentUpon>XMLSchema1.xsd</DependentUpon>
@@ -344,40 +333,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup Condition="Exists('ORMModel1.orm')">
-    <None Include="ORMModel1.DCIL.xml">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ORMModel1.orm</DependentUpon>
-      <ORMGenerator>ConceptualDBtoDCL</ORMGenerator>
-    </None>
-    <None Include="ORMModel1.DDIL.xml">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ORMModel1.orm</DependentUpon>
-      <ORMGenerator>DCILtoDDIL</ORMGenerator>
-    </None>
-    <None Include="ORMModel1.LinqToSqlAttributeMapping.PLiX.xml">
-      <AutoGen>True</AutoGen>
-      <Generator>NUPlixLoader</Generator>
-      <DependentUpon>ORMModel1.orm</DependentUpon>
-      <ORMGenerator>DCILtoLinqAttributeMapping</ORMGenerator>
-    </None>
-    <None Include="ORMModel1.LinqToSqlSettings.xml">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ORMModel1.orm</DependentUpon>
-      <ORMGenerator>LinqToSqlSettings</ORMGenerator>
-    </None>
-    <None Include="ORMModel1.SQLServer.sql">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ORMModel1.orm</DependentUpon>
-      <ORMGenerator>DDILtoSQLServer</ORMGenerator>
-    </None>
-    <None Include="ORMModel1.SQLStandard.sql">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ORMModel1.orm</DependentUpon>
-      <ORMGenerator>DDILtoSQLStandard</ORMGenerator>
-    </None>
+  <ItemGroup>
+    <Folder Include="x\xml\" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

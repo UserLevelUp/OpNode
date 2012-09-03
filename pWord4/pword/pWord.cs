@@ -21,6 +21,7 @@ using pWordLib.dat.math;
 using pWordLib.dat.Math;
 using System.Collections.Generic;
 using System.Net;
+using System.Text.RegularExpressions;
 
 namespace myPword
 {
@@ -482,8 +483,8 @@ namespace myPword
             this.saveFileDialogHTML = new System.Windows.Forms.SaveFileDialog();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.treeView1 = new myPword.pView();
             this.userControl11 = new LeftRight.LeftRight();
+            this.treeView1 = new myPword.pView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -523,7 +524,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 372);
+            this.statusBar1.Location = new System.Drawing.Point(0, 312);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(349, 22);
             this.statusBar1.TabIndex = 0;
@@ -1299,7 +1300,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 118);
+            this.splitter1.Location = new System.Drawing.Point(0, 58);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(349, 8);
             this.splitter1.TabIndex = 5;
@@ -1312,7 +1313,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(349, 300);
+            this.panel1.Size = new System.Drawing.Size(349, 240);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1433,7 +1434,7 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 104);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(349, 227);
+            this.panel6.Size = new System.Drawing.Size(349, 167);
             this.panel6.TabIndex = 5;
             // 
             // tabs
@@ -1442,7 +1443,7 @@ namespace myPword
             this.tabs.Controls.Add(this.tabNamespaces);
             this.tabs.Controls.Add(this.tabAttributes);
             this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabs.Location = new System.Drawing.Point(0, 126);
+            this.tabs.Location = new System.Drawing.Point(0, 66);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(349, 101);
@@ -1564,6 +1565,19 @@ namespace myPword
             // 
             this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
             // 
+            // userControl11
+            // 
+            this.userControl11.ContextMenu = this.cmMasters;
+            this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userControl11.Location = new System.Drawing.Point(0, 48);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(349, 24);
+            this.userControl11.TabIndex = 4;
+            this.userControl11.TabStop = false;
+            this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
+            this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
+            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
+            // 
             // treeView1
             // 
             this.treeView1.AllowDrop = true;
@@ -1581,7 +1595,7 @@ namespace myPword
             this.treeView1.Name = "treeView1";
             this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(349, 118);
+            this.treeView1.Size = new System.Drawing.Size(349, 58);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1594,24 +1608,11 @@ namespace myPword
             this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
             this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
-            // userControl11
-            // 
-            this.userControl11.ContextMenu = this.cmMasters;
-            this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.userControl11.Location = new System.Drawing.Point(0, 48);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(349, 24);
-            this.userControl11.TabIndex = 4;
-            this.userControl11.TabStop = false;
-            this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
-            this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
-            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
-            // 
             // pWord
             // 
             this.AccessibleDescription = "Enabled to view file after xml or html export.";
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(349, 394);
+            this.ClientSize = new System.Drawing.Size(349, 334);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.toolBar1);
@@ -3037,15 +3038,26 @@ namespace myPword
             // MessageBox.Show("pView top node:" + node.Text);
             // use c# 4.0 in a nut shell to construct XmlDocument for this xml stuff
             // page starts on 490
+            xdoc = new XmlDocument();
+            xdoc.AppendChild(xdoc.CreateXmlDeclaration("1.0", null, "yes"));
+
             if (xdoc == null)  // instantiate the first time through
             {
+                xdoc = new XmlDocument();
                 System.Xml.NameTable nt = new NameTable();
                 nt.Add(node.Text);
                 XmlNameTable xnt = (XmlNameTable)nt;
                 System.Xml.XmlNamespaceManager xnsm = new XmlNamespaceManager(xnt);
                 if (!(node.Namespace == null))
                 {
-                    xnsm.AddNamespace(node.Namespace.Prefix, node.Namespace.URI_PREFIX);  // prefix will be like 'xs', and url will be like 'http://www.url.com/etc/'
+                    if (node.Namespace.Prefix != null)
+                    {
+                        xnsm.AddNamespace(node.Namespace.Prefix, node.Namespace.URI_PREFIX);  // prefix will be like 'xs', and url will be like 'http://www.url.com/etc/'
+                    }
+                    if (node.Namespace.Suffix != null)
+                    {
+                        xnsm.AddNamespace(node.Namespace.Suffix, node.Namespace.URI_SUFFIX);
+                    }
                 }
                 // todo:  iterate through all nodes in pNode and place namespaces into the namespace manager
                 // for now only do the first one if it exists
@@ -3059,32 +3071,126 @@ namespace myPword
                     //xdoc.Schemas.Add(key, xnsm.LookupNamespace(key));
                 }
             }
-            XmlNode rootNode = xdoc.CreateElement(node.Text);
+
+            node.getXmlName();  // fix node attributes and todo: eventually namespaces
+
+            XmlNode rootNode = xdoc.CreateElement(node.getXmlName());
             rootNode.InnerText = (String)node.Tag;
+ 
+            if (node.Namespace != null)
+            {
+                //rootNode = xdoc.CreateNode(XmlNodeType.Element, node.Namespace.Prefix, node.Name, node.Namespace.URI_PREFIX);
+            }
+            else
+            {
+                // this takes a long time as well
+                // see if we can't use an existing node and clone it
+                //rootNode = xdoc.CreateNode(XmlNodeType.Element, node.getXmlName(), "");  // any time getXmlName is called ... 
+                // it should be necessary to now recheck to see if its got attributes at this current node
+            }
+            foreach (String key in node.getKeys())
+            {
+                if (key != "")
+                {
+                    if (!(node.Namespace == null))
+                    {
+                        XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, node.Namespace.Prefix, key, node.Namespace.URI_PREFIX);
+                        attr.Value = node.getValue(key);
+                        rootNode.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                    }
+                    else
+                    {
+                        XmlNode attr;
+                        if (node.Namespace != null)
+                        {
+                            if (node.Namespace.Prefix != null)
+                            {
+                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, node.Namespace.URI_PREFIX);
+                            }
+                            else
+                            {
+                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                            }
+                        }
+                        else
+                        {
+                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                        }
+                        attr.Value = node.getValue(key);
+                        rootNode.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                    }
+                }
+            }
+
+
+
+            foreach (pNode p in node.Nodes)
+            {
+                p.getXmlName();  // fix any attributes (this has been completed in pNode.DetectComplexNodeName()
+                                 // todo: fix any namespace ... 
+            }
+
             foreach (pNode p in node.Nodes)
             {
                 XmlNode xn;
                 if (p.Namespace != null)
                 {
-                    xn = xdoc.CreateNode(XmlNodeType.Element, p.Namespace.Prefix, p.Name, p.Namespace.URI_PREFIX);
+                    if (p.Namespace.Prefix != null)
+                    {
+                        xn = xdoc.CreateNode(XmlNodeType.Element, p.Namespace.Prefix, p.Text, p.Namespace.URI_PREFIX);
+                    }
+                    else
+                    {
+                        // this takes a long time as well
+                        // see if we can't use an existing node and clone it
+                        xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName(), "");  // any time getXmlName is called ... 
+                        // it should be necessary to now recheck to see if its got attributes at this current node
+                    }
                 }
                 else
                 {
                     // this takes a long time as well
                     // see if we can't use an existing node and clone it
-                    xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName(), "");
+                    xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName(), "");  // any time getXmlName is called ... 
+                                                                                    // it should be necessary to now recheck to see if its got attributes at this current node
                 }
+                xn.InnerText = (String)p.Tag;
                 foreach (String key in p.getKeys())
                 {
-                    if (!(p.Namespace == null))
+                    if (p.Namespace != null)
                     {
-                        XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, p.Namespace.Prefix, key, p.Namespace.URI_PREFIX);
-                        attr.Value = p.getValue(key);
-                        xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                        if (p.Namespace.Prefix != null)
+                        {
+                            XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, p.Namespace.Prefix, key, p.Namespace.URI_PREFIX);
+                            attr.Value = p.getValue(key);
+                            xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                        }
+                        else
+                        {
+                            XmlNode attr;
+                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                            attr.Value = p.getValue(key);
+                            xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                        }
                     }
                     else
                     {
-                        XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                        XmlNode attr;
+                        if (p.Namespace != null)
+                        {
+                            if (p.Namespace.Prefix != null)
+                            {
+                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, p.Namespace.URI_PREFIX);
+                            }
+                            else
+                            {
+                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                            }
+                        }
+                        else
+                        {
+                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                        }
                         attr.Value = p.getValue(key);
                         xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
                     }
@@ -3097,6 +3203,12 @@ namespace myPword
 
         private XmlNode RecursiveChildren(ref XmlNode node, TreeNodeCollection pNodes)
         {
+
+            foreach (pNode p in pNodes)
+            {
+                p.getXmlName();
+            }
+
             foreach (pNode p in pNodes)
             {
                 XmlNode xn;
@@ -3113,11 +3225,36 @@ namespace myPword
                 xn.InnerText = (String)p.Tag;
                 foreach (String key in p.getKeys())
                 {
-                    if (!(p.Namespace == null))
+                    System.Xml.NameTable nt = new NameTable();
+                    nt.Add(p.Text);
+                    XmlNameTable xnt = (XmlNameTable)nt;
+                    System.Xml.XmlNamespaceManager xnsm = new XmlNamespaceManager(xnt);
+                    if (p.Namespace != null)
                     {
-                        XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, p.Namespace.Prefix, p.Namespace.URI_PREFIX);
-                        attr.Value = p.getValue(key);
-                        xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                        if (p.Namespace.Prefix != null)
+                        {
+                            xnsm.AddNamespace(p.Namespace.Prefix, p.Namespace.URI_PREFIX);  // prefix will be like 'xs', and url will be like 'http://www.url.com/etc/'
+                        }
+                        if (p.Namespace.Suffix != null)
+                        {
+                            xnsm.AddNamespace(p.Namespace.Suffix, p.Namespace.URI_SUFFIX);
+                        }
+
+                    }
+
+                    if (p.Namespace != null)
+                    {
+                        if (p.Namespace.Prefix != null)
+                        {
+                            XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, p.Namespace.Prefix, p.Namespace.URI_PREFIX);
+                            attr.Value = p.getValue(key);
+                            xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                        }
+                        else
+                        {
+                            XmlNode attr;
+                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                        }
                     }
                     else
                     {
@@ -3962,6 +4099,8 @@ namespace myPword
                     using (WebClient client = new WebClient())
                     using (Stream stream = client.OpenRead(filenameHTML))
                     {
+                  //      byte[] buf = new byte[stream.Length];
+                  //      stream.Read(buf, 0, (int)stream.Length);
                         xdoc = new XmlDocument();
                         try
                         {
@@ -4057,22 +4196,38 @@ namespace myPword
                             if ((xn.Prefix != null) && (xn.Prefix != ""))
                             {
                                 aNode.Namespace = new NameSpace();
-                               // aNode.Namespace.Prefix = xn.Prefix;
+                                // aNode.Namespace.Prefix = xn.Prefix;
                                 aNode.Namespace.URI_PREFIX = xn.NamespaceURI;
-                                foreach (XmlAttribute attr in xn.Attributes)
+                                if (xn.Attributes.Count > 0)
                                 {
-                                    if (attr.Prefix == "xmlns") // its a namespace declaration
+                                    foreach (XmlAttribute attr in xn.Attributes)
                                     {
-                                        aNode.Namespace = new NameSpace();
-                                        aNode.Namespace.Prefix = attr.LocalName;
-                                        aNode.Namespace.URI_PREFIX = attr.Value;
+                                        if (attr.Prefix == "xmlns") // its a namespace declaration
+                                        {
+                                            aNode.Namespace = new NameSpace();
+                                            aNode.Namespace.Prefix = attr.LocalName;
+                                            aNode.Namespace.URI_PREFIX = attr.Value;
+                                        }
+                                        else
+                                        {
+                                            aNode.AddAttribute(attr.LocalName, attr.Value);
+                                        }
                                     }
-                                    else
+                                }
+
+                            }
+                            else
+                            {
+
+                                if (xn.Attributes.Count > 0)
+                                {
+                                    foreach (XmlAttribute attr in xn.Attributes)
                                     {
-                                        aNode.AddAttribute(attr.LocalName, attr.Value);
+                                            aNode.AddAttribute(attr.LocalName, attr.Value);
                                     }
                                 }
                             }
+
                             // check first child to see if text
                             if ((xn.FirstChild != null) && (xn.FirstChild.NodeType == XmlNodeType.Text))
                             {

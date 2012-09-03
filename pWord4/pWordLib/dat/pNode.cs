@@ -10,6 +10,8 @@ using System.Runtime.Serialization;
 using System.Security.Permissions;
 using pWordLib.dat.math;
 using System.Drawing;
+using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace pWordLib.dat
 {
@@ -62,6 +64,8 @@ namespace pWordLib.dat
 
         public String getXmlName()
         {
+            DetectComplexNodeName();
+
             if ((base.Text == null) || (base.Text == ""))
             {
                 return Guid.NewGuid().ToString();
@@ -69,19 +73,20 @@ namespace pWordLib.dat
             else
             {
                 // exceptions here
-                base.Text = base.Text.Replace(@"#", "");
-                base.Text = base.Text.Replace(@"/", "");
-                base.Text = base.Text.Replace(@"\", "");
-                base.Text = base.Text.Replace(@"@", "");
-                base.Text = base.Text.Replace(@"(", "");
-                base.Text = base.Text.Replace(@")", "");
-                base.Text = base.Text.Replace(@"*", "");
-                base.Text = base.Text.Replace(@"%", "");
-                base.Text = base.Text.Replace(@" ", "");
-                base.Text = base.Text.Replace(@"+", "");
-                base.Text = base.Text.Replace(@";", "");
-                base.Text = base.Text.Replace(@":", "");
-                base.Text = base.Text.Replace(@"&", "");
+                // try and figure out why these cause the system to export so slowly
+                //base.Text = base.Text.Replace(@"#", "");
+                //base.Text = base.Text.Replace(@"/", "");
+                //base.Text = base.Text.Replace(@"\", "");
+                //base.Text = base.Text.Replace(@"@", "");
+                //base.Text = base.Text.Replace(@"(", "");
+                //base.Text = base.Text.Replace(@")", "");
+                //base.Text = base.Text.Replace(@"*", "");
+                //base.Text = base.Text.Replace(@"%", "");
+                //base.Text = base.Text.Replace(@" ", "");
+                //base.Text = base.Text.Replace(@"+", "");
+                //base.Text = base.Text.Replace(@";", "");
+                //base.Text = base.Text.Replace(@":", "");
+                //base.Text = base.Text.Replace(@"&", "");
                 if (base.Text == "")
                 {
                     return Guid.NewGuid().ToString();
@@ -131,7 +136,6 @@ namespace pWordLib.dat
         public void AddAttribute(String key, String value)
         {
             attributes.Add(key, value);
-            
         }
 
         private List<IOperate> operations = null;
@@ -270,5 +274,37 @@ namespace pWordLib.dat
 
             return pClone;
         }
+
+        public void DetectComplexNodeName()
+        {
+
+            // get attributes from node.Text from a name
+            // node.Text deterimne if node.Text is name followed by attr1="value1" attr2="value2" ...
+            Regex rx = new Regex("(?<name>[A-z]{1,1}\\w*)\\s(\\s*(?<attr>[A-z]{1,1}\\w*)=['\"](?<value>\\w*)\\s*['\"])*", RegexOptions.Singleline);
+            if (rx.IsMatch(this.Text))
+            {
+                MatchCollection mc = rx.Matches(this.Text);
+                int matchCount = mc.Count;
+                foreach (Match m in mc)
+                {
+                    // first get the name
+                    Debug.WriteLine("{0} is group count.", m.Groups.Count);
+                    this.Text = m.Groups["name"].ToString();
+                    Regex rxattr = new Regex("(\\s*(?<attr>[A-z]{1,1}\\w*)=['\"](?<value>[^'\"]*)\\s*['\"])", RegexOptions.Multiline);
+                    if (rxattr.IsMatch(m.Value))
+                    {
+                        // then get the attributes
+                        MatchCollection mca = rxattr.Matches(m.Value);
+                        int matchAttrCount = mca.Count;
+                        foreach (Match ma in mca)
+                        {
+                            this.AddAttribute(ma.Groups["attr"].ToString(), ma.Groups["value"].ToString());
+                            Debug.WriteLine("{0} is group count.", ma.Groups.Count);
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
