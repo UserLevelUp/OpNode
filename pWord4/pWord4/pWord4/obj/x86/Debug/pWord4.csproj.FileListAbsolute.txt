@@ -1,0 +1,8 @@
+C:\src\pword\pWord4\pWord4\pWord4\bin\Debug\pWord4.exe
+C:\src\pword\pWord4\pWord4\pWord4\bin\Debug\pWord4.pdb
+C:\src\pword\pWord4\pWord4\pWord4\obj\x86\Debug\pWord4.csprojAssemblyReference.cache
+C:\src\pword\pWord4\pWord4\pWord4\obj\x86\Debug\pWord4.Properties.Resources.resources
+C:\src\pword\pWord4\pWord4\pWord4\obj\x86\Debug\pWord4.csproj.GenerateResource.cache
+C:\src\pword\pWord4\pWord4\pWord4\obj\x86\Debug\pWord4.csproj.CoreCompileInputs.cache
+C:\src\pword\pWord4\pWord4\pWord4\obj\x86\Debug\pWord4.exe
+C:\src\pword\pWord4\pWord4\pWord4\obj\x86\Debug\pWord4.pdb

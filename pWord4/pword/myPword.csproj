@@ -27,7 +27,7 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <SignAssembly>false</SignAssembly>
     <TargetZone>LocalIntranet</TargetZone>
     <GenerateManifests>true</GenerateManifests>
@@ -206,11 +206,6 @@
     <Compile Include="Win32.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Content Include="x\xout\ani.html" />
-    <Content Include="x\xout\img\Marc.jpg" />
-    <Content Include="x\xsl\marc.xslt">
-      <SubType>Designer</SubType>
-    </Content>
     <EmbeddedResource Include="AddItem.resx">
       <DependentUpon>AddItem.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -256,33 +251,42 @@
       <DependentUpon>XMLSchema1.xsd</DependentUpon>
     </None>
     <Content Include="App.ico" />
-    <Content Include="bin\Debug\icons\master1.ico" />
-    <Content Include="bin\Debug\icons\master2.ico" />
-    <Content Include="bin\Debug\icons\PW.ico" />
-    <Content Include="bin\Debug\icons\Sum.ico" />
-    <Content Include="bin\Debug\icons\toolbar\AutoHide.ico" />
-    <Content Include="bin\Debug\icons\toolbar\AutoHide2.ico" />
-    <Content Include="bin\Release\icons\master1.ico" />
-    <Content Include="bin\Release\icons\master2.ico" />
-    <Content Include="bin\Release\icons\PW.ico" />
-    <Content Include="bin\Release\icons\Sum.ico" />
-    <Content Include="bin\Release\icons\toolbar\AutoHide.ico" />
-    <Content Include="bin\Release\icons\toolbar\AutoHide2.ico" />
     <Content Include="Data.xml" />
     <Content Include="Data.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Data.Designer.cs</LastGenOutput>
     </Content>
     <None Include="Resources\%24this.Icon.ico" />
-    <Content Include="icons\Sum.ico" />
+    <Content Include="icons\Master.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>ICONS</CustomToolNamespace>
+    </Content>
+    <Content Include="icons\Sum.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\Division.ico" />
     <None Include="Resources\Cos.ico" />
     <Content Include="Resources\ExpandedLink.ico" />
-    <Content Include="icons\master1.ico" />
-    <Content Include="icons\master2.ico" />
-    <Content Include="icons\PW.ico" />
-    <Content Include="icons\toolbar\AutoHide.ico" />
-    <Content Include="icons\toolbar\AutoHide2.ico" />
+    <Content Include="icons\master1.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>ICONS</CustomToolNamespace>
+    </Content>
+    <Content Include="icons\master2.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>ICONS</CustomToolNamespace>
+    </Content>
+    <Content Include="icons\PW.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>ICONS</CustomToolNamespace>
+    </Content>
+    <Content Include="icons\toolbar\AutoHide.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>ICONS</CustomToolNamespace>
+    </Content>
+    <Content Include="icons\toolbar\AutoHide2.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>ICONS</CustomToolNamespace>
+    </Content>
     <None Include="Resources\Plus.ico" />
     <None Include="Resources\Minus.ico" />
     <None Include="Resources\Empty.ico" />
@@ -334,7 +338,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="x\xml\" />
+    <Folder Include="bin\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
