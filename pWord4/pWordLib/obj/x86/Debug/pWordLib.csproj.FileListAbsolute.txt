@@ -1,5 +1,0 @@
-C:\src\pword\pWord4\pWordLib\bin\x86\Debug\pWordLib.dll
-C:\src\pword\pWord4\pWordLib\bin\x86\Debug\pWordLib.pdb
-C:\src\pword\pWord4\pWordLib\obj\x86\Debug\pWordLib.csproj.CoreCompileInputs.cache
-C:\src\pword\pWord4\pWordLib\obj\x86\Debug\pWordLib.dll
-C:\src\pword\pWord4\pWordLib\obj\x86\Debug\pWordLib.pdb

@@ -1,9 +1,0 @@
-C:\src\pword\pWord4\LeftRight\bin\x86\Debug\LeftRight.dll
-C:\src\pword\pWord4\LeftRight\bin\x86\Debug\LeftRight.pdb
-C:\src\pword\pWord4\LeftRight\obj\x86\Debug\LeftRight.ChangeName.resources
-C:\src\pword\pWord4\LeftRight\obj\x86\Debug\LeftRight.LeftRight.resources
-C:\src\pword\pWord4\LeftRight\obj\x86\Debug\LeftRight.Resource1.resources
-C:\src\pword\pWord4\LeftRight\obj\x86\Debug\LeftRight.csproj.GenerateResource.cache
-C:\src\pword\pWord4\LeftRight\obj\x86\Debug\LeftRight.csproj.CoreCompileInputs.cache
-C:\src\pword\pWord4\LeftRight\obj\x86\Debug\LeftRight.dll
-C:\src\pword\pWord4\LeftRight\obj\x86\Debug\LeftRight.pdb

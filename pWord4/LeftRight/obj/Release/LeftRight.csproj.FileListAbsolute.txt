@@ -1,8 +1,0 @@
-C:\src\pword\pWord4\LeftRight\bin\Release\LeftRight.dll
-C:\src\pword\pWord4\LeftRight\obj\Release\LeftRight.csprojAssemblyReference.cache
-C:\src\pword\pWord4\LeftRight\obj\Release\LeftRight.ChangeName.resources
-C:\src\pword\pWord4\LeftRight\obj\Release\LeftRight.LeftRight.resources
-C:\src\pword\pWord4\LeftRight\obj\Release\LeftRight.Resource1.resources
-C:\src\pword\pWord4\LeftRight\obj\Release\LeftRight.csproj.GenerateResource.cache
-C:\src\pword\pWord4\LeftRight\obj\Release\LeftRight.csproj.CoreCompileInputs.cache
-C:\src\pword\pWord4\LeftRight\obj\Release\LeftRight.dll
