@@ -1497,7 +1497,7 @@ namespace myPword
             this.tabNamespaces.Location = new System.Drawing.Point(4, 29);
             this.tabNamespaces.Name = "tabNamespaces";
             this.tabNamespaces.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNamespaces.Size = new System.Drawing.Size(550, 114);
+            this.tabNamespaces.Size = new System.Drawing.Size(450, 114);
             this.tabNamespaces.TabIndex = 1;
             this.tabNamespaces.Text = "Namespaces";
             this.tabNamespaces.UseVisualStyleBackColor = true;
@@ -1512,7 +1512,7 @@ namespace myPword
             this.lstNamespaces.HideSelection = false;
             this.lstNamespaces.Location = new System.Drawing.Point(3, 3);
             this.lstNamespaces.Name = "lstNamespaces";
-            this.lstNamespaces.Size = new System.Drawing.Size(544, 108);
+            this.lstNamespaces.Size = new System.Drawing.Size(444, 108);
             this.lstNamespaces.TabIndex = 0;
             this.lstNamespaces.UseCompatibleStateImageBehavior = false;
             this.lstNamespaces.View = System.Windows.Forms.View.Details;
@@ -1538,7 +1538,7 @@ namespace myPword
             this.tabAttributes.Location = new System.Drawing.Point(4, 29);
             this.tabAttributes.Name = "tabAttributes";
             this.tabAttributes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAttributes.Size = new System.Drawing.Size(550, 114);
+            this.tabAttributes.Size = new System.Drawing.Size(450, 114);
             this.tabAttributes.TabIndex = 2;
             this.tabAttributes.Text = "Attributes";
             this.tabAttributes.UseVisualStyleBackColor = true;
@@ -1552,7 +1552,7 @@ namespace myPword
             this.lstAttributes.HideSelection = false;
             this.lstAttributes.Location = new System.Drawing.Point(3, 3);
             this.lstAttributes.Name = "lstAttributes";
-            this.lstAttributes.Size = new System.Drawing.Size(544, 108);
+            this.lstAttributes.Size = new System.Drawing.Size(444, 108);
             this.lstAttributes.TabIndex = 1;
             this.lstAttributes.UseCompatibleStateImageBehavior = false;
             this.lstAttributes.View = System.Windows.Forms.View.Details;
