@@ -120,21 +120,22 @@ namespace LeftRight
             this.txtMaster.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaster.Location = new System.Drawing.Point(24, 0);
             this.txtMaster.Name = "txtMaster";
-            this.txtMaster.Size = new System.Drawing.Size(128, 20);
+            this.txtMaster.Size = new System.Drawing.Size(128, 26);
             this.txtMaster.TabIndex = 2;
             this.txtMaster.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtMaster_MouseClick);
             // 
             // ctxChangeName
             // 
+            this.ctxChangeName.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.ctxChangeName.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctxItemChangeName});
             this.ctxChangeName.Name = "ctxChangeName";
-            this.ctxChangeName.Size = new System.Drawing.Size(151, 26);
+            this.ctxChangeName.Size = new System.Drawing.Size(197, 36);
             // 
             // ctxItemChangeName
             // 
             this.ctxItemChangeName.Name = "ctxItemChangeName";
-            this.ctxItemChangeName.Size = new System.Drawing.Size(150, 22);
+            this.ctxItemChangeName.Size = new System.Drawing.Size(196, 32);
             this.ctxItemChangeName.Text = "Change Name";
             this.ctxItemChangeName.Click += new System.EventHandler(this.ctxItemChangeName_Click);
             // 
