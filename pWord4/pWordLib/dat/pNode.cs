@@ -40,6 +40,7 @@ namespace pWordLib.dat
             {
                 this.operations = new List<IOperate>();
             }
+
         }
 
         //public pNode Parent {
