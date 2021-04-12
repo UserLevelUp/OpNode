@@ -76,4 +76,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <StartWithIE>true</StartWithIE>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="ChangeName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

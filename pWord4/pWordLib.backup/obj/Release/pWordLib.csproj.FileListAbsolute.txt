@@ -1,0 +1,6 @@
+C:\src\pword\pWord4\pWordLib\bin\Release\pWordLib.dll
+C:\src\pword\pWord4\pWordLib\bin\Release\pWordLib.pdb
+C:\src\pword\pWord4\pWordLib\obj\Release\pWordLib.csprojAssemblyReference.cache
+C:\src\pword\pWord4\pWordLib\obj\Release\pWordLib.csproj.CoreCompileInputs.cache
+C:\src\pword\pWord4\pWordLib\obj\Release\pWordLib.dll
+C:\src\pword\pWord4\pWordLib\obj\Release\pWordLib.pdb

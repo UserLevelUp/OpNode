@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myPword", "myPword.csproj", "{439D51A6-D899-4BB9-8B93-85B486673842}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{439D51A6-D899-4BB9-8B93-85B486673842}.Debug.ActiveCfg = Debug|.NET
+		{439D51A6-D899-4BB9-8B93-85B486673842}.Debug.Build.0 = Debug|.NET
+		{439D51A6-D899-4BB9-8B93-85B486673842}.Release.ActiveCfg = Release|.NET
+		{439D51A6-D899-4BB9-8B93-85B486673842}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

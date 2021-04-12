@@ -50,6 +50,7 @@ namespace pWordLib.dat.math
 
                 // note: to make this a little more clear, if it is an operations field this current pNode has child nodes under it, it
                 // will then process all child nodes under it based on whatever type of operaiton it is performing
+                // Also note is only performs operations on the current set of children and not children of children
 
                 // attempt to convert to decimal and place it in num and perform the multiplication operation
                 else if (Double.TryParse((String)node.Tag, out number))

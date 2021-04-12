@@ -71,4 +71,24 @@
   <PropertyGroup>
     <EnableSecurityDebugging>false</EnableSecurityDebugging>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="AddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AYS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="pWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

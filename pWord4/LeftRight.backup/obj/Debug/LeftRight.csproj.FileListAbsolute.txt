@@ -1,0 +1,10 @@
+C:\src\pword\pWord4\LeftRight\bin\Debug\LeftRight.dll
+C:\src\pword\pWord4\LeftRight\bin\Debug\LeftRight.pdb
+C:\src\pword\pWord4\LeftRight\obj\Debug\LeftRight.ChangeName.resources
+C:\src\pword\pWord4\LeftRight\obj\Debug\LeftRight.LeftRight.resources
+C:\src\pword\pWord4\LeftRight\obj\Debug\LeftRight.Resource1.resources
+C:\src\pword\pWord4\LeftRight\obj\Debug\LeftRight.csproj.GenerateResource.cache
+C:\src\pword\pWord4\LeftRight\obj\Debug\LeftRight.csproj.CoreCompileInputs.cache
+C:\src\pword\pWord4\LeftRight\obj\Debug\LeftRight.dll
+C:\src\pword\pWord4\LeftRight\obj\Debug\LeftRight.pdb
+C:\src\pword\pWord4\LeftRight\obj\Debug\LeftRight.csprojAssemblyReference.cache

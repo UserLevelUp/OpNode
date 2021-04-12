@@ -1,16 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{439D51A6-D899-4BB9-8B93-85B486673842}</ProjectGuid>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ApplicationIcon>App.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>myPword</AssemblyName>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
@@ -18,24 +12,15 @@
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>myPword</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>myPword.pWord</StartupObject>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <SignManifests>false</SignManifests>
-    <SignAssembly>false</SignAssembly>
     <TargetZone>LocalIntranet</TargetZone>
     <GenerateManifests>true</GenerateManifests>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
     <ExcludedPermissions>
     </ExcludedPermissions>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
     <PublishUrl>C:\tmp\pword\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -51,82 +36,51 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DocumentationFile>
     </DocumentationFile>
-    <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
     <NoWarn>
     </NoWarn>
-    <Optimize>false</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
-    <DebugType>full</DebugType>
-    <ErrorReport>prompt</ErrorReport>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>bin\Release\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>TRACE</DefineConstants>
     <DocumentationFile>
     </DocumentationFile>
-    <DebugSymbols>false</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
     <NoWarn>
     </NoWarn>
-    <Optimize>true</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
     <DebugType>none</DebugType>
-    <ErrorReport>prompt</ErrorReport>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <BaseAddress>285212672</BaseAddress>
     <Optimize>true</Optimize>
     <FileAlignment>4096</FileAlignment>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
     <BaseAddress>285212672</BaseAddress>
-    <Optimize>true</Optimize>
     <FileAlignment>4096</FileAlignment>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>1907EFF02E5E85481B128DE9637224A1E4DD6DAD</ManifestCertificateThumbprint>
@@ -135,127 +89,35 @@
     <ManifestKeyFile>myPword_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System">
+    <Reference Update="System">
       <Name>System</Name>
     </Reference>
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Data">
+    <Reference Update="System.Data">
       <Name>System.Data</Name>
     </Reference>
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Drawing">
+    <Reference Update="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Windows.Forms">
-      <Name>System.Windows.Forms</Name>
-    </Reference>
-    <Reference Include="System.Xml">
+    <Reference Update="System.Xml">
       <Name>System.XML</Name>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddItem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AYS.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Data.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Data.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DrawpNodeEventArgs.cs" />
-    <Compile Include="frmAbout.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHelp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Image.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LL.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="pView.cs">
+    <Compile Update="pView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="pWord.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="pWordSettings.cs" />
-    <Compile Include="pWordSettings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>pWordSettings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="pWordSettings1.cs" />
-    <Compile Include="Resource1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource1.resx</DependentUpon>
-    </Compile>
-    <Compile Include="UserActivityHook.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Win32.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <EmbeddedResource Include="AddItem.resx">
-      <DependentUpon>AddItem.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddMaster.resx">
-      <DependentUpon>AddMaster.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AYS.resx">
-      <DependentUpon>AYS.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAbout.resx">
-      <DependentUpon>frmAbout.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHelp.resx">
-      <DependentUpon>frmHelp.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="pWord.resx">
-      <DependentUpon>pWord.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resource1.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="app.config" />
-    <None Include="Data.xsc">
+    <Content Include="appsettings.json" />
+    <None Update="Data.xsc">
       <DependentUpon>Data.xsd</DependentUpon>
     </None>
-    <None Include="Data.xss">
+    <None Update="Data.xss">
       <DependentUpon>Data.xsd</DependentUpon>
     </None>
-    <None Include="Data.xsx">
+    <None Update="Data.xsx">
       <DependentUpon>Data.xsd</DependentUpon>
     </None>
     <None Include="myPword_TemporaryKey.pfx" />
-    <None Include="Properties\app.manifest" />
-    <None Include="pWordSettings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>pWordSettings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="XMLSchema1.xsx">
+    <None Update="XMLSchema1.xsx">
       <DependentUpon>XMLSchema1.xsd</DependentUpon>
     </None>
     <Content Include="App.ico" />
@@ -272,8 +134,6 @@
     <Content Include="icons\Sum.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\Division.ico" />
-    <None Include="Resources\Cos.ico" />
     <Content Include="Resources\ExpandedLink.ico" />
     <Content Include="icons\master1.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -295,28 +155,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <CustomToolNamespace>ICONS</CustomToolNamespace>
     </Content>
-    <None Include="Resources\Plus.ico" />
-    <None Include="Resources\Minus.ico" />
-    <None Include="Resources\Empty.ico" />
-    <None Include="Resources\SubMinus.ico" />
-    <None Include="Resources\Multiplication.ico" />
-    <None Include="Resources\Subtraction.ico" />
-    <None Include="Resources\Sin.ico" />
     <Content Include="Resources\Sum.ico" />
-    <None Include="Resources\_.ico" />
-    <None Include="Resources\Tan.ico" />
     <Content Include="XMLFile1.xml" />
     <Content Include="XMLSchema1.xsd" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LeftRight\LeftRight.csproj">
-      <Project>{351681A0-AA94-4BF9-855A-683D5981F90D}</Project>
-      <Name>LeftRight</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\pWordLib\pWordLib.csproj">
-      <Project>{001AC338-98C7-440E-ABC3-4D0056FE6D56}</Project>
-      <Name>pWordLib</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\LeftRight\LeftRight.csproj" />
+    <ProjectReference Include="..\pWordLib\pWordLib.csproj" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -345,12 +190,44 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.Federation" Version="4.8.1" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.2.217201">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Backup1\AssemblyInfo.cs" />
+    <Compile Remove="Backup1\LeftRight.cs" />
+    <Compile Remove="Backup\AddItem.cs" />
+    <Compile Remove="Backup\AddMaster.cs" />
+    <Compile Remove="Backup\AssemblyInfo.cs" />
+    <Compile Remove="Backup\AYS.cs" />
+    <Compile Remove="Backup\Data.cs" />
+    <Compile Remove="Backup\frmAbout.cs" />
+    <Compile Remove="Backup\frmHelp.cs" />
+    <Compile Remove="Backup\Image.cs" />
+    <Compile Remove="Backup\LL.cs" />
+    <Compile Remove="Backup\pWord.cs" />
+    <Compile Remove="Backup\UserActivityHook.cs" />
+    <Compile Remove="Backup\Win32.cs" />
+    <Compile Remove="Data.cs" />
+    <Compile Remove="ORMModel1.LinqToSqlAttributeMapping.PLiX.cs" />
+    <Compile Remove="ORMModel1._ORMCustomToolReport.cs" />
+    <Compile Remove="pNode.cs" />
+    <Compile Remove="pNodeoLD.cs" />
+    <EmbeddedResource Remove="Backup1\LeftRight.resx" />
+    <EmbeddedResource Remove="Backup\AddItem.resx" />
+    <EmbeddedResource Remove="Backup\AddMaster.resx" />
+    <EmbeddedResource Remove="Backup\AYS.resx" />
+    <EmbeddedResource Remove="Backup\frmAbout.resx" />
+    <EmbeddedResource Remove="Backup\frmHelp.resx" />
+    <EmbeddedResource Remove="Backup\pWord.resx" />
+  </ItemGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
 </Project>

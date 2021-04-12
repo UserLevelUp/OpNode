@@ -1,0 +1,1499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plx:root xmlns:plx="http://schemas.neumont.edu/CodeGeneration/PLiX">
+	<plx:namespaceImport name="System" />
+	<plx:namespaceImport name="System.Collections.Generic" />
+	<plx:namespaceImport name="System.ComponentModel" />
+	<plx:namespaceImport name="System.Data" />
+	<plx:namespaceImport name="System.Data.Linq" />
+	<plx:namespaceImport name="System.Data.Linq.Mapping" />
+	<plx:namespaceImport name="System.Data.SqlClient" />
+	<plx:namespaceImport name="System.Diagnostics.CodeAnalysis" />
+	<plx:namespaceImport name="System.Linq" />
+	<plx:namespaceImport name="System.Runtime.Serialization" />
+	<plx:namespaceImport name="System.Security.Permissions" />
+	<plx:namespaceImport name="System.ServiceModel" />
+	<plx:namespaceImport name="System.Threading" />
+	<plx:namespaceImport name="pWord 0.0.6.B.Properties" />
+	<plx:namespace name="myPword">
+		<plx:interface visibility="public" name="IORMModel1Service">
+			<plx:attribute dataTypeName="ServiceContractAttribute" />
+			<plx:pragma type="region" data="Insert, Select, Update, and Delete Operations for User" />
+			<plx:function visibility="public" name="InsertUser">
+				<plx:attribute dataTypeName="OperationContract">
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="IsOneWay" />
+							</plx:left>
+							<plx:right>
+								<plx:falseKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:param dataTypeName="User" name="userToInsert" />
+			</plx:function>
+			<plx:function visibility="public" name="SelectUserByPreferredIdentifier">
+				<plx:attribute dataTypeName="OperationContract">
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="IsOneWay" />
+							</plx:left>
+							<plx:right>
+								<plx:falseKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:param name="userId" dataTypeName="Int32" />
+				<plx:returns dataTypeName="User" />
+			</plx:function>
+			<plx:function visibility="public" name="UpdateUser">
+				<plx:attribute dataTypeName="OperationContract">
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="IsOneWay" />
+							</plx:left>
+							<plx:right>
+								<plx:falseKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:param dataTypeName="User" name="newUser" />
+				<plx:param dataTypeName="User" name="oldUser" />
+			</plx:function>
+			<plx:function name="DeleteUser" visibility="public">
+				<plx:attribute dataTypeName="OperationContract">
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="IsOneWay" />
+							</plx:left>
+							<plx:right>
+								<plx:falseKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:param dataTypeName="User" name="userToDelete" />
+			</plx:function>
+			<plx:pragma type="closeRegion" data="Insert, Select, Update, and Delete Operations for User" />
+		</plx:interface>
+		<plx:class partial="true" visibility="public" name="ORMModel1Service">
+			<plx:attribute dataTypeName="ServiceBehavior">
+				<plx:passParam>
+					<plx:binaryOperator type="assignNamed">
+						<plx:left>
+							<plx:nameRef name="InstanceContextMode" />
+						</plx:left>
+						<plx:right>
+							<plx:callStatic dataTypeName="InstanceContextMode" name="PerCall" type="field" />
+						</plx:right>
+					</plx:binaryOperator>
+				</plx:passParam>
+			</plx:attribute>
+			<plx:implementsInterface dataTypeName="IORMModel1Service" />
+			<plx:function visibility="public" name=".construct" />
+			<plx:field visibility="private" dataTypeName="ORMModel1DataContext" name="_serviceDataContext" />
+			<plx:property visibility="public" name="ServiceDataContext">
+				<plx:returns dataTypeName="ORMModel1DataContext" />
+				<plx:get>
+					<plx:return>
+						<plx:inlineStatement dataTypeName="ORMModel1DataContext">
+							<plx:nullFallbackOperator>
+								<plx:left>
+									<plx:callThis type="field" name="_serviceDataContext" />
+								</plx:left>
+								<plx:right>
+									<plx:inlineStatement dataTypeName="ORMModel1DataContext">
+										<plx:assign>
+											<plx:left>
+												<plx:callThis type="field" name="_serviceDataContext" />
+											</plx:left>
+											<plx:right>
+												<plx:callNew dataTypeName="ORMModel1DataContext" />
+											</plx:right>
+										</plx:assign>
+									</plx:inlineStatement>
+								</plx:right>
+							</plx:nullFallbackOperator>
+						</plx:inlineStatement>
+					</plx:return>
+				</plx:get>
+				<plx:set>
+					<plx:assign>
+						<plx:left>
+							<plx:callThis type="field" name="_serviceDataContext" />
+						</plx:left>
+						<plx:right>
+							<plx:valueKeyword />
+						</plx:right>
+					</plx:assign>
+				</plx:set>
+			</plx:property>
+			<plx:pragma type="region" data="IORMModel1 Insert, Select, Update, and Delete Implementation for User" />
+			<plx:function name="InsertUser" visibility="public">
+				<plx:attribute dataTypeName="OperationBehavior">
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="TransactionScopeRequired" />
+							</plx:left>
+							<plx:right>
+								<plx:trueKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="TransactionAutoComplete" />
+							</plx:left>
+							<plx:right>
+								<plx:trueKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:param dataTypeName="User" name="userToInsert" />
+				<plx:try>
+					<plx:autoDispose localName=".implied" dataTypeName="ServiceDataContext">
+						<plx:initialize>
+							<plx:callNew dataTypeName="ORMModel1DataContext" type="new" />
+						</plx:initialize>
+						<plx:callInstance name="InsertOnSubmit">
+							<plx:callObject>
+								<plx:callInstance type="property" name="UserTable">
+									<plx:callObject>
+										<plx:callThis type="property" name="ServiceDataContext" />
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:callObject>
+							<plx:passParam>
+								<plx:nameRef name="userToInsert" />
+							</plx:passParam>
+						</plx:callInstance>
+						<plx:callInstance name="SubmitChanges">
+							<plx:callObject>
+								<plx:callThis type="property" name="ServiceDataContext" />
+							</plx:callObject>
+							<plx:passParam>
+								<plx:callInstance type="property" name="FailOnFirstConflict">
+									<plx:callObject>
+										<plx:nameRef name="ConflictMode" />
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:passParam>
+						</plx:callInstance>
+					</plx:autoDispose>
+					<plx:catch dataTypeName="SqlException" localName="exception">
+						<plx:comment>TODO: Log the exception somewhere</plx:comment>
+						<plx:throw />
+					</plx:catch>
+					<plx:catch dataTypeName="Exception" localName="exception">
+						<plx:comment>TODO: Log the exception somewhere</plx:comment>
+						<plx:throw />
+					</plx:catch>
+				</plx:try>
+			</plx:function>
+			<plx:function visibility="public" name="SelectUserByPreferredIdentifier">
+				<plx:param name="userId" dataTypeName="Int32" />
+				<plx:returns dataTypeName="User" />
+				<plx:autoDispose localName=".implied" dataTypeName="ServiceDataContext">
+					<plx:initialize>
+						<plx:callNew dataTypeName="ORMModel1DataContext" type="new" />
+					</plx:initialize>
+					<plx:assign>
+						<plx:left>
+							<plx:callInstance name="ObjectTrackingEnabled" type="property">
+								<plx:callObject>
+									<plx:callThis name="ServiceDataContext" type="property" />
+								</plx:callObject>
+							</plx:callInstance>
+						</plx:left>
+						<plx:right>
+							<plx:falseKeyword />
+						</plx:right>
+					</plx:assign>
+					<plx:return>
+						<plx:callInstance name="First">
+							<plx:callObject>
+								<plx:callInstance name="Where">
+									<plx:callObject>
+										<plx:callInstance type="property" name="UserTable">
+											<plx:callObject>
+												<plx:callThis name="ServiceDataContext" type="property" />
+											</plx:callObject>
+										</plx:callInstance>
+									</plx:callObject>
+									<plx:passParam>
+										<plx:anonymousFunction>
+											<plx:param dataTypeName="User" name="userToSelect" />
+											<plx:return>
+												<plx:binaryOperator type="equality">
+													<plx:left>
+														<plx:callInstance name="UserId" type="property">
+															<plx:callObject>
+																<plx:nameRef name="userToSelect" type="parameter" />
+															</plx:callObject>
+														</plx:callInstance>
+													</plx:left>
+													<plx:right>
+														<plx:nameRef name="userId" type="parameter" />
+													</plx:right>
+												</plx:binaryOperator>
+											</plx:return>
+										</plx:anonymousFunction>
+									</plx:passParam>
+								</plx:callInstance>
+							</plx:callObject>
+						</plx:callInstance>
+					</plx:return>
+				</plx:autoDispose>
+			</plx:function>
+			<plx:function name="UpdateUser" visibility="public">
+				<plx:attribute dataTypeName="OperationBehavior">
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="TransactionScopeRequired" />
+							</plx:left>
+							<plx:right>
+								<plx:trueKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="TransactionAutoComplete" />
+							</plx:left>
+							<plx:right>
+								<plx:trueKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:param dataTypeName="User" name="newUser" />
+				<plx:param dataTypeName="User" name="oldUser" />
+				<plx:try>
+					<plx:autoDispose localName=".implied" dataTypeName="ServiceDataContext">
+						<plx:initialize>
+							<plx:callNew dataTypeName="ORMModel1DataContext" type="new" />
+						</plx:initialize>
+						<plx:callInstance name="Attach">
+							<plx:callObject>
+								<plx:callInstance type="property" name="UserTable">
+									<plx:callObject>
+										<plx:callThis type="property" name="ServiceDataContext" />
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:callObject>
+							<plx:passParam>
+								<plx:nameRef name="newUser" type="parameter" />
+							</plx:passParam>
+							<plx:passParam>
+								<plx:nameRef name="oldUser" type="parameter" />
+							</plx:passParam>
+						</plx:callInstance>
+						<plx:callInstance name="SubmitChanges">
+							<plx:callObject>
+								<plx:callThis type="property" name="ServiceDataContext" />
+							</plx:callObject>
+							<plx:passParam>
+								<plx:callInstance type="property" name="FailOnFirstConflict">
+									<plx:callObject>
+										<plx:nameRef name="ConflictMode" />
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:passParam>
+						</plx:callInstance>
+					</plx:autoDispose>
+					<plx:catch dataTypeName="SqlException" localName="exception">
+						<plx:comment>TODO: Log the exception somewhere</plx:comment>
+						<plx:throw />
+					</plx:catch>
+					<plx:catch dataTypeName="Exception" localName="exception">
+						<plx:comment>TODO: Log the exception somewhere</plx:comment>
+						<plx:throw />
+					</plx:catch>
+				</plx:try>
+			</plx:function>
+			<plx:function name="DeleteUser" visibility="public">
+				<plx:attribute dataTypeName="OperationBehavior">
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="TransactionScopeRequired" />
+							</plx:left>
+							<plx:right>
+								<plx:trueKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="TransactionAutoComplete" />
+							</plx:left>
+							<plx:right>
+								<plx:trueKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:param dataTypeName="User" name="userToDelete" />
+				<plx:try>
+					<plx:callInstance name="Attach">
+						<plx:callObject>
+							<plx:callInstance type="property" name="UserTable">
+								<plx:callObject>
+									<plx:callThis type="property" name="ServiceDataContext" />
+								</plx:callObject>
+							</plx:callInstance>
+						</plx:callObject>
+						<plx:passParam>
+							<plx:nameRef name="userToDelete" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:falseKeyword />
+						</plx:passParam>
+					</plx:callInstance>
+					<plx:callInstance name="DeleteOnSubmit">
+						<plx:callObject>
+							<plx:callInstance type="property" name="UserTable">
+								<plx:callObject>
+									<plx:callThis type="property" name="ServiceDataContext" />
+								</plx:callObject>
+							</plx:callInstance>
+						</plx:callObject>
+						<plx:passParam>
+							<plx:nameRef name="userToDelete" />
+						</plx:passParam>
+					</plx:callInstance>
+					<plx:callInstance name="SubmitChanges">
+						<plx:callObject>
+							<plx:callThis type="property" name="ServiceDataContext" />
+						</plx:callObject>
+						<plx:passParam>
+							<plx:callInstance type="property" name="FailOnFirstConflict">
+								<plx:callObject>
+									<plx:nameRef name="ConflictMode" />
+								</plx:callObject>
+							</plx:callInstance>
+						</plx:passParam>
+					</plx:callInstance>
+					<plx:catch dataTypeName="SqlException" localName="exception">
+						<plx:comment>TODO: Log the exception somewhere</plx:comment>
+						<plx:throw />
+					</plx:catch>
+					<plx:catch dataTypeName="Exception" localName="exception">
+						<plx:comment>TODO: Log the exception somewhere</plx:comment>
+						<plx:throw />
+					</plx:catch>
+				</plx:try>
+			</plx:function>
+			<plx:pragma type="closeRegion" data="IORMModel1 Insert, Select, Update, and Delete Implementation for User" />
+		</plx:class>
+		<plx:class partial="true" visibility="public" name="ORMModel1DataContext">
+			<plx:attribute dataTypeName="Database">
+				<plx:passParam>
+					<plx:binaryOperator type="assignNamed">
+						<plx:left>
+							<plx:nameRef name="Name" />
+						</plx:left>
+						<plx:right>
+							<plx:string data="ORMModel1" />
+						</plx:right>
+					</plx:binaryOperator>
+				</plx:passParam>
+			</plx:attribute>
+			<plx:derivesFromClass dataTypeName="DataContext" />
+			<plx:field visibility="private" static="true" dataTypeName="MappingSource" name="_mapping">
+				<plx:initialize>
+					<plx:callNew dataTypeName="AttributeMappingSource" />
+				</plx:initialize>
+			</plx:field>
+			<plx:function visibility="public" name=".construct">
+				<plx:initialize>
+					<plx:callThis name=".implied" accessor="base">
+						<plx:passParam>
+							<plx:callInstance name="ORMModel1ConnectionString" type="property">
+								<plx:callObject>
+									<plx:callStatic dataTypeName="Settings" name="Default" type="property" />
+								</plx:callObject>
+							</plx:callInstance>
+						</plx:passParam>
+						<plx:passParam>
+							<plx:nameRef name="_mapping" type="parameter" />
+						</plx:passParam>
+					</plx:callThis>
+				</plx:initialize>
+			</plx:function>
+			<plx:function name=".construct" visibility="public">
+				<plx:param name="connection" dataTypeName="IDbConnection" />
+				<plx:initialize>
+					<plx:callThis name=".implied" accessor="base">
+						<plx:passParam>
+							<plx:nameRef name="connection" type="parameter" />
+						</plx:passParam>
+					</plx:callThis>
+				</plx:initialize>
+			</plx:function>
+			<plx:function name=".construct" visibility="public">
+				<plx:param name="fileOrServerConnection" dataTypeName=".string" />
+				<plx:initialize>
+					<plx:callThis name=".implied" accessor="base">
+						<plx:passParam>
+							<plx:nameRef name="fileOrServerConnection" type="parameter" />
+						</plx:passParam>
+					</plx:callThis>
+				</plx:initialize>
+			</plx:function>
+			<plx:function name=".construct" visibility="public">
+				<plx:param name="connection" dataTypeName="IDbConnection" />
+				<plx:param name="mapping" dataTypeName="MappingSource" />
+				<plx:initialize>
+					<plx:callThis name=".implied" accessor="base">
+						<plx:passParam>
+							<plx:nameRef name="connection" type="parameter" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:nameRef name="mapping" type="parameter" />
+						</plx:passParam>
+					</plx:callThis>
+				</plx:initialize>
+			</plx:function>
+			<plx:function name=".construct" visibility="public">
+				<plx:param name="fileOrServerConnection" dataTypeName=".string" />
+				<plx:param name="mapping" dataTypeName="MappingSource" />
+				<plx:initialize>
+					<plx:callThis name=".implied" accessor="base">
+						<plx:passParam>
+							<plx:nameRef name="fileOrServerConnection" type="parameter" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:nameRef name="mapping" type="parameter" />
+						</plx:passParam>
+					</plx:callThis>
+				</plx:initialize>
+			</plx:function>
+			<plx:property name="UserTable" visibility="public">
+				<plx:returns dataTypeName="Table">
+					<plx:passTypeParam dataTypeName="User" />
+				</plx:returns>
+				<plx:get>
+					<plx:return>
+						<plx:callThis name="GetTable">
+							<plx:passMemberTypeParam dataTypeName="User" />
+						</plx:callThis>
+					</plx:return>
+				</plx:get>
+			</plx:property>
+		</plx:class>
+		<plx:class partial="true" visibility="public" name="User">
+			<plx:attribute dataTypeName="DataContract">
+				<plx:passParam>
+					<plx:binaryOperator type="assignNamed">
+						<plx:left>
+							<plx:nameRef name="Name" />
+						</plx:left>
+						<plx:right>
+							<plx:string data="User" />
+						</plx:right>
+					</plx:binaryOperator>
+				</plx:passParam>
+			</plx:attribute>
+			<plx:attribute dataTypeName="Table">
+				<plx:passParam>
+					<plx:binaryOperator type="assignNamed">
+						<plx:left>
+							<plx:nameRef name="Name" />
+						</plx:left>
+						<plx:right>
+							<plx:string data="ORMModel1.&quot;User&quot;" />
+						</plx:right>
+					</plx:binaryOperator>
+				</plx:passParam>
+			</plx:attribute>
+			<plx:implementsInterface dataTypeName="INotifyPropertyChanging" />
+			<plx:implementsInterface dataTypeName="INotifyPropertyChanged" />
+			<plx:function visibility="public" name=".construct" />
+			<plx:pragma type="region" data="INotifyPropertyChanging and INotifyPropertyChanged Information for User" />
+			<plx:field visibility="private" name="_propertyChangingEventHandler" dataTypeName="PropertyChangingEventHandler" />
+			<plx:event visibility="privateInterfaceMember" name="PropertyChanging">
+				<plx:attribute dataTypeName="SuppressMessageAttribute">
+					<plx:passParam>
+						<plx:string>Microsoft.Design</plx:string>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:string>CA1033:InterfaceMethodsShouldBeCallableByChildTypes</plx:string>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:interfaceMember memberName="PropertyChanging" dataTypeName="INotifyPropertyChanging" />
+				<plx:param name="sender" dataTypeName=".object" />
+				<plx:param name="e" dataTypeName="PropertyChangingEventArgs" />
+				<plx:explicitDelegateType dataTypeName="PropertyChangingEventHandler" />
+				<plx:onAdd>
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:valueKeyword />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:local name="currentHandler" dataTypeName="PropertyChangingEventHandler" />
+						<plx:loop checkCondition="before">
+							<plx:condition>
+								<plx:binaryOperator type="identityInequality">
+									<plx:left>
+										<plx:cast type="exceptionCast" dataTypeName=".object">
+											<plx:callStatic name="CompareExchange" dataTypeName="Interlocked">
+												<plx:passMemberTypeParam dataTypeName="PropertyChangingEventHandler" />
+												<plx:passParam type="inOut">
+													<plx:callThis type="field" name="_propertyChangingEventHandler" />
+												</plx:passParam>
+												<plx:passParam>
+													<plx:cast type="exceptionCast" dataTypeName="PropertyChangingEventHandler">
+														<plx:callStatic name="Combine" dataTypeName="Delegate" dataTypeQualifier="System">
+															<plx:passParam>
+																<plx:inlineStatement dataTypeName="PropertyChangingEventHandler">
+																	<plx:assign>
+																		<plx:left>
+																			<plx:nameRef type="local" name="currentHandler" />
+																		</plx:left>
+																		<plx:right>
+																			<plx:callThis type="field" name="_propertyChangingEventHandler" />
+																		</plx:right>
+																	</plx:assign>
+																</plx:inlineStatement>
+															</plx:passParam>
+															<plx:passParam>
+																<plx:valueKeyword />
+															</plx:passParam>
+														</plx:callStatic>
+													</plx:cast>
+												</plx:passParam>
+												<plx:passParam>
+													<plx:nameRef type="local" name="currentHandler" />
+												</plx:passParam>
+											</plx:callStatic>
+										</plx:cast>
+									</plx:left>
+									<plx:right>
+										<plx:cast type="exceptionCast" dataTypeName=".object">
+											<plx:nameRef type="local" name="currentHandler" />
+										</plx:cast>
+									</plx:right>
+								</plx:binaryOperator>
+							</plx:condition>
+						</plx:loop>
+					</plx:branch>
+				</plx:onAdd>
+				<plx:onRemove>
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:valueKeyword />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:local name="currentHandler" dataTypeName="PropertyChangingEventHandler" />
+						<plx:loop checkCondition="before">
+							<plx:condition>
+								<plx:binaryOperator type="identityInequality">
+									<plx:left>
+										<plx:cast type="exceptionCast" dataTypeName=".object">
+											<plx:callStatic name="CompareExchange" dataTypeName="Interlocked">
+												<plx:passMemberTypeParam dataTypeName="PropertyChangingEventHandler" />
+												<plx:passParam type="inOut">
+													<plx:callThis type="field" name="_propertyChangingEventHandler" />
+												</plx:passParam>
+												<plx:passParam>
+													<plx:cast type="exceptionCast" dataTypeName="PropertyChangingEventHandler">
+														<plx:callStatic name="Remove" dataTypeName="Delegate" dataTypeQualifier="System">
+															<plx:passParam>
+																<plx:inlineStatement dataTypeName="PropertyChangingEventHandler">
+																	<plx:assign>
+																		<plx:left>
+																			<plx:nameRef type="local" name="currentHandler" />
+																		</plx:left>
+																		<plx:right>
+																			<plx:callThis type="field" name="_propertyChangingEventHandler" />
+																		</plx:right>
+																	</plx:assign>
+																</plx:inlineStatement>
+															</plx:passParam>
+															<plx:passParam>
+																<plx:valueKeyword />
+															</plx:passParam>
+														</plx:callStatic>
+													</plx:cast>
+												</plx:passParam>
+												<plx:passParam>
+													<plx:nameRef type="local" name="currentHandler" />
+												</plx:passParam>
+											</plx:callStatic>
+										</plx:cast>
+									</plx:left>
+									<plx:right>
+										<plx:cast type="exceptionCast" dataTypeName=".object">
+											<plx:nameRef type="local" name="currentHandler" />
+										</plx:cast>
+									</plx:right>
+								</plx:binaryOperator>
+							</plx:condition>
+						</plx:loop>
+					</plx:branch>
+				</plx:onRemove>
+			</plx:event>
+			<plx:function visibility="private" overload="false" name="OnPropertyChanging">
+				<plx:param name="e" dataTypeName="PropertyChangingEventArgs" />
+				<plx:local name="eventHandler" dataTypeName="PropertyChangingEventHandler" />
+				<plx:branch>
+					<plx:condition>
+						<plx:binaryOperator type="identityInequality">
+							<plx:left>
+								<plx:cast type="exceptionCast" dataTypeName=".object">
+									<plx:inlineStatement dataTypeName="PropertyChangingEventHandler">
+										<plx:assign>
+											<plx:left>
+												<plx:nameRef type="local" name="eventHandler" />
+											</plx:left>
+											<plx:right>
+												<plx:callThis type="field" name="_propertyChangingEventHandler" />
+											</plx:right>
+										</plx:assign>
+									</plx:inlineStatement>
+								</plx:cast>
+							</plx:left>
+							<plx:right>
+								<plx:nullKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:condition>
+					<plx:callStatic name="InvokeEventHandlerAsync" dataTypeName="EventHandlerUtility">
+						<plx:passParam>
+							<plx:nameRef type="local" name="eventHandler" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:thisKeyword />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:nameRef type="parameter" name="e" />
+						</plx:passParam>
+					</plx:callStatic>
+				</plx:branch>
+			</plx:function>
+			<plx:field visibility="private" name="_propertyChangedEventHandler" dataTypeName="PropertyChangedEventHandler" />
+			<plx:event visibility="privateInterfaceMember" name="PropertyChanged">
+				<plx:attribute dataTypeName="SuppressMessageAttribute">
+					<plx:passParam>
+						<plx:string>Microsoft.Design</plx:string>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:string>CA1033:InterfaceMethodsShouldBeCallableByChildTypes</plx:string>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:interfaceMember memberName="PropertyChanged" dataTypeName="INotifyPropertyChanged" />
+				<plx:param name="sender" dataTypeName=".object" />
+				<plx:param name="e" dataTypeName="PropertyChangedEventArgs" />
+				<plx:explicitDelegateType dataTypeName="PropertyChangedEventHandler" />
+				<plx:onAdd>
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:valueKeyword />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:local name="currentHandler" dataTypeName="PropertyChangedEventHandler" />
+						<plx:loop checkCondition="before">
+							<plx:condition>
+								<plx:binaryOperator type="identityInequality">
+									<plx:left>
+										<plx:cast type="exceptionCast" dataTypeName=".object">
+											<plx:callStatic name="CompareExchange" dataTypeName="Interlocked">
+												<plx:passMemberTypeParam dataTypeName="PropertyChangedEventHandler" />
+												<plx:passParam type="inOut">
+													<plx:callThis type="field" name="_propertyChangedEventHandler" />
+												</plx:passParam>
+												<plx:passParam>
+													<plx:cast type="exceptionCast" dataTypeName="PropertyChangedEventHandler">
+														<plx:callStatic name="Combine" dataTypeName="Delegate" dataTypeQualifier="System">
+															<plx:passParam>
+																<plx:inlineStatement dataTypeName="PropertyChangedEventHandler">
+																	<plx:assign>
+																		<plx:left>
+																			<plx:nameRef type="local" name="currentHandler" />
+																		</plx:left>
+																		<plx:right>
+																			<plx:callThis type="field" name="_propertyChangedEventHandler" />
+																		</plx:right>
+																	</plx:assign>
+																</plx:inlineStatement>
+															</plx:passParam>
+															<plx:passParam>
+																<plx:valueKeyword />
+															</plx:passParam>
+														</plx:callStatic>
+													</plx:cast>
+												</plx:passParam>
+												<plx:passParam>
+													<plx:nameRef type="local" name="currentHandler" />
+												</plx:passParam>
+											</plx:callStatic>
+										</plx:cast>
+									</plx:left>
+									<plx:right>
+										<plx:cast type="exceptionCast" dataTypeName=".object">
+											<plx:nameRef type="local" name="currentHandler" />
+										</plx:cast>
+									</plx:right>
+								</plx:binaryOperator>
+							</plx:condition>
+						</plx:loop>
+					</plx:branch>
+				</plx:onAdd>
+				<plx:onRemove>
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:valueKeyword />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:local name="currentHandler" dataTypeName="PropertyChangedEventHandler" />
+						<plx:loop checkCondition="before">
+							<plx:condition>
+								<plx:binaryOperator type="identityInequality">
+									<plx:left>
+										<plx:cast type="exceptionCast" dataTypeName=".object">
+											<plx:callStatic name="CompareExchange" dataTypeName="Interlocked">
+												<plx:passMemberTypeParam dataTypeName="PropertyChangedEventHandler" />
+												<plx:passParam type="inOut">
+													<plx:callThis type="field" name="_propertyChangedEventHandler" />
+												</plx:passParam>
+												<plx:passParam>
+													<plx:cast type="exceptionCast" dataTypeName="PropertyChangedEventHandler">
+														<plx:callStatic name="Remove" dataTypeName="Delegate" dataTypeQualifier="System">
+															<plx:passParam>
+																<plx:inlineStatement dataTypeName="PropertyChangedEventHandler">
+																	<plx:assign>
+																		<plx:left>
+																			<plx:nameRef type="local" name="currentHandler" />
+																		</plx:left>
+																		<plx:right>
+																			<plx:callThis type="field" name="_propertyChangedEventHandler" />
+																		</plx:right>
+																	</plx:assign>
+																</plx:inlineStatement>
+															</plx:passParam>
+															<plx:passParam>
+																<plx:valueKeyword />
+															</plx:passParam>
+														</plx:callStatic>
+													</plx:cast>
+												</plx:passParam>
+												<plx:passParam>
+													<plx:nameRef type="local" name="currentHandler" />
+												</plx:passParam>
+											</plx:callStatic>
+										</plx:cast>
+									</plx:left>
+									<plx:right>
+										<plx:cast type="exceptionCast" dataTypeName=".object">
+											<plx:nameRef type="local" name="currentHandler" />
+										</plx:cast>
+									</plx:right>
+								</plx:binaryOperator>
+							</plx:condition>
+						</plx:loop>
+					</plx:branch>
+				</plx:onRemove>
+			</plx:event>
+			<plx:function visibility="private" overload="false" name="OnPropertyChanged">
+				<plx:param name="e" dataTypeName="PropertyChangedEventArgs" />
+				<plx:local name="eventHandler" dataTypeName="PropertyChangedEventHandler" />
+				<plx:branch>
+					<plx:condition>
+						<plx:binaryOperator type="identityInequality">
+							<plx:left>
+								<plx:cast type="exceptionCast" dataTypeName=".object">
+									<plx:inlineStatement dataTypeName="PropertyChangedEventHandler">
+										<plx:assign>
+											<plx:left>
+												<plx:nameRef type="local" name="eventHandler" />
+											</plx:left>
+											<plx:right>
+												<plx:callThis type="field" name="_propertyChangedEventHandler" />
+											</plx:right>
+										</plx:assign>
+									</plx:inlineStatement>
+								</plx:cast>
+							</plx:left>
+							<plx:right>
+								<plx:nullKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:condition>
+					<plx:callStatic name="InvokeEventHandlerAsync" dataTypeName="EventHandlerUtility">
+						<plx:passParam>
+							<plx:nameRef type="local" name="eventHandler" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:thisKeyword />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:nameRef type="parameter" name="e" />
+						</plx:passParam>
+					</plx:callStatic>
+				</plx:branch>
+			</plx:function>
+			<plx:pragma type="closeRegion" data="INotifyPropertyChanging and INotifyPropertyChanged Information for User" />
+			<plx:pragma type="region" data="PropertyChanging and PropertyChanged Information for UserId" />
+			<plx:field visibility="private" static="true" readOnly="true" dataTypeName="PropertyChangingEventArgs" name="UserIdPropertyChangingEventArgs">
+				<plx:initialize>
+					<plx:callNew dataTypeName="PropertyChangingEventArgs">
+						<plx:passParam>
+							<plx:string data="UserId" />
+						</plx:passParam>
+					</plx:callNew>
+				</plx:initialize>
+			</plx:field>
+			<plx:field visibility="private" static="true" readOnly="true" dataTypeName="PropertyChangedEventArgs" name="UserIdPropertyChangedEventArgs">
+				<plx:initialize>
+					<plx:callNew dataTypeName="PropertyChangedEventArgs">
+						<plx:passParam>
+							<plx:string data="UserId" />
+						</plx:passParam>
+					</plx:callNew>
+				</plx:initialize>
+			</plx:field>
+			<plx:pragma type="closeRegion" data="PropertyChanging and PropertyChanged Information for UserId" />
+			<plx:field visibility="private" name="_userId" dataTypeName="Int32" />
+			<plx:property visibility="public" name="UserId">
+				<plx:attribute dataTypeName="DataMember">
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="Name" />
+							</plx:left>
+							<plx:right>
+								<plx:string data="UserId" />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="IsRequired" />
+							</plx:left>
+							<plx:right>
+								<plx:trueKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:attribute dataTypeName="Column">
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="Name" />
+							</plx:left>
+							<plx:right>
+								<plx:string data="userId" />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="Storage" />
+							</plx:left>
+							<plx:right>
+								<plx:string data="_userId" />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="CanBeNull" />
+							</plx:left>
+							<plx:right>
+								<plx:falseKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="IsPrimaryKey" />
+							</plx:left>
+							<plx:right>
+								<plx:trueKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="IsDbGenerated" />
+							</plx:left>
+							<plx:right>
+								<plx:trueKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="DbType" />
+							</plx:left>
+							<plx:right>
+								<plx:string data="Int NOT NULL IDENTITY" />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:returns dataTypeName="Int32" />
+				<plx:get>
+					<plx:return>
+						<plx:callThis type="field" name="_userId" />
+					</plx:return>
+				</plx:get>
+				<plx:set>
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:callThis type="field" name="_userId" />
+								</plx:left>
+								<plx:right>
+									<plx:valueKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:callThis name="OnPropertyChanging">
+							<plx:passParam>
+								<plx:nameRef name="UserIdPropertyChangingEventArgs" />
+							</plx:passParam>
+						</plx:callThis>
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="_userId" />
+							</plx:left>
+							<plx:right>
+								<plx:valueKeyword />
+							</plx:right>
+						</plx:assign>
+						<plx:callThis name="OnPropertyChanged">
+							<plx:passParam>
+								<plx:nameRef name="UserIdPropertyChangedEventArgs" />
+							</plx:passParam>
+						</plx:callThis>
+					</plx:branch>
+				</plx:set>
+			</plx:property>
+			<plx:pragma type="region" data="PropertyChanging and PropertyChanged Information for Name" />
+			<plx:field visibility="private" static="true" readOnly="true" dataTypeName="PropertyChangingEventArgs" name="NamePropertyChangingEventArgs">
+				<plx:initialize>
+					<plx:callNew dataTypeName="PropertyChangingEventArgs">
+						<plx:passParam>
+							<plx:string data="Name" />
+						</plx:passParam>
+					</plx:callNew>
+				</plx:initialize>
+			</plx:field>
+			<plx:field visibility="private" static="true" readOnly="true" dataTypeName="PropertyChangedEventArgs" name="NamePropertyChangedEventArgs">
+				<plx:initialize>
+					<plx:callNew dataTypeName="PropertyChangedEventArgs">
+						<plx:passParam>
+							<plx:string data="Name" />
+						</plx:passParam>
+					</plx:callNew>
+				</plx:initialize>
+			</plx:field>
+			<plx:pragma type="closeRegion" data="PropertyChanging and PropertyChanged Information for Name" />
+			<plx:field visibility="private" name="_name" dataTypeName="String" />
+			<plx:property visibility="public" name="Name">
+				<plx:attribute dataTypeName="DataMember">
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="Name" />
+							</plx:left>
+							<plx:right>
+								<plx:string data="Name" />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="IsRequired" />
+							</plx:left>
+							<plx:right>
+								<plx:falseKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:attribute dataTypeName="Column">
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="Name" />
+							</plx:left>
+							<plx:right>
+								<plx:string data="name" />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="Storage" />
+							</plx:left>
+							<plx:right>
+								<plx:string data="_name" />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="CanBeNull" />
+							</plx:left>
+							<plx:right>
+								<plx:trueKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="DbType" />
+							</plx:left>
+							<plx:right>
+								<plx:string data="NChar(50)" />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:returns dataTypeName="String" />
+				<plx:get>
+					<plx:return>
+						<plx:callThis type="field" name="_name" />
+					</plx:return>
+				</plx:get>
+				<plx:set>
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:callThis type="field" name="_name" />
+								</plx:left>
+								<plx:right>
+									<plx:valueKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:callThis name="OnPropertyChanging">
+							<plx:passParam>
+								<plx:nameRef name="NamePropertyChangingEventArgs" />
+							</plx:passParam>
+						</plx:callThis>
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="_name" />
+							</plx:left>
+							<plx:right>
+								<plx:valueKeyword />
+							</plx:right>
+						</plx:assign>
+						<plx:callThis name="OnPropertyChanged">
+							<plx:passParam>
+								<plx:nameRef name="NamePropertyChangedEventArgs" />
+							</plx:passParam>
+						</plx:callThis>
+					</plx:branch>
+				</plx:set>
+			</plx:property>
+			<plx:pragma type="region" data="PropertyChanging and PropertyChanged Information for Phone" />
+			<plx:field visibility="private" static="true" readOnly="true" dataTypeName="PropertyChangingEventArgs" name="PhonePropertyChangingEventArgs">
+				<plx:initialize>
+					<plx:callNew dataTypeName="PropertyChangingEventArgs">
+						<plx:passParam>
+							<plx:string data="Phone" />
+						</plx:passParam>
+					</plx:callNew>
+				</plx:initialize>
+			</plx:field>
+			<plx:field visibility="private" static="true" readOnly="true" dataTypeName="PropertyChangedEventArgs" name="PhonePropertyChangedEventArgs">
+				<plx:initialize>
+					<plx:callNew dataTypeName="PropertyChangedEventArgs">
+						<plx:passParam>
+							<plx:string data="Phone" />
+						</plx:passParam>
+					</plx:callNew>
+				</plx:initialize>
+			</plx:field>
+			<plx:pragma type="closeRegion" data="PropertyChanging and PropertyChanged Information for Phone" />
+			<plx:field visibility="private" name="_phone" dataTypeName="String" />
+			<plx:property visibility="public" name="Phone">
+				<plx:attribute dataTypeName="DataMember">
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="Name" />
+							</plx:left>
+							<plx:right>
+								<plx:string data="Phone" />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="IsRequired" />
+							</plx:left>
+							<plx:right>
+								<plx:falseKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:attribute dataTypeName="Column">
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="Name" />
+							</plx:left>
+							<plx:right>
+								<plx:string data="phone" />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="Storage" />
+							</plx:left>
+							<plx:right>
+								<plx:string data="_phone" />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="CanBeNull" />
+							</plx:left>
+							<plx:right>
+								<plx:trueKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef name="DbType" />
+							</plx:left>
+							<plx:right>
+								<plx:string data="NChar(50)" />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:returns dataTypeName="String" />
+				<plx:get>
+					<plx:return>
+						<plx:callThis type="field" name="_phone" />
+					</plx:return>
+				</plx:get>
+				<plx:set>
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:callThis type="field" name="_phone" />
+								</plx:left>
+								<plx:right>
+									<plx:valueKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:callThis name="OnPropertyChanging">
+							<plx:passParam>
+								<plx:nameRef name="PhonePropertyChangingEventArgs" />
+							</plx:passParam>
+						</plx:callThis>
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="_phone" />
+							</plx:left>
+							<plx:right>
+								<plx:valueKeyword />
+							</plx:right>
+						</plx:assign>
+						<plx:callThis name="OnPropertyChanged">
+							<plx:passParam>
+								<plx:nameRef name="PhonePropertyChangedEventArgs" />
+							</plx:passParam>
+						</plx:callThis>
+					</plx:branch>
+				</plx:set>
+			</plx:property>
+		</plx:class>
+		<plx:class visibility="public" modifier="static" name="EventHandlerUtility">
+			<plx:attribute dataTypeName="HostProtectionAttribute">
+				<plx:passParam>
+					<plx:callStatic type="field" name="LinkDemand" dataTypeName="SecurityAction" />
+				</plx:passParam>
+				<plx:passParam>
+					<plx:binaryOperator type="assignNamed">
+						<plx:left>
+							<plx:nameRef type="namedParameter" name="SharedState" />
+						</plx:left>
+						<plx:right>
+							<plx:trueKeyword />
+						</plx:right>
+					</plx:binaryOperator>
+				</plx:passParam>
+			</plx:attribute>
+			<plx:function visibility="public" modifier="static" name="InvokeEventHandlerAsync">
+				<plx:param name="eventHandler" dataTypeName="PropertyChangedEventHandler" />
+				<plx:param name="sender" dataTypeName=".object" />
+				<plx:param name="e" dataTypeName="PropertyChangedEventArgs" />
+				<plx:branch>
+					<plx:condition>
+						<plx:binaryOperator type="identityEquality">
+							<plx:left>
+								<plx:cast type="exceptionCast" dataTypeName=".object">
+									<plx:nameRef type="parameter" name="eventHandler" />
+								</plx:cast>
+							</plx:left>
+							<plx:right>
+								<plx:nullKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:condition>
+					<plx:throw>
+						<plx:callNew dataTypeName="ArgumentNullException">
+							<plx:passParam>
+								<plx:string data="eventHandler" />
+							</plx:passParam>
+						</plx:callNew>
+					</plx:throw>
+				</plx:branch>
+				<plx:local name="invocationList" dataTypeName="Delegate" dataTypeQualifier="System" dataTypeIsSimpleArray="true">
+					<plx:initialize>
+						<plx:callInstance name="GetInvocationList">
+							<plx:callObject>
+								<plx:nameRef type="parameter" name="eventHandler" />
+							</plx:callObject>
+						</plx:callInstance>
+					</plx:initialize>
+				</plx:local>
+				<plx:loop checkCondition="before">
+					<plx:initializeLoop>
+						<plx:local name="i" dataTypeName=".i4">
+							<plx:initialize>
+								<plx:value type="i4" data="0" />
+							</plx:initialize>
+						</plx:local>
+					</plx:initializeLoop>
+					<plx:condition>
+						<plx:binaryOperator type="lessThan">
+							<plx:left>
+								<plx:nameRef type="local" name="i" />
+							</plx:left>
+							<plx:right>
+								<plx:callInstance type="property" name="Length">
+									<plx:callObject>
+										<plx:nameRef type="local" name="invocationList" />
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:condition>
+					<plx:beforeLoop>
+						<plx:increment type="post">
+							<plx:nameRef type="local" name="i" />
+						</plx:increment>
+					</plx:beforeLoop>
+					<plx:local name="currentEventHandler" dataTypeName="PropertyChangedEventHandler">
+						<plx:initialize>
+							<plx:cast type="exceptionCast" dataTypeName="PropertyChangedEventHandler">
+								<plx:callInstance type="arrayIndexer" name=".implied">
+									<plx:callObject>
+										<plx:nameRef type="local" name="invocationList" />
+									</plx:callObject>
+									<plx:passParam>
+										<plx:nameRef type="local" name="i" />
+									</plx:passParam>
+								</plx:callInstance>
+							</plx:cast>
+						</plx:initialize>
+					</plx:local>
+					<plx:callInstance name="BeginInvoke">
+						<plx:callObject>
+							<plx:nameRef type="local" name="currentEventHandler" />
+						</plx:callObject>
+						<plx:passParam>
+							<plx:nameRef type="parameter" name="sender" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:nameRef type="parameter" name="e" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:callNew dataTypeName="AsyncCallback">
+								<plx:passParam>
+									<plx:callInstance type="methodReference" name="EndInvoke">
+										<plx:callObject>
+											<plx:nameRef type="local" name="currentEventHandler" />
+										</plx:callObject>
+									</plx:callInstance>
+								</plx:passParam>
+							</plx:callNew>
+						</plx:passParam>
+						<plx:passParam>
+							<plx:nullKeyword />
+						</plx:passParam>
+					</plx:callInstance>
+				</plx:loop>
+			</plx:function>
+			<plx:function visibility="public" modifier="static" name="InvokeEventHandlerAsync">
+				<plx:param name="eventHandler" dataTypeName="PropertyChangingEventHandler" />
+				<plx:param name="sender" dataTypeName=".object" />
+				<plx:param name="e" dataTypeName="PropertyChangingEventArgs" />
+				<plx:branch>
+					<plx:condition>
+						<plx:binaryOperator type="identityEquality">
+							<plx:left>
+								<plx:cast type="exceptionCast" dataTypeName=".object">
+									<plx:nameRef type="parameter" name="eventHandler" />
+								</plx:cast>
+							</plx:left>
+							<plx:right>
+								<plx:nullKeyword />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:condition>
+					<plx:throw>
+						<plx:callNew dataTypeName="ArgumentNullException">
+							<plx:passParam>
+								<plx:string data="eventHandler" />
+							</plx:passParam>
+						</plx:callNew>
+					</plx:throw>
+				</plx:branch>
+				<plx:local name="invocationList" dataTypeName="Delegate" dataTypeQualifier="System" dataTypeIsSimpleArray="true">
+					<plx:initialize>
+						<plx:callInstance name="GetInvocationList">
+							<plx:callObject>
+								<plx:nameRef type="parameter" name="eventHandler" />
+							</plx:callObject>
+						</plx:callInstance>
+					</plx:initialize>
+				</plx:local>
+				<plx:loop checkCondition="before">
+					<plx:initializeLoop>
+						<plx:local name="i" dataTypeName=".i4">
+							<plx:initialize>
+								<plx:value type="i4" data="0" />
+							</plx:initialize>
+						</plx:local>
+					</plx:initializeLoop>
+					<plx:condition>
+						<plx:binaryOperator type="lessThan">
+							<plx:left>
+								<plx:nameRef type="local" name="i" />
+							</plx:left>
+							<plx:right>
+								<plx:callInstance type="property" name="Length">
+									<plx:callObject>
+										<plx:nameRef type="local" name="invocationList" />
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:condition>
+					<plx:beforeLoop>
+						<plx:increment type="post">
+							<plx:nameRef type="local" name="i" />
+						</plx:increment>
+					</plx:beforeLoop>
+					<plx:local name="currentEventHandler" dataTypeName="PropertyChangingEventHandler">
+						<plx:initialize>
+							<plx:cast type="exceptionCast" dataTypeName="PropertyChangingEventHandler">
+								<plx:callInstance type="arrayIndexer" name=".implied">
+									<plx:callObject>
+										<plx:nameRef type="local" name="invocationList" />
+									</plx:callObject>
+									<plx:passParam>
+										<plx:nameRef type="local" name="i" />
+									</plx:passParam>
+								</plx:callInstance>
+							</plx:cast>
+						</plx:initialize>
+					</plx:local>
+					<plx:callInstance name="BeginInvoke">
+						<plx:callObject>
+							<plx:nameRef type="local" name="currentEventHandler" />
+						</plx:callObject>
+						<plx:passParam>
+							<plx:nameRef type="parameter" name="sender" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:nameRef type="parameter" name="e" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:callNew dataTypeName="AsyncCallback">
+								<plx:passParam>
+									<plx:callInstance type="methodReference" name="EndInvoke">
+										<plx:callObject>
+											<plx:nameRef type="local" name="currentEventHandler" />
+										</plx:callObject>
+									</plx:callInstance>
+								</plx:passParam>
+							</plx:callNew>
+						</plx:passParam>
+						<plx:passParam>
+							<plx:nullKeyword />
+						</plx:passParam>
+					</plx:callInstance>
+				</plx:loop>
+			</plx:function>
+		</plx:class>
+	</plx:namespace>
+</plx:root>

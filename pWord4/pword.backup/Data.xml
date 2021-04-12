@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<WebSites xmlns="http://tempuri.org/Data.xsd">
+	<sitename id="1" value="www.simtest.net" un="mnoon" pw="password"></sitename>
+	<sitename id="2" value="www.simtest.net" un="mnoon" pw="password"></sitename>
+</WebSites>

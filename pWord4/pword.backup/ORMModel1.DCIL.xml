@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dcl:schema name="ORMModel1" xmlns:dcl="http://schemas.orm.net/DIL/DCIL" xmlns:dil="http://schemas.orm.net/DIL/DIL" xmlns:ddt="http://schemas.orm.net/DIL/DILDT" xmlns:dep="http://schemas.orm.net/DIL/DILEP" xmlns:dml="http://schemas.orm.net/DIL/DMIL" xmlns:ddl="http://schemas.orm.net/DIL/DDIL">
+	<dcl:table name="&quot;User&quot;" requestedName="User">
+		<dcl:column name="userId" isNullable="false" isIdentity="true">
+			<dcl:predefinedDataType name="INTEGER" />
+		</dcl:column>
+		<dcl:column name="name" isNullable="true" isIdentity="false">
+			<dcl:predefinedDataType name="CHARACTER" length="50" />
+		</dcl:column>
+		<dcl:column name="phone" isNullable="true" isIdentity="false">
+			<dcl:predefinedDataType name="CHARACTER" length="50" />
+		</dcl:column>
+		<dcl:uniquenessConstraint name="User_PK" isPrimary="true">
+			<dcl:columnRef name="userId" />
+		</dcl:uniquenessConstraint>
+	</dcl:table>
+</dcl:schema>

@@ -1,0 +1,320 @@
+2021-04-01 14:33:11.419 -07:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-04-01 14:33:11.465 -07:00 [INF] Registered 1 extensions:
+	Default extension
+2021-04-01 14:33:16.749 -07:00 [INF] Initializing upgrade step Select an entrypoint
+2021-04-01 14:33:28.474 -07:00 [INF] Applying upgrade step Select an entrypoint
+2021-04-01 14:33:41.484 -07:00 [INF] Upgrade step Select an entrypoint applied successfully
+2021-04-01 14:33:43.665 -07:00 [INF] Initializing upgrade step Select project to upgrade
+2021-04-01 14:33:43.676 -07:00 [INF] Initializing upgrade step Back up project
+2021-04-01 14:33:54.105 -07:00 [INF] Applying upgrade step Back up project
+2021-04-01 14:33:59.337 -07:00 [INF] Backing up C:\src\pword\pWord4\LeftRight to C:\src\pword\pWord4\LeftRight.backup
+2021-04-01 14:33:59.613 -07:00 [INF] Project backed up to C:\src\pword\pWord4\LeftRight.backup
+2021-04-01 14:33:59.614 -07:00 [INF] Upgrade step Back up project applied successfully
+2021-04-01 14:34:00.889 -07:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-04-01 14:34:05.633 -07:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-04-01 14:34:05.635 -07:00 [INF] Converting project file format with try-convert, version 0.7.216201
+2021-04-01 14:34:07.845 -07:00 [INF] [try-convert] Conversion complete!
+2021-04-01 14:34:08.182 -07:00 [INF] Project file converted successfully! The project may require additional changes to build successfully against the new .NET target.
+2021-04-01 14:34:09.435 -07:00 [INF] Upgrade step Convert project file to SDK style applied successfully
+2021-04-01 14:34:09.509 -07:00 [INF] Initializing upgrade step Clean up NuGet package references
+2021-04-01 14:34:16.354 -07:00 [INF] Reference to .NET Upgrade Assistant analyzer package (Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, version 0.2.217201) needs added
+2021-04-01 14:34:16.359 -07:00 [INF] Packages to be addded:
+Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.217201
+2021-04-01 14:34:16.364 -07:00 [INF] Applying upgrade step Clean up NuGet package references
+2021-04-01 14:34:16.369 -07:00 [INF] Adding package reference: Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.217201
+2021-04-01 14:34:19.309 -07:00 [INF] Upgrade step Clean up NuGet package references applied successfully
+2021-04-01 14:34:28.513 -07:00 [INF] Initializing upgrade step Update TFM
+2021-04-01 14:34:28.549 -07:00 [INF] TFM needs updated to net5.0-windows
+2021-04-01 14:34:35.513 -07:00 [INF] Applying upgrade step Update TFM
+2021-04-01 14:34:37.653 -07:00 [INF] Updated TFM to net5.0-windows
+2021-04-01 14:34:37.654 -07:00 [INF] Upgrade step Update TFM applied successfully
+2021-04-01 14:34:55.840 -07:00 [INF] Initializing upgrade step Update NuGet Packages
+2021-04-01 14:34:57.542 -07:00 [INF] Adding Microsoft.Windows.Compatibility 5.0.2
+2021-04-01 14:34:57.550 -07:00 [INF] Packages to be addded:
+Microsoft.Windows.Compatibility, Version=5.0.2
+2021-04-01 14:34:59.753 -07:00 [INF] Applying upgrade step Update NuGet Packages
+2021-04-01 14:34:59.754 -07:00 [INF] Adding package reference: Microsoft.Windows.Compatibility, Version=5.0.2
+2021-04-01 14:35:01.505 -07:00 [FTL] Unexpected exception analyzing package references for: C:\src\pword\pWord4\LeftRight\LeftRight.csproj
+NuGet.Protocol.Core.Types.FatalProtocolException: Failed to retrieve information about 'Microsoft.Windows.Compatibility' from remote source 'https://api.nuget.org/v3-flatcontainer/microsoft.windows.compatibility/index.json'.
+ ---> System.Net.Http.HttpRequestException: No such host is known. (api.nuget.org:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|283_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.DefaultConnectAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.AuthenticationHelper.SendWithAuthAsync(HttpRequestMessage request, Uri authUri, Boolean async, ICredentials credentials, Boolean preAuthenticate, Boolean isProxyAuth, Boolean doRequestAuth, HttpConnectionPool pool, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at NuGet.Protocol.ServerWarningLogHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at NuGet.Protocol.HttpSourceAuthenticationHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at NuGet.Protocol.HttpRetryHandler.<>c__DisplayClass2_1.<<SendAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at NuGet.Protocol.TimeoutUtility.StartWithTimeout[T](Func`2 getTask, TimeSpan timeout, String timeoutMessage, CancellationToken token)
+   at NuGet.Protocol.HttpRetryHandler.SendAsync(HttpRetryHandlerRequest request, String source, ILogger log, CancellationToken cancellationToken)
+   at NuGet.Protocol.HttpSource.GetThrottledResponse(Func`1 requestFactory, TimeSpan requestTimeout, TimeSpan downloadTimeout, Int32 maxTries, Boolean isRetry, Boolean isLastAttempt, Guid sessionId, ILogger log, CancellationToken cancellationToken)
+   at NuGet.Protocol.HttpSource.<>c__DisplayClass15_0`1.<<GetAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at NuGet.Common.ConcurrencyUtilities.ExecuteWithFileLockedAsync[T](String filePath, Func`2 action, CancellationToken token)
+   at NuGet.Common.ConcurrencyUtilities.ExecuteWithFileLockedAsync[T](String filePath, Func`2 action, CancellationToken token)
+   at NuGet.Protocol.HttpSource.GetAsync[T](HttpSourceCachedRequest request, Func`2 processAsync, ILogger log, CancellationToken token)
+   at NuGet.Protocol.HttpFileSystemBasedFindPackageByIdResource.FindPackagesByIdAsync(String id, SourceCacheContext cacheContext, ILogger logger, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at NuGet.Protocol.HttpFileSystemBasedFindPackageByIdResource.FindPackagesByIdAsync(String id, SourceCacheContext cacheContext, ILogger logger, CancellationToken cancellationToken)
+   at NuGet.Protocol.HttpFileSystemBasedFindPackageByIdResource.EnsurePackagesAsync(String id, SourceCacheContext cacheContext, ILogger logger, CancellationToken cancellationToken)
+   at NuGet.Protocol.HttpFileSystemBasedFindPackageByIdResource.DoesPackageExistAsync(String id, NuGetVersion version, SourceCacheContext cacheContext, ILogger logger, CancellationToken cancellationToken)
+   at Microsoft.DotNet.UpgradeAssistant.Steps.Packages.PackageLoader.GetPackageArchiveAsync(NuGetReference packageReference, CancellationToken token, String cachePath) in /_/src/steps/Microsoft.DotNet.UpgradeAssistant.Steps.Packages/PackageLoader.cs:line 245
+   at Microsoft.DotNet.UpgradeAssistant.Steps.Packages.PackageLoader.DoesPackageSupportTargetFrameworkAsync(NuGetReference packageReference, String cachePath, TargetFrameworkMoniker targetFramework, CancellationToken token) in /_/src/steps/Microsoft.DotNet.UpgradeAssistant.Steps.Packages/PackageLoader.cs:line 50
+   at Microsoft.DotNet.UpgradeAssistant.Steps.Packages.Analyzers.TargetCompatibilityReferenceAnalyzer.AnalyzeAsync(IProject project, PackageAnalysisState state, CancellationToken token) in /_/src/steps/Microsoft.DotNet.UpgradeAssistant.Steps.Packages/Analyzers/TargetCompatibilityReferenceAnalyzer.cs:line 39
+   at Microsoft.DotNet.UpgradeAssistant.Steps.Packages.PackageUpdaterStep.RunPackageAnalyzersAsync(IUpgradeContext context, CancellationToken token) in /_/src/steps/Microsoft.DotNet.UpgradeAssistant.Steps.Packages/PackageUpdaterStep.cs:line 206
+   at Microsoft.DotNet.UpgradeAssistant.Steps.Packages.PackageUpdaterStep.ApplyImplAsync(IUpgradeContext context, CancellationToken token) in /_/src/steps/Microsoft.DotNet.UpgradeAssistant.Steps.Packages/PackageUpdaterStep.cs:line 172
+2021-04-01 14:35:01.563 -07:00 [WRN] Upgrade step Update NuGet Packages failed: "Failed": Unexpected exception analyzing package references for: C:\src\pword\pWord4\LeftRight\LeftRight.csproj
+2021-04-01 14:35:08.017 -07:00 [INF] Applying upgrade step Update NuGet Packages
+2021-04-01 14:35:14.109 -07:00 [INF] Upgrade step Update NuGet Packages applied successfully
+2021-04-01 14:35:18.570 -07:00 [INF] Initializing upgrade step Add template files
+2021-04-01 14:35:18.605 -07:00 [INF] 0 expected template items needed
+2021-04-01 14:35:18.606 -07:00 [INF] Initializing upgrade step Update C# source
+2021-04-01 14:35:19.906 -07:00 [INF] Initializing upgrade step Move to next project
+2021-04-01 14:36:06.697 -07:00 [INF] Applying upgrade step Move to next project
+2021-04-01 14:36:06.698 -07:00 [INF] Upgrade step Move to next project applied successfully
+2021-04-01 14:36:14.266 -07:00 [INF] Initializing upgrade step Select project to upgrade
+2021-04-01 14:36:14.277 -07:00 [INF] No projects need upgraded for entry point C:\src\pword\pWord4\LeftRight\LeftRight.csproj
+2021-04-01 14:36:14.278 -07:00 [INF] Initializing upgrade step Finalize upgrade
+2021-04-01 14:36:32.696 -07:00 [INF] Applying upgrade step Finalize upgrade
+2021-04-01 14:36:32.698 -07:00 [INF] Upgrade step Finalize upgrade applied successfully
+2021-04-01 14:36:34.760 -07:00 [INF] Upgrade has completed. Please review any changes.
+2021-04-01 14:36:34.762 -07:00 [INF] Saving upgrade progress file at C:\src\pword\pWord4\pWord4\.upgrade-assistant
+2021-04-01 14:36:38.381 -07:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-04-01 14:36:38.402 -07:00 [INF] Registered 1 extensions:
+	Default extension
+2021-04-01 14:36:40.164 -07:00 [INF] Loading upgrade progress file at C:\src\pword\pWord4\pWord4\.upgrade-assistant
+2021-04-01 14:36:40.181 -07:00 [INF] Initializing upgrade step Select an entrypoint
+2021-04-01 14:36:42.314 -07:00 [INF] Applying upgrade step Select an entrypoint
+2021-04-01 14:36:53.577 -07:00 [INF] Upgrade step Select an entrypoint applied successfully
+2021-04-01 14:36:54.820 -07:00 [INF] Initializing upgrade step Select project to upgrade
+2021-04-01 14:36:56.544 -07:00 [INF] Applying upgrade step Select project to upgrade
+2021-04-01 14:37:00.480 -07:00 [INF] Upgrade step Select project to upgrade applied successfully
+2021-04-01 14:37:04.008 -07:00 [INF] Initializing upgrade step Back up project
+2021-04-01 14:37:05.688 -07:00 [INF] Applying upgrade step Back up project
+2021-04-01 14:37:08.120 -07:00 [INF] Backing up C:\src\pword\pWord4\pWordLib to C:\src\pword\pWord4\pWordLib.backup
+2021-04-01 14:37:08.505 -07:00 [INF] Project backed up to C:\src\pword\pWord4\pWordLib.backup
+2021-04-01 14:37:08.506 -07:00 [INF] Upgrade step Back up project applied successfully
+2021-04-01 14:37:10.336 -07:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-04-01 14:37:11.744 -07:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-04-01 14:37:11.746 -07:00 [INF] Converting project file format with try-convert, version 0.7.216201
+2021-04-01 14:37:13.355 -07:00 [INF] [try-convert] Conversion complete!
+2021-04-01 14:37:13.771 -07:00 [INF] Project file converted successfully! The project may require additional changes to build successfully against the new .NET target.
+2021-04-01 14:37:15.135 -07:00 [INF] Upgrade step Convert project file to SDK style applied successfully
+2021-04-01 14:37:15.208 -07:00 [INF] Initializing upgrade step Clean up NuGet package references
+2021-04-01 14:37:16.638 -07:00 [INF] Reference to .NET Upgrade Assistant analyzer package (Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, version 0.2.217201) needs added
+2021-04-01 14:37:16.642 -07:00 [INF] Packages to be addded:
+Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.217201
+2021-04-01 14:37:18.008 -07:00 [INF] Applying upgrade step Clean up NuGet package references
+2021-04-01 14:37:18.014 -07:00 [INF] Adding package reference: Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.217201
+2021-04-01 14:37:19.756 -07:00 [INF] Upgrade step Clean up NuGet package references applied successfully
+2021-04-01 14:37:24.176 -07:00 [INF] Initializing upgrade step Update TFM
+2021-04-01 14:37:24.180 -07:00 [INF] TFM needs updated to net5.0-windows
+2021-04-01 14:37:25.048 -07:00 [INF] Applying upgrade step Update TFM
+2021-04-01 14:37:26.913 -07:00 [INF] Updated TFM to net5.0-windows
+2021-04-01 14:37:26.914 -07:00 [INF] Upgrade step Update TFM applied successfully
+2021-04-01 14:37:29.232 -07:00 [INF] Initializing upgrade step Update NuGet Packages
+2021-04-01 14:37:30.641 -07:00 [INF] Adding Microsoft.Windows.Compatibility 5.0.2
+2021-04-01 14:37:30.642 -07:00 [INF] Packages to be addded:
+Microsoft.Windows.Compatibility, Version=5.0.2
+2021-04-01 14:37:31.768 -07:00 [INF] Applying upgrade step Update NuGet Packages
+2021-04-01 14:37:31.769 -07:00 [INF] Adding package reference: Microsoft.Windows.Compatibility, Version=5.0.2
+2021-04-01 14:37:33.825 -07:00 [INF] Marking package System.Data.DataSetExtensions for removal because it appears to be a transitive dependency
+2021-04-01 14:37:33.908 -07:00 [INF] Removing outdated package reference: System.Data.DataSetExtensions, Version=4.5.0
+2021-04-01 14:37:36.052 -07:00 [INF] Upgrade step Update NuGet Packages applied successfully
+2021-04-01 14:37:45.144 -07:00 [INF] Initializing upgrade step Add template files
+2021-04-01 14:37:45.174 -07:00 [INF] 0 expected template items needed
+2021-04-01 14:37:45.175 -07:00 [INF] Initializing upgrade step Update C# source
+2021-04-01 14:37:46.346 -07:00 [INF] Initializing upgrade step Move to next project
+2021-04-01 14:37:47.920 -07:00 [INF] Applying upgrade step Move to next project
+2021-04-01 14:37:47.921 -07:00 [INF] Upgrade step Move to next project applied successfully
+2021-04-01 14:37:50.561 -07:00 [INF] Initializing upgrade step Select project to upgrade
+2021-04-01 14:37:52.688 -07:00 [INF] Applying upgrade step Select project to upgrade
+2021-04-01 14:37:58.328 -07:00 [INF] Upgrade step Select project to upgrade applied successfully
+2021-04-01 14:37:59.376 -07:00 [INF] Initializing upgrade step Back up project
+2021-04-01 14:38:00.928 -07:00 [INF] Applying upgrade step Back up project
+2021-04-01 14:38:03.040 -07:00 [INF] Backing up C:\src\pword\pWord4\pword to C:\src\pword\pWord4\pword.backup
+2021-04-01 14:38:04.107 -07:00 [INF] Project backed up to C:\src\pword\pWord4\pword.backup
+2021-04-01 14:38:04.108 -07:00 [INF] Upgrade step Back up project applied successfully
+2021-04-01 14:38:05.848 -07:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-04-01 14:38:06.904 -07:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-04-01 14:38:06.905 -07:00 [INF] Converting project file format with try-convert, version 0.7.216201
+2021-04-01 14:38:19.693 -07:00 [INF] [try-convert] Conversion complete!
+2021-04-01 14:38:20.166 -07:00 [INF] Project file converted successfully! The project may require additional changes to build successfully against the new .NET target.
+2021-04-01 14:38:21.893 -07:00 [INF] Upgrade step Convert project file to SDK style applied successfully
+2021-04-01 14:38:21.966 -07:00 [INF] Initializing upgrade step Clean up NuGet package references
+2021-04-01 14:38:23.574 -07:00 [INF] Marking assembly reference System.Configuration for removal based on package mapping configuration System.Configuration
+2021-04-01 14:38:23.577 -07:00 [INF] Adding package System.Configuration.ConfigurationManager based on package mapping configuration System.Configuration
+2021-04-01 14:38:23.579 -07:00 [INF] Marking assembly reference System.ServiceModel for removal based on package mapping configuration System.ServiceModel
+2021-04-01 14:38:23.580 -07:00 [INF] Adding package System.ServiceModel.Primitives based on package mapping configuration System.ServiceModel
+2021-04-01 14:38:23.581 -07:00 [INF] Adding package System.ServiceModel.Http based on package mapping configuration System.ServiceModel
+2021-04-01 14:38:23.582 -07:00 [INF] Adding package System.ServiceModel.Duplex based on package mapping configuration System.ServiceModel
+2021-04-01 14:38:23.583 -07:00 [INF] Adding package System.ServiceModel.NetTcp based on package mapping configuration System.ServiceModel
+2021-04-01 14:38:23.584 -07:00 [INF] Adding package System.ServiceModel.Security based on package mapping configuration System.ServiceModel
+2021-04-01 14:38:23.585 -07:00 [INF] Adding package System.ServiceModel.Federation based on package mapping configuration System.ServiceModel
+2021-04-01 14:38:23.590 -07:00 [INF] Reference to .NET Upgrade Assistant analyzer package (Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, version 0.2.217201) needs added
+2021-04-01 14:38:23.594 -07:00 [INF] References to be removed:
+System.Configuration
+System.ServiceModel
+2021-04-01 14:38:23.594 -07:00 [INF] Packages to be addded:
+System.Configuration.ConfigurationManager, Version=5.0.0
+System.ServiceModel.Primitives, Version=4.8.1
+System.ServiceModel.Http, Version=4.8.1
+System.ServiceModel.Duplex, Version=4.8.1
+System.ServiceModel.NetTcp, Version=4.8.1
+System.ServiceModel.Security, Version=4.8.1
+System.ServiceModel.Federation, Version=4.8.1
+Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.217201
+2021-04-01 14:38:27.240 -07:00 [INF] Applying upgrade step Clean up NuGet package references
+2021-04-01 14:38:27.242 -07:00 [INF] Removing outdated assembly reference: System.Configuration
+2021-04-01 14:38:27.244 -07:00 [INF] Removing outdated assembly reference: System.ServiceModel
+2021-04-01 14:38:27.245 -07:00 [INF] Adding package reference: System.Configuration.ConfigurationManager, Version=5.0.0
+2021-04-01 14:38:27.246 -07:00 [INF] Adding package reference: System.ServiceModel.Primitives, Version=4.8.1
+2021-04-01 14:38:27.247 -07:00 [INF] Adding package reference: System.ServiceModel.Http, Version=4.8.1
+2021-04-01 14:38:27.248 -07:00 [INF] Adding package reference: System.ServiceModel.Duplex, Version=4.8.1
+2021-04-01 14:38:27.250 -07:00 [INF] Adding package reference: System.ServiceModel.NetTcp, Version=4.8.1
+2021-04-01 14:38:27.251 -07:00 [INF] Adding package reference: System.ServiceModel.Security, Version=4.8.1
+2021-04-01 14:38:27.252 -07:00 [INF] Adding package reference: System.ServiceModel.Federation, Version=4.8.1
+2021-04-01 14:38:27.253 -07:00 [INF] Adding package reference: Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.217201
+2021-04-01 14:38:32.964 -07:00 [INF] Marking package System.ServiceModel.Primitives for removal because it appears to be a transitive dependency
+2021-04-01 14:38:32.966 -07:00 [INF] Marking package System.ServiceModel.Http for removal because it appears to be a transitive dependency
+2021-04-01 14:38:32.969 -07:00 [INF] Marking package System.ServiceModel.Security for removal because it appears to be a transitive dependency
+2021-04-01 14:38:33.009 -07:00 [INF] Removing outdated package reference: System.ServiceModel.Primitives, Version=4.8.1
+2021-04-01 14:38:33.010 -07:00 [INF] Removing outdated package reference: System.ServiceModel.Http, Version=4.8.1
+2021-04-01 14:38:33.011 -07:00 [INF] Removing outdated package reference: System.ServiceModel.Security, Version=4.8.1
+2021-04-01 14:38:35.174 -07:00 [INF] Upgrade step Clean up NuGet package references applied successfully
+2021-04-01 14:38:38.058 -07:00 [INF] Initializing upgrade step Update TFM
+2021-04-01 14:38:38.080 -07:00 [INF] TFM needs updated to net5.0-windows
+2021-04-01 14:38:40.048 -07:00 [INF] Applying upgrade step Update TFM
+2021-04-01 14:38:50.693 -07:00 [INF] Updated TFM to net5.0-windows
+2021-04-01 14:38:50.694 -07:00 [INF] Upgrade step Update TFM applied successfully
+2021-04-01 14:38:50.767 -07:00 [INF] Initializing upgrade step Update NuGet Packages
+2021-04-01 14:38:52.325 -07:00 [INF] Marking package System.Data.DataSetExtensions for removal because it appears to be a transitive dependency
+2021-04-01 14:38:52.334 -07:00 [INF] Marking package System.Configuration.ConfigurationManager for removal because it appears to be a transitive dependency
+2021-04-01 14:38:52.380 -07:00 [INF] Marking assembly reference System.Web.Extensions for removal based on package mapping configuration ASP.NET
+2021-04-01 14:38:52.381 -07:00 [INF] Adding framework reference Microsoft.AspNetCore.App based on package mapping configuration ASP.NET
+2021-04-01 14:38:52.391 -07:00 [INF] References to be removed:
+System.Web.Extensions
+2021-04-01 14:38:52.391 -07:00 [INF] Packages to be removed:
+System.Data.DataSetExtensions, Version=4.5.0
+System.Configuration.ConfigurationManager, Version=5.0.0
+2021-04-01 14:38:52.392 -07:00 [INF] Framework references to be addded:
+Microsoft.AspNetCore.App
+2021-04-01 14:38:57.928 -07:00 [INF] Applying upgrade step Update NuGet Packages
+2021-04-01 14:38:57.929 -07:00 [INF] Removing outdated assembly reference: System.Web.Extensions
+2021-04-01 14:38:57.930 -07:00 [INF] Removing outdated package reference: System.Data.DataSetExtensions, Version=4.5.0
+2021-04-01 14:38:57.931 -07:00 [INF] Removing outdated package reference: System.Configuration.ConfigurationManager, Version=5.0.0
+2021-04-01 14:38:57.931 -07:00 [INF] Adding framework reference: Microsoft.AspNetCore.App
+2021-04-01 14:39:01.815 -07:00 [INF] Upgrade step Update NuGet Packages applied successfully
+2021-04-01 14:39:09.769 -07:00 [INF] Initializing upgrade step Add template files
+2021-04-01 14:39:09.771 -07:00 [INF] 0 expected template items needed
+2021-04-01 14:39:09.771 -07:00 [INF] Initializing upgrade step Upgrade app config files
+2021-04-01 14:39:09.786 -07:00 [INF] Found 13 app settings for upgrade: columnHeader1.Text, toolBarButton1.Enabled, toolBarButton1.ImageIndex, toolBarButton1.Pushed, pWord.Enabled, pWord.TopMost, txtValue.AcceptsReturn, txtValue.AcceptsTab, txtValue.AllowDrop, txtValue.Multiline, txtValue.Enabled, treeView1.Scrollable, ClientSettingsProvider.ServiceUri
+2021-04-01 14:39:09.791 -07:00 [INF] 0 web page namespace imports need upgraded: 
+2021-04-01 14:39:12.321 -07:00 [INF] Applying upgrade step Convert Application Settings
+2021-04-01 14:39:12.955 -07:00 [INF] Upgrade step Convert Application Settings applied successfully
+2021-04-01 14:39:12.957 -07:00 [INF] Applying upgrade step Upgrade app config files
+2021-04-01 14:39:12.958 -07:00 [INF] Upgrade step Upgrade app config files applied successfully
+2021-04-01 14:39:15.035 -07:00 [INF] Initializing upgrade step Update C# source
+2021-04-01 14:39:15.728 -07:00 [INF] Initializing upgrade step Move to next project
+2021-04-01 14:39:19.120 -07:00 [INF] Applying upgrade step Move to next project
+2021-04-01 14:39:19.121 -07:00 [INF] Upgrade step Move to next project applied successfully
+2021-04-01 14:39:20.913 -07:00 [INF] Initializing upgrade step Select project to upgrade
+2021-04-01 14:39:21.000 -07:00 [INF] No projects need upgraded for entry point C:\src\pword\pWord4\pword\myPword.csproj
+2021-04-01 14:39:21.001 -07:00 [INF] Initializing upgrade step Finalize upgrade
+2021-04-01 14:39:23.512 -07:00 [INF] Applying upgrade step Finalize upgrade
+2021-04-01 14:39:23.513 -07:00 [INF] Upgrade step Finalize upgrade applied successfully
+2021-04-01 14:39:24.935 -07:00 [INF] Upgrade has completed. Please review any changes.
+2021-04-01 14:39:24.937 -07:00 [INF] Saving upgrade progress file at C:\src\pword\pWord4\pWord4\.upgrade-assistant
+2021-04-01 14:39:27.612 -07:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-04-01 14:39:27.632 -07:00 [INF] Registered 1 extensions:
+	Default extension
+2021-04-01 14:39:29.758 -07:00 [INF] Loading upgrade progress file at C:\src\pword\pWord4\pWord4\.upgrade-assistant
+2021-04-01 14:39:29.775 -07:00 [INF] Initializing upgrade step Select an entrypoint
+2021-04-01 14:39:29.784 -07:00 [INF] Applying upgrade step Select an entrypoint
+2021-04-01 14:39:50.560 -07:00 [INF] Upgrade step Select an entrypoint applied successfully
+2021-04-01 14:39:51.688 -07:00 [INF] Initializing upgrade step Select project to upgrade
+2021-04-01 14:39:51.701 -07:00 [INF] No projects need upgraded for entry point C:\src\pword\pWord4\pWord4\PlaygroundAlpha\PlaygroundAlpha.csproj
+2021-04-01 14:39:51.702 -07:00 [INF] Initializing upgrade step Finalize upgrade
+2021-04-01 14:39:52.792 -07:00 [INF] Applying upgrade step Finalize upgrade
+2021-04-01 14:39:52.793 -07:00 [INF] Upgrade step Finalize upgrade applied successfully
+2021-04-01 14:39:54.688 -07:00 [INF] Upgrade has completed. Please review any changes.
+2021-04-01 14:39:54.689 -07:00 [INF] Saving upgrade progress file at C:\src\pword\pWord4\pWord4\.upgrade-assistant
+2021-04-01 14:39:58.401 -07:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-04-01 14:39:58.422 -07:00 [INF] Registered 1 extensions:
+	Default extension
+2021-04-01 14:40:00.541 -07:00 [INF] Loading upgrade progress file at C:\src\pword\pWord4\pWord4\.upgrade-assistant
+2021-04-01 14:40:00.557 -07:00 [INF] Initializing upgrade step Select an entrypoint
+2021-04-01 14:40:00.566 -07:00 [INF] Applying upgrade step Select an entrypoint
+2021-04-01 14:40:04.606 -07:00 [INF] Upgrade step Select an entrypoint applied successfully
+2021-04-01 14:40:06.048 -07:00 [INF] Initializing upgrade step Select project to upgrade
+2021-04-01 14:40:06.058 -07:00 [INF] Initializing upgrade step Back up project
+2021-04-01 14:40:08.184 -07:00 [INF] Applying upgrade step Back up project
+2021-04-01 14:40:09.856 -07:00 [INF] Backing up C:\src\pword\pWord4\pWord4\pWord4 to C:\src\pword\pWord4\pWord4\pWord4.backup
+2021-04-01 14:40:10.021 -07:00 [INF] Project backed up to C:\src\pword\pWord4\pWord4\pWord4.backup
+2021-04-01 14:40:10.022 -07:00 [INF] Upgrade step Back up project applied successfully
+2021-04-01 14:40:12.767 -07:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-04-01 14:40:14.192 -07:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-04-01 14:40:14.194 -07:00 [INF] Converting project file format with try-convert, version 0.7.216201
+2021-04-01 14:40:15.774 -07:00 [INF] [try-convert] Conversion complete!
+2021-04-01 14:40:17.090 -07:00 [INF] Project file converted successfully! The project may require additional changes to build successfully against the new .NET target.
+2021-04-01 14:40:18.742 -07:00 [INF] Upgrade step Convert project file to SDK style applied successfully
+2021-04-01 14:40:21.759 -07:00 [INF] Initializing upgrade step Clean up NuGet package references
+2021-04-01 14:40:24.013 -07:00 [WRN] No version of Microsoft.CSharp found that supports net40; leaving unchanged
+2021-04-01 14:40:27.452 -07:00 [WRN] No version of System.Data.DataSetExtensions found that supports net40; leaving unchanged
+2021-04-01 14:40:27.460 -07:00 [INF] Reference to .NET Upgrade Assistant analyzer package (Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, version 0.2.217201) needs added
+2021-04-01 14:40:27.465 -07:00 [INF] Packages to be addded:
+Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.217201
+2021-04-01 14:40:27.473 -07:00 [INF] Applying upgrade step Clean up NuGet package references
+2021-04-01 14:40:27.479 -07:00 [INF] Adding package reference: Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.217201
+2021-04-01 14:40:29.780 -07:00 [WRN] No version of Microsoft.CSharp found that supports net40; leaving unchanged
+2021-04-01 14:40:29.788 -07:00 [WRN] No version of System.Data.DataSetExtensions found that supports net40; leaving unchanged
+2021-04-01 14:40:29.790 -07:00 [INF] Upgrade step Clean up NuGet package references applied successfully
+2021-04-01 14:40:31.416 -07:00 [INF] Initializing upgrade step Update TFM
+2021-04-01 14:40:31.421 -07:00 [INF] TFM needs updated to net5.0-windows
+2021-04-01 14:40:32.703 -07:00 [INF] Applying upgrade step Update TFM
+2021-04-01 14:40:35.129 -07:00 [INF] Updated TFM to net5.0-windows
+2021-04-01 14:40:35.130 -07:00 [INF] Upgrade step Update TFM applied successfully
+2021-04-01 14:40:37.231 -07:00 [INF] Initializing upgrade step Update NuGet Packages
+2021-04-01 14:40:38.914 -07:00 [INF] Adding Microsoft.Windows.Compatibility 5.0.2
+2021-04-01 14:40:38.916 -07:00 [INF] Packages to be addded:
+Microsoft.Windows.Compatibility, Version=5.0.2
+2021-04-01 14:40:39.607 -07:00 [INF] Applying upgrade step Update NuGet Packages
+2021-04-01 14:40:39.609 -07:00 [INF] Adding package reference: Microsoft.Windows.Compatibility, Version=5.0.2
+2021-04-01 14:40:42.217 -07:00 [INF] Marking package System.Data.DataSetExtensions for removal because it appears to be a transitive dependency
+2021-04-01 14:40:42.282 -07:00 [INF] Removing outdated package reference: System.Data.DataSetExtensions, Version=4.5.0
+2021-04-01 14:40:44.993 -07:00 [INF] Upgrade step Update NuGet Packages applied successfully
+2021-04-01 14:40:45.066 -07:00 [INF] Initializing upgrade step Add template files
+2021-04-01 14:40:45.095 -07:00 [INF] 0 expected template items needed
+2021-04-01 14:40:45.096 -07:00 [INF] Initializing upgrade step Update C# source
+2021-04-01 14:40:46.159 -07:00 [INF] Initializing upgrade step Move to next project
+2021-04-01 14:40:46.184 -07:00 [INF] Applying upgrade step Move to next project
+2021-04-01 14:40:46.185 -07:00 [INF] Upgrade step Move to next project applied successfully
+2021-04-01 14:40:47.665 -07:00 [INF] Initializing upgrade step Finalize upgrade
+2021-04-01 14:40:48.344 -07:00 [INF] Applying upgrade step Finalize upgrade
+2021-04-01 14:40:48.345 -07:00 [INF] Upgrade step Finalize upgrade applied successfully
+2021-04-01 14:40:51.892 -07:00 [INF] Upgrade has completed. Please review any changes.
+2021-04-01 14:40:51.894 -07:00 [INF] Saving upgrade progress file at C:\src\pword\pWord4\pWord4\.upgrade-assistant
+2021-04-01 14:40:56.970 -07:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-04-01 14:40:56.990 -07:00 [INF] Registered 1 extensions:
+	Default extension
+2021-04-01 14:40:59.174 -07:00 [INF] Loading upgrade progress file at C:\src\pword\pWord4\pWord4\.upgrade-assistant
+2021-04-01 14:40:59.190 -07:00 [INF] Initializing upgrade step Select an entrypoint
+2021-04-01 14:41:02.017 -07:00 [INF] Applying upgrade step Select an entrypoint
+2021-04-01 14:41:06.913 -07:00 [INF] Upgrade step Select an entrypoint applied successfully
+2021-04-01 14:41:09.222 -07:00 [INF] Initializing upgrade step Finalize upgrade
+2021-04-01 14:41:11.232 -07:00 [INF] Applying upgrade step Finalize upgrade
+2021-04-01 14:41:11.233 -07:00 [INF] Upgrade step Finalize upgrade applied successfully
+2021-04-01 14:41:15.376 -07:00 [INF] Upgrade has completed. Please review any changes.
+2021-04-01 14:41:15.378 -07:00 [INF] Saving upgrade progress file at C:\src\pword\pWord4\pWord4\.upgrade-assistant
