@@ -40,6 +40,7 @@ namespace pWordLib.dat
             {
                 this.operations = new List<IOperate>();
             }
+
         }
 
         //public pNode Parent {
@@ -158,6 +159,9 @@ namespace pWordLib.dat
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Appears to be sluggish or slow for some reason
+        /// </summary>
         public void PerformOperations()
         {
             if (operations == null)

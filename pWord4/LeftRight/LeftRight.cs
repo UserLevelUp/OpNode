@@ -161,29 +161,35 @@ namespace LeftRight
 		private void button1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
 		{
 		
-
-
 		}
 
 		public void btnLeft_Click(object sender, System.EventArgs e)
 		{
-			if (index >0)
-			{
-				index--;
-				this.txtMaster.Text = (string)Masters[index];
-				this.txtMaster.Tag = MastersValue[index];
-				// call event
-				OnLeftClicked(EventArgs.Empty);
-			}
-			else if (index == 0)
-			{
-				index = 0;
-				this.txtMaster.Text = (string)Masters[index];
-				this.txtMaster.Tag = MastersValue[index];
-			}
+            try
+            {
+                if (index > 0)
+                {
+                    index--;
+                    this.txtMaster.Text = (string)Masters[index];
+                    this.txtMaster.Tag = MastersValue[index];
+                    // call event
+                    OnLeftClicked(EventArgs.Empty);
+                }
+                else if (index == 0)
+                {
+                    index = 0;
+                    this.txtMaster.Text = (string)Masters[index];
+                    this.txtMaster.Tag = MastersValue[index];
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("btnLeft_Click exception", ex);
+            }
 
 
-		}
+
+        }
 
 		public void btnRight_Click(object sender, System.EventArgs e)
 		{
