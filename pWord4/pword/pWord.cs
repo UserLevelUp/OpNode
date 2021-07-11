@@ -176,7 +176,7 @@ namespace myPword
         private System.Windows.Forms.SaveFileDialog saveFileDialogHTML;
         private System.Windows.Forms.MenuItem menuItem33;
         private System.Windows.Forms.MenuItem menuItem34;
-        private System.Windows.Forms.MenuItem menuItem35;
+        private System.Windows.Forms.MenuItem menuItemExportToXmlHtml;
         private ToolBarButton toolBarXML;
         private NotifyIcon notifyIcon2;
         private MenuItem menuItem2;
@@ -258,7 +258,9 @@ namespace myPword
         private MenuItem menuItem88;
         private MenuItem menuItem89;
         private MenuItem menuItem90;
-        pWordLib.mgr.registryMgr rm = null;
+        private MenuItem menuItemExportJson;
+		private ToolBarButton toolBarSearch;
+		pWordLib.mgr.registryMgr rm = null;
         public pWord()
         {
 
@@ -354,6 +356,7 @@ namespace myPword
 			this.toolBarTac = new System.Windows.Forms.ToolBarButton();
 			this.toolBarView = new System.Windows.Forms.ToolBarButton();
 			this.toolBarXML = new System.Windows.Forms.ToolBarButton();
+			this.toolBarSearch = new System.Windows.Forms.ToolBarButton();
 			this.imgToolbar1 = new System.Windows.Forms.ImageList(this.components);
 			this.cmTree = new System.Windows.Forms.ContextMenu();
 			this.menuItem4 = new System.Windows.Forms.MenuItem();
@@ -374,8 +377,9 @@ namespace myPword
 			this.menuItem1 = new System.Windows.Forms.MenuItem();
 			this.menuItem14 = new System.Windows.Forms.MenuItem();
 			this.menuItem34 = new System.Windows.Forms.MenuItem();
-			this.menuItem35 = new System.Windows.Forms.MenuItem();
+			this.menuItemExportToXmlHtml = new System.Windows.Forms.MenuItem();
 			this.menuItem85 = new System.Windows.Forms.MenuItem();
+			this.menuItemExportJson = new System.Windows.Forms.MenuItem();
 			this.mnuImportXML = new System.Windows.Forms.MenuItem();
 			this.mnuImportNodeXML = new System.Windows.Forms.MenuItem();
 			this.menuItem40 = new System.Windows.Forms.MenuItem();
@@ -470,7 +474,6 @@ namespace myPword
 			this.chkClear = new System.Windows.Forms.CheckBox();
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.treeView1 = new myPword.pView();
 			this.tabs = new System.Windows.Forms.TabControl();
 			this.tabValue = new System.Windows.Forms.TabPage();
 			this.tabNamespaces = new System.Windows.Forms.TabPage();
@@ -487,6 +490,7 @@ namespace myPword
 			this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
 			this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
 			this.userControl11 = new LeftRight.LeftRight();
+			this.treeView1 = new myPword.pView();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel4.SuspendLayout();
@@ -526,7 +530,7 @@ namespace myPword
 			// 
 			// statusBar1
 			// 
-			this.statusBar1.Location = new System.Drawing.Point(0, 257);
+			this.statusBar1.Location = new System.Drawing.Point(0, 218);
 			this.statusBar1.Name = "statusBar1";
 			this.statusBar1.Size = new System.Drawing.Size(574, 41);
 			this.statusBar1.TabIndex = 0;
@@ -537,7 +541,8 @@ namespace myPword
 			this.toolBar1.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[] {
             this.toolBarTac,
             this.toolBarView,
-            this.toolBarXML});
+            this.toolBarXML,
+            this.toolBarSearch});
 			this.toolBar1.DropDownArrows = true;
 			this.toolBar1.ImageList = this.imgToolbar1;
 			this.toolBar1.Location = new System.Drawing.Point(0, 0);
@@ -569,6 +574,11 @@ namespace myPword
 			this.toolBarXML.Name = "toolBarXML";
 			this.toolBarXML.Visible = false;
 			// 
+			// toolBarSearch
+			// 
+			this.toolBarSearch.ImageIndex = 8;
+			this.toolBarSearch.Name = "toolBarSearch";
+			// 
 			// imgToolbar1
 			// 
 			this.imgToolbar1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgToolbar1.ImageStream")));
@@ -581,6 +591,7 @@ namespace myPword
 			this.imgToolbar1.Images.SetKeyName(5, "Bin.png");
 			this.imgToolbar1.Images.SetKeyName(6, "AutoHide.ico");
 			this.imgToolbar1.Images.SetKeyName(7, "AutoHide2.ico");
+			this.imgToolbar1.Images.SetKeyName(8, "searchB.png");
 			// 
 			// cmTree
 			// 
@@ -730,22 +741,29 @@ namespace myPword
 			// 
 			this.menuItem34.Index = 14;
 			this.menuItem34.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem35,
-            this.menuItem85});
+            this.menuItemExportToXmlHtml,
+            this.menuItem85,
+            this.menuItemExportJson});
 			this.menuItem34.Text = "Export Node";
 			// 
-			// menuItem35
+			// menuItemExportToXmlHtml
 			// 
-			this.menuItem35.Index = 0;
-			this.menuItem35.Shortcut = System.Windows.Forms.Shortcut.F11;
-			this.menuItem35.Text = "to XML/HTML";
-			this.menuItem35.Click += new System.EventHandler(this.menuItem35_Click);
+			this.menuItemExportToXmlHtml.Index = 0;
+			this.menuItemExportToXmlHtml.Shortcut = System.Windows.Forms.Shortcut.F11;
+			this.menuItemExportToXmlHtml.Text = "to XML/HTML";
+			this.menuItemExportToXmlHtml.Click += new System.EventHandler(this.menuItem35_Click);
 			// 
 			// menuItem85
 			// 
 			this.menuItem85.Index = 1;
 			this.menuItem85.Text = "XML->XSLT->Result";
 			this.menuItem85.Click += new System.EventHandler(this.menuItem85_Click_1);
+			// 
+			// menuItemExportJson
+			// 
+			this.menuItemExportJson.Index = 2;
+			this.menuItemExportJson.Text = "to JSON";
+			this.menuItemExportJson.Click += new System.EventHandler(this.menuItemExportJson_Click);
 			// 
 			// mnuImportXML
 			// 
@@ -1302,7 +1320,7 @@ namespace myPword
 			// splitter1
 			// 
 			this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.splitter1.Location = new System.Drawing.Point(0, -139);
+			this.splitter1.Location = new System.Drawing.Point(0, -178);
 			this.splitter1.Name = "splitter1";
 			this.splitter1.Size = new System.Drawing.Size(574, 15);
 			this.splitter1.TabIndex = 5;
@@ -1315,7 +1333,7 @@ namespace myPword
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 92);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(574, 165);
+			this.panel1.Size = new System.Drawing.Size(574, 126);
 			this.panel1.TabIndex = 6;
 			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
@@ -1436,38 +1454,8 @@ namespace myPword
 			this.panel6.Controls.Add(this.btnCancel);
 			this.panel6.Location = new System.Drawing.Point(0, 192);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(574, 62);
+			this.panel6.Size = new System.Drawing.Size(574, 23);
 			this.panel6.TabIndex = 5;
-			// 
-			// treeView1
-			// 
-			this.treeView1.AllowDrop = true;
-			this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.treeView1.ContextMenu = this.cmTree;
-			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-			this.treeView1.FullRowSelect = true;
-			this.treeView1.HideSelection = false;
-			this.treeView1.HotTracking = true;
-			this.treeView1.ImageIndex = 0;
-			this.treeView1.ImageList = this.imageTree1;
-			this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
-			this.treeView1.Location = new System.Drawing.Point(0, 0);
-			this.treeView1.Name = "treeView1";
-			this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
-			this.treeView1.SelectedImageIndex = 0;
-			this.treeView1.Size = new System.Drawing.Size(574, 0);
-			this.treeView1.TabIndex = 3;
-			this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
-			this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
-			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
-			this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
-			this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
-			this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
-			this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
-			this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
-			this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
-			this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
 			// 
 			// tabs
 			// 
@@ -1475,7 +1463,7 @@ namespace myPword
 			this.tabs.Controls.Add(this.tabNamespaces);
 			this.tabs.Controls.Add(this.tabAttributes);
 			this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tabs.Location = new System.Drawing.Point(0, -124);
+			this.tabs.Location = new System.Drawing.Point(0, -163);
 			this.tabs.Name = "tabs";
 			this.tabs.SelectedIndex = 0;
 			this.tabs.Size = new System.Drawing.Size(574, 186);
@@ -1612,11 +1600,41 @@ namespace myPword
 			this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
 			this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
 			// 
+			// treeView1
+			// 
+			this.treeView1.AllowDrop = true;
+			this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.treeView1.ContextMenu = this.cmTree;
+			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
+			this.treeView1.FullRowSelect = true;
+			this.treeView1.HideSelection = false;
+			this.treeView1.HotTracking = true;
+			this.treeView1.ImageIndex = 0;
+			this.treeView1.ImageList = this.imageTree1;
+			this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
+			this.treeView1.Location = new System.Drawing.Point(0, 0);
+			this.treeView1.Name = "treeView1";
+			this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
+			this.treeView1.SelectedImageIndex = 0;
+			this.treeView1.Size = new System.Drawing.Size(574, 0);
+			this.treeView1.TabIndex = 3;
+			this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
+			this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
+			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
+			this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
+			this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
+			this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+			this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
+			this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
+			this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
+			this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
+			// 
 			// pWord
 			// 
 			this.AccessibleDescription = "Enabled to view file after xml or html export.";
 			this.AutoScaleBaseSize = new System.Drawing.Size(10, 24);
-			this.ClientSize = new System.Drawing.Size(574, 298);
+			this.ClientSize = new System.Drawing.Size(574, 259);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.userControl11);
 			this.Controls.Add(this.toolBar1);
@@ -1652,6 +1670,7 @@ namespace myPword
 			this.PerformLayout();
 
         }
+
         #endregion
         /// <summary>
         /// The main entry point for the application.
@@ -2770,8 +2789,7 @@ namespace myPword
 
         private void genericCursorMoved(object sender, EventArgs e) {
             //TODO: Make sure mouse move switches from keyboard state.  If user clicks a key like up or down arrow it should ignore the position the cursor is on and re-activate the mouse cursor
-            Debugger.Log(1, "test", "Whats going on");
-                        if (e.GetType() == typeof(System.Windows.Forms.MouseEventArgs)) {
+            if (e.GetType() == typeof(System.Windows.Forms.MouseEventArgs)) {
                 var ei = (System.Windows.Forms.MouseEventArgs)e;
                 pNode a = (pNode)treeView1.GetNodeAt(ei.X, ei.Y);
                 if (a != null)
@@ -3081,12 +3099,12 @@ namespace myPword
 
                 xdoc = new XmlDocument(xnt);
                 xdoc.AppendChild(xdoc.CreateXmlDeclaration("1.0", null, "yes"));
-                foreach (String key in xnsm.GetNamespacesInScope(XmlNamespaceScope.All).Keys)
-                {
-                    // this inserts the namespace into the xdoc from the name space manager
-                    //xdoc.Schemas.XmlResolver resolve = 
-                    //xdoc.Schemas.Add(key, xnsm.LookupNamespace(key));
-                }
+                //foreach (String key in xnsm.GetNamespacesInScope(XmlNamespaceScope.All).Keys)
+                //{
+                //    // this inserts the namespace into the xdoc from the name space manager
+                //    //xdoc.Schemas.XmlResolver resolve = 
+                //    //xdoc.Schemas.Add(key, xnsm.LookupNamespace(key));
+                //}
             }
 
             node.getXmlName();  // fix node attributes and todo: eventually namespaces
@@ -3231,6 +3249,8 @@ namespace myPword
                 XmlNode xn;
                 if (p.Namespace != null)
                 {
+                    // change any p.Name to be text only
+
                     xn = xdoc.CreateNode(XmlNodeType.Element, p.Namespace.Prefix, p.getXmlName(), p.Namespace.URI_PREFIX);
                 }
                 else
@@ -3412,8 +3432,8 @@ namespace myPword
 
         private void treeView1_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-            var pv = sender as pView;
-            Cursor = pv.Cursor;
+            //var pv = sender as pView;
+            //Cursor = pv.Cursor;
             Cursor.Hide();
             genericCursorMoved(sender, e);
 
@@ -4330,6 +4350,11 @@ namespace myPword
         private void menuItem88_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void menuItemExportJson_Click(object sender, EventArgs e)
+        {
+            Debugger.Log(1,"ExportJson", "Export JSON Hit");
         }
     }
 }
