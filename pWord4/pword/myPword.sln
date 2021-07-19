@@ -1,5 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.223
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myPword", "myPword.csproj", "{439D51A6-D899-4BB9-8B93-85B486673842}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeftRight", "..\LeftRight\LeftRight.csproj", "{351681A0-AA94-4BF9-855A-683D5981F90D}"
@@ -27,5 +29,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {863238FF-BE1A-4242-A710-04673F3F34D1}
 	EndGlobalSection
 EndGlobal

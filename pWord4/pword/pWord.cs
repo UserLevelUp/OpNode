@@ -101,7 +101,8 @@ namespace myPword
             cut = 11,
             trig,
             find,
-            xmlUpdate
+            xmlUpdate,
+            search
         }
 
         nodeMode mode = nodeMode.addto;  // see above
@@ -530,7 +531,7 @@ namespace myPword
 			// 
 			// statusBar1
 			// 
-			this.statusBar1.Location = new System.Drawing.Point(0, 218);
+			this.statusBar1.Location = new System.Drawing.Point(0, 400);
 			this.statusBar1.Name = "statusBar1";
 			this.statusBar1.Size = new System.Drawing.Size(574, 41);
 			this.statusBar1.TabIndex = 0;
@@ -1320,7 +1321,7 @@ namespace myPword
 			// splitter1
 			// 
 			this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.splitter1.Location = new System.Drawing.Point(0, -178);
+			this.splitter1.Location = new System.Drawing.Point(0, 4);
 			this.splitter1.Name = "splitter1";
 			this.splitter1.Size = new System.Drawing.Size(574, 15);
 			this.splitter1.TabIndex = 5;
@@ -1333,7 +1334,7 @@ namespace myPword
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 92);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(574, 126);
+			this.panel1.Size = new System.Drawing.Size(574, 308);
 			this.panel1.TabIndex = 6;
 			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
@@ -1454,7 +1455,7 @@ namespace myPword
 			this.panel6.Controls.Add(this.btnCancel);
 			this.panel6.Location = new System.Drawing.Point(0, 192);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(574, 23);
+			this.panel6.Size = new System.Drawing.Size(574, 205);
 			this.panel6.TabIndex = 5;
 			// 
 			// tabs
@@ -1463,7 +1464,7 @@ namespace myPword
 			this.tabs.Controls.Add(this.tabNamespaces);
 			this.tabs.Controls.Add(this.tabAttributes);
 			this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tabs.Location = new System.Drawing.Point(0, -163);
+			this.tabs.Location = new System.Drawing.Point(0, 19);
 			this.tabs.Name = "tabs";
 			this.tabs.SelectedIndex = 0;
 			this.tabs.Size = new System.Drawing.Size(574, 186);
@@ -1617,7 +1618,7 @@ namespace myPword
 			this.treeView1.Name = "treeView1";
 			this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
 			this.treeView1.SelectedImageIndex = 0;
-			this.treeView1.Size = new System.Drawing.Size(574, 0);
+			this.treeView1.Size = new System.Drawing.Size(574, 4);
 			this.treeView1.TabIndex = 3;
 			this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
 			this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1634,7 +1635,7 @@ namespace myPword
 			// 
 			this.AccessibleDescription = "Enabled to view file after xml or html export.";
 			this.AutoScaleBaseSize = new System.Drawing.Size(10, 24);
-			this.ClientSize = new System.Drawing.Size(574, 259);
+			this.ClientSize = new System.Drawing.Size(574, 441);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.userControl11);
 			this.Controls.Add(this.toolBar1);
@@ -2296,6 +2297,27 @@ namespace myPword
                         //StringWriter sw = new StringWriter();
                         //xs.Serialize(sw, treeView1.Nodes[0]);
                     }
+                    else if (e.Button == this.toolBarSearch) 
+                    {
+                    // this should be a full search as the search is conducted on the toolbar
+                    var masterNode = (pNode)this.treeView1.Nodes[0];
+                    var pNodes = masterNode.Find(this.txtObject.Text, 0);
+                    foreach(var _pNode in pNodes) {
+                        var _parent = _pNode.Parent;
+                        var _parents = new List<pNode>();
+                        _parents.Add((pNode)_parent);
+                        while(_parent.Parent != null)
+                        {
+                            _parent = _parent.Parent;
+                            _parents.Add((pNode)_parent);
+						}
+                        _parents.Add(_pNode);
+                        foreach(var _parent2 in _parents) 
+                        {
+                            _parent2.Expand();
+						}
+					}
+					}
                 }
                 catch (Exception f)
                 {
@@ -4091,6 +4113,10 @@ namespace myPword
         private void menuItemFind_Click(object sender, EventArgs e)
         {
             mode = nodeMode.find;
+            this.modeIndex = treeView1.SelectedNode.Index;
+            //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+            //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+            tmpNode = (pNode)treeView1.SelectedNode;
             try
             {
                 lblName.Text = "Find Name:";

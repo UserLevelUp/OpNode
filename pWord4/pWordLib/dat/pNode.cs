@@ -310,5 +310,37 @@ namespace pWordLib.dat
             }
         }
 
+        /// <summary>
+        /// Find search text within the current node starting with the current node
+        /// return the pNode that contains the text if any else add status that could not find 
+        /// the pNode by return null
+        /// </summary>
+        /// <remarks>
+        /// The behavior of this is that it should start to loop through all the pNodes starting with the parent pNode
+        /// It should increment the index starting with 0 each time.   So if find or F3 is selected while on the prowl or find mode 
+        /// it will remember the top node it stated and maybe even box it in a rectange.  It will just continue looping through each 
+        /// index allong the chain of pNodes in the tree starting with the parent pNode that was selected when the process started.
+        /// Since this function uses a bit of recursion it should not be expanding anything.  The calling functions should determine what gets expanded
+        /// </remarks>
+        /// <param name="searchText"></param>
+        /// <returns>pNode</returns>
+        public List<pNode> Find(string searchText, int index) {
+            if (string.IsNullOrWhiteSpace(searchText)) {
+                return null;
+			}
+            List<pNode> pNodes = new List<pNode>();
+            if ((this.Text??"").Contains(searchText) || ((string)this.Tag??"").Contains(searchText) || this.attributes.ContainsKey(searchText) || this.attributes.ContainsValue(searchText) ) {
+                pNodes.Add(this);
+			}
+            // maybe use a Dictionary<string searchInstance, List<pNode>> for each search context..
+            foreach (var _pNodeInstance in this.Nodes)
+            {
+                index++;
+                var _pNode = _pNodeInstance as pNode;
+                pNodes.AddRange(_pNode.Find(searchText, 0));
+            }
+            return pNodes;            
+		}
+
     }
 }

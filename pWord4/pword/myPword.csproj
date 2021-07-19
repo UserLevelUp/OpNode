@@ -313,8 +313,24 @@
       <Project>{351681A0-AA94-4BF9-855A-683D5981F90D}</Project>
       <Name>LeftRight</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LeftRight\LeftRight.csproj">
+      <Project>{351681a0-aa94-4bf9-855a-683d5981f90d}</Project>
+      <Name>LeftRight</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LeftRight\LeftRight.csproj">
+      <Project>{351681a0-aa94-4bf9-855a-683d5981f90d}</Project>
+      <Name>LeftRight</Name>
+    </ProjectReference>
     <ProjectReference Include="..\pWordLib\pWordLib.csproj">
       <Project>{001AC338-98C7-440E-ABC3-4D0056FE6D56}</Project>
+      <Name>pWordLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pWordLib\pWordLib.csproj">
+      <Project>{001ac338-98c7-440e-abc3-4d0056fe6d56}</Project>
+      <Name>pWordLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pWordLib\pWordLib.csproj">
+      <Project>{001ac338-98c7-440e-abc3-4d0056fe6d56}</Project>
       <Name>pWordLib</Name>
     </ProjectReference>
   </ItemGroup>

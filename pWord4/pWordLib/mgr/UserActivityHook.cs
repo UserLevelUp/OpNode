@@ -15,6 +15,8 @@ namespace pWordLib.UserActivityHook  {
 	/// <remarks>
 	/// 	created by - Georgi
 	/// 	created on - 22.05.2004 13:08:01
+	/// 	Adapted by me for good intentions.  I keep it secret to prevent nefarious actors from using it
+	/// 	Also these hooks need to be upgraded to work on newer versions of windows and linux with .Net 5 and greater
 	/// </remarks>
 	public class UserActivityHook : object {
 		
