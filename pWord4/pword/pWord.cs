@@ -261,6 +261,7 @@ namespace myPword
         private MenuItem menuItem90;
         private MenuItem menuItemExportJson;
 		private ToolBarButton toolBarSearch;
+		private ToolBarButton toolBarCollapse;
 		pWordLib.mgr.registryMgr rm = null;
         public pWord()
         {
@@ -475,6 +476,7 @@ namespace myPword
 			this.chkClear = new System.Windows.Forms.CheckBox();
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.panel6 = new System.Windows.Forms.Panel();
+			this.treeView1 = new myPword.pView();
 			this.tabs = new System.Windows.Forms.TabControl();
 			this.tabValue = new System.Windows.Forms.TabPage();
 			this.tabNamespaces = new System.Windows.Forms.TabPage();
@@ -491,7 +493,7 @@ namespace myPword
 			this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
 			this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
 			this.userControl11 = new LeftRight.LeftRight();
-			this.treeView1 = new myPword.pView();
+			this.toolBarCollapse = new System.Windows.Forms.ToolBarButton();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel4.SuspendLayout();
@@ -531,7 +533,7 @@ namespace myPword
 			// 
 			// statusBar1
 			// 
-			this.statusBar1.Location = new System.Drawing.Point(0, 400);
+			this.statusBar1.Location = new System.Drawing.Point(0, 520);
 			this.statusBar1.Name = "statusBar1";
 			this.statusBar1.Size = new System.Drawing.Size(574, 41);
 			this.statusBar1.TabIndex = 0;
@@ -543,7 +545,8 @@ namespace myPword
             this.toolBarTac,
             this.toolBarView,
             this.toolBarXML,
-            this.toolBarSearch});
+            this.toolBarSearch,
+            this.toolBarCollapse});
 			this.toolBar1.DropDownArrows = true;
 			this.toolBar1.ImageList = this.imgToolbar1;
 			this.toolBar1.Location = new System.Drawing.Point(0, 0);
@@ -593,6 +596,7 @@ namespace myPword
 			this.imgToolbar1.Images.SetKeyName(6, "AutoHide.ico");
 			this.imgToolbar1.Images.SetKeyName(7, "AutoHide2.ico");
 			this.imgToolbar1.Images.SetKeyName(8, "searchB.png");
+			this.imgToolbar1.Images.SetKeyName(9, "collapse.png");
 			// 
 			// cmTree
 			// 
@@ -1321,7 +1325,7 @@ namespace myPword
 			// splitter1
 			// 
 			this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.splitter1.Location = new System.Drawing.Point(0, 4);
+			this.splitter1.Location = new System.Drawing.Point(0, 124);
 			this.splitter1.Name = "splitter1";
 			this.splitter1.Size = new System.Drawing.Size(574, 15);
 			this.splitter1.TabIndex = 5;
@@ -1334,7 +1338,7 @@ namespace myPword
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 92);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(574, 308);
+			this.panel1.Size = new System.Drawing.Size(574, 428);
 			this.panel1.TabIndex = 6;
 			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
@@ -1455,8 +1459,38 @@ namespace myPword
 			this.panel6.Controls.Add(this.btnCancel);
 			this.panel6.Location = new System.Drawing.Point(0, 192);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(574, 205);
+			this.panel6.Size = new System.Drawing.Size(574, 325);
 			this.panel6.TabIndex = 5;
+			// 
+			// treeView1
+			// 
+			this.treeView1.AllowDrop = true;
+			this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.treeView1.ContextMenu = this.cmTree;
+			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
+			this.treeView1.FullRowSelect = true;
+			this.treeView1.HideSelection = false;
+			this.treeView1.HotTracking = true;
+			this.treeView1.ImageIndex = 0;
+			this.treeView1.ImageList = this.imageTree1;
+			this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
+			this.treeView1.Location = new System.Drawing.Point(0, 0);
+			this.treeView1.Name = "treeView1";
+			this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
+			this.treeView1.SelectedImageIndex = 0;
+			this.treeView1.Size = new System.Drawing.Size(574, 124);
+			this.treeView1.TabIndex = 3;
+			this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
+			this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
+			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
+			this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
+			this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
+			this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+			this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
+			this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
+			this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
+			this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
 			// 
 			// tabs
 			// 
@@ -1464,7 +1498,7 @@ namespace myPword
 			this.tabs.Controls.Add(this.tabNamespaces);
 			this.tabs.Controls.Add(this.tabAttributes);
 			this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tabs.Location = new System.Drawing.Point(0, 19);
+			this.tabs.Location = new System.Drawing.Point(0, 139);
 			this.tabs.Name = "tabs";
 			this.tabs.SelectedIndex = 0;
 			this.tabs.Size = new System.Drawing.Size(574, 186);
@@ -1601,41 +1635,16 @@ namespace myPword
 			this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
 			this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
 			// 
-			// treeView1
+			// toolBarCollapse
 			// 
-			this.treeView1.AllowDrop = true;
-			this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.treeView1.ContextMenu = this.cmTree;
-			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-			this.treeView1.FullRowSelect = true;
-			this.treeView1.HideSelection = false;
-			this.treeView1.HotTracking = true;
-			this.treeView1.ImageIndex = 0;
-			this.treeView1.ImageList = this.imageTree1;
-			this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
-			this.treeView1.Location = new System.Drawing.Point(0, 0);
-			this.treeView1.Name = "treeView1";
-			this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
-			this.treeView1.SelectedImageIndex = 0;
-			this.treeView1.Size = new System.Drawing.Size(574, 4);
-			this.treeView1.TabIndex = 3;
-			this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
-			this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
-			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
-			this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
-			this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
-			this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
-			this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
-			this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
-			this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
-			this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
+			this.toolBarCollapse.ImageIndex = 9;
+			this.toolBarCollapse.Name = "toolBarCollapse";
 			// 
 			// pWord
 			// 
 			this.AccessibleDescription = "Enabled to view file after xml or html export.";
 			this.AutoScaleBaseSize = new System.Drawing.Size(10, 24);
-			this.ClientSize = new System.Drawing.Size(574, 441);
+			this.ClientSize = new System.Drawing.Size(574, 561);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.userControl11);
 			this.Controls.Add(this.toolBar1);
@@ -2315,8 +2324,13 @@ namespace myPword
                         foreach(var _parent2 in _parents) 
                         {
                             _parent2.Expand();
+
 						}
 					}
+					}
+                    else if (e.Button == this.toolBarCollapse) 
+                    {
+                        this.treeView1.CollapseAll();
 					}
                 }
                 catch (Exception f)
