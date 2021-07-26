@@ -1,0 +1,211 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "Microsoft.Data.ConnectionUI/17.0.0-previews-2-31512-422": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.Data.ConnectionUI.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Data.ConnectionUI.dll": {}
+        }
+      },
+      "Microsoft.DependencyValidation.Analyzers/0.11.0": {
+        "type": "package"
+      },
+      "Microsoft.VisualStudio.Data/17.0.0-previews-2-31512-422": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Data.ConnectionUI": "17.0.0-previews-2-31512-422"
+        },
+        "compile": {
+          "lib/net472/Microsoft.VisualStudio.Data.dll": {}
+        },
+        "runtime": {
+          "lib/net472/Microsoft.VisualStudio.Data.dll": {}
+        }
+      },
+      "pWordLib/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/pWordLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/pWordLib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Data.ConnectionUI/17.0.0-previews-2-31512-422": {
+      "sha512": "W6kxI8gRAB00CCEFtakNaioFw4OgKw2uR3XyK3mmX7cZACOz5cDAIhpGHa1NhgUDZfgfKF/g3R6o7jY/rjg7dg==",
+      "type": "package",
+      "path": "microsoft.data.connectionui/17.0.0-previews-2-31512-422",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.Data.ConnectionUI.dll",
+        "lib/net45/Microsoft.Data.ConnectionUI.xml",
+        "microsoft.data.connectionui.17.0.0-previews-2-31512-422.nupkg.sha512",
+        "microsoft.data.connectionui.nuspec"
+      ]
+    },
+    "Microsoft.DependencyValidation.Analyzers/0.11.0": {
+      "sha512": "3xBVhMsM4o9cDpsvmlv78T1FG+cTH8i6bjl1Irk6hoIwEc6Ekoz4mKAR6Hn5M/2G2ZsHNrYBNwGkgF7aiw74UA==",
+      "type": "package",
+      "path": "microsoft.dependencyvalidation.analyzers/0.11.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/Microsoft.DependencyValidation.Analyzers.dll",
+        "analyzers/dotnet/cs/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/de/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/es/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/fr/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/it/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/ja/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/ko/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/pl/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/pt-BR/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/ru/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/tr/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/zh-HANS/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/zh-HANT/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "microsoft.dependencyvalidation.analyzers.0.11.0.nupkg.sha512",
+        "microsoft.dependencyvalidation.analyzers.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.VisualStudio.Data/17.0.0-previews-2-31512-422": {
+      "sha512": "vOEc/4Y5XgoI1eE40CyhPOlsREnvKdsq1sb4e2jVZuWBFIrxGoHTyMPJiUKp8WdgIRuEkYMvoX1x+JRXiI4n0A==",
+      "type": "package",
+      "path": "microsoft.visualstudio.data/17.0.0-previews-2-31512-422",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.VisualStudio.Data.xml",
+        "lib/net472/Microsoft.VisualStudio.Data.dll",
+        "microsoft.visualstudio.data.17.0.0-previews-2-31512-422.nupkg.sha512",
+        "microsoft.visualstudio.data.nuspec"
+      ]
+    },
+    "pWordLib/1.0.0": {
+      "type": "project",
+      "path": "../../pWordLib/pWordLib.csproj",
+      "msbuildProject": "../../pWordLib/pWordLib.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "Microsoft.DependencyValidation.Analyzers >= 0.11.0",
+      "Microsoft.VisualStudio.Data >= 17.0.0-previews-2-31512-422",
+      "pWordLib >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\marcn\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\src\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
+      "projectName": "PnodeDataProvider",
+      "projectPath": "C:\\src\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
+      "packagesPath": "C:\\Users\\marcn\\.nuget\\packages\\",
+      "outputPath": "C:\\src\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\marcn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\src\\pword2\\pword\\pWord4\\pWordLib\\pWordLib.csproj": {
+              "projectPath": "C:\\src\\pword2\\pword\\pWord4\\pWordLib\\pWordLib.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "dependencies": {
+          "Microsoft.DependencyValidation.Analyzers": {
+            "target": "Package",
+            "version": "[0.11.0, )"
+          },
+          "Microsoft.VisualStudio.Data": {
+            "target": "Package",
+            "version": "[17.0.0-previews-2-31512-422, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Data.ConnectionUI 17.0.0-previews-2-31512-422' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Data.ConnectionUI",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.VisualStudio.Data 17.0.0-previews-2-31512-422' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.VisualStudio.Data",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}

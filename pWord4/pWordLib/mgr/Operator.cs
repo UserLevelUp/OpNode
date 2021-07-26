@@ -7,12 +7,14 @@ using System.Drawing;
 using pWordLib.dat;
 using System.Diagnostics;
 
+
 namespace pWordLib.mgr
 {
     [Serializable()]
     public abstract class Operator : IOperate
     {
 
+             
         public Operator()
         {
             //Symbol = new Icon(Icon, 

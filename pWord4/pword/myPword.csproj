@@ -239,6 +239,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <AdditionalFiles Include="..\pWord4\DependencyValidation1\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\pWord4\DependencyValidation1\DependencyValidation2.layerdiagram">
+      <Link>DependencyValidation2.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
     <None Include="app.config" />
     <None Include="Data.xsc">
       <DependentUpon>Data.xsd</DependentUpon>
@@ -250,6 +258,7 @@
       <DependentUpon>Data.xsd</DependentUpon>
     </None>
     <None Include="myPword_TemporaryKey.pfx" />
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="pWordSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -363,6 +372,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="xml\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

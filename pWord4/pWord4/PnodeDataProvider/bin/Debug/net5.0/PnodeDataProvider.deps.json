@@ -1,0 +1,79 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "PnodeDataProvider/1.0.0": {
+        "dependencies": {
+          "Microsoft.DependencyValidation.Analyzers": "0.11.0",
+          "Microsoft.VisualStudio.Data": "17.0.0-previews-2-31512-422",
+          "pWordLib": "1.0.0"
+        },
+        "runtime": {
+          "PnodeDataProvider.dll": {}
+        }
+      },
+      "Microsoft.Data.ConnectionUI/17.0.0-previews-2-31512-422": {
+        "runtime": {
+          "lib/net45/Microsoft.Data.ConnectionUI.dll": {
+            "assemblyVersion": "17.0.0.0",
+            "fileVersion": "17.0.31512.422"
+          }
+        }
+      },
+      "Microsoft.DependencyValidation.Analyzers/0.11.0": {},
+      "Microsoft.VisualStudio.Data/17.0.0-previews-2-31512-422": {
+        "dependencies": {
+          "Microsoft.Data.ConnectionUI": "17.0.0-previews-2-31512-422"
+        },
+        "runtime": {
+          "lib/net472/Microsoft.VisualStudio.Data.dll": {
+            "assemblyVersion": "17.0.0.0",
+            "fileVersion": "17.0.31512.422"
+          }
+        }
+      },
+      "pWordLib/1.0.0": {
+        "runtime": {
+          "pWordLib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PnodeDataProvider/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Data.ConnectionUI/17.0.0-previews-2-31512-422": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W6kxI8gRAB00CCEFtakNaioFw4OgKw2uR3XyK3mmX7cZACOz5cDAIhpGHa1NhgUDZfgfKF/g3R6o7jY/rjg7dg==",
+      "path": "microsoft.data.connectionui/17.0.0-previews-2-31512-422",
+      "hashPath": "microsoft.data.connectionui.17.0.0-previews-2-31512-422.nupkg.sha512"
+    },
+    "Microsoft.DependencyValidation.Analyzers/0.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3xBVhMsM4o9cDpsvmlv78T1FG+cTH8i6bjl1Irk6hoIwEc6Ekoz4mKAR6Hn5M/2G2ZsHNrYBNwGkgF7aiw74UA==",
+      "path": "microsoft.dependencyvalidation.analyzers/0.11.0",
+      "hashPath": "microsoft.dependencyvalidation.analyzers.0.11.0.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Data/17.0.0-previews-2-31512-422": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vOEc/4Y5XgoI1eE40CyhPOlsREnvKdsq1sb4e2jVZuWBFIrxGoHTyMPJiUKp8WdgIRuEkYMvoX1x+JRXiI4n0A==",
+      "path": "microsoft.visualstudio.data/17.0.0-previews-2-31512-422",
+      "hashPath": "microsoft.visualstudio.data.17.0.0-previews-2-31512-422.nupkg.sha512"
+    },
+    "pWordLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

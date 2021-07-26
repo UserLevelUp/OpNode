@@ -41,9 +41,9 @@ namespace myPword
         private System.Windows.Forms.ImageList imgToolbar1;
         private System.Windows.Forms.ToolBarButton toolBarTac;
         private System.Windows.Forms.ContextMenu cmTree;
-        private System.Windows.Forms.MenuItem menuItem4;
+        private System.Windows.Forms.MenuItem menuItemAddTo;
         private System.Windows.Forms.MainMenu mainMenu1;
-        private System.Windows.Forms.MenuItem menuItem7;
+        private System.Windows.Forms.MenuItem menuItemFile;
         private System.Windows.Forms.MenuItem newFileMenuItem;
         private System.Windows.Forms.MenuItem openFileMenuItem;
         private System.Windows.Forms.MenuItem saveFileMenuItem;
@@ -53,10 +53,10 @@ namespace myPword
         private System.Windows.Forms.MenuItem exitMenuItem;
         private System.Windows.Forms.MenuItem menuItemBlank;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.MenuItem menuItem1;
+        private System.Windows.Forms.MenuItem menuItemEncryptNode;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolBarButton toolBarView;
-        private System.Windows.Forms.MenuItem menuItem3;
+        private System.Windows.Forms.MenuItem menuItemCopy;
         private System.Windows.Forms.MenuItem menuItem17;
         private System.Windows.Forms.MenuItem menuItem18;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
@@ -145,7 +145,7 @@ namespace myPword
         private System.Windows.Forms.MenuItem menuItem19;
         private System.Windows.Forms.MenuItem menuItem20;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.MenuItem menuItem11;
+        private System.Windows.Forms.MenuItem menuItemOpenLink;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuItem menuItem12;
         private System.Windows.Forms.Panel panel2;
@@ -180,13 +180,13 @@ namespace myPword
         private System.Windows.Forms.MenuItem menuItemExportToXmlHtml;
         private ToolBarButton toolBarXML;
         private NotifyIcon notifyIcon2;
-        private MenuItem menuItem2;
+        private MenuItem menuItemAttributes;
 
         // Import interop services
 
         pWordLib.UserActivityHook.UserActivityHook actHook;
-        private MenuItem menuItem5;
-        private MenuItem menuItem6;
+        private MenuItem menuItemAttributeAdd;
+        private MenuItem menuItemNamespace;
         private MenuItem menuItem36;
         private MenuItem menuItem37;
         private MenuItem menuItem40;
@@ -359,15 +359,16 @@ namespace myPword
 			this.toolBarView = new System.Windows.Forms.ToolBarButton();
 			this.toolBarXML = new System.Windows.Forms.ToolBarButton();
 			this.toolBarSearch = new System.Windows.Forms.ToolBarButton();
+			this.toolBarCollapse = new System.Windows.Forms.ToolBarButton();
 			this.imgToolbar1 = new System.Windows.Forms.ImageList(this.components);
 			this.cmTree = new System.Windows.Forms.ContextMenu();
-			this.menuItem4 = new System.Windows.Forms.MenuItem();
+			this.menuItemAddTo = new System.Windows.Forms.MenuItem();
 			this.menuItem13 = new System.Windows.Forms.MenuItem();
 			this.menuItem29 = new System.Windows.Forms.MenuItem();
-			this.menuItem3 = new System.Windows.Forms.MenuItem();
-			this.menuItem2 = new System.Windows.Forms.MenuItem();
-			this.menuItem5 = new System.Windows.Forms.MenuItem();
-			this.menuItem6 = new System.Windows.Forms.MenuItem();
+			this.menuItemCopy = new System.Windows.Forms.MenuItem();
+			this.menuItemAttributes = new System.Windows.Forms.MenuItem();
+			this.menuItemAttributeAdd = new System.Windows.Forms.MenuItem();
+			this.menuItemNamespace = new System.Windows.Forms.MenuItem();
 			this.menuItem36 = new System.Windows.Forms.MenuItem();
 			this.menuItem37 = new System.Windows.Forms.MenuItem();
 			this.menuItem83 = new System.Windows.Forms.MenuItem();
@@ -376,7 +377,7 @@ namespace myPword
 			this.menuItem32 = new System.Windows.Forms.MenuItem();
 			this.menuItem21 = new System.Windows.Forms.MenuItem();
 			this.menuItem31 = new System.Windows.Forms.MenuItem();
-			this.menuItem1 = new System.Windows.Forms.MenuItem();
+			this.menuItemEncryptNode = new System.Windows.Forms.MenuItem();
 			this.menuItem14 = new System.Windows.Forms.MenuItem();
 			this.menuItem34 = new System.Windows.Forms.MenuItem();
 			this.menuItemExportToXmlHtml = new System.Windows.Forms.MenuItem();
@@ -436,10 +437,10 @@ namespace myPword
 			this.menuItem89 = new System.Windows.Forms.MenuItem();
 			this.menuItem90 = new System.Windows.Forms.MenuItem();
 			this.menuItem24 = new System.Windows.Forms.MenuItem();
-			this.menuItem11 = new System.Windows.Forms.MenuItem();
+			this.menuItemOpenLink = new System.Windows.Forms.MenuItem();
 			this.imageTree1 = new System.Windows.Forms.ImageList(this.components);
 			this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
-			this.menuItem7 = new System.Windows.Forms.MenuItem();
+			this.menuItemFile = new System.Windows.Forms.MenuItem();
 			this.newFileMenuItem = new System.Windows.Forms.MenuItem();
 			this.openFileMenuItem = new System.Windows.Forms.MenuItem();
 			this.saveFileMenuItem = new System.Windows.Forms.MenuItem();
@@ -493,7 +494,6 @@ namespace myPword
 			this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
 			this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
 			this.userControl11 = new LeftRight.LeftRight();
-			this.toolBarCollapse = new System.Windows.Forms.ToolBarButton();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel4.SuspendLayout();
@@ -518,7 +518,7 @@ namespace myPword
 			// 
 			this.menuItemShow.Index = 0;
 			this.menuItemShow.Text = "&Show";
-			this.menuItemShow.Click += new System.EventHandler(this.menuItem6_Click);
+			this.menuItemShow.Click += new System.EventHandler(this.menuItemShow_Click);
 			// 
 			// menuItemBlank
 			// 
@@ -529,11 +529,11 @@ namespace myPword
 			// 
 			this.menuItemExit.Index = 2;
 			this.menuItemExit.Text = "E&xit";
-			this.menuItemExit.Click += new System.EventHandler(this.menuItem5_Click);
+			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
 			// 
 			// statusBar1
 			// 
-			this.statusBar1.Location = new System.Drawing.Point(0, 520);
+			this.statusBar1.Location = new System.Drawing.Point(0, 442);
 			this.statusBar1.Name = "statusBar1";
 			this.statusBar1.Size = new System.Drawing.Size(574, 41);
 			this.statusBar1.TabIndex = 0;
@@ -583,6 +583,11 @@ namespace myPword
 			this.toolBarSearch.ImageIndex = 8;
 			this.toolBarSearch.Name = "toolBarSearch";
 			// 
+			// toolBarCollapse
+			// 
+			this.toolBarCollapse.ImageIndex = 9;
+			this.toolBarCollapse.Name = "toolBarCollapse";
+			// 
 			// imgToolbar1
 			// 
 			this.imgToolbar1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgToolbar1.ImageStream")));
@@ -601,34 +606,34 @@ namespace myPword
 			// cmTree
 			// 
 			this.cmTree.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem4,
+            this.menuItemAddTo,
             this.menuItem13,
             this.menuItem29,
-            this.menuItem3,
-            this.menuItem2,
-            this.menuItem6,
+            this.menuItemCopy,
+            this.menuItemAttributes,
+            this.menuItemNamespace,
             this.menuItem83,
             this.menuItem30,
             this.menuItem22,
             this.menuItem32,
             this.menuItem21,
             this.menuItem31,
-            this.menuItem1,
+            this.menuItemEncryptNode,
             this.menuItem14,
             this.menuItem34,
             this.mnuImportXML,
             this.menuItem40,
             this.menuItem39,
             this.menuItem24,
-            this.menuItem11});
+            this.menuItemOpenLink});
 			this.cmTree.Popup += new System.EventHandler(this.cmTree_Popup);
 			// 
 			// menuItem4
 			// 
-			this.menuItem4.Index = 0;
-			this.menuItem4.Shortcut = System.Windows.Forms.Shortcut.CtrlA;
-			this.menuItem4.Text = "Add To";
-			this.menuItem4.Click += new System.EventHandler(this.menuItem4_Click);
+			this.menuItemAddTo.Index = 0;
+			this.menuItemAddTo.Shortcut = System.Windows.Forms.Shortcut.CtrlA;
+			this.menuItemAddTo.Text = "Add To";
+			this.menuItemAddTo.Click += new System.EventHandler(this.menuItemAddTo_Click);
 			// 
 			// menuItem13
 			// 
@@ -646,33 +651,33 @@ namespace myPword
 			// 
 			// menuItem3
 			// 
-			this.menuItem3.Index = 3;
-			this.menuItem3.Shortcut = System.Windows.Forms.Shortcut.CtrlC;
-			this.menuItem3.Text = "Copy";
-			this.menuItem3.Click += new System.EventHandler(this.menuItem3_Click_1);
+			this.menuItemCopy.Index = 3;
+			this.menuItemCopy.Shortcut = System.Windows.Forms.Shortcut.CtrlC;
+			this.menuItemCopy.Text = "Copy";
+			this.menuItemCopy.Click += new System.EventHandler(this.menuItemCopy_Click);
 			// 
 			// menuItem2
 			// 
-			this.menuItem2.Index = 4;
-			this.menuItem2.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem5});
-			this.menuItem2.Text = "A&ttributes";
-			this.menuItem2.Click += new System.EventHandler(this.menuItemAttribute_Click);
+			this.menuItemAttributes.Index = 4;
+			this.menuItemAttributes.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemAttributeAdd});
+			this.menuItemAttributes.Text = "A&ttributes";
+			this.menuItemAttributes.Click += new System.EventHandler(this.menuItemAttribute_Click);
 			// 
 			// menuItem5
 			// 
-			this.menuItem5.Index = 0;
-			this.menuItem5.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftA;
-			this.menuItem5.Text = "Add";
-			this.menuItem5.Click += new System.EventHandler(this.menuItemAttributeAdd_Click);
+			this.menuItemAttributeAdd.Index = 0;
+			this.menuItemAttributeAdd.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftA;
+			this.menuItemAttributeAdd.Text = "Add";
+			this.menuItemAttributeAdd.Click += new System.EventHandler(this.menuItemAttributeAdd_Click);
 			// 
 			// menuItem6
 			// 
-			this.menuItem6.Index = 5;
-			this.menuItem6.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			this.menuItemNamespace.Index = 5;
+			this.menuItemNamespace.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem36,
             this.menuItem37});
-			this.menuItem6.Text = "Namespace";
+			this.menuItemNamespace.Text = "Namespace";
 			// 
 			// menuItem36
 			// 
@@ -731,9 +736,9 @@ namespace myPword
 			// 
 			// menuItem1
 			// 
-			this.menuItem1.Enabled = false;
-			this.menuItem1.Index = 12;
-			this.menuItem1.Text = "Encrypt Node";
+			this.menuItemEncryptNode.Enabled = false;
+			this.menuItemEncryptNode.Index = 12;
+			this.menuItemEncryptNode.Text = "Encrypt Node";
 			// 
 			// menuItem14
 			// 
@@ -1136,9 +1141,9 @@ namespace myPword
 			// 
 			// menuItem11
 			// 
-			this.menuItem11.Index = 19;
-			this.menuItem11.Text = "Open Link [Dbl Lft Click]";
-			this.menuItem11.Click += new System.EventHandler(this.menuItem11_Click);
+			this.menuItemOpenLink.Index = 19;
+			this.menuItemOpenLink.Text = "Open Link [Dbl Lft Click]";
+			this.menuItemOpenLink.Click += new System.EventHandler(this.menuItemOpenLink_Click);
 			// 
 			// imageTree1
 			// 
@@ -1151,15 +1156,15 @@ namespace myPword
 			// mainMenu1
 			// 
 			this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem7,
+            this.menuItemFile,
             this.menuItem26,
             this.menuItem33,
             this.menuItem17});
 			// 
 			// menuItem7
 			// 
-			this.menuItem7.Index = 0;
-			this.menuItem7.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			this.menuItemFile.Index = 0;
+			this.menuItemFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.newFileMenuItem,
             this.openFileMenuItem,
             this.saveFileMenuItem,
@@ -1167,14 +1172,14 @@ namespace myPword
             this.exportXMLMenuItem,
             this.menuItem25,
             this.exitMenuItem});
-			this.menuItem7.Text = "&File";
-			this.menuItem7.Click += new System.EventHandler(this.menuItem7_Click);
+			this.menuItemFile.Text = "&File";
+			this.menuItemFile.Click += new System.EventHandler(this.menuItem7_Click);
 			// 
 			// newFileMenuItem
 			// 
 			this.newFileMenuItem.Index = 0;
 			this.newFileMenuItem.Text = "&New";
-			this.newFileMenuItem.Click += new System.EventHandler(this.menuItem8_Click);
+			this.newFileMenuItem.Click += new System.EventHandler(this.menuItemNewFile_Click);
 			// 
 			// openFileMenuItem
 			// 
@@ -1325,7 +1330,7 @@ namespace myPword
 			// splitter1
 			// 
 			this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.splitter1.Location = new System.Drawing.Point(0, 124);
+			this.splitter1.Location = new System.Drawing.Point(0, 46);
 			this.splitter1.Name = "splitter1";
 			this.splitter1.Size = new System.Drawing.Size(574, 15);
 			this.splitter1.TabIndex = 5;
@@ -1338,7 +1343,7 @@ namespace myPword
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 92);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(574, 428);
+			this.panel1.Size = new System.Drawing.Size(574, 350);
 			this.panel1.TabIndex = 6;
 			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
@@ -1459,7 +1464,7 @@ namespace myPword
 			this.panel6.Controls.Add(this.btnCancel);
 			this.panel6.Location = new System.Drawing.Point(0, 192);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(574, 325);
+			this.panel6.Size = new System.Drawing.Size(574, 247);
 			this.panel6.TabIndex = 5;
 			// 
 			// treeView1
@@ -1479,7 +1484,7 @@ namespace myPword
 			this.treeView1.Name = "treeView1";
 			this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
 			this.treeView1.SelectedImageIndex = 0;
-			this.treeView1.Size = new System.Drawing.Size(574, 124);
+			this.treeView1.Size = new System.Drawing.Size(574, 46);
 			this.treeView1.TabIndex = 3;
 			this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
 			this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1498,7 +1503,7 @@ namespace myPword
 			this.tabs.Controls.Add(this.tabNamespaces);
 			this.tabs.Controls.Add(this.tabAttributes);
 			this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tabs.Location = new System.Drawing.Point(0, 139);
+			this.tabs.Location = new System.Drawing.Point(0, 61);
 			this.tabs.Name = "tabs";
 			this.tabs.SelectedIndex = 0;
 			this.tabs.Size = new System.Drawing.Size(574, 186);
@@ -1635,16 +1640,11 @@ namespace myPword
 			this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
 			this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
 			// 
-			// toolBarCollapse
-			// 
-			this.toolBarCollapse.ImageIndex = 9;
-			this.toolBarCollapse.Name = "toolBarCollapse";
-			// 
 			// pWord
 			// 
 			this.AccessibleDescription = "Enabled to view file after xml or html export.";
 			this.AutoScaleBaseSize = new System.Drawing.Size(10, 24);
-			this.ClientSize = new System.Drawing.Size(574, 561);
+			this.ClientSize = new System.Drawing.Size(574, 483);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.userControl11);
 			this.Controls.Add(this.toolBar1);
@@ -1695,7 +1695,7 @@ namespace myPword
 #endif
         }
 
-        private void menuItem5_Click(object sender, System.EventArgs e)
+        private void menuItemExit_Click(object sender, System.EventArgs e)
         {
             // EXIT
             this.Dispose(true);
@@ -1879,11 +1879,11 @@ namespace myPword
 
         }
 
-        private void menuItem3_Click(object sender, System.EventArgs e)
-        {
-            VIS = true;
-            this.Visible = true;
-        }
+        //private void menuItemCopy_Click(object sender, System.EventArgs e)
+        //{
+        //    VIS = true;
+        //    this.Visible = true;
+        //}
 
         private void UpdateTree()
         {
@@ -1905,7 +1905,7 @@ namespace myPword
 
         }
 
-        private void menuItem8_Click(object sender, System.EventArgs e)
+        private void menuItemNewFile_Click(object sender, System.EventArgs e)
         {
             flag_file = false;  // notice... I don't want you saving new stuff over your old refined work.
 
@@ -1971,7 +1971,7 @@ namespace myPword
 
         }
 
-        private void menuItem4_Click(object sender, System.EventArgs e)
+        private void menuItemAddTo_Click(object sender, System.EventArgs e)
         {
 
             mode = nodeMode.addto;
@@ -2027,7 +2027,7 @@ namespace myPword
 
         }
 
-        private void menuItem6_Click(object sender, System.EventArgs e)
+        private void menuItemShow_Click(object sender, System.EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
             this.autoHide_flag = false;
@@ -2310,6 +2310,9 @@ namespace myPword
                     {
                     // this should be a full search as the search is conducted on the toolbar
                     var masterNode = (pNode)this.treeView1.Nodes[0];
+                    if (this.txtObject.Text == "") {
+                        throw new ArgumentException("Value text must contain some search term");
+					}
                     var pNodes = masterNode.Find(this.txtObject.Text, 0);
                     foreach(var _pNode in pNodes) {
                         var _parent = _pNode.Parent;
@@ -2369,7 +2372,7 @@ namespace myPword
 
         }
 
-        private void menuItem3_Click_1(object sender, System.EventArgs e)
+        private void menuItemCopy_Click(object sender, System.EventArgs e)
         {
             lblName.Text = "Name:";
             lblValue.Text = "Value:";
@@ -2528,7 +2531,7 @@ namespace myPword
             this.Close();
         }
 
-        private void menuItem11_Click(object sender, System.EventArgs e)
+        private void menuItemOpenLink_Click(object sender, System.EventArgs e)
         {
             try
             {
@@ -2949,7 +2952,7 @@ namespace myPword
                 else if (e.Clicks == 2)
                 {
                     System.EventArgs generic = new System.EventArgs();
-                    menuItem11_Click(sender, generic);
+                    menuItemOpenLink_Click(sender, generic);
                 }
             }
             else if (e.Button == System.Windows.Forms.MouseButtons.Right)
