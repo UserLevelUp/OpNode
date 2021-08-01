@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Microsoft.Data.ConnectionUI/17.0.0-previews-2-31512-422": {
+      "Microsoft.Data.ConnectionUI/16.10.31320.204": {
         "type": "package",
         "compile": {
           "lib/net45/Microsoft.Data.ConnectionUI.dll": {}
@@ -14,16 +14,61 @@
       "Microsoft.DependencyValidation.Analyzers/0.11.0": {
         "type": "package"
       },
-      "Microsoft.VisualStudio.Data/17.0.0-previews-2-31512-422": {
+      "Microsoft.VisualStudio.Data/16.10.31320.204": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Data.ConnectionUI": "17.0.0-previews-2-31512-422"
+          "Microsoft.Data.ConnectionUI": "16.10.31320.204",
+          "Microsoft.VisualStudio.Shell.Interop": "16.10.31320.204"
         },
         "compile": {
           "lib/net472/Microsoft.VisualStudio.Data.dll": {}
         },
         "runtime": {
           "lib/net472/Microsoft.VisualStudio.Data.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.OLE.Interop/16.10.31320.204": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.SDK.EmbedInteropTypes": "15.0.34"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.OLE.Interop.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.OLE.Interop.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.SDK.EmbedInteropTypes/15.0.34": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.VisualStudio.SDK.EmbedInteropTypes.targets": {}
+        }
+      },
+      "Microsoft.VisualStudio.Shell.Interop/16.10.31320.204": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.SDK.EmbedInteropTypes": "15.0.34",
+          "Microsoft.VisualStudio.TextManager.Interop": "16.10.31320.204"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Shell.Interop.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Shell.Interop.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.TextManager.Interop/16.10.31320.204": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.OLE.Interop": "16.10.31320.204",
+          "Microsoft.VisualStudio.SDK.EmbedInteropTypes": "15.0.34"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.TextManager.Interop.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.TextManager.Interop.dll": {}
         }
       },
       "pWordLib/1.0.0": {
@@ -38,16 +83,16 @@
     }
   },
   "libraries": {
-    "Microsoft.Data.ConnectionUI/17.0.0-previews-2-31512-422": {
-      "sha512": "W6kxI8gRAB00CCEFtakNaioFw4OgKw2uR3XyK3mmX7cZACOz5cDAIhpGHa1NhgUDZfgfKF/g3R6o7jY/rjg7dg==",
+    "Microsoft.Data.ConnectionUI/16.10.31320.204": {
+      "sha512": "1tIo6C2M41uL1CJzDC+fpi3C/MOxwWHOZlUCbXzNsHkFRQVI1zQiFfG0UcF2mgYddBSHqE9znUPURc/uMQToKQ==",
       "type": "package",
-      "path": "microsoft.data.connectionui/17.0.0-previews-2-31512-422",
+      "path": "microsoft.data.connectionui/16.10.31320.204",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net45/Microsoft.Data.ConnectionUI.dll",
         "lib/net45/Microsoft.Data.ConnectionUI.xml",
-        "microsoft.data.connectionui.17.0.0-previews-2-31512-422.nupkg.sha512",
+        "microsoft.data.connectionui.16.10.31320.204.nupkg.sha512",
         "microsoft.data.connectionui.nuspec"
       ]
     },
@@ -79,17 +124,80 @@
         "tools/uninstall.ps1"
       ]
     },
-    "Microsoft.VisualStudio.Data/17.0.0-previews-2-31512-422": {
-      "sha512": "vOEc/4Y5XgoI1eE40CyhPOlsREnvKdsq1sb4e2jVZuWBFIrxGoHTyMPJiUKp8WdgIRuEkYMvoX1x+JRXiI4n0A==",
+    "Microsoft.VisualStudio.Data/16.10.31320.204": {
+      "sha512": "pRsEC85eoK9W8k2sYBthCtiAOxmW+UXAQUn1ERW6oXckJ0DLEO5XhNjsbWPIa1G3//otymhTr0bzqKFnL8yy3A==",
       "type": "package",
-      "path": "microsoft.visualstudio.data/17.0.0-previews-2-31512-422",
+      "path": "microsoft.visualstudio.data/16.10.31320.204",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net45/Microsoft.VisualStudio.Data.xml",
         "lib/net472/Microsoft.VisualStudio.Data.dll",
-        "microsoft.visualstudio.data.17.0.0-previews-2-31512-422.nupkg.sha512",
+        "microsoft.visualstudio.data.16.10.31320.204.nupkg.sha512",
         "microsoft.visualstudio.data.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.OLE.Interop/16.10.31320.204": {
+      "sha512": "75KZJPVwVc31vbYUv+g8LJ3yFYn9XIY/h7oz43aRUExQDKWJtIGEX3g77fgatFgRbj4Y5jJwM5JK9TFGskzywg==",
+      "type": "package",
+      "path": "microsoft.visualstudio.ole.interop/16.10.31320.204",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "PackageIcon.png",
+        "lib/net45/Microsoft.VisualStudio.OLE.Interop.dll",
+        "lib/net45/Microsoft.VisualStudio.OLE.Interop.xml",
+        "lib/netstandard2.0/Microsoft.VisualStudio.OLE.Interop.dll",
+        "lib/netstandard2.0/Microsoft.VisualStudio.OLE.Interop.xml",
+        "microsoft.visualstudio.ole.interop.16.10.31320.204.nupkg.sha512",
+        "microsoft.visualstudio.ole.interop.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.SDK.EmbedInteropTypes/15.0.34": {
+      "sha512": "zDb7MrGyE5V5X91sul3cM5vEpiXL94fsxE+HITpBzsZwiOpu6um6S+aJV+lPL0RCddblj+tu1yfrlowm5rtSRQ==",
+      "type": "package",
+      "path": "microsoft.visualstudio.sdk.embedinteroptypes/15.0.34",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Microsoft.VisualStudio.SDK.EmbedInteropTypes.targets",
+        "microsoft.visualstudio.sdk.embedinteroptypes.15.0.34.nupkg.sha512",
+        "microsoft.visualstudio.sdk.embedinteroptypes.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Shell.Interop/16.10.31320.204": {
+      "sha512": "WITpG7W9phHr2ioimHaU768OeXBRecCsL/eiLhUanBz6Kan2yMqA008b5zC20W/XHgG6sdXNKBbckrJY4W/E0g==",
+      "type": "package",
+      "path": "microsoft.visualstudio.shell.interop/16.10.31320.204",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "PackageIcon.png",
+        "lib/net45/Microsoft.VisualStudio.Shell.Interop.dll",
+        "lib/net45/Microsoft.VisualStudio.Shell.Interop.xml",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Shell.Interop.dll",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Shell.Interop.xml",
+        "microsoft.visualstudio.shell.interop.16.10.31320.204.nupkg.sha512",
+        "microsoft.visualstudio.shell.interop.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.TextManager.Interop/16.10.31320.204": {
+      "sha512": "l9ZX5+eubbmXETQTrgdAFf2Ddu+uL5QPSx34EJ9gy6FnKcZQM1ns/ovplRzOGnuxWDdMd9ENfrP7QbjBnU7mBg==",
+      "type": "package",
+      "path": "microsoft.visualstudio.textmanager.interop/16.10.31320.204",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "PackageIcon.png",
+        "lib/net45/Microsoft.VisualStudio.TextManager.Interop.dll",
+        "lib/net45/Microsoft.VisualStudio.TextManager.Interop.xml",
+        "lib/netstandard2.0/Microsoft.VisualStudio.TextManager.Interop.dll",
+        "lib/netstandard2.0/Microsoft.VisualStudio.TextManager.Interop.xml",
+        "microsoft.visualstudio.textmanager.interop.16.10.31320.204.nupkg.sha512",
+        "microsoft.visualstudio.textmanager.interop.nuspec"
       ]
     },
     "pWordLib/1.0.0": {
@@ -101,7 +209,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.DependencyValidation.Analyzers >= 0.11.0",
-      "Microsoft.VisualStudio.Data >= 17.0.0-previews-2-31512-422",
+      "Microsoft.VisualStudio.Data >= 16.10.31320.204",
       "pWordLib >= 1.0.0"
     ]
   },
@@ -164,7 +272,7 @@
           },
           "Microsoft.VisualStudio.Data": {
             "target": "Package",
-            "version": "[17.0.0-previews-2-31512-422, )"
+            "version": "[16.10.31320.204, )"
           }
         },
         "imports": [
@@ -191,7 +299,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.Data.ConnectionUI 17.0.0-previews-2-31512-422' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.Data.ConnectionUI 16.10.31320.204' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Data.ConnectionUI",
       "targetGraphs": [
         "net5.0"
@@ -201,7 +309,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.VisualStudio.Data 17.0.0-previews-2-31512-422' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.VisualStudio.Data 16.10.31320.204' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.VisualStudio.Data",
       "targetGraphs": [
         "net5.0"

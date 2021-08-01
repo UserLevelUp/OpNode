@@ -1,19 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "04sVtRnJ1ds2dnhpiM2FjHgehz2HpI0HWfi6VRKoYH1muggX7olV4kZ5yOXts1ft+wbGRN6ws13BbwrxTXpoyg==",
+  "dgSpecHash": "fZ+9Hu4VJXWT9yeRI2k/TsQTdhHb0qMxe+zrVMcNGZ7E5PtShe/6IVN6DyocU3zsFOoKJqDXrkbTvaae0oiyAg==",
   "success": true,
   "projectFilePath": "C:\\src\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\marcn\\.nuget\\packages\\microsoft.data.connectionui\\17.0.0-previews-2-31512-422\\microsoft.data.connectionui.17.0.0-previews-2-31512-422.nupkg.sha512",
+    "C:\\Users\\marcn\\.nuget\\packages\\microsoft.data.connectionui\\16.10.31320.204\\microsoft.data.connectionui.16.10.31320.204.nupkg.sha512",
     "C:\\Users\\marcn\\.nuget\\packages\\microsoft.dependencyvalidation.analyzers\\0.11.0\\microsoft.dependencyvalidation.analyzers.0.11.0.nupkg.sha512",
-    "C:\\Users\\marcn\\.nuget\\packages\\microsoft.visualstudio.data\\17.0.0-previews-2-31512-422\\microsoft.visualstudio.data.17.0.0-previews-2-31512-422.nupkg.sha512"
+    "C:\\Users\\marcn\\.nuget\\packages\\microsoft.visualstudio.data\\16.10.31320.204\\microsoft.visualstudio.data.16.10.31320.204.nupkg.sha512",
+    "C:\\Users\\marcn\\.nuget\\packages\\microsoft.visualstudio.ole.interop\\16.10.31320.204\\microsoft.visualstudio.ole.interop.16.10.31320.204.nupkg.sha512",
+    "C:\\Users\\marcn\\.nuget\\packages\\microsoft.visualstudio.sdk.embedinteroptypes\\15.0.34\\microsoft.visualstudio.sdk.embedinteroptypes.15.0.34.nupkg.sha512",
+    "C:\\Users\\marcn\\.nuget\\packages\\microsoft.visualstudio.shell.interop\\16.10.31320.204\\microsoft.visualstudio.shell.interop.16.10.31320.204.nupkg.sha512",
+    "C:\\Users\\marcn\\.nuget\\packages\\microsoft.visualstudio.textmanager.interop\\16.10.31320.204\\microsoft.visualstudio.textmanager.interop.16.10.31320.204.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.Data.ConnectionUI 17.0.0-previews-2-31512-422' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.Data.ConnectionUI 16.10.31320.204' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Data.ConnectionUI",
       "targetGraphs": [
         "net5.0"
@@ -23,7 +27,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.VisualStudio.Data 17.0.0-previews-2-31512-422' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.VisualStudio.Data 16.10.31320.204' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.VisualStudio.Data",
       "targetGraphs": [
         "net5.0"

@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.DependencyValidation.Analyzers" Version="0.11.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Data" Version="17.0.0-previews-2-31512-422" />
+    <PackageReference Include="Microsoft.VisualStudio.Data" Version="16.10.31320.204" />
   </ItemGroup>
 
   <ItemGroup>

@@ -57,7 +57,7 @@
             },
             "Microsoft.VisualStudio.Data": {
               "target": "Package",
-              "version": "[17.0.0-previews-2-31512-422, )"
+              "version": "[16.10.31320.204, )"
             }
           },
           "imports": [
