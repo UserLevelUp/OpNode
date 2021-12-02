@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fZ+9Hu4VJXWT9yeRI2k/TsQTdhHb0qMxe+zrVMcNGZ7E5PtShe/6IVN6DyocU3zsFOoKJqDXrkbTvaae0oiyAg==",
+  "dgSpecHash": "fwsviKVhoBZ+b2IYIW4ENaDMilat5vlSoZUFHYLCqg5jNnEb4Dedf1KtIEXUVrL8Kxj/wzNh0Zk9LQE17o+Y2A==",
   "success": true,
-  "projectFilePath": "C:\\src\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
+  "projectFilePath": "C:\\src\\OldDev\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marcn\\.nuget\\packages\\microsoft.data.connectionui\\16.10.31320.204\\microsoft.data.connectionui.16.10.31320.204.nupkg.sha512",
     "C:\\Users\\marcn\\.nuget\\packages\\microsoft.dependencyvalidation.analyzers\\0.11.0\\microsoft.dependencyvalidation.analyzers.0.11.0.nupkg.sha512",

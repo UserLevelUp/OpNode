@@ -222,11 +222,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\src\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
+      "projectUniqueName": "C:\\src\\OldDev\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
       "projectName": "PnodeDataProvider",
-      "projectPath": "C:\\src\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
+      "projectPath": "C:\\src\\OldDev\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
       "packagesPath": "C:\\Users\\marcn\\.nuget\\packages\\",
-      "outputPath": "C:\\src\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\obj\\",
+      "outputPath": "C:\\src\\OldDev\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -244,14 +244,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://adv-dev.pkgs.visualstudio.com/_packaging/ARTS-Packages/Nuget/v3/index.json": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\src\\pword2\\pword\\pWord4\\pWordLib\\pWordLib.csproj": {
-              "projectPath": "C:\\src\\pword2\\pword\\pWord4\\pWordLib\\pWordLib.csproj"
+            "C:\\src\\OldDev\\pword2\\pword\\pWord4\\pWordLib\\pWordLib.csproj": {
+              "projectPath": "C:\\src\\OldDev\\pword2\\pword\\pWord4\\pWordLib\\pWordLib.csproj"
             }
           }
         }
@@ -290,7 +291,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
