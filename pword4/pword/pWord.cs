@@ -535,9 +535,9 @@ namespace myPword
 			// 
 			// statusBar1
 			// 
-			this.statusBar1.Location = new System.Drawing.Point(0, 403);
+			this.statusBar1.Location = new System.Drawing.Point(0, 484);
 			this.statusBar1.Name = "statusBar1";
-			this.statusBar1.Size = new System.Drawing.Size(574, 41);
+			this.statusBar1.Size = new System.Drawing.Size(576, 37);
 			this.statusBar1.TabIndex = 0;
 			this.statusBar1.Text = "statusBar1";
 			// 
@@ -554,7 +554,7 @@ namespace myPword
 			this.toolBar1.Location = new System.Drawing.Point(0, 0);
 			this.toolBar1.Name = "toolBar1";
 			this.toolBar1.ShowToolTips = true;
-			this.toolBar1.Size = new System.Drawing.Size(574, 48);
+			this.toolBar1.Size = new System.Drawing.Size(576, 48);
 			this.toolBar1.TabIndex = 1;
 			this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
 			// 
@@ -1307,7 +1307,7 @@ namespace myPword
 			this.txtValue.Multiline = true;
 			this.txtValue.Name = "txtValue";
 			this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.txtValue.Size = new System.Drawing.Size(552, 133);
+			this.txtValue.Size = new System.Drawing.Size(562, 128);
 			this.txtValue.TabIndex = 3;
 			this.txtValue.TabStop = false;
 			// 
@@ -1332,9 +1332,9 @@ namespace myPword
 			// splitter1
 			// 
 			this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.splitter1.Location = new System.Drawing.Point(0, 7);
+			this.splitter1.Location = new System.Drawing.Point(0, 117);
 			this.splitter1.Name = "splitter1";
-			this.splitter1.Size = new System.Drawing.Size(574, 15);
+			this.splitter1.Size = new System.Drawing.Size(576, 13);
 			this.splitter1.TabIndex = 5;
 			this.splitter1.TabStop = false;
 			// 
@@ -1343,9 +1343,9 @@ namespace myPword
 			this.panel1.Controls.Add(this.panel2);
 			this.panel1.Controls.Add(this.panel6);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(0, 92);
+			this.panel1.Location = new System.Drawing.Point(0, 88);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(574, 311);
+			this.panel1.Size = new System.Drawing.Size(576, 396);
 			this.panel1.TabIndex = 6;
 			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
@@ -1358,7 +1358,7 @@ namespace myPword
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(574, 192);
+			this.panel2.Size = new System.Drawing.Size(576, 176);
 			this.panel2.TabIndex = 3;
 			this.panel2.VisibleChanged += new System.EventHandler(this.panel2_VisibleChanged);
 			// 
@@ -1367,9 +1367,9 @@ namespace myPword
 			this.panel4.Controls.Add(this.txtObject);
 			this.panel4.Controls.Add(this.lblValue);
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel4.Location = new System.Drawing.Point(0, 44);
+			this.panel4.Location = new System.Drawing.Point(0, 40);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(570, 75);
+			this.panel4.Size = new System.Drawing.Size(572, 69);
 			this.panel4.TabIndex = 2;
 			// 
 			// txtObject
@@ -1377,11 +1377,11 @@ namespace myPword
 			this.txtObject.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtObject.Location = new System.Drawing.Point(112, 0);
+			this.txtObject.Location = new System.Drawing.Point(101, 0);
 			this.txtObject.Multiline = true;
 			this.txtObject.Name = "txtObject";
 			this.txtObject.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.txtObject.Size = new System.Drawing.Size(458, 73);
+			this.txtObject.Size = new System.Drawing.Size(471, 67);
 			this.txtObject.TabIndex = 1;
 			// 
 			// lblValue
@@ -1389,7 +1389,7 @@ namespace myPword
 			this.lblValue.Dock = System.Windows.Forms.DockStyle.Left;
 			this.lblValue.Location = new System.Drawing.Point(0, 0);
 			this.lblValue.Name = "lblValue";
-			this.lblValue.Size = new System.Drawing.Size(112, 75);
+			this.lblValue.Size = new System.Drawing.Size(101, 69);
 			this.lblValue.TabIndex = 0;
 			this.lblValue.Text = "Value:";
 			// 
@@ -1400,15 +1400,15 @@ namespace myPword
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel3.Location = new System.Drawing.Point(0, 0);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(570, 44);
+			this.panel3.Size = new System.Drawing.Size(572, 40);
 			this.panel3.TabIndex = 0;
 			// 
 			// txtName
 			// 
 			this.txtName.Dock = System.Windows.Forms.DockStyle.Top;
-			this.txtName.Location = new System.Drawing.Point(112, 0);
+			this.txtName.Location = new System.Drawing.Point(101, 0);
 			this.txtName.Name = "txtName";
-			this.txtName.Size = new System.Drawing.Size(458, 31);
+			this.txtName.Size = new System.Drawing.Size(471, 29);
 			this.txtName.TabIndex = 1;
 			this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
 			// 
@@ -1417,7 +1417,7 @@ namespace myPword
 			this.lblName.Dock = System.Windows.Forms.DockStyle.Left;
 			this.lblName.Location = new System.Drawing.Point(0, 0);
 			this.lblName.Name = "lblName";
-			this.lblName.Size = new System.Drawing.Size(112, 44);
+			this.lblName.Size = new System.Drawing.Size(101, 40);
 			this.lblName.TabIndex = 0;
 			this.lblName.Text = "Name:";
 			// 
@@ -1427,18 +1427,18 @@ namespace myPword
 			this.panel5.Controls.Add(this.chkClear);
 			this.panel5.Controls.Add(this.btnAdd);
 			this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel5.Location = new System.Drawing.Point(0, 127);
+			this.panel5.Location = new System.Drawing.Point(0, 116);
 			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(570, 61);
+			this.panel5.Size = new System.Drawing.Size(572, 56);
 			this.panel5.TabIndex = 4;
 			// 
 			// chkClear
 			// 
 			this.chkClear.Checked = true;
 			this.chkClear.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.chkClear.Location = new System.Drawing.Point(176, 0);
+			this.chkClear.Location = new System.Drawing.Point(158, 0);
 			this.chkClear.Name = "chkClear";
-			this.chkClear.Size = new System.Drawing.Size(516, 44);
+			this.chkClear.Size = new System.Drawing.Size(465, 40);
 			this.chkClear.TabIndex = 2;
 			this.chkClear.TabStop = false;
 			this.chkClear.Text = "Clear Name and Value fields?";
@@ -1450,7 +1450,7 @@ namespace myPword
 			// 
 			this.btnAdd.Location = new System.Drawing.Point(0, 0);
 			this.btnAdd.Name = "btnAdd";
-			this.btnAdd.Size = new System.Drawing.Size(150, 44);
+			this.btnAdd.Size = new System.Drawing.Size(135, 40);
 			this.btnAdd.TabIndex = 0;
 			this.btnAdd.Text = "Add";
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -1464,9 +1464,9 @@ namespace myPword
 			this.panel6.Controls.Add(this.splitter1);
 			this.panel6.Controls.Add(this.tabs);
 			this.panel6.Controls.Add(this.btnCancel);
-			this.panel6.Location = new System.Drawing.Point(0, 192);
+			this.panel6.Location = new System.Drawing.Point(0, 176);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(574, 208);
+			this.panel6.Size = new System.Drawing.Size(576, 301);
 			this.panel6.TabIndex = 5;
 			// 
 			// treeView1
@@ -1486,7 +1486,7 @@ namespace myPword
 			this.treeView1.Name = "treeView1";
 			this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
 			this.treeView1.SelectedImageIndex = 0;
-			this.treeView1.Size = new System.Drawing.Size(574, 7);
+			this.treeView1.Size = new System.Drawing.Size(576, 117);
 			this.treeView1.TabIndex = 3;
 			this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
 			this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1505,20 +1505,20 @@ namespace myPword
 			this.tabs.Controls.Add(this.tabNamespaces);
 			this.tabs.Controls.Add(this.tabAttributes);
 			this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tabs.Location = new System.Drawing.Point(0, 22);
+			this.tabs.Location = new System.Drawing.Point(0, 130);
 			this.tabs.Name = "tabs";
 			this.tabs.SelectedIndex = 0;
-			this.tabs.Size = new System.Drawing.Size(574, 186);
+			this.tabs.Size = new System.Drawing.Size(576, 171);
 			this.tabs.TabIndex = 7;
 			// 
 			// tabValue
 			// 
 			this.tabValue.AllowDrop = true;
 			this.tabValue.Controls.Add(this.txtValue);
-			this.tabValue.Location = new System.Drawing.Point(8, 39);
+			this.tabValue.Location = new System.Drawing.Point(4, 33);
 			this.tabValue.Name = "tabValue";
 			this.tabValue.Padding = new System.Windows.Forms.Padding(3);
-			this.tabValue.Size = new System.Drawing.Size(558, 139);
+			this.tabValue.Size = new System.Drawing.Size(568, 134);
 			this.tabValue.TabIndex = 0;
 			this.tabValue.Text = "Value";
 			this.tabValue.UseVisualStyleBackColor = true;
@@ -1526,10 +1526,10 @@ namespace myPword
 			// tabNamespaces
 			// 
 			this.tabNamespaces.Controls.Add(this.lstNamespaces);
-			this.tabNamespaces.Location = new System.Drawing.Point(8, 39);
+			this.tabNamespaces.Location = new System.Drawing.Point(4, 33);
 			this.tabNamespaces.Name = "tabNamespaces";
 			this.tabNamespaces.Padding = new System.Windows.Forms.Padding(3);
-			this.tabNamespaces.Size = new System.Drawing.Size(558, 139);
+			this.tabNamespaces.Size = new System.Drawing.Size(510, 134);
 			this.tabNamespaces.TabIndex = 1;
 			this.tabNamespaces.Text = "Namespaces";
 			this.tabNamespaces.UseVisualStyleBackColor = true;
@@ -1544,7 +1544,7 @@ namespace myPword
 			this.lstNamespaces.HideSelection = false;
 			this.lstNamespaces.Location = new System.Drawing.Point(3, 3);
 			this.lstNamespaces.Name = "lstNamespaces";
-			this.lstNamespaces.Size = new System.Drawing.Size(552, 133);
+			this.lstNamespaces.Size = new System.Drawing.Size(504, 128);
 			this.lstNamespaces.TabIndex = 0;
 			this.lstNamespaces.UseCompatibleStateImageBehavior = false;
 			this.lstNamespaces.View = System.Windows.Forms.View.Details;
@@ -1567,10 +1567,10 @@ namespace myPword
 			// tabAttributes
 			// 
 			this.tabAttributes.Controls.Add(this.lstAttributes);
-			this.tabAttributes.Location = new System.Drawing.Point(8, 39);
+			this.tabAttributes.Location = new System.Drawing.Point(4, 33);
 			this.tabAttributes.Name = "tabAttributes";
 			this.tabAttributes.Padding = new System.Windows.Forms.Padding(3);
-			this.tabAttributes.Size = new System.Drawing.Size(558, 139);
+			this.tabAttributes.Size = new System.Drawing.Size(510, 134);
 			this.tabAttributes.TabIndex = 2;
 			this.tabAttributes.Text = "Attributes";
 			this.tabAttributes.UseVisualStyleBackColor = true;
@@ -1584,7 +1584,7 @@ namespace myPword
 			this.lstAttributes.HideSelection = false;
 			this.lstAttributes.Location = new System.Drawing.Point(3, 3);
 			this.lstAttributes.Name = "lstAttributes";
-			this.lstAttributes.Size = new System.Drawing.Size(552, 133);
+			this.lstAttributes.Size = new System.Drawing.Size(504, 128);
 			this.lstAttributes.TabIndex = 1;
 			this.lstAttributes.UseCompatibleStateImageBehavior = false;
 			this.lstAttributes.View = System.Windows.Forms.View.Details;
@@ -1604,7 +1604,7 @@ namespace myPword
 			this.btnCancel.Enabled = false;
 			this.btnCancel.Location = new System.Drawing.Point(4, -4);
 			this.btnCancel.Name = "btnCancel";
-			this.btnCancel.Size = new System.Drawing.Size(150, 44);
+			this.btnCancel.Size = new System.Drawing.Size(135, 41);
 			this.btnCancel.TabIndex = 1;
 			this.btnCancel.TabStop = false;
 			this.btnCancel.Text = "Cancel";
@@ -1635,7 +1635,7 @@ namespace myPword
 			this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
 			this.userControl11.Location = new System.Drawing.Point(0, 48);
 			this.userControl11.Name = "userControl11";
-			this.userControl11.Size = new System.Drawing.Size(574, 44);
+			this.userControl11.Size = new System.Drawing.Size(576, 40);
 			this.userControl11.TabIndex = 4;
 			this.userControl11.TabStop = false;
 			this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
@@ -1645,8 +1645,8 @@ namespace myPword
 			// pWord
 			// 
 			this.AccessibleDescription = "Enabled to view file after xml or html export.";
-			this.AutoScaleBaseSize = new System.Drawing.Size(10, 24);
-			this.ClientSize = new System.Drawing.Size(574, 444);
+			this.AutoScaleBaseSize = new System.Drawing.Size(9, 22);
+			this.ClientSize = new System.Drawing.Size(576, 521);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.userControl11);
 			this.Controls.Add(this.toolBar1);
@@ -1655,7 +1655,7 @@ namespace myPword
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.Menu = this.mainMenu1;
-			this.MinimumSize = new System.Drawing.Size(600, 369);
+			this.MinimumSize = new System.Drawing.Size(540, 338);
 			this.Name = "pWord";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "0_0_6B";
@@ -2323,7 +2323,7 @@ namespace myPword
                     foreach (var _pNode in pNodes)
                     {
                         var _parent = _pNode.Parent;
-                        var _parents = new List<pNode>();
+                        var _parents = new List<pNode>();          
                         _parents.Add((pNode)_parent);
                         while (_parent.Parent != null)
                         {
