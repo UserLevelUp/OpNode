@@ -535,7 +535,7 @@ namespace myPword
 			// 
 			// statusBar1
 			// 
-			this.statusBar1.Location = new System.Drawing.Point(0, 484);
+			this.statusBar1.Location = new System.Drawing.Point(0, 257);
 			this.statusBar1.Name = "statusBar1";
 			this.statusBar1.Size = new System.Drawing.Size(576, 37);
 			this.statusBar1.TabIndex = 0;
@@ -1332,7 +1332,7 @@ namespace myPword
 			// splitter1
 			// 
 			this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.splitter1.Location = new System.Drawing.Point(0, 117);
+			this.splitter1.Location = new System.Drawing.Point(0, -139);
 			this.splitter1.Name = "splitter1";
 			this.splitter1.Size = new System.Drawing.Size(576, 13);
 			this.splitter1.TabIndex = 5;
@@ -1345,7 +1345,7 @@ namespace myPword
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 88);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(576, 396);
+			this.panel1.Size = new System.Drawing.Size(574, 165);
 			this.panel1.TabIndex = 6;
 			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
@@ -1466,7 +1466,7 @@ namespace myPword
 			this.panel6.Controls.Add(this.btnCancel);
 			this.panel6.Location = new System.Drawing.Point(0, 176);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(576, 301);
+			this.panel6.Size = new System.Drawing.Size(574, 62);
 			this.panel6.TabIndex = 5;
 			// 
 			// treeView1
@@ -1505,7 +1505,7 @@ namespace myPword
 			this.tabs.Controls.Add(this.tabNamespaces);
 			this.tabs.Controls.Add(this.tabAttributes);
 			this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tabs.Location = new System.Drawing.Point(0, 130);
+			this.tabs.Location = new System.Drawing.Point(0, -124);
 			this.tabs.Name = "tabs";
 			this.tabs.SelectedIndex = 0;
 			this.tabs.Size = new System.Drawing.Size(576, 171);
@@ -1645,8 +1645,8 @@ namespace myPword
 			// pWord
 			// 
 			this.AccessibleDescription = "Enabled to view file after xml or html export.";
-			this.AutoScaleBaseSize = new System.Drawing.Size(9, 22);
-			this.ClientSize = new System.Drawing.Size(576, 521);
+			this.AutoScaleBaseSize = new System.Drawing.Size(10, 24);
+			this.ClientSize = new System.Drawing.Size(574, 298);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.userControl11);
 			this.Controls.Add(this.toolBar1);
@@ -2846,8 +2846,8 @@ namespace myPword
         private void genericCursorMoved(object sender, EventArgs e)
         {
             //TODO: Make sure mouse move switches from keyboard state.  If user clicks a key like up or down arrow it should ignore the position the cursor is on and re-activate the mouse cursor
-            if (e.GetType() == typeof(System.Windows.Forms.MouseEventArgs))
-            {
+            Debugger.Log(1, "test", "Whats going on");
+                        if (e.GetType() == typeof(System.Windows.Forms.MouseEventArgs)) {
                 var ei = (System.Windows.Forms.MouseEventArgs)e;
                 pNode a = (pNode)treeView1.GetNodeAt(ei.X, ei.Y);
                 if (a != null)
@@ -4416,7 +4416,7 @@ namespace myPword
 
         private void menuItemExportJson_Click(object sender, EventArgs e)
         {
-            Debugger.Log(1, "ExportJson", "Export JSON Hit");
+            Debugger.Log(1,"ExportJson", "Export JSON Hit");
         }
     }
 }
