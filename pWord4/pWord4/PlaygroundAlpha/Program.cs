@@ -8,12 +8,11 @@ namespace PlaygroundAlpha
     {
         private readonly HttpClient _httpClient = new HttpClient();
 
-
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
 
-            // This line will yield control to the UI as the request
+            //   This line will yield control to the UI as the request
             // from the web service is happening.
             //
             // The UI thread is now free to perform other work.
@@ -39,7 +38,6 @@ namespace PlaygroundAlpha
                 Console.WriteLine("adding one");
                 counter.Add(1);
             }
-
         }
 
         private static void Counter_APressed(object sender, EventArgs e)
@@ -47,7 +45,6 @@ namespace PlaygroundAlpha
             Console.WriteLine($"Sender is of type: {sender.GetType().FullName}");
         }
     }
-
 
     class Counter
     {

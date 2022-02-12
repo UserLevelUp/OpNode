@@ -46,7 +46,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -239,6 +239,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <AdditionalFiles Include="..\pWord4\DependencyValidation1\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\pWord4\DependencyValidation1\DependencyValidation2.layerdiagram">
+      <Link>DependencyValidation2.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
     <None Include="app.config" />
     <None Include="Data.xsc">
       <DependentUpon>Data.xsd</DependentUpon>
@@ -250,6 +258,7 @@
       <DependentUpon>Data.xsd</DependentUpon>
     </None>
     <None Include="myPword_TemporaryKey.pfx" />
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="pWordSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -313,8 +322,24 @@
       <Project>{351681A0-AA94-4BF9-855A-683D5981F90D}</Project>
       <Name>LeftRight</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LeftRight\LeftRight.csproj">
+      <Project>{351681a0-aa94-4bf9-855a-683d5981f90d}</Project>
+      <Name>LeftRight</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LeftRight\LeftRight.csproj">
+      <Project>{351681a0-aa94-4bf9-855a-683d5981f90d}</Project>
+      <Name>LeftRight</Name>
+    </ProjectReference>
     <ProjectReference Include="..\pWordLib\pWordLib.csproj">
       <Project>{001AC338-98C7-440E-ABC3-4D0056FE6D56}</Project>
+      <Name>pWordLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pWordLib\pWordLib.csproj">
+      <Project>{001ac338-98c7-440e-abc3-4d0056fe6d56}</Project>
+      <Name>pWordLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pWordLib\pWordLib.csproj">
+      <Project>{001ac338-98c7-440e-abc3-4d0056fe6d56}</Project>
       <Name>pWordLib</Name>
     </ProjectReference>
   </ItemGroup>
@@ -345,7 +370,13 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="xml\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
