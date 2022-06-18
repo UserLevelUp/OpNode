@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CJQaXa+gGJGUfRjJF1G0clA2ncPEO38YdB4jDMO4kuR0sXj+k7FMgLGzXtGP+UgWCoMpZko/iKpBIsMzbpntew==",
+  "dgSpecHash": "4CLYAy9SBSLTGvGzU4XLCrI49nzTyLGyaJRwpzKoWghOdh/BbCAe3ZMVomqqnRAbuWF24PO/jDZFDOPJZVabog==",
   "success": true,
   "projectFilePath": "C:\\src\\OldDev\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
   "expectedPackageFiles": [
@@ -17,20 +17,20 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.Data.ConnectionUI 16.10.31320.204' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.Data.ConnectionUI 16.10.31320.204' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Data.ConnectionUI",
       "targetGraphs": [
-        "net5.0"
+        "net6.0"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.VisualStudio.Data 16.10.31320.204' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.VisualStudio.Data 16.10.31320.204' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.VisualStudio.Data",
       "targetGraphs": [
-        "net5.0"
+        "net6.0"
       ]
     }
   ]
