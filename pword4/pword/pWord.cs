@@ -2651,6 +2651,7 @@ namespace myPword
                     treeView1.SelectedNode = this.tmpNode;
                     treeView1.SelectedNode.Text = aNode.Text;
                     treeView1.SelectedNode.Tag = aNode.Tag;
+                    treeView1.SelectedNode.Name = aNode.Name;
 
                     // This is not necessary, when a save is committed this can be performed at that juncture
                     // However, it may be beneficial to know whether or not a node change was successfully saved
@@ -2665,7 +2666,8 @@ namespace myPword
                     }
 
                     // TODO: for some reason while in edit mode, the starting node is master??? why instead of the selected node???  FIX
-                    aNode.OperationChanged();
+                    //aNode.OperationChanged();
+                    ((pNode)treeView1.SelectedNode).OperationChanged();
 
                     if (flag_file == true)
                     {
