@@ -2141,6 +2141,12 @@ namespace myPword
             }
         }
 
+
+		/// <summary>
+        /// Todo: change to delteNode instead of menuItem4
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menuItem14_Click(object sender, System.EventArgs e)
         {
             try
@@ -2149,6 +2155,7 @@ namespace myPword
                 pNode masterNode;
                 if (treeView1.SelectedNode.Parent != null)
                 {
+                    ((pNode)treeView1.SelectedNode).OperationChanged();
                     treeView1.SelectedNode.Remove();
                     masterNode = (pNode)treeView1.Nodes[0];
                     //					Nodes[0] = masterNode;
@@ -2657,12 +2664,14 @@ namespace myPword
                         this.txtObject.Clear();
                     }
 
+                    // TODO: for some reason while in edit mode, the starting node is master??? why instead of the selected node???  FIX
+                    aNode.OperationChanged();
+
                     if (flag_file == true)
                     {
                         autosave();
                     }
 
-                    aNode.OperationChanged();
                     this.Refresh();
                 }
                 catch (Exception f)
@@ -3014,7 +3023,13 @@ namespace myPword
                 this.modeIndex = treeView1.SelectedNode.Index;
                 //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
                 //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
-                this.tmpNode = (pNode)treeView1.SelectedNode;
+
+                if (treeView1.SelectedNode.Parent != null)
+                {
+                    ((pNode)treeView1.SelectedNode.Parent).OperationChanged();
+                    this.tmpNode = ((pNode)treeView1.SelectedNode);
+                }
+
                 this.txtName.Text = tmpNode.Text;
                 this.txtObject.Text = (string)tmpNode.Tag;
                 this.statusBar1.Text = "Edit Mode";
@@ -3674,6 +3689,7 @@ namespace myPword
                     this.nodeIndex = treeView1.SelectedNode.Index;
                     if (this.treeView1.SelectedNode.Parent != null)
                     {
+                        ((pNode)treeView1.SelectedNode).OperationChanged();
                         this.treeView1.SelectedNode.Remove();
                     }
                     this.statusBar1.Text = "CUT Node Mode";
