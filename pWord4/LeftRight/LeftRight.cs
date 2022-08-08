@@ -72,83 +72,83 @@ namespace LeftRight
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LeftRight));
-            this.btnLeft = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btnRight = new System.Windows.Forms.Button();
-            this.txtMaster = new System.Windows.Forms.TextBox();
-            this.ctxChangeName = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ctxItemChangeName = new System.Windows.Forms.ToolStripMenuItem();
-            this.ctxChangeName.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // btnLeft
-            // 
-            this.btnLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnLeft.ImageIndex = 0;
-            this.btnLeft.ImageList = this.imageList1;
-            this.btnLeft.Location = new System.Drawing.Point(0, 0);
-            this.btnLeft.Name = "btnLeft";
-            this.btnLeft.Size = new System.Drawing.Size(24, 24);
-            this.btnLeft.TabIndex = 0;
-            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
-            this.btnLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.btnLeft_Paint);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "");
-            this.imageList1.Images.SetKeyName(1, "");
-            // 
-            // btnRight
-            // 
-            this.btnRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnRight.ImageIndex = 1;
-            this.btnRight.ImageList = this.imageList1;
-            this.btnRight.Location = new System.Drawing.Point(152, 0);
-            this.btnRight.Name = "btnRight";
-            this.btnRight.Size = new System.Drawing.Size(24, 24);
-            this.btnRight.TabIndex = 1;
-            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
-            this.btnRight.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
-            // 
-            // txtMaster
-            // 
-            this.txtMaster.ContextMenuStrip = this.ctxChangeName;
-            this.txtMaster.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMaster.Location = new System.Drawing.Point(24, 0);
-            this.txtMaster.Name = "txtMaster";
-            this.txtMaster.Size = new System.Drawing.Size(128, 26);
-            this.txtMaster.TabIndex = 2;
-            this.txtMaster.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtMaster_MouseClick);
-            // 
-            // ctxChangeName
-            // 
-            this.ctxChangeName.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.ctxChangeName.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LeftRight));
+			this.btnLeft = new System.Windows.Forms.Button();
+			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+			this.btnRight = new System.Windows.Forms.Button();
+			this.txtMaster = new System.Windows.Forms.TextBox();
+			this.ctxChangeName = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.ctxItemChangeName = new System.Windows.Forms.ToolStripMenuItem();
+			this.ctxChangeName.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// btnLeft
+			// 
+			this.btnLeft.Dock = System.Windows.Forms.DockStyle.Left;
+			this.btnLeft.ImageIndex = 0;
+			this.btnLeft.ImageList = this.imageList1;
+			this.btnLeft.Location = new System.Drawing.Point(0, 0);
+			this.btnLeft.Name = "btnLeft";
+			this.btnLeft.Size = new System.Drawing.Size(24, 24);
+			this.btnLeft.TabIndex = 0;
+			this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
+			this.btnLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.btnLeft_Paint);
+			// 
+			// imageList1
+			// 
+			this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+			this.imageList1.Images.SetKeyName(0, "");
+			this.imageList1.Images.SetKeyName(1, "");
+			// 
+			// btnRight
+			// 
+			this.btnRight.Dock = System.Windows.Forms.DockStyle.Right;
+			this.btnRight.ImageIndex = 1;
+			this.btnRight.ImageList = this.imageList1;
+			this.btnRight.Location = new System.Drawing.Point(152, 0);
+			this.btnRight.Name = "btnRight";
+			this.btnRight.Size = new System.Drawing.Size(24, 24);
+			this.btnRight.TabIndex = 1;
+			this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
+			this.btnRight.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
+			// 
+			// txtMaster
+			// 
+			this.txtMaster.ContextMenuStrip = this.ctxChangeName;
+			this.txtMaster.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.txtMaster.Location = new System.Drawing.Point(24, 0);
+			this.txtMaster.Name = "txtMaster";
+			this.txtMaster.Size = new System.Drawing.Size(128, 20);
+			this.txtMaster.TabIndex = 2;
+			this.txtMaster.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtMaster_MouseClick);
+			// 
+			// ctxChangeName
+			// 
+			this.ctxChangeName.ImageScalingSize = new System.Drawing.Size(24, 24);
+			this.ctxChangeName.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctxItemChangeName});
-            this.ctxChangeName.Name = "ctxChangeName";
-            this.ctxChangeName.Size = new System.Drawing.Size(197, 36);
-            // 
-            // ctxItemChangeName
-            // 
-            this.ctxItemChangeName.Name = "ctxItemChangeName";
-            this.ctxItemChangeName.Size = new System.Drawing.Size(196, 32);
-            this.ctxItemChangeName.Text = "Change Name";
-            this.ctxItemChangeName.Click += new System.EventHandler(this.ctxItemChangeName_Click);
-            // 
-            // LeftRight
-            // 
-            this.Controls.Add(this.txtMaster);
-            this.Controls.Add(this.btnRight);
-            this.Controls.Add(this.btnLeft);
-            this.Name = "LeftRight";
-            this.Size = new System.Drawing.Size(176, 24);
-            this.ctxChangeName.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.ctxChangeName.Name = "ctxChangeName";
+			this.ctxChangeName.Size = new System.Drawing.Size(151, 26);
+			// 
+			// ctxItemChangeName
+			// 
+			this.ctxItemChangeName.Name = "ctxItemChangeName";
+			this.ctxItemChangeName.Size = new System.Drawing.Size(150, 22);
+			this.ctxItemChangeName.Text = "Change Name";
+			this.ctxItemChangeName.Click += new System.EventHandler(this.ctxItemChangeName_Click);
+			// 
+			// LeftRight
+			// 
+			this.Controls.Add(this.txtMaster);
+			this.Controls.Add(this.btnRight);
+			this.Controls.Add(this.btnLeft);
+			this.Name = "LeftRight";
+			this.Size = new System.Drawing.Size(176, 24);
+			this.ctxChangeName.ResumeLayout(false);
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion
