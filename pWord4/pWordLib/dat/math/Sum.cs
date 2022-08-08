@@ -56,41 +56,47 @@ namespace pWordLib.dat.Math
             // perform a summation on only child pNode elements
             // i.e.  this.Tag = total.ToString();
             decimal total = 0.0M;  // start off with 0
-            foreach (pNode node in _pNode.Nodes)
-            {
-                node.PerformOperations();  // if there are no operations it will assume this is not an operator and treat it only as a value field
-                decimal num = 0.0M;
-                // attempt to convert to decimal
-                if (Decimal.TryParse((String)node.Tag, out num))
+            if (_pNode.HasChangedOperations()) {
+                foreach (pNode node in _pNode.Nodes)
                 {
+                    node.PerformOperations();  // if there are no operations it will assume this is not an operator and treat it only as a value field
+                    decimal num = 0.0M;
+                    // attempt to convert to decimal
+                    if (Decimal.TryParse((String)node.Tag, out num))
+                    {
 
-                    try
-                    {
-                        total += num; // perform the basic summation
-                    }
-                    catch (OverflowException ex)
-                    {
-                        // overflow occurred... can't go any hire
-                        total = Decimal.MaxValue;
-                        _pNode.ErrorString = "OverflowException occurred. " + ex.ToString();
-                    }
-                    catch (Exception ex)
-                    {
-                        // max value reached
-                        _pNode.ErrorString = "Unknown problem occurred. " + ex.ToString();
-                    }
-                    
-                }
-                else
-                {
-                    _pNode.ErrorString = "A Node failed to Sum";
-                    Debug.WriteLine("A Node failed to Sum");
-                }
+                        try
+                        {
+                            total += num; // perform the basic summation
+                        }
+                        catch (OverflowException ex)
+                        {
+                            // overflow occurred... can't go any hire
+                            total = Decimal.MaxValue;
+                            _pNode.ErrorString = "OverflowException occurred. " + ex.ToString();
+                        }
+                        catch (Exception ex)
+                        {
+                            // max value reached
+                            _pNode.ErrorString = "Unknown problem occurred. " + ex.ToString();
+                        }
 
-                //note: eventially I want to add advanced summation on (n^2+n)/2 with i=1 etc... but for now it just totallys up the values
-            }
-            _pNode.Tag = total.ToString();
-            return _pNode;  // not yet implemented
+                    }
+                    else
+                    {
+                        _pNode.ErrorString = "A Node failed to Sum";
+                        Debug.WriteLine("A Node failed to Sum");
+                    }
+
+                    //note: eventially I want to add advanced summation on (n^2+n)/2 with i=1 etc... but for now it just totallys up the values
+                }
+                _pNode.Tag = total.ToString();
+			}
+			else
+			{
+				// else do nothing because what is in tag shouldn't have to change as nothing changed
+			}
+			return _pNode;  // not yet implemented
         }
 
 

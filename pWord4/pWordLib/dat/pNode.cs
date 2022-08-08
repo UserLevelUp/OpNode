@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
@@ -52,7 +53,6 @@ namespace pWordLib.dat
 
         // }
 
-        
         protected pNode(SerializationInfo info, StreamingContext context) : this()
         {
             // my deserialization code ... don't forget that the info returns something
@@ -63,7 +63,12 @@ namespace pWordLib.dat
             base.Deserialize(info, context);
         }
 
-        public String getXmlName()
+		public bool HasChangedOperations()
+		{
+            return this.operations.Where(m => m.Changed == true).Count() > 0;
+		}
+
+		public String getXmlName()
         {
             DetectComplexNodeName();
 
@@ -170,9 +175,10 @@ namespace pWordLib.dat
                 }
             else
             {
-                foreach (IOperate operation in operations)
+                foreach (IOperate operation in operations) //.Where(m => m.Changed == true))
                 {
                     operation.Operate(this); // usually it performs the actual operation on its child elements, and stores the result in its tag field or value field.
+                    ((IChange)operation).ChangeFalse(this);
                 }
             }
         }
@@ -203,8 +209,6 @@ namespace pWordLib.dat
         {
             return null;
         }
-
-
 
         #region ISerializable Members
  
@@ -340,6 +344,30 @@ namespace pWordLib.dat
                 pNodes.AddRange(_pNode.Find(searchText, 0));
             }
             return pNodes;            
+		}
+		
+        public void OperationChanged() 
+        {
+            // this is called when the operation is changed if 1 or mor operatins exist on current node
+            var ops = operations as List<IOperate>;
+			if (ops != null && ops.Count > 0)
+			{
+                ops.FirstOrDefault().Change(this);
+            }
+			else 
+			{
+				// check that the node has a parent node
+				if (this.Parent != null)
+				{
+                    if (((pNode)this.Parent).operations.Count() >= 1) {
+                        ((pNode)this.Parent).operations[0].Change((pNode)this.Parent);
+                    }
+					else
+					{
+						// parent is not an IOperate so do nothing b/c we only care about parents that contain IOperate
+					}
+				}
+			}
 		}
 
     }
