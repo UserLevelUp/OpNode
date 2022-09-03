@@ -128,7 +128,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA0
-        QQAAAk1TRnQBSQFMAgEBCgEAASwBHgEsAR4BJwEAASQBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGc
+        QQAAAk1TRnQBSQFMAgEBCgEAAVwBHgFcAR4BJwEAASQBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGc
         AwABbAMAAQEBAAEYBQABcAHFbwAD/gPoA2sGCwNoA+UD/gP/A/UB5wLmA/ld/wP8AecC5gLwAe8D/v8A
         RQAD/gPUAyoDKANpA2sDKgMoA+AD+AGdAZoBmQFPAUkBSAGNAYkBiAH2AvVX/wP4AaEBngGdAU4BSAFH
         AX8BewF6A+v/AEIAA/4DygMiAywDyAb4A8QDJQNQAfgC9wGLAYcBhQErASQBIgEuAScBJQFvAWoBaAH0
@@ -420,7 +420,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADA
-        CAAAAk1TRnQBSQFMAgEBAwEAASwBHgEsAR4BEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CAAAAk1TRnQBSQFMAgEBAwEAAVwBHgFcAR4BEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -473,7 +473,7 @@
     <value>993, 28</value>
   </metadata>
   <metadata name="saveFileDialogHTML.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>-13, 140</value>
+    <value>14, 144</value>
   </metadata>
   <metadata name="notifyIcon2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>172, 88</value>
@@ -482,7 +482,7 @@
     <value>328, 116</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>357</value>
+    <value>204</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
