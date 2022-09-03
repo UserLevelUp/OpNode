@@ -536,7 +536,7 @@ namespace myPword
 			// 
 			// statusBar1
 			// 
-			this.statusBar1.Location = new System.Drawing.Point(0, 598);
+			this.statusBar1.Location = new System.Drawing.Point(0, 578);
 			this.statusBar1.Name = "statusBar1";
 			this.statusBar1.Size = new System.Drawing.Size(299, 20);
 			this.statusBar1.TabIndex = 0;
@@ -1333,7 +1333,7 @@ namespace myPword
 			// splitter1
 			// 
 			this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.splitter1.Location = new System.Drawing.Point(0, 306);
+			this.splitter1.Location = new System.Drawing.Point(0, 286);
 			this.splitter1.Name = "splitter1";
 			this.splitter1.Size = new System.Drawing.Size(299, 7);
 			this.splitter1.TabIndex = 5;
@@ -1346,7 +1346,7 @@ namespace myPword
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 70);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(299, 528);
+			this.panel1.Size = new System.Drawing.Size(299, 508);
 			this.panel1.TabIndex = 6;
 			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
@@ -1467,7 +1467,7 @@ namespace myPword
 			this.panel6.Controls.Add(this.btnCancel);
 			this.panel6.Location = new System.Drawing.Point(0, 95);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(299, 473);
+			this.panel6.Size = new System.Drawing.Size(299, 453);
 			this.panel6.TabIndex = 5;
 			// 
 			// treeView1
@@ -1487,7 +1487,7 @@ namespace myPword
 			this.treeView1.Name = "treeView1";
 			this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
 			this.treeView1.SelectedImageIndex = 0;
-			this.treeView1.Size = new System.Drawing.Size(299, 306);
+			this.treeView1.Size = new System.Drawing.Size(299, 286);
 			this.treeView1.TabIndex = 3;
 			this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
 			this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1507,7 +1507,7 @@ namespace myPword
 			this.tabs.Controls.Add(this.tabAttributes);
 			this.tabs.Controls.Add(this.tabCMD);
 			this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tabs.Location = new System.Drawing.Point(0, 313);
+			this.tabs.Location = new System.Drawing.Point(0, 293);
 			this.tabs.Name = "tabs";
 			this.tabs.SelectedIndex = 0;
 			this.tabs.Size = new System.Drawing.Size(299, 160);
@@ -1677,7 +1677,7 @@ namespace myPword
 			// 
 			this.AccessibleDescription = "Enabled to view file after xml or html export.";
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(299, 618);
+			this.ClientSize = new System.Drawing.Size(299, 598);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.userControl11);
 			this.Controls.Add(this.toolBar1);
