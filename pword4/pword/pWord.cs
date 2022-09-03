@@ -124,7 +124,6 @@ namespace myPword
             treexml = 3
         }
 
-
         ExportMode exportMode = ExportMode.treeview;
         ImportMode importMode = ImportMode.treeview;
 
@@ -264,7 +263,9 @@ namespace myPword
         private MenuItem menuItemExportJson;
         private ToolBarButton toolBarSearch;
         private ToolBarButton toolBarCollapse;
-        pWordLib.mgr.registryMgr rm = null;
+		private TabPage tabCMD;
+		private TextBox txtCMD;
+		pWordLib.mgr.registryMgr rm = null;
         public pWord()
         {
 
@@ -300,9 +301,6 @@ namespace myPword
             actHook = new pWordLib.UserActivityHook.UserActivityHook();  // create an instance
             // hang on events
             actHook.OnMouseActivity += new MouseEventHandler(MouseMoved);
-
-
-
         }
 
         void notifyIcon1_DoubleClick(object sender, EventArgs e)
@@ -491,6 +489,8 @@ namespace myPword
 			this.lstAttributes = new System.Windows.Forms.ListView();
 			this.columnAttributeName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnAttributeValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.tabCMD = new System.Windows.Forms.TabPage();
+			this.txtCMD = new System.Windows.Forms.TextBox();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.saveFileDialogHTML = new System.Windows.Forms.SaveFileDialog();
 			this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -506,6 +506,7 @@ namespace myPword
 			this.tabValue.SuspendLayout();
 			this.tabNamespaces.SuspendLayout();
 			this.tabAttributes.SuspendLayout();
+			this.tabCMD.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// contextMenuNotify
@@ -535,9 +536,9 @@ namespace myPword
 			// 
 			// statusBar1
 			// 
-			this.statusBar1.Location = new System.Drawing.Point(0, 279);
+			this.statusBar1.Location = new System.Drawing.Point(0, 578);
 			this.statusBar1.Name = "statusBar1";
-			this.statusBar1.Size = new System.Drawing.Size(574, 20);
+			this.statusBar1.Size = new System.Drawing.Size(299, 20);
 			this.statusBar1.TabIndex = 0;
 			this.statusBar1.Text = "statusBar1";
 			// 
@@ -554,7 +555,7 @@ namespace myPword
 			this.toolBar1.Location = new System.Drawing.Point(0, 0);
 			this.toolBar1.Name = "toolBar1";
 			this.toolBar1.ShowToolTips = true;
-			this.toolBar1.Size = new System.Drawing.Size(574, 48);
+			this.toolBar1.Size = new System.Drawing.Size(299, 48);
 			this.toolBar1.TabIndex = 1;
 			this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
 			// 
@@ -763,7 +764,7 @@ namespace myPword
 			this.menuItemExportToXmlHtml.Index = 0;
 			this.menuItemExportToXmlHtml.Shortcut = System.Windows.Forms.Shortcut.F11;
 			this.menuItemExportToXmlHtml.Text = "to XML/HTML";
-			this.menuItemExportToXmlHtml.Click += new System.EventHandler(this.menuItem35_Click);
+			this.menuItemExportToXmlHtml.Click += new System.EventHandler(this.menuItemToHTML_Click);
 			// 
 			// menuItem85
 			// 
@@ -1307,7 +1308,7 @@ namespace myPword
 			this.txtValue.Multiline = true;
 			this.txtValue.Name = "txtValue";
 			this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.txtValue.Size = new System.Drawing.Size(560, 60);
+			this.txtValue.Size = new System.Drawing.Size(285, 128);
 			this.txtValue.TabIndex = 3;
 			this.txtValue.TabStop = false;
 			// 
@@ -1332,9 +1333,9 @@ namespace myPword
 			// splitter1
 			// 
 			this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.splitter1.Location = new System.Drawing.Point(0, 55);
+			this.splitter1.Location = new System.Drawing.Point(0, 286);
 			this.splitter1.Name = "splitter1";
-			this.splitter1.Size = new System.Drawing.Size(574, 7);
+			this.splitter1.Size = new System.Drawing.Size(299, 7);
 			this.splitter1.TabIndex = 5;
 			this.splitter1.TabStop = false;
 			// 
@@ -1345,7 +1346,7 @@ namespace myPword
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 70);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(574, 209);
+			this.panel1.Size = new System.Drawing.Size(299, 508);
 			this.panel1.TabIndex = 6;
 			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
@@ -1358,7 +1359,7 @@ namespace myPword
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(574, 95);
+			this.panel2.Size = new System.Drawing.Size(299, 95);
 			this.panel2.TabIndex = 3;
 			this.panel2.VisibleChanged += new System.EventHandler(this.panel2_VisibleChanged);
 			// 
@@ -1369,7 +1370,7 @@ namespace myPword
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel4.Location = new System.Drawing.Point(0, 22);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(570, 37);
+			this.panel4.Size = new System.Drawing.Size(295, 37);
 			this.panel4.TabIndex = 2;
 			// 
 			// txtObject
@@ -1381,7 +1382,7 @@ namespace myPword
 			this.txtObject.Multiline = true;
 			this.txtObject.Name = "txtObject";
 			this.txtObject.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.txtObject.Size = new System.Drawing.Size(520, 36);
+			this.txtObject.Size = new System.Drawing.Size(245, 36);
 			this.txtObject.TabIndex = 1;
 			// 
 			// lblValue
@@ -1400,7 +1401,7 @@ namespace myPword
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel3.Location = new System.Drawing.Point(0, 0);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(570, 22);
+			this.panel3.Size = new System.Drawing.Size(295, 22);
 			this.panel3.TabIndex = 0;
 			// 
 			// txtName
@@ -1408,7 +1409,7 @@ namespace myPword
 			this.txtName.Dock = System.Windows.Forms.DockStyle.Top;
 			this.txtName.Location = new System.Drawing.Point(50, 0);
 			this.txtName.Name = "txtName";
-			this.txtName.Size = new System.Drawing.Size(520, 20);
+			this.txtName.Size = new System.Drawing.Size(245, 20);
 			this.txtName.TabIndex = 1;
 			this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
 			// 
@@ -1429,7 +1430,7 @@ namespace myPword
 			this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panel5.Location = new System.Drawing.Point(0, 61);
 			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(570, 30);
+			this.panel5.Size = new System.Drawing.Size(295, 30);
 			this.panel5.TabIndex = 4;
 			// 
 			// chkClear
@@ -1466,7 +1467,7 @@ namespace myPword
 			this.panel6.Controls.Add(this.btnCancel);
 			this.panel6.Location = new System.Drawing.Point(0, 95);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(574, 154);
+			this.panel6.Size = new System.Drawing.Size(299, 453);
 			this.panel6.TabIndex = 5;
 			// 
 			// treeView1
@@ -1486,7 +1487,7 @@ namespace myPword
 			this.treeView1.Name = "treeView1";
 			this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
 			this.treeView1.SelectedImageIndex = 0;
-			this.treeView1.Size = new System.Drawing.Size(574, 55);
+			this.treeView1.Size = new System.Drawing.Size(299, 286);
 			this.treeView1.TabIndex = 3;
 			this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
 			this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1504,11 +1505,12 @@ namespace myPword
 			this.tabs.Controls.Add(this.tabValue);
 			this.tabs.Controls.Add(this.tabNamespaces);
 			this.tabs.Controls.Add(this.tabAttributes);
+			this.tabs.Controls.Add(this.tabCMD);
 			this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tabs.Location = new System.Drawing.Point(0, 62);
+			this.tabs.Location = new System.Drawing.Point(0, 293);
 			this.tabs.Name = "tabs";
 			this.tabs.SelectedIndex = 0;
-			this.tabs.Size = new System.Drawing.Size(574, 92);
+			this.tabs.Size = new System.Drawing.Size(299, 160);
 			this.tabs.TabIndex = 7;
 			// 
 			// tabValue
@@ -1518,7 +1520,7 @@ namespace myPword
 			this.tabValue.Location = new System.Drawing.Point(4, 22);
 			this.tabValue.Name = "tabValue";
 			this.tabValue.Padding = new System.Windows.Forms.Padding(3);
-			this.tabValue.Size = new System.Drawing.Size(566, 66);
+			this.tabValue.Size = new System.Drawing.Size(291, 134);
 			this.tabValue.TabIndex = 0;
 			this.tabValue.Text = "Value";
 			this.tabValue.UseVisualStyleBackColor = true;
@@ -1529,7 +1531,7 @@ namespace myPword
 			this.tabNamespaces.Location = new System.Drawing.Point(4, 22);
 			this.tabNamespaces.Name = "tabNamespaces";
 			this.tabNamespaces.Padding = new System.Windows.Forms.Padding(3);
-			this.tabNamespaces.Size = new System.Drawing.Size(279, 66);
+			this.tabNamespaces.Size = new System.Drawing.Size(291, 134);
 			this.tabNamespaces.TabIndex = 1;
 			this.tabNamespaces.Text = "Namespaces";
 			this.tabNamespaces.UseVisualStyleBackColor = true;
@@ -1544,7 +1546,7 @@ namespace myPword
 			this.lstNamespaces.HideSelection = false;
 			this.lstNamespaces.Location = new System.Drawing.Point(3, 3);
 			this.lstNamespaces.Name = "lstNamespaces";
-			this.lstNamespaces.Size = new System.Drawing.Size(273, 60);
+			this.lstNamespaces.Size = new System.Drawing.Size(285, 128);
 			this.lstNamespaces.TabIndex = 0;
 			this.lstNamespaces.UseCompatibleStateImageBehavior = false;
 			this.lstNamespaces.View = System.Windows.Forms.View.Details;
@@ -1570,7 +1572,7 @@ namespace myPword
 			this.tabAttributes.Location = new System.Drawing.Point(4, 22);
 			this.tabAttributes.Name = "tabAttributes";
 			this.tabAttributes.Padding = new System.Windows.Forms.Padding(3);
-			this.tabAttributes.Size = new System.Drawing.Size(279, 66);
+			this.tabAttributes.Size = new System.Drawing.Size(291, 134);
 			this.tabAttributes.TabIndex = 2;
 			this.tabAttributes.Text = "Attributes";
 			this.tabAttributes.UseVisualStyleBackColor = true;
@@ -1584,7 +1586,7 @@ namespace myPword
 			this.lstAttributes.HideSelection = false;
 			this.lstAttributes.Location = new System.Drawing.Point(3, 3);
 			this.lstAttributes.Name = "lstAttributes";
-			this.lstAttributes.Size = new System.Drawing.Size(273, 60);
+			this.lstAttributes.Size = new System.Drawing.Size(285, 128);
 			this.lstAttributes.TabIndex = 1;
 			this.lstAttributes.UseCompatibleStateImageBehavior = false;
 			this.lstAttributes.View = System.Windows.Forms.View.Details;
@@ -1598,6 +1600,35 @@ namespace myPword
 			// 
 			this.columnAttributeValue.Text = "Value";
 			this.columnAttributeValue.Width = 198;
+			// 
+			// tabCMD
+			// 
+			this.tabCMD.Controls.Add(this.txtCMD);
+			this.tabCMD.Location = new System.Drawing.Point(4, 22);
+			this.tabCMD.Name = "tabCMD";
+			this.tabCMD.Padding = new System.Windows.Forms.Padding(3);
+			this.tabCMD.Size = new System.Drawing.Size(291, 134);
+			this.tabCMD.TabIndex = 3;
+			this.tabCMD.Text = "Cmd";
+			this.tabCMD.UseVisualStyleBackColor = true;
+			// 
+			// txtCMD
+			// 
+			this.txtCMD.AcceptsReturn = true;
+			this.txtCMD.AcceptsTab = true;
+			this.txtCMD.AllowDrop = true;
+			this.txtCMD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtCMD.BackColor = System.Drawing.SystemColors.WindowText;
+			this.txtCMD.ForeColor = System.Drawing.Color.White;
+			this.txtCMD.Location = new System.Drawing.Point(1, 0);
+			this.txtCMD.Multiline = true;
+			this.txtCMD.Name = "txtCMD";
+			this.txtCMD.Size = new System.Drawing.Size(290, 98);
+			this.txtCMD.TabIndex = 0;
+			this.txtCMD.UseWaitCursor = true;
+			this.txtCMD.TextChanged += new System.EventHandler(this.txtCMD_TextChanged);
 			// 
 			// btnCancel
 			// 
@@ -1635,7 +1666,7 @@ namespace myPword
 			this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
 			this.userControl11.Location = new System.Drawing.Point(0, 48);
 			this.userControl11.Name = "userControl11";
-			this.userControl11.Size = new System.Drawing.Size(574, 22);
+			this.userControl11.Size = new System.Drawing.Size(299, 22);
 			this.userControl11.TabIndex = 4;
 			this.userControl11.TabStop = false;
 			this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
@@ -1646,7 +1677,7 @@ namespace myPword
 			// 
 			this.AccessibleDescription = "Enabled to view file after xml or html export.";
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(574, 299);
+			this.ClientSize = new System.Drawing.Size(299, 598);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.userControl11);
 			this.Controls.Add(this.toolBar1);
@@ -1678,6 +1709,8 @@ namespace myPword
 			this.tabValue.PerformLayout();
 			this.tabNamespaces.ResumeLayout(false);
 			this.tabAttributes.ResumeLayout(false);
+			this.tabCMD.ResumeLayout(false);
+			this.tabCMD.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1733,8 +1766,14 @@ namespace myPword
         }
 
 
-
-        public void MouseMoved(object sender, MouseEventArgs e)
+		/// <summary>
+		/// When the mouse moves checks for the bounds
+		/// Visibility may need to be fixed in newer versions of windows as behavior has changed since 2010
+		/// Also auto hide no longer works in newer versions of windows
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		public void MouseMoved(object sender, MouseEventArgs e)
         {
             try
             {
@@ -2141,6 +2180,12 @@ namespace myPword
             }
         }
 
+
+		/// <summary>
+        /// Todo: change to delteNode instead of menuItem4
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menuItem14_Click(object sender, System.EventArgs e)
         {
             try
@@ -2149,6 +2194,7 @@ namespace myPword
                 pNode masterNode;
                 if (treeView1.SelectedNode.Parent != null)
                 {
+                    ((pNode)treeView1.SelectedNode).OperationChanged();
                     treeView1.SelectedNode.Remove();
                     masterNode = (pNode)treeView1.Nodes[0];
                     //					Nodes[0] = masterNode;
@@ -2207,7 +2253,7 @@ namespace myPword
                             xml.Clear();  // clear out contents first.
                                           //CallRecursive(xmlNode);
                                           // xmlNode = (pNode)treeView1.SelectedNode;  // this assinged xmlNode to the selected node
-                                          //menuItem35_Click(sender, new EventArgs());
+                                          //menuItemToHTML_Click(sender, new EventArgs());
                         }
                         else if (exportMode == ExportMode.pNode)
                         {
@@ -2400,14 +2446,16 @@ namespace myPword
 
         private void treeView1_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            pNode a = (pNode)treeView1.GetNodeAt(e.X, e.Y);
-
-            if (a != null)
+            if (lastMousePos.Item1 != e.X && lastMousePos.Item2 != e.Y)
             {
-                treeView1.SelectedNode = a;
-                this.txtValue.Text = (string)a.Tag;
-            }
+                pNode a = (pNode)treeView1.GetNodeAt(e.X, e.Y);
 
+                if (a != null)
+                {
+                    treeView1.SelectedNode = a;
+                    this.txtValue.Text = (string)a.Tag;
+                }
+            }
         }
 
         private void menuItem17_Click(object sender, System.EventArgs e)
@@ -2644,6 +2692,7 @@ namespace myPword
                     treeView1.SelectedNode = this.tmpNode;
                     treeView1.SelectedNode.Text = aNode.Text;
                     treeView1.SelectedNode.Tag = aNode.Tag;
+                    treeView1.SelectedNode.Name = aNode.Name;
 
                     // This is not necessary, when a save is committed this can be performed at that juncture
                     // However, it may be beneficial to know whether or not a node change was successfully saved
@@ -2657,12 +2706,15 @@ namespace myPword
                         this.txtObject.Clear();
                     }
 
+                    // TODO: for some reason while in edit mode, the starting node is master??? why instead of the selected node???  FIX
+                    //aNode.OperationChanged();
+                    ((pNode)treeView1.SelectedNode).OperationChanged();
+
                     if (flag_file == true)
                     {
                         autosave();
                     }
 
-                    aNode.OperationChanged();
                     this.Refresh();
                 }
                 catch (Exception f)
@@ -3014,7 +3066,13 @@ namespace myPword
                 this.modeIndex = treeView1.SelectedNode.Index;
                 //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
                 //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
-                this.tmpNode = (pNode)treeView1.SelectedNode;
+
+                if (treeView1.SelectedNode.Parent != null)
+                {
+                    ((pNode)treeView1.SelectedNode.Parent).OperationChanged();
+                    this.tmpNode = ((pNode)treeView1.SelectedNode);
+                }
+
                 this.txtName.Text = tmpNode.Text;
                 this.txtObject.Text = (string)tmpNode.Tag;
                 this.statusBar1.Text = "Edit Mode";
@@ -3674,6 +3732,7 @@ namespace myPword
                     this.nodeIndex = treeView1.SelectedNode.Index;
                     if (this.treeView1.SelectedNode.Parent != null)
                     {
+                        ((pNode)treeView1.SelectedNode).OperationChanged();
                         this.treeView1.SelectedNode.Remove();
                     }
                     this.statusBar1.Text = "CUT Node Mode";
@@ -3731,7 +3790,7 @@ namespace myPword
         }
 
 
-        private void menuItem35_Click(object sender, System.EventArgs e)
+        private void menuItemToHTML_Click(object sender, System.EventArgs e)
         {
 
             try
@@ -4426,5 +4485,46 @@ namespace myPword
         {
             Debugger.Log(1,"ExportJson", "Export JSON Hit");
         }
-    }
+
+		private void txtCMD_TextChanged(object sender, EventArgs e)
+		{
+			// check for return character... and then process
+
+			if (txtCMD.Text.Length > 0)
+			{
+				if (txtCMD.Text[txtCMD.Text.Length - 1] == '\n')
+				{
+					// process command
+					ProcessCommand(txtCMD.Text);
+					// add history node to treeview
+					// then insert this command into the history
+					// and insert its text result as a child node
+					txtCMD.Text = "";
+				}
+			}
+		}
+
+		private void ProcessCommand(string text)
+		{
+
+            var proc = System.Diagnostics.Process.Start(this.treeView1.SelectedNode.Tag.ToString());
+			proc.WaitForExit();
+			// get the result
+			string result = proc.StandardOutput.ReadToEnd();
+			// add to treeview
+
+			// check to see if history node exists
+			// if not, create it
+			if (this.treeView1.SelectedNode.Nodes["History"] == null)
+			{
+				TreeNode history = new TreeNode("History");
+				this.treeView1.SelectedNode.Nodes.Add(history);
+			}
+			// TODO:  add the command to the history node
+
+			// TODO: and add the result to its child node
+
+
+		}
+	}
 }
