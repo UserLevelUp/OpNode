@@ -23,6 +23,9 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Runtime.Remoting.Channels;
+using System.Linq;
+using System.ComponentModel.Design;
+using System.Text;
 
 namespace myPword
 {
@@ -298,9 +301,9 @@ namespace myPword
             //notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
             notifyIcon1.DoubleClick += new EventHandler(notifyIcon1_DoubleClick);
 
-            actHook = new pWordLib.UserActivityHook.UserActivityHook();  // create an instance
+            //actHook = new pWordLib.UserActivityHook.UserActivityHook();  // create an instance
             // hang on events
-            actHook.OnMouseActivity += new MouseEventHandler(MouseMoved);
+            //actHook.OnMouseActivity += new MouseEventHandler(MouseMoved);
         }
 
         void notifyIcon1_DoubleClick(object sender, EventArgs e)
@@ -317,7 +320,7 @@ namespace myPword
 
             this.WindowState = FormWindowState.Normal;
             this.DockRight(sender, e);
-            this.actHook.Stop();
+            //this.actHook.Stop();
             notifyIcon1.Visible = false;
             notifyIcon2.Visible = true;
         }
@@ -329,7 +332,7 @@ namespace myPword
         {
             if (disposing)
             {
-                this.actHook.Stop();
+                //this.actHook.Stop();
                 if (components != null)
                 {
                     components.Dispose();
@@ -536,7 +539,7 @@ namespace myPword
 			// 
 			// statusBar1
 			// 
-			this.statusBar1.Location = new System.Drawing.Point(0, 578);
+			this.statusBar1.Location = new System.Drawing.Point(0, 538);
 			this.statusBar1.Name = "statusBar1";
 			this.statusBar1.Size = new System.Drawing.Size(299, 20);
 			this.statusBar1.TabIndex = 0;
@@ -643,14 +646,14 @@ namespace myPword
 			this.menuItem13.Index = 1;
 			this.menuItem13.Shortcut = System.Windows.Forms.Shortcut.CtrlE;
 			this.menuItem13.Text = "Edit";
-			this.menuItem13.Click += new System.EventHandler(this.menuItem13_Click);
+			this.menuItem13.Click += new System.EventHandler(this.menuItemEdit_Click);
 			// 
 			// menuItem29
 			// 
 			this.menuItem29.Index = 2;
 			this.menuItem29.Shortcut = System.Windows.Forms.Shortcut.CtrlI;
 			this.menuItem29.Text = "Insert";
-			this.menuItem29.Click += new System.EventHandler(this.menuItem29_Click);
+			this.menuItem29.Click += new System.EventHandler(this.menuItemInsertNode_Click);
 			// 
 			// menuItemCopy
 			// 
@@ -659,8 +662,7 @@ namespace myPword
 			this.menuItemCopy.Text = "Copy";
 			this.menuItemCopy.Click += new System.EventHandler(this.menuItemCopy_Click);
 			// 
-			// menuItemAttributes
-			// 
+			// menuItemAttributesicl// 
 			this.menuItemAttributes.Index = 4;
 			this.menuItemAttributes.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemAttributeAdd});
@@ -735,7 +737,7 @@ namespace myPword
 			this.menuItem31.Index = 11;
 			this.menuItem31.Shortcut = System.Windows.Forms.Shortcut.Ins;
 			this.menuItem31.Text = "Insert Node";
-			this.menuItem31.Click += new System.EventHandler(this.menuItem31_Click);
+			this.menuItem31.Click += new System.EventHandler(this.menuItemInsertNode2_Click);
 			// 
 			// menuItemEncryptNode
 			// 
@@ -1333,7 +1335,7 @@ namespace myPword
 			// splitter1
 			// 
 			this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.splitter1.Location = new System.Drawing.Point(0, 286);
+			this.splitter1.Location = new System.Drawing.Point(0, 246);
 			this.splitter1.Name = "splitter1";
 			this.splitter1.Size = new System.Drawing.Size(299, 7);
 			this.splitter1.TabIndex = 5;
@@ -1346,7 +1348,7 @@ namespace myPword
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 70);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(299, 508);
+			this.panel1.Size = new System.Drawing.Size(299, 468);
 			this.panel1.TabIndex = 6;
 			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
@@ -1467,7 +1469,7 @@ namespace myPword
 			this.panel6.Controls.Add(this.btnCancel);
 			this.panel6.Location = new System.Drawing.Point(0, 95);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(299, 453);
+			this.panel6.Size = new System.Drawing.Size(299, 413);
 			this.panel6.TabIndex = 5;
 			// 
 			// treeView1
@@ -1487,7 +1489,7 @@ namespace myPword
 			this.treeView1.Name = "treeView1";
 			this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
 			this.treeView1.SelectedImageIndex = 0;
-			this.treeView1.Size = new System.Drawing.Size(299, 286);
+			this.treeView1.Size = new System.Drawing.Size(299, 246);
 			this.treeView1.TabIndex = 3;
 			this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
 			this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1507,7 +1509,7 @@ namespace myPword
 			this.tabs.Controls.Add(this.tabAttributes);
 			this.tabs.Controls.Add(this.tabCMD);
 			this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tabs.Location = new System.Drawing.Point(0, 293);
+			this.tabs.Location = new System.Drawing.Point(0, 253);
 			this.tabs.Name = "tabs";
 			this.tabs.SelectedIndex = 0;
 			this.tabs.Size = new System.Drawing.Size(299, 160);
@@ -1677,7 +1679,7 @@ namespace myPword
 			// 
 			this.AccessibleDescription = "Enabled to view file after xml or html export.";
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(299, 598);
+			this.ClientSize = new System.Drawing.Size(299, 558);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.userControl11);
 			this.Controls.Add(this.toolBar1);
@@ -1756,7 +1758,7 @@ namespace myPword
 
             this.WindowState = FormWindowState.Normal;
             this.DockRight(sender, e);
-            this.actHook.Stop();
+            //this.actHook.Stop();
         }
 
         struct Masters
@@ -2081,7 +2083,7 @@ namespace myPword
 
             this.WindowState = FormWindowState.Normal;
             this.DockRight(sender, e);
-            this.actHook.Stop();
+            //this.actHook.Stop();
 
         }
 
@@ -2234,14 +2236,14 @@ namespace myPword
                         this.autoHide_flag = false;
                         this.statusBar1.Text = "AutoHide Inactive";
                         this.toolBarTac.ImageIndex = 1;
-                        this.actHook.Stop();
+                        //this.actHook.Stop();
                     }
                     else
                     {
                         this.autoHide_flag = true;
                         this.statusBar1.Text = "AutoHide Active";
                         this.toolBarTac.ImageIndex = 0;
-                        this.actHook.Start();
+                        //this.actHook.Start();
                     }
                 }
                 else if (e.Button == this.toolBarView)
@@ -2448,12 +2450,19 @@ namespace myPword
         {
             if (lastMousePos.Item1 != e.X && lastMousePos.Item2 != e.Y)
             {
-                pNode a = (pNode)treeView1.GetNodeAt(e.X, e.Y);
-
-                if (a != null)
+                try 
                 {
-                    treeView1.SelectedNode = a;
-                    this.txtValue.Text = (string)a.Tag;
+					pNode a = (pNode)treeView1.GetNodeAt(e.X, e.Y);
+
+					if (a != null)
+					{
+						treeView1.SelectedNode = a;
+						this.txtValue.Text = (string)a.Tag;
+					}
+				}
+				catch (Exception ex)
+                {
+                    Debug.WriteLine("Error: " + ex);
                 }
             }
         }
@@ -2906,7 +2915,7 @@ namespace myPword
         private void genericCursorMoved(object sender, EventArgs e)
         {
             //TODO: Make sure mouse move switches from keyboard state.  If user clicks a key like up or down arrow it should ignore the position the cursor is on and re-activate the mouse cursor
-            Debugger.Log(1, "test", "Whats going on");
+            Debugger.Log(1, "test", "Whats going on\n");
                         if (e.GetType() == typeof(System.Windows.Forms.MouseEventArgs)) {
                 var ei = (System.Windows.Forms.MouseEventArgs)e;
                 pNode a = (pNode)treeView1.GetNodeAt(ei.X, ei.Y);
@@ -3054,7 +3063,7 @@ namespace myPword
                 this.drag_flag = false;
         }
 
-        private void menuItem13_Click(object sender, System.EventArgs e)
+        private void menuItemEdit_Click(object sender, System.EventArgs e)
         {
 
             mode = nodeMode.edit;
@@ -3499,7 +3508,7 @@ namespace myPword
             //this.treeView1.Cursor = 
         }
 
-        private void menuItem29_Click(object sender, System.EventArgs e)
+        private void menuItemInsertNode_Click(object sender, System.EventArgs e)
         {
             lblName.Text = "Name:";
             lblValue.Text = "Value:";
@@ -3527,7 +3536,7 @@ namespace myPword
 
         }
 
-        private void menuItem31_Click(object sender, System.EventArgs e)
+        private void menuItemInsertNode2_Click(object sender, System.EventArgs e)
         {
             // Insert next to
             try
@@ -3572,7 +3581,7 @@ namespace myPword
                 EventArgs f = new EventArgs();
                 if (menuItem29.Enabled == true)
                 {
-                    menuItem29_Click(sender, f);
+                    menuItemInsertNode_Click(sender, f);
                 }
             }
         }
@@ -3897,7 +3906,7 @@ namespace myPword
             this.autoHide_flag = true;
             this.statusBar1.Text = "AutoHide Active";
             this.toolBarTac.ImageIndex = 0;
-            this.actHook.Start();
+            //this.actHook.Start();
             this.VIS = false;
             this.Visible = false;
             notifyIcon2.Visible = false;
@@ -4488,43 +4497,149 @@ namespace myPword
 
 		private void txtCMD_TextChanged(object sender, EventArgs e)
 		{
+            // hide the busy mouse icon
+            this.Cursor = Cursors.Default;
+			this.txtCMD.Cursor = Cursors.Default;
+
 			// check for return character... and then process
 
 			if (txtCMD.Text.Length > 0)
 			{
-				if (txtCMD.Text[txtCMD.Text.Length - 1] == '\n')
+			    if (txtCMD.Text.Length < 4 && txtCMD.Text.ToLower().Contains("cls")) 
+                {
+                    txtCMD.Text = "";
+                } 
+                else if (txtCMD.Text[txtCMD.Text.Length - 1] == '\n' || txtCMD.Text[txtCMD.Text.Length - 1] == '\r')
 				{
 					// process command
-					ProcessCommand(txtCMD.Text);
-					// add history node to treeview
-					// then insert this command into the history
-					// and insert its text result as a child node
-					txtCMD.Text = "";
+					this.txtCMD.Cursor = Cursors.WaitCursor;
+					this.txtCMD.Parent.Cursor = Cursors.WaitCursor;
+					ProcessCommandText(txtCMD.Text);
+                    // add history node to treeview
+                    // then insert this command into the history
+                    // and insert its text result as a child node
+                    txtCMD.Text += output.ToString();
 				}
 			}
+            this.Cursor = Cursors.Default;
+            this.txtCMD.Cursor = Cursors.Default;
+            this.txtCMD.Parent.Cursor = Cursors.Default;
+            this.txtCMD.Focus();
 		}
 
-		private void ProcessCommand(string text)
-		{
 
-            var proc = System.Diagnostics.Process.Start(this.treeView1.SelectedNode.Tag.ToString());
-			proc.WaitForExit();
-			// get the result
-			string result = proc.StandardOutput.ReadToEnd();
-			// add to treeview
+        /// <summary>
+        /// Assuming one user with one thread...
+        /// </summary>
+		private static int lineCount = 0;
+		private static StringBuilder output = new StringBuilder();
+		
+        
+        private void ProcessCommandText(string txt) 
+        {
+			// check for multiple commands
+			var commands = txt.Split('\n');
+			
+			foreach(var cmd in commands) {
+				var _cmd = cmd.Replace("\n", "").Replace("\r", "");
 
-			// check to see if history node exists
-			// if not, create it
-			if (this.treeView1.SelectedNode.Nodes["History"] == null)
-			{
-				TreeNode history = new TreeNode("History");
-				this.treeView1.SelectedNode.Nodes.Add(history);
+			    Process process = new Process();
+                process.StartInfo.FileName = @"c:\windows\system32\cmd";
+                process.StartInfo.Arguments = "/c " + _cmd;
+				                                        
+			    process.StartInfo.UseShellExecute = false;
+			    process.StartInfo.RedirectStandardOutput = true;
+
+				output.Clear();
+				process.OutputDataReceived += new DataReceivedEventHandler((sender, e) =>
+			    {
+				    // Prepend line numbers to each line of the output.
+				    if (!String.IsNullOrEmpty(e.Data))
+				    {
+					    lineCount++;
+					    output.Append("\n[" + lineCount + "]: " + e.Data);
+				    }
+			    });
+
+			    process.Start();
+
+			    // Asynchronously read the standard output of the spawned process.
+			    // This raises OutputDataReceived events for each line of output.
+			    process.BeginOutputReadLine();
+			    process.WaitForExit();
+
+			    // Write the redirected output to this application's window.
+			    Console.WriteLine(output);
+
+			    process.WaitForExit();
+			    process.Close();
+
+			    Console.WriteLine("\n\nPress any key to exit.");
+
+				Debugger.Log(1, "success", "testing");
+
+				// regex match text a-Z only
+				var stringMatches = Regex.Matches(_cmd, @"[a-zA-Z_]+");
+                var stringMatchResult = "";
+				foreach (Match stringMatch in stringMatches)
+				{
+                    // get all the alpha characters and combine them into a single result
+                    stringMatchResult += stringMatch.Value;
+				}
+
+				if (treeView1.Nodes[0].Nodes.Find("History", false).Length == 0)
+                {
+					pNode aNode = new pNode("History");
+					treeView1.Nodes[0].Nodes.Add(aNode);
+				}
+
+				treeView1.SelectedNode = treeView1.Nodes[0].Nodes.Find("History", false).FirstOrDefault();
+
+				if (_cmd.Length > 0) 
+	      {
+					txtName.Text = stringMatchResult;
+					txtObject.Text = output.ToString();
+                    var cmdNode = new pNode(stringMatchResult);
+                    cmdNode.Tag = output.ToString();
+					treeView1.SelectedNode.Nodes.Add(cmdNode);
+                    txtCMD.Focus();
+				}
 			}
-			// TODO:  add the command to the history node
-
-			// TODO: and add the result to its child node
-
 
 		}
+
+  //      private void createHistoryNodeOnMasterNode() 
+		//{
+		//	// find the history node if it exists
+		//	//this.tmpNode = treeView1.Nodes.Find("History", false).FirstOrDefault() as pNode;
+		//	//if (tmpNode == null) 
+  // //         {
+  // //             treeView1.Nodes.Add("History", "");
+		//	//	this.tmpNode = treeView1.Nodes.Find("History", false).FirstOrDefault() as pNode;
+		//	//}
+		//}
+
+		//private void ProcessCommand(string text)
+		//{
+
+  //          var proc = System.Diagnostics.Process.Start(this.treeView1.SelectedNode.Tag.ToString());
+		//	proc.WaitForExit();
+		//	// get the result
+		//	string result = proc.StandardOutput.ReadToEnd();
+		//	// add to treeview
+								
+		//	// check to see if history node exists
+		//	// if not, create it
+		//	if (this.treeView1.SelectedNode.Nodes["History"] == null)
+		//	{
+		//		TreeNode history = new TreeNode("History");
+		//		this.treeView1.SelectedNode.Nodes.Add(history);
+		//	}
+		//	// TODO:  add the command to the history node
+
+		//	// TODO: and add the result to its child node
+
+
+		//}
 	}
 }
