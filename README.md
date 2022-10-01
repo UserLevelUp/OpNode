@@ -8,7 +8,6 @@ Feel free to add issues or request issues be added.   I'll create a milestone fo
 
 ## Issues being added for Hactoberfest are:
 
-
 Create a video of how to use OpNode to attact a larger talent pool to work on this open sourced project.
 
 OpNode is about a treenode that contains different operations for a parent, and the operations occur on the child nodes.
@@ -57,4 +56,6 @@ May need a project manager to help with issues.  Adding issues, upgrading or dow
 
 The installer initially was based on a free version of InstallShield so I switched to Wix which is free and open source.  But may need a massive amount of help as Wix is complex and murky installer for executables and resource files.
 
+### Other Notes
 
+If you add an issue, please request it to be looked over by myself and I will add any tags or remarks to the issue.  Otherwise I'm likely to delete the issue especially if  it doesn't relate with the goals of the project.  But I'm more than happy to work with you to make it fit into the goals of this project.
