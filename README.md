@@ -1,6 +1,8 @@
 # OpNode Tree Based Database
 
-Create a branch based on the master branch an attempt a pull request.   Please don't post spammy PRs.
+Create a branch based on the master branch and attempt a pull request.   Please don't post spammy PRs.  
+
+I'll accept anything that is simple, eloquent, and works.
 
 Issues being added for Hactoberfest are:
 
