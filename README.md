@@ -1,4 +1,4 @@
-# OpNode Tree Based Couch DB with a Simple Operations Interface
+# OpNode - Tree Based Couch DB with a Simple Operations Interface
 
 Create a branch based on the master branch and attempt a pull request.   Please don't post spammy PRs.  
 
