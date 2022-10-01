@@ -1,5 +1,7 @@
 # OpNode Tree Based Database
 
+Create a branch based on the master branch an attempt a pull request.   Please don't post spammy PRs.
+
 Issues being added for Hactoberfest are:
 
 Create a video of how to use OpNode to attact a larger talent pool to work on this open sourced project.
