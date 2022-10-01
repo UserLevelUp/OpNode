@@ -1,7 +1,9 @@
 # OpNode - Tree Based Couch DB with a Simple Operations Interface
 Welcome to OpNode which is a TreeView based system for collecting key value pairs.  Since it is a tree view it can do thing like import and export xml files.  It can search through the node structure for a keyword and expand the treenode for quick usage.   Also the OpNode can execute command and values on a particular node can be copied and dragged to somewhere off the application.   There are many other things OpNode can do now, and will do in the future.   
 
-OpNode was originally used as a password vault. So it has uses to store things under a system of grouping under a particular parent.  There are no limit to the depth of trees you can go, but its probably better to start a new file and keep the depth shallow as things can get lost if you go to deep in the treeview tree structure.  But if you remember the name you can expand the tree to that point in the treeview.
+Goal of the project to to give a face lift to an old project started in 2005 called pWord.  New name is called OpNode to designate individual nodes that contain an operation on a per node basis.  Each Node can have different operations like Add, Subtract, Command Node, any node you can imagine an operational node will encompass it.
+
+OpNode when it was called pWord was originally used as a password vault. So it has uses to store things under a system of grouping under a particular parent.  There are no limit to the depth of trees you can go, but its probably better to start a new file and keep the depth shallow as things can get lost if you go to deep in the treeview tree structure.  But if you remember the name you can expand the tree to that point in the treeview.
 
 Create a branch based on the master branch and attempt a pull request.   Please don't post spammy PRs.  
 
@@ -18,8 +20,6 @@ OpNode is about a treenode that contains different operations for a parent, and 
 Nodes without operations are just key value pairs.
 
 Getting this project ready for Hacktoberfest
-
-Goal of the project to to give a face lift to an old project started in 2005 called pWord.  New name is called OpNode to designate individual nodes that contain an operation on a per node basis.  Each Node can have different operations like Add, Subtract, Command Node, any node you can imagine an operational node will encompass it.
 
 The old project is on sourceforge named pWord.  I'm renaming it to OpNode.
 
