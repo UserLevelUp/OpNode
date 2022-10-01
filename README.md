@@ -1,5 +1,9 @@
 # OpNode Tree Based Database
 
+Issues being added for Hactoberfest are:
+
+Create a video of how to use OpNode to attact a larger talent pool to work on this open sourced project.
+
 OpNode is about a treenode that contains different operations for a parent, and the operations occur on the child nodes.
 
 Nodes without operations are just key value pairs.
@@ -24,10 +28,16 @@ Optimizing the file saves as a binary file is another issue that needs to be mod
 
 Another major issue that needs to be resolved is converting operational nodes to XML and from XML back into a treenode structure.  There is a concept of attributes, prefixes, and sufixes and even namespaces and operations for each node.  So this is possible but will require an extensive amount of work.  Though its not hard, it will require a lot of testing.
 
-Converting the model to JSON and from JSON back to a tree node structure.
+Converting the model to JSON and from JSON back to a tree node structure. Very difficult problem.  The XML is not very optimized but works.  So same kind of logic but for JSON objects.
+
+Adding a JSON Schema operation to a parent node so all children follow it is also an issue on the extremely hard list.
 
 Make OpNode multi-threadeda application.  Very difficult problem to solve.
 
 Get the command prompt working as well so that it can add nodes and even operational nodes using the command line.
 
-Create a video of how to use OpNode to attact a larger talent pool to work on this open sourced project.
+Get the command prompt working more seemlessly so it has better history for command, powershell, bash, terminal prompt, nodejs prompt, etc...
+
+May need aproject manager to help with issues.
+
+
