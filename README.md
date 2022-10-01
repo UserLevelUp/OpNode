@@ -16,6 +16,8 @@ Getting this project ready for Hacktoberfest
 
 Goal of the project to to give a face lift to an old project started in 2005 called pWord.  New name is called OpNode to designate individual nodes that contain an operation on a per node basis.  Each Node can have different operations like Add, Subtract, Command Node, any node you can imagine an operational node will encompass it.
 
+The old project is on sourceforge named pWord.  I'm renaming it to OpNode.
+
 A more lofty goal of the project is to perform fast operations where it only checks for certain nodes parents to see if its dirty and grabs the results of the parents in the correct order.  This logic has already been added but it needs to be optimized.
 
 The Events within this forms app also needs to be renamed in many cases because the default name was generated and a good name that relates to its function is missing.  So its hard to understand over half of the events used with this Forms Application.
