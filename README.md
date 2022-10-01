@@ -6,6 +6,8 @@ I'll accept anything that is simple, eloquent, and works.
 
 Issues being added for Hactoberfest are:
 
+Feel free to add issues or request issues be added.   I'll create a milestone for each type of issue so they are grouped by Milestones.
+
 Create a video of how to use OpNode to attact a larger talent pool to work on this open sourced project.
 
 OpNode is about a treenode that contains different operations for a parent, and the operations occur on the child nodes.
