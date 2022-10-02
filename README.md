@@ -1,6 +1,6 @@
 # OpNode - Tree Based Couch DB with a Simple Operations Interface
 
-<img src="https://repository-images.githubusercontent.com/274567598/c444e080-aac2-48db-9ff6-8d42abc9374c" alt="OpNode Image" />
+<!-- <img src="https://repository-images.githubusercontent.com/274567598/c444e080-aac2-48db-9ff6-8d42abc9374c" alt="OpNode Image" /> -->
 
 <img src="https://github.com/UserLevelUp/OpNode/blob/master/Logo%20Sugestions/Logo.png" alt="OpNode Image" />
 
