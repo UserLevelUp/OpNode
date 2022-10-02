@@ -1,6 +1,0 @@
-C:\src\pword2\pword\pWord4\pWord4\pWordSetup\bin\Debug\pWordSetup.msi
-C:\src\pword2\pword\pWord4\pWord4\pWordSetup\bin\Debug\pWordSetup.wixpdb
-obj\Debug\Product.wixobj
-obj\Debug\pWordSetup.wixproj.BindContentsFileListnull.txt
-obj\Debug\pWordSetup.wixproj.BindOutputsFileListnull.txt
-obj\Debug\pWordSetup.wixproj.BindBuiltOutputsFileListnull.txt
