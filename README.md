@@ -46,7 +46,7 @@ Converting the treeview model to JSON and from JSON back to a tree node structur
 
 Adding a JSON Schema operation to a parent node so all children follow it is also an issue on the extremely hard list.
 
-Also need to add XML schema is a good thing.
+Also need to add XML schema.
 
 Add an XSLT operations to a particular node.
 
