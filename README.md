@@ -2,7 +2,7 @@
 
 <!-- <img src="https://repository-images.githubusercontent.com/274567598/c444e080-aac2-48db-9ff6-8d42abc9374c" alt="OpNode Image" /> -->
 
-<img src="https://github.com/UserLevelUp/OpNode/blob/master/Logo%20Sugestions/Logo.png" alt="OpNode Image" />
+<img src="https://github.com/UserLevelUp/OpNode/blob/master/Logo%20Sugestions/OpNodeLogo.png" alt="OpNode Image" />
 
 Welcome to OpNode which is a TreeView based system for collecting key value pairs.  Since it is a tree view it can do thing like import and export xml files.  It can search through the node structure for a keyword and expand the treenode for quick usage.   Also the OpNode can execute command and values on a particular node can be copied and dragged to somewhere off the application.   There are many other things OpNode can do now, and will do in the future.   
 
