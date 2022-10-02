@@ -1,2 +1,0 @@
-C:\Users\marcn\source\repos\User-Level-Up\pWord2\pWord4\pWordWixSetup\bin\Debug\pWordWixSetup.msi
-C:\Users\marcn\source\repos\User-Level-Up\pWord2\pWord4\pWordWixSetup\bin\Debug\pWordWixSetup.wixpdb
