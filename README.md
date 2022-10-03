@@ -4,6 +4,12 @@
 
 <img src="https://github.com/UserLevelUp/OpNode/blob/master/Logo%20Sugestions/OpNodeLogo.png" alt="OpNode Image" />
 
+## Dev Info
+
+If you are a developer the solution or the .sln file is in PWord4 project.   Start from there and it will load all projects and libraries together.
+
+## Welcome
+
 Welcome to OpNode which is a TreeView based system for collecting key value pairs.  Since it is a tree view it can do things like import and export xml files.  It can search through the node structure for a keyword and expand the treenode for quick usage.   Also the OpNode can execute commands and values on a particular node and the results can be copied and dragged to somewhere off the application.   There are many other things OpNode can do now, and will do in the future.   
 
 Goal of the project to to give a face lift to an old project started in 2005 called pWord.  New name is called OpNode to designate individual nodes that contain an operation on a per node basis.  Each Node can have different operations like Add, Subtract, Command Node, any node you can imagine an operational node will encompass it.
