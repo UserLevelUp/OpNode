@@ -6,7 +6,7 @@
 
 ## Dev Info
 
-If you are a developer the solution or the .sln file is in PWord4 project.   Start from there and it will load all projects and libraries together.  The startup project should be set to MyPword even though the solution is in PWord4 currently.   Also I'm doing development in Visual Studio 2022 so you may not have the best experience in older version of Visual Studio.
+If you are a developer please get the latest version in master for the solution or the .sln file is in PWord4 project.   Start from there and it will load all projects and libraries together.  The startup project should be set to MyPword even though the solution is in PWord4 currently.   Also I'm doing development in Visual Studio 2022 so you may not have the best experience in older version of Visual Studio.  
 
 ## Welcome
 
@@ -71,6 +71,16 @@ Get the command prompt working more seemlessly so it has better history for comm
 May need a project manager to help with issues.  Adding issues, upgrading or down grading issues.  Prioritizing sets of tasks so they fall in order when resources are available to tackle them.
 
 The installer initially was based on a free version of InstallShield so I switched to Wix which is free and open source.  But may need a massive amount of help as Wix is complex and murky installer for executables and resource files.
+
+### If You Are New To Git
+
+You can download a zip version of the project.  But its better to first install Git from the GitSCM approved website and then once that installed then open up a new command prompt or use a git client app like app.  You'll need to create a folder dedicated to the project such as c:\src\opnode.  Change directory to that folder.  Then you'll need to run the git clone command to install the repostiory form github into your opnode folder.
+
+<pre>
+mkdir opnode
+cd opnode
+git clone https://github.com/UserLevelUp/OpNode.git .
+</pre>
 
 ### Other Notes
 
