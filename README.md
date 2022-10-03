@@ -6,7 +6,7 @@
 
 ## Dev Info
 
-If you are a developer please get the latest version in the root or master branch.  To open the solution look for the solution or the .sln file is in PWord4 project.   Start from there and it will load all projects and libraries together.  The startup project should be set to MyPword even though the solution is in PWord4 currently.   Also I'm doing development in Visual Studio 2022 so you may not have the best experience in older version of Visual Studio.  
+If you are a developer please get the latest version in the root or master branch - its the default branch.  To open the solution look for the solution or the .sln file is in PWord4 project.   Start from there and it will load all projects and libraries together.  The startup project should be set to MyPword even though the solution is in PWord4 currently.   Also I'm doing development in Visual Studio 2022 so you may not have the best experience in older version of Visual Studio.  
 
 ## Welcome
 
