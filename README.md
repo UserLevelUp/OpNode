@@ -74,7 +74,7 @@ The installer initially was based on a free version of InstallShield so I switch
 
 ### If You Are New To Git
 
-You can download a zip version of the project.  But its better to first install Git from the GitSCM approved website and then once that installed then open up a new command prompt or use a git client app like app.  You'll need to create a folder dedicated to the project such as c:\src\opnode.  Change directory to that folder.  Then you'll need to run the git clone command to install the repostiory form github into your opnode folder.
+You can download a zip version of the project.  But its better to first install Git from the GitSCM approved website and then once that installed then open up a new command prompt or use a git client app like tortoisegit.  You'll need to create a folder dedicated to the project such as c:\src\opnode.  Change directory to that folder.  Then you'll need to run the git clone command to install the repostiory form github into your opnode folder.
 
 <pre>
 mkdir opnode
