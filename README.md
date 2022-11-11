@@ -8,6 +8,13 @@
 
 If you are a developer please get the latest version in the root or master branch - its the default branch.  To open the solution look for the solution or the .sln file is in PWord4 project.   Start from there and it will load all projects and libraries together.  The startup project should be set to MyPword even though the solution is in PWord4 currently.   Also I'm doing development in Visual Studio 2022 so you may not have the best experience in older version of Visual Studio.  
 
+```mermaid
+pie
+"Development" : 49.1
+"Design" : 25.9
+"Documentation" : 25
+```
+
 ## Welcome
 
 Welcome to OpNode which is a TreeView based system for collecting key value pairs.  Since it is a tree view it can do things like import and export xml files.  It can search through the node structure for a keyword and expand the treenode for quick usage.   Also the OpNode can execute commands and values on a particular node and the results can be copied and dragged to somewhere off the application.   There are many other things OpNode can do now, and will do in the future.   
