@@ -2,13 +2,26 @@
 
 <!-- <img src="https://repository-images.githubusercontent.com/274567598/c444e080-aac2-48db-9ff6-8d42abc9374c" alt="OpNode Image" /> -->
 
-<img src="https://github.com/UserLevelUp/OpNode/blob/master/Logo%20Sugestions/Logo.png" alt="OpNode Image" />
+<img src="https://github.com/UserLevelUp/OpNode/blob/master/Logo%20Sugestions/OpNodeLogo.png" alt="OpNode Image" />
 
-Welcome to OpNode which is a TreeView based system for collecting key value pairs.  Since it is a tree view it can do thing like import and export xml files.  It can search through the node structure for a keyword and expand the treenode for quick usage.   Also the OpNode can execute command and values on a particular node can be copied and dragged to somewhere off the application.   There are many other things OpNode can do now, and will do in the future.   
+## Dev Info
+
+If you are a developer please get the latest version in the root or master branch - its the default branch.  To open the solution look for the solution or the .sln file is in PWord4 project.   Start from there and it will load all projects and libraries together.  The startup project should be set to MyPword even though the solution is in PWord4 currently.   Also I'm doing development in Visual Studio 2022 so you may not have the best experience in older version of Visual Studio.  
+
+```mermaid
+pie
+"Development" : 49.1
+"Design" : 25.9
+"Documentation" : 25
+```
+
+## Welcome
+
+Welcome to OpNode which is a TreeView based system for collecting key value pairs.  Since it is a tree view it can do things like import and export xml files.  It can search through the node structure for a keyword and expand the treenode for quick usage.   Also the OpNode can execute commands and values on a particular node and the results can be copied and dragged to somewhere off the application.   There are many other things OpNode can do now, and will do in the future.   
 
 Goal of the project to to give a face lift to an old project started in 2005 called pWord.  New name is called OpNode to designate individual nodes that contain an operation on a per node basis.  Each Node can have different operations like Add, Subtract, Command Node, any node you can imagine an operational node will encompass it.
 
-OpNode when it was called pWord was originally used as a password vault. So it has uses to store things under a system of grouping under a particular parent.  There are no limit to the depth of trees you can go, but its probably better to start a new file and keep the depth shallow as things can get lost if you go to deep in the treeview tree structure.  But if you remember the name you can expand the tree to that point in the treeview.
+OpNode when it was called pWord was originally used as a password vault. So it has uses to store things under a system of grouping under a particular parent.  There are no limit to the depth of nodes you can go, but it's probably better to start a new file and keep the depth shallow as things can get lost if you go to deep in the treeview tree structure.  But if you remember the name you can expand the tree to that point in the treeview.
 
 Create a branch based on the master branch and attempt a pull request.   Please don't post spammy PRs.  
 
@@ -16,15 +29,17 @@ I'll accept anything that is simple, eloquent, and works.
 
 Feel free to add issues or request issues be added.   I'll create a milestone for each type of issue so they are grouped by Milestones.
 
-## Issues being added for Hactoberfest are:
-
-Create a video of how to use OpNode to attact a larger talent pool to work on this open sourced project.
+## So What is OpNode and Whats going on Now
 
 OpNode is about a treenode that contains different operations for a parent, and the operations occur on the child nodes.
 
 Nodes without operations are just key value pairs.
 
 Getting this project ready for Hacktoberfest
+
+## Issues being added for Hactoberfest are:
+
+Create a video of how to use OpNode to attact a larger talent pool to work on this open sourced project.
 
 The old project is on sourceforge named pWord.  I'm renaming it to OpNode.
 
@@ -63,6 +78,16 @@ Get the command prompt working more seemlessly so it has better history for comm
 May need a project manager to help with issues.  Adding issues, upgrading or down grading issues.  Prioritizing sets of tasks so they fall in order when resources are available to tackle them.
 
 The installer initially was based on a free version of InstallShield so I switched to Wix which is free and open source.  But may need a massive amount of help as Wix is complex and murky installer for executables and resource files.
+
+### If You Are New To Git
+
+You can download a zip version of the project.  But its better to first install Git from the GitSCM approved website and then once that installed then open up a new command prompt or use a git client app like tortoisegit.  You'll need to create a folder dedicated to the project such as c:\src\opnode.  Change directory to that folder.  Then you'll need to run the git clone command to install the repostiory form github into your opnode folder.
+
+<pre>
+mkdir opnode
+cd opnode
+git clone https://github.com/UserLevelUp/OpNode.git .
+</pre>
 
 ### Other Notes
 
