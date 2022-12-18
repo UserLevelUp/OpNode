@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<!--<Product Id="*" Name="pWordSetup" Language="1033" Version="1.0.0.0" Manufacturer="UserLevelUp" UpgradeCode="70c223ca-580d-4aef-8640-ed6bd1ca1293">
+	<Product Id="*" Name="pWordSetup" Language="1033" Version="1.0.0.0" Manufacturer="UserLevelUp" UpgradeCode="70c223ca-580d-4aef-8640-ed6bd1ca1293">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
@@ -22,8 +22,8 @@
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="ProductComponents">
-        --><!-- TODO: Insert files, registry keys, and other resources here. --><!--
+        <!-- TODO: Insert files, registry keys, and other resources here. -->
       </Component>
 		</ComponentGroup>
-	</Fragment>-->
+	</Fragment>
 </Wix>
