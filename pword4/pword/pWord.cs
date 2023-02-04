@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using pWordLib;
 using pWordLib.dat;
 using pWordLib.dat.math;
@@ -111,14 +112,16 @@ namespace myPword
         {
             treeview = 1,
             pNode = 2,
-            treexml = 3
+            treexml = 3,
+            treejson = 4
         }
 
         public enum ImportMode
         {
             treeview = 1,
             pNode = 2,
-            treexml = 3
+            treexml = 3,
+            treejson = 4
         }
 
         ExportMode exportMode = ExportMode.treeview;
@@ -263,6 +266,7 @@ namespace myPword
         private ToolBarButton toolBarCollapse;
         private TabPage tabCMD;
         private TextBox txtCMD;
+        private MenuItem menuItemImportJSON;
         pWordLib.mgr.registryMgr rm = null;
         public pWord()
         {
@@ -344,270 +348,271 @@ namespace myPword
         /// </summary>
         private void InitializeComponent()
         {
-			this.components = new System.ComponentModel.Container();
-			System.Configuration.AppSettingsReader configurationAppSettings = new System.Configuration.AppSettingsReader();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pWord));
-			this.contextMenuNotify = new System.Windows.Forms.ContextMenu();
-			this.menuItemShow = new System.Windows.Forms.MenuItem();
-			this.menuItemBlank = new System.Windows.Forms.MenuItem();
-			this.menuItemExit = new System.Windows.Forms.MenuItem();
-			this.statusBar1 = new System.Windows.Forms.StatusBar();
-			this.toolBar1 = new System.Windows.Forms.ToolBar();
-			this.toolBarTac = new System.Windows.Forms.ToolBarButton();
-			this.toolBarView = new System.Windows.Forms.ToolBarButton();
-			this.toolBarXML = new System.Windows.Forms.ToolBarButton();
-			this.toolBarSearch = new System.Windows.Forms.ToolBarButton();
-			this.toolBarCollapse = new System.Windows.Forms.ToolBarButton();
-			this.imgToolbar1 = new System.Windows.Forms.ImageList(this.components);
-			this.cmTree = new System.Windows.Forms.ContextMenu();
-			this.menuItemAddTo = new System.Windows.Forms.MenuItem();
-			this.menuItem13 = new System.Windows.Forms.MenuItem();
-			this.menuItem29 = new System.Windows.Forms.MenuItem();
-			this.menuItemCopy = new System.Windows.Forms.MenuItem();
-			this.menuItemAttributes = new System.Windows.Forms.MenuItem();
-			this.menuItemAttributeAdd = new System.Windows.Forms.MenuItem();
-			this.menuItemNamespace = new System.Windows.Forms.MenuItem();
-			this.menuItem36 = new System.Windows.Forms.MenuItem();
-			this.menuItem37 = new System.Windows.Forms.MenuItem();
-			this.menuItem83 = new System.Windows.Forms.MenuItem();
-			this.menuItem30 = new System.Windows.Forms.MenuItem();
-			this.menuItem22 = new System.Windows.Forms.MenuItem();
-			this.menuItem32 = new System.Windows.Forms.MenuItem();
-			this.menuItem21 = new System.Windows.Forms.MenuItem();
-			this.menuItem31 = new System.Windows.Forms.MenuItem();
-			this.menuItemEncryptNode = new System.Windows.Forms.MenuItem();
-			this.menuItem14 = new System.Windows.Forms.MenuItem();
-			this.menuItem34 = new System.Windows.Forms.MenuItem();
-			this.menuItemExportToXmlHtml = new System.Windows.Forms.MenuItem();
-			this.menuItem85 = new System.Windows.Forms.MenuItem();
-			this.menuItemExportJson = new System.Windows.Forms.MenuItem();
-			this.mnuImportXML = new System.Windows.Forms.MenuItem();
-			this.mnuImportNodeXML = new System.Windows.Forms.MenuItem();
-			this.menuItem40 = new System.Windows.Forms.MenuItem();
-			this.menuItem39 = new System.Windows.Forms.MenuItem();
-			this.menuItem46 = new System.Windows.Forms.MenuItem();
-			this.menuItem74 = new System.Windows.Forms.MenuItem();
-			this.menuItem75 = new System.Windows.Forms.MenuItem();
-			this.menuItem42 = new System.Windows.Forms.MenuItem();
-			this.menuItem44 = new System.Windows.Forms.MenuItem();
-			this.menuItem43 = new System.Windows.Forms.MenuItem();
-			this.menuItem45 = new System.Windows.Forms.MenuItem();
-			this.menuItem41 = new System.Windows.Forms.MenuItem();
-			this.menuItem60 = new System.Windows.Forms.MenuItem();
-			this.menuItem61 = new System.Windows.Forms.MenuItem();
-			this.menuItem62 = new System.Windows.Forms.MenuItem();
-			this.menuItem57 = new System.Windows.Forms.MenuItem();
-			this.menuItem58 = new System.Windows.Forms.MenuItem();
-			this.menuItem59 = new System.Windows.Forms.MenuItem();
-			this.menuItem54 = new System.Windows.Forms.MenuItem();
-			this.menuItem55 = new System.Windows.Forms.MenuItem();
-			this.menuItem56 = new System.Windows.Forms.MenuItem();
-			this.menuItem69 = new System.Windows.Forms.MenuItem();
-			this.menuItem70 = new System.Windows.Forms.MenuItem();
-			this.menuItem71 = new System.Windows.Forms.MenuItem();
-			this.menuItem72 = new System.Windows.Forms.MenuItem();
-			this.menuItem73 = new System.Windows.Forms.MenuItem();
-			this.menuItem63 = new System.Windows.Forms.MenuItem();
-			this.menuItem64 = new System.Windows.Forms.MenuItem();
-			this.menuItem65 = new System.Windows.Forms.MenuItem();
-			this.menuItem66 = new System.Windows.Forms.MenuItem();
-			this.menuItem67 = new System.Windows.Forms.MenuItem();
-			this.menuItem68 = new System.Windows.Forms.MenuItem();
-			this.menuItem50 = new System.Windows.Forms.MenuItem();
-			this.menuItem47 = new System.Windows.Forms.MenuItem();
-			this.menuItem48 = new System.Windows.Forms.MenuItem();
-			this.menuItem49 = new System.Windows.Forms.MenuItem();
-			this.menuItem51 = new System.Windows.Forms.MenuItem();
-			this.menuItem52 = new System.Windows.Forms.MenuItem();
-			this.menuItem53 = new System.Windows.Forms.MenuItem();
-			this.menuItem38 = new System.Windows.Forms.MenuItem();
-			this.menuItem76 = new System.Windows.Forms.MenuItem();
-			this.menuItem77 = new System.Windows.Forms.MenuItem();
-			this.menuItem80 = new System.Windows.Forms.MenuItem();
-			this.menuItem78 = new System.Windows.Forms.MenuItem();
-			this.menuItem81 = new System.Windows.Forms.MenuItem();
-			this.menuItem82 = new System.Windows.Forms.MenuItem();
-			this.menuItem79 = new System.Windows.Forms.MenuItem();
-			this.menuItemViewErrors = new System.Windows.Forms.MenuItem();
-			this.menuItem86 = new System.Windows.Forms.MenuItem();
-			this.menuItem87 = new System.Windows.Forms.MenuItem();
-			this.menuItem88 = new System.Windows.Forms.MenuItem();
-			this.menuItem89 = new System.Windows.Forms.MenuItem();
-			this.menuItem90 = new System.Windows.Forms.MenuItem();
-			this.menuItem24 = new System.Windows.Forms.MenuItem();
-			this.menuItemOpenLink = new System.Windows.Forms.MenuItem();
-			this.imageTree1 = new System.Windows.Forms.ImageList(this.components);
-			this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
-			this.menuItemFile = new System.Windows.Forms.MenuItem();
-			this.newFileMenuItem = new System.Windows.Forms.MenuItem();
-			this.openFileMenuItem = new System.Windows.Forms.MenuItem();
-			this.saveFileMenuItem = new System.Windows.Forms.MenuItem();
-			this.menuItem15 = new System.Windows.Forms.MenuItem();
-			this.exportXMLMenuItem = new System.Windows.Forms.MenuItem();
-			this.menuItem25 = new System.Windows.Forms.MenuItem();
-			this.exitMenuItem = new System.Windows.Forms.MenuItem();
-			this.menuItem26 = new System.Windows.Forms.MenuItem();
-			this.menuItem27 = new System.Windows.Forms.MenuItem();
-			this.menuItem28 = new System.Windows.Forms.MenuItem();
-			this.menuItem84 = new System.Windows.Forms.MenuItem();
-			this.mnuNamespaces = new System.Windows.Forms.MenuItem();
-			this.mnuAttributes = new System.Windows.Forms.MenuItem();
-			this.menuItem33 = new System.Windows.Forms.MenuItem();
-			this.menuItem17 = new System.Windows.Forms.MenuItem();
-			this.menuItem12 = new System.Windows.Forms.MenuItem();
-			this.menuItem18 = new System.Windows.Forms.MenuItem();
-			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.txtValue = new System.Windows.Forms.TextBox();
-			this.cmMasters = new System.Windows.Forms.ContextMenu();
-			this.menuItem19 = new System.Windows.Forms.MenuItem();
-			this.menuItem20 = new System.Windows.Forms.MenuItem();
-			this.splitter1 = new System.Windows.Forms.Splitter();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.panel4 = new System.Windows.Forms.Panel();
-			this.txtObject = new System.Windows.Forms.TextBox();
-			this.lblValue = new System.Windows.Forms.Label();
-			this.panel3 = new System.Windows.Forms.Panel();
-			this.txtName = new System.Windows.Forms.TextBox();
-			this.lblName = new System.Windows.Forms.Label();
-			this.panel5 = new System.Windows.Forms.Panel();
-			this.chkClear = new System.Windows.Forms.CheckBox();
-			this.btnAdd = new System.Windows.Forms.Button();
-			this.panel6 = new System.Windows.Forms.Panel();
-			this.treeView1 = new myPword.pView();
-			this.tabs = new System.Windows.Forms.TabControl();
-			this.tabValue = new System.Windows.Forms.TabPage();
-			this.tabNamespaces = new System.Windows.Forms.TabPage();
-			this.lstNamespaces = new System.Windows.Forms.ListView();
-			this.columnPrefix = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnPrefixURI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnSuffix = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.tabAttributes = new System.Windows.Forms.TabPage();
-			this.lstAttributes = new System.Windows.Forms.ListView();
-			this.columnAttributeName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnAttributeValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.tabCMD = new System.Windows.Forms.TabPage();
-			this.txtCMD = new System.Windows.Forms.TextBox();
-			this.btnCancel = new System.Windows.Forms.Button();
-			this.saveFileDialogHTML = new System.Windows.Forms.SaveFileDialog();
-			this.saveFileDialogJSON = new System.Windows.Forms.SaveFileDialog();
-			this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
-			this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-			this.userControl11 = new LeftRight.LeftRight();
-			this.panel1.SuspendLayout();
-			this.panel2.SuspendLayout();
-			this.panel4.SuspendLayout();
-			this.panel3.SuspendLayout();
-			this.panel5.SuspendLayout();
-			this.panel6.SuspendLayout();
-			this.tabs.SuspendLayout();
-			this.tabValue.SuspendLayout();
-			this.tabNamespaces.SuspendLayout();
-			this.tabAttributes.SuspendLayout();
-			this.tabCMD.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// contextMenuNotify
-			// 
-			this.contextMenuNotify.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.components = new System.ComponentModel.Container();
+            System.Configuration.AppSettingsReader configurationAppSettings = new System.Configuration.AppSettingsReader();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pWord));
+            this.contextMenuNotify = new System.Windows.Forms.ContextMenu();
+            this.menuItemShow = new System.Windows.Forms.MenuItem();
+            this.menuItemBlank = new System.Windows.Forms.MenuItem();
+            this.menuItemExit = new System.Windows.Forms.MenuItem();
+            this.statusBar1 = new System.Windows.Forms.StatusBar();
+            this.toolBar1 = new System.Windows.Forms.ToolBar();
+            this.toolBarTac = new System.Windows.Forms.ToolBarButton();
+            this.toolBarView = new System.Windows.Forms.ToolBarButton();
+            this.toolBarXML = new System.Windows.Forms.ToolBarButton();
+            this.toolBarSearch = new System.Windows.Forms.ToolBarButton();
+            this.toolBarCollapse = new System.Windows.Forms.ToolBarButton();
+            this.imgToolbar1 = new System.Windows.Forms.ImageList(this.components);
+            this.cmTree = new System.Windows.Forms.ContextMenu();
+            this.menuItemAddTo = new System.Windows.Forms.MenuItem();
+            this.menuItem13 = new System.Windows.Forms.MenuItem();
+            this.menuItem29 = new System.Windows.Forms.MenuItem();
+            this.menuItemCopy = new System.Windows.Forms.MenuItem();
+            this.menuItemAttributes = new System.Windows.Forms.MenuItem();
+            this.menuItemAttributeAdd = new System.Windows.Forms.MenuItem();
+            this.menuItemNamespace = new System.Windows.Forms.MenuItem();
+            this.menuItem36 = new System.Windows.Forms.MenuItem();
+            this.menuItem37 = new System.Windows.Forms.MenuItem();
+            this.menuItem83 = new System.Windows.Forms.MenuItem();
+            this.menuItem30 = new System.Windows.Forms.MenuItem();
+            this.menuItem22 = new System.Windows.Forms.MenuItem();
+            this.menuItem32 = new System.Windows.Forms.MenuItem();
+            this.menuItem21 = new System.Windows.Forms.MenuItem();
+            this.menuItem31 = new System.Windows.Forms.MenuItem();
+            this.menuItemEncryptNode = new System.Windows.Forms.MenuItem();
+            this.menuItem14 = new System.Windows.Forms.MenuItem();
+            this.menuItem34 = new System.Windows.Forms.MenuItem();
+            this.menuItemExportToXmlHtml = new System.Windows.Forms.MenuItem();
+            this.menuItem85 = new System.Windows.Forms.MenuItem();
+            this.menuItemExportJson = new System.Windows.Forms.MenuItem();
+            this.mnuImportXML = new System.Windows.Forms.MenuItem();
+            this.mnuImportNodeXML = new System.Windows.Forms.MenuItem();
+            this.menuItem40 = new System.Windows.Forms.MenuItem();
+            this.menuItem39 = new System.Windows.Forms.MenuItem();
+            this.menuItem46 = new System.Windows.Forms.MenuItem();
+            this.menuItem74 = new System.Windows.Forms.MenuItem();
+            this.menuItem75 = new System.Windows.Forms.MenuItem();
+            this.menuItem42 = new System.Windows.Forms.MenuItem();
+            this.menuItem44 = new System.Windows.Forms.MenuItem();
+            this.menuItem43 = new System.Windows.Forms.MenuItem();
+            this.menuItem45 = new System.Windows.Forms.MenuItem();
+            this.menuItem41 = new System.Windows.Forms.MenuItem();
+            this.menuItem60 = new System.Windows.Forms.MenuItem();
+            this.menuItem61 = new System.Windows.Forms.MenuItem();
+            this.menuItem62 = new System.Windows.Forms.MenuItem();
+            this.menuItem57 = new System.Windows.Forms.MenuItem();
+            this.menuItem58 = new System.Windows.Forms.MenuItem();
+            this.menuItem59 = new System.Windows.Forms.MenuItem();
+            this.menuItem54 = new System.Windows.Forms.MenuItem();
+            this.menuItem55 = new System.Windows.Forms.MenuItem();
+            this.menuItem56 = new System.Windows.Forms.MenuItem();
+            this.menuItem69 = new System.Windows.Forms.MenuItem();
+            this.menuItem70 = new System.Windows.Forms.MenuItem();
+            this.menuItem71 = new System.Windows.Forms.MenuItem();
+            this.menuItem72 = new System.Windows.Forms.MenuItem();
+            this.menuItem73 = new System.Windows.Forms.MenuItem();
+            this.menuItem63 = new System.Windows.Forms.MenuItem();
+            this.menuItem64 = new System.Windows.Forms.MenuItem();
+            this.menuItem65 = new System.Windows.Forms.MenuItem();
+            this.menuItem66 = new System.Windows.Forms.MenuItem();
+            this.menuItem67 = new System.Windows.Forms.MenuItem();
+            this.menuItem68 = new System.Windows.Forms.MenuItem();
+            this.menuItem50 = new System.Windows.Forms.MenuItem();
+            this.menuItem47 = new System.Windows.Forms.MenuItem();
+            this.menuItem48 = new System.Windows.Forms.MenuItem();
+            this.menuItem49 = new System.Windows.Forms.MenuItem();
+            this.menuItem51 = new System.Windows.Forms.MenuItem();
+            this.menuItem52 = new System.Windows.Forms.MenuItem();
+            this.menuItem53 = new System.Windows.Forms.MenuItem();
+            this.menuItem38 = new System.Windows.Forms.MenuItem();
+            this.menuItem76 = new System.Windows.Forms.MenuItem();
+            this.menuItem77 = new System.Windows.Forms.MenuItem();
+            this.menuItem80 = new System.Windows.Forms.MenuItem();
+            this.menuItem78 = new System.Windows.Forms.MenuItem();
+            this.menuItem81 = new System.Windows.Forms.MenuItem();
+            this.menuItem82 = new System.Windows.Forms.MenuItem();
+            this.menuItem79 = new System.Windows.Forms.MenuItem();
+            this.menuItemViewErrors = new System.Windows.Forms.MenuItem();
+            this.menuItem86 = new System.Windows.Forms.MenuItem();
+            this.menuItem87 = new System.Windows.Forms.MenuItem();
+            this.menuItem88 = new System.Windows.Forms.MenuItem();
+            this.menuItem89 = new System.Windows.Forms.MenuItem();
+            this.menuItem90 = new System.Windows.Forms.MenuItem();
+            this.menuItem24 = new System.Windows.Forms.MenuItem();
+            this.menuItemOpenLink = new System.Windows.Forms.MenuItem();
+            this.imageTree1 = new System.Windows.Forms.ImageList(this.components);
+            this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
+            this.menuItemFile = new System.Windows.Forms.MenuItem();
+            this.newFileMenuItem = new System.Windows.Forms.MenuItem();
+            this.openFileMenuItem = new System.Windows.Forms.MenuItem();
+            this.saveFileMenuItem = new System.Windows.Forms.MenuItem();
+            this.menuItem15 = new System.Windows.Forms.MenuItem();
+            this.exportXMLMenuItem = new System.Windows.Forms.MenuItem();
+            this.menuItem25 = new System.Windows.Forms.MenuItem();
+            this.exitMenuItem = new System.Windows.Forms.MenuItem();
+            this.menuItem26 = new System.Windows.Forms.MenuItem();
+            this.menuItem27 = new System.Windows.Forms.MenuItem();
+            this.menuItem28 = new System.Windows.Forms.MenuItem();
+            this.menuItem84 = new System.Windows.Forms.MenuItem();
+            this.mnuNamespaces = new System.Windows.Forms.MenuItem();
+            this.mnuAttributes = new System.Windows.Forms.MenuItem();
+            this.menuItem33 = new System.Windows.Forms.MenuItem();
+            this.menuItem17 = new System.Windows.Forms.MenuItem();
+            this.menuItem12 = new System.Windows.Forms.MenuItem();
+            this.menuItem18 = new System.Windows.Forms.MenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtValue = new System.Windows.Forms.TextBox();
+            this.cmMasters = new System.Windows.Forms.ContextMenu();
+            this.menuItem19 = new System.Windows.Forms.MenuItem();
+            this.menuItem20 = new System.Windows.Forms.MenuItem();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtObject = new System.Windows.Forms.TextBox();
+            this.lblValue = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.chkClear = new System.Windows.Forms.CheckBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.treeView1 = new myPword.pView();
+            this.tabs = new System.Windows.Forms.TabControl();
+            this.tabValue = new System.Windows.Forms.TabPage();
+            this.tabNamespaces = new System.Windows.Forms.TabPage();
+            this.lstNamespaces = new System.Windows.Forms.ListView();
+            this.columnPrefix = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPrefixURI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnSuffix = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabAttributes = new System.Windows.Forms.TabPage();
+            this.lstAttributes = new System.Windows.Forms.ListView();
+            this.columnAttributeName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnAttributeValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabCMD = new System.Windows.Forms.TabPage();
+            this.txtCMD = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.saveFileDialogHTML = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialogJSON = new System.Windows.Forms.SaveFileDialog();
+            this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.userControl11 = new LeftRight.LeftRight();
+            this.menuItemImportJSON = new System.Windows.Forms.MenuItem();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.tabs.SuspendLayout();
+            this.tabValue.SuspendLayout();
+            this.tabNamespaces.SuspendLayout();
+            this.tabAttributes.SuspendLayout();
+            this.tabCMD.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // contextMenuNotify
+            // 
+            this.contextMenuNotify.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemShow,
             this.menuItemBlank,
             this.menuItemExit});
-			this.contextMenuNotify.Popup += new System.EventHandler(this.contextMenu1_Popup);
-			// 
-			// menuItemShow
-			// 
-			this.menuItemShow.Index = 0;
-			this.menuItemShow.Text = "&Show";
-			this.menuItemShow.Click += new System.EventHandler(this.menuItemShow_Click);
-			// 
-			// menuItemBlank
-			// 
-			this.menuItemBlank.Index = 1;
-			this.menuItemBlank.Text = "-";
-			// 
-			// menuItemExit
-			// 
-			this.menuItemExit.Index = 2;
-			this.menuItemExit.Text = "E&xit";
-			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
-			// 
-			// statusBar1
-			// 
-			this.statusBar1.Location = new System.Drawing.Point(0, 497);
-			this.statusBar1.Name = "statusBar1";
-			this.statusBar1.Size = new System.Drawing.Size(299, 20);
-			this.statusBar1.TabIndex = 0;
-			this.statusBar1.Text = "statusBar1";
-			// 
-			// toolBar1
-			// 
-			this.toolBar1.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[] {
+            this.contextMenuNotify.Popup += new System.EventHandler(this.contextMenu1_Popup);
+            // 
+            // menuItemShow
+            // 
+            this.menuItemShow.Index = 0;
+            this.menuItemShow.Text = "&Show";
+            this.menuItemShow.Click += new System.EventHandler(this.menuItemShow_Click);
+            // 
+            // menuItemBlank
+            // 
+            this.menuItemBlank.Index = 1;
+            this.menuItemBlank.Text = "-";
+            // 
+            // menuItemExit
+            // 
+            this.menuItemExit.Index = 2;
+            this.menuItemExit.Text = "E&xit";
+            this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
+            // 
+            // statusBar1
+            // 
+            this.statusBar1.Location = new System.Drawing.Point(0, 497);
+            this.statusBar1.Name = "statusBar1";
+            this.statusBar1.Size = new System.Drawing.Size(299, 20);
+            this.statusBar1.TabIndex = 0;
+            this.statusBar1.Text = "statusBar1";
+            // 
+            // toolBar1
+            // 
+            this.toolBar1.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[] {
             this.toolBarTac,
             this.toolBarView,
             this.toolBarXML,
             this.toolBarSearch,
             this.toolBarCollapse});
-			this.toolBar1.DropDownArrows = true;
-			this.toolBar1.ImageList = this.imgToolbar1;
-			this.toolBar1.Location = new System.Drawing.Point(0, 0);
-			this.toolBar1.Name = "toolBar1";
-			this.toolBar1.ShowToolTips = true;
-			this.toolBar1.Size = new System.Drawing.Size(299, 48);
-			this.toolBar1.TabIndex = 1;
-			this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
-			// 
-			// toolBarTac
-			// 
-			this.toolBarTac.Enabled = ((bool)(configurationAppSettings.GetValue("toolBarButton1.Enabled", typeof(bool))));
-			this.toolBarTac.ImageIndex = ((int)(configurationAppSettings.GetValue("toolBarButton1.ImageIndex", typeof(int))));
-			this.toolBarTac.Name = "toolBarTac";
-			this.toolBarTac.Pushed = ((bool)(configurationAppSettings.GetValue("toolBarButton1.Pushed", typeof(bool))));
-			this.toolBarTac.ToolTipText = "3 State Thumb tac when used with minimize.";
-			// 
-			// toolBarView
-			// 
-			this.toolBarView.Enabled = false;
-			this.toolBarView.ImageIndex = 2;
-			this.toolBarView.Name = "toolBarView";
-			this.toolBarView.ToolTipText = "Enabled to view file after xml or html export.";
-			// 
-			// toolBarXML
-			// 
-			this.toolBarXML.Enabled = false;
-			this.toolBarXML.ImageIndex = 4;
-			this.toolBarXML.Name = "toolBarXML";
-			this.toolBarXML.Visible = false;
-			// 
-			// toolBarSearch
-			// 
-			this.toolBarSearch.ImageIndex = 8;
-			this.toolBarSearch.Name = "toolBarSearch";
-			// 
-			// toolBarCollapse
-			// 
-			this.toolBarCollapse.ImageIndex = 9;
-			this.toolBarCollapse.Name = "toolBarCollapse";
-			// 
-			// imgToolbar1
-			// 
-			this.imgToolbar1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgToolbar1.ImageStream")));
-			this.imgToolbar1.TransparentColor = System.Drawing.Color.Transparent;
-			this.imgToolbar1.Images.SetKeyName(0, "");
-			this.imgToolbar1.Images.SetKeyName(1, "");
-			this.imgToolbar1.Images.SetKeyName(2, "");
-			this.imgToolbar1.Images.SetKeyName(3, "");
-			this.imgToolbar1.Images.SetKeyName(4, "XML.png");
-			this.imgToolbar1.Images.SetKeyName(5, "Bin.png");
-			this.imgToolbar1.Images.SetKeyName(6, "AutoHide.ico");
-			this.imgToolbar1.Images.SetKeyName(7, "AutoHide2.ico");
-			this.imgToolbar1.Images.SetKeyName(8, "searchB.png");
-			this.imgToolbar1.Images.SetKeyName(9, "collapse.png");
-			// 
-			// cmTree
-			// 
-			this.cmTree.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.toolBar1.DropDownArrows = true;
+            this.toolBar1.ImageList = this.imgToolbar1;
+            this.toolBar1.Location = new System.Drawing.Point(0, 0);
+            this.toolBar1.Name = "toolBar1";
+            this.toolBar1.ShowToolTips = true;
+            this.toolBar1.Size = new System.Drawing.Size(299, 48);
+            this.toolBar1.TabIndex = 1;
+            this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
+            // 
+            // toolBarTac
+            // 
+            this.toolBarTac.Enabled = ((bool)(configurationAppSettings.GetValue("toolBarButton1.Enabled", typeof(bool))));
+            this.toolBarTac.ImageIndex = ((int)(configurationAppSettings.GetValue("toolBarButton1.ImageIndex", typeof(int))));
+            this.toolBarTac.Name = "toolBarTac";
+            this.toolBarTac.Pushed = ((bool)(configurationAppSettings.GetValue("toolBarButton1.Pushed", typeof(bool))));
+            this.toolBarTac.ToolTipText = "3 State Thumb tac when used with minimize.";
+            // 
+            // toolBarView
+            // 
+            this.toolBarView.Enabled = false;
+            this.toolBarView.ImageIndex = 2;
+            this.toolBarView.Name = "toolBarView";
+            this.toolBarView.ToolTipText = "Enabled to view file after xml or html export.";
+            // 
+            // toolBarXML
+            // 
+            this.toolBarXML.Enabled = false;
+            this.toolBarXML.ImageIndex = 4;
+            this.toolBarXML.Name = "toolBarXML";
+            this.toolBarXML.Visible = false;
+            // 
+            // toolBarSearch
+            // 
+            this.toolBarSearch.ImageIndex = 8;
+            this.toolBarSearch.Name = "toolBarSearch";
+            // 
+            // toolBarCollapse
+            // 
+            this.toolBarCollapse.ImageIndex = 9;
+            this.toolBarCollapse.Name = "toolBarCollapse";
+            // 
+            // imgToolbar1
+            // 
+            this.imgToolbar1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgToolbar1.ImageStream")));
+            this.imgToolbar1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgToolbar1.Images.SetKeyName(0, "");
+            this.imgToolbar1.Images.SetKeyName(1, "");
+            this.imgToolbar1.Images.SetKeyName(2, "");
+            this.imgToolbar1.Images.SetKeyName(3, "");
+            this.imgToolbar1.Images.SetKeyName(4, "XML.png");
+            this.imgToolbar1.Images.SetKeyName(5, "Bin.png");
+            this.imgToolbar1.Images.SetKeyName(6, "AutoHide.ico");
+            this.imgToolbar1.Images.SetKeyName(7, "AutoHide2.ico");
+            this.imgToolbar1.Images.SetKeyName(8, "searchB.png");
+            this.imgToolbar1.Images.SetKeyName(9, "collapse.png");
+            // 
+            // cmTree
+            // 
+            this.cmTree.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemAddTo,
             this.menuItem13,
             this.menuItem29,
@@ -628,208 +633,209 @@ namespace myPword
             this.menuItem39,
             this.menuItem24,
             this.menuItemOpenLink});
-			this.cmTree.Popup += new System.EventHandler(this.cmTree_Popup);
-			// 
-			// menuItemAddTo
-			// 
-			this.menuItemAddTo.Index = 0;
-			this.menuItemAddTo.Shortcut = System.Windows.Forms.Shortcut.CtrlA;
-			this.menuItemAddTo.Text = "Add To";
-			this.menuItemAddTo.Click += new System.EventHandler(this.menuItemAddTo_Click);
-			// 
-			// menuItem13
-			// 
-			this.menuItem13.Index = 1;
-			this.menuItem13.Shortcut = System.Windows.Forms.Shortcut.CtrlE;
-			this.menuItem13.Text = "Edit";
-			this.menuItem13.Click += new System.EventHandler(this.menuItemEdit_Click);
-			// 
-			// menuItem29
-			// 
-			this.menuItem29.Index = 2;
-			this.menuItem29.Shortcut = System.Windows.Forms.Shortcut.CtrlI;
-			this.menuItem29.Text = "Insert";
-			this.menuItem29.Click += new System.EventHandler(this.menuItemInsertNode_Click);
-			// 
-			// menuItemCopy
-			// 
-			this.menuItemCopy.Index = 3;
-			this.menuItemCopy.Shortcut = System.Windows.Forms.Shortcut.CtrlC;
-			this.menuItemCopy.Text = "Copy";
-			this.menuItemCopy.Click += new System.EventHandler(this.menuItemCopy_Click);
-			// 
-			// menuItemAttributes
-			// 
-			this.menuItemAttributes.Index = 4;
-			this.menuItemAttributes.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.cmTree.Popup += new System.EventHandler(this.cmTree_Popup);
+            // 
+            // menuItemAddTo
+            // 
+            this.menuItemAddTo.Index = 0;
+            this.menuItemAddTo.Shortcut = System.Windows.Forms.Shortcut.CtrlA;
+            this.menuItemAddTo.Text = "Add To";
+            this.menuItemAddTo.Click += new System.EventHandler(this.menuItemAddTo_Click);
+            // 
+            // menuItem13
+            // 
+            this.menuItem13.Index = 1;
+            this.menuItem13.Shortcut = System.Windows.Forms.Shortcut.CtrlE;
+            this.menuItem13.Text = "Edit";
+            this.menuItem13.Click += new System.EventHandler(this.menuItemEdit_Click);
+            // 
+            // menuItem29
+            // 
+            this.menuItem29.Index = 2;
+            this.menuItem29.Shortcut = System.Windows.Forms.Shortcut.CtrlI;
+            this.menuItem29.Text = "Insert";
+            this.menuItem29.Click += new System.EventHandler(this.menuItemInsertNode_Click);
+            // 
+            // menuItemCopy
+            // 
+            this.menuItemCopy.Index = 3;
+            this.menuItemCopy.Shortcut = System.Windows.Forms.Shortcut.CtrlC;
+            this.menuItemCopy.Text = "Copy";
+            this.menuItemCopy.Click += new System.EventHandler(this.menuItemCopy_Click);
+            // 
+            // menuItemAttributes
+            // 
+            this.menuItemAttributes.Index = 4;
+            this.menuItemAttributes.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemAttributeAdd});
-			this.menuItemAttributes.Text = "A&ttributes";
-			this.menuItemAttributes.Click += new System.EventHandler(this.menuItemAttribute_Click);
-			// 
-			// menuItemAttributeAdd
-			// 
-			this.menuItemAttributeAdd.Index = 0;
-			this.menuItemAttributeAdd.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftA;
-			this.menuItemAttributeAdd.Text = "Add";
-			this.menuItemAttributeAdd.Click += new System.EventHandler(this.menuItemAttributeAdd_Click);
-			// 
-			// menuItemNamespace
-			// 
-			this.menuItemNamespace.Index = 5;
-			this.menuItemNamespace.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemAttributes.Text = "A&ttributes";
+            this.menuItemAttributes.Click += new System.EventHandler(this.menuItemAttribute_Click);
+            // 
+            // menuItemAttributeAdd
+            // 
+            this.menuItemAttributeAdd.Index = 0;
+            this.menuItemAttributeAdd.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftA;
+            this.menuItemAttributeAdd.Text = "Add";
+            this.menuItemAttributeAdd.Click += new System.EventHandler(this.menuItemAttributeAdd_Click);
+            // 
+            // menuItemNamespace
+            // 
+            this.menuItemNamespace.Index = 5;
+            this.menuItemNamespace.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem36,
             this.menuItem37});
-			this.menuItemNamespace.Text = "Namespace";
-			// 
-			// menuItem36
-			// 
-			this.menuItem36.Index = 0;
-			this.menuItem36.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftP;
-			this.menuItem36.Text = "Set Prefix";
-			this.menuItem36.Click += new System.EventHandler(this.menuItemNamespaceAddPrefix_Click);
-			// 
-			// menuItem37
-			// 
-			this.menuItem37.Index = 1;
-			this.menuItem37.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftS;
-			this.menuItem37.Text = "Set Suffix";
-			this.menuItem37.Click += new System.EventHandler(this.menuItemNamespaceAddSuffix_Click);
-			// 
-			// menuItem83
-			// 
-			this.menuItem83.Index = 6;
-			this.menuItem83.Text = "Find";
-			this.menuItem83.Click += new System.EventHandler(this.menuItemFind_Click);
-			// 
-			// menuItem30
-			// 
-			this.menuItem30.Index = 7;
-			this.menuItem30.Text = "-";
-			// 
-			// menuItem22
-			// 
-			this.menuItem22.Index = 8;
-			this.menuItem22.Shortcut = System.Windows.Forms.Shortcut.CtrlG;
-			this.menuItem22.Text = "Get Node";
-			this.menuItem22.Click += new System.EventHandler(this.menuItemGetNode_Click);
-			// 
-			// menuItem32
-			// 
-			this.menuItem32.Index = 9;
-			this.menuItem32.Shortcut = System.Windows.Forms.Shortcut.CtrlX;
-			this.menuItem32.Text = "Cut Node";
-			this.menuItem32.Click += new System.EventHandler(this.menuCutNode_Click);
-			// 
-			// menuItem21
-			// 
-			this.menuItem21.Enabled = false;
-			this.menuItem21.Index = 10;
-			this.menuItem21.Shortcut = System.Windows.Forms.Shortcut.CtrlP;
-			this.menuItem21.Text = "Put Node In";
-			this.menuItem21.Click += new System.EventHandler(this.menuItem21_Click);
-			// 
-			// menuItem31
-			// 
-			this.menuItem31.Enabled = false;
-			this.menuItem31.Index = 11;
-			this.menuItem31.Shortcut = System.Windows.Forms.Shortcut.Ins;
-			this.menuItem31.Text = "Insert Node";
-			this.menuItem31.Click += new System.EventHandler(this.menuItemInsertNode2_Click);
-			// 
-			// menuItemEncryptNode
-			// 
-			this.menuItemEncryptNode.Enabled = false;
-			this.menuItemEncryptNode.Index = 12;
-			this.menuItemEncryptNode.Text = "Encrypt Node";
-			// 
-			// menuItem14
-			// 
-			this.menuItem14.Index = 13;
-			this.menuItem14.Shortcut = System.Windows.Forms.Shortcut.Del;
-			this.menuItem14.Text = "Delete Node";
-			this.menuItem14.Click += new System.EventHandler(this.menuItem14_Click);
-			// 
-			// menuItem34
-			// 
-			this.menuItem34.Index = 14;
-			this.menuItem34.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemNamespace.Text = "Namespace";
+            // 
+            // menuItem36
+            // 
+            this.menuItem36.Index = 0;
+            this.menuItem36.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftP;
+            this.menuItem36.Text = "Set Prefix";
+            this.menuItem36.Click += new System.EventHandler(this.menuItemNamespaceAddPrefix_Click);
+            // 
+            // menuItem37
+            // 
+            this.menuItem37.Index = 1;
+            this.menuItem37.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftS;
+            this.menuItem37.Text = "Set Suffix";
+            this.menuItem37.Click += new System.EventHandler(this.menuItemNamespaceAddSuffix_Click);
+            // 
+            // menuItem83
+            // 
+            this.menuItem83.Index = 6;
+            this.menuItem83.Text = "Find";
+            this.menuItem83.Click += new System.EventHandler(this.menuItemFind_Click);
+            // 
+            // menuItem30
+            // 
+            this.menuItem30.Index = 7;
+            this.menuItem30.Text = "-";
+            // 
+            // menuItem22
+            // 
+            this.menuItem22.Index = 8;
+            this.menuItem22.Shortcut = System.Windows.Forms.Shortcut.CtrlG;
+            this.menuItem22.Text = "Get Node";
+            this.menuItem22.Click += new System.EventHandler(this.menuItemGetNode_Click);
+            // 
+            // menuItem32
+            // 
+            this.menuItem32.Index = 9;
+            this.menuItem32.Shortcut = System.Windows.Forms.Shortcut.CtrlX;
+            this.menuItem32.Text = "Cut Node";
+            this.menuItem32.Click += new System.EventHandler(this.menuCutNode_Click);
+            // 
+            // menuItem21
+            // 
+            this.menuItem21.Enabled = false;
+            this.menuItem21.Index = 10;
+            this.menuItem21.Shortcut = System.Windows.Forms.Shortcut.CtrlP;
+            this.menuItem21.Text = "Put Node In";
+            this.menuItem21.Click += new System.EventHandler(this.menuItem21_Click);
+            // 
+            // menuItem31
+            // 
+            this.menuItem31.Enabled = false;
+            this.menuItem31.Index = 11;
+            this.menuItem31.Shortcut = System.Windows.Forms.Shortcut.Ins;
+            this.menuItem31.Text = "Insert Node";
+            this.menuItem31.Click += new System.EventHandler(this.menuItemInsertNode2_Click);
+            // 
+            // menuItemEncryptNode
+            // 
+            this.menuItemEncryptNode.Enabled = false;
+            this.menuItemEncryptNode.Index = 12;
+            this.menuItemEncryptNode.Text = "Encrypt Node";
+            // 
+            // menuItem14
+            // 
+            this.menuItem14.Index = 13;
+            this.menuItem14.Shortcut = System.Windows.Forms.Shortcut.Del;
+            this.menuItem14.Text = "Delete Node";
+            this.menuItem14.Click += new System.EventHandler(this.menuItem14_Click);
+            // 
+            // menuItem34
+            // 
+            this.menuItem34.Index = 14;
+            this.menuItem34.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemExportToXmlHtml,
             this.menuItem85,
             this.menuItemExportJson});
-			this.menuItem34.Text = "Export Node";
-			// 
-			// menuItemExportToXmlHtml
-			// 
-			this.menuItemExportToXmlHtml.Index = 0;
-			this.menuItemExportToXmlHtml.Shortcut = System.Windows.Forms.Shortcut.F11;
-			this.menuItemExportToXmlHtml.Text = "to XML/HTML";
-			this.menuItemExportToXmlHtml.Click += new System.EventHandler(this.menuItemToHTML_Click);
-			// 
-			// menuItem85
-			// 
-			this.menuItem85.Index = 1;
-			this.menuItem85.Text = "XML->XSLT->Result";
-			this.menuItem85.Click += new System.EventHandler(this.menuItem85_Click_1);
-			// 
-			// menuItemExportJson
-			// 
-			this.menuItemExportJson.Index = 2;
-			this.menuItemExportJson.Text = "to JSON";
-			this.menuItemExportJson.Click += new System.EventHandler(this.menuItemExportJson_Click);
-			// 
-			// mnuImportXML
-			// 
-			this.mnuImportXML.Index = 15;
-			this.mnuImportXML.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mnuImportNodeXML});
-			this.mnuImportXML.Text = "Import Node";
-			this.mnuImportXML.Click += new System.EventHandler(this.menuItem85_Click);
-			// 
-			// mnuImportNodeXML
-			// 
-			this.mnuImportNodeXML.Index = 0;
-			this.mnuImportNodeXML.Text = "from XML/HTML";
-			this.mnuImportNodeXML.Click += new System.EventHandler(this.mnuImportNodeXML_Click);
-			// 
-			// menuItem40
-			// 
-			this.menuItem40.Index = 16;
-			this.menuItem40.Text = "-";
-			// 
-			// menuItem39
-			// 
-			this.menuItem39.Index = 17;
-			this.menuItem39.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem34.Text = "Export Node";
+            // 
+            // menuItemExportToXmlHtml
+            // 
+            this.menuItemExportToXmlHtml.Index = 0;
+            this.menuItemExportToXmlHtml.Shortcut = System.Windows.Forms.Shortcut.F11;
+            this.menuItemExportToXmlHtml.Text = "to XML/HTML";
+            this.menuItemExportToXmlHtml.Click += new System.EventHandler(this.menuItemToHTML_Click);
+            // 
+            // menuItem85
+            // 
+            this.menuItem85.Index = 1;
+            this.menuItem85.Text = "XML->XSLT->Result";
+            this.menuItem85.Click += new System.EventHandler(this.menuItem85_Click_1);
+            // 
+            // menuItemExportJson
+            // 
+            this.menuItemExportJson.Index = 2;
+            this.menuItemExportJson.Text = "to JSON";
+            this.menuItemExportJson.Click += new System.EventHandler(this.menuItemExportJson_Click);
+            // 
+            // mnuImportXML
+            // 
+            this.mnuImportXML.Index = 15;
+            this.mnuImportXML.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mnuImportNodeXML,
+            this.menuItemImportJSON});
+            this.mnuImportXML.Text = "Import Node";
+            this.mnuImportXML.Click += new System.EventHandler(this.menuItem85_Click);
+            // 
+            // mnuImportNodeXML
+            // 
+            this.mnuImportNodeXML.Index = 0;
+            this.mnuImportNodeXML.Text = "from XML/HTML";
+            this.mnuImportNodeXML.Click += new System.EventHandler(this.mnuImportNodeXML_Click);
+            // 
+            // menuItem40
+            // 
+            this.menuItem40.Index = 16;
+            this.menuItem40.Text = "-";
+            // 
+            // menuItem39
+            // 
+            this.menuItem39.Index = 17;
+            this.menuItem39.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem46,
             this.menuItem74,
             this.menuItem42,
             this.menuItem38,
             this.menuItemViewErrors,
             this.menuItem86});
-			this.menuItem39.Text = "Operations";
-			// 
-			// menuItem46
-			// 
-			this.menuItem46.Index = 0;
-			this.menuItem46.Text = "Clear Operations";
-			this.menuItem46.Click += new System.EventHandler(this.menuItemOperationsClear_Click);
-			// 
-			// menuItem74
-			// 
-			this.menuItem74.Index = 1;
-			this.menuItem74.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem39.Text = "Operations";
+            // 
+            // menuItem46
+            // 
+            this.menuItem46.Index = 0;
+            this.menuItem46.Text = "Clear Operations";
+            this.menuItem46.Click += new System.EventHandler(this.menuItemOperationsClear_Click);
+            // 
+            // menuItem74
+            // 
+            this.menuItem74.Index = 1;
+            this.menuItem74.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem75});
-			this.menuItem74.Text = "Language";
-			// 
-			// menuItem75
-			// 
-			this.menuItem75.Index = 0;
-			this.menuItem75.Text = "To Latin";
-			// 
-			// menuItem42
-			// 
-			this.menuItem42.Index = 2;
-			this.menuItem42.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem74.Text = "Language";
+            // 
+            // menuItem75
+            // 
+            this.menuItem75.Index = 0;
+            this.menuItem75.Text = "To Latin";
+            // 
+            // menuItem42
+            // 
+            this.menuItem42.Index = 2;
+            this.menuItem42.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem44,
             this.menuItem43,
             this.menuItem45,
@@ -840,220 +846,220 @@ namespace myPword
             this.menuItem69,
             this.menuItem63,
             this.menuItem50});
-			this.menuItem42.Text = "Math";
-			// 
-			// menuItem44
-			// 
-			this.menuItem44.Index = 0;
-			this.menuItem44.Shortcut = System.Windows.Forms.Shortcut.CtrlD;
-			this.menuItem44.Text = "Divide";
-			this.menuItem44.Click += new System.EventHandler(this.menuItemMathDivide_Click);
-			// 
-			// menuItem43
-			// 
-			this.menuItem43.Index = 1;
-			this.menuItem43.Shortcut = System.Windows.Forms.Shortcut.CtrlM;
-			this.menuItem43.Text = "Multiply";
-			this.menuItem43.Click += new System.EventHandler(this.menuItemMathMultiple_Click);
-			// 
-			// menuItem45
-			// 
-			this.menuItem45.Index = 2;
-			this.menuItem45.Shortcut = System.Windows.Forms.Shortcut.CtrlM;
-			this.menuItem45.Text = "Minus";
-			this.menuItem45.Click += new System.EventHandler(this.menuItemMathSubtract_Click);
-			// 
-			// menuItem41
-			// 
-			this.menuItem41.Index = 3;
-			this.menuItem41.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftS;
-			this.menuItem41.Text = "Sum";
-			this.menuItem41.Click += new System.EventHandler(this.menuItemMathSum_Click);
-			// 
-			// menuItem60
-			// 
-			this.menuItem60.Index = 4;
-			this.menuItem60.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem42.Text = "Math";
+            // 
+            // menuItem44
+            // 
+            this.menuItem44.Index = 0;
+            this.menuItem44.Shortcut = System.Windows.Forms.Shortcut.CtrlD;
+            this.menuItem44.Text = "Divide";
+            this.menuItem44.Click += new System.EventHandler(this.menuItemMathDivide_Click);
+            // 
+            // menuItem43
+            // 
+            this.menuItem43.Index = 1;
+            this.menuItem43.Shortcut = System.Windows.Forms.Shortcut.CtrlM;
+            this.menuItem43.Text = "Multiply";
+            this.menuItem43.Click += new System.EventHandler(this.menuItemMathMultiple_Click);
+            // 
+            // menuItem45
+            // 
+            this.menuItem45.Index = 2;
+            this.menuItem45.Shortcut = System.Windows.Forms.Shortcut.CtrlM;
+            this.menuItem45.Text = "Minus";
+            this.menuItem45.Click += new System.EventHandler(this.menuItemMathSubtract_Click);
+            // 
+            // menuItem41
+            // 
+            this.menuItem41.Index = 3;
+            this.menuItem41.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftS;
+            this.menuItem41.Text = "Sum";
+            this.menuItem41.Click += new System.EventHandler(this.menuItemMathSum_Click);
+            // 
+            // menuItem60
+            // 
+            this.menuItem60.Index = 4;
+            this.menuItem60.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem61,
             this.menuItem62});
-			this.menuItem60.Text = "Calculus";
-			// 
-			// menuItem61
-			// 
-			this.menuItem61.Index = 0;
-			this.menuItem61.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftD;
-			this.menuItem61.Text = "d/dx";
-			// 
-			// menuItem62
-			// 
-			this.menuItem62.Index = 1;
-			this.menuItem62.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftI;
-			this.menuItem62.Text = "Integral";
-			// 
-			// menuItem57
-			// 
-			this.menuItem57.Index = 5;
-			this.menuItem57.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem60.Text = "Calculus";
+            // 
+            // menuItem61
+            // 
+            this.menuItem61.Index = 0;
+            this.menuItem61.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftD;
+            this.menuItem61.Text = "d/dx";
+            // 
+            // menuItem62
+            // 
+            this.menuItem62.Index = 1;
+            this.menuItem62.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftI;
+            this.menuItem62.Text = "Integral";
+            // 
+            // menuItem57
+            // 
+            this.menuItem57.Index = 5;
+            this.menuItem57.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem58,
             this.menuItem59});
-			this.menuItem57.Text = "Exponent";
-			// 
-			// menuItem58
-			// 
-			this.menuItem58.Index = 0;
-			this.menuItem58.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftE;
-			this.menuItem58.Text = "x^y";
-			// 
-			// menuItem59
-			// 
-			this.menuItem59.Index = 1;
-			this.menuItem59.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftQ;
-			this.menuItem59.Text = "Sqrt";
-			// 
-			// menuItem54
-			// 
-			this.menuItem54.Index = 6;
-			this.menuItem54.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem57.Text = "Exponent";
+            // 
+            // menuItem58
+            // 
+            this.menuItem58.Index = 0;
+            this.menuItem58.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftE;
+            this.menuItem58.Text = "x^y";
+            // 
+            // menuItem59
+            // 
+            this.menuItem59.Index = 1;
+            this.menuItem59.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftQ;
+            this.menuItem59.Text = "Sqrt";
+            // 
+            // menuItem54
+            // 
+            this.menuItem54.Index = 6;
+            this.menuItem54.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem55,
             this.menuItem56});
-			this.menuItem54.Text = "Log";
-			// 
-			// menuItem55
-			// 
-			this.menuItem55.Index = 0;
-			this.menuItem55.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftN;
-			this.menuItem55.Text = "ln";
-			// 
-			// menuItem56
-			// 
-			this.menuItem56.Index = 1;
-			this.menuItem56.Shortcut = System.Windows.Forms.Shortcut.CtrlL;
-			this.menuItem56.Text = "log10";
-			// 
-			// menuItem69
-			// 
-			this.menuItem69.Index = 7;
-			this.menuItem69.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem54.Text = "Log";
+            // 
+            // menuItem55
+            // 
+            this.menuItem55.Index = 0;
+            this.menuItem55.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftN;
+            this.menuItem55.Text = "ln";
+            // 
+            // menuItem56
+            // 
+            this.menuItem56.Index = 1;
+            this.menuItem56.Shortcut = System.Windows.Forms.Shortcut.CtrlL;
+            this.menuItem56.Text = "log10";
+            // 
+            // menuItem69
+            // 
+            this.menuItem69.Index = 7;
+            this.menuItem69.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem70,
             this.menuItem71,
             this.menuItem72,
             this.menuItem73});
-			this.menuItem69.Text = "Logic";
-			// 
-			// menuItem70
-			// 
-			this.menuItem70.Index = 0;
-			this.menuItem70.Shortcut = System.Windows.Forms.Shortcut.Alt0;
-			this.menuItem70.Text = "Not";
-			// 
-			// menuItem71
-			// 
-			this.menuItem71.Index = 1;
-			this.menuItem71.Shortcut = System.Windows.Forms.Shortcut.Alt1;
-			this.menuItem71.Text = "And";
-			// 
-			// menuItem72
-			// 
-			this.menuItem72.Index = 2;
-			this.menuItem72.Shortcut = System.Windows.Forms.Shortcut.Alt2;
-			this.menuItem72.Text = "Or";
-			// 
-			// menuItem73
-			// 
-			this.menuItem73.Index = 3;
-			this.menuItem73.Shortcut = System.Windows.Forms.Shortcut.Alt3;
-			this.menuItem73.Text = "Xor";
-			// 
-			// menuItem63
-			// 
-			this.menuItem63.Index = 8;
-			this.menuItem63.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem69.Text = "Logic";
+            // 
+            // menuItem70
+            // 
+            this.menuItem70.Index = 0;
+            this.menuItem70.Shortcut = System.Windows.Forms.Shortcut.Alt0;
+            this.menuItem70.Text = "Not";
+            // 
+            // menuItem71
+            // 
+            this.menuItem71.Index = 1;
+            this.menuItem71.Shortcut = System.Windows.Forms.Shortcut.Alt1;
+            this.menuItem71.Text = "And";
+            // 
+            // menuItem72
+            // 
+            this.menuItem72.Index = 2;
+            this.menuItem72.Shortcut = System.Windows.Forms.Shortcut.Alt2;
+            this.menuItem72.Text = "Or";
+            // 
+            // menuItem73
+            // 
+            this.menuItem73.Index = 3;
+            this.menuItem73.Shortcut = System.Windows.Forms.Shortcut.Alt3;
+            this.menuItem73.Text = "Xor";
+            // 
+            // menuItem63
+            // 
+            this.menuItem63.Index = 8;
+            this.menuItem63.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem64,
             this.menuItem65,
             this.menuItem66,
             this.menuItem67,
             this.menuItem68});
-			this.menuItem63.Text = "Statistics";
-			// 
-			// menuItem64
-			// 
-			this.menuItem64.Index = 0;
-			this.menuItem64.Shortcut = System.Windows.Forms.Shortcut.Ctrl0;
-			this.menuItem64.Text = "Avg";
-			// 
-			// menuItem65
-			// 
-			this.menuItem65.Index = 1;
-			this.menuItem65.Shortcut = System.Windows.Forms.Shortcut.Ctrl1;
-			this.menuItem65.Text = "Median";
-			// 
-			// menuItem66
-			// 
-			this.menuItem66.Index = 2;
-			this.menuItem66.Shortcut = System.Windows.Forms.Shortcut.Ctrl2;
-			this.menuItem66.Text = "Min";
-			// 
-			// menuItem67
-			// 
-			this.menuItem67.Index = 3;
-			this.menuItem67.Shortcut = System.Windows.Forms.Shortcut.Ctrl3;
-			this.menuItem67.Text = "Max";
-			// 
-			// menuItem68
-			// 
-			this.menuItem68.Index = 4;
-			this.menuItem68.Shortcut = System.Windows.Forms.Shortcut.Ctrl4;
-			this.menuItem68.Text = "Union";
-			// 
-			// menuItem50
-			// 
-			this.menuItem50.Index = 9;
-			this.menuItem50.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem63.Text = "Statistics";
+            // 
+            // menuItem64
+            // 
+            this.menuItem64.Index = 0;
+            this.menuItem64.Shortcut = System.Windows.Forms.Shortcut.Ctrl0;
+            this.menuItem64.Text = "Avg";
+            // 
+            // menuItem65
+            // 
+            this.menuItem65.Index = 1;
+            this.menuItem65.Shortcut = System.Windows.Forms.Shortcut.Ctrl1;
+            this.menuItem65.Text = "Median";
+            // 
+            // menuItem66
+            // 
+            this.menuItem66.Index = 2;
+            this.menuItem66.Shortcut = System.Windows.Forms.Shortcut.Ctrl2;
+            this.menuItem66.Text = "Min";
+            // 
+            // menuItem67
+            // 
+            this.menuItem67.Index = 3;
+            this.menuItem67.Shortcut = System.Windows.Forms.Shortcut.Ctrl3;
+            this.menuItem67.Text = "Max";
+            // 
+            // menuItem68
+            // 
+            this.menuItem68.Index = 4;
+            this.menuItem68.Shortcut = System.Windows.Forms.Shortcut.Ctrl4;
+            this.menuItem68.Text = "Union";
+            // 
+            // menuItem50
+            // 
+            this.menuItem50.Index = 9;
+            this.menuItem50.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem47,
             this.menuItem48,
             this.menuItem49,
             this.menuItem51,
             this.menuItem52,
             this.menuItem53});
-			this.menuItem50.Text = "Trig";
-			// 
-			// menuItem47
-			// 
-			this.menuItem47.Index = 0;
-			this.menuItem47.Text = "Sin";
-			this.menuItem47.Click += new System.EventHandler(this.menuItemMathTrigSign_Click);
-			// 
-			// menuItem48
-			// 
-			this.menuItem48.Index = 1;
-			this.menuItem48.Text = "Cos";
-			this.menuItem48.Click += new System.EventHandler(this.menuItemMathTrigCos_Click);
-			// 
-			// menuItem49
-			// 
-			this.menuItem49.Index = 2;
-			this.menuItem49.Text = "Tan";
-			this.menuItem49.Click += new System.EventHandler(this.menuItemMathTrigTan_Click);
-			// 
-			// menuItem51
-			// 
-			this.menuItem51.Index = 3;
-			this.menuItem51.Text = "Arcsine";
-			// 
-			// menuItem52
-			// 
-			this.menuItem52.Index = 4;
-			this.menuItem52.Text = "Arccos";
-			// 
-			// menuItem53
-			// 
-			this.menuItem53.Index = 5;
-			this.menuItem53.Text = "Arctan";
-			// 
-			// menuItem38
-			// 
-			this.menuItem38.Index = 3;
-			this.menuItem38.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem50.Text = "Trig";
+            // 
+            // menuItem47
+            // 
+            this.menuItem47.Index = 0;
+            this.menuItem47.Text = "Sin";
+            this.menuItem47.Click += new System.EventHandler(this.menuItemMathTrigSign_Click);
+            // 
+            // menuItem48
+            // 
+            this.menuItem48.Index = 1;
+            this.menuItem48.Text = "Cos";
+            this.menuItem48.Click += new System.EventHandler(this.menuItemMathTrigCos_Click);
+            // 
+            // menuItem49
+            // 
+            this.menuItem49.Index = 2;
+            this.menuItem49.Text = "Tan";
+            this.menuItem49.Click += new System.EventHandler(this.menuItemMathTrigTan_Click);
+            // 
+            // menuItem51
+            // 
+            this.menuItem51.Index = 3;
+            this.menuItem51.Text = "Arcsine";
+            // 
+            // menuItem52
+            // 
+            this.menuItem52.Index = 4;
+            this.menuItem52.Text = "Arccos";
+            // 
+            // menuItem53
+            // 
+            this.menuItem53.Index = 5;
+            this.menuItem53.Text = "Arctan";
+            // 
+            // menuItem38
+            // 
+            this.menuItem38.Index = 3;
+            this.menuItem38.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem76,
             this.menuItem77,
             this.menuItem80,
@@ -1061,112 +1067,112 @@ namespace myPword
             this.menuItem81,
             this.menuItem82,
             this.menuItem79});
-			this.menuItem38.Text = "RecordIP";
-			// 
-			// menuItem76
-			// 
-			this.menuItem76.Index = 0;
-			this.menuItem76.Text = "Mouse";
-			// 
-			// menuItem77
-			// 
-			this.menuItem77.Index = 1;
-			this.menuItem77.Text = "Keyboard";
-			// 
-			// menuItem80
-			// 
-			this.menuItem80.Index = 2;
-			this.menuItem80.Text = "M and K";
-			// 
-			// menuItem78
-			// 
-			this.menuItem78.Index = 3;
-			this.menuItem78.Text = "Audio";
-			// 
-			// menuItem81
-			// 
-			this.menuItem81.Index = 4;
-			this.menuItem81.Text = "Video";
-			// 
-			// menuItem82
-			// 
-			this.menuItem82.Index = 5;
-			this.menuItem82.Text = "A and V";
-			// 
-			// menuItem79
-			// 
-			this.menuItem79.Enabled = false;
-			this.menuItem79.Index = 6;
-			this.menuItem79.Text = "Click to Stop";
-			// 
-			// menuItemViewErrors
-			// 
-			this.menuItemViewErrors.Index = 4;
-			this.menuItemViewErrors.Text = "View Errors";
-			this.menuItemViewErrors.Click += new System.EventHandler(this.menuItemViewErrors_Click);
-			// 
-			// menuItem86
-			// 
-			this.menuItem86.Index = 5;
-			this.menuItem86.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem38.Text = "RecordIP";
+            // 
+            // menuItem76
+            // 
+            this.menuItem76.Index = 0;
+            this.menuItem76.Text = "Mouse";
+            // 
+            // menuItem77
+            // 
+            this.menuItem77.Index = 1;
+            this.menuItem77.Text = "Keyboard";
+            // 
+            // menuItem80
+            // 
+            this.menuItem80.Index = 2;
+            this.menuItem80.Text = "M and K";
+            // 
+            // menuItem78
+            // 
+            this.menuItem78.Index = 3;
+            this.menuItem78.Text = "Audio";
+            // 
+            // menuItem81
+            // 
+            this.menuItem81.Index = 4;
+            this.menuItem81.Text = "Video";
+            // 
+            // menuItem82
+            // 
+            this.menuItem82.Index = 5;
+            this.menuItem82.Text = "A and V";
+            // 
+            // menuItem79
+            // 
+            this.menuItem79.Enabled = false;
+            this.menuItem79.Index = 6;
+            this.menuItem79.Text = "Click to Stop";
+            // 
+            // menuItemViewErrors
+            // 
+            this.menuItemViewErrors.Index = 4;
+            this.menuItemViewErrors.Text = "View Errors";
+            this.menuItemViewErrors.Click += new System.EventHandler(this.menuItemViewErrors_Click);
+            // 
+            // menuItem86
+            // 
+            this.menuItem86.Index = 5;
+            this.menuItem86.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem87,
             this.menuItem88,
             this.menuItem89,
             this.menuItem90});
-			this.menuItem86.Text = "XML";
-			// 
-			// menuItem87
-			// 
-			this.menuItem87.Index = 0;
-			this.menuItem87.Text = "Mark Node as XML";
-			// 
-			// menuItem88
-			// 
-			this.menuItem88.Index = 1;
-			this.menuItem88.Text = "Mark Node as XSLT";
-			this.menuItem88.Click += new System.EventHandler(this.menuItem88_Click);
-			// 
-			// menuItem89
-			// 
-			this.menuItem89.Index = 2;
-			this.menuItem89.Text = "Apply XSLT siblings to XML siblings";
-			// 
-			// menuItem90
-			// 
-			this.menuItem90.Index = 3;
-			this.menuItem90.Text = "Apply XSLT to Child XML Nodes";
-			// 
-			// menuItem24
-			// 
-			this.menuItem24.Index = 18;
-			this.menuItem24.Text = "-";
-			// 
-			// menuItemOpenLink
-			// 
-			this.menuItemOpenLink.Index = 19;
-			this.menuItemOpenLink.Text = "Open Link [Dbl Lft Click]";
-			this.menuItemOpenLink.Click += new System.EventHandler(this.menuItemOpenLink_Click);
-			// 
-			// imageTree1
-			// 
-			this.imageTree1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageTree1.ImageStream")));
-			this.imageTree1.TransparentColor = System.Drawing.Color.Transparent;
-			this.imageTree1.Images.SetKeyName(0, "master1.ico");
-			this.imageTree1.Images.SetKeyName(1, "master2.ico");
-			this.imageTree1.Images.SetKeyName(2, "Sum.ico");
-			// 
-			// mainMenu1
-			// 
-			this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem86.Text = "XML";
+            // 
+            // menuItem87
+            // 
+            this.menuItem87.Index = 0;
+            this.menuItem87.Text = "Mark Node as XML";
+            // 
+            // menuItem88
+            // 
+            this.menuItem88.Index = 1;
+            this.menuItem88.Text = "Mark Node as XSLT";
+            this.menuItem88.Click += new System.EventHandler(this.menuItem88_Click);
+            // 
+            // menuItem89
+            // 
+            this.menuItem89.Index = 2;
+            this.menuItem89.Text = "Apply XSLT siblings to XML siblings";
+            // 
+            // menuItem90
+            // 
+            this.menuItem90.Index = 3;
+            this.menuItem90.Text = "Apply XSLT to Child XML Nodes";
+            // 
+            // menuItem24
+            // 
+            this.menuItem24.Index = 18;
+            this.menuItem24.Text = "-";
+            // 
+            // menuItemOpenLink
+            // 
+            this.menuItemOpenLink.Index = 19;
+            this.menuItemOpenLink.Text = "Open Link [Dbl Lft Click]";
+            this.menuItemOpenLink.Click += new System.EventHandler(this.menuItemOpenLink_Click);
+            // 
+            // imageTree1
+            // 
+            this.imageTree1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageTree1.ImageStream")));
+            this.imageTree1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageTree1.Images.SetKeyName(0, "master1.ico");
+            this.imageTree1.Images.SetKeyName(1, "master2.ico");
+            this.imageTree1.Images.SetKeyName(2, "Sum.ico");
+            // 
+            // mainMenu1
+            // 
+            this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemFile,
             this.menuItem26,
             this.menuItem33,
             this.menuItem17});
-			// 
-			// menuItemFile
-			// 
-			this.menuItemFile.Index = 0;
-			this.menuItemFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            // 
+            // menuItemFile
+            // 
+            this.menuItemFile.Index = 0;
+            this.menuItemFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.newFileMenuItem,
             this.openFileMenuItem,
             this.saveFileMenuItem,
@@ -1174,550 +1180,556 @@ namespace myPword
             this.exportXMLMenuItem,
             this.menuItem25,
             this.exitMenuItem});
-			this.menuItemFile.Text = "&File";
-			this.menuItemFile.Click += new System.EventHandler(this.menuItem7_Click);
-			// 
-			// newFileMenuItem
-			// 
-			this.newFileMenuItem.Index = 0;
-			this.newFileMenuItem.Text = "&New";
-			this.newFileMenuItem.Click += new System.EventHandler(this.menuItemNewFile_Click);
-			// 
-			// openFileMenuItem
-			// 
-			this.openFileMenuItem.Index = 1;
-			this.openFileMenuItem.Text = "&Open";
-			this.openFileMenuItem.Click += new System.EventHandler(this.menuItem9_Click);
-			// 
-			// saveFileMenuItem
-			// 
-			this.saveFileMenuItem.Index = 2;
-			this.saveFileMenuItem.Text = "&Save";
-			this.saveFileMenuItem.Click += new System.EventHandler(this.menuSave_Click);
-			// 
-			// menuItem15
-			// 
-			this.menuItem15.Index = 3;
-			this.menuItem15.Text = "-";
-			// 
-			// exportXMLMenuItem
-			// 
-			this.exportXMLMenuItem.Index = 4;
-			this.exportXMLMenuItem.Text = "&Export XML";
-			this.exportXMLMenuItem.Click += new System.EventHandler(this.menuItemExportXML_Click);
-			// 
-			// menuItem25
-			// 
-			this.menuItem25.Index = 5;
-			this.menuItem25.Text = "-";
-			// 
-			// exitMenuItem
-			// 
-			this.exitMenuItem.Index = 6;
-			this.exitMenuItem.Text = "E&xit";
-			this.exitMenuItem.Click += new System.EventHandler(this.menuItem16_Click);
-			// 
-			// menuItem26
-			// 
-			this.menuItem26.Index = 1;
-			this.menuItem26.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemFile.Text = "&File";
+            this.menuItemFile.Click += new System.EventHandler(this.menuItem7_Click);
+            // 
+            // newFileMenuItem
+            // 
+            this.newFileMenuItem.Index = 0;
+            this.newFileMenuItem.Text = "&New";
+            this.newFileMenuItem.Click += new System.EventHandler(this.menuItemNewFile_Click);
+            // 
+            // openFileMenuItem
+            // 
+            this.openFileMenuItem.Index = 1;
+            this.openFileMenuItem.Text = "&Open";
+            this.openFileMenuItem.Click += new System.EventHandler(this.menuItem9_Click);
+            // 
+            // saveFileMenuItem
+            // 
+            this.saveFileMenuItem.Index = 2;
+            this.saveFileMenuItem.Text = "&Save";
+            this.saveFileMenuItem.Click += new System.EventHandler(this.menuSave_Click);
+            // 
+            // menuItem15
+            // 
+            this.menuItem15.Index = 3;
+            this.menuItem15.Text = "-";
+            // 
+            // exportXMLMenuItem
+            // 
+            this.exportXMLMenuItem.Index = 4;
+            this.exportXMLMenuItem.Text = "&Export XML";
+            this.exportXMLMenuItem.Click += new System.EventHandler(this.menuItemExportXML_Click);
+            // 
+            // menuItem25
+            // 
+            this.menuItem25.Index = 5;
+            this.menuItem25.Text = "-";
+            // 
+            // exitMenuItem
+            // 
+            this.exitMenuItem.Index = 6;
+            this.exitMenuItem.Text = "E&xit";
+            this.exitMenuItem.Click += new System.EventHandler(this.menuItem16_Click);
+            // 
+            // menuItem26
+            // 
+            this.menuItem26.Index = 1;
+            this.menuItem26.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem27,
             this.menuItem28,
             this.menuItem84,
             this.mnuNamespaces,
             this.mnuAttributes});
-			this.menuItem26.Text = "&View";
-			// 
-			// menuItem27
-			// 
-			this.menuItem27.Index = 0;
-			this.menuItem27.Text = "&Alphabetize a-Z";
-			this.menuItem27.Click += new System.EventHandler(this.menuItem27_Click);
-			// 
-			// menuItem28
-			// 
-			this.menuItem28.Index = 1;
-			this.menuItem28.Text = "Alphabetize &Off";
-			this.menuItem28.Click += new System.EventHandler(this.menuItem28_Click);
-			// 
-			// menuItem84
-			// 
-			this.menuItem84.Index = 2;
-			this.menuItem84.Text = "-";
-			// 
-			// mnuNamespaces
-			// 
-			this.mnuNamespaces.Checked = true;
-			this.mnuNamespaces.Index = 3;
-			this.mnuNamespaces.Text = "Namespaces";
-			// 
-			// mnuAttributes
-			// 
-			this.mnuAttributes.Checked = true;
-			this.mnuAttributes.Index = 4;
-			this.mnuAttributes.Text = "Attributes";
-			// 
-			// menuItem33
-			// 
-			this.menuItem33.Index = 2;
-			this.menuItem33.Text = "&Undo";
-			this.menuItem33.Visible = false;
-			this.menuItem33.Click += new System.EventHandler(this.menuItem33_Click);
-			// 
-			// menuItem17
-			// 
-			this.menuItem17.Index = 3;
-			this.menuItem17.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem26.Text = "&View";
+            // 
+            // menuItem27
+            // 
+            this.menuItem27.Index = 0;
+            this.menuItem27.Text = "&Alphabetize a-Z";
+            this.menuItem27.Click += new System.EventHandler(this.menuItem27_Click);
+            // 
+            // menuItem28
+            // 
+            this.menuItem28.Index = 1;
+            this.menuItem28.Text = "Alphabetize &Off";
+            this.menuItem28.Click += new System.EventHandler(this.menuItem28_Click);
+            // 
+            // menuItem84
+            // 
+            this.menuItem84.Index = 2;
+            this.menuItem84.Text = "-";
+            // 
+            // mnuNamespaces
+            // 
+            this.mnuNamespaces.Checked = true;
+            this.mnuNamespaces.Index = 3;
+            this.mnuNamespaces.Text = "Namespaces";
+            // 
+            // mnuAttributes
+            // 
+            this.mnuAttributes.Checked = true;
+            this.mnuAttributes.Index = 4;
+            this.mnuAttributes.Text = "Attributes";
+            // 
+            // menuItem33
+            // 
+            this.menuItem33.Index = 2;
+            this.menuItem33.Text = "&Undo";
+            this.menuItem33.Visible = false;
+            this.menuItem33.Click += new System.EventHandler(this.menuItem33_Click);
+            // 
+            // menuItem17
+            // 
+            this.menuItem17.Index = 3;
+            this.menuItem17.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem12,
             this.menuItem18});
-			this.menuItem17.MergeType = System.Windows.Forms.MenuMerge.Remove;
-			this.menuItem17.Text = "&About";
-			this.menuItem17.Click += new System.EventHandler(this.menuItem17_Click);
-			// 
-			// menuItem12
-			// 
-			this.menuItem12.Enabled = false;
-			this.menuItem12.Index = 0;
-			this.menuItem12.Text = " &Help";
-			this.menuItem12.Click += new System.EventHandler(this.menuItem12_Click_1);
-			// 
-			// menuItem18
-			// 
-			this.menuItem18.Index = 1;
-			this.menuItem18.Text = "&About pWord";
-			this.menuItem18.Click += new System.EventHandler(this.menuItem18_Click);
-			// 
-			// saveFileDialog1
-			// 
-			this.saveFileDialog1.Filter = "pWord files|*.pwd";
-			this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
-			// 
-			// openFileDialog1
-			// 
-			this.openFileDialog1.Filter = "pWord files|*.pwd";
-			this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-			// 
-			// txtValue
-			// 
-			this.txtValue.BackColor = System.Drawing.SystemColors.Info;
-			this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
-			this.txtValue.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.txtValue.ForeColor = System.Drawing.Color.Black;
-			this.txtValue.Location = new System.Drawing.Point(3, 3);
-			this.txtValue.Multiline = true;
-			this.txtValue.Name = "txtValue";
-			this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.txtValue.Size = new System.Drawing.Size(285, 128);
-			this.txtValue.TabIndex = 3;
-			this.txtValue.TabStop = false;
-			// 
-			// cmMasters
-			// 
-			this.cmMasters.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem17.MergeType = System.Windows.Forms.MenuMerge.Remove;
+            this.menuItem17.Text = "&About";
+            this.menuItem17.Click += new System.EventHandler(this.menuItem17_Click);
+            // 
+            // menuItem12
+            // 
+            this.menuItem12.Enabled = false;
+            this.menuItem12.Index = 0;
+            this.menuItem12.Text = " &Help";
+            this.menuItem12.Click += new System.EventHandler(this.menuItem12_Click_1);
+            // 
+            // menuItem18
+            // 
+            this.menuItem18.Index = 1;
+            this.menuItem18.Text = "&About pWord";
+            this.menuItem18.Click += new System.EventHandler(this.menuItem18_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "pWord files|*.pwd";
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "pWord files|*.pwd";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // txtValue
+            // 
+            this.txtValue.BackColor = System.Drawing.SystemColors.Info;
+            this.txtValue.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtValue.ForeColor = System.Drawing.Color.Black;
+            this.txtValue.Location = new System.Drawing.Point(3, 3);
+            this.txtValue.Multiline = true;
+            this.txtValue.Name = "txtValue";
+            this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtValue.Size = new System.Drawing.Size(285, 128);
+            this.txtValue.TabIndex = 3;
+            this.txtValue.TabStop = false;
+            // 
+            // cmMasters
+            // 
+            this.cmMasters.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem19,
             this.menuItem20});
-			// 
-			// menuItem19
-			// 
-			this.menuItem19.Index = 0;
-			this.menuItem19.Text = "Add Master";
-			this.menuItem19.Click += new System.EventHandler(this.menuItem19_Click);
-			// 
-			// menuItem20
-			// 
-			this.menuItem20.Index = 1;
-			this.menuItem20.Text = "Delete Master";
-			this.menuItem20.Click += new System.EventHandler(this.menuItem20_Click);
-			// 
-			// splitter1
-			// 
-			this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.splitter1.Location = new System.Drawing.Point(0, 205);
-			this.splitter1.Name = "splitter1";
-			this.splitter1.Size = new System.Drawing.Size(299, 7);
-			this.splitter1.TabIndex = 5;
-			this.splitter1.TabStop = false;
-			// 
-			// panel1
-			// 
-			this.panel1.Controls.Add(this.panel2);
-			this.panel1.Controls.Add(this.panel6);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(0, 70);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(299, 427);
-			this.panel1.TabIndex = 6;
-			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-			// 
-			// panel2
-			// 
-			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel2.Controls.Add(this.panel4);
-			this.panel2.Controls.Add(this.panel3);
-			this.panel2.Controls.Add(this.panel5);
-			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel2.Location = new System.Drawing.Point(0, 0);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(299, 95);
-			this.panel2.TabIndex = 3;
-			this.panel2.VisibleChanged += new System.EventHandler(this.panel2_VisibleChanged);
-			// 
-			// panel4
-			// 
-			this.panel4.Controls.Add(this.txtObject);
-			this.panel4.Controls.Add(this.lblValue);
-			this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel4.Location = new System.Drawing.Point(0, 22);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(295, 37);
-			this.panel4.TabIndex = 2;
-			// 
-			// txtObject
-			// 
-			this.txtObject.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            // 
+            // menuItem19
+            // 
+            this.menuItem19.Index = 0;
+            this.menuItem19.Text = "Add Master";
+            this.menuItem19.Click += new System.EventHandler(this.menuItem19_Click);
+            // 
+            // menuItem20
+            // 
+            this.menuItem20.Index = 1;
+            this.menuItem20.Text = "Delete Master";
+            this.menuItem20.Click += new System.EventHandler(this.menuItem20_Click);
+            // 
+            // splitter1
+            // 
+            this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitter1.Location = new System.Drawing.Point(0, 205);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(299, 7);
+            this.splitter1.TabIndex = 5;
+            this.splitter1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 70);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(299, 427);
+            this.panel1.TabIndex = 6;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(299, 95);
+            this.panel2.TabIndex = 3;
+            this.panel2.VisibleChanged += new System.EventHandler(this.panel2_VisibleChanged);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.txtObject);
+            this.panel4.Controls.Add(this.lblValue);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 22);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(295, 37);
+            this.panel4.TabIndex = 2;
+            // 
+            // txtObject
+            // 
+            this.txtObject.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtObject.Location = new System.Drawing.Point(50, 0);
-			this.txtObject.Multiline = true;
-			this.txtObject.Name = "txtObject";
-			this.txtObject.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.txtObject.Size = new System.Drawing.Size(245, 36);
-			this.txtObject.TabIndex = 1;
-			// 
-			// lblValue
-			// 
-			this.lblValue.Dock = System.Windows.Forms.DockStyle.Left;
-			this.lblValue.Location = new System.Drawing.Point(0, 0);
-			this.lblValue.Name = "lblValue";
-			this.lblValue.Size = new System.Drawing.Size(50, 37);
-			this.lblValue.TabIndex = 0;
-			this.lblValue.Text = "Value:";
-			// 
-			// panel3
-			// 
-			this.panel3.Controls.Add(this.txtName);
-			this.panel3.Controls.Add(this.lblName);
-			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel3.Location = new System.Drawing.Point(0, 0);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(295, 22);
-			this.panel3.TabIndex = 0;
-			// 
-			// txtName
-			// 
-			this.txtName.Dock = System.Windows.Forms.DockStyle.Top;
-			this.txtName.Location = new System.Drawing.Point(50, 0);
-			this.txtName.Name = "txtName";
-			this.txtName.Size = new System.Drawing.Size(245, 20);
-			this.txtName.TabIndex = 1;
-			this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
-			// 
-			// lblName
-			// 
-			this.lblName.Dock = System.Windows.Forms.DockStyle.Left;
-			this.lblName.Location = new System.Drawing.Point(0, 0);
-			this.lblName.Name = "lblName";
-			this.lblName.Size = new System.Drawing.Size(50, 22);
-			this.lblName.TabIndex = 0;
-			this.lblName.Text = "Name:";
-			// 
-			// panel5
-			// 
-			this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel5.Controls.Add(this.chkClear);
-			this.panel5.Controls.Add(this.btnAdd);
-			this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel5.Location = new System.Drawing.Point(0, 61);
-			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(295, 30);
-			this.panel5.TabIndex = 4;
-			// 
-			// chkClear
-			// 
-			this.chkClear.Checked = true;
-			this.chkClear.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.chkClear.Location = new System.Drawing.Point(79, 0);
-			this.chkClear.Name = "chkClear";
-			this.chkClear.Size = new System.Drawing.Size(233, 22);
-			this.chkClear.TabIndex = 2;
-			this.chkClear.TabStop = false;
-			this.chkClear.Text = "Clear Name and Value fields?";
-			this.chkClear.ThreeState = true;
-			this.chkClear.CheckedChanged += new System.EventHandler(this.chkClear_CheckedChanged);
-			this.chkClear.CheckStateChanged += new System.EventHandler(this.chkClear_CheckStateChanged);
-			// 
-			// btnAdd
-			// 
-			this.btnAdd.Location = new System.Drawing.Point(0, 0);
-			this.btnAdd.Name = "btnAdd";
-			this.btnAdd.Size = new System.Drawing.Size(68, 22);
-			this.btnAdd.TabIndex = 0;
-			this.btnAdd.Text = "Add";
-			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-			// 
-			// panel6
-			// 
-			this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtObject.Location = new System.Drawing.Point(50, 0);
+            this.txtObject.Multiline = true;
+            this.txtObject.Name = "txtObject";
+            this.txtObject.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtObject.Size = new System.Drawing.Size(245, 36);
+            this.txtObject.TabIndex = 1;
+            // 
+            // lblValue
+            // 
+            this.lblValue.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblValue.Location = new System.Drawing.Point(0, 0);
+            this.lblValue.Name = "lblValue";
+            this.lblValue.Size = new System.Drawing.Size(50, 37);
+            this.lblValue.TabIndex = 0;
+            this.lblValue.Text = "Value:";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.txtName);
+            this.panel3.Controls.Add(this.lblName);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(295, 22);
+            this.panel3.TabIndex = 0;
+            // 
+            // txtName
+            // 
+            this.txtName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtName.Location = new System.Drawing.Point(50, 0);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(245, 20);
+            this.txtName.TabIndex = 1;
+            this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
+            // 
+            // lblName
+            // 
+            this.lblName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblName.Location = new System.Drawing.Point(0, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(50, 22);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Name:";
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.chkClear);
+            this.panel5.Controls.Add(this.btnAdd);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 61);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(295, 30);
+            this.panel5.TabIndex = 4;
+            // 
+            // chkClear
+            // 
+            this.chkClear.Checked = true;
+            this.chkClear.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkClear.Location = new System.Drawing.Point(79, 0);
+            this.chkClear.Name = "chkClear";
+            this.chkClear.Size = new System.Drawing.Size(233, 22);
+            this.chkClear.TabIndex = 2;
+            this.chkClear.TabStop = false;
+            this.chkClear.Text = "Clear Name and Value fields?";
+            this.chkClear.ThreeState = true;
+            this.chkClear.CheckedChanged += new System.EventHandler(this.chkClear_CheckedChanged);
+            this.chkClear.CheckStateChanged += new System.EventHandler(this.chkClear_CheckStateChanged);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(0, 0);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(68, 22);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel6.Controls.Add(this.treeView1);
-			this.panel6.Controls.Add(this.splitter1);
-			this.panel6.Controls.Add(this.tabs);
-			this.panel6.Controls.Add(this.btnCancel);
-			this.panel6.Location = new System.Drawing.Point(0, 95);
-			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(299, 372);
-			this.panel6.TabIndex = 5;
-			// 
-			// treeView1
-			// 
-			this.treeView1.AllowDrop = true;
-			this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.treeView1.ContextMenu = this.cmTree;
-			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-			this.treeView1.FullRowSelect = true;
-			this.treeView1.HideSelection = false;
-			this.treeView1.HotTracking = true;
-			this.treeView1.ImageIndex = 0;
-			this.treeView1.ImageList = this.imageTree1;
-			this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
-			this.treeView1.Location = new System.Drawing.Point(0, 0);
-			this.treeView1.Name = "treeView1";
-			this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
-			this.treeView1.SelectedImageIndex = 0;
-			this.treeView1.Size = new System.Drawing.Size(299, 205);
-			this.treeView1.TabIndex = 3;
-			this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
-			this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
-			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
-			this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
-			this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
-			this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
-			this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
-			this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
-			this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
-			this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
-			// 
-			// tabs
-			// 
-			this.tabs.Controls.Add(this.tabValue);
-			this.tabs.Controls.Add(this.tabNamespaces);
-			this.tabs.Controls.Add(this.tabAttributes);
-			this.tabs.Controls.Add(this.tabCMD);
-			this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tabs.Location = new System.Drawing.Point(0, 212);
-			this.tabs.Name = "tabs";
-			this.tabs.SelectedIndex = 0;
-			this.tabs.Size = new System.Drawing.Size(299, 160);
-			this.tabs.TabIndex = 7;
-			// 
-			// tabValue
-			// 
-			this.tabValue.AllowDrop = true;
-			this.tabValue.Controls.Add(this.txtValue);
-			this.tabValue.Location = new System.Drawing.Point(4, 22);
-			this.tabValue.Name = "tabValue";
-			this.tabValue.Padding = new System.Windows.Forms.Padding(3);
-			this.tabValue.Size = new System.Drawing.Size(291, 134);
-			this.tabValue.TabIndex = 0;
-			this.tabValue.Text = "Value";
-			this.tabValue.UseVisualStyleBackColor = true;
-			// 
-			// tabNamespaces
-			// 
-			this.tabNamespaces.Controls.Add(this.lstNamespaces);
-			this.tabNamespaces.Location = new System.Drawing.Point(4, 22);
-			this.tabNamespaces.Name = "tabNamespaces";
-			this.tabNamespaces.Padding = new System.Windows.Forms.Padding(3);
-			this.tabNamespaces.Size = new System.Drawing.Size(291, 134);
-			this.tabNamespaces.TabIndex = 1;
-			this.tabNamespaces.Text = "Namespaces";
-			this.tabNamespaces.UseVisualStyleBackColor = true;
-			// 
-			// lstNamespaces
-			// 
-			this.lstNamespaces.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.panel6.Controls.Add(this.treeView1);
+            this.panel6.Controls.Add(this.splitter1);
+            this.panel6.Controls.Add(this.tabs);
+            this.panel6.Controls.Add(this.btnCancel);
+            this.panel6.Location = new System.Drawing.Point(0, 95);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(299, 372);
+            this.panel6.TabIndex = 5;
+            // 
+            // treeView1
+            // 
+            this.treeView1.AllowDrop = true;
+            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView1.ContextMenu = this.cmTree;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
+            this.treeView1.FullRowSelect = true;
+            this.treeView1.HideSelection = false;
+            this.treeView1.HotTracking = true;
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageTree1;
+            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
+            this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.Size = new System.Drawing.Size(299, 205);
+            this.treeView1.TabIndex = 3;
+            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
+            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
+            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
+            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
+            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
+            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
+            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
+            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
+            // 
+            // tabs
+            // 
+            this.tabs.Controls.Add(this.tabValue);
+            this.tabs.Controls.Add(this.tabNamespaces);
+            this.tabs.Controls.Add(this.tabAttributes);
+            this.tabs.Controls.Add(this.tabCMD);
+            this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabs.Location = new System.Drawing.Point(0, 212);
+            this.tabs.Name = "tabs";
+            this.tabs.SelectedIndex = 0;
+            this.tabs.Size = new System.Drawing.Size(299, 160);
+            this.tabs.TabIndex = 7;
+            // 
+            // tabValue
+            // 
+            this.tabValue.AllowDrop = true;
+            this.tabValue.Controls.Add(this.txtValue);
+            this.tabValue.Location = new System.Drawing.Point(4, 22);
+            this.tabValue.Name = "tabValue";
+            this.tabValue.Padding = new System.Windows.Forms.Padding(3);
+            this.tabValue.Size = new System.Drawing.Size(291, 134);
+            this.tabValue.TabIndex = 0;
+            this.tabValue.Text = "Value";
+            this.tabValue.UseVisualStyleBackColor = true;
+            // 
+            // tabNamespaces
+            // 
+            this.tabNamespaces.Controls.Add(this.lstNamespaces);
+            this.tabNamespaces.Location = new System.Drawing.Point(4, 22);
+            this.tabNamespaces.Name = "tabNamespaces";
+            this.tabNamespaces.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNamespaces.Size = new System.Drawing.Size(291, 134);
+            this.tabNamespaces.TabIndex = 1;
+            this.tabNamespaces.Text = "Namespaces";
+            this.tabNamespaces.UseVisualStyleBackColor = true;
+            // 
+            // lstNamespaces
+            // 
+            this.lstNamespaces.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnPrefix,
             this.columnPrefixURI,
             this.columnSuffix});
-			this.lstNamespaces.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.lstNamespaces.HideSelection = false;
-			this.lstNamespaces.Location = new System.Drawing.Point(3, 3);
-			this.lstNamespaces.Name = "lstNamespaces";
-			this.lstNamespaces.Size = new System.Drawing.Size(285, 128);
-			this.lstNamespaces.TabIndex = 0;
-			this.lstNamespaces.UseCompatibleStateImageBehavior = false;
-			this.lstNamespaces.View = System.Windows.Forms.View.Details;
-			// 
-			// columnPrefix
-			// 
-			this.columnPrefix.Text = "Prefix";
-			this.columnPrefix.Width = 69;
-			// 
-			// columnPrefixURI
-			// 
-			this.columnPrefixURI.Text = "URI";
-			this.columnPrefixURI.Width = 198;
-			// 
-			// columnSuffix
-			// 
-			this.columnSuffix.Text = "Suffix";
-			this.columnSuffix.Width = 85;
-			// 
-			// tabAttributes
-			// 
-			this.tabAttributes.Controls.Add(this.lstAttributes);
-			this.tabAttributes.Location = new System.Drawing.Point(4, 22);
-			this.tabAttributes.Name = "tabAttributes";
-			this.tabAttributes.Padding = new System.Windows.Forms.Padding(3);
-			this.tabAttributes.Size = new System.Drawing.Size(291, 134);
-			this.tabAttributes.TabIndex = 2;
-			this.tabAttributes.Text = "Attributes";
-			this.tabAttributes.UseVisualStyleBackColor = true;
-			// 
-			// lstAttributes
-			// 
-			this.lstAttributes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstNamespaces.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstNamespaces.HideSelection = false;
+            this.lstNamespaces.Location = new System.Drawing.Point(3, 3);
+            this.lstNamespaces.Name = "lstNamespaces";
+            this.lstNamespaces.Size = new System.Drawing.Size(285, 128);
+            this.lstNamespaces.TabIndex = 0;
+            this.lstNamespaces.UseCompatibleStateImageBehavior = false;
+            this.lstNamespaces.View = System.Windows.Forms.View.Details;
+            // 
+            // columnPrefix
+            // 
+            this.columnPrefix.Text = "Prefix";
+            this.columnPrefix.Width = 69;
+            // 
+            // columnPrefixURI
+            // 
+            this.columnPrefixURI.Text = "URI";
+            this.columnPrefixURI.Width = 198;
+            // 
+            // columnSuffix
+            // 
+            this.columnSuffix.Text = "Suffix";
+            this.columnSuffix.Width = 85;
+            // 
+            // tabAttributes
+            // 
+            this.tabAttributes.Controls.Add(this.lstAttributes);
+            this.tabAttributes.Location = new System.Drawing.Point(4, 22);
+            this.tabAttributes.Name = "tabAttributes";
+            this.tabAttributes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAttributes.Size = new System.Drawing.Size(291, 134);
+            this.tabAttributes.TabIndex = 2;
+            this.tabAttributes.Text = "Attributes";
+            this.tabAttributes.UseVisualStyleBackColor = true;
+            // 
+            // lstAttributes
+            // 
+            this.lstAttributes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnAttributeName,
             this.columnAttributeValue});
-			this.lstAttributes.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.lstAttributes.HideSelection = false;
-			this.lstAttributes.Location = new System.Drawing.Point(3, 3);
-			this.lstAttributes.Name = "lstAttributes";
-			this.lstAttributes.Size = new System.Drawing.Size(285, 128);
-			this.lstAttributes.TabIndex = 1;
-			this.lstAttributes.UseCompatibleStateImageBehavior = false;
-			this.lstAttributes.View = System.Windows.Forms.View.Details;
-			// 
-			// columnAttributeName
-			// 
-			this.columnAttributeName.Text = "Attribute";
-			this.columnAttributeName.Width = 91;
-			// 
-			// columnAttributeValue
-			// 
-			this.columnAttributeValue.Text = "Value";
-			this.columnAttributeValue.Width = 198;
-			// 
-			// tabCMD
-			// 
-			this.tabCMD.Controls.Add(this.txtCMD);
-			this.tabCMD.Location = new System.Drawing.Point(4, 22);
-			this.tabCMD.Name = "tabCMD";
-			this.tabCMD.Padding = new System.Windows.Forms.Padding(3);
-			this.tabCMD.Size = new System.Drawing.Size(291, 134);
-			this.tabCMD.TabIndex = 3;
-			this.tabCMD.Text = "Cmd";
-			this.tabCMD.UseVisualStyleBackColor = true;
-			// 
-			// txtCMD
-			// 
-			this.txtCMD.AcceptsReturn = true;
-			this.txtCMD.AcceptsTab = true;
-			this.txtCMD.AllowDrop = true;
-			this.txtCMD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lstAttributes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstAttributes.HideSelection = false;
+            this.lstAttributes.Location = new System.Drawing.Point(3, 3);
+            this.lstAttributes.Name = "lstAttributes";
+            this.lstAttributes.Size = new System.Drawing.Size(285, 128);
+            this.lstAttributes.TabIndex = 1;
+            this.lstAttributes.UseCompatibleStateImageBehavior = false;
+            this.lstAttributes.View = System.Windows.Forms.View.Details;
+            // 
+            // columnAttributeName
+            // 
+            this.columnAttributeName.Text = "Attribute";
+            this.columnAttributeName.Width = 91;
+            // 
+            // columnAttributeValue
+            // 
+            this.columnAttributeValue.Text = "Value";
+            this.columnAttributeValue.Width = 198;
+            // 
+            // tabCMD
+            // 
+            this.tabCMD.Controls.Add(this.txtCMD);
+            this.tabCMD.Location = new System.Drawing.Point(4, 22);
+            this.tabCMD.Name = "tabCMD";
+            this.tabCMD.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCMD.Size = new System.Drawing.Size(291, 134);
+            this.tabCMD.TabIndex = 3;
+            this.tabCMD.Text = "Cmd";
+            this.tabCMD.UseVisualStyleBackColor = true;
+            // 
+            // txtCMD
+            // 
+            this.txtCMD.AcceptsReturn = true;
+            this.txtCMD.AcceptsTab = true;
+            this.txtCMD.AllowDrop = true;
+            this.txtCMD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtCMD.BackColor = System.Drawing.SystemColors.WindowText;
-			this.txtCMD.ForeColor = System.Drawing.Color.White;
-			this.txtCMD.Location = new System.Drawing.Point(1, 0);
-			this.txtCMD.Multiline = true;
-			this.txtCMD.Name = "txtCMD";
-			this.txtCMD.Size = new System.Drawing.Size(290, 98);
-			this.txtCMD.TabIndex = 0;
-			this.txtCMD.UseWaitCursor = true;
-			this.txtCMD.TextChanged += new System.EventHandler(this.txtCMD_TextChanged);
-			// 
-			// btnCancel
-			// 
-			this.btnCancel.Enabled = false;
-			this.btnCancel.Location = new System.Drawing.Point(2, -2);
-			this.btnCancel.Name = "btnCancel";
-			this.btnCancel.Size = new System.Drawing.Size(68, 22);
-			this.btnCancel.TabIndex = 1;
-			this.btnCancel.TabStop = false;
-			this.btnCancel.Text = "Cancel";
-			this.btnCancel.Visible = false;
-			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-			// 
-			// saveFileDialogHTML
-			// 
-			this.saveFileDialogHTML.Filter = "XML format|*.xml|HTML format|*.html|All Files|*.*";
-			this.saveFileDialogHTML.Title = "Save As XML//HTML";
-			this.saveFileDialogHTML.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogHTML_FileOk);
-			// 
-			// saveFileDialogJSON
-			// 
-			this.saveFileDialogJSON.Filter = "JSON format|*.json|JSON format|*.json|All Files|*.*";
-			this.saveFileDialogJSON.Title = "Save As JSON";
-			this.saveFileDialogJSON.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogJSON_FileOk);
-			// 
-			// notifyIcon2
-			// 
-			this.notifyIcon2.Text = "notifyIcon2";
-			this.notifyIcon2.Visible = true;
-			this.notifyIcon2.DoubleClick += new System.EventHandler(this.notifyIcon2_DoubleClick);
-			this.notifyIcon2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseClick);
-			this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseDoubleClick);
-			// 
-			// openFileDialog2
-			// 
-			this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
-			// 
-			// userControl11
-			// 
-			this.userControl11.ContextMenu = this.cmMasters;
-			this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
-			this.userControl11.Location = new System.Drawing.Point(0, 48);
-			this.userControl11.Name = "userControl11";
-			this.userControl11.Size = new System.Drawing.Size(299, 22);
-			this.userControl11.TabIndex = 4;
-			this.userControl11.TabStop = false;
-			this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
-			this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
-			this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
-			// 
-			// pWord
-			// 
-			this.AccessibleDescription = "Enabled to view file after xml or html export.";
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(299, 517);
-			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.userControl11);
-			this.Controls.Add(this.toolBar1);
-			this.Controls.Add(this.statusBar1);
-			this.Enabled = ((bool)(configurationAppSettings.GetValue("pWord.Enabled", typeof(bool))));
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.MaximizeBox = false;
-			this.Menu = this.mainMenu1;
-			this.MinimumSize = new System.Drawing.Size(270, 183);
-			this.Name = "pWord";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-			this.Text = "0_0_6B";
-			this.TopMost = ((bool)(configurationAppSettings.GetValue("pWord.TopMost", typeof(bool))));
-			this.Deactivate += new System.EventHandler(this.pWord_Deactivate);
-			this.Load += new System.EventHandler(this.pWord_Load);
-			this.VisibleChanged += new System.EventHandler(this.pWord_VisibleChanged);
-			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pWord_MouseDown);
-			this.MouseLeave += new System.EventHandler(this.pWord_MouseLeave);
-			this.panel1.ResumeLayout(false);
-			this.panel2.ResumeLayout(false);
-			this.panel4.ResumeLayout(false);
-			this.panel4.PerformLayout();
-			this.panel3.ResumeLayout(false);
-			this.panel3.PerformLayout();
-			this.panel5.ResumeLayout(false);
-			this.panel6.ResumeLayout(false);
-			this.tabs.ResumeLayout(false);
-			this.tabValue.ResumeLayout(false);
-			this.tabValue.PerformLayout();
-			this.tabNamespaces.ResumeLayout(false);
-			this.tabAttributes.ResumeLayout(false);
-			this.tabCMD.ResumeLayout(false);
-			this.tabCMD.PerformLayout();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.txtCMD.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtCMD.ForeColor = System.Drawing.Color.White;
+            this.txtCMD.Location = new System.Drawing.Point(1, 0);
+            this.txtCMD.Multiline = true;
+            this.txtCMD.Name = "txtCMD";
+            this.txtCMD.Size = new System.Drawing.Size(290, 98);
+            this.txtCMD.TabIndex = 0;
+            this.txtCMD.UseWaitCursor = true;
+            this.txtCMD.TextChanged += new System.EventHandler(this.txtCMD_TextChanged);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Location = new System.Drawing.Point(2, -2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(68, 22);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // saveFileDialogHTML
+            // 
+            this.saveFileDialogHTML.Filter = "XML format|*.xml|HTML format|*.html|All Files|*.*";
+            this.saveFileDialogHTML.Title = "Save As XML//HTML";
+            this.saveFileDialogHTML.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogHTML_FileOk);
+            // 
+            // saveFileDialogJSON
+            // 
+            this.saveFileDialogJSON.Filter = "JSON format|*.json|JSON format|*.json|All Files|*.*";
+            this.saveFileDialogJSON.Title = "Save As JSON";
+            this.saveFileDialogJSON.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogJSON_FileOk);
+            // 
+            // notifyIcon2
+            // 
+            this.notifyIcon2.Text = "notifyIcon2";
+            this.notifyIcon2.Visible = true;
+            this.notifyIcon2.DoubleClick += new System.EventHandler(this.notifyIcon2_DoubleClick);
+            this.notifyIcon2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseClick);
+            this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseDoubleClick);
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
+            // 
+            // userControl11
+            // 
+            this.userControl11.ContextMenu = this.cmMasters;
+            this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userControl11.Location = new System.Drawing.Point(0, 48);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(299, 22);
+            this.userControl11.TabIndex = 4;
+            this.userControl11.TabStop = false;
+            this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
+            this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
+            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
+            // 
+            // menuItemImportJSON
+            // 
+            this.menuItemImportJSON.Index = 1;
+            this.menuItemImportJSON.Text = "from JSON";
+            this.menuItemImportJSON.Click += new System.EventHandler(this.menuItemImportJSON_Click);
+            // 
+            // pWord
+            // 
+            this.AccessibleDescription = "Enabled to view file after xml or html export.";
+            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.ClientSize = new System.Drawing.Size(299, 517);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.userControl11);
+            this.Controls.Add(this.toolBar1);
+            this.Controls.Add(this.statusBar1);
+            this.Enabled = ((bool)(configurationAppSettings.GetValue("pWord.Enabled", typeof(bool))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Menu = this.mainMenu1;
+            this.MinimumSize = new System.Drawing.Size(270, 183);
+            this.Name = "pWord";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "0_0_6B";
+            this.TopMost = ((bool)(configurationAppSettings.GetValue("pWord.TopMost", typeof(bool))));
+            this.Deactivate += new System.EventHandler(this.pWord_Deactivate);
+            this.Load += new System.EventHandler(this.pWord_Load);
+            this.VisibleChanged += new System.EventHandler(this.pWord_VisibleChanged);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pWord_MouseDown);
+            this.MouseLeave += new System.EventHandler(this.pWord_MouseLeave);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.tabs.ResumeLayout(false);
+            this.tabValue.ResumeLayout(false);
+            this.tabValue.PerformLayout();
+            this.tabNamespaces.ResumeLayout(false);
+            this.tabAttributes.ResumeLayout(false);
+            this.tabCMD.ResumeLayout(false);
+            this.tabCMD.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -3188,7 +3200,7 @@ namespace myPword
 
 			try
 			{
-				this.exportMode = ExportMode.pNode;  // what am I exporting?  A pNode
+				this.exportMode = ExportMode.treejson;  // what am I exporting?  A pNode
 				xml.Clear();  // clear out contents first.
 
 				//this.xmlNode = (pNode)treeView1.SelectedNode;  // xmlNode is what is being exported to xml
@@ -3255,7 +3267,7 @@ namespace myPword
 			}
 			catch (Exception f)
 			{
-				MessageBox.Show("You had an error while exporting to XML. " + f.Message, "SAVE ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
+				MessageBox.Show("You had an error while exporting to JSON. " + f.Message, "SAVE ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
 			}
 
 
@@ -4733,6 +4745,110 @@ namespace myPword
             }
 
         }
+
+		private void menuItemImportJSON_Click(object sender, EventArgs e)
+		{
+
+			importMode = ImportMode.treejson; // what am I exporting?  XML from previous exportNode
+											 // I'm importing into a node that i selected using import node treexml 
+
+			xml.Clear();  // clear out contents first.
+
+			//this.xmlNode = (pNode)treeView1.SelectedNode;  // xmlNode is what is being exported to xml
+			this.xmlIndex = treeView1.SelectedNode.Index; // xmlIndex is the SelectedNodes index
+			this.menuItem21.Enabled = true; // MenuItem21 is enabled... Todo: rename menuItem21
+			this.menuItem31.Enabled = true;  // MneuItem21 is enabled... Todo: rename menuItem31
+			this.nodeIndex = treeView1.SelectedNode.Index; // nodeInex is now equal to xmlIndex?
+			this.statusBar1.Text = "Import Node JSON Mode";
+			//CallRecursive(xmlNode);  // disabled CallRecursive here... need to fix Call recursive
+			// ToDo: fix CallRecursive(xmlNode)
+			tmpNode = (pNode)treeView1.SelectedNode;
+			this.openFileDialog2.ShowDialog();
+			filenameHTML = this.openFileDialog2.FileName;
+			if ((filenameHTML == null) || (filenameHTML == ""))
+			{
+				return;
+			}
+			else
+			{
+				try
+				{
+					using (WebClient client = new WebClient())
+					using (Stream stream = client.OpenRead(filenameHTML))
+					{
+						//      byte[] buf = new byte[stream.Length];
+						//      stream.Read(buf, 0, (int)stream.Length);
+						xdoc = new XmlDocument();
+						try
+						{
+							//xdoc.Load(stream);
+							// load json with newton soft and convert to XmlDocument
+							var json = File.ReadAllText(filenameHTML);
+							var jObject = JObject.Parse(json);
+							var xml = JsonConvert.DeserializeXmlNode(json);
+							xdoc.LoadXml(xml.InnerXml);
+						}
+						catch (Exception ex)
+						{
+							MessageBox.Show(ex.Message);
+						}
+					}
+					pNode masterNode = (pNode)treeView1.Nodes[0];
+					// now that we have the xdoc... now we need to stick it in the getNode
+					//                pNode pn = new pNode(xdoc.ChildNodes[1].Name);
+					//                pn.AddAttribute(xdoc.ch
+					//                getNode.Nodes.Add(
+					pNode pn = (pNode)treeView1.SelectedNode;
+					if (treeView1.SelectedNode.Tag == null)
+						treeView1.SelectedNode.Tag = "";
+					pn.Tag = treeView1.SelectedNode.Tag;
+					if (xdoc != null && xdoc.Attributes != null && xdoc.Attributes.Count > 0)
+					{
+						foreach (XmlAttribute xmlAttr in xdoc)
+						{
+							pn.AddAttribute(xmlAttr.LocalName, xmlAttr.Value);
+						}
+					}
+					AddChildNodes(xdoc.ChildNodes, ref pn);
+					treeView1.SelectedNode = pn;
+					//                .Nodes.Add(pn);
+					//treeView1.SelectedNode.Nodes.Add(aNode);
+					// after adding the new node, be sure the index is updated as well... this is not necessary
+					userControl11.MastersValue[userControl11.index] = masterNode;
+
+					// Change from Add Dialog to local members for adding name and value
+
+					// check box
+					if (this.chkClear.CheckState == CheckState.Checked)
+					{
+						this.txtName.Clear();
+						this.txtObject.Clear();
+						this.txtName.Focus();
+					}
+					else if (this.chkClear.CheckState == CheckState.Indeterminate)
+					{
+						this.txtObject.Clear();
+						this.txtObject.Focus();
+					}
+					else
+					{
+						this.btnAdd.Focus();
+					}
+
+					if (flag_file == true)
+					{
+						//autosave();
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Error occurred during JSON document load.");
+				}
+			}
+
+
+        }
+
 
         //      private void createHistoryNodeOnMasterNode() 
         //{
