@@ -387,6 +387,7 @@ namespace myPword
             this.menuItemExportJson = new System.Windows.Forms.MenuItem();
             this.mnuImportXML = new System.Windows.Forms.MenuItem();
             this.mnuImportNodeXML = new System.Windows.Forms.MenuItem();
+            this.menuItemImportJSON = new System.Windows.Forms.MenuItem();
             this.menuItem40 = new System.Windows.Forms.MenuItem();
             this.menuItem39 = new System.Windows.Forms.MenuItem();
             this.menuItem46 = new System.Windows.Forms.MenuItem();
@@ -499,7 +500,6 @@ namespace myPword
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.userControl11 = new LeftRight.LeftRight();
-            this.menuItemImportJSON = new System.Windows.Forms.MenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -540,7 +540,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 497);
+            this.statusBar1.Location = new System.Drawing.Point(0, 457);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(299, 20);
             this.statusBar1.TabIndex = 0;
@@ -796,6 +796,12 @@ namespace myPword
             this.mnuImportNodeXML.Index = 0;
             this.mnuImportNodeXML.Text = "from XML/HTML";
             this.mnuImportNodeXML.Click += new System.EventHandler(this.mnuImportNodeXML_Click);
+            // 
+            // menuItemImportJSON
+            // 
+            this.menuItemImportJSON.Index = 1;
+            this.menuItemImportJSON.Text = "from JSON";
+            this.menuItemImportJSON.Click += new System.EventHandler(this.menuItemImportJSON_Click);
             // 
             // menuItem40
             // 
@@ -1338,7 +1344,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 205);
+            this.splitter1.Location = new System.Drawing.Point(0, 165);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(299, 7);
             this.splitter1.TabIndex = 5;
@@ -1351,7 +1357,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 70);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(299, 427);
+            this.panel1.Size = new System.Drawing.Size(299, 387);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1472,7 +1478,7 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 95);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(299, 372);
+            this.panel6.Size = new System.Drawing.Size(299, 332);
             this.panel6.TabIndex = 5;
             // 
             // treeView1
@@ -1492,7 +1498,7 @@ namespace myPword
             this.treeView1.Name = "treeView1";
             this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(299, 205);
+            this.treeView1.Size = new System.Drawing.Size(299, 165);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1512,7 +1518,7 @@ namespace myPword
             this.tabs.Controls.Add(this.tabAttributes);
             this.tabs.Controls.Add(this.tabCMD);
             this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabs.Location = new System.Drawing.Point(0, 212);
+            this.tabs.Location = new System.Drawing.Point(0, 172);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(299, 160);
@@ -1684,17 +1690,11 @@ namespace myPword
             this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
             this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
             // 
-            // menuItemImportJSON
-            // 
-            this.menuItemImportJSON.Index = 1;
-            this.menuItemImportJSON.Text = "from JSON";
-            this.menuItemImportJSON.Click += new System.EventHandler(this.menuItemImportJSON_Click);
-            // 
             // pWord
             // 
             this.AccessibleDescription = "Enabled to view file after xml or html export.";
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(299, 517);
+            this.ClientSize = new System.Drawing.Size(299, 477);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.toolBar1);
