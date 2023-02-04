@@ -19,6 +19,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml;
+using Newtonsoft.Json.Linq;
 
 namespace myPword
 {
@@ -118,7 +119,8 @@ namespace myPword
         {
             treeview = 1,
             pNode = 2,
-            treexml = 3
+            treexml = 3,
+            treejson = 4
         }
 
         ExportMode exportMode = ExportMode.treeview;
@@ -263,7 +265,8 @@ namespace myPword
         private ToolBarButton toolBarCollapse;
         private TabPage tabCMD;
         private TextBox txtCMD;
-        pWordLib.mgr.registryMgr rm = null;
+		private MenuItem menuItem1;
+		pWordLib.mgr.registryMgr rm = null;
         public pWord()
         {
 
@@ -495,6 +498,7 @@ namespace myPword
 			this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
 			this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
 			this.userControl11 = new LeftRight.LeftRight();
+			this.menuItem1 = new System.Windows.Forms.MenuItem();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel4.SuspendLayout();
@@ -781,7 +785,8 @@ namespace myPword
 			// 
 			this.mnuImportXML.Index = 15;
 			this.mnuImportXML.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mnuImportNodeXML});
+            this.mnuImportNodeXML,
+            this.menuItem1});
 			this.mnuImportXML.Text = "Import Node";
 			this.mnuImportXML.Click += new System.EventHandler(this.menuItem85_Click);
 			// 
@@ -1677,6 +1682,12 @@ namespace myPword
 			this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
 			this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
 			this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
+			// 
+			// menuItem1
+			// 
+			this.menuItem1.Index = 1;
+			this.menuItem1.Text = "from JSON";
+			this.menuItem1.Click += new System.EventHandler(this.menuItemImportJSON_Click);
 			// 
 			// pWord
 			// 
@@ -4734,38 +4745,141 @@ namespace myPword
 
         }
 
-        //      private void createHistoryNodeOnMasterNode() 
-        //{
-        //	// find the history node if it exists
-        //	//this.tmpNode = treeView1.Nodes.Find("History", false).FirstOrDefault() as pNode;
-        //	//if (tmpNode == null) 
-        // //         {
-        // //             treeView1.Nodes.Add("History", "");
-        //	//	this.tmpNode = treeView1.Nodes.Find("History", false).FirstOrDefault() as pNode;
-        //	//}
-        //}
+		private void menuItemImportJSON_Click(object sender, EventArgs e)
+		{
 
-        //private void ProcessCommand(string text)
-        //{
+			importMode = ImportMode.treejson; // what am I exporting?  XML from previous exportNode
+											 // I'm importing into a node that i selected using import node treexml 
 
-        //          var proc = System.Diagnostics.Process.Start(this.treeView1.SelectedNode.Tag.ToString());
-        //	proc.WaitForExit();
-        //	// get the result
-        //	string result = proc.StandardOutput.ReadToEnd();
-        //	// add to treeview
+			xml.Clear();  // clear out contents first.
 
-        //	// check to see if history node exists
-        //	// if not, create it
-        //	if (this.treeView1.SelectedNode.Nodes["History"] == null)
-        //	{
-        //		TreeNode history = new TreeNode("History");
-        //		this.treeView1.SelectedNode.Nodes.Add(history);
-        //	}
-        //	// TODO:  add the command to the history node
+			//this.xmlNode = (pNode)treeView1.SelectedNode;  // xmlNode is what is being exported to xml
+			this.xmlIndex = treeView1.SelectedNode.Index; // xmlIndex is the SelectedNodes index
+			this.menuItem21.Enabled = true; // MenuItem21 is enabled... Todo: rename menuItem21
+			this.menuItem31.Enabled = true;  // MneuItem21 is enabled... Todo: rename menuItem31
+			this.nodeIndex = treeView1.SelectedNode.Index; // nodeInex is now equal to xmlIndex?
+			this.statusBar1.Text = "Import Node JSON Mode";
+			//CallRecursive(xmlNode);  // disabled CallRecursive here... need to fix Call recursive
+			// ToDo: fix CallRecursive(xmlNode)
+			tmpNode = (pNode)treeView1.SelectedNode;
+			this.openFileDialog2.ShowDialog();
+			filenameHTML = this.openFileDialog2.FileName;
+			if ((filenameHTML == null) || (filenameHTML == ""))
+			{
+				return;
+			}
+			else
+			{
+				try
+				{
+					using (WebClient client = new WebClient())
+					using (Stream stream = client.OpenRead(filenameHTML))
+					{
+						//      byte[] buf = new byte[stream.Length];
+						//      stream.Read(buf, 0, (int)stream.Length);
+						xdoc = new XmlDocument();
+						try
+						{
+							//xdoc.Load(stream);
+							// load json with newton soft and convert to XmlDocument
+							var json = File.ReadAllText(filenameHTML);
+							var jObject = JObject.Parse(json);
+							var xml = JsonConvert.DeserializeXmlNode(json);
+							xdoc.LoadXml(xml.InnerXml);
+						}
+						catch (Exception ex)
+						{
+							MessageBox.Show(ex.Message);
+						}
+					}
+					pNode masterNode = (pNode)treeView1.Nodes[0];
+					// now that we have the xdoc... now we need to stick it in the getNode
+					//                pNode pn = new pNode(xdoc.ChildNodes[1].Name);
+					//                pn.AddAttribute(xdoc.ch
+					//                getNode.Nodes.Add(
+					pNode pn = (pNode)treeView1.SelectedNode;
+					if (treeView1.SelectedNode.Tag == null)
+						treeView1.SelectedNode.Tag = "";
+					pn.Tag = treeView1.SelectedNode.Tag;
+					if (xdoc != null && xdoc.Attributes != null && xdoc.Attributes.Count > 0)
+					{
+						foreach (XmlAttribute xmlAttr in xdoc)
+						{
+							pn.AddAttribute(xmlAttr.LocalName, xmlAttr.Value);
+						}
+					}
+					AddChildNodes(xdoc.ChildNodes, ref pn);
+					treeView1.SelectedNode = pn;
+					//                .Nodes.Add(pn);
+					//treeView1.SelectedNode.Nodes.Add(aNode);
+					// after adding the new node, be sure the index is updated as well... this is not necessary
+					userControl11.MastersValue[userControl11.index] = masterNode;
 
-        //	// TODO: and add the result to its child node
+					// Change from Add Dialog to local members for adding name and value
+
+					// check box
+					if (this.chkClear.CheckState == CheckState.Checked)
+					{
+						this.txtName.Clear();
+						this.txtObject.Clear();
+						this.txtName.Focus();
+					}
+					else if (this.chkClear.CheckState == CheckState.Indeterminate)
+					{
+						this.txtObject.Clear();
+						this.txtObject.Focus();
+					}
+					else
+					{
+						this.btnAdd.Focus();
+					}
+
+					if (flag_file == true)
+					{
+						//autosave();
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Error occurred during xml document load.");
+				}
+			}
 
 
-        //}
-    }
+		}
+
+		//      private void createHistoryNodeOnMasterNode() 
+		//{
+		//	// find the history node if it exists
+		//	//this.tmpNode = treeView1.Nodes.Find("History", false).FirstOrDefault() as pNode;
+		//	//if (tmpNode == null) 
+		// //         {
+		// //             treeView1.Nodes.Add("History", "");
+		//	//	this.tmpNode = treeView1.Nodes.Find("History", false).FirstOrDefault() as pNode;
+		//	//}
+		//}
+
+		//private void ProcessCommand(string text)
+		//{
+
+		//          var proc = System.Diagnostics.Process.Start(this.treeView1.SelectedNode.Tag.ToString());
+		//	proc.WaitForExit();
+		//	// get the result
+		//	string result = proc.StandardOutput.ReadToEnd();
+		//	// add to treeview
+
+		//	// check to see if history node exists
+		//	// if not, create it
+		//	if (this.treeView1.SelectedNode.Nodes["History"] == null)
+		//	{
+		//		TreeNode history = new TreeNode("History");
+		//		this.treeView1.SelectedNode.Nodes.Add(history);
+		//	}
+		//	// TODO:  add the command to the history node
+
+		//	// TODO: and add the result to its child node
+
+
+		//}
+	}
 }
