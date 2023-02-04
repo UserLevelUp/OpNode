@@ -112,7 +112,8 @@ namespace myPword
         {
             treeview = 1,
             pNode = 2,
-            treexml = 3
+            treexml = 3,
+            treejson = 4
         }
 
         public enum ImportMode
@@ -3199,7 +3200,7 @@ namespace myPword
 
 			try
 			{
-				this.exportMode = ExportMode.pNode;  // what am I exporting?  A pNode
+				this.exportMode = ExportMode.treejson;  // what am I exporting?  A pNode
 				xml.Clear();  // clear out contents first.
 
 				//this.xmlNode = (pNode)treeView1.SelectedNode;  // xmlNode is what is being exported to xml
@@ -3266,7 +3267,7 @@ namespace myPword
 			}
 			catch (Exception f)
 			{
-				MessageBox.Show("You had an error while exporting to XML. " + f.Message, "SAVE ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
+				MessageBox.Show("You had an error while exporting to JSON. " + f.Message, "SAVE ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
 			}
 
 
@@ -4841,7 +4842,7 @@ namespace myPword
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show("Error occurred during xml document load.");
+					MessageBox.Show("Error occurred during JSON document load.");
 				}
 			}
 
