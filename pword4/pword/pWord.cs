@@ -480,7 +480,6 @@ namespace myPword
             this.chkClear = new System.Windows.Forms.CheckBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.treeView1 = new myPword.pView();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabValue = new System.Windows.Forms.TabPage();
             this.tabNamespaces = new System.Windows.Forms.TabPage();
@@ -500,6 +499,7 @@ namespace myPword
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.userControl11 = new LeftRight.LeftRight();
+            this.treeView1 = new myPword.pView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -540,7 +540,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 457);
+            this.statusBar1.Location = new System.Drawing.Point(0, 355);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(299, 20);
             this.statusBar1.TabIndex = 0;
@@ -1344,7 +1344,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 165);
+            this.splitter1.Location = new System.Drawing.Point(0, 63);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(299, 7);
             this.splitter1.TabIndex = 5;
@@ -1357,7 +1357,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 70);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(299, 387);
+            this.panel1.Size = new System.Drawing.Size(299, 285);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1478,38 +1478,8 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 95);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(299, 332);
+            this.panel6.Size = new System.Drawing.Size(299, 230);
             this.panel6.TabIndex = 5;
-            // 
-            // treeView1
-            // 
-            this.treeView1.AllowDrop = true;
-            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeView1.ContextMenu = this.cmTree;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-            this.treeView1.FullRowSelect = true;
-            this.treeView1.HideSelection = false;
-            this.treeView1.HotTracking = true;
-            this.treeView1.ImageIndex = 0;
-            this.treeView1.ImageList = this.imageTree1;
-            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
-            this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(299, 165);
-            this.treeView1.TabIndex = 3;
-            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
-            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
-            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
-            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
-            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
-            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
-            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
-            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
-            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
             // tabs
             // 
@@ -1518,7 +1488,7 @@ namespace myPword
             this.tabs.Controls.Add(this.tabAttributes);
             this.tabs.Controls.Add(this.tabCMD);
             this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabs.Location = new System.Drawing.Point(0, 172);
+            this.tabs.Location = new System.Drawing.Point(0, 70);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(299, 160);
@@ -1690,11 +1660,41 @@ namespace myPword
             this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
             this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
             // 
+            // treeView1
+            // 
+            this.treeView1.AllowDrop = true;
+            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView1.ContextMenu = this.cmTree;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
+            this.treeView1.FullRowSelect = true;
+            this.treeView1.HideSelection = false;
+            this.treeView1.HotTracking = true;
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageTree1;
+            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
+            this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.Size = new System.Drawing.Size(299, 63);
+            this.treeView1.TabIndex = 3;
+            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
+            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
+            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
+            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
+            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
+            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
+            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
+            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
+            // 
             // pWord
             // 
             this.AccessibleDescription = "Enabled to view file after xml or html export.";
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(299, 477);
+            this.ClientSize = new System.Drawing.Size(299, 375);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.toolBar1);
@@ -2764,7 +2764,7 @@ namespace myPword
                     aNode.Tag = this.txtObject.Text;
                     if (tmpNode.Namespace != null)
                     {
-                        aNode.Namespace = tmpNode.Namespace;
+                        aNode.Namespace = tmpNode.Namespace;  // trickle down namespaces
                     }
                     treeView1.SelectedNode = tmpNode;
                     treeView1.SelectedNode.Nodes.Insert(modeIndex, aNode);
@@ -2837,7 +2837,10 @@ namespace myPword
                     //aNode = new pNode(this.txtName.Text);
                     //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
                     //aNode.Tag = this.txtObject.Text;
-                    tmpNode.Namespace = new pWordLib.dat.NameSpace();
+                    if (tmpNode.Namespace == null)
+                    {
+                        tmpNode.Namespace = new NameSpace();
+                    }
                     tmpNode.Namespace.Prefix = txtName.Text;
                     tmpNode.Namespace.URI_PREFIX = txtObject.Text;
                     treeView1.SelectedNode = tmpNode;
@@ -2872,7 +2875,10 @@ namespace myPword
                     //aNode = new pNode(this.txtName.Text);
                     //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
                     //aNode.Tag = this.txtObject.Text;
-                    tmpNode.Namespace = new pWordLib.dat.NameSpace();
+                    if (tmpNode.Namespace == null)
+                    {
+                        tmpNode.Namespace = new NameSpace();
+                    }
                     tmpNode.Namespace.Suffix = txtName.Text;
                     tmpNode.Namespace.URI_SUFFIX = txtObject.Text;
                     treeView1.SelectedNode = tmpNode;
