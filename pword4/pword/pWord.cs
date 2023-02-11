@@ -65,27 +65,47 @@ namespace myPword
         /// <summary>
         ///   Add my VARIABLES HERE
         /// </summary>
-        //
+        
+        /// TODO: Move To pWordLib
         bool VIS = true;
 
         // The master list for all views
+        // TODO: Move To pWordLib
         LL.List masterList = new LL.List();
 
         // flag_file is false if it's a new file, or upon opening program.
         // If flag_file is true... it's because the current tree was saved or opened.
+        // TODO: Move To pWordLib
         bool flag_file = false;
+
+        // TODO: Move To pWordLib
         string filename = "";
         string filenameHTML = "";
         string filenameJSON = "";
+
+        // TODO: Move To pWordLib
         pNode tmpNode = new pNode();  // used to store a tree node temporarily
+
+        // TODO: Move To pWordLib
         pNode getNode = new pNode();  // used for put op
+
+        // TODO: Move To pWordLib
         pNode moveNode = new pNode(); // moved pNode
+
+        // TODO: Move To pWordLib
         pNode xmlNode = new pNode();  // used for xml ... especially the EYE icon next to ( to the right of when active) the Pin Icon
+
+        // TODO: Move To pWordLib
         ArrayList xml = new ArrayList();
+
+        // TODO: Move To pWordLib
         private Tuple<int, int> lastMousePos = new Tuple<int, int>(0, 0);
+
+        // TODO: Move To pWordLib
         int nodeIndex = 0;
         int xmlIndex = 0;
 
+        // TODO: Move To pWordLib
         public enum nodeMode
         {
             addto = 1,
@@ -105,9 +125,12 @@ namespace myPword
             search
         }
 
-        nodeMode mode = nodeMode.addto;  // see above
-        int modeIndex = 0;  // this represents the index of interest depending on the mode
 
+        // TODO: Move To pWordLib
+        public nodeMode mode = nodeMode.addto;  // see above
+        public int modeIndex = 0;  // this represents the index of interest depending on the mode
+
+        // TODO: Move To pWordLib
         public enum ExportMode
         {
             treeview = 1,
@@ -116,6 +139,7 @@ namespace myPword
             treejson = 4
         }
 
+        // TODO: Move To pWordLib
         public enum ImportMode
         {
             treeview = 1,
@@ -124,6 +148,7 @@ namespace myPword
             treejson = 4
         }
 
+        // TODO: Move To pWordLib
         ExportMode exportMode = ExportMode.treeview;
         ImportMode importMode = ImportMode.treeview;
 
@@ -480,6 +505,7 @@ namespace myPword
             this.chkClear = new System.Windows.Forms.CheckBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.treeView1 = new myPword.pView();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabValue = new System.Windows.Forms.TabPage();
             this.tabNamespaces = new System.Windows.Forms.TabPage();
@@ -499,7 +525,6 @@ namespace myPword
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.userControl11 = new LeftRight.LeftRight();
-            this.treeView1 = new myPword.pView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -540,7 +565,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 355);
+            this.statusBar1.Location = new System.Drawing.Point(0, 335);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(299, 20);
             this.statusBar1.TabIndex = 0;
@@ -1344,7 +1369,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 63);
+            this.splitter1.Location = new System.Drawing.Point(0, 43);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(299, 7);
             this.splitter1.TabIndex = 5;
@@ -1357,7 +1382,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 70);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(299, 285);
+            this.panel1.Size = new System.Drawing.Size(299, 265);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1478,8 +1503,38 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 95);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(299, 230);
+            this.panel6.Size = new System.Drawing.Size(299, 210);
             this.panel6.TabIndex = 5;
+            // 
+            // treeView1
+            // 
+            this.treeView1.AllowDrop = true;
+            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView1.ContextMenu = this.cmTree;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
+            this.treeView1.FullRowSelect = true;
+            this.treeView1.HideSelection = false;
+            this.treeView1.HotTracking = true;
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageTree1;
+            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
+            this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.Size = new System.Drawing.Size(299, 43);
+            this.treeView1.TabIndex = 3;
+            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
+            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
+            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
+            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
+            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
+            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
+            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
+            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
             // tabs
             // 
@@ -1488,7 +1543,7 @@ namespace myPword
             this.tabs.Controls.Add(this.tabAttributes);
             this.tabs.Controls.Add(this.tabCMD);
             this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabs.Location = new System.Drawing.Point(0, 70);
+            this.tabs.Location = new System.Drawing.Point(0, 50);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(299, 160);
@@ -1660,41 +1715,11 @@ namespace myPword
             this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
             this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
             // 
-            // treeView1
-            // 
-            this.treeView1.AllowDrop = true;
-            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeView1.ContextMenu = this.cmTree;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-            this.treeView1.FullRowSelect = true;
-            this.treeView1.HideSelection = false;
-            this.treeView1.HotTracking = true;
-            this.treeView1.ImageIndex = 0;
-            this.treeView1.ImageList = this.imageTree1;
-            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
-            this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(299, 63);
-            this.treeView1.TabIndex = 3;
-            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
-            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
-            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
-            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
-            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
-            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
-            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
-            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
-            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
-            // 
             // pWord
             // 
             this.AccessibleDescription = "Enabled to view file after xml or html export.";
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(299, 375);
+            this.ClientSize = new System.Drawing.Size(299, 355);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.toolBar1);
@@ -2026,12 +2051,10 @@ namespace myPword
             {
                 MessageBox.Show("You had an error while saving. " + f.Message, "SAVE ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
             }
-
         }
 
         private void menuItemAddTo_Click(object sender, System.EventArgs e)
         {
-
             mode = nodeMode.addto;
             try
             {
@@ -3310,9 +3333,14 @@ namespace myPword
             // MessageBox.Show("pView top node:" + node.Text);
             // use c# 4.0 in a nut shell to construct XmlDocument for this xml stuff
             // page starts on 490
+
+            // TODO: Move To pWordLib
             xdoc = new XmlDocument();
+
+            // TODO: Move To pWordLib
             xdoc.AppendChild(xdoc.CreateXmlDeclaration("1.0", null, "yes"));
 
+            // TODO: Move To pWordLib
             if (xdoc == null)  // instantiate the first time through
             {
                 xdoc = new XmlDocument();
@@ -3334,7 +3362,10 @@ namespace myPword
                 // todo:  iterate through all nodes in pNode and place namespaces into the namespace manager
                 // for now only do the first one if it exists
 
+                // TODO: Move To pWordLib
                 xdoc = new XmlDocument(xnt);
+
+                // TODO: Move To pWordLib
                 xdoc.AppendChild(xdoc.CreateXmlDeclaration("1.0", null, "yes"));
                 //foreach (String key in xnsm.GetNamespacesInScope(XmlNamespaceScope.All).Keys)
                 //{
@@ -3344,11 +3375,15 @@ namespace myPword
                 //}
             }
 
+            // TODO: Move To pWordLib
             node.getXmlName();  // fix node attributes and todo: eventually namespaces
 
+            // TODO: Move To pWordLib
             XmlNode rootNode = xdoc.CreateElement(node.getXmlName());
             rootNode.InnerText = (String)node.Tag;
-            foreach(var attrKey in node.getKeys()) 
+
+            // TODO: Move To pWordLib
+            foreach (var attrKey in node.getKeys()) 
             {
 
                 var val = node.getValue(attrKey);
@@ -3366,9 +3401,7 @@ namespace myPword
 
 			}
 
-            
-            
-
+            // TODO: Move To pWordLib
             if (node.Namespace != null)
             {
                 //rootNode = xdoc.CreateNode(XmlNodeType.Element, node.Namespace.Prefix, node.Name, node.Namespace.URI_PREFIX);
@@ -3380,6 +3413,8 @@ namespace myPword
                 //rootNode = xdoc.CreateNode(XmlNodeType.Element, node.getXmlName(), "");  // any time getXmlName is called ... 
                 // it should be necessary to now recheck to see if its got attributes at this current node
             }
+
+            // TODO: Move To pWordLib
             foreach (String key in node.getKeys())
             {
                 if (key != "")
@@ -3414,14 +3449,14 @@ namespace myPword
                 }
             }
 
-
-
+            // TODO: Move To pWordLib
             foreach (pNode p in node.Nodes)
             {
                 p.getXmlName();  // fix any attributes (this has been completed in pNode.DetectComplexNodeName()
                                  // todo: fix any namespace ... 
             }
 
+            // TODO: Move To pWordLib
             foreach (pNode p in node.Nodes)
             {
                 XmlNode xn;
@@ -3487,27 +3522,30 @@ namespace myPword
                         xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
                     }
                 }
-
+                
+                // TODO: Move To pWordLib
                 rootNode.AppendChild(RecursiveChildren(ref xn, p.Nodes));
             }
+            // TODO: Move To pWordLib
             xdoc.AppendChild(rootNode);
         }
 
         private XmlNode RecursiveChildren(ref XmlNode node, TreeNodeCollection pNodes)
         {
-
+            // TODO: Move To pWordLib
             foreach (pNode p in pNodes)
             {
                 p.getXmlName();
             }
 
+            // TODO: Move To pWordLib
             foreach (pNode p in pNodes)
             {
+                // TODO: Move To pWordLib
                 XmlNode xn;
                 if (p.Namespace != null)
                 {
                     // change any p.Name to be text only
-
                     xn = xdoc.CreateNode(XmlNodeType.Element, p.Namespace.Prefix, p.getXmlName(), p.Namespace.URI_PREFIX);
                 }
                 else
@@ -3516,11 +3554,18 @@ namespace myPword
                     // Check to see if we cna not create a node, but use an available or existing node
                     xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName().Replace(" ", ""), "");
                 }
+
+                // TODO: Move To pWordLib
                 xn.InnerText = (String)p.Tag;
+
+                // TODO: Move To pWordLib
                 foreach (String key in p.getKeys())
                 {
+                    // TODO: Move To pWordLib
                     System.Xml.NameTable nt = new NameTable();
                     nt.Add(p.Text);
+
+                    // TODO: Move To pWordLib
                     XmlNameTable xnt = (XmlNameTable)nt;
                     System.Xml.XmlNamespaceManager xnsm = new XmlNamespaceManager(xnt);
                     if (p.Namespace != null)
@@ -3536,6 +3581,7 @@ namespace myPword
 
                     }
 
+                    // TODO: Move To pWordLib
                     if (p.Namespace != null)
                     {
                         if (p.Namespace.Prefix != null)
@@ -3565,6 +3611,7 @@ namespace myPword
                         xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
                     }
                 }
+                // TODO: Move To pWordLib
                 node.AppendChild(RecursiveChildren(ref xn, p.Nodes));
             }
             return node;
@@ -3946,7 +3993,9 @@ namespace myPword
 
             try
             {
+                // TODO: Move To pWordLib
                 this.exportMode = ExportMode.pNode;  // what am I exporting?  A pNode
+                // TODO: Move To pWordLib
                 xml.Clear();  // clear out contents first.
 
                 //this.xmlNode = (pNode)treeView1.SelectedNode;  // xmlNode is what is being exported to xml
@@ -3959,7 +4008,10 @@ namespace myPword
                 // ToDo: fix CallRecursive(xmlNode)
                 xmlNode = null;
                 xmlNode = (pNode)treeView1.SelectedNode;
+
+                // TODO: Move To pWordLib
                 CallRecursive(xmlNode);  // treeview1 is a pView
+                
                 this.saveFileDialogHTML.FileName = filenameHTML;
                 this.saveFileDialogHTML.Title = "Save the NODE to XML/HTML";
                 this.saveFileDialogHTML.ShowDialog();
@@ -4001,7 +4053,6 @@ namespace myPword
                         MessageBox.Show("The export was not able to save b/c it was empty.");
                     }
                 }
-
                 this.toolBarView.Enabled = true;
             }
             catch (Exception f)
@@ -4071,7 +4122,9 @@ namespace myPword
 
         private void menuItemAttributeAdd_Click(object sender, EventArgs e)
         {
+            // TODO: Move To pWordLib
             mode = nodeMode.addAttributeTo;
+
             try
             {
                 lblName.Text = "Attribute:";
@@ -4103,9 +4156,9 @@ namespace myPword
             }
         }
 
-
         private void menuItemNamespaceAddPrefix_Click(object sender, EventArgs e)
         {
+            // TODO: Move To pWordLib
             mode = nodeMode.addNamespacePrefix;
             try
             {
@@ -4114,7 +4167,10 @@ namespace myPword
                 this.modeIndex = treeView1.SelectedNode.Index;
                 //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
                 //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+
+                // TODO: Move To pWordLib (make it more pWordLib friendly)
                 this.tmpNode = (pNode)treeView1.SelectedNode;
+
                 this.statusBar1.Text = "Add Prefix to Node";
                 if (this.chkClear.CheckState == CheckState.Checked)
                 {
@@ -4148,7 +4204,10 @@ namespace myPword
                 this.modeIndex = treeView1.SelectedNode.Index;
                 //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
                 //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+
+                // TODO: Move To pWordLib (make more pWordLib friendly)
                 this.tmpNode = (pNode)treeView1.SelectedNode;
+                
                 this.statusBar1.Text = "Add Suffix to Node";
                 if (this.chkClear.CheckState == CheckState.Checked)
                 {
@@ -4200,6 +4259,7 @@ namespace myPword
 
         private void menuItemMathMultiple_Click(object sender, EventArgs e)
         {
+            // TODO: Move To pWordLib
             mode = nodeMode.multiply;
             try
             {
@@ -4208,15 +4268,18 @@ namespace myPword
                 this.modeIndex = treeView1.SelectedNode.Index;
                 //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
                 //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+                
+                // TODO: Move To pWordLib
                 tmpNode = (pNode)treeView1.SelectedNode;
                 tmpNode.AddOperation(new Multiply(Resource1.Multiplication));
+
+                // TODO: Move To pWordLib (make pWordLib friendlier)
                 treeView1.SelectedNode = tmpNode;
                 this.statusBar1.Text = "Mutliple";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
 
                 this.txtName.Focus();
                 autosave();  // may need to hook up an event to save when ever new nodes are added or removed???
-
             }
             catch (Exception f)
             {
@@ -4234,9 +4297,12 @@ namespace myPword
                 this.modeIndex = treeView1.SelectedNode.Index;
                 //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
                 //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+
+                // TODO: Move To pWordLib  (make pWordLib Friendlier)
                 tmpNode = (pNode)treeView1.SelectedNode;
                 tmpNode.AddOperation(new Divide(Resource1.Division));
                 treeView1.SelectedNode = tmpNode;
+                
                 this.statusBar1.Text = "Divide";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
                 this.txtName.Focus();
@@ -4251,7 +4317,9 @@ namespace myPword
 
         private void menuItemMathSubtract_Click(object sender, EventArgs e)
         {
+            // TODO: Move To pWordLib
             mode = nodeMode.divide;
+
             try
             {
                 lblName.Text = "Name:";
@@ -4259,9 +4327,12 @@ namespace myPword
                 this.modeIndex = treeView1.SelectedNode.Index;
                 //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
                 //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+
+                // TODO: Move To pWordLib (Make pWordLib friendlier)
                 tmpNode = (pNode)treeView1.SelectedNode;
                 tmpNode.AddOperation(new Subtract(Resource1.Subtraction));
                 treeView1.SelectedNode = tmpNode;
+                
                 this.statusBar1.Text = "Subtract";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
                 this.txtName.Focus();
@@ -4299,14 +4370,16 @@ namespace myPword
                 this.modeIndex = treeView1.SelectedNode.Index;
                 //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
                 //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+
+                // TODO: Move To pWordLib (Make pWordLib friendlier)
                 tmpNode = (pNode)treeView1.SelectedNode;
                 tmpNode.AddOperation(new Sin(Resource1.Sin));  // add new sin operation ... trying to make this a plug in.
                 treeView1.SelectedNode = tmpNode;
+                
                 this.statusBar1.Text = "Sin";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
                 this.txtName.Focus();
                 autosave();  // may need to hook up an event to save when ever new nodes are added or removed???
-
             }
             catch (Exception f)
             {
@@ -4324,14 +4397,16 @@ namespace myPword
                 this.modeIndex = treeView1.SelectedNode.Index;
                 //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
                 //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+
+                // TODO: Move To pWordLib (Make pWordLib friendlier)
                 tmpNode = (pNode)treeView1.SelectedNode;
                 tmpNode.AddOperation(new Cos(Resource1.Cos));  // add new sin operation ... trying to make this a plug in.
                 treeView1.SelectedNode = tmpNode;
+                
                 this.statusBar1.Text = "Cos";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
                 this.txtName.Focus();
                 autosave();  // may need to hook up an event to save when ever new nodes are added or removed???
-
             }
             catch (Exception f)
             {
@@ -4349,14 +4424,16 @@ namespace myPword
                 this.modeIndex = treeView1.SelectedNode.Index;
                 //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
                 //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+
+                // TODO: Move To pWordLib
                 tmpNode = (pNode)treeView1.SelectedNode;
                 tmpNode.AddOperation(new Tan(Resource1.Tan));  // add new sin operation ... trying to make this a plug in.
                 treeView1.SelectedNode = tmpNode;
+                
                 this.statusBar1.Text = "Tan";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
                 this.txtName.Focus();
                 autosave();  // may need to hook up an event to save when ever new nodes are added or removed???
-
             }
             catch (Exception f)
             {
@@ -4364,12 +4441,15 @@ namespace myPword
             }
         }
 
+        // re-think
         private void menuItemFind_Click(object sender, EventArgs e)
         {
             mode = nodeMode.find;
             this.modeIndex = treeView1.SelectedNode.Index;
             //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
             //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
+
+            // TODO: Move To pWordLib
             tmpNode = (pNode)treeView1.SelectedNode;
             try
             {
@@ -4391,10 +4471,11 @@ namespace myPword
 
         private void mnuImportNodeXML_Click(object sender, EventArgs e)
         {
-
+            // TODO: Move To pWordLib (Make pWordLib friendlier)
             importMode = ImportMode.treexml; // what am I exporting?  XML from previous exportNode
-            // I'm importing into a node that i selected using import node treexml 
+                                             // I'm importing into a node that i selected using import node treexml 
 
+            // TODO: Move To pWordLib
             xml.Clear();  // clear out contents first.
 
             //this.xmlNode = (pNode)treeView1.SelectedNode;  // xmlNode is what is being exported to xml
@@ -4405,6 +4486,8 @@ namespace myPword
             this.statusBar1.Text = "Import Node XML Mode";
             //CallRecursive(xmlNode);  // disabled CallRecursive here... need to fix Call recursive
             // ToDo: fix CallRecursive(xmlNode)
+
+            // TODO: Move To pWordLib (Make pWordLib friendlier)
             tmpNode = (pNode)treeView1.SelectedNode;
             this.openFileDialog2.ShowDialog();
             filenameHTML = this.openFileDialog2.FileName;
@@ -4440,13 +4523,18 @@ namespace myPword
                     if (treeView1.SelectedNode.Tag == null)
                         treeView1.SelectedNode.Tag = "";
                     pn.Tag = treeView1.SelectedNode.Tag;
+
+                    // TODO: Move To pWordLib
                     if (xdoc != null && xdoc.Attributes != null && xdoc.Attributes.Count > 0) {
 						foreach (XmlAttribute xmlAttr in xdoc)
 						{
 							pn.AddAttribute(xmlAttr.LocalName, xmlAttr.Value);
 						}
 					}
-					AddChildNodes(xdoc.ChildNodes, ref pn);
+                    
+                    // TODO: Move To pWordLib
+                    AddChildNodes(xdoc.ChildNodes, ref pn);
+                    
                     treeView1.SelectedNode = pn;
                     //                .Nodes.Add(pn);
                     //treeView1.SelectedNode.Nodes.Add(aNode);
@@ -4500,6 +4588,8 @@ namespace myPword
             //}
 
             treeView1.SelectedNode = tmpNode;
+
+            // TODO: Move To pWordLib
             foreach (XmlNode xn in children)
             {
                 //AddChildNodes(xn.ChildNodes, ref pn);
@@ -4515,6 +4605,7 @@ namespace myPword
 
                         // pn.Tag = xn.Value;
                     }
+                    // TODO: Move To pWordLib
                     else if (xn.NodeType == XmlNodeType.Element)
                     {
                         aNode.Text = xn.LocalName;
@@ -4542,6 +4633,7 @@ namespace myPword
                             }
 
                         }
+                        // TODO: Move To pWordLib
                         else
                         {
 
@@ -4560,22 +4652,26 @@ namespace myPword
                             aNode.Tag = xn.InnerText;
                         }
                     }
+                    // TODO: Move To pWordLib
                     else if (xn.NodeType == XmlNodeType.Attribute)
                     {
                         continue;
                         //aNode.AddAttribute(xn.Name, xn.Value);
                     }
+                    // TODO: Move To pWordLib
                     else if (xn.NodeType == XmlNodeType.Entity)
                     {
                         aNode.Name = xn.Name;
                         aNode.Text = xn.Name;
                     }
+                    // TODO: Move To pWordLib
                     else
                     {
                         MessageBox.Show("TypeOf: " + xn.NodeType.ToString());
 
                     }
 
+                    // TODO: Move To pWordLib
                     AddChildNodes(xn.ChildNodes, ref aNode);
                     pn.Nodes.Add(aNode);
                 }
@@ -4677,7 +4773,6 @@ namespace myPword
 		private static int lineCount = 0;
         private static StringBuilder output = new StringBuilder();
 
-
         private void ProcessCommandText(string txt)
         {
             // check for multiple commands
@@ -4755,20 +4850,26 @@ namespace myPword
 		private void menuItemImportJSON_Click(object sender, EventArgs e)
 		{
 
-			importMode = ImportMode.treejson; // what am I exporting?  XML from previous exportNode
-											 // I'm importing into a node that i selected using import node treexml 
+            // TODO: Move To pWordLib
+            importMode = ImportMode.treejson; // what am I exporting?  XML from previous exportNode
+                                              // I'm importing into a node that i selected using import node treexml 
 
-			xml.Clear();  // clear out contents first.
+            // TODO: Move To pWordLib
+            xml.Clear();  // clear out contents first.
 
-			//this.xmlNode = (pNode)treeView1.SelectedNode;  // xmlNode is what is being exported to xml
-			this.xmlIndex = treeView1.SelectedNode.Index; // xmlIndex is the SelectedNodes index
+            // TODO: Move To pWordLib (make pWordLib friendly)
+            this.xmlIndex = treeView1.SelectedNode.Index; // xmlIndex is the SelectedNodes index
+            
 			this.menuItem21.Enabled = true; // MenuItem21 is enabled... Todo: rename menuItem21
 			this.menuItem31.Enabled = true;  // MneuItem21 is enabled... Todo: rename menuItem31
 			this.nodeIndex = treeView1.SelectedNode.Index; // nodeInex is now equal to xmlIndex?
 			this.statusBar1.Text = "Import Node JSON Mode";
-			//CallRecursive(xmlNode);  // disabled CallRecursive here... need to fix Call recursive
-			// ToDo: fix CallRecursive(xmlNode)
-			tmpNode = (pNode)treeView1.SelectedNode;
+            //CallRecursive(xmlNode);  // disabled CallRecursive here... need to fix Call recursive
+            // ToDo: fix CallRecursive(xmlNode)
+
+            // TODO: Move To pWordLib (make pWordLib friendly)
+            tmpNode = (pNode)treeView1.SelectedNode;
+
 			this.openFileDialog2.ShowDialog();
 			filenameHTML = this.openFileDialog2.FileName;
 			if ((filenameHTML == null) || (filenameHTML == ""))
@@ -4790,7 +4891,7 @@ namespace myPword
 							//xdoc.Load(stream);
 							// load json with newton soft and convert to XmlDocument
 							var json = File.ReadAllText(filenameHTML);
-							var jObject = JObject.Parse(json);
+							//var jObject = JObject.Parse(json);
 							var xml = JsonConvert.DeserializeXmlNode(json);
 							xdoc.LoadXml(xml.InnerXml);
 						}
@@ -4799,23 +4900,32 @@ namespace myPword
 							MessageBox.Show(ex.Message);
 						}
 					}
-					pNode masterNode = (pNode)treeView1.Nodes[0];
-					// now that we have the xdoc... now we need to stick it in the getNode
-					//                pNode pn = new pNode(xdoc.ChildNodes[1].Name);
-					//                pn.AddAttribute(xdoc.ch
-					//                getNode.Nodes.Add(
-					pNode pn = (pNode)treeView1.SelectedNode;
+
+                    // TODO: Move To pWordLib (make pWordLib friendly)
+                    pNode masterNode = (pNode)treeView1.Nodes[0];
+                    // now that we have the xdoc... now we need to stick it in the getNode
+                    //                pNode pn = new pNode(xdoc.ChildNodes[1].Name);
+                    //                pn.AddAttribute(xdoc.ch
+                    //                getNode.Nodes.Add(
+
+                    // TODO: Move To pWordLib (make pWordLib friendly)
+                    pNode pn = (pNode)treeView1.SelectedNode;
 					if (treeView1.SelectedNode.Tag == null)
 						treeView1.SelectedNode.Tag = "";
 					pn.Tag = treeView1.SelectedNode.Tag;
-					if (xdoc != null && xdoc.Attributes != null && xdoc.Attributes.Count > 0)
+
+                    // TODO: Move To pWordLib
+                    if (xdoc != null && xdoc.Attributes != null && xdoc.Attributes.Count > 0)
 					{
 						foreach (XmlAttribute xmlAttr in xdoc)
 						{
 							pn.AddAttribute(xmlAttr.LocalName, xmlAttr.Value);
 						}
 					}
-					AddChildNodes(xdoc.ChildNodes, ref pn);
+
+                    // TODO: Move To pWordLib
+                    AddChildNodes(xdoc.ChildNodes, ref pn);
+                    
 					treeView1.SelectedNode = pn;
 					//                .Nodes.Add(pn);
 					//treeView1.SelectedNode.Nodes.Add(aNode);
@@ -4851,8 +4961,6 @@ namespace myPword
 					MessageBox.Show("Error occurred during JSON document load.");
 				}
 			}
-
-
         }
 
 
