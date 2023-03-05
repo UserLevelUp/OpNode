@@ -43,8 +43,6 @@ namespace pWordLib.dat.Behavior
             return _pNode;  // not yet implemented
         }
 
-
-
         #endregion
 
 
