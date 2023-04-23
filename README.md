@@ -34,7 +34,7 @@ We welcome contributions from developers of all skill levels. To get started, fo
 
 1. Fork the repository and create a new branch based on the master branch
 2. Make your changes, additions, or improvements to the code
-3. Submit a pull request with a clear description of your changes
+3. Submit a pull/merge request with a clear description of your changes
 4. Please avoid submitting spammy or low-quality pull requests
 
 For more complex tasks or feature requests, please create an issue or request one to be added. We will organize issues into milestones for easier management.
