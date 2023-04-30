@@ -12,7 +12,7 @@ OpNode is a versatile and powerful tree-based system for managing key-value pair
 - **Importing and exporting XML files:** Seamlessly integrate with XML-based data sources or export your data in a widely-supported format.
 - **Search functionality within node structures:** Quickly locate specific nodes by searching for keywords.
 - **Extensible operations on individual nodes:** Customize and expand the functionality of each node with various operations.
-- **Integration with CouchDB as a tree-spanning database:** Leverage the power of CouchDB for a more robust and scalable data storage solution.
+- **Integration with JSON and XML as a tree-spanning database:** Leverage the power of NoSQL for a more robust and scalable data storage solution.
 - **Support for XML, JSON, JSON Schema, and XML Schema operations:** Gain flexibility and control over data management with support for popular data formats and schemas.
 
 ## Getting Started
