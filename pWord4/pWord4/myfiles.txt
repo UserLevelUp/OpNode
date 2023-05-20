@@ -1,0 +1,2428 @@
+ Volume in drive D is New Volume
+ Volume Serial Number is C06F-88FE
+
+ Directory of D:\src\opnode\pWord4\pWord4
+
+04/30/2023  01:24 PM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+04/09/2023  07:00 PM    <DIR>          Backup
+04/09/2023  07:21 PM    <DIR>          Backup1
+03/19/2023  08:46 AM           261,259 CodeMap1.dgml
+03/19/2023  08:46 AM    <DIR>          DependencyValidation1
+04/30/2023  01:24 PM                 0 myfiles.txt
+03/19/2023  08:46 AM    <DIR>          packages
+03/19/2023  08:53 AM    <DIR>          PlaygroundAlpha
+03/19/2023  08:53 AM    <DIR>          PnodeDataProvider
+03/19/2023  08:52 AM    <DIR>          pWord4
+04/30/2023  01:00 PM            16,869 pWord4.sln
+04/30/2023  12:59 PM    <DIR>          pWordSetup
+03/19/2023  08:46 AM               414 readme.md
+03/19/2023  08:46 AM            35,512 UpgradeLog.htm
+03/19/2023  08:46 AM            11,714 UpgradeLog.XML
+04/30/2023  01:00 PM            14,502 UpgradeLog2.htm
+03/19/2023  08:46 AM             2,333 UpgradeLog2.XML
+03/19/2023  08:46 AM             2,828 UpgradeLog3.XML
+               9 File(s)        345,431 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\.vs
+
+04/30/2023  01:24 PM    <DIR>          ..
+04/08/2023  06:43 PM    <DIR>          ProjectEvaluation
+03/19/2023  09:06 AM    <DIR>          pWord4
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\.vs\ProjectEvaluation
+
+04/10/2023  02:42 AM    <DIR>          .
+04/10/2023  02:42 AM           229,898 pword4.metadata.v6.1
+04/10/2023  02:42 AM         1,815,990 pword4.projects.v6.1
+               2 File(s)      2,045,888 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\.vs\pWord4
+
+04/10/2023  01:29 AM    <DIR>          .
+04/10/2023  01:29 AM    <DIR>          config
+03/19/2023  09:06 AM    <DIR>          DesignTimeBuild
+04/30/2023  01:02 PM    <DIR>          FileContentIndex
+04/08/2023  06:39 PM               603 project-colors.json
+04/02/2023  01:06 PM    <DIR>          v17
+               1 File(s)            603 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\.vs\pWord4\config
+
+04/10/2023  01:29 AM    <DIR>          .
+04/10/2023  01:29 AM    <DIR>          ..
+04/10/2023  01:30 AM            84,078 applicationhost.config
+               1 File(s)         84,078 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\.vs\pWord4\DesignTimeBuild
+
+03/19/2023  09:06 AM    <DIR>          .
+04/10/2023  01:29 AM    <DIR>          ..
+04/21/2023  10:01 PM           144,340 .dtbcache.v2
+               1 File(s)        144,340 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\.vs\pWord4\FileContentIndex
+
+04/30/2023  01:02 PM    <DIR>          .
+04/10/2023  01:29 AM    <DIR>          ..
+04/21/2023  09:47 PM            29,991 4e7476fd-c2e2-4e23-9f35-8899e6c5ecc6.vsidx
+04/30/2023  12:59 PM            13,395 9501e0f5-efad-49d4-bf00-145e107fbc0c.vsidx
+04/21/2023  09:47 PM            13,209 95916f4e-ca00-4d26-9c31-f499860f9f0a.vsidx
+04/30/2023  01:02 PM           861,333 be77af8a-fdc0-445b-9eb2-5757040d2371.vsidx
+04/30/2023  01:02 PM    <DIR>          merges
+03/19/2023  08:53 AM                 0 read.lock
+               5 File(s)        917,928 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\.vs\pWord4\FileContentIndex\merges
+
+04/30/2023  01:02 PM    <DIR>          .
+04/30/2023  01:02 PM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\.vs\pWord4\v17
+
+04/02/2023  01:06 PM    <DIR>          .
+04/10/2023  01:29 AM    <DIR>          ..
+04/02/2023  01:06 PM               246 .futdcache.v1
+04/10/2023  02:42 AM               524 .futdcache.v2
+               2 File(s)            770 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\Backup
+
+04/09/2023  07:00 PM    <DIR>          .
+04/30/2023  01:24 PM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\Backup1
+
+04/09/2023  07:21 PM    <DIR>          .
+04/30/2023  01:24 PM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\DependencyValidation1
+
+03/19/2023  08:46 AM    <DIR>          .
+04/30/2023  01:24 PM    <DIR>          ..
+03/19/2023  08:46 AM                 4 DependencyValidation1.layerdiagram
+03/19/2023  08:46 AM                 4 DependencyValidation1.layerdiagram.layout
+03/19/2023  08:46 AM                 4 DependencyValidation1.layerdiagram.suppressions
+03/19/2023  08:46 AM             2,566 DependencyValidation1.modelproj
+03/19/2023  08:46 AM                 4 DependencyValidation2.layerdiagram
+03/19/2023  08:46 AM                 4 DependencyValidation2.layerdiagram.layout
+03/19/2023  08:46 AM                 4 DependencyValidation2.layerdiagram.suppressions
+               7 File(s)          2,590 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages
+
+03/19/2023  08:46 AM    <DIR>          .
+04/30/2023  01:24 PM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          Microsoft.Bcl.AsyncInterfaces.7.0.0
+03/19/2023  08:46 AM    <DIR>          Microsoft.DependencyValidation.Analyzers.0.11.0
+03/19/2023  08:46 AM    <DIR>          Newtonsoft.Json.13.0.2
+03/19/2023  08:46 AM    <DIR>          System.Buffers.4.5.1
+03/19/2023  08:46 AM    <DIR>          System.Memory.4.5.5
+03/19/2023  08:46 AM    <DIR>          System.Numerics.Vectors.4.5.0
+03/19/2023  08:46 AM    <DIR>          System.Runtime.CompilerServices.Unsafe.6.0.0
+03/19/2023  08:46 AM    <DIR>          System.Text.Encodings.Web.7.0.0
+03/19/2023  08:46 AM    <DIR>          System.Text.Json.7.0.1
+03/19/2023  08:46 AM    <DIR>          System.Threading.Tasks.Extensions.4.5.4
+03/19/2023  08:46 AM    <DIR>          System.ValueTuple.4.5.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            22,799 .signature.p7s
+03/19/2023  08:46 AM    <DIR>          buildTransitive
+03/19/2023  08:46 AM             7,006 Icon.png
+03/19/2023  08:46 AM    <DIR>          lib
+03/19/2023  08:46 AM             1,139 LICENSE.TXT
+03/19/2023  08:46 AM            95,839 Microsoft.Bcl.AsyncInterfaces.7.0.0.nupkg
+03/19/2023  08:46 AM            63,076 THIRD-PARTY-NOTICES.TXT
+03/19/2023  08:46 AM                 0 useSharedDesignerContext.txt
+               6 File(s)        189,859 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\buildTransitive
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          net461
+03/19/2023  08:46 AM    <DIR>          net462
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\buildTransitive\net461
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM               661 Microsoft.Bcl.AsyncInterfaces.targets
+               1 File(s)            661 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\buildTransitive\net462
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          net462
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+03/19/2023  08:46 AM    <DIR>          netstandard2.1
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            26,752 Microsoft.Bcl.AsyncInterfaces.dll
+03/19/2023  08:46 AM            29,813 Microsoft.Bcl.AsyncInterfaces.xml
+               2 File(s)         56,565 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            26,752 Microsoft.Bcl.AsyncInterfaces.dll
+03/19/2023  08:46 AM            29,813 Microsoft.Bcl.AsyncInterfaces.xml
+               2 File(s)         56,565 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\netstandard2.1
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            19,072 Microsoft.Bcl.AsyncInterfaces.dll
+03/19/2023  08:46 AM             7,105 Microsoft.Bcl.AsyncInterfaces.xml
+               2 File(s)         26,177 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,706 .signature.p7s
+03/19/2023  08:46 AM    <DIR>          analyzers
+03/19/2023  08:46 AM           688,029 Microsoft.DependencyValidation.Analyzers.0.11.0.nupkg
+03/19/2023  08:46 AM    <DIR>          tools
+               2 File(s)        706,735 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          dotnet
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          cs
+03/19/2023  08:46 AM    <DIR>          de
+03/19/2023  08:46 AM    <DIR>          es
+03/19/2023  08:46 AM    <DIR>          fr
+03/19/2023  08:46 AM    <DIR>          it
+03/19/2023  08:46 AM    <DIR>          ja
+03/19/2023  08:46 AM    <DIR>          ko
+03/19/2023  08:46 AM           441,216 Microsoft.DependencyValidation.Analyzers.dll
+03/19/2023  08:46 AM    <DIR>          pl
+03/19/2023  08:46 AM    <DIR>          pt-BR
+03/19/2023  08:46 AM    <DIR>          ru
+03/19/2023  08:46 AM    <DIR>          tr
+03/19/2023  08:46 AM    <DIR>          zh-HANS
+03/19/2023  08:46 AM    <DIR>          zh-HANT
+               1 File(s)        441,216 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\de
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\es
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,600 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,600 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\fr
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,592 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,592 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\it
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,600 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,600 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\ja
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\ko
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\pl
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\pt-BR
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\ru
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           138,112 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        138,112 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\tr
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\zh-HANS
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           136,576 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        136,576 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\zh-HANT
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           136,784 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        136,784 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\tools
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM             1,341 install.ps1
+03/19/2023  08:46 AM             1,477 uninstall.ps1
+               2 File(s)          2,818 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Newtonsoft.Json.13.0.2
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            24,497 .signature.p7s
+03/19/2023  08:46 AM    <DIR>          lib
+03/19/2023  08:46 AM             1,104 LICENSE.md
+03/19/2023  08:46 AM         2,441,714 Newtonsoft.Json.13.0.2.nupkg
+03/19/2023  08:46 AM             8,956 packageIcon.png
+03/19/2023  08:46 AM             1,963 README.md
+               5 File(s)      2,478,234 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Newtonsoft.Json.13.0.2\lib
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          net20
+03/19/2023  08:46 AM    <DIR>          net35
+03/19/2023  08:46 AM    <DIR>          net40
+03/19/2023  08:46 AM    <DIR>          net45
+03/19/2023  08:46 AM    <DIR>          net6.0
+03/19/2023  08:46 AM    <DIR>          netstandard1.0
+03/19/2023  08:46 AM    <DIR>          netstandard1.3
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Newtonsoft.Json.13.0.2\lib\net20
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           580,880 Newtonsoft.Json.dll
+03/19/2023  08:46 AM           609,898 Newtonsoft.Json.xml
+               2 File(s)      1,190,778 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Newtonsoft.Json.13.0.2\lib\net35
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           515,856 Newtonsoft.Json.dll
+03/19/2023  08:46 AM           554,990 Newtonsoft.Json.xml
+               2 File(s)      1,070,846 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Newtonsoft.Json.13.0.2\lib\net40
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           584,976 Newtonsoft.Json.dll
+03/19/2023  08:46 AM           566,909 Newtonsoft.Json.xml
+               2 File(s)      1,151,885 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Newtonsoft.Json.13.0.2\lib\net45
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           711,952 Newtonsoft.Json.dll
+03/19/2023  08:46 AM           713,541 Newtonsoft.Json.xml
+               2 File(s)      1,425,493 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Newtonsoft.Json.13.0.2\lib\net6.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           711,952 Newtonsoft.Json.dll
+03/19/2023  08:46 AM           710,990 Newtonsoft.Json.xml
+               2 File(s)      1,422,942 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Newtonsoft.Json.13.0.2\lib\netstandard1.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           680,720 Newtonsoft.Json.dll
+03/19/2023  08:46 AM           692,186 Newtonsoft.Json.xml
+               2 File(s)      1,372,906 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Newtonsoft.Json.13.0.2\lib\netstandard1.3
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           699,664 Newtonsoft.Json.dll
+03/19/2023  08:46 AM           700,392 Newtonsoft.Json.xml
+               2 File(s)      1,400,056 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\Newtonsoft.Json.13.0.2\lib\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           705,296 Newtonsoft.Json.dll
+03/19/2023  08:46 AM           712,253 Newtonsoft.Json.xml
+               2 File(s)      1,417,549 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Buffers.4.5.1
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,702 .signature.p7s
+03/19/2023  08:46 AM    <DIR>          lib
+03/19/2023  08:46 AM             1,139 LICENSE.TXT
+03/19/2023  08:46 AM    <DIR>          ref
+03/19/2023  08:46 AM            93,737 System.Buffers.4.5.1.nupkg
+03/19/2023  08:46 AM            15,835 THIRD-PARTY-NOTICES.TXT
+03/19/2023  08:46 AM                 0 useSharedDesignerContext.txt
+03/19/2023  08:46 AM                42 version.txt
+               6 File(s)        129,455 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Buffers.4.5.1\lib
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          net461
+03/19/2023  08:46 AM    <DIR>          netcoreapp2.0
+03/19/2023  08:46 AM    <DIR>          netstandard1.1
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+03/19/2023  08:46 AM    <DIR>          uap10.0.16299
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Buffers.4.5.1\lib\net461
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            20,856 System.Buffers.dll
+03/19/2023  08:46 AM             3,481 System.Buffers.xml
+               2 File(s)         24,337 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Buffers.4.5.1\lib\netcoreapp2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Buffers.4.5.1\lib\netstandard1.1
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            20,864 System.Buffers.dll
+03/19/2023  08:46 AM             3,481 System.Buffers.xml
+               2 File(s)         24,345 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Buffers.4.5.1\lib\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            21,376 System.Buffers.dll
+03/19/2023  08:46 AM             3,481 System.Buffers.xml
+               2 File(s)         24,857 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Buffers.4.5.1\lib\uap10.0.16299
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Buffers.4.5.1\ref
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          net45
+03/19/2023  08:46 AM    <DIR>          netcoreapp2.0
+03/19/2023  08:46 AM    <DIR>          netstandard1.1
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+03/19/2023  08:46 AM    <DIR>          uap10.0.16299
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Buffers.4.5.1\ref\net45
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            14,720 System.Buffers.dll
+03/19/2023  08:46 AM             3,481 System.Buffers.xml
+               2 File(s)         18,201 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Buffers.4.5.1\ref\netcoreapp2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Buffers.4.5.1\ref\netstandard1.1
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            14,712 System.Buffers.dll
+03/19/2023  08:46 AM             3,481 System.Buffers.xml
+               2 File(s)         18,193 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Buffers.4.5.1\ref\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            14,720 System.Buffers.dll
+03/19/2023  08:46 AM             3,481 System.Buffers.xml
+               2 File(s)         18,201 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Buffers.4.5.1\ref\uap10.0.16299
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Memory.4.5.5
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,702 .signature.p7s
+03/19/2023  08:46 AM    <DIR>          lib
+03/19/2023  08:46 AM             1,139 LICENSE.TXT
+03/19/2023  08:46 AM    <DIR>          ref
+03/19/2023  08:46 AM           208,978 System.Memory.4.5.5.nupkg
+03/19/2023  08:46 AM            15,835 THIRD-PARTY-NOTICES.TXT
+03/19/2023  08:46 AM                 0 useSharedDesignerContext.txt
+03/19/2023  08:46 AM                42 version.txt
+               6 File(s)        244,696 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Memory.4.5.5\lib
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          net461
+03/19/2023  08:46 AM    <DIR>          netcoreapp2.1
+03/19/2023  08:46 AM    <DIR>          netstandard1.1
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Memory.4.5.5\lib\net461
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           142,240 System.Memory.dll
+03/19/2023  08:46 AM            13,950 System.Memory.xml
+               2 File(s)        156,190 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Memory.4.5.5\lib\netcoreapp2.1
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Memory.4.5.5\lib\netstandard1.1
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           138,144 System.Memory.dll
+03/19/2023  08:46 AM            13,950 System.Memory.xml
+               2 File(s)        152,094 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Memory.4.5.5\lib\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           142,752 System.Memory.dll
+03/19/2023  08:46 AM            13,950 System.Memory.xml
+               2 File(s)        156,702 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Memory.4.5.5\ref
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          netcoreapp2.1
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Memory.4.5.5\ref\netcoreapp2.1
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            22,354 .signature.p7s
+03/19/2023  08:46 AM    <DIR>          lib
+03/19/2023  08:46 AM             1,139 LICENSE.TXT
+03/19/2023  08:46 AM    <DIR>          ref
+03/19/2023  08:46 AM           382,792 System.Numerics.Vectors.4.5.0.nupkg
+03/19/2023  08:46 AM            15,835 THIRD-PARTY-NOTICES.TXT
+03/19/2023  08:46 AM                 0 useSharedDesignerContext.txt
+03/19/2023  08:46 AM                42 version.txt
+               6 File(s)        422,162 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\lib
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          MonoAndroid10
+03/19/2023  08:46 AM    <DIR>          MonoTouch10
+03/19/2023  08:46 AM    <DIR>          net46
+03/19/2023  08:46 AM    <DIR>          netcoreapp2.0
+03/19/2023  08:46 AM    <DIR>          netstandard1.0
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+03/19/2023  08:46 AM    <DIR>          portable-net45+win8+wp8+wpa81
+03/19/2023  08:46 AM    <DIR>          uap10.0.16299
+03/19/2023  08:46 AM    <DIR>          xamarinios10
+03/19/2023  08:46 AM    <DIR>          xamarinmac20
+03/19/2023  08:46 AM    <DIR>          xamarintvos10
+03/19/2023  08:46 AM    <DIR>          xamarinwatchos10
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\lib\MonoAndroid10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\lib\MonoTouch10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\lib\net46
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           115,856 System.Numerics.Vectors.dll
+03/19/2023  08:46 AM           183,484 System.Numerics.Vectors.xml
+               2 File(s)        299,340 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\lib\netcoreapp2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\lib\netstandard1.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           160,912 System.Numerics.Vectors.dll
+03/19/2023  08:46 AM           183,484 System.Numerics.Vectors.xml
+               2 File(s)        344,396 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\lib\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           163,464 System.Numerics.Vectors.dll
+03/19/2023  08:46 AM           183,484 System.Numerics.Vectors.xml
+               2 File(s)        346,948 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           160,912 System.Numerics.Vectors.dll
+03/19/2023  08:46 AM           183,484 System.Numerics.Vectors.xml
+               2 File(s)        344,396 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\lib\uap10.0.16299
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\lib\xamarinios10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\lib\xamarinmac20
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\lib\xamarintvos10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\lib\xamarinwatchos10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\ref
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          MonoAndroid10
+03/19/2023  08:46 AM    <DIR>          MonoTouch10
+03/19/2023  08:46 AM    <DIR>          net45
+03/19/2023  08:46 AM    <DIR>          net46
+03/19/2023  08:46 AM    <DIR>          netcoreapp2.0
+03/19/2023  08:46 AM    <DIR>          netstandard1.0
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+03/19/2023  08:46 AM    <DIR>          uap10.0.16299
+03/19/2023  08:46 AM    <DIR>          xamarinios10
+03/19/2023  08:46 AM    <DIR>          xamarinmac20
+03/19/2023  08:46 AM    <DIR>          xamarintvos10
+03/19/2023  08:46 AM    <DIR>          xamarinwatchos10
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\ref\MonoAndroid10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\ref\MonoTouch10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\ref\net45
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            38,032 System.Numerics.Vectors.dll
+03/19/2023  08:46 AM           183,484 System.Numerics.Vectors.xml
+               2 File(s)        221,516 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\ref\net46
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            29,320 System.Numerics.Vectors.dll
+03/19/2023  08:46 AM           183,484 System.Numerics.Vectors.xml
+               2 File(s)        212,804 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\ref\netcoreapp2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\ref\netstandard1.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            38,272 System.Numerics.Vectors.dll
+03/19/2023  08:46 AM           183,484 System.Numerics.Vectors.xml
+               2 File(s)        221,756 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\ref\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            38,272 System.Numerics.Vectors.dll
+03/19/2023  08:46 AM           183,484 System.Numerics.Vectors.xml
+               2 File(s)        221,756 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\ref\uap10.0.16299
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\ref\xamarinios10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\ref\xamarinmac20
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\ref\xamarintvos10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Numerics.Vectors.4.5.0\ref\xamarinwatchos10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Runtime.CompilerServices.Unsafe.6.0.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,703 .signature.p7s
+03/19/2023  08:46 AM    <DIR>          buildTransitive
+03/19/2023  08:46 AM             7,006 Icon.png
+03/19/2023  08:46 AM    <DIR>          lib
+03/19/2023  08:46 AM             1,139 LICENSE.TXT
+03/19/2023  08:46 AM            84,343 System.Runtime.CompilerServices.Unsafe.6.0.0.nupkg
+03/19/2023  08:46 AM            46,990 THIRD-PARTY-NOTICES.TXT
+03/19/2023  08:46 AM                 0 useSharedDesignerContext.txt
+               6 File(s)        158,181 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\buildTransitive
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          netcoreapp2.0
+03/19/2023  08:46 AM    <DIR>          netcoreapp3.1
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\buildTransitive\netcoreapp2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM               453 System.Runtime.CompilerServices.Unsafe.targets
+               1 File(s)            453 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\buildTransitive\netcoreapp3.1
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          net461
+03/19/2023  08:46 AM    <DIR>          net6.0
+03/19/2023  08:46 AM    <DIR>          netcoreapp3.1
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,024 System.Runtime.CompilerServices.Unsafe.dll
+03/19/2023  08:46 AM            20,529 System.Runtime.CompilerServices.Unsafe.xml
+               2 File(s)         38,553 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net6.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,024 System.Runtime.CompilerServices.Unsafe.dll
+03/19/2023  08:46 AM            20,529 System.Runtime.CompilerServices.Unsafe.xml
+               2 File(s)         38,553 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netcoreapp3.1
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,024 System.Runtime.CompilerServices.Unsafe.dll
+03/19/2023  08:46 AM            20,529 System.Runtime.CompilerServices.Unsafe.xml
+               2 File(s)         38,553 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,024 System.Runtime.CompilerServices.Unsafe.dll
+03/19/2023  08:46 AM            20,529 System.Runtime.CompilerServices.Unsafe.xml
+               2 File(s)         38,553 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            22,799 .signature.p7s
+03/19/2023  08:46 AM    <DIR>          buildTransitive
+03/19/2023  08:46 AM             7,006 Icon.png
+03/19/2023  08:46 AM    <DIR>          lib
+03/19/2023  08:46 AM             1,139 LICENSE.TXT
+03/19/2023  08:46 AM    <DIR>          runtimes
+03/19/2023  08:46 AM           283,808 System.Text.Encodings.Web.7.0.0.nupkg
+03/19/2023  08:46 AM            63,076 THIRD-PARTY-NOTICES.TXT
+03/19/2023  08:46 AM                 0 useSharedDesignerContext.txt
+               6 File(s)        377,828 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\buildTransitive
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          net461
+03/19/2023  08:46 AM    <DIR>          net462
+03/19/2023  08:46 AM    <DIR>          net6.0
+03/19/2023  08:46 AM    <DIR>          netcoreapp2.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\buildTransitive\net461
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM               649 System.Text.Encodings.Web.targets
+               1 File(s)            649 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\buildTransitive\net462
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\buildTransitive\net6.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\buildTransitive\netcoreapp2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM               649 System.Text.Encodings.Web.targets
+               1 File(s)            649 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\lib
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          net462
+03/19/2023  08:46 AM    <DIR>          net6.0
+03/19/2023  08:46 AM    <DIR>          net7.0
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\lib\net462
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            78,976 System.Text.Encodings.Web.dll
+03/19/2023  08:46 AM            63,180 System.Text.Encodings.Web.xml
+               2 File(s)        142,156 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\lib\net6.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            71,312 System.Text.Encodings.Web.dll
+03/19/2023  08:46 AM            63,180 System.Text.Encodings.Web.xml
+               2 File(s)        134,492 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\lib\net7.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            70,800 System.Text.Encodings.Web.dll
+03/19/2023  08:46 AM            63,180 System.Text.Encodings.Web.xml
+               2 File(s)        133,980 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\lib\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            78,992 System.Text.Encodings.Web.dll
+03/19/2023  08:46 AM            63,180 System.Text.Encodings.Web.xml
+               2 File(s)        142,172 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\runtimes
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          browser
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\runtimes\browser
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          lib
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\runtimes\browser\lib
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          net6.0
+03/19/2023  08:46 AM    <DIR>          net7.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\runtimes\browser\lib\net6.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            71,312 System.Text.Encodings.Web.dll
+03/19/2023  08:46 AM            63,180 System.Text.Encodings.Web.xml
+               2 File(s)        134,492 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Encodings.Web.7.0.0\runtimes\browser\lib\net7.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            71,312 System.Text.Encodings.Web.dll
+03/19/2023  08:46 AM            63,180 System.Text.Encodings.Web.xml
+               2 File(s)        134,492 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            22,798 .signature.p7s
+03/19/2023  08:46 AM    <DIR>          analyzers
+03/19/2023  08:46 AM    <DIR>          buildTransitive
+03/19/2023  08:46 AM             7,006 Icon.png
+03/19/2023  08:46 AM    <DIR>          lib
+03/19/2023  08:46 AM             1,139 LICENSE.TXT
+03/19/2023  08:46 AM             1,001 README.md
+03/19/2023  08:46 AM         1,602,903 System.Text.Json.7.0.1.nupkg
+03/19/2023  08:46 AM            63,076 THIRD-PARTY-NOTICES.TXT
+03/19/2023  08:46 AM                 0 useSharedDesignerContext.txt
+               7 File(s)      1,697,923 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          dotnet
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          roslyn3.11
+03/19/2023  08:46 AM    <DIR>          roslyn4.0
+03/19/2023  08:46 AM    <DIR>          roslyn4.4
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          cs
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          cs
+03/19/2023  08:46 AM    <DIR>          de
+03/19/2023  08:46 AM    <DIR>          es
+03/19/2023  08:46 AM    <DIR>          fr
+03/19/2023  08:46 AM    <DIR>          it
+03/19/2023  08:46 AM    <DIR>          ja
+03/19/2023  08:46 AM    <DIR>          ko
+03/19/2023  08:46 AM    <DIR>          pl
+03/19/2023  08:46 AM    <DIR>          pt-BR
+03/19/2023  08:46 AM    <DIR>          ru
+03/19/2023  08:46 AM           157,864 System.Text.Json.SourceGeneration.dll
+03/19/2023  08:46 AM    <DIR>          tr
+03/19/2023  08:46 AM    <DIR>          zh-Hans
+03/19/2023  08:46 AM    <DIR>          zh-Hant
+               1 File(s)        157,864 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs\cs
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs\de
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs\es
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs\fr
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs\it
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs\ja
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            19,072 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         19,072 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs\ko
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            19,072 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         19,072 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs\pl
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs\pt-BR
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs\ru
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            20,096 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         20,096 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs\tr
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs\zh-Hans
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn3.11\cs\zh-Hant
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          cs
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          cs
+03/19/2023  08:46 AM    <DIR>          de
+03/19/2023  08:46 AM    <DIR>          es
+03/19/2023  08:46 AM    <DIR>          fr
+03/19/2023  08:46 AM    <DIR>          it
+03/19/2023  08:46 AM    <DIR>          ja
+03/19/2023  08:46 AM    <DIR>          ko
+03/19/2023  08:46 AM    <DIR>          pl
+03/19/2023  08:46 AM    <DIR>          pt-BR
+03/19/2023  08:46 AM    <DIR>          ru
+03/19/2023  08:46 AM           174,248 System.Text.Json.SourceGeneration.dll
+03/19/2023  08:46 AM    <DIR>          tr
+03/19/2023  08:46 AM    <DIR>          zh-Hans
+03/19/2023  08:46 AM    <DIR>          zh-Hant
+               1 File(s)        174,248 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs\cs
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs\de
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs\es
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs\fr
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs\it
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs\ja
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            19,072 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         19,072 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs\ko
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            19,072 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         19,072 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs\pl
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs\pt-BR
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs\ru
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            20,096 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         20,096 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs\tr
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs\zh-Hans
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.0\cs\zh-Hant
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          cs
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          cs
+03/19/2023  08:46 AM    <DIR>          de
+03/19/2023  08:46 AM    <DIR>          es
+03/19/2023  08:46 AM    <DIR>          fr
+03/19/2023  08:46 AM    <DIR>          it
+03/19/2023  08:46 AM    <DIR>          ja
+03/19/2023  08:46 AM    <DIR>          ko
+03/19/2023  08:46 AM    <DIR>          pl
+03/19/2023  08:46 AM    <DIR>          pt-BR
+03/19/2023  08:46 AM    <DIR>          ru
+03/19/2023  08:46 AM           159,360 System.Text.Json.SourceGeneration.dll
+03/19/2023  08:46 AM    <DIR>          tr
+03/19/2023  08:46 AM    <DIR>          zh-Hans
+03/19/2023  08:46 AM    <DIR>          zh-Hant
+               1 File(s)        159,360 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs\cs
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs\de
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs\es
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs\fr
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs\it
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs\ja
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            19,072 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         19,072 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs\ko
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            19,072 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         19,072 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs\pl
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs\pt-BR
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs\ru
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            20,096 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         20,096 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs\tr
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs\zh-Hans
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\analyzers\dotnet\roslyn4.4\cs\zh-Hant
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,560 System.Text.Json.SourceGeneration.resources.dll
+               1 File(s)         18,560 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\buildTransitive
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          net461
+03/19/2023  08:46 AM    <DIR>          net462
+03/19/2023  08:46 AM    <DIR>          net6.0
+03/19/2023  08:46 AM    <DIR>          netcoreapp2.0
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\buildTransitive\net461
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM               622 System.Text.Json.targets
+               1 File(s)            622 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\buildTransitive\net462
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM             1,245 System.Text.Json.targets
+               1 File(s)          1,245 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\buildTransitive\net6.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM             1,245 System.Text.Json.targets
+               1 File(s)          1,245 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\buildTransitive\netcoreapp2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM               622 System.Text.Json.targets
+               1 File(s)            622 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\buildTransitive\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM             1,245 System.Text.Json.targets
+               1 File(s)          1,245 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\lib
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          net462
+03/19/2023  08:46 AM    <DIR>          net6.0
+03/19/2023  08:46 AM    <DIR>          net7.0
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\lib\net462
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           582,832 System.Text.Json.dll
+03/19/2023  08:46 AM           492,637 System.Text.Json.xml
+               2 File(s)      1,075,469 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\lib\net6.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           543,920 System.Text.Json.dll
+03/19/2023  08:46 AM           492,637 System.Text.Json.xml
+               2 File(s)      1,036,557 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\lib\net7.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           542,896 System.Text.Json.dll
+03/19/2023  08:46 AM           492,637 System.Text.Json.xml
+               2 File(s)      1,035,533 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Text.Json.7.0.1\lib\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           571,056 System.Text.Json.dll
+03/19/2023  08:46 AM           492,637 System.Text.Json.xml
+               2 File(s)      1,063,693 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,703 .signature.p7s
+03/19/2023  08:46 AM    <DIR>          lib
+03/19/2023  08:46 AM             1,139 LICENSE.TXT
+03/19/2023  08:46 AM    <DIR>          ref
+03/19/2023  08:46 AM            89,582 System.Threading.Tasks.Extensions.4.5.4.nupkg
+03/19/2023  08:46 AM            15,835 THIRD-PARTY-NOTICES.TXT
+03/19/2023  08:46 AM                 0 useSharedDesignerContext.txt
+03/19/2023  08:46 AM                42 version.txt
+               6 File(s)        125,301 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\lib
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          MonoAndroid10
+03/19/2023  08:46 AM    <DIR>          MonoTouch10
+03/19/2023  08:46 AM    <DIR>          net461
+03/19/2023  08:46 AM    <DIR>          netcoreapp2.1
+03/19/2023  08:46 AM    <DIR>          netstandard1.0
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+03/19/2023  08:46 AM    <DIR>          portable-net45+win8+wp8+wpa81
+03/19/2023  08:46 AM    <DIR>          xamarinios10
+03/19/2023  08:46 AM    <DIR>          xamarinmac20
+03/19/2023  08:46 AM    <DIR>          xamarintvos10
+03/19/2023  08:46 AM    <DIR>          xamarinwatchos10
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\lib\MonoAndroid10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\lib\MonoTouch10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            10,147 System.Threading.Tasks.Extensions.xml
+               1 File(s)         10,147 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\lib\netcoreapp2.1
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard1.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            10,147 System.Threading.Tasks.Extensions.xml
+               1 File(s)         10,147 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            10,147 System.Threading.Tasks.Extensions.xml
+               1 File(s)         10,147 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\lib\portable-net45+win8+wp8+wpa81
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            10,147 System.Threading.Tasks.Extensions.xml
+               1 File(s)         10,147 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarinios10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarinmac20
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarintvos10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarinwatchos10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\ref
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          MonoAndroid10
+03/19/2023  08:46 AM    <DIR>          MonoTouch10
+03/19/2023  08:46 AM    <DIR>          netcoreapp2.1
+03/19/2023  08:46 AM    <DIR>          xamarinios10
+03/19/2023  08:46 AM    <DIR>          xamarinmac20
+03/19/2023  08:46 AM    <DIR>          xamarintvos10
+03/19/2023  08:46 AM    <DIR>          xamarinwatchos10
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\ref\MonoAndroid10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\ref\MonoTouch10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\ref\netcoreapp2.1
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarinios10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarinmac20
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarintvos10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarinwatchos10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            22,354 .signature.p7s
+03/19/2023  08:46 AM    <DIR>          lib
+03/19/2023  08:46 AM             1,139 LICENSE.TXT
+03/19/2023  08:46 AM    <DIR>          ref
+03/19/2023  08:46 AM           204,904 System.ValueTuple.4.5.0.nupkg
+03/19/2023  08:46 AM            15,835 THIRD-PARTY-NOTICES.TXT
+03/19/2023  08:46 AM                 0 useSharedDesignerContext.txt
+03/19/2023  08:46 AM                42 version.txt
+               6 File(s)        244,274 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          MonoAndroid10
+03/19/2023  08:46 AM    <DIR>          MonoTouch10
+03/19/2023  08:46 AM    <DIR>          net461
+03/19/2023  08:46 AM    <DIR>          net47
+03/19/2023  08:46 AM    <DIR>          netcoreapp2.0
+03/19/2023  08:46 AM    <DIR>          netstandard1.0
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+03/19/2023  08:46 AM    <DIR>          portable-net40+sl4+win8+wp8
+03/19/2023  08:46 AM    <DIR>          uap10.0.16299
+03/19/2023  08:46 AM    <DIR>          xamarinios10
+03/19/2023  08:46 AM    <DIR>          xamarinmac20
+03/19/2023  08:46 AM    <DIR>          xamarintvos10
+03/19/2023  08:46 AM    <DIR>          xamarinwatchos10
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib\MonoAndroid10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib\MonoTouch10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib\net461
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            78,992 System.ValueTuple.dll
+03/19/2023  08:46 AM            85,027 System.ValueTuple.xml
+               2 File(s)        164,019 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib\net47
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            25,232 System.ValueTuple.dll
+03/19/2023  08:46 AM               142 System.ValueTuple.xml
+               2 File(s)         25,374 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib\netcoreapp2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib\netstandard1.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            78,992 System.ValueTuple.dll
+03/19/2023  08:46 AM            85,027 System.ValueTuple.xml
+               2 File(s)        164,019 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib\portable-net40+sl4+win8+wp8
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            79,496 System.ValueTuple.dll
+03/19/2023  08:46 AM            85,027 System.ValueTuple.xml
+               2 File(s)        164,523 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib\uap10.0.16299
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib\xamarinios10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib\xamarinmac20
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib\xamarintvos10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\lib\xamarinwatchos10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\ref
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          MonoAndroid10
+03/19/2023  08:46 AM    <DIR>          MonoTouch10
+03/19/2023  08:46 AM    <DIR>          net461
+03/19/2023  08:46 AM    <DIR>          net47
+03/19/2023  08:46 AM    <DIR>          netcoreapp2.0
+03/19/2023  08:46 AM    <DIR>          netstandard2.0
+03/19/2023  08:46 AM    <DIR>          portable-net40+sl4+win8+wp8
+03/19/2023  08:46 AM    <DIR>          uap10.0.16299
+03/19/2023  08:46 AM    <DIR>          xamarinios10
+03/19/2023  08:46 AM    <DIR>          xamarinmac20
+03/19/2023  08:46 AM    <DIR>          xamarintvos10
+03/19/2023  08:46 AM    <DIR>          xamarinwatchos10
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\ref\MonoAndroid10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\ref\MonoTouch10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\ref\net461
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            40,592 System.ValueTuple.dll
+               1 File(s)         40,592 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\ref\net47
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            21,648 System.ValueTuple.dll
+               1 File(s)         21,648 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\ref\netcoreapp2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\ref\netstandard2.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\ref\portable-net40+sl4+win8+wp8
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            41,616 System.ValueTuple.dll
+               1 File(s)         41,616 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\ref\uap10.0.16299
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\ref\xamarinios10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\ref\xamarinmac20
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\ref\xamarintvos10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\packages\System.ValueTuple.4.5.0\ref\xamarinwatchos10
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM                 0 _._
+               1 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha
+
+03/19/2023  08:53 AM    <DIR>          .
+04/30/2023  01:24 PM    <DIR>          ..
+04/09/2023  05:13 PM    <DIR>          bin
+04/09/2023  06:43 PM    <DIR>          obj
+03/19/2023  08:46 AM               828 PlaygroundAlpha.csproj
+03/19/2023  08:46 AM             4,558 Program.cs
+03/19/2023  08:46 AM    <DIR>          Services
+               2 File(s)          5,386 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\bin
+
+04/09/2023  05:13 PM    <DIR>          .
+03/19/2023  08:53 AM    <DIR>          ..
+03/19/2023  08:53 AM    <DIR>          Debug
+04/09/2023  05:13 PM    <DIR>          Release
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\bin\Debug
+
+03/19/2023  08:53 AM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+03/21/2023  08:41 AM    <DIR>          net5.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\bin\Debug\net5.0
+
+03/21/2023  08:41 AM    <DIR>          .
+03/19/2023  08:53 AM    <DIR>          ..
+04/08/2023  07:28 PM               986 PlaygroundAlpha.deps.json
+04/08/2023  07:28 PM            12,800 PlaygroundAlpha.dll
+04/08/2023  07:28 PM           125,952 PlaygroundAlpha.exe
+04/08/2023  07:28 PM            12,128 PlaygroundAlpha.pdb
+04/08/2023  07:28 PM               272 PlaygroundAlpha.runtimeconfig.dev.json
+04/08/2023  07:28 PM               147 PlaygroundAlpha.runtimeconfig.json
+04/08/2023  07:28 PM    <DIR>          ref
+               6 File(s)        152,285 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\bin\Debug\net5.0\ref
+
+04/08/2023  07:28 PM    <DIR>          .
+03/21/2023  08:41 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\bin\Release
+
+04/09/2023  05:13 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/09/2023  05:24 PM    <DIR>          net5.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\bin\Release\net5.0
+
+04/09/2023  05:24 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/09/2023  07:00 PM               986 PlaygroundAlpha.deps.json
+04/09/2023  05:24 PM            11,776 PlaygroundAlpha.dll
+04/09/2023  05:24 PM           125,952 PlaygroundAlpha.exe
+04/09/2023  05:24 PM            11,448 PlaygroundAlpha.pdb
+04/09/2023  07:00 PM               272 PlaygroundAlpha.runtimeconfig.dev.json
+04/09/2023  07:00 PM               253 PlaygroundAlpha.runtimeconfig.json
+               6 File(s)        150,687 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\obj
+
+04/09/2023  06:43 PM    <DIR>          .
+03/19/2023  08:53 AM    <DIR>          ..
+03/19/2023  08:53 AM    <DIR>          Debug
+04/09/2023  06:43 PM             3,181 PlaygroundAlpha.csproj.nuget.dgspec.json
+04/08/2023  06:39 PM             1,667 PlaygroundAlpha.csproj.nuget.g.props
+03/19/2023  08:53 AM               150 PlaygroundAlpha.csproj.nuget.g.targets
+04/09/2023  06:38 PM             5,065 project.assets.json
+04/09/2023  06:43 PM             1,023 project.nuget.cache
+04/09/2023  05:13 PM    <DIR>          Release
+               5 File(s)         11,086 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\obj\Debug
+
+03/19/2023  08:53 AM    <DIR>          .
+04/09/2023  06:43 PM    <DIR>          ..
+04/08/2023  07:28 PM    <DIR>          net5.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\obj\Debug\net5.0
+
+04/08/2023  07:28 PM    <DIR>          .
+03/19/2023  08:53 AM    <DIR>          ..
+04/08/2023  07:11 PM               198 .NETCoreApp,Version=v5.0.AssemblyAttributes.cs
+04/08/2023  07:28 PM           125,952 apphost.exe
+03/19/2023  08:54 AM             1,018 PlaygroundAlpha.AssemblyInfo.cs
+03/19/2023  08:54 AM                42 PlaygroundAlpha.AssemblyInfoInputs.cache
+04/08/2023  06:39 PM               771 PlaygroundAlpha.assets.cache
+04/08/2023  06:25 PM            89,416 PlaygroundAlpha.csproj.AssemblyReference.cache
+03/19/2023  08:54 AM                42 PlaygroundAlpha.csproj.CoreCompileInputs.cache
+04/08/2023  07:28 PM             1,507 PlaygroundAlpha.csproj.FileListAbsolute.txt
+04/08/2023  07:28 PM            12,800 PlaygroundAlpha.dll
+04/08/2023  06:39 PM               498 PlaygroundAlpha.GeneratedMSBuildEditorConfig.editorconfig
+03/19/2023  08:54 AM                42 PlaygroundAlpha.genruntimeconfig.cache
+04/08/2023  07:28 PM            12,128 PlaygroundAlpha.pdb
+03/19/2023  08:54 AM    <DIR>          ref
+04/08/2023  07:28 PM    <DIR>          refint
+              12 File(s)        244,414 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\obj\Debug\net5.0\ref
+
+03/19/2023  08:54 AM    <DIR>          .
+04/08/2023  07:28 PM    <DIR>          ..
+04/08/2023  06:25 PM             8,192 PlaygroundAlpha.dll
+               1 File(s)          8,192 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\obj\Debug\net5.0\refint
+
+04/08/2023  07:28 PM    <DIR>          .
+04/08/2023  07:28 PM    <DIR>          ..
+04/08/2023  07:28 PM             8,192 PlaygroundAlpha.dll
+               1 File(s)          8,192 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\obj\Release
+
+04/09/2023  05:13 PM    <DIR>          .
+04/09/2023  06:43 PM    <DIR>          ..
+04/09/2023  05:24 PM    <DIR>          net5.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\obj\Release\net5.0
+
+04/09/2023  05:24 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/09/2023  05:13 PM               198 .NETCoreApp,Version=v5.0.AssemblyAttributes.cs
+04/09/2023  05:24 PM           125,952 apphost.exe
+04/09/2023  05:24 PM             1,020 PlaygroundAlpha.AssemblyInfo.cs
+04/09/2023  05:24 PM                42 PlaygroundAlpha.AssemblyInfoInputs.cache
+04/09/2023  06:38 PM               771 PlaygroundAlpha.assets.cache
+04/09/2023  05:24 PM            89,416 PlaygroundAlpha.csproj.AssemblyReference.cache
+04/09/2023  05:24 PM                42 PlaygroundAlpha.csproj.CoreCompileInputs.cache
+04/09/2023  05:24 PM             1,539 PlaygroundAlpha.csproj.FileListAbsolute.txt
+04/09/2023  05:24 PM            11,776 PlaygroundAlpha.dll
+04/09/2023  05:24 PM               498 PlaygroundAlpha.GeneratedMSBuildEditorConfig.editorconfig
+04/09/2023  05:24 PM                42 PlaygroundAlpha.genruntimeconfig.cache
+04/09/2023  05:24 PM            11,448 PlaygroundAlpha.pdb
+04/09/2023  05:24 PM    <DIR>          ref
+04/09/2023  05:24 PM    <DIR>          refint
+              12 File(s)        242,744 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\obj\Release\net5.0\ref
+
+04/09/2023  05:24 PM    <DIR>          .
+04/09/2023  05:24 PM    <DIR>          ..
+04/09/2023  05:24 PM             8,192 PlaygroundAlpha.dll
+               1 File(s)          8,192 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\obj\Release\net5.0\refint
+
+04/09/2023  05:24 PM    <DIR>          .
+04/09/2023  05:24 PM    <DIR>          ..
+04/09/2023  05:24 PM             8,192 PlaygroundAlpha.dll
+               1 File(s)          8,192 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\Services
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:53 AM    <DIR>          ..
+03/19/2023  08:46 AM             1,133 CurriculumService.cs
+03/19/2023  08:46 AM    <DIR>          Interfaces
+               1 File(s)          1,133 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PlaygroundAlpha\Services\Interfaces
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM               442 ICurriculum.cs
+               1 File(s)            442 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider
+
+03/19/2023  08:53 AM    <DIR>          .
+04/30/2023  01:24 PM    <DIR>          ..
+04/09/2023  05:13 PM    <DIR>          bin
+04/09/2023  06:43 PM    <DIR>          obj
+03/19/2023  08:46 AM               936 PnodeDataProvider.csproj
+03/19/2023  08:46 AM               225 PnodeDataProvider.csproj.user
+03/19/2023  08:46 AM             2,028 Program.cs
+               3 File(s)          3,189 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\bin
+
+04/09/2023  05:13 PM    <DIR>          .
+03/19/2023  08:53 AM    <DIR>          ..
+03/19/2023  08:53 AM    <DIR>          Debug
+04/09/2023  05:13 PM    <DIR>          Release
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\bin\Debug
+
+03/19/2023  08:53 AM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+03/21/2023  08:41 AM    <DIR>          net6.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\bin\Debug\net6.0
+
+03/21/2023  08:41 AM    <DIR>          .
+03/19/2023  08:53 AM    <DIR>          ..
+05/20/2021  06:33 AM            16,768 Microsoft.Data.ConnectionUI.dll
+05/20/2021  06:41 AM           247,176 Microsoft.VisualStudio.Data.dll
+02/08/2021  04:58 PM           136,792 Microsoft.VisualStudio.OLE.Interop.dll
+02/08/2021  04:58 PM           266,008 Microsoft.VisualStudio.Shell.Interop.dll
+05/20/2021  01:31 PM           123,792 Microsoft.VisualStudio.TextManager.Interop.dll
+04/08/2023  07:28 PM             5,736 PnodeDataProvider.deps.json
+04/08/2023  07:34 PM             6,144 PnodeDataProvider.dll
+04/08/2023  07:34 PM           147,968 PnodeDataProvider.exe
+04/08/2023  07:34 PM            11,084 PnodeDataProvider.pdb
+04/08/2023  07:28 PM               147 PnodeDataProvider.runtimeconfig.json
+04/08/2023  07:32 PM            22,016 pWordLib.dll
+04/08/2023  07:32 PM            75,264 pWordLib.pdb
+04/08/2023  07:28 PM    <DIR>          ref
+              12 File(s)      1,058,895 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\bin\Debug\net6.0\ref
+
+04/08/2023  07:28 PM    <DIR>          .
+03/21/2023  08:41 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\bin\Release
+
+04/09/2023  05:13 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/09/2023  05:24 PM    <DIR>          net6.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\bin\Release\net6.0
+
+04/09/2023  05:24 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+05/20/2021  06:33 AM            16,768 Microsoft.Data.ConnectionUI.dll
+05/20/2021  06:41 AM           247,176 Microsoft.VisualStudio.Data.dll
+02/08/2021  04:58 PM           136,792 Microsoft.VisualStudio.OLE.Interop.dll
+02/08/2021  04:58 PM           266,008 Microsoft.VisualStudio.Shell.Interop.dll
+05/20/2021  01:31 PM           123,792 Microsoft.VisualStudio.TextManager.Interop.dll
+04/09/2023  07:00 PM             5,736 PnodeDataProvider.deps.json
+04/09/2023  07:00 PM             6,144 PnodeDataProvider.dll
+04/09/2023  07:00 PM           147,968 PnodeDataProvider.exe
+04/09/2023  07:00 PM            10,948 PnodeDataProvider.pdb
+04/09/2023  07:00 PM               253 PnodeDataProvider.runtimeconfig.json
+04/09/2023  06:43 PM            19,968 pWordLib.dll
+04/09/2023  06:43 PM            69,120 pWordLib.pdb
+              12 File(s)      1,050,673 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\obj
+
+04/09/2023  06:43 PM    <DIR>          .
+03/19/2023  08:53 AM    <DIR>          ..
+03/19/2023  08:53 AM    <DIR>          Debug
+04/09/2023  06:43 PM             3,417 PnodeDataProvider.csproj.nuget.dgspec.json
+04/08/2023  06:39 PM             1,667 PnodeDataProvider.csproj.nuget.g.props
+03/19/2023  08:53 AM               563 PnodeDataProvider.csproj.nuget.g.targets
+04/09/2023  06:38 PM            13,471 project.assets.json
+04/09/2023  06:43 PM             2,690 project.nuget.cache
+04/09/2023  05:13 PM    <DIR>          Release
+               5 File(s)         21,808 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\obj\Debug
+
+03/19/2023  08:53 AM    <DIR>          .
+04/09/2023  06:43 PM    <DIR>          ..
+04/08/2023  07:34 PM    <DIR>          net6.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\obj\Debug\net6.0
+
+04/08/2023  07:34 PM    <DIR>          .
+03/19/2023  08:53 AM    <DIR>          ..
+04/08/2023  07:11 PM               198 .NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+04/08/2023  07:34 PM           147,968 apphost.exe
+03/19/2023  08:54 AM             1,024 PnodeDataProvider.AssemblyInfo.cs
+03/19/2023  08:54 AM                42 PnodeDataProvider.AssemblyInfoInputs.cache
+04/08/2023  06:39 PM             5,312 PnodeDataProvider.assets.cache
+04/08/2023  07:34 PM            95,394 PnodeDataProvider.csproj.AssemblyReference.cache
+04/08/2023  07:34 PM                 0 PnodeDataProvider.csproj.CopyComplete
+03/19/2023  08:54 AM                42 PnodeDataProvider.csproj.CoreCompileInputs.cache
+04/08/2023  07:28 PM             2,233 PnodeDataProvider.csproj.FileListAbsolute.txt
+04/08/2023  07:34 PM             6,144 PnodeDataProvider.dll
+04/08/2023  06:39 PM               502 PnodeDataProvider.GeneratedMSBuildEditorConfig.editorconfig
+03/19/2023  08:54 AM                42 PnodeDataProvider.genruntimeconfig.cache
+04/08/2023  07:34 PM            11,084 PnodeDataProvider.pdb
+03/19/2023  08:54 AM    <DIR>          ref
+04/08/2023  07:28 PM    <DIR>          refint
+              13 File(s)        269,985 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\obj\Debug\net6.0\ref
+
+03/19/2023  08:54 AM    <DIR>          .
+04/08/2023  07:34 PM    <DIR>          ..
+04/08/2023  06:25 PM             6,144 PnodeDataProvider.dll
+               1 File(s)          6,144 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\obj\Debug\net6.0\refint
+
+04/08/2023  07:28 PM    <DIR>          .
+04/08/2023  07:34 PM    <DIR>          ..
+04/08/2023  07:34 PM             6,144 PnodeDataProvider.dll
+               1 File(s)          6,144 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\obj\Release
+
+04/09/2023  05:13 PM    <DIR>          .
+04/09/2023  06:43 PM    <DIR>          ..
+04/09/2023  07:00 PM    <DIR>          net6.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\obj\Release\net6.0
+
+04/30/2023  01:01 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/09/2023  05:13 PM               198 .NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+04/09/2023  07:00 PM           147,968 apphost.exe
+04/09/2023  05:24 PM             1,026 PnodeDataProvider.AssemblyInfo.cs
+04/09/2023  05:24 PM                42 PnodeDataProvider.AssemblyInfoInputs.cache
+04/09/2023  06:38 PM             5,312 PnodeDataProvider.assets.cache
+04/30/2023  01:01 PM            95,398 PnodeDataProvider.csproj.AssemblyReference.cache
+04/09/2023  07:00 PM                 0 PnodeDataProvider.csproj.CopyComplete
+04/09/2023  05:24 PM                42 PnodeDataProvider.csproj.CoreCompileInputs.cache
+04/09/2023  05:24 PM             2,279 PnodeDataProvider.csproj.FileListAbsolute.txt
+04/09/2023  07:00 PM             6,144 PnodeDataProvider.dll
+04/09/2023  05:24 PM               502 PnodeDataProvider.GeneratedMSBuildEditorConfig.editorconfig
+04/09/2023  05:24 PM                42 PnodeDataProvider.genruntimeconfig.cache
+04/09/2023  07:00 PM            10,948 PnodeDataProvider.pdb
+04/09/2023  05:24 PM    <DIR>          ref
+04/09/2023  05:24 PM    <DIR>          refint
+              13 File(s)        269,901 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\obj\Release\net6.0\ref
+
+04/09/2023  05:24 PM    <DIR>          .
+04/30/2023  01:01 PM    <DIR>          ..
+04/09/2023  05:24 PM             6,144 PnodeDataProvider.dll
+               1 File(s)          6,144 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\PnodeDataProvider\obj\Release\net6.0\refint
+
+04/09/2023  05:24 PM    <DIR>          .
+04/30/2023  01:01 PM    <DIR>          ..
+04/09/2023  07:00 PM             6,144 PnodeDataProvider.dll
+               1 File(s)          6,144 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWord4
+
+03/19/2023  08:52 AM    <DIR>          .
+04/30/2023  01:24 PM    <DIR>          ..
+03/19/2023  08:46 AM               161 app.config
+04/09/2023  05:13 PM    <DIR>          bin
+03/19/2023  08:46 AM               356 Form1.cs
+03/19/2023  08:46 AM             1,170 Form1.Designer.cs
+03/19/2023  08:52 AM    <DIR>          obj
+03/19/2023  08:46 AM               175 packages.config
+03/19/2023  08:46 AM               498 Program.cs
+03/19/2023  08:46 AM    <DIR>          Properties
+03/19/2023  08:46 AM             4,947 pWord4.csproj
+03/19/2023  08:46 AM               147 pWord4.csproj.user
+               7 File(s)          7,454 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWord4\bin
+
+04/09/2023  05:13 PM    <DIR>          .
+03/19/2023  08:52 AM    <DIR>          ..
+03/19/2023  08:52 AM    <DIR>          Debug
+04/09/2023  05:13 PM    <DIR>          Release
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWord4\bin\Debug
+
+03/19/2023  08:52 AM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWord4\bin\Release
+
+04/09/2023  05:24 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/09/2023  05:24 PM             6,656 pWord4.exe
+03/19/2023  08:46 AM               161 pWord4.exe.config
+04/09/2023  05:24 PM            22,016 pWord4.pdb
+               3 File(s)         28,833 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWord4\obj
+
+03/19/2023  08:52 AM    <DIR>          .
+03/19/2023  08:52 AM    <DIR>          ..
+04/09/2023  05:13 PM    <DIR>          x86
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWord4\obj\x86
+
+04/09/2023  05:13 PM    <DIR>          .
+03/19/2023  08:52 AM    <DIR>          ..
+03/19/2023  08:53 AM    <DIR>          Debug
+04/09/2023  05:24 PM    <DIR>          Release
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWord4\obj\x86\Debug
+
+03/19/2023  08:53 AM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/08/2023  07:11 PM               210 .NETFramework,Version=v4.8.AssemblyAttributes.cs
+04/08/2023  07:11 PM             7,024 DesignTimeResolveAssemblyReferencesInput.cache
+03/19/2023  08:53 AM             5,736 pWord4.csproj.AssemblyReference.cache
+03/19/2023  08:53 AM    <DIR>          TempPE
+               3 File(s)         12,970 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWord4\obj\x86\Debug\TempPE
+
+04/08/2023  07:11 PM    <DIR>          .
+03/19/2023  08:53 AM    <DIR>          ..
+04/08/2023  07:11 PM             4,096 Properties.Resources.Designer.cs.dll
+               1 File(s)          4,096 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWord4\obj\x86\Release
+
+04/09/2023  05:24 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/09/2023  05:13 PM               210 .NETFramework,Version=v4.8.AssemblyAttributes.cs
+04/09/2023  05:24 PM             5,736 pWord4.csproj.AssemblyReference.cache
+04/09/2023  05:24 PM                42 pWord4.csproj.CoreCompileInputs.cache
+04/09/2023  05:24 PM               767 pWord4.csproj.FileListAbsolute.txt
+04/09/2023  05:24 PM                84 pWord4.csproj.GenerateResource.cache
+04/09/2023  05:24 PM                 0 pWord4.csproj.SuggestedBindingRedirects.cache
+04/09/2023  05:24 PM             6,656 pWord4.exe
+04/09/2023  05:24 PM            22,016 pWord4.pdb
+04/09/2023  05:24 PM               180 pWord4.Properties.Resources.resources
+04/09/2023  05:13 PM    <DIR>          TempPE
+               9 File(s)         35,691 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWord4\obj\x86\Release\TempPE
+
+04/09/2023  05:13 PM    <DIR>          .
+04/09/2023  05:24 PM    <DIR>          ..
+04/09/2023  05:13 PM             4,096 Properties.Resources.Designer.cs.dll
+               1 File(s)          4,096 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWord4\Properties
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:52 AM    <DIR>          ..
+03/19/2023  08:46 AM             1,442 AssemblyInfo.cs
+03/19/2023  08:46 AM             2,841 Resources.Designer.cs
+03/19/2023  08:46 AM             5,612 Resources.resx
+03/19/2023  08:46 AM             1,089 Settings.Designer.cs
+03/19/2023  08:46 AM               249 Settings.settings
+               5 File(s)         11,233 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWordSetup
+
+04/30/2023  12:59 PM    <DIR>          .
+04/30/2023  01:24 PM    <DIR>          ..
+04/09/2023  05:13 PM    <DIR>          bin
+04/09/2023  05:13 PM    <DIR>          obj
+04/30/2023  12:59 PM             1,244 Product.wxs
+04/09/2023  07:47 PM             1,061 Product.xml
+04/09/2023  07:27 PM             2,484 pWordSetup.wixproj
+04/09/2023  07:47 PM               372 pWordSetup.wixproj.user
+               4 File(s)          5,161 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWordSetup\bin
+
+04/09/2023  05:13 PM    <DIR>          .
+04/30/2023  12:59 PM    <DIR>          ..
+04/02/2023  11:41 AM    <DIR>          Debug
+04/09/2023  05:13 PM    <DIR>          Release
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWordSetup\bin\Debug
+
+04/02/2023  11:41 AM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWordSetup\bin\Release
+
+04/09/2023  05:13 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWordSetup\obj
+
+04/09/2023  05:13 PM    <DIR>          .
+04/30/2023  12:59 PM    <DIR>          ..
+04/08/2023  07:34 PM    <DIR>          Debug
+04/09/2023  05:13 PM    <DIR>          Release
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWordSetup\obj\Debug
+
+04/08/2023  07:34 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/08/2023  07:34 PM               180 pWordSetup.wixproj.FileList.txt
+               1 File(s)            180 bytes
+
+ Directory of D:\src\opnode\pWord4\pWord4\pWordSetup\obj\Release
+
+04/09/2023  05:13 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/09/2023  06:43 PM               186 pWordSetup.wixproj.FileList.txt
+               1 File(s)            186 bytes
+
+     Total Files Listed:
+             460 File(s)     36,671,866 bytes
+             838 Dir(s)  42,834,771,968 bytes free

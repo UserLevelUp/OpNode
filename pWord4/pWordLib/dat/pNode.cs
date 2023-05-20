@@ -44,6 +44,8 @@ namespace pWordLib.dat
 
         }
 
+
+
         //public pNode Parent {
 
         //    get {
@@ -369,5 +371,318 @@ namespace pWordLib.dat
 			}
 		}
 
+        public XmlDocument CallRecursive(pNode node)
+        {
+            // MessageBox.Show("getnode:" + getNode.Name);
+            // MessageBox.Show("pView top node:" + node.Text);
+            // use c# 4.0 in a nut shell to construct XmlDocument for this xml stuff
+            // page starts on 490
+
+            // TODO: Move To pWordLib
+            var xdoc = new XmlDocument();
+
+            // TODO: Move To pWordLib
+            xdoc.AppendChild(xdoc.CreateXmlDeclaration("1.0", null, "yes"));
+
+            // TODO: Move To pWordLib
+            if (xdoc == null)  // instantiate the first time through
+            {
+                xdoc = new XmlDocument();
+                System.Xml.NameTable nt = new NameTable();
+                nt.Add(node.Text);
+                XmlNameTable xnt = (XmlNameTable)nt;
+                System.Xml.XmlNamespaceManager xnsm = new XmlNamespaceManager(xnt);
+                if (!(node.Namespace == null))
+                {
+                    if (node.Namespace.Prefix != null)
+                    {
+                        xnsm.AddNamespace(node.Namespace.Prefix, node.Namespace.URI_PREFIX);  // prefix will be like 'xs', and url will be like 'http://www.url.com/etc/'
+                    }
+                    if (node.Namespace.Suffix != null)
+                    {
+                        xnsm.AddNamespace(node.Namespace.Suffix, node.Namespace.URI_SUFFIX);
+                    }
+                }
+                // todo:  iterate through all nodes in pNode and place namespaces into the namespace manager
+                // for now only do the first one if it exists
+
+                // TODO: Move To pWordLib
+                xdoc = new XmlDocument(xnt);
+
+                // TODO: Move To pWordLib
+                xdoc.AppendChild(xdoc.CreateXmlDeclaration("1.0", null, "yes"));
+                //foreach (String key in xnsm.GetNamespacesInScope(XmlNamespaceScope.All).Keys)
+                //{
+                //    // this inserts the namespace into the xdoc from the name space manager
+                //    //xdoc.Schemas.XmlResolver resolve = 
+                //    //xdoc.Schemas.Add(key, xnsm.LookupNamespace(key));
+                //}
+            }
+
+            // TODO: Move To pWordLib
+            node.getXmlName();  // fix node attributes and todo: eventually namespaces
+
+            // TODO: Move To pWordLib
+            XmlNode rootNode = xdoc.CreateElement(node.getXmlName());
+            rootNode.InnerText = (String)node.Tag;
+
+            // TODO: Move To pWordLib
+            foreach (var attrKey in node.getKeys())
+            {
+
+                var val = node.getValue(attrKey);
+
+                //
+
+                XmlAttribute xmlAttribute = null;
+                if (val != null)
+                {
+                    xmlAttribute = xdoc.CreateAttribute(attrKey);
+                    xmlAttribute.Value = val;
+                    rootNode.Attributes.Append(xmlAttribute);
+                }
+                //rootNode.Attributes.Append(new XmlAttribute(attrKey, val));
+
+            }
+
+            // TODO: Move To pWordLib
+            if (node.Namespace != null)
+            {
+                //rootNode = xdoc.CreateNode(XmlNodeType.Element, node.Namespace.Prefix, node.Name, node.Namespace.URI_PREFIX);
+            }
+            else
+            {
+                // this takes a long time as well
+                // see if we can't use an existing node and clone it
+                //rootNode = xdoc.CreateNode(XmlNodeType.Element, node.getXmlName(), "");  // any time getXmlName is called ... 
+                // it should be necessary to now recheck to see if its got attributes at this current node
+            }
+
+            // TODO: Move To pWordLib
+            foreach (String key in node.getKeys())
+            {
+                if (key != "")
+                {
+                    if (!(node.Namespace == null))
+                    {
+                        XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, node.Namespace.Prefix, key, node.Namespace.URI_PREFIX);
+                        attr.Value = node.getValue(key);
+                        rootNode.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                    }
+                    else
+                    {
+                        XmlNode attr;
+                        if (node.Namespace != null)
+                        {
+                            if (node.Namespace.Prefix != null)
+                            {
+                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, node.Namespace.URI_PREFIX);
+                            }
+                            else
+                            {
+                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                            }
+                        }
+                        else
+                        {
+                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                        }
+                        attr.Value = node.getValue(key);
+                        rootNode.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                    }
+                }
+            }
+
+            // TODO: Move To pWordLib
+            foreach (pNode p in node.Nodes)
+            {
+                p.getXmlName();  // fix any attributes (this has been completed in pNode.DetectComplexNodeName()
+                                 // todo: fix any namespace ... 
+            }
+
+            // TODO: Move To pWordLib
+            foreach (pNode p in node.Nodes)
+            {
+                XmlNode xn;
+                if (p.Namespace != null)
+                {
+                    if (p.Namespace.Prefix != null)
+                    {
+                        xn = xdoc.CreateNode(XmlNodeType.Element, p.Namespace.Prefix, p.Text, p.Namespace.URI_PREFIX);
+                    }
+                    else
+                    {
+                        // this takes a long time as well
+                        // see if we can't use an existing node and clone it
+                        xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName(), "");  // any time getXmlName is called ... 
+                        // it should be necessary to now recheck to see if its got attributes at this current node
+                    }
+                }
+                else
+                {
+                    // this takes a long time as well
+                    // see if we can't use an existing node and clone it
+                    xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName(), "");  // any time getXmlName is called ... 
+                                                                                    // it should be necessary to now recheck to see if its got attributes at this current node
+                }
+                xn.InnerText = (String)p.Tag;
+                foreach (String key in p.getKeys())
+                {
+                    if (p.Namespace != null)
+                    {
+                        if (p.Namespace.Prefix != null)
+                        {
+                            XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, p.Namespace.Prefix, key, p.Namespace.URI_PREFIX);
+                            attr.Value = p.getValue(key);
+                            xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                        }
+                        else
+                        {
+                            XmlNode attr;
+                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                            attr.Value = p.getValue(key);
+                            xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                        }
+                    }
+                    else
+                    {
+                        XmlNode attr;
+                        if (p.Namespace != null)
+                        {
+                            if (p.Namespace.Prefix != null)
+                            {
+                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, p.Namespace.URI_PREFIX);
+                            }
+                            else
+                            {
+                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                            }
+                        }
+                        else
+                        {
+                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                        }
+                        attr.Value = p.getValue(key);
+                        xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                    }
+                }
+
+                // TODO: Move To pWordLib
+                rootNode.AppendChild(RecursiveChildren(ref xn, p.Nodes, xdoc));
+            }
+            // TODO: Move To pWordLib
+            xdoc.AppendChild(rootNode);
+            return xdoc;
+        }
+
+        private XmlNode RecursiveChildren(ref XmlNode node, TreeNodeCollection pNodes, XmlDocument xdoc)
+        {
+            // TODO: Move To pWordLib
+            foreach (pNode p in pNodes)
+            {
+                p.getXmlName();
+            }
+
+            // TODO: Move To pWordLib
+            foreach (pNode p in pNodes)
+            {
+                // TODO: Move To pWordLib
+                XmlNode xn;
+                if (p.Namespace != null)
+                {
+                    // change any p.Name to be text only
+                    xn = xdoc.CreateNode(XmlNodeType.Element, p.Namespace.Prefix, p.getXmlName(), p.Namespace.URI_PREFIX);
+                }
+                else
+                {
+                    // Takes a long time to do this... why???? 
+                    // Check to see if we cna not create a node, but use an available or existing node
+                    xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName().Replace(" ", ""), "");
+                }
+
+                // TODO: Move To pWordLib
+                xn.InnerText = (String)p.Tag;
+
+                // TODO: Move To pWordLib
+                foreach (String key in p.getKeys())
+                {
+                    // TODO: Move To pWordLib
+                    System.Xml.NameTable nt = new NameTable();
+                    nt.Add(p.Text);
+
+                    // TODO: Move To pWordLib
+                    XmlNameTable xnt = (XmlNameTable)nt;
+                    System.Xml.XmlNamespaceManager xnsm = new XmlNamespaceManager(xnt);
+                    if (p.Namespace != null)
+                    {
+                        if (p.Namespace.Prefix != null)
+                        {
+                            xnsm.AddNamespace(p.Namespace.Prefix, p.Namespace.URI_PREFIX);  // prefix will be like 'xs', and url will be like 'http://www.url.com/etc/'
+                        }
+                        if (p.Namespace.Suffix != null)
+                        {
+                            xnsm.AddNamespace(p.Namespace.Suffix, p.Namespace.URI_SUFFIX);
+                        }
+
+                    }
+
+                    // TODO: Move To pWordLib
+                    if (p.Namespace != null)
+                    {
+                        if (p.Namespace.Prefix != null)
+                        {
+                            XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, p.Namespace.Prefix, p.Namespace.URI_PREFIX);
+                            attr.Value = p.getValue(key);
+                            xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                        }
+                        else
+                        {
+                            XmlNode attr;
+                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                        }
+                    }
+                    else
+                    {
+                        XmlNode attr;
+                        if (p.Namespace != null)
+                        {
+                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, p.Namespace.URI_PREFIX);
+                        }
+                        else
+                        {
+                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                        }
+                        attr.Value = p.getValue(key);
+                        xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                    }
+                }
+                // TODO: Move To pWordLib
+                node.AppendChild(RecursiveChildren(ref xn, p.Nodes, xdoc));
+            }
+            return node;
+        }
+
+
+
     }
+
+    public enum nodeMode
+    {
+        addto = 1,
+        insert = 2,
+        edit = 3,
+        addAttributeTo = 4,
+        addNamespacePrefix = 5,
+        addNamespaceSuffix = 6,
+        sum = 7,
+        multiply = 8,
+        divide = 9,
+        viewErrors = 10,
+        cut = 11,
+        trig,
+        find,
+        xmlUpdate,
+        search
+    }
+
 }
