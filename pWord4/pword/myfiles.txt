@@ -1,0 +1,582 @@
+ Volume in drive D is New Volume
+ Volume Serial Number is C06F-88FE
+
+ Directory of D:\src\opnode\pWord4\pword
+
+04/30/2023  01:26 PM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM             8,544 AddItem.cs
+03/19/2023  08:46 AM             8,978 AddItem.resx
+03/19/2023  08:46 AM             3,597 AddMaster.cs
+03/19/2023  08:46 AM            11,784 AddMaster.resx
+03/19/2023  08:46 AM             4,815 app.config
+03/19/2023  08:46 AM             8,478 App.ico
+03/19/2023  08:46 AM             2,465 AssemblyInfo.cs
+03/19/2023  08:46 AM             3,662 AYS.cs
+03/19/2023  08:46 AM            11,770 AYS.resx
+03/19/2023  08:46 AM    <DIR>          Backup
+03/19/2023  08:46 AM    <DIR>          Backup1
+03/19/2023  08:46 AM    <DIR>          Backup2
+04/09/2023  05:13 PM    <DIR>          bin
+03/19/2023  08:46 AM    <DIR>          CVS
+03/19/2023  08:46 AM            16,849 Data.cs
+03/19/2023  08:46 AM            39,848 Data.Designer.cs
+03/19/2023  08:46 AM               263 Data.xml
+03/19/2023  08:46 AM                 3 Data.xsc
+03/19/2023  08:46 AM               984 Data.xsd
+03/19/2023  08:46 AM                 3 Data.xss
+03/19/2023  08:46 AM               193 Data.xsx
+03/19/2023  08:46 AM               732 DrawpNodeEventArgs.cs
+03/19/2023  08:46 AM               388 Form1.cs
+03/19/2023  08:46 AM             2,113 Form1.Designer.cs
+03/19/2023  08:46 AM             5,817 Form1.resx
+03/19/2023  08:46 AM             8,184 frmAbout.cs
+03/19/2023  08:46 AM            99,026 frmAbout.resx
+03/19/2023  08:46 AM             1,547 frmHelp.cs
+03/19/2023  08:46 AM             9,540 frmHelp.resx
+03/19/2023  08:46 AM    <DIR>          icons
+03/19/2023  08:46 AM             1,575 Image.cs
+03/19/2023  08:46 AM             7,470 LL.cs
+04/30/2023  01:26 PM                 0 myfiles.txt
+04/09/2023  07:47 PM            18,699 myPword.csproj
+03/19/2023  08:46 AM             2,787 myPword.csproj.user
+03/19/2023  08:46 AM             3,814 myPword.sln
+03/19/2023  08:46 AM            69,120 myPword.suo
+04/09/2023  05:13 PM    <DIR>          obj
+03/19/2023  08:46 AM               970 ORMModel1.DCIL.xml
+03/19/2023  08:46 AM             1,813 ORMModel1.DDIL.xml
+03/19/2023  08:46 AM             5,575 ORMModel1.LinqToSqlAttributeMapping.PLiX.cs
+03/19/2023  08:46 AM            53,956 ORMModel1.LinqToSqlAttributeMapping.PLiX.xml
+03/19/2023  08:46 AM             8,472 ORMModel1.LinqToSqlSettings.xml
+03/19/2023  08:46 AM             1,050 ORMModel1.orm
+03/19/2023  08:46 AM               236 ORMModel1.SQLServer.sql
+03/19/2023  08:46 AM               375 ORMModel1.SQLStandard.sql
+03/19/2023  08:46 AM               170 ORMModel1._ORMCustomToolReport.cs
+03/19/2023  08:46 AM    <DIR>          packages
+03/19/2023  08:46 AM             1,002 packages.config
+03/19/2023  08:46 AM               966 pNode.cs
+03/19/2023  08:46 AM               969 pNodeoLD.cs
+03/19/2023  08:46 AM    <DIR>          Properties
+03/19/2023  08:46 AM            10,350 pView.cs
+04/30/2023  01:01 PM           206,555 pWord.cs
+03/19/2023  08:46 AM            39,563 pWord.resx
+03/19/2023  08:46 AM             1,256 pWordSettings.cs
+03/19/2023  08:46 AM             7,698 pWordSettings.Designer.cs
+03/19/2023  08:46 AM             2,265 pWordSettings.settings
+03/19/2023  08:46 AM             1,255 pWordSettings1.cs
+03/19/2023  08:46 AM             1,687 readme.txt
+03/19/2023  08:46 AM             7,843 Resource1.Designer.cs
+03/19/2023  08:46 AM             9,042 Resource1.resx
+03/19/2023  08:46 AM    <DIR>          Resources
+03/19/2023  08:46 AM            31,564 UpgradeLog.htm
+03/19/2023  08:46 AM             8,834 UpgradeLog.XML
+03/19/2023  08:46 AM             2,515 UpgradeLog2.XML
+03/19/2023  08:46 AM            10,743 UserActivityHook.cs
+03/19/2023  08:46 AM             1,253 Win32.cs
+03/19/2023  08:46 AM                45 XMLFile1.xml
+03/19/2023  08:46 AM               398 XMLSchema1.xsd
+03/19/2023  08:46 AM               193 XMLSchema1.xsx
+03/19/2023  08:46 AM    <DIR>          _UpgradeReport_Files
+              61 File(s)        771,661 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\Backup
+
+03/19/2023  08:46 AM    <DIR>          .
+04/30/2023  01:26 PM    <DIR>          ..
+03/19/2023  08:46 AM             7,282 AddItem.cs
+03/19/2023  08:46 AM            14,034 AddItem.resx
+03/19/2023  08:46 AM             3,596 AddMaster.cs
+03/19/2023  08:46 AM            11,784 AddMaster.resx
+03/19/2023  08:46 AM               956 app.config
+03/19/2023  08:46 AM             8,478 App.ico
+03/19/2023  08:46 AM             2,426 AssemblyInfo.cs
+03/19/2023  08:46 AM             3,661 AYS.cs
+03/19/2023  08:46 AM            11,770 AYS.resx
+03/19/2023  08:46 AM            16,849 Data.cs
+03/19/2023  08:46 AM               263 Data.xml
+03/19/2023  08:46 AM               984 Data.xsd
+03/19/2023  08:46 AM               193 Data.xsx
+03/19/2023  08:46 AM             6,775 frmAbout.cs
+03/19/2023  08:46 AM           104,969 frmAbout.resx
+03/19/2023  08:46 AM             1,546 frmHelp.cs
+03/19/2023  08:46 AM             9,540 frmHelp.resx
+03/19/2023  08:46 AM    <DIR>          icons
+03/19/2023  08:46 AM             1,562 Image.cs
+03/19/2023  08:46 AM             7,470 LL.cs
+03/19/2023  08:46 AM             9,916 myPword.csproj
+03/19/2023  08:46 AM             1,899 myPword.csproj.user
+03/19/2023  08:46 AM               899 myPword.sln
+03/19/2023  08:46 AM            10,240 myPword.suo
+03/19/2023  08:46 AM            72,027 pWord.cs
+03/19/2023  08:46 AM            57,748 pWord.resx
+03/19/2023  08:46 AM             9,833 UserActivityHook.cs
+03/19/2023  08:46 AM             1,253 Win32.cs
+03/19/2023  08:46 AM                45 XMLFile1.xml
+03/19/2023  08:46 AM               398 XMLSchema1.xsd
+03/19/2023  08:46 AM               193 XMLSchema1.xsx
+              30 File(s)        378,589 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\Backup\icons
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM             1,078 master1.ico
+03/19/2023  08:46 AM             1,078 master2.ico
+03/19/2023  08:46 AM             1,910 PW.ico
+03/19/2023  08:46 AM    <DIR>          toolbar
+               3 File(s)          4,066 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\Backup\icons\toolbar
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM             4,846 AutoHide.ico
+03/19/2023  08:46 AM             4,846 AutoHide2.ico
+               2 File(s)          9,692 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\Backup1
+
+03/19/2023  08:46 AM    <DIR>          .
+04/30/2023  01:26 PM    <DIR>          ..
+03/19/2023  08:46 AM             2,426 AssemblyInfo.cs
+03/19/2023  08:46 AM             5,387 LeftRight.cs
+03/19/2023  08:46 AM             4,929 LeftRight.csproj
+03/19/2023  08:46 AM             1,803 LeftRight.csproj.user
+03/19/2023  08:46 AM            12,052 LeftRight.resx
+               5 File(s)         26,597 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\Backup2
+
+03/19/2023  08:46 AM    <DIR>          .
+04/30/2023  01:26 PM    <DIR>          ..
+03/19/2023  08:46 AM             1,863 myPword.sln
+               1 File(s)          1,863 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\bin
+
+04/09/2023  05:13 PM    <DIR>          .
+04/30/2023  01:26 PM    <DIR>          ..
+04/09/2023  04:38 PM    <DIR>          Debug
+04/21/2023  09:47 PM    <DIR>          Release
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\bin\Debug
+
+04/09/2023  04:38 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/09/2023  04:38 PM    <DIR>          app.publish
+03/19/2023  08:54 AM    <DIR>          icons
+03/19/2023  08:53 AM            32,768 LeftRight.dll
+03/19/2023  08:53 AM            28,160 LeftRight.pdb
+04/08/2023  07:34 PM             2,051 myPword.application
+04/08/2023  07:34 PM           249,856 myPword.exe
+03/19/2023  08:46 AM             4,815 myPword.exe.config
+04/08/2023  07:34 PM            14,699 myPword.exe.manifest
+04/08/2023  07:34 PM           189,952 myPword.pdb
+03/19/2023  08:46 AM           711,952 Newtonsoft.Json.dll
+03/19/2023  08:46 AM           713,541 Newtonsoft.Json.xml
+04/08/2023  07:34 PM            22,016 pWordLib.dll
+04/08/2023  07:34 PM            75,264 pWordLib.pdb
+04/08/2023  06:49 PM            20,856 System.Buffers.dll
+04/08/2023  06:49 PM           142,240 System.Memory.dll
+04/08/2023  06:49 PM           115,856 System.Numerics.Vectors.dll
+04/08/2023  06:49 PM            18,024 System.Runtime.CompilerServices.Unsafe.dll
+04/08/2023  06:49 PM            25,232 System.ValueTuple.dll
+              16 File(s)      2,367,282 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\bin\Debug\app.publish
+
+04/09/2023  04:38 PM    <DIR>          .
+04/09/2023  04:38 PM    <DIR>          ..
+04/08/2023  07:34 PM           249,856 myPword.exe
+               1 File(s)        249,856 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\bin\Debug\icons
+
+04/08/2023  07:34 PM    <DIR>          .
+04/09/2023  04:38 PM    <DIR>          ..
+03/19/2023  08:46 AM             1,078 Master.ico
+03/19/2023  08:46 AM             1,078 master1.ico
+03/19/2023  08:46 AM             1,078 master2.ico
+03/19/2023  08:46 AM             1,910 PW.ico
+03/19/2023  08:46 AM             1,078 Sum.ico
+03/19/2023  08:54 AM    <DIR>          toolbar
+               5 File(s)          6,222 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\bin\Debug\icons\toolbar
+
+04/08/2023  07:34 PM    <DIR>          .
+04/08/2023  07:34 PM    <DIR>          ..
+03/19/2023  08:46 AM             4,846 AutoHide.ico
+03/19/2023  08:46 AM             4,846 AutoHide2.ico
+               2 File(s)          9,692 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\bin\Release
+
+04/30/2023  01:02 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/30/2023  01:02 PM    <DIR>          app.publish
+04/09/2023  06:43 PM    <DIR>          icons
+04/09/2023  06:43 PM            32,768 LeftRight.dll
+04/30/2023  01:02 PM             2,051 myPword.application
+04/17/2023  07:03 AM           241,664 myPword.exe
+03/19/2023  08:46 AM             4,815 myPword.exe.config
+04/30/2023  01:02 PM            14,699 myPword.exe.manifest
+03/19/2023  08:46 AM           711,952 Newtonsoft.Json.dll
+03/19/2023  08:46 AM           713,541 Newtonsoft.Json.xml
+04/09/2023  06:43 PM            19,968 pWordLib.dll
+04/09/2023  06:43 PM            69,120 pWordLib.pdb
+04/08/2023  06:49 PM            20,856 System.Buffers.dll
+04/08/2023  06:49 PM           142,240 System.Memory.dll
+04/08/2023  06:49 PM           115,856 System.Numerics.Vectors.dll
+04/08/2023  06:49 PM            18,024 System.Runtime.CompilerServices.Unsafe.dll
+04/08/2023  06:49 PM            25,232 System.ValueTuple.dll
+              14 File(s)      2,132,786 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\bin\Release\app.publish
+
+04/30/2023  01:02 PM    <DIR>          .
+04/30/2023  01:02 PM    <DIR>          ..
+04/30/2023  01:02 PM           241,664 myPword.exe
+               1 File(s)        241,664 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\bin\Release\icons
+
+04/09/2023  06:43 PM    <DIR>          .
+04/30/2023  01:02 PM    <DIR>          ..
+03/19/2023  08:46 AM             1,078 Master.ico
+03/19/2023  08:46 AM             1,078 master1.ico
+03/19/2023  08:46 AM             1,078 master2.ico
+03/19/2023  08:46 AM             1,910 PW.ico
+03/19/2023  08:46 AM             1,078 Sum.ico
+04/09/2023  05:24 PM    <DIR>          toolbar
+               5 File(s)          6,222 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\bin\Release\icons\toolbar
+
+04/09/2023  06:43 PM    <DIR>          .
+04/09/2023  06:43 PM    <DIR>          ..
+03/19/2023  08:46 AM             4,846 AutoHide.ico
+03/19/2023  08:46 AM             4,846 AutoHide2.ico
+               2 File(s)          9,692 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\CVS
+
+03/19/2023  08:46 AM    <DIR>          .
+04/30/2023  01:26 PM    <DIR>          ..
+03/19/2023  08:46 AM             1,523 Entries
+03/19/2023  08:46 AM               761 Entries.Extra
+03/19/2023  08:46 AM               775 Entries.Extra.Old
+03/19/2023  08:46 AM             1,534 Entries.Old
+03/19/2023  08:46 AM                 7 Repository
+03/19/2023  08:46 AM                57 Root
+               6 File(s)          4,657 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\icons
+
+03/19/2023  08:46 AM    <DIR>          .
+04/30/2023  01:26 PM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          CVS
+03/19/2023  08:46 AM             1,078 Master.ico
+03/19/2023  08:46 AM             1,078 master1.ico
+03/19/2023  08:46 AM             1,078 master2.ico
+03/19/2023  08:46 AM             1,910 PW.ico
+03/19/2023  08:46 AM             1,078 Sum.ico
+03/19/2023  08:46 AM    <DIR>          toolbar
+               5 File(s)          6,222 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\icons\CVS
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM               201 Entries
+03/19/2023  08:46 AM               100 Entries.Extra
+03/19/2023  08:46 AM                82 Entries.Extra.Old
+03/19/2023  08:46 AM               189 Entries.Old
+03/19/2023  08:46 AM                13 Repository
+03/19/2023  08:46 AM                57 Root
+               6 File(s)            642 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\icons\toolbar
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM             4,846 AutoHide.ico
+03/19/2023  08:46 AM             4,846 AutoHide2.ico
+03/19/2023  08:46 AM    <DIR>          CVS
+               2 File(s)          9,692 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\icons\toolbar\CVS
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM               102 Entries
+03/19/2023  08:46 AM                47 Entries.Extra
+03/19/2023  08:46 AM                 0 Entries.Extra.Old
+03/19/2023  08:46 AM                 0 Entries.Old
+03/19/2023  08:46 AM                21 Repository
+03/19/2023  08:46 AM                57 Root
+               6 File(s)            227 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\obj
+
+04/09/2023  05:13 PM    <DIR>          .
+04/30/2023  01:26 PM    <DIR>          ..
+04/08/2023  06:39 PM    <DIR>          Debug
+04/09/2023  06:43 PM    <DIR>          Release
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\obj\Debug
+
+04/08/2023  07:34 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/08/2023  07:11 PM               210 .NETFramework,Version=v4.8.AssemblyAttributes.cs
+04/08/2023  07:11 PM             9,785 DesignTimeResolveAssemblyReferencesInput.cache
+04/08/2023  07:34 PM             2,051 myPword.application
+04/08/2023  07:34 PM            18,079 myPword.csproj.AssemblyReference.cache
+04/08/2023  07:34 PM                 0 myPword.csproj.CopyComplete
+04/08/2023  07:34 PM                42 myPword.csproj.CoreCompileInputs.cache
+04/08/2023  07:34 PM             2,489 myPword.csproj.FileListAbsolute.txt
+04/08/2023  07:34 PM               649 myPword.csproj.GenerateResource.cache
+04/08/2023  07:34 PM                 0 myPword.csproj.SuggestedBindingRedirects.cache
+04/08/2023  07:34 PM           249,856 myPword.exe
+04/08/2023  07:34 PM            14,699 myPword.exe.manifest
+04/08/2023  07:34 PM               180 myPword.Form1.resources
+04/08/2023  07:34 PM           189,952 myPword.pdb
+04/08/2023  07:34 PM            21,194 myPword.pWord.resources
+04/08/2023  07:34 PM            17,960 myPword.Resource1.resources
+04/08/2023  07:34 PM             1,227 myPword.TrustInfo.xml
+04/08/2023  07:34 PM             2,476 pWordLib.AddItem.resources
+04/08/2023  07:34 PM             7,179 pWordLib.AddMaster.resources
+04/08/2023  07:34 PM             7,155 pWordLib.AYS.resources
+04/08/2023  07:34 PM            62,798 pWordLib.frmAbout.resources
+04/08/2023  07:34 PM             5,311 pWordLib.frmHelp.resources
+03/19/2023  11:38 AM    <DIR>          TempPE
+              21 File(s)        613,292 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\obj\Debug\TempPE
+
+03/19/2023  11:38 AM    <DIR>          .
+04/08/2023  07:34 PM    <DIR>          ..
+03/19/2023  11:38 AM            20,480 Data.Designer.cs.dll
+03/19/2023  11:38 AM             8,192 Resource1.Designer.cs.dll
+               2 File(s)         28,672 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\obj\Release
+
+04/30/2023  01:01 PM    <DIR>          .
+04/09/2023  05:13 PM    <DIR>          ..
+04/09/2023  05:13 PM               210 .NETFramework,Version=v4.8.AssemblyAttributes.cs
+04/09/2023  07:47 PM             9,758 DesignTimeResolveAssemblyReferencesInput.cache
+04/30/2023  01:02 PM             2,051 myPword.application
+04/30/2023  01:01 PM            17,706 myPword.csproj.AssemblyReference.cache
+04/09/2023  06:43 PM                 0 myPword.csproj.CopyComplete
+04/09/2023  06:43 PM                42 myPword.csproj.CoreCompileInputs.cache
+04/30/2023  01:02 PM             2,413 myPword.csproj.FileListAbsolute.txt
+04/09/2023  06:43 PM               649 myPword.csproj.GenerateResource.cache
+04/09/2023  06:43 PM                 0 myPword.csproj.SuggestedBindingRedirects.cache
+04/30/2023  01:02 PM           241,664 myPword.exe
+04/30/2023  01:02 PM            14,699 myPword.exe.manifest
+04/10/2023  01:33 AM               180 myPword.Form1.resources
+04/10/2023  01:33 AM            21,194 myPword.pWord.resources
+04/10/2023  01:33 AM            17,960 myPword.Resource1.resources
+04/12/2023  12:08 PM             1,227 myPword.TrustInfo.xml
+04/10/2023  01:33 AM             2,476 pWordLib.AddItem.resources
+04/10/2023  01:33 AM             7,179 pWordLib.AddMaster.resources
+04/10/2023  01:33 AM             7,155 pWordLib.AYS.resources
+04/10/2023  01:33 AM            62,798 pWordLib.frmAbout.resources
+04/10/2023  01:33 AM             5,311 pWordLib.frmHelp.resources
+04/09/2023  05:13 PM    <DIR>          TempPE
+              20 File(s)        414,672 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\obj\Release\TempPE
+
+04/09/2023  05:13 PM    <DIR>          .
+04/30/2023  01:01 PM    <DIR>          ..
+04/09/2023  05:13 PM            20,480 Data.Designer.cs.dll
+04/09/2023  05:13 PM             8,192 Resource1.Designer.cs.dll
+               2 File(s)         28,672 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages
+
+03/19/2023  08:46 AM    <DIR>          .
+04/30/2023  01:26 PM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          Microsoft.DependencyValidation.Analyzers.0.11.0
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM            18,706 .signature.p7s
+03/19/2023  08:46 AM    <DIR>          analyzers
+03/19/2023  08:46 AM           688,029 Microsoft.DependencyValidation.Analyzers.0.11.0.nupkg
+03/19/2023  08:46 AM    <DIR>          tools
+               2 File(s)        706,735 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          dotnet
+               0 File(s)              0 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM    <DIR>          cs
+03/19/2023  08:46 AM    <DIR>          de
+03/19/2023  08:46 AM    <DIR>          es
+03/19/2023  08:46 AM    <DIR>          fr
+03/19/2023  08:46 AM    <DIR>          it
+03/19/2023  08:46 AM    <DIR>          ja
+03/19/2023  08:46 AM    <DIR>          ko
+03/19/2023  08:46 AM           441,216 Microsoft.DependencyValidation.Analyzers.dll
+03/19/2023  08:46 AM    <DIR>          pl
+03/19/2023  08:46 AM    <DIR>          pt-BR
+03/19/2023  08:46 AM    <DIR>          ru
+03/19/2023  08:46 AM    <DIR>          tr
+03/19/2023  08:46 AM    <DIR>          zh-HANS
+03/19/2023  08:46 AM    <DIR>          zh-HANT
+               1 File(s)        441,216 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\de
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\es
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,600 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,600 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\fr
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,592 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,592 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\it
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,600 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,600 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\ja
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\ko
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\pl
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\pt-BR
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\ru
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           138,112 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        138,112 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\tr
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           137,088 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        137,088 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\zh-HANS
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           136,576 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        136,576 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\zh-HANT
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM           136,784 Microsoft.DependencyValidation.Analyzers.resources.dll
+               1 File(s)        136,784 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\tools
+
+03/19/2023  08:46 AM    <DIR>          .
+03/19/2023  08:46 AM    <DIR>          ..
+03/19/2023  08:46 AM             1,341 install.ps1
+03/19/2023  08:46 AM             1,477 uninstall.ps1
+               2 File(s)          2,818 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\Properties
+
+03/19/2023  08:46 AM    <DIR>          .
+04/30/2023  01:26 PM    <DIR>          ..
+03/19/2023  08:46 AM             1,498 app.manifest
+               1 File(s)          1,498 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\Resources
+
+03/19/2023  08:46 AM    <DIR>          .
+04/30/2023  01:26 PM    <DIR>          ..
+03/19/2023  08:46 AM             1,078 $this.Icon.ico
+03/19/2023  08:46 AM             1,078 Cos.ico
+03/19/2023  08:46 AM             1,078 Division.ico
+03/19/2023  08:46 AM             1,078 Empty.ico
+03/19/2023  08:46 AM             1,078 ExpandedLink.ico
+03/19/2023  08:46 AM             1,078 Minus.ico
+03/19/2023  08:46 AM             1,078 Multiplication.ico
+03/19/2023  08:46 AM             1,078 Plus.ico
+03/19/2023  08:46 AM             1,078 Sin.ico
+03/19/2023  08:46 AM             1,078 SubMinus.ico
+03/19/2023  08:46 AM             1,078 Subtraction.ico
+03/19/2023  08:46 AM             1,078 Sum.ico
+03/19/2023  08:46 AM             1,078 Tan.ico
+03/19/2023  08:46 AM             1,078 _.ico
+              14 File(s)         15,092 bytes
+
+ Directory of D:\src\opnode\pWord4\pword\_UpgradeReport_Files
+
+03/19/2023  08:46 AM    <DIR>          .
+04/30/2023  01:26 PM    <DIR>          ..
+03/19/2023  08:46 AM             3,348 UpgradeReport.css
+03/19/2023  08:46 AM            12,579 UpgradeReport.xslt
+03/19/2023  08:46 AM                69 UpgradeReport_Minus.gif
+03/19/2023  08:46 AM                71 UpgradeReport_Plus.gif
+               4 File(s)         16,067 bytes
+
+     Total Files Listed:
+             255 File(s)     10,289,938 bytes
+             137 Dir(s)  42,365,067,264 bytes free
