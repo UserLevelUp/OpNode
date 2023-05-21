@@ -66,7 +66,7 @@ sequenceDiagram
 - **Child Node Operations:** Child nodes with a parent that contains an operation can optionally contain the same operation or different operations or no operations.
 - **Integration with JSON and XML as a tree-spanning database:** Leverage the power of NoSQL for a more robust and scalable data storage solution.
 - **Support for XML, JSON, JSON Schema, and XML Schema operations:** Gain flexibility and control over data management with support for popular data formats and schemas.
-- **Change detection:** Change detection bubbles up only to the parent with same operations and doesn't re-calculate all siblings of a parent to make it efficient.  The parent will only grab the results of child siblings of the child that informed the parent of a change it it contains the same operation, making it ultra efficient.
+- **Change detection:** Change detection bubbles up only to the parent with same operations and doesn't re-calculate all siblings of a parent to make it efficient.  The parent will only grab the results of child siblings of the child that informed the parent of a change if it contains the same operation, making it ultra efficient.
 
 ## Getting Started
 
