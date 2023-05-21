@@ -21,24 +21,20 @@ classDiagram
     class OpNode{
         +key: string
         +value: any
-        +optional operation: doOperation()
-        +CalculateChildrenResults()
-        +InformParent()
-        +@attribute(name: "key", type: "string", required: false)
-        +@attribute(name: "value", type: "any", required: false)
-        +@attribute(name: "operation", type: "function", required: false)
-        +@prefix(name: "OpNode", required: false)
-        +@namespace(name: "com.example", required: false)
-        +@suffix(name: "Node", required: false)
-        +attributes: [@attribute]
+        +optional operation: function
+            +HasChildren()
+            +DoOperation()
+            +CalculateChildrenResults()
+            +InformParent()
+        +attributes: attribute[]
         +prefix: string
         +namespace: string
         +suffix: string
     }
     class Library{
-        +OpNodeModels
+        +OpNodeModels: OpNode[]
         +OpNodeFunctions()
-        +OpNodePluginModels
+        +OpNodePluginModels: OpNode[]
         +OpNodePluginFunctions()
     }
     OpNodeImpl "1" -- "*" OpNode: contains
