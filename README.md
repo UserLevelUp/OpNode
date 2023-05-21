@@ -29,6 +29,10 @@ classDiagram
         +@prefix(name: "OpNode", required: false)
         +@namespace(name: "com.example", required: false)
         +@suffix(name: "Node", required: false)
+        +attributes: [@attribute]
+        +prefix: string
+        +namespace: string
+        +suffix: string
     }
     class Library{
         +OpNodeModels
