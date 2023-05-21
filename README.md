@@ -8,7 +8,8 @@ OpNode is a versatile and powerful tree-based system for managing key-value pair
 
 ```mermaid
 classDiagram
-    class OpNodeForms{
+    class OpNodeImpl{
+        +RootNode: OpNode
         +StateChanges()
         +ViewDocuments()
         +CommandHistory()
@@ -30,10 +31,10 @@ classDiagram
         +@suffix(name: "Node", required: false)
     }
     class Library{
-        +NodeModels
-        +NodeFunctions()
+        +OpNodeModels
+        +OpNodeFunctions()
     }
-    OpNodeForms "1" -- "*" OpNode: contains
+    OpNodeImpl "1" -- "*" OpNode: contains
     Library "1" -- "*" OpNode: operates on
     OpNode "1" -- "*" OpNode: doOperation()
     OpNode "1" -- "*" OpNode: CalculateChildrenResults()
