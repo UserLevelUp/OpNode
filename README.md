@@ -45,6 +45,18 @@ classDiagram
     OpNode "1" -- "*" OpNode: InformParent()
 ```
 
+## Basic sequence of all Operations (Operations are always optional)
+```mermaid
+sequenceDiagram
+    participant H as hasChildren()
+    participant D as doOperation()
+    participant C as CalculateChildrenResults()
+    participant I as InformParent()
+    H->>D: hasChildren()
+    D->>C: doOperation()
+    C->>I: CalculateChildrenResults()
+```
+
 ## Special Features
 
 - **TreeView-based key-value pair management:** Easily organize and manage data in a hierarchical structure.
