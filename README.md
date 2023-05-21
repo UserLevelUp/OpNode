@@ -15,6 +15,7 @@ classDiagram
         +CommandHistory()
         +SecurityChanges()
         +TrackNodeChanges()
+        +OpNodePlugins()
         +OperationalChanges()
     }
     class OpNode{
@@ -37,13 +38,15 @@ classDiagram
     class Library{
         +OpNodeModels
         +OpNodeFunctions()
+        +OpNodePluginModels
+        +OpNodePluginFunctions()
     }
     OpNodeImpl "1" -- "*" OpNode: contains
     Library "1" -- "*" OpNode: operates on
+    OpNode "1" -- "*" OpNode: has children
     OpNode "1" -- "*" OpNode: doOperation()
     OpNode "1" -- "*" OpNode: CalculateChildrenResults()
     OpNode "1" -- "*" OpNode: InformParent()
-    OpNode "1" -- "*" OpNode: has children
 ```
 
 ## Special Features
