@@ -6,6 +6,29 @@
 
 OpNode is a versatile and powerful tree-based system for managing key-value pairs using a TreeView structure. The project aims to provide a user-friendly interface for operations on individual tree nodes, with a wide range of potential applications such as password management, data organization, and more.  Operations are optional functionality that is added to OpNode which supports importing and exporting XML files, searching node structures, and executing commands on individual nodes.
 
+```mermaid
+classDiagram
+    class OpNodeImplementation{
+        +StateChanges()
+        +ViewDocuments()
+        +CommandHistory()
+        +SecurityChanges()
+        +TrackNodeChanges()
+        +OperationalChanges()
+    }
+    class OpNode{
+        +CalculateValue()
+        +InformParent()
+    }
+    class Library{
+        +NodeModels
+        +NodeFunctions()
+    }
+    OpNodeImplementation "1" -- "*" OpNode: contains
+    Library "1" -- "*" OpNode: operates on
+    OpNode "1" -- "*" OpNode: has children
+```
+
 ## Special Features
 
 - **TreeView-based key-value pair management:** Easily organize and manage data in a hierarchical structure.
