@@ -62,7 +62,7 @@ sequenceDiagram
 - **TreeView-based key-value pair management:** Easily organize and manage data in a hierarchical structure.
 - **Importing and exporting XML files:** Seamlessly integrate with XML-based data sources or export your data in a widely-supported format.
 - **Search functionality within node structures:** Quickly locate specific nodes by searching for keywords.
-- **Extensible operations on individual nodes:** Customize and expand the functionality of each node with various operations.
+- **Extensible operations on individual nodes:** Customize and expand the functionality of each node with various optional operations.
 - **Child Node Operations:** Child nodes with a parent that contains an operation can optionally contain the same operation or different operations or no operations.
 - **Integration with JSON and XML as a tree-spanning database:** Leverage the power of NoSQL for a more robust and scalable data storage solution.
 - **Support for XML, JSON, JSON Schema, and XML Schema operations:** Gain flexibility and control over data management with support for popular data formats and schemas.
