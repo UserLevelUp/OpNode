@@ -8,7 +8,7 @@ OpNode is a versatile and powerful tree-based system for managing key-value pair
 
 ```mermaid
 classDiagram
-    class OpNodeImplementation{
+    class OpNodeImpl{
         +StateChanges()
         +ViewDocuments()
         +CommandHistory()
@@ -19,14 +19,18 @@ classDiagram
     class OpNode{
         +CalculateValue()
         +InformParent()
+        +optional operation: doOperation()
     }
     class Library{
         +NodeModels
         +NodeFunctions()
     }
-    OpNodeImplementation "1" -- "*" OpNode: contains
+    OpNodeImpl "1" -- "*" OpNode: contains
     Library "1" -- "*" OpNode: operates on
     OpNode "1" -- "*" OpNode: has children
+    OpNode ..> OpNodeImpl
+    OpNode ..> Library
+    OpNode "1" -- "*" OpNode: doOperation()
 ```
 
 ## Special Features
