@@ -45,7 +45,7 @@ classDiagram
     OpNode "1" -- "*" OpNode: InformParent()
 ```
 
-## Basic sequence of all Operations (Operations are always optional)
+## Basic sequence of all OpNodes with one or more Operations (Operations are always optional)
 ```mermaid
 sequenceDiagram
     participant H as hasChildren()
