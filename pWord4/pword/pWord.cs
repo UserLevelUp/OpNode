@@ -104,24 +104,7 @@ namespace myPword
         int xmlIndex = 0;
 
         // TODO: Move To pWordLib
-        public enum nodeMode
-        {
-            addto = 1,
-            insert = 2,
-            edit = 3,
-            addAttributeTo = 4,
-            addNamespacePrefix = 5,
-            addNamespaceSuffix = 6,
-            sum = 7,
-            multiply = 8,
-            divide = 9,
-            viewErrors = 10,
-            cut = 11,
-            trig,
-            find,
-            xmlUpdate,
-            search
-        }
+
 
 
         // TODO: Move To pWordLib
@@ -563,7 +546,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 335);
+            this.statusBar1.Location = new System.Drawing.Point(0, 315);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(299, 20);
             this.statusBar1.TabIndex = 0;
@@ -1367,7 +1350,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 43);
+            this.splitter1.Location = new System.Drawing.Point(0, 23);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(299, 7);
             this.splitter1.TabIndex = 5;
@@ -1380,7 +1363,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 70);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(299, 265);
+            this.panel1.Size = new System.Drawing.Size(299, 245);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1501,7 +1484,7 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 95);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(299, 210);
+            this.panel6.Size = new System.Drawing.Size(299, 190);
             this.panel6.TabIndex = 5;
             // 
             // treeView1
@@ -1521,7 +1504,7 @@ namespace myPword
             this.treeView1.Name = "treeView1";
             this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(299, 43);
+            this.treeView1.Size = new System.Drawing.Size(299, 23);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1541,7 +1524,7 @@ namespace myPword
             this.tabs.Controls.Add(this.tabAttributes);
             this.tabs.Controls.Add(this.tabCMD);
             this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabs.Location = new System.Drawing.Point(0, 50);
+            this.tabs.Location = new System.Drawing.Point(0, 30);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(299, 160);
@@ -1717,7 +1700,7 @@ namespace myPword
             // 
             this.AccessibleDescription = "Enabled to view file after xml or html export.";
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(299, 355);
+            this.ClientSize = new System.Drawing.Size(299, 335);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.toolBar1);
@@ -2312,7 +2295,7 @@ namespace myPword
                                 //CallRecursive(xmlNode);  // disabled CallRecursive here... need to fix Call recursive
                                 // ToDo: fix CallRecursive(xmlNode)
 
-                                CallRecursive(xmlNode);  // treeview1 is a pView
+                                var xdoc = ((pNode)treeView1.SelectedNode).CallRecursive(xmlNode);  // treeview1 is a pView
 
                                 this.saveFileDialogHTML.FileName = filenameHTML;
                                 this.saveFileDialogHTML.Title = "Save the NODE to XML/HTML";
@@ -2349,6 +2332,7 @@ namespace myPword
                                         xdoc.Save(filenameHTML);
                                         xdoc.RemoveAll();
                                         xdoc = null;
+                                        filenameJSON = null;
                                     }
                                     else
                                     {
@@ -2379,10 +2363,92 @@ namespace myPword
                         //swFromFile.Close();
                         System.Diagnostics.Process.Start(filenameHTML);
                     }
-
-                    else
+                    else if (filenameJSON != null)
                     {
-                        MessageBox.Show("You must first export a NODE to XML or HTML.");
+                        if (exportMode == ExportMode.treeview)
+                        {
+                            xml.Clear();  // clear out contents first.
+                                          //CallRecursive(xmlNode);
+                                          // xmlNode = (pNode)treeView1.SelectedNode;  // this assinged xmlNode to the selected node
+                                          //menuItemToHTML_Click(sender, new EventArgs());
+                        }
+                        else if (exportMode == ExportMode.pNode)
+                        {
+                            xml.Clear(); // clear out contents first.
+                                         //CallRecursive(xmlNode);
+
+                            try
+                            {
+                                this.exportMode = ExportMode.pNode;  // what am I exporting?  A pNode
+                                xml.Clear();  // clear out contents first.
+
+                                //this.xmlNode = (pNode)treeView1.SelectedNode;  // xmlNode is what is being exported to xml
+                                this.xmlIndex = treeView1.SelectedNode.Index; // xmlIndex is the SelectedNodes index
+                                this.menuItem21.Enabled = true; // MenuItem21 is enabled... Todo: rename menuItem21
+                                this.menuItem31.Enabled = true;  // MneuItem21 is enabled... Todo: rename menuItem31
+                                this.nodeIndex = treeView1.SelectedNode.Index; // nodeInex is now equal to xmlIndex?
+                                this.statusBar1.Text = "Export Node JSON Mode";
+                                //CallRecursive(xmlNode);  // disabled CallRecursive here... need to fix Call recursive
+                                // ToDo: fix CallRecursive(xmlNode)
+
+                                var xdoc = ((pNode)treeView1.SelectedNode).CallRecursive(xmlNode);  // treeview1 is a pView
+
+                                if (xdoc != null)
+                                {
+                                    // convert xdoc to JSON
+                                    string json = "";
+
+                                    // use JsonSerializer to convert xdoc to json with options
+
+                                    json = JsonConvert.SerializeXmlNode(xdoc, Newtonsoft.Json.Formatting.Indented, false);
+                                    File.WriteAllText(filenameJSON, json);
+                                    //xdoc.Save(filenameHTML);
+                                    xdoc.RemoveAll();
+                                    xdoc = null;
+                                    this.filenameHTML = null;
+                                    this.saveFileDialogJSON.FileName = filenameJSON;
+                                    this.saveFileDialogJSON.Title = "Save the NODE to JSON";
+                                    this.toolBarView.Enabled = true;
+                                }
+
+                                else
+                                {
+                                    MessageBox.Show("The export was not able to save b/c it was empty.");
+                                }
+
+
+                            }
+                            catch (Exception f)
+                            {
+                                MessageBox.Show("You had an error while exporting to XML. " + f.Message, "SAVE ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
+                            }
+
+
+
+                        }
+
+
+                        //StreamWriter swFromFile = new StreamWriter(filenameHTML);
+
+                        //swFromFile.WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\" ?>");
+                        //for (int i = 0; i < xml.Count; i++)
+                        //{
+                        //    swFromFile.Write(xml[i]);
+                        //}
+                        //swFromFile.Flush();
+                        //swFromFile.Close();
+                        if (filenameHTML != null)
+                        {
+                            System.Diagnostics.Process.Start(filenameHTML);
+                        }
+                        else if (filenameJSON != null)
+                        {
+                            System.Diagnostics.Process.Start(filenameJSON);
+                        }
+                        else
+                        {
+                            MessageBox.Show("You must first export a NODE to XML or HTM or JSON");
+                        }
                     }
                 }
                 else if (e.Button == this.toolBarXML)
@@ -2437,6 +2503,7 @@ namespace myPword
                 {
                     this.treeView1.CollapseAll();
                 }
+
             }
             catch (Exception f)
             {
@@ -3109,9 +3176,7 @@ namespace myPword
 
         private void menuItemEdit_Click(object sender, System.EventArgs e)
         {
-
             mode = nodeMode.edit;
-
             try
             {
                 lblName.Text = "Name:";
@@ -3186,7 +3251,7 @@ namespace myPword
         {
 
             xml.Clear();  // clear out contents first.
-            CallRecursive((pNode)treeView1.SelectedNode);
+            ((pNode)treeView1.SelectedNode).CallRecursive((pNode)treeView1.SelectedNode);
 			try
             {
                 exportMode = ExportMode.treeview;
@@ -3240,7 +3305,7 @@ namespace myPword
 				// ToDo: fix CallRecursive(xmlNode)
 				xmlNode = null;
 				xmlNode = (pNode)treeView1.SelectedNode;
-				CallRecursive(xmlNode);  // treeview1 is a pView
+				var xdoc = ((pNode)treeView1.SelectedNode).CallRecursive(xmlNode);  // treeview1 is a pView
 				this.saveFileDialogJSON.FileName = filenameJSON;
 				this.saveFileDialogJSON.Title = "Save the NODE to JSON";
 				this.saveFileDialogJSON.ShowDialog();
@@ -3283,6 +3348,7 @@ namespace myPword
 						//xdoc.Save(filenameHTML);
 						xdoc.RemoveAll();
 						xdoc = null;
+                        this.filenameHTML = null;
 					}
 					else
 					{
@@ -3325,295 +3391,7 @@ namespace myPword
         // this will allow the open dialog box to close 
         // and then the pNode tree will be generated from the xDoc after
         // the open dialog box closes.
-        private void CallRecursive(pNode node)
-        {
-            // MessageBox.Show("getnode:" + getNode.Name);
-            // MessageBox.Show("pView top node:" + node.Text);
-            // use c# 4.0 in a nut shell to construct XmlDocument for this xml stuff
-            // page starts on 490
 
-            // TODO: Move To pWordLib
-            xdoc = new XmlDocument();
-
-            // TODO: Move To pWordLib
-            xdoc.AppendChild(xdoc.CreateXmlDeclaration("1.0", null, "yes"));
-
-            // TODO: Move To pWordLib
-            if (xdoc == null)  // instantiate the first time through
-            {
-                xdoc = new XmlDocument();
-                System.Xml.NameTable nt = new NameTable();
-                nt.Add(node.Text);
-                XmlNameTable xnt = (XmlNameTable)nt;
-                System.Xml.XmlNamespaceManager xnsm = new XmlNamespaceManager(xnt);
-                if (!(node.Namespace == null))
-                {
-                    if (node.Namespace.Prefix != null)
-                    {
-                        xnsm.AddNamespace(node.Namespace.Prefix, node.Namespace.URI_PREFIX);  // prefix will be like 'xs', and url will be like 'http://www.url.com/etc/'
-                    }
-                    if (node.Namespace.Suffix != null)
-                    {
-                        xnsm.AddNamespace(node.Namespace.Suffix, node.Namespace.URI_SUFFIX);
-                    }
-                }
-                // todo:  iterate through all nodes in pNode and place namespaces into the namespace manager
-                // for now only do the first one if it exists
-
-                // TODO: Move To pWordLib
-                xdoc = new XmlDocument(xnt);
-
-                // TODO: Move To pWordLib
-                xdoc.AppendChild(xdoc.CreateXmlDeclaration("1.0", null, "yes"));
-                //foreach (String key in xnsm.GetNamespacesInScope(XmlNamespaceScope.All).Keys)
-                //{
-                //    // this inserts the namespace into the xdoc from the name space manager
-                //    //xdoc.Schemas.XmlResolver resolve = 
-                //    //xdoc.Schemas.Add(key, xnsm.LookupNamespace(key));
-                //}
-            }
-
-            // TODO: Move To pWordLib
-            node.getXmlName();  // fix node attributes and todo: eventually namespaces
-
-            // TODO: Move To pWordLib
-            XmlNode rootNode = xdoc.CreateElement(node.getXmlName());
-            rootNode.InnerText = (String)node.Tag;
-
-            // TODO: Move To pWordLib
-            foreach (var attrKey in node.getKeys()) 
-            {
-
-                var val = node.getValue(attrKey);
-
-                //
-
-                XmlAttribute xmlAttribute = null;
-				if (val != null)
-				{
-					xmlAttribute = xdoc.CreateAttribute(attrKey);
-					xmlAttribute.Value = val;
-					rootNode.Attributes.Append(xmlAttribute);
-				}
-				//rootNode.Attributes.Append(new XmlAttribute(attrKey, val));
-
-			}
-
-            // TODO: Move To pWordLib
-            if (node.Namespace != null)
-            {
-                //rootNode = xdoc.CreateNode(XmlNodeType.Element, node.Namespace.Prefix, node.Name, node.Namespace.URI_PREFIX);
-            }
-            else
-            {
-                // this takes a long time as well
-                // see if we can't use an existing node and clone it
-                //rootNode = xdoc.CreateNode(XmlNodeType.Element, node.getXmlName(), "");  // any time getXmlName is called ... 
-                // it should be necessary to now recheck to see if its got attributes at this current node
-            }
-
-            // TODO: Move To pWordLib
-            foreach (String key in node.getKeys())
-            {
-                if (key != "")
-                {
-                    if (!(node.Namespace == null))
-                    {
-                        XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, node.Namespace.Prefix, key, node.Namespace.URI_PREFIX);
-                        attr.Value = node.getValue(key);
-                        rootNode.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
-                    }
-                    else
-                    {
-                        XmlNode attr;
-                        if (node.Namespace != null)
-                        {
-                            if (node.Namespace.Prefix != null)
-                            {
-                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, node.Namespace.URI_PREFIX);
-                            }
-                            else
-                            {
-                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
-                            }
-                        }
-                        else
-                        {
-                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
-                        }
-                        attr.Value = node.getValue(key);
-                        rootNode.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
-                    }
-                }
-            }
-
-            // TODO: Move To pWordLib
-            foreach (pNode p in node.Nodes)
-            {
-                p.getXmlName();  // fix any attributes (this has been completed in pNode.DetectComplexNodeName()
-                                 // todo: fix any namespace ... 
-            }
-
-            // TODO: Move To pWordLib
-            foreach (pNode p in node.Nodes)
-            {
-                XmlNode xn;
-                if (p.Namespace != null)
-                {
-                    if (p.Namespace.Prefix != null)
-                    {
-                        xn = xdoc.CreateNode(XmlNodeType.Element, p.Namespace.Prefix, p.Text, p.Namespace.URI_PREFIX);
-                    }
-                    else
-                    {
-                        // this takes a long time as well
-                        // see if we can't use an existing node and clone it
-                        xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName(), "");  // any time getXmlName is called ... 
-                        // it should be necessary to now recheck to see if its got attributes at this current node
-                    }
-                }
-                else
-                {
-                    // this takes a long time as well
-                    // see if we can't use an existing node and clone it
-                    xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName(), "");  // any time getXmlName is called ... 
-                                                                                    // it should be necessary to now recheck to see if its got attributes at this current node
-                }
-                xn.InnerText = (String)p.Tag;
-                foreach (String key in p.getKeys())
-                {
-                    if (p.Namespace != null)
-                    {
-                        if (p.Namespace.Prefix != null)
-                        {
-                            XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, p.Namespace.Prefix, key, p.Namespace.URI_PREFIX);
-                            attr.Value = p.getValue(key);
-                            xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
-                        }
-                        else
-                        {
-                            XmlNode attr;
-                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
-                            attr.Value = p.getValue(key);
-                            xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
-                        }
-                    }
-                    else
-                    {
-                        XmlNode attr;
-                        if (p.Namespace != null)
-                        {
-                            if (p.Namespace.Prefix != null)
-                            {
-                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, p.Namespace.URI_PREFIX);
-                            }
-                            else
-                            {
-                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
-                            }
-                        }
-                        else
-                        {
-                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
-                        }
-                        attr.Value = p.getValue(key);
-                        xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
-                    }
-                }
-                
-                // TODO: Move To pWordLib
-                rootNode.AppendChild(RecursiveChildren(ref xn, p.Nodes));
-            }
-            // TODO: Move To pWordLib
-            xdoc.AppendChild(rootNode);
-        }
-
-        private XmlNode RecursiveChildren(ref XmlNode node, TreeNodeCollection pNodes)
-        {
-            // TODO: Move To pWordLib
-            foreach (pNode p in pNodes)
-            {
-                p.getXmlName();
-            }
-
-            // TODO: Move To pWordLib
-            foreach (pNode p in pNodes)
-            {
-                // TODO: Move To pWordLib
-                XmlNode xn;
-                if (p.Namespace != null)
-                {
-                    // change any p.Name to be text only
-                    xn = xdoc.CreateNode(XmlNodeType.Element, p.Namespace.Prefix, p.getXmlName(), p.Namespace.URI_PREFIX);
-                }
-                else
-                {
-                    // Takes a long time to do this... why???? 
-                    // Check to see if we cna not create a node, but use an available or existing node
-                    xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName().Replace(" ", ""), "");
-                }
-
-                // TODO: Move To pWordLib
-                xn.InnerText = (String)p.Tag;
-
-                // TODO: Move To pWordLib
-                foreach (String key in p.getKeys())
-                {
-                    // TODO: Move To pWordLib
-                    System.Xml.NameTable nt = new NameTable();
-                    nt.Add(p.Text);
-
-                    // TODO: Move To pWordLib
-                    XmlNameTable xnt = (XmlNameTable)nt;
-                    System.Xml.XmlNamespaceManager xnsm = new XmlNamespaceManager(xnt);
-                    if (p.Namespace != null)
-                    {
-                        if (p.Namespace.Prefix != null)
-                        {
-                            xnsm.AddNamespace(p.Namespace.Prefix, p.Namespace.URI_PREFIX);  // prefix will be like 'xs', and url will be like 'http://www.url.com/etc/'
-                        }
-                        if (p.Namespace.Suffix != null)
-                        {
-                            xnsm.AddNamespace(p.Namespace.Suffix, p.Namespace.URI_SUFFIX);
-                        }
-
-                    }
-
-                    // TODO: Move To pWordLib
-                    if (p.Namespace != null)
-                    {
-                        if (p.Namespace.Prefix != null)
-                        {
-                            XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, p.Namespace.Prefix, p.Namespace.URI_PREFIX);
-                            attr.Value = p.getValue(key);
-                            xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
-                        }
-                        else
-                        {
-                            XmlNode attr;
-                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
-                        }
-                    }
-                    else
-                    {
-                        XmlNode attr;
-                        if (p.Namespace != null)
-                        {
-                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, p.Namespace.URI_PREFIX);
-                        }
-                        else
-                        {
-                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
-                        }
-                        attr.Value = p.getValue(key);
-                        xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
-                    }
-                }
-                // TODO: Move To pWordLib
-                node.AppendChild(RecursiveChildren(ref xn, p.Nodes));
-            }
-            return node;
-        }
 
         //// Call the procedure using the TreeView.
         //private void CallRecursive(pView treeView)
@@ -4008,7 +3786,7 @@ namespace myPword
                 xmlNode = (pNode)treeView1.SelectedNode;
 
                 // TODO: Move To pWordLib
-                CallRecursive(xmlNode);  // treeview1 is a pView
+                var xdoc = ((pNode)treeView1.SelectedNode).CallRecursive(xmlNode);  // treeview1 is a pView
                 
                 this.saveFileDialogHTML.FileName = filenameHTML;
                 this.saveFileDialogHTML.Title = "Save the NODE to XML/HTML";
