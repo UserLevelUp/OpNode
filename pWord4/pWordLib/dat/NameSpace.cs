@@ -5,6 +5,8 @@ using System.Text;
 
 namespace pWordLib.dat
 {
+    // explain what ICloneabl does
+    // https://docs.microsoft.com/en-us/dotnet/api/system.icloneable?view=netframework-4.8
     [Serializable()]
     public class NameSpace : ICloneable
     {
@@ -15,7 +17,11 @@ namespace pWordLib.dat
         public string URI_SUFFIX { get; set; }
 
 
-        #region ICloneable Members
+                #region ICloneable Members
+        /// <summary>
+        /// Shallow copy
+        /// </summary>
+        /// <returns></returns>#region ICloneable Members
 
         public object Clone()
         {

@@ -60,7 +60,7 @@ namespace pWordLib.dat
             // my deserialization code ... don't forget that the info returns something
             // battled this for a little while hoping that the info would do it all on its own
             this.operations = (List<IOperate>)info.GetValue("operations", typeof(List<IOperate>));
-            this.Namespace = (NameSpace)info.GetValue("namespace", typeof(NameSpace));
+            this.Namespaces = (List<NameSpace>)info.GetValue("namespace", typeof(List<NameSpace>));
             this.attributes = (SortedList<String, String>)info.GetValue("attributes", typeof(SortedList<String, String>));
             base.Deserialize(info, context);
         }
@@ -118,7 +118,7 @@ namespace pWordLib.dat
             this.SelectedImageIndex = img2;
         }
 
-        public NameSpace Namespace { get; set; }
+        public List<NameSpace> Namespaces { get; set; }
 
         private SortedList<String, String> attributes = null;
 
@@ -217,7 +217,7 @@ namespace pWordLib.dat
         void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("operations", operations);
-            info.AddValue("namespace", Namespace);
+            info.AddValue("namespace", Namespaces);
             info.AddValue("attributes", attributes);
             base.Serialize(info, context);
         }
@@ -274,7 +274,7 @@ namespace pWordLib.dat
             {
                 pClone.attributes.Add(attribute.Key, attribute.Value);
             }
-            pClone.Namespace = (Namespace != null) ? (NameSpace)Namespace.Clone() : null;
+            pClone.Namespaces = (Namespaces != null) ? (List<NameSpace>)Namespaces.ToList() : null;
 
             foreach(pNode pn in this.Nodes)
             {
@@ -392,17 +392,17 @@ namespace pWordLib.dat
                 nt.Add(node.Text);
                 XmlNameTable xnt = (XmlNameTable)nt;
                 System.Xml.XmlNamespaceManager xnsm = new XmlNamespaceManager(xnt);
-                if (!(node.Namespace == null))
+                node.Namespaces.ForEach(ns =>
                 {
-                    if (node.Namespace.Prefix != null)
+                    if (ns.Prefix != null)
                     {
-                        xnsm.AddNamespace(node.Namespace.Prefix, node.Namespace.URI_PREFIX);  // prefix will be like 'xs', and url will be like 'http://www.url.com/etc/'
+                        xnsm.AddNamespace(ns.Prefix, ns.URI_PREFIX);  // prefix will be like 'xs', and url will be like 'http://www.url.com/etc/'
                     }
-                    if (node.Namespace.Suffix != null)
+                    if (ns.Suffix != null)
                     {
-                        xnsm.AddNamespace(node.Namespace.Suffix, node.Namespace.URI_SUFFIX);
+                        xnsm.AddNamespace(ns.Suffix, ns.URI_SUFFIX);
                     }
-                }
+                });
                 // todo:  iterate through all nodes in pNode and place namespaces into the namespace manager
                 // for now only do the first one if it exists
 
@@ -446,7 +446,7 @@ namespace pWordLib.dat
             }
 
             // TODO: Move To pWordLib
-            if (node.Namespace != null)
+            if (node.Namespaces != null)
             {
                 //rootNode = xdoc.CreateNode(XmlNodeType.Element, node.Namespace.Prefix, node.Name, node.Namespace.URI_PREFIX);
             }
@@ -463,20 +463,17 @@ namespace pWordLib.dat
             {
                 if (key != "")
                 {
-                    if (!(node.Namespace == null))
+                    node.Namespaces.ForEach(ns =>
                     {
-                        XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, node.Namespace.Prefix, key, node.Namespace.URI_PREFIX);
+                        XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, ns.Prefix, key, ns.URI_PREFIX);
                         attr.Value = node.getValue(key);
                         rootNode.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
-                    }
-                    else
-                    {
-                        XmlNode attr;
-                        if (node.Namespace != null)
+
+                        if (ns != null)
                         {
-                            if (node.Namespace.Prefix != null)
+                            if (ns.Prefix != null)
                             {
-                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, node.Namespace.URI_PREFIX);
+                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, ns.URI_PREFIX);
                             }
                             else
                             {
@@ -489,7 +486,8 @@ namespace pWordLib.dat
                         }
                         attr.Value = node.getValue(key);
                         rootNode.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
-                    }
+
+                    });
                 }
             }
 
@@ -501,74 +499,72 @@ namespace pWordLib.dat
             }
 
             // TODO: Move To pWordLib
+            XmlNode xn;
+
             foreach (pNode p in node.Nodes)
             {
-                XmlNode xn;
-                if (p.Namespace != null)
+                p.Namespaces.ForEach(ns =>
                 {
-                    if (p.Namespace.Prefix != null)
+                    if (ns.Prefix != null)
                     {
-                        xn = xdoc.CreateNode(XmlNodeType.Element, p.Namespace.Prefix, p.Text, p.Namespace.URI_PREFIX);
+                        xn = xdoc.CreateNode(XmlNodeType.Element, ns.Prefix, p.Text, ns.URI_PREFIX);
                     }
                     else
                     {
                         // this takes a long time as well
                         // see if we can't use an existing node and clone it
                         xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName(), "");  // any time getXmlName is called ... 
-                        // it should be necessary to now recheck to see if its got attributes at this current node
+                        xn.InnerText = (String)p.Tag;
                     }
-                }
-                else
-                {
-                    // this takes a long time as well
-                    // see if we can't use an existing node and clone it
-                    xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName(), "");  // any time getXmlName is called ... 
-                                                                                    // it should be necessary to now recheck to see if its got attributes at this current node
-                }
-                xn.InnerText = (String)p.Tag;
-                foreach (String key in p.getKeys())
-                {
-                    if (p.Namespace != null)
+
+                    foreach (String key in p.getKeys())
                     {
-                        if (p.Namespace.Prefix != null)
+                        if (ns != null)
                         {
-                            XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, p.Namespace.Prefix, key, p.Namespace.URI_PREFIX);
-                            attr.Value = p.getValue(key);
-                            xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                            if (ns.Prefix != null)
+                            {
+                                XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, ns.Prefix, key, ns.URI_PREFIX);
+                                attr.Value = p.getValue(key);
+                                xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                            }
+                            else
+                            {
+                                XmlNode attr;
+                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                                attr.Value = p.getValue(key);
+                                xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
+                            }
                         }
                         else
                         {
                             XmlNode attr;
-                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
-                            attr.Value = p.getValue(key);
-                            xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
-                        }
-                    }
-                    else
-                    {
-                        XmlNode attr;
-                        if (p.Namespace != null)
-                        {
-                            if (p.Namespace.Prefix != null)
+                            if (ns != null)
                             {
-                                attr = xdoc.CreateNode(XmlNodeType.Attribute, key, p.Namespace.URI_PREFIX);
+                                if (ns.Prefix != null)
+                                {
+                                    attr = xdoc.CreateNode(XmlNodeType.Attribute, key, ns.URI_PREFIX);
+                                }
+                                else
+                                {
+                                    attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
+                                }
                             }
                             else
                             {
                                 attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
                             }
-                        }
-                        else
-                        {
-                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
-                        }
-                        attr.Value = p.getValue(key);
-                        xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
-                    }
-                }
+                            attr.Value = p.getValue(key);
+                            xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
 
-                // TODO: Move To pWordLib
-                rootNode.AppendChild(RecursiveChildren(ref xn, p.Nodes, xdoc));
+                            // TODO: Move To pWordLib
+                            rootNode.AppendChild(RecursiveChildren(ref xn, p.Nodes, xdoc));
+
+                        }
+                    }
+
+                });
+
+
             }
             // TODO: Move To pWordLib
             xdoc.AppendChild(rootNode);
@@ -588,50 +584,38 @@ namespace pWordLib.dat
             {
                 // TODO: Move To pWordLib
                 XmlNode xn;
-                if (p.Namespace != null)
+                p.Namespaces.ForEach(ns =>
                 {
                     // change any p.Name to be text only
-                    xn = xdoc.CreateNode(XmlNodeType.Element, p.Namespace.Prefix, p.getXmlName(), p.Namespace.URI_PREFIX);
-                }
-                else
-                {
-                    // Takes a long time to do this... why???? 
-                    // Check to see if we cna not create a node, but use an available or existing node
-                    xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName().Replace(" ", ""), "");
-                }
-
-                // TODO: Move To pWordLib
-                xn.InnerText = (String)p.Tag;
-
-                // TODO: Move To pWordLib
-                foreach (String key in p.getKeys())
-                {
+                    xn = xdoc.CreateNode(XmlNodeType.Element, ns.Prefix, p.getXmlName(), ns.URI_PREFIX);
                     // TODO: Move To pWordLib
-                    System.Xml.NameTable nt = new NameTable();
-                    nt.Add(p.Text);
+                    xn.InnerText = (String)p.Tag;
+
 
                     // TODO: Move To pWordLib
-                    XmlNameTable xnt = (XmlNameTable)nt;
-                    System.Xml.XmlNamespaceManager xnsm = new XmlNamespaceManager(xnt);
-                    if (p.Namespace != null)
+                    foreach (String key in p.getKeys())
                     {
-                        if (p.Namespace.Prefix != null)
+                        // TODO: Move To pWordLib
+                        System.Xml.NameTable nt = new NameTable();
+                        nt.Add(p.Text);
+
+                        // TODO: Move To pWordLib
+                        XmlNameTable xnt = (XmlNameTable)nt;
+                        System.Xml.XmlNamespaceManager xnsm = new XmlNamespaceManager(xnt);
+                        if (ns.Prefix != null)
                         {
-                            xnsm.AddNamespace(p.Namespace.Prefix, p.Namespace.URI_PREFIX);  // prefix will be like 'xs', and url will be like 'http://www.url.com/etc/'
+                            xnsm.AddNamespace(ns.Prefix, ns.URI_PREFIX);  // prefix will be like 'xs', and url will be like 'http://www.url.com/etc/'
                         }
-                        if (p.Namespace.Suffix != null)
+                        if (ns.Suffix != null)
                         {
-                            xnsm.AddNamespace(p.Namespace.Suffix, p.Namespace.URI_SUFFIX);
+                            xnsm.AddNamespace(ns.Suffix, ns.URI_SUFFIX);
                         }
 
-                    }
+                        // TODO: Move To pWordLib
 
-                    // TODO: Move To pWordLib
-                    if (p.Namespace != null)
-                    {
-                        if (p.Namespace.Prefix != null)
+                        if (ns.Prefix != null)
                         {
-                            XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, p.Namespace.Prefix, p.Namespace.URI_PREFIX);
+                            XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, ns.Prefix, ns.URI_PREFIX);
                             attr.Value = p.getValue(key);
                             xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
                         }
@@ -641,24 +625,16 @@ namespace pWordLib.dat
                             attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
                         }
                     }
-                    else
-                    {
-                        XmlNode attr;
-                        if (p.Namespace != null)
-                        {
-                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, p.Namespace.URI_PREFIX);
-                        }
-                        else
-                        {
-                            attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
-                        }
-                        attr.Value = p.getValue(key);
-                        xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
-                    }
-                }
-                // TODO: Move To pWordLib
-                node.AppendChild(RecursiveChildren(ref xn, p.Nodes, xdoc));
+
+                    // TODO: Move To pWordLib
+                    xn.AppendChild(RecursiveChildren(ref xn, p.Nodes, xdoc));
+
+
+                });
+
             }
+
+            // TODO: fix reference to node?   Don't understand what I'm doing with this???
             return node;
         }
 
