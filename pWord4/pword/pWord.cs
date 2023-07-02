@@ -2749,10 +2749,14 @@ namespace myPword
                     //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
                     aNode.Tag = this.txtObject.Text;
                     aNode.Text = this.txtName.Text;
-                    if (tmpNode.Namespace != null)
+                    tmpNode.Namespaces.ForEach(ns =>
                     {
-                        aNode.Namespace = tmpNode.Namespace;  // trickle down namespaces
-                    }
+                        if (aNode.Namespaces == null)
+                        {
+                            aNode.Namespaces = new List<NameSpace>();
+                        }
+                        aNode.Namespaces.Add(ns);  // trickle down namespaces
+                    });
                     treeView1.SelectedNode = tmpNode;
                     treeView1.SelectedNode.Nodes.Add(aNode);
                     // after adding the new node, be sure the index is updated as well... this is not necessary
@@ -2850,10 +2854,15 @@ namespace myPword
                     aNode = new pNode(this.txtName.Text);
                     TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
                     aNode.Tag = this.txtObject.Text;
-                    if (tmpNode.Namespace != null)
+                    tmpNode.Namespaces.ForEach(ns =>
                     {
-                        aNode.Namespace = tmpNode.Namespace;  // trickle down namespaces
-                    }
+                        if (aNode.Namespaces == null)
+                        {
+                            aNode.Namespaces = new List<NameSpace>();
+                        }
+                        aNode.Namespaces.Add(ns);  // trickle down namespaces
+                    });
+
                     treeView1.SelectedNode = tmpNode;
                     treeView1.SelectedNode.Nodes.Insert(modeIndex, aNode);
                     userControl11.MastersValue[userControl11.index] = masterNode;
@@ -2925,12 +2934,16 @@ namespace myPword
                     //aNode = new pNode(this.txtName.Text);
                     //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
                     //aNode.Tag = this.txtObject.Text;
-                    if (tmpNode.Namespace == null)
+                    if (tmpNode.Namespaces == null)
                     {
-                        tmpNode.Namespace = new NameSpace();
+                        tmpNode.Namespaces = new List<NameSpace>();
                     }
-                    tmpNode.Namespace.Prefix = txtName.Text;
-                    tmpNode.Namespace.URI_PREFIX = txtObject.Text;
+                    tmpNode.Namespaces.Add(new NameSpace
+                    {
+                        Prefix = txtName.Text,
+                        URI_PREFIX = txtObject.Text
+                    });
+                    
                     treeView1.SelectedNode = tmpNode;
                     userControl11.MastersValue[userControl11.index] = masterNode;
 
@@ -2963,12 +2976,15 @@ namespace myPword
                     //aNode = new pNode(this.txtName.Text);
                     //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
                     //aNode.Tag = this.txtObject.Text;
-                    if (tmpNode.Namespace == null)
+                    if (tmpNode.Namespaces == null)
                     {
-                        tmpNode.Namespace = new NameSpace();
+                        tmpNode.Namespaces = new List<NameSpace>();
                     }
-                    tmpNode.Namespace.Suffix = txtName.Text;
-                    tmpNode.Namespace.URI_SUFFIX = txtObject.Text;
+                    tmpNode.Namespaces.Add(new NameSpace
+                    {
+                        Suffix = txtName.Text,
+                        URI_SUFFIX = txtObject.Text
+                    });
                     treeView1.SelectedNode = tmpNode;
                     userControl11.MastersValue[userControl11.index] = masterNode;
 
@@ -3047,17 +3063,22 @@ namespace myPword
                         pNode aParent = a;
                         do
                         {
-                            if (aParent.Namespace == null)
+                            if (aParent.Namespaces == null)
                             {
                                 aParent = (pNode)aParent.Parent;
                             }
                             else
                             {
                                 // show only prefixes for now
-                                ListViewItem item = new ListViewItem(aParent.Namespace.Prefix);
-                                item.SubItems.Add(aParent.Namespace.URI_PREFIX);
-                                item.SubItems.Add(aParent.Namespace.URI_SUFFIX);
-                                lstNamespaces.Items.Add(item);
+                                aParent.Namespaces.ForEach(ns =>
+                                {
+                                    ListViewItem item = new ListViewItem(ns.Prefix);
+                                    item.SubItems.Add(ns.URI_PREFIX);
+                                    item.SubItems.Add(ns.URI_SUFFIX);
+                                    lstNamespaces.Items.Add(item);
+
+                                });
+                                
                                 lstNamespaces.Refresh();
                                 break;
                             }
@@ -4388,39 +4409,49 @@ namespace myPword
                         aNode.Name = xn.LocalName;
                         if ((xn.Prefix != null) && (xn.Prefix != ""))
                         {
-                            aNode.Namespace = new NameSpace();
+                            aNode.Namespaces = new List<NameSpace>();
                             // aNode.Namespace.Prefix = xn.Prefix;
-                            aNode.Namespace.URI_PREFIX = xn.NamespaceURI;
-                            if (xn.Attributes.Count > 0)
+                            aNode.Namespaces.Add(new NameSpace
                             {
-                                foreach (XmlAttribute attr in xn.Attributes)
-                                {
-                                    if (attr.Prefix == "xmlns") // its a namespace declaration
-                                    {
-                                        aNode.Namespace = new NameSpace();
-                                        aNode.Namespace.Prefix = attr.LocalName;
-                                        aNode.Namespace.URI_PREFIX = attr.Value;
-                                    }
-                                    else
-                                    {
-                                        aNode.AddAttribute(attr.LocalName, attr.Value);
-                                    }
-                                }
-                            }
+                                URI_PREFIX = xn.NamespaceURI
+                            };
 
-                        }
-                        // TODO: Move To pWordLib
-                        else
+                        });
+
+
+                        if (xn.Attributes.Count > 0)
                         {
-
-                            if (xn.Attributes.Count > 0)
+                            foreach (XmlAttribute attr in xn.Attributes)
                             {
-                                foreach (XmlAttribute attr in xn.Attributes)
+                                if (attr.Prefix == "xmlns") // its a namespace declaration
+                                {
+                                    aNode.Namespaces = new List<NameSpace>();
+                                    aNode.Namespaces.Add(new NameSpace
+                                    {
+                                        Prefix = attr.LocalName,
+                                        URI_PREFIX = attr.Value
+                                    };
+                                }
+                                else
                                 {
                                     aNode.AddAttribute(attr.LocalName, attr.Value);
                                 }
+                            });
+                        }
+                    }
+
+                    // TODO: Move To pWordLib
+                    else
+                    {
+
+                        if (xn.Attributes.Count > 0)
+                        {
+                            foreach (XmlAttribute attr in xn.Attributes)
+                            {
+                                aNode.AddAttribute(attr.LocalName, attr.Value);
                             }
                         }
+                    }
 
                         // check first child to see if text
                         if ((xn.FirstChild != null) && (xn.FirstChild.NodeType == XmlNodeType.Text))
