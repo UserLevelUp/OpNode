@@ -47,8 +47,7 @@ namespace OpNodeWPF
 
         private void GridSplitter_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
-            // fix this
-
+            // This should all for consistent heigh with no strange behaviors between the two heights 500 and 45
             var delta = BottomDockPanel.Height - e.VerticalChange;
             if (BottomDockPanel.Height + delta <= 500 && BottomDockPanel.Height + delta >= 45)
             {
