@@ -44,5 +44,27 @@ namespace OpNodeWPF
             item.Header = "New Item";
             OpNode.Items.Add(item);
         }
+
+        private void GridSplitter_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
+        {
+            // fix this
+
+            var delta = BottomDockPanel.Height - e.VerticalChange;
+            if (BottomDockPanel.Height + delta <= 500 && BottomDockPanel.Height + delta >= 45)
+            {
+                    BottomDockPanel.Height = delta;
+            }
+            if (BottomDockPanel.Height < 45)
+            {
+                BottomDockPanel.Height = 45;
+            }
+            if (BottomDockPanel.Height > 500)
+            {
+                BottomDockPanel.Height = 300;
+            }
+
+
+            e.Handled = true;
+        }
     }
 }
