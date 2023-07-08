@@ -1,0 +1,5 @@
+C:\src\opnode\pWord4\pWord4\OpNodeTests\obj\Debug\net6.0\OpNodeTests.csproj.AssemblyReference.cache
+C:\src\opnode\pWord4\pWord4\OpNodeTests\obj\Debug\net6.0\OpNodeTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\src\opnode\pWord4\pWord4\OpNodeTests\obj\Debug\net6.0\OpNodeTests.AssemblyInfoInputs.cache
+C:\src\opnode\pWord4\pWord4\OpNodeTests\obj\Debug\net6.0\OpNodeTests.AssemblyInfo.cs
+C:\src\opnode\pWord4\pWord4\OpNodeTests\obj\Debug\net6.0\OpNodeTests.csproj.CoreCompileInputs.cache
