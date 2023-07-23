@@ -13,7 +13,7 @@
                 <Button TabIndex="1" Click="Button_Click">Test2</Button>
             </DockPanel>
             <DockPanel  Name="BottomDockPanel" DockPanel.Dock="Bottom" Height="75">
-                <TextBox AcceptsReturn="True"></TextBox>
+                <TextBox Name="SummaryText" AcceptsReturn="True"></TextBox>
             </DockPanel>
             <GridSplitter Height="5"  ResizeDirection="Rows"  HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="Black" DockPanel.Dock="Bottom" DragDelta="GridSplitter_DragDelta" />
             <DockPanel Name="DockPanelLeft"  DockPanel.Dock="Left" MinHeight="45">

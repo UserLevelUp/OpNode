@@ -25,7 +25,17 @@ namespace OpNodeWPF
         {
             this.Top = 0;
             this.Left = SystemParameters.PrimaryScreenWidth - this.Width;
-            this.Height = SystemParameters.PrimaryScreenHeight;
+            // fix the height so its the PrimaryScreenHeight minus the height of the window toolbar
+            this.Height = SystemParameters.PrimaryScreenHeight - 40;
+
+        }
+
+        // create a method that detects when the windows toolbar height changes
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // fix the height so its the PrimaryScreenHeight minus the height of the window toolbar
+            // explain why 40 is used
+            this.Height = SystemParameters.PrimaryScreenHeight - 40;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -42,9 +52,33 @@ namespace OpNodeWPF
         {
             TreeViewItem item = new TreeViewItem();
             item.Header = "New Item";
+            // set the value to some test value
+            var count = OpNode.Items.Count;
+            item.Tag = $"Test Value{count}";
+            item.MouseEnter += OpNode_TreeViewItem_MouseMove;
+            var child = new TreeViewItem { Header = "Test Name", Tag = $"Test Value{count}" };
+            child.MouseEnter += OpNode_TreeViewItem_MouseMove;
+            item.Items.Add(child);
             OpNode.Items.Add(item);
+
         }
 
+        // Hover over a TreeViewItem and show the value in teh TextBox
+        private void OpNode_TreeViewItem_MouseMove(object sender, MouseEventArgs e)
+        {
+            // get the item that is being hovered over
+            TreeViewItem item = (TreeViewItem)sender;
+            // get the value of the item
+            string value = item.Tag.ToString();
+            // set the value of the textbox to the value of the item
+            SummaryText.Text = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridSplitter_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
             // This should all for consistent heigh with no strange behaviors between the two heights 500 and 45
