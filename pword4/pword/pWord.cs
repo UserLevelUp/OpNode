@@ -1745,6 +1745,8 @@ namespace myPword
         /// </summary>
         [STAThread]
         static void Main()
+       
+        
         {
             Application.Run(new pWord());
 #if debug
@@ -2739,263 +2741,268 @@ namespace myPword
 
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
+            // create a switch case statement for each node mode
+            // this will determine what to do with the node
+            // add, delete, edit, etc...
+            // this will be a very large switch statement
+            // this will be the most important part of the program
+            // it will be inside the pWordLib library but will need to send information about the state of the mode
+
+            pWordLib.AddItem addItem = new pWordLib.AddItem();
+
             pNode masterNode = (pNode)treeView1.Nodes[0];
-            if (mode == nodeMode.addto)
+            switch (mode)
             {
-                try
-                {
-                    pNode aNode;
-                    aNode = new pNode(this.txtName.Text);
-                    //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
-                    aNode.Tag = this.txtObject.Text;
-                    aNode.Text = this.txtName.Text;
-                    if (tmpNode.Namespace != null)
+                case nodeMode.addto:
+                    try
                     {
-                        aNode.Namespace = tmpNode.Namespace;  // trickle down namespaces
+                        pNode aNode;
+                        aNode = new pNode(this.txtName.Text);
+                        //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
+                        aNode.Tag = this.txtObject.Text;
+                        aNode.Text = this.txtName.Text;
+                        if (tmpNode.Namespace != null)
+                        {
+                            aNode.Namespace = tmpNode.Namespace;  // trickle down namespaces
+                        }
+                        treeView1.SelectedNode = tmpNode;
+                        treeView1.SelectedNode.Nodes.Add(aNode);
+                        // after adding the new node, be sure the index is updated as well... this is not necessary
+                        userControl11.MastersValue[userControl11.index] = masterNode;
+
+                        // Change from Add Dialog to local members for adding name and value
+
+                        // check box
+                        if (this.chkClear.CheckState == CheckState.Checked)
+                        {
+                            this.txtName.Clear();
+                            this.txtObject.Clear();
+                            this.txtName.Focus();
+                        }
+                        else if (this.chkClear.CheckState == CheckState.Indeterminate)
+                        {
+                            this.txtObject.Clear();
+                            this.txtObject.Focus();
+                        }
+                        else
+                        {
+                            this.btnAdd.Focus();
+                        }
+
+                        aNode.OperationChanged();
+
+                        // TODO: 2022-Aug-06 Now recalculated all nodes with operations that have changed in these sets of node
+
+
+                        if (flag_file == true)
+                        {
+                            autosave();
+                        }
                     }
-                    treeView1.SelectedNode = tmpNode;
-                    treeView1.SelectedNode.Nodes.Add(aNode);
-                    // after adding the new node, be sure the index is updated as well... this is not necessary
-                    userControl11.MastersValue[userControl11.index] = masterNode;
-
-                    // Change from Add Dialog to local members for adding name and value
-
-                    // check box
-                    if (this.chkClear.CheckState == CheckState.Checked)
+                    catch (Exception f)
                     {
-                        this.txtName.Clear();
-                        this.txtObject.Clear();
-                        this.txtName.Focus();
+                        MessageBox.Show(f.Message);
                     }
-                    else if (this.chkClear.CheckState == CheckState.Indeterminate)
+                    break;
+                case nodeMode.edit:
+                    try
                     {
-                        this.txtObject.Clear();
-                        this.txtObject.Focus();
+                        // EDIT MODE
+                        // Only edit the current node
+                        pNode aNode;
+                        aNode = new pNode(this.txtName.Text);
+                        TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
+                        aNode.Tag = this.txtObject.Text;
+                        treeView1.SelectedNode = this.tmpNode;
+                        treeView1.SelectedNode.Text = aNode.Text;
+                        treeView1.SelectedNode.Tag = aNode.Tag;
+                        treeView1.SelectedNode.Name = aNode.Name;
+
+                        // This is not necessary, when a save is committed this can be performed at that juncture
+                        // However, it may be beneficial to know whether or not a node change was successfully saved
+                        // at the iteration the event occurred.  This will prevent loss of work
+                        userControl11.MastersValue[userControl11.index] = masterNode;
+
+                        // Change from Add Dialog to local members for adding name and value
+
+                        // check box
+                        if (this.chkClear.CheckState == CheckState.Checked)
+                        {
+                            this.txtName.Clear();
+                            this.txtObject.Clear();
+                            this.txtName.Focus();
+                        }
+                        else if (this.chkClear.CheckState == CheckState.Indeterminate)
+                        {
+                            this.txtObject.Clear();
+                            this.txtObject.Focus();
+                        }
+                        else
+                        {
+                            this.btnAdd.Focus();
+                        }
+
+                        aNode.OperationChanged();
                     }
-                    else
+                    catch (Exception f)
                     {
-                        this.btnAdd.Focus();
+                        MessageBox.Show(f.Message);
                     }
-
-                    aNode.OperationChanged();
-
-                    // TODO: 2022-Aug-06 Now recalculated all nodes with operations that have changed in these sets of node
-
-
-                    if (flag_file == true)
+                    break;
+                case nodeMode.insert:
+                    if (treeView1.SelectedNode.Parent == null)
                     {
-                        autosave();
+                        MessageBox.Show("You can not insert a sibling of the master node.");
+                        return;
                     }
-                }
-                catch (Exception f)
-                {
-                    MessageBox.Show(f.Message);
-                }
+                    try
+                    {
+                        // Insert Mode
+                        // Only edit the current node
+                        pNode aNode;
+                        aNode = new pNode(this.txtName.Text);
+                        TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
+                        aNode.Tag = this.txtObject.Text;
+                        if (tmpNode.Namespace != null)
+                        {
+                            aNode.Namespace = tmpNode.Namespace;  // trickle down namespaces
+                        }
+                        treeView1.SelectedNode = tmpNode;
+                        treeView1.SelectedNode.Nodes.Insert(modeIndex, aNode);
+                        userControl11.MastersValue[userControl11.index] = masterNode;
+
+                        // Change from Add Dialog to local members for adding name and value
+
+                        // check box
+                        if (this.chkClear.Checked == true)
+                        {
+                            this.txtName.Clear();
+                            this.txtObject.Clear();
+                        }
+
+                        if (flag_file == true)
+                        {
+                            autosave();
+                        }
+                        aNode.OperationChanged();
+                    }
+                    catch (Exception f)
+                    {
+                        MessageBox.Show(f.Message);
+                    }
+                    break;
+                case nodeMode.addAttributeTo:
+                    try
+                    {
+                        // Add attribute to the selected treeNode
+                        // Only edit the current node
+                        //pNode aNode;
+                        //aNode = new pNode(this.txtName.Text);
+                        //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
+                        //aNode.Tag = this.txtObject.Text;
+                        tmpNode.AddAttribute(txtName.Text, txtObject.Text);
+                        treeView1.SelectedNode = tmpNode;
+                        userControl11.MastersValue[userControl11.index] = masterNode;
+
+                        // Change from Add Dialog to local members for adding name and value
+
+                        // check box
+                        if (this.chkClear.Checked == true)
+                        {
+                            this.txtName.Clear();
+                            this.txtObject.Clear();
+                        }
+
+                        if (flag_file == true)
+                        {
+                            autosave();
+                        }
+                    }
+                    catch (Exception f)
+                    {
+                        MessageBox.Show(f.Message);
+                    }
+                    break;
+                case nodeMode.viewErrors:
+                    break; // do nothing at all
+                case nodeMode.addNamespacePrefix:
+                    try
+                    {
+                        // Add attribute to the selected treeNode
+                        // Only edit the current node
+                        //pNode aNode;
+                        //aNode = new pNode(this.txtName.Text);
+                        //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
+                        //aNode.Tag = this.txtObject.Text;
+                        if (tmpNode.Namespace == null)
+                        {
+                            tmpNode.Namespace = new NameSpace();
+                        }
+                        tmpNode.Namespace.Prefix = txtName.Text;
+                        tmpNode.Namespace.URI_PREFIX = txtObject.Text;
+                        treeView1.SelectedNode = tmpNode;
+                        userControl11.MastersValue[userControl11.index] = masterNode;
+
+                        // Change from Add Dialog to local members for adding name and value
+
+                        // check box
+                        if (this.chkClear.Checked == true)
+                        {
+                            this.txtName.Clear();
+                            this.txtObject.Clear();
+                        }
+
+                        if (flag_file == true)
+                        {
+                            autosave();
+                        }
+                    }
+                    catch (Exception f)
+                    {
+                        MessageBox.Show(f.Message);
+                    }
+                    break;
+                case nodeMode.addNamespaceSuffix:
+                    try
+                    {
+                        // Add attribute to the selected treeNode
+                        // Only edit the current node
+                        //pNode aNode;
+                        //aNode = new pNode(this.txtName.Text);
+                        //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
+                        //aNode.Tag = this.txtObject.Text;
+                        if (tmpNode.Namespace == null)
+                        {
+                            tmpNode.Namespace = new NameSpace();
+                        }
+                        tmpNode.Namespace.Suffix = txtName.Text;
+                        tmpNode.Namespace.URI_SUFFIX = txtObject.Text;
+                        treeView1.SelectedNode = tmpNode;
+                        userControl11.MastersValue[userControl11.index] = masterNode;
+
+                        // Change from Add Dialog to local members for adding name and value
+
+                        // check box
+                        if (this.chkClear.Checked == true)
+                        {
+                            this.txtName.Clear();
+                            this.txtObject.Clear();
+                        }
+
+                        if (flag_file == true)
+                        {
+                            autosave();
+                        }
+                    }
+                    catch (Exception f)
+                    {
+                        MessageBox.Show(f.Message);
+                    }
+                    break;
+                default:
+                    break;
             }
-            else if (mode == nodeMode.edit)
-            {
-                try
-                {
-                    // EDIT MODE
-                    // Only edit the current node
-                    pNode aNode;
-                    aNode = new pNode(this.txtName.Text);
-                    TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
-                    aNode.Tag = this.txtObject.Text;
-                    treeView1.SelectedNode = this.tmpNode;
-                    treeView1.SelectedNode.Text = aNode.Text;
-                    treeView1.SelectedNode.Tag = aNode.Tag;
-                    treeView1.SelectedNode.Name = aNode.Name;
-
-                    // This is not necessary, when a save is committed this can be performed at that juncture
-                    // However, it may be beneficial to know whether or not a node change was successfully saved
-                    // at the iteration the event occurred.  This will prevent loss of work
-                    userControl11.MastersValue[userControl11.index] = masterNode;
-
-                    // Change from Add Dialog to local members for adding name and value
-                    if (this.chkClear.Checked == true)
-                    {
-                        this.txtName.Clear();
-                        this.txtObject.Clear();
-                    }
-
-                    // TODO: for some reason while in edit mode, the starting node is master??? why instead of the selected node???  FIX
-                    //aNode.OperationChanged();
-                    ((pNode)treeView1.SelectedNode).OperationChanged();
-
-                    if (flag_file == true)
-                    {
-                        autosave();
-                    }
-
-                    this.Refresh();
-                }
-                catch (Exception f)
-                {
-                    MessageBox.Show(f.Message);
-                }
-            }
-            else if (mode == nodeMode.insert)
-            {
-                if (treeView1.SelectedNode.Parent == null)
-                {
-                    MessageBox.Show("You can not insert a sibling of the master node.");
-                    return;
-                }
-                try
-                {
-                    // Insert Mode
-                    // Only edit the current node
-                    pNode aNode;
-                    aNode = new pNode(this.txtName.Text);
-                    TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
-                    aNode.Tag = this.txtObject.Text;
-                    if (tmpNode.Namespace != null)
-                    {
-                        aNode.Namespace = tmpNode.Namespace;  // trickle down namespaces
-                    }
-                    treeView1.SelectedNode = tmpNode;
-                    treeView1.SelectedNode.Nodes.Insert(modeIndex, aNode);
-                    userControl11.MastersValue[userControl11.index] = masterNode;
-
-                    // Change from Add Dialog to local members for adding name and value
-
-                    // check box
-                    if (this.chkClear.Checked == true)
-                    {
-                        this.txtName.Clear();
-                        this.txtObject.Clear();
-                    }
-
-                    if (flag_file == true)
-                    {
-                        autosave();
-                    }
-                    aNode.OperationChanged();
-                }
-                catch (Exception f)
-                {
-                    MessageBox.Show(f.Message);
-                }
-            }
-            else if (mode == nodeMode.addAttributeTo)
-            {
-                try
-                {
-                    // Add attribute to the selected treeNode
-                    // Only edit the current node
-                    //pNode aNode;
-                    //aNode = new pNode(this.txtName.Text);
-                    //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
-                    //aNode.Tag = this.txtObject.Text;
-                    tmpNode.AddAttribute(txtName.Text, txtObject.Text);
-                    treeView1.SelectedNode = tmpNode;
-                    userControl11.MastersValue[userControl11.index] = masterNode;
-
-                    // Change from Add Dialog to local members for adding name and value
-
-                    // check box
-                    if (this.chkClear.Checked == true)
-                    {
-                        this.txtName.Clear();
-                        this.txtObject.Clear();
-                    }
-
-                    if (flag_file == true)
-                    {
-                        autosave();
-                    }
-                }
-                catch (Exception f)
-                {
-                    MessageBox.Show(f.Message);
-                }
-            }
-            else if (mode == nodeMode.viewErrors)
-            {
-                // do nothing at all
-            }
-            else if (mode == nodeMode.addNamespacePrefix)
-            {
-                try
-                {
-                    // Add attribute to the selected treeNode
-                    // Only edit the current node
-                    //pNode aNode;
-                    //aNode = new pNode(this.txtName.Text);
-                    //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
-                    //aNode.Tag = this.txtObject.Text;
-                    if (tmpNode.Namespace == null)
-                    {
-                        tmpNode.Namespace = new NameSpace();
-                    }
-                    tmpNode.Namespace.Prefix = txtName.Text;
-                    tmpNode.Namespace.URI_PREFIX = txtObject.Text;
-                    treeView1.SelectedNode = tmpNode;
-                    userControl11.MastersValue[userControl11.index] = masterNode;
-
-                    // Change from Add Dialog to local members for adding name and value
-
-                    // check box
-                    if (this.chkClear.Checked == true)
-                    {
-                        this.txtName.Clear();
-                        this.txtObject.Clear();
-                    }
-
-                    if (flag_file == true)
-                    {
-                        autosave();
-                    }
-                }
-                catch (Exception f)
-                {
-                    MessageBox.Show(f.Message);
-                }
-            }
-            else if (mode == nodeMode.addNamespaceSuffix)
-            {
-                try
-                {
-                    // Add attribute to the selected treeNode
-                    // Only edit the current node
-                    //pNode aNode;
-                    //aNode = new pNode(this.txtName.Text);
-                    //TreePics apic = new TreePics("aNode", img.GroupUp, img.GroupDown);
-                    //aNode.Tag = this.txtObject.Text;
-                    if (tmpNode.Namespace == null)
-                    {
-                        tmpNode.Namespace = new NameSpace();
-                    }
-                    tmpNode.Namespace.Suffix = txtName.Text;
-                    tmpNode.Namespace.URI_SUFFIX = txtObject.Text;
-                    treeView1.SelectedNode = tmpNode;
-                    userControl11.MastersValue[userControl11.index] = masterNode;
-
-                    // Change from Add Dialog to local members for adding name and value
-
-                    // check box
-                    if (this.chkClear.Checked == true)
-                    {
-                        this.txtName.Clear();
-                        this.txtObject.Clear();
-                    }
-
-                    if (flag_file == true)
-                    {
-                        autosave();
-                    }
-                }
-                catch (Exception f)
-                {
-                    MessageBox.Show(f.Message);
-                }
-            }
-
         }
-
-
-
 
         private void btnCancel_Click(object sender, System.EventArgs e)
         {

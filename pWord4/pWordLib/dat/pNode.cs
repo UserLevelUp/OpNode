@@ -666,6 +666,14 @@ namespace pWordLib.dat
 
     }
 
+    // Instead of the enums I really want a collection of a struct which tells me the base types of 
+    // functionality such as adding a node, inserting a node,  editing, adding to an attribute, adding prfixes or suffixes or namespaces,
+    // and then adding operations and the type of operation and perhaps even its symbol instead of using a 
+    // switch statement it would use node to look as base operation and any possible added operations
+    // and it would use the switch statement to determine what to do with the mode of struct
+    // I might call this struct something like OpNodeMode.
+    // I would then have a collection of OpNodeMode structs which would be used to determine what to do with the node based
+    // on my last command that was applied to the node
     public enum nodeMode
     {
         addto = 1,
