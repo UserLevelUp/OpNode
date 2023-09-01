@@ -3,7 +3,6 @@ C:\src\opnode\pWord4\pWord4\OpNodeWPF\bin\Debug\net8.0-windows\OpNodeWPF.deps.js
 C:\src\opnode\pWord4\pWord4\OpNodeWPF\bin\Debug\net8.0-windows\OpNodeWPF.runtimeconfig.json
 C:\src\opnode\pWord4\pWord4\OpNodeWPF\bin\Debug\net8.0-windows\OpNodeWPF.dll
 C:\src\opnode\pWord4\pWord4\OpNodeWPF\bin\Debug\net8.0-windows\OpNodeWPF.pdb
-C:\src\opnode\pWord4\pWord4\OpNodeWPF\obj\Debug\net8.0-windows\OpNodeWPF.csproj.AssemblyReference.cache
 C:\src\opnode\pWord4\pWord4\OpNodeWPF\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\src\opnode\pWord4\pWord4\OpNodeWPF\obj\Debug\net8.0-windows\App.g.cs
 C:\src\opnode\pWord4\pWord4\OpNodeWPF\obj\Debug\net8.0-windows\OpNodeWPF_MarkupCompile.cache
