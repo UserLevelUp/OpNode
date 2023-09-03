@@ -486,7 +486,6 @@ namespace myPword
             this.chkClear = new System.Windows.Forms.CheckBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.treeView1 = new myPword.pView();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabValue = new System.Windows.Forms.TabPage();
             this.tabNamespaces = new System.Windows.Forms.TabPage();
@@ -505,6 +504,7 @@ namespace myPword
             this.saveFileDialogJSON = new System.Windows.Forms.SaveFileDialog();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.treeView1 = new myPword.pView();
             this.userControl11 = new LeftRight.LeftRight();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -546,7 +546,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 330);
+            this.statusBar1.Location = new System.Drawing.Point(0, 203);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(306, 23);
             this.statusBar1.TabIndex = 0;
@@ -1350,7 +1350,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 39);
+            this.splitter1.Location = new System.Drawing.Point(0, -88);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(306, 8);
             this.splitter1.TabIndex = 5;
@@ -1363,7 +1363,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 74);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(306, 256);
+            this.panel1.Size = new System.Drawing.Size(306, 129);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1484,38 +1484,8 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 110);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(306, 232);
+            this.panel6.Size = new System.Drawing.Size(306, 105);
             this.panel6.TabIndex = 5;
-            // 
-            // treeView1
-            // 
-            this.treeView1.AllowDrop = true;
-            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeView1.ContextMenu = this.cmTree;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-            this.treeView1.FullRowSelect = true;
-            this.treeView1.HideSelection = false;
-            this.treeView1.HotTracking = true;
-            this.treeView1.ImageIndex = 0;
-            this.treeView1.ImageList = this.imageTree1;
-            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
-            this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(306, 39);
-            this.treeView1.TabIndex = 3;
-            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
-            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
-            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
-            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
-            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
-            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
-            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
-            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
-            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
             // tabs
             // 
@@ -1524,7 +1494,7 @@ namespace myPword
             this.tabs.Controls.Add(this.tabAttributes);
             this.tabs.Controls.Add(this.tabCMD);
             this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabs.Location = new System.Drawing.Point(0, 47);
+            this.tabs.Location = new System.Drawing.Point(0, -80);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(306, 185);
@@ -1548,7 +1518,7 @@ namespace myPword
             this.tabNamespaces.Location = new System.Drawing.Point(4, 25);
             this.tabNamespaces.Name = "tabNamespaces";
             this.tabNamespaces.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNamespaces.Size = new System.Drawing.Size(351, 156);
+            this.tabNamespaces.Size = new System.Drawing.Size(298, 156);
             this.tabNamespaces.TabIndex = 1;
             this.tabNamespaces.Text = "Namespaces";
             this.tabNamespaces.UseVisualStyleBackColor = true;
@@ -1563,7 +1533,7 @@ namespace myPword
             this.lstNamespaces.HideSelection = false;
             this.lstNamespaces.Location = new System.Drawing.Point(3, 3);
             this.lstNamespaces.Name = "lstNamespaces";
-            this.lstNamespaces.Size = new System.Drawing.Size(345, 150);
+            this.lstNamespaces.Size = new System.Drawing.Size(292, 150);
             this.lstNamespaces.TabIndex = 0;
             this.lstNamespaces.UseCompatibleStateImageBehavior = false;
             this.lstNamespaces.View = System.Windows.Forms.View.Details;
@@ -1589,7 +1559,7 @@ namespace myPword
             this.tabAttributes.Location = new System.Drawing.Point(4, 25);
             this.tabAttributes.Name = "tabAttributes";
             this.tabAttributes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAttributes.Size = new System.Drawing.Size(351, 156);
+            this.tabAttributes.Size = new System.Drawing.Size(298, 156);
             this.tabAttributes.TabIndex = 2;
             this.tabAttributes.Text = "Attributes";
             this.tabAttributes.UseVisualStyleBackColor = true;
@@ -1603,7 +1573,7 @@ namespace myPword
             this.lstAttributes.HideSelection = false;
             this.lstAttributes.Location = new System.Drawing.Point(3, 3);
             this.lstAttributes.Name = "lstAttributes";
-            this.lstAttributes.Size = new System.Drawing.Size(345, 150);
+            this.lstAttributes.Size = new System.Drawing.Size(292, 150);
             this.lstAttributes.TabIndex = 1;
             this.lstAttributes.UseCompatibleStateImageBehavior = false;
             this.lstAttributes.View = System.Windows.Forms.View.Details;
@@ -1624,7 +1594,7 @@ namespace myPword
             this.tabCMD.Location = new System.Drawing.Point(4, 25);
             this.tabCMD.Name = "tabCMD";
             this.tabCMD.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCMD.Size = new System.Drawing.Size(351, 156);
+            this.tabCMD.Size = new System.Drawing.Size(298, 156);
             this.tabCMD.TabIndex = 3;
             this.tabCMD.Text = "Cmd";
             this.tabCMD.UseVisualStyleBackColor = true;
@@ -1642,7 +1612,7 @@ namespace myPword
             this.txtCMD.Location = new System.Drawing.Point(1, 0);
             this.txtCMD.Multiline = true;
             this.txtCMD.Name = "txtCMD";
-            this.txtCMD.Size = new System.Drawing.Size(348, 110);
+            this.txtCMD.Size = new System.Drawing.Size(295, 110);
             this.txtCMD.TabIndex = 0;
             this.txtCMD.UseWaitCursor = true;
             this.txtCMD.TextChanged += new System.EventHandler(this.txtCMD_TextChanged);
@@ -1683,6 +1653,36 @@ namespace myPword
             // 
             this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
             // 
+            // treeView1
+            // 
+            this.treeView1.AllowDrop = true;
+            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView1.ContextMenu = this.cmTree;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
+            this.treeView1.FullRowSelect = true;
+            this.treeView1.HideSelection = false;
+            this.treeView1.HotTracking = true;
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageTree1;
+            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
+            this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.Size = new System.Drawing.Size(306, 0);
+            this.treeView1.TabIndex = 3;
+            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
+            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
+            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
+            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
+            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
+            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
+            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
+            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
+            // 
             // userControl11
             // 
             this.userControl11.ContextMenu = this.cmMasters;
@@ -1700,7 +1700,7 @@ namespace myPword
             // 
             this.AccessibleDescription = "Enabled to view file after xml or html export.";
             this.AutoScaleBaseSize = new System.Drawing.Size(6, 15);
-            this.ClientSize = new System.Drawing.Size(306, 353);
+            this.ClientSize = new System.Drawing.Size(306, 226);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.toolBar1);
@@ -3102,7 +3102,7 @@ namespace myPword
                         foreach (String key in keys)
                         {
                             ListViewItem item = new ListViewItem(key);
-                            item.SubItems.Add(a.getValue(key));
+                            item.SubItems.Add(a.getAttrValue(key));
                             lstAttributes.Items.Add(item);
                         }
                 }
