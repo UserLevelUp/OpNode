@@ -111,16 +111,16 @@ namespace pWordLib
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(532, 200);
             this.panel1.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(223, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 24);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Copyright 2023";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            //// 
+            //// label4
+            //// 
+            //this.label4.Location = new System.Drawing.Point(223, 19);
+            //this.label4.Name = "label4";
+            //this.label4.Size = new System.Drawing.Size(96, 24);
+            //this.label4.TabIndex = 11;
+            //this.label4.Text = "Copyright 2023";
+            //this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            //this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox2
             // 
@@ -211,9 +211,9 @@ namespace pWordLib
 
 		}
 
-        private void label4_Click(object sender, EventArgs e)
-        {
+        //private void label4_Click(object sender, EventArgs e)
+        //{
 
-        }
+        //}
     }
 }

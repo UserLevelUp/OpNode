@@ -504,8 +504,8 @@ namespace myPword
             this.saveFileDialogJSON = new System.Windows.Forms.SaveFileDialog();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.treeView1 = new myPword.pView();
             this.userControl11 = new LeftRight.LeftRight();
+            this.treeView1 = new myPword.pView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -546,7 +546,7 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 203);
+            this.statusBar1.Location = new System.Drawing.Point(0, 116);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Size = new System.Drawing.Size(306, 23);
             this.statusBar1.TabIndex = 0;
@@ -1350,7 +1350,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, -88);
+            this.splitter1.Location = new System.Drawing.Point(0, -175);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(306, 8);
             this.splitter1.TabIndex = 5;
@@ -1363,7 +1363,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 74);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(306, 129);
+            this.panel1.Size = new System.Drawing.Size(306, 42);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1484,7 +1484,7 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 110);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(306, 105);
+            this.panel6.Size = new System.Drawing.Size(306, 18);
             this.panel6.TabIndex = 5;
             // 
             // tabs
@@ -1494,7 +1494,7 @@ namespace myPword
             this.tabs.Controls.Add(this.tabAttributes);
             this.tabs.Controls.Add(this.tabCMD);
             this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabs.Location = new System.Drawing.Point(0, -80);
+            this.tabs.Location = new System.Drawing.Point(0, -167);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(306, 185);
@@ -1653,6 +1653,19 @@ namespace myPword
             // 
             this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
             // 
+            // userControl11
+            // 
+            this.userControl11.ContextMenu = this.cmMasters;
+            this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userControl11.Location = new System.Drawing.Point(0, 48);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(306, 26);
+            this.userControl11.TabIndex = 4;
+            this.userControl11.TabStop = false;
+            this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
+            this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
+            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
+            // 
             // treeView1
             // 
             this.treeView1.AllowDrop = true;
@@ -1683,24 +1696,11 @@ namespace myPword
             this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
             this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
-            // userControl11
-            // 
-            this.userControl11.ContextMenu = this.cmMasters;
-            this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.userControl11.Location = new System.Drawing.Point(0, 48);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(306, 26);
-            this.userControl11.TabIndex = 4;
-            this.userControl11.TabStop = false;
-            this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
-            this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
-            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
-            // 
             // pWord
             // 
             this.AccessibleDescription = "Enabled to view file after xml or html export.";
             this.AutoScaleBaseSize = new System.Drawing.Size(6, 15);
-            this.ClientSize = new System.Drawing.Size(306, 226);
+            this.ClientSize = new System.Drawing.Size(306, 139);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.toolBar1);
