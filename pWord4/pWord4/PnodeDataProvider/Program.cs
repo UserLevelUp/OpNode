@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.Data;
 using Microsoft.VisualStudio.Data.AdoDotNet;
 using Microsoft.VisualStudio.Data.Interop;
 using pWordLib.dat;
+using System.Runtime.Intrinsics.X86;
 
 namespace PnodeDataProvider
 {
@@ -44,7 +45,10 @@ namespace PnodeDataProvider
 			}
 		}
 
-		public override object CreateObject(Guid dataSource, Type objType)
+        // Security 'System.Exception' should not be thrown by user code.
+        // Critical icon CRITICAL
+        // Error Prone Remove this use of 'GetType' on a 'System.Type'.
+        public override object CreateObject(Guid dataSource, Type objType)
 		{
 			// TODO: fix pWord so it returns a pNode of master pNodes instead of a list 
 			if (objType == typeof(pWordLib.dat.pNode)) {
@@ -54,7 +58,8 @@ namespace PnodeDataProvider
 			}
 			else
 			{
-				throw new Exception($"Object Type: {objType.GetType()} is not allowed");
+				return null;
+				//throw new Exception($"Object Type: {objType.GetType()} is not allowed");
 			}
 		}
 
@@ -64,8 +69,16 @@ namespace PnodeDataProvider
 			throw new NotImplementedException();
 		}
 
+		/// <summary>
+		/// Implement this so that it gets the assembly for the pWordLib.dll
+		/// </summary>
+		/// <param name="dataSource"></param>
+		/// <param name="assemblyString"></param>
+		/// <returns></returns>
+		/// <exception cref="NotImplementedException"></exception>
 		public override Assembly GetAssembly(Guid dataSource, string assemblyString)
 		{
+			// get assembly for pWordLib.dll
 			throw new NotImplementedException();
 		}
 

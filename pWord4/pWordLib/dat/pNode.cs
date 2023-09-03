@@ -41,10 +41,7 @@ namespace pWordLib.dat
             {
                 this.operations = new List<IOperate>();
             }
-
         }
-
-
 
         //public pNode Parent {
 
@@ -118,6 +115,16 @@ namespace pWordLib.dat
             this.SelectedImageIndex = img2;
         }
 
+        public pNode(string name, string value) : this(name)
+        {
+            this.setValue(value);
+        }
+
+        public pNode(string name, object value) : this(name)
+        {
+            this.setValueObject(value);
+        }
+
         public NameSpace Namespace { get; set; }
 
         private SortedList<String, String> attributes = null;
@@ -127,9 +134,9 @@ namespace pWordLib.dat
             return attributes.Keys;
         }
 
-        public String getValue(String key)
+        public string getAttrValue(string key)
         {
-            String value;
+            string value;
             if (attributes.TryGetValue(key, out value) == true)
             {
                 return value;
@@ -140,12 +147,71 @@ namespace pWordLib.dat
             }
         }
 
+        public string getValue(string key)
+        {
+            return ((TreeNode)this).Text;
+        }
+
+        public object getValueObject()
+        {
+            return ((TreeNode)this).Tag;
+        }
+
+        // get the tag for a child with name == key
+        public object getValueObject(string key)
+        {
+            foreach (TreeNode child in this.Nodes)
+            {
+                if (child.Name == key)
+                {
+                    return child.Tag;
+                }
+            }
+            return null;
+        }
+
+        public void setName(string key)
+        {
+            ((TreeNode)this).Name = key;
+        }
+
+        // get the tag for a child with name == key
+        public void setValue( string value)
+        {
+            ((TreeNode)this).Text = value;
+        }
+
+        public void setValueObject(object value)
+        {
+            ((TreeNode)this).Tag = value;
+        }
+
+        // get the name for current node
+        public string getName()
+        {
+            return ((TreeNode)this).Name;
+        }
+
+        // check to see if the name for a child node with name == key exists    
+        public bool hasName(string key)
+        {
+            foreach (TreeNode child in this.Nodes)
+            {
+                if (child.Name == key)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void AddAttribute(String key, String value)
         {
             attributes.Add(key, value);
         }
 
         private List<IOperate> operations = null;
+        private int v;
 
         public void AddOperation(IOperate operation)
         {
@@ -183,7 +249,6 @@ namespace pWordLib.dat
                 }
             }
         }
-
 
         public void DeleteAttribute(String key)
         {
@@ -430,7 +495,7 @@ namespace pWordLib.dat
             foreach (var attrKey in node.getKeys())
             {
 
-                var val = node.getValue(attrKey);
+                var val = node.getAttrValue(attrKey);
 
                 //
 
@@ -466,7 +531,7 @@ namespace pWordLib.dat
                     if (!(node.Namespace == null))
                     {
                         XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, node.Namespace.Prefix, key, node.Namespace.URI_PREFIX);
-                        attr.Value = node.getValue(key);
+                        attr.Value = node.getAttrValue(key);
                         rootNode.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
                     }
                     else
@@ -487,7 +552,7 @@ namespace pWordLib.dat
                         {
                             attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
                         }
-                        attr.Value = node.getValue(key);
+                        attr.Value = node.getAttrValue(key);
                         rootNode.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
                     }
                 }
@@ -533,14 +598,14 @@ namespace pWordLib.dat
                         if (p.Namespace.Prefix != null)
                         {
                             XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, p.Namespace.Prefix, key, p.Namespace.URI_PREFIX);
-                            attr.Value = p.getValue(key);
+                            attr.Value = p.getAttrValue(key);
                             xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
                         }
                         else
                         {
                             XmlNode attr;
                             attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
-                            attr.Value = p.getValue(key);
+                            attr.Value = p.getAttrValue(key);
                             xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
                         }
                     }
@@ -562,7 +627,7 @@ namespace pWordLib.dat
                         {
                             attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
                         }
-                        attr.Value = p.getValue(key);
+                        attr.Value = p.getAttrValue(key);
                         xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
                     }
                 }
@@ -632,7 +697,7 @@ namespace pWordLib.dat
                         if (p.Namespace.Prefix != null)
                         {
                             XmlNode attr = xdoc.CreateNode(XmlNodeType.Attribute, p.Namespace.Prefix, p.Namespace.URI_PREFIX);
-                            attr.Value = p.getValue(key);
+                            attr.Value = p.getAttrValue(key);
                             xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
                         }
                         else
@@ -652,7 +717,7 @@ namespace pWordLib.dat
                         {
                             attr = xdoc.CreateNode(XmlNodeType.Attribute, key, "");
                         }
-                        attr.Value = p.getValue(key);
+                        attr.Value = p.getAttrValue(key);
                         xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
                     }
                 }
@@ -662,8 +727,19 @@ namespace pWordLib.dat
             return node;
         }
 
+        public pNode getChild(int v)
+        {
+            if (((this.Nodes.Count -1 ) >= v) && (v >= 0))
+            {
+                return (pNode)this.Nodes[v];
+            }
+            return null;
+        }
 
-
+        public string getValue()
+        {
+            return this.Text;
+        }
     }
 
     // Instead of the enums I really want a collection of a struct which tells me the base types of 

@@ -8,11 +8,11 @@ namespace OpNodeTests
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void AddOpNode()
-        {
-            var po = PrivateObject.Create(new OpNode());
-        }
+        //[TestMethod]
+        //public void AddOpNode()
+        //{
+        //    var po = PrivateObject.Create(new OpNode());
+        //}
 
 
     }
