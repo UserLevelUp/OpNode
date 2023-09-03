@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OpNodeTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+256e835f4e4792e9b886043e65acafa4f65ef419")]
 [assembly: System.Reflection.AssemblyProductAttribute("OpNodeTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OpNodeTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

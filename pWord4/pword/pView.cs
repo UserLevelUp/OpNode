@@ -12,6 +12,14 @@ namespace myPword
 {
     
 
+    // Explain what pView does
+    // pView is a treeview that is used to display the xml data in a treeview format.  It is also used to
+    // manipulate the xml data.
+    // It is used to add, delete, and modify the xml data.
+    // It is also used to display the xml data in a treeview format.
+
+
+
 
     public class pView : TreeView
     {
@@ -127,9 +135,7 @@ namespace myPword
                     e.Graphics.FillRectangle(sbBackground, r );
                     // Retrieve the node font. If the node font has not been set,
                     // use the TreeView font.
-                    Font nodeFont = e.Node.NodeFont;
-                    if (nodeFont == null) nodeFont = ((TreeView)sender).Font;
-
+                    Font nodeFont = e.Node.NodeFont ?? ((TreeView)sender).Font;
                     SolidBrush sbForeground = new SolidBrush(pWordSettings.Default.SelectedNodeForeground);
                     // Draw the node text.
                     if ( ((pNode)e.Node).OperationsCount() > 0)
@@ -244,15 +250,15 @@ namespace myPword
 
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
+        //protected override void OnPaint(PaintEventArgs e)
+        //{
 
-            //Graphics g = e.Graphics;
-            //Brush b = Brushes.Black;
-            //Pen p = new Pen(b, 2.3f);
-            //g.DrawLine(p, 0, 0, 300, 300);
-            //base.OnPaint(e);
-        }
+        //    //Graphics g = e.Graphics;
+        //    //Brush b = Brushes.Black;
+        //    //Pen p = new Pen(b, 2.3f);
+        //    //g.DrawLine(p, 0, 0, 300, 300);
+        //    //base.OnPaint(e);
+        //}
 
         
 

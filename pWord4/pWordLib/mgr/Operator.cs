@@ -15,12 +15,12 @@ namespace pWordLib.mgr
     {
         private bool changed = false;
 
-        public Operator()
+        protected Operator()
         {
             //Symbol = new Icon(Icon, 
         }
 
-        public Operator(Icon symbol)
+        protected Operator(Icon symbol)
         {
             this.symbol = symbol;
         }
