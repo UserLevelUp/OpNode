@@ -3,11 +3,8 @@ using System.Data;
 using System.Data.Common;
 using System.Collections.Generic;
 using System.Reflection;
-using Microsoft.VisualStudio.Data;
-using Microsoft.VisualStudio.Data.AdoDotNet;
-using Microsoft.VisualStudio.Data.Interop;
 using pWordLib.dat;
-using System.Runtime.Intrinsics.X86;
+using Microsoft.VisualStudio.Data;
 
 namespace PnodeDataProvider
 {
@@ -20,81 +17,67 @@ namespace PnodeDataProvider
 	}
 
 	public class MyDataProv : DataProvider
-	{
-		public override Guid Guid
-		{
-			get
-			{
-				Guid guid = new(4, 2, 2, 4, 4, 2, 2, 4, 42, 97, 10);
-				return guid;
-			}
-		}
+    {
+        //public MyDataProv(StatementBuilder sb) : base(sb)
+        //{
+        //}
 
-		public override string DisplayName => "pWord Data Proiver";
+        // add methods for MyDataProv here
 
-		public override string ShortDisplayName => "pWord";
+        public override Guid Guid => new Guid("some-guid-here");
 
-		public override string Description => "Data Provider for pWord";
+        public override string DisplayName => "pWord Data Provider";
 
-		public override Guid Technology
-		{
-			get
-			{
-				Guid guid = new(4, 2, 2, 4, 4, 2, 2, 4, 42, 97, 11);
-				return guid;
-			}
-		}
+        public override string ShortDisplayName => "pWord";
 
-        // Security 'System.Exception' should not be thrown by user code.
-        // Critical icon CRITICAL
-        // Error Prone Remove this use of 'GetType' on a 'System.Type'.
+        public override string Description => "Data Provider for pWord";
+
+        public override Guid Technology => new Guid("some-other-guid-here");
+
         public override object CreateObject(Guid dataSource, Type objType)
-		{
-			// TODO: fix pWord so it returns a pNode of master pNodes instead of a list 
-			if (objType == typeof(pWordLib.dat.pNode)) {
-				return new List<pNode> {
-					new pNode("master")
-					};
-			}
-			else
-			{
-				return null;
-				//throw new Exception($"Object Type: {objType.GetType()} is not allowed");
-			}
-		}
+        {
+            if (objType == typeof(pNode))
+            {
+                return new List<pNode>
+                {
+                    new pNode("master")
+                };
+            }
+            else
+            {
+                throw new NotSupportedException($"Object Type: {objType.Name} is not supported");
+            }
+        }
 
-		public override Guid DeriveDataSource(string connectionString)
-		{
-			// find a pNode data source as a file and retrieve its Guid unique guid stored in the master master file
-			throw new NotImplementedException();
-		}
+        public override Guid DeriveDataSource(string connectionString)
+        {
+            // Implement logic to derive data source
+            throw new NotImplementedException();
+        }
 
-		/// <summary>
-		/// Implement this so that it gets the assembly for the pWordLib.dll
-		/// </summary>
-		/// <param name="dataSource"></param>
-		/// <param name="assemblyString"></param>
-		/// <returns></returns>
-		/// <exception cref="NotImplementedException"></exception>
-		public override Assembly GetAssembly(Guid dataSource, string assemblyString)
-		{
-			// get assembly for pWordLib.dll
-			throw new NotImplementedException();
-		}
+        public override Assembly GetAssembly(Guid dataSource, string assemblyString)
+        {
+            // Implement logic to get assembly
+            throw new NotImplementedException();
+        }
 
-		public override object GetProperty(string name)
-		{
-			throw new NotImplementedException();
-		}
+        public override object GetProperty(string name)
+        {
+            // Implement logic to get property
+            throw new NotImplementedException();
+        }
 
-		public override Type GetType(Guid dataSource, string typeName)
-		{
-			throw new NotImplementedException();
-		}
+        public override Type GetType(Guid dataSource, string typeName)
+        {
+            // Implement logic to get type
+            throw new NotImplementedException();
+        }
 
-		public override bool SupportsObject(Guid dataSource, Type objType)
-		{
-			throw new NotImplementedException();
-		}
-	}
+        public override bool SupportsObject(Guid dataSource, Type objType)
+        {
+            // Implement logic to check if object is supported
+            throw new NotImplementedException();
+        }
+
+    }
 }
