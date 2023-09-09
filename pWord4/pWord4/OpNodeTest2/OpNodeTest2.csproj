@@ -90,6 +90,10 @@
   <ItemGroup>
     <EmbeddedResource Include="LeftRigthTest.resx">
       <DependentUpon>LeftRigthTest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestaableLeftRightWrapper.resx">
+      <DependentUpon>TestaableLeftRightWrapper.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
