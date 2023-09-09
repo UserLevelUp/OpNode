@@ -4,6 +4,9 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Windows.Forms;
+using pWordLib.mgr;
+using pWordLib.dat;
+using System.Collections.Generic;
 
 namespace LeftRight
 {
@@ -14,7 +17,13 @@ namespace LeftRight
 
 	public class LeftRight : System.Windows.Forms.UserControl
 	{
-		public System.Windows.Forms.Button btnLeft;
+        private MasterNodesMgr masterNodesMgr;
+
+        // Delegate existing methods and properties to MasterNodesMgr
+        public List<pNode> MasterNodes => masterNodesMgr.MasterNodes;
+        public List<string> MasterNames => masterNodesMgr.MasterNames;
+
+        public System.Windows.Forms.Button btnLeft;
 		public System.Windows.Forms.TextBox txtMaster;
 		private System.Windows.Forms.ImageList imageList1;
 		private System.ComponentModel.IContainer components;
@@ -50,7 +59,8 @@ namespace LeftRight
 		{
 			// This call is required by the Windows.Forms Form Designer.
 			InitializeComponent();
-		}
+            masterNodesMgr = new MasterNodesMgr();
+        }
 
 		/// <summary>
 		/// Clean up any resources being used.
@@ -153,6 +163,11 @@ namespace LeftRight
 		}
 		#endregion
 
+        //private void OnLoad()
+        //{
+        //    this.txtMaster.Text = MasterNames[index];
+        //}
+
 		private void btnLeft_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
 		{
 			Graphics g = e.Graphics;
@@ -170,44 +185,53 @@ namespace LeftRight
                 if (index > 0)
                 {
                     index--;
-                    this.txtMaster.Text = (string)Masters[index];
-                    this.txtMaster.Tag = MastersValue[index];
+                    this.txtMaster.Text = MasterNames[index];
+                    this.txtMaster.Tag = MasterNodes[index];
                     // call event
                     OnLeftClicked(EventArgs.Empty);
                 }
                 else if (index == 0)
                 {
                     index = 0;
-                    this.txtMaster.Text = (string)Masters[index];
-                    this.txtMaster.Tag = MastersValue[index];
+                    this.txtMaster.Text = MasterNames[index];
+                    this.txtMaster.Tag = MasterNodes[index];
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception("btnLeft_Click exception", ex);
             }
-
-
-
+            masterNodesMgr.MoveLeft();
+            UpdateUI();
         }
 
-		public void btnRight_Click(object sender, System.EventArgs e)
-		{
-			if (index < (Masters.Count-1))
-			{
-				index++;
-				this.txtMaster.Text = (string)Masters[index];
-				this.txtMaster.Tag = MastersValue[index];
-				OnRightClicked(EventArgs.Empty);
-			}
-			else if (index == Masters.Count-1)
-			{
-	
-				this.txtMaster.Text = (string)Masters[index];
-				this.txtMaster.Tag = MastersValue[index];
+        private void UpdateUI()
+        {
+            // Update the UI based on the current master node
+            var (currentMasterNode, currentMasterName) = masterNodesMgr.GetCurrentMasterNodeAndName();
+            // ... update UI logic here ...
+            txtMaster.Text = this.masterNodesMgr.MasterNames[this.masterNodesMgr.CurrentIndex];
+        }
 
-			}
-		}
+        public void btnRight_Click(object sender, System.EventArgs e)
+		{
+            if (index < (MasterNames.Count - 1))
+            {
+                index++;
+                this.txtMaster.Text = (string)MasterNames[index];
+                this.txtMaster.Tag = MasterNodes[index];
+                OnRightClicked(EventArgs.Empty);
+            }
+            else if (index == Masters.Count - 1)
+            {
+
+                this.txtMaster.Text = MasterNames[index];
+                this.txtMaster.Tag = MasterNodes[index];
+
+            }
+            masterNodesMgr.MoveRight();
+            UpdateUI();
+        }
 
         private void txtMaster_MouseClick(object sender, MouseEventArgs e)
         {
@@ -224,8 +248,8 @@ namespace LeftRight
             if (diaglogResult == DialogResult.OK)
             {
                 // set the new name
-                Masters[index] = name.MasterName;
-                txtMaster.Text = (String)Masters[index];
+                MasterNames[index] = name.MasterName;
+                txtMaster.Text = MasterNames[index];
             }
             else if (diaglogResult == DialogResult.Cancel)
             {

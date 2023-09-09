@@ -1982,8 +1982,8 @@ namespace myPword
             if (ays.DialogResult == DialogResult.OK)
             {
 
-                userControl11.Masters.Clear();
-                userControl11.MastersValue.Clear();
+                userControl11.MasterNames.Clear();
+                userControl11.MasterNodes.Clear();
                 treeView1.Nodes.Clear();
                 pNode masterNode;
                 masterNode = new pNode("MASTER");
@@ -1993,9 +1993,9 @@ namespace myPword
                 this.treeView1.Nodes.Add(masterNode);
 
                 userControl11.index = 0;  // For some reason it loses track of index?
-                userControl11.Masters.Add("MASTER");
-                userControl11.MastersValue.Add(masterNode);
-                userControl11.txtMaster.Text = (string)userControl11.Masters[userControl11.index];
+                userControl11.MasterNames.Add("MASTER");
+                userControl11.MasterNodes.Add(masterNode);
+                userControl11.txtMaster.Text = (string)userControl11.MasterNames[userControl11.index];
                 this.tmpNode = (pNode)treeView1.Nodes[0];
             }
 
@@ -2008,14 +2008,14 @@ namespace myPword
             try
             {
                 //	Nodes[0] = userControl11;
-                int count = userControl11.Masters.Count;
+                int count = userControl11.MasterNames.Count;
                 Nodes.Clear();
                 Nodes.Add(count);
 
                 for (int i = 0; i < count; i++)
                 {
-                    Nodes.Add((string)userControl11.Masters[i]);
-                    Nodes.Add((pNode)userControl11.MastersValue[i]);
+                    Nodes.Add((string)userControl11.MasterNames[i]);
+                    Nodes.Add((pNode)userControl11.MasterNodes[i]);
                 }
 
                 //this.saveFileDialog1.ShowDialog();
@@ -2164,14 +2164,14 @@ namespace myPword
             try
             {
                 //	Nodes[0] = userControl11;
-                int count = userControl11.Masters.Count;
+                int count = userControl11.MasterNames.Count;
                 Nodes.Clear();
                 Nodes.Add(count);
 
                 for (int i = 0; i < count; i++)
                 {
-                    Nodes.Add((string)userControl11.Masters[i]);
-                    Nodes.Add((pNode)userControl11.MastersValue[i]);
+                    Nodes.Add((string)userControl11.MasterNames[i]);
+                    Nodes.Add((pNode)userControl11.MasterNodes[i]);
                 }
 
                 // save the registry entry for the current user
@@ -2196,8 +2196,8 @@ namespace myPword
         private void menuItem9_Click(object sender, System.EventArgs e)
         {
             this.Nodes.Clear();
-            this.userControl11.MastersValue.Clear();
-            this.userControl11.Masters.Clear();
+            this.userControl11.MasterNodes.Clear();
+            this.userControl11.MasterNames.Clear();
             try
             {
 
@@ -2228,7 +2228,7 @@ namespace myPword
                     treeView1.SelectedNode.Remove();
                     masterNode = (pNode)treeView1.Nodes[0];
                     //					Nodes[0] = masterNode;
-                    userControl11.MastersValue[userControl11.index] = masterNode;
+                    userControl11.MasterNodes[userControl11.index] = masterNode;
 
                     if (flag_file == true)
                     {
@@ -2654,9 +2654,9 @@ namespace myPword
 
                 this.treeView1.Nodes.Add(masterNode);
 
-                userControl11.Masters.Add("MASTER");
-                userControl11.MastersValue.Add(masterNode);
-                userControl11.txtMaster.Text = (string)userControl11.Masters[userControl11.index];
+                userControl11.MasterNames.Add("MASTER");
+                userControl11.MasterNodes.Add(masterNode);
+                userControl11.txtMaster.Text = userControl11.MasterNames[userControl11.index];
             }
             this.tmpNode = (pNode)treeView1.Nodes[0];
             // master node should be called by Nodes[0]...
@@ -2679,10 +2679,10 @@ namespace myPword
 
                 this.treeView1.Nodes.Add(masterNode);
 
-                userControl11.Masters.Add(dlg.txtMaster.Text);
-                userControl11.MastersValue.Add(masterNode);
+                userControl11.MasterNames.Add(dlg.txtMaster.Text);
+                userControl11.MasterNodes.Add(masterNode);
                 userControl11.index++;
-                userControl11.txtMaster.Text = (string)userControl11.Masters[userControl11.index];
+                userControl11.txtMaster.Text = (string)userControl11.MasterNames[userControl11.index];
                 this.tmpNode = (pNode)treeView1.Nodes[0];  // Always start with master
             }
         }
@@ -2697,7 +2697,7 @@ namespace myPword
 
             // This is the hardest of all
             this.treeView1.Nodes.Clear();
-            pNode masterNode = (pNode)userControl11.MastersValue[userControl11.index];
+            pNode masterNode = (pNode)userControl11.MasterNodes[userControl11.index];
             TreePics apic = new TreePics("masterNode", img.GroupUp, img.GroupDown);
             this.treeView1.Nodes.Add(masterNode);
 
@@ -2708,7 +2708,7 @@ namespace myPword
         {
             // This is the hardest of all
             this.treeView1.Nodes.Clear();
-            pNode masterNode = (pNode)userControl11.MastersValue[userControl11.index];
+            pNode masterNode = (pNode)userControl11.MasterNodes[userControl11.index];
             TreePics apic = new TreePics("masterNode", img.GroupUp, img.GroupDown);
             this.treeView1.Nodes.Add(masterNode);
         }
@@ -2781,7 +2781,7 @@ namespace myPword
                         treeView1.SelectedNode = tmpNode;
                         treeView1.SelectedNode.Nodes.Add(aNode);
                         // after adding the new node, be sure the index is updated as well... this is not necessary
-                        userControl11.MastersValue[userControl11.index] = masterNode;
+                        userControl11.MasterNodes[userControl11.index] = masterNode;
 
                         // Change from Add Dialog to local members for adding name and value
 
@@ -2834,7 +2834,7 @@ namespace myPword
                         // This is not necessary, when a save is committed this can be performed at that juncture
                         // However, it may be beneficial to know whether or not a node change was successfully saved
                         // at the iteration the event occurred.  This will prevent loss of work
-                        userControl11.MastersValue[userControl11.index] = masterNode;
+                        userControl11.MasterNodes[userControl11.index] = masterNode;
 
                         // Change from Add Dialog to local members for adding name and value
 
@@ -2882,7 +2882,7 @@ namespace myPword
                         }
                         treeView1.SelectedNode = tmpNode;
                         treeView1.SelectedNode.Nodes.Insert(modeIndex, aNode);
-                        userControl11.MastersValue[userControl11.index] = masterNode;
+                        userControl11.MasterNodes[userControl11.index] = masterNode;
 
                         // Change from Add Dialog to local members for adding name and value
 
@@ -2915,7 +2915,7 @@ namespace myPword
                         //aNode.Tag = this.txtObject.Text;
                         tmpNode.AddAttribute(txtName.Text, txtObject.Text);
                         treeView1.SelectedNode = tmpNode;
-                        userControl11.MastersValue[userControl11.index] = masterNode;
+                        userControl11.MasterNodes[userControl11.index] = masterNode;
 
                         // Change from Add Dialog to local members for adding name and value
 
@@ -2954,7 +2954,7 @@ namespace myPword
                         tmpNode.Namespace.Prefix = txtName.Text;
                         tmpNode.Namespace.URI_PREFIX = txtObject.Text;
                         treeView1.SelectedNode = tmpNode;
-                        userControl11.MastersValue[userControl11.index] = masterNode;
+                        userControl11.MasterNodes[userControl11.index] = masterNode;
 
                         // Change from Add Dialog to local members for adding name and value
 
@@ -2991,7 +2991,7 @@ namespace myPword
                         tmpNode.Namespace.Suffix = txtName.Text;
                         tmpNode.Namespace.URI_SUFFIX = txtObject.Text;
                         treeView1.SelectedNode = tmpNode;
-                        userControl11.MastersValue[userControl11.index] = masterNode;
+                        userControl11.MasterNodes[userControl11.index] = masterNode;
 
                         // Change from Add Dialog to local members for adding name and value
 
@@ -3628,8 +3628,8 @@ namespace myPword
         {
 
             this.Nodes.Clear();
-            this.userControl11.MastersValue.Clear();
-            this.userControl11.Masters.Clear();
+            this.userControl11.MasterNodes.Clear();
+            this.userControl11.MasterNames.Clear();
             filename = this.openFileDialog1.FileName;
 
             IFormatter formatter = new BinaryFormatter();
@@ -3645,12 +3645,12 @@ namespace myPword
             int i = 1;
             while (i < Nodes.Count)
             {
-                userControl11.Masters.Add((string)Nodes[i]);
+                userControl11.MasterNames.Add((string)Nodes[i]);
                 // check Nodes type
                 ++i;
                 if (Nodes[i].GetType() == typeof(pNode))
                 {
-                    userControl11.MastersValue.Add((pNode)Nodes[i]);
+                    userControl11.MasterNodes.Add((pNode)Nodes[i]);
                 }
                 else if (Nodes[i].GetType() == typeof(TreeNode))
                 {
@@ -3665,7 +3665,7 @@ namespace myPword
                     {
                         pNode p = pNode.TreeNode2pNode(a);
                         //                    userControl11.MastersValue.Add((TreeNode)Nodes[i]);
-                        userControl11.MastersValue.Add(p);
+                        userControl11.MasterNodes.Add(p);
                     }
                     catch (Exception ex)
                     {
@@ -3675,7 +3675,8 @@ namespace myPword
                 i++;
             }
             userControl11.index = 0;
-            this.treeView1.Nodes.Add((pNode)userControl11.MastersValue[userControl11.index]);
+            this.treeView1.Nodes.Add((pNode)userControl11.MasterNodes[userControl11.index]);
+            userControl11.txtMaster.Text = userControl11.MasterNames[userControl11.index];
             flag_file = true;
 
             // successful?  go ahead and make the open stick
@@ -3696,8 +3697,8 @@ namespace myPword
                     if (this.flag_file == true)
                     {
                         this.Nodes.Clear();
-                        this.userControl11.MastersValue.Clear();
-                        this.userControl11.Masters.Clear();
+                        this.userControl11.MasterNodes.Clear();
+                        this.userControl11.MasterNames.Clear();
 
 
                         IFormatter formatter = new BinaryFormatter();
@@ -3713,12 +3714,12 @@ namespace myPword
                         int i = 1;
                         while (i < Nodes.Count)
                         {
-                            userControl11.Masters.Add((string)Nodes[i]);
-                            userControl11.MastersValue.Add((pNode)Nodes[++i]);
+                            userControl11.MasterNames.Add((string)Nodes[i]);
+                            userControl11.MasterNodes.Add((pNode)Nodes[++i]);
                             i++;
                         }
                         userControl11.index = 0;
-                        this.treeView1.Nodes.Add((pNode)userControl11.MastersValue[userControl11.index]);
+                        this.treeView1.Nodes.Add((pNode)userControl11.MasterNodes[userControl11.index]);
                         flag_file = true;
                     }
                     else
@@ -4381,7 +4382,7 @@ namespace myPword
                     //                .Nodes.Add(pn);
                     //treeView1.SelectedNode.Nodes.Add(aNode);
                     // after adding the new node, be sure the index is updated as well... this is not necessary
-                    userControl11.MastersValue[userControl11.index] = masterNode;
+                    userControl11.MasterNodes[userControl11.index] = masterNode;
 
                     // Change from Add Dialog to local members for adding name and value
 
@@ -4772,7 +4773,7 @@ namespace myPword
 					//                .Nodes.Add(pn);
 					//treeView1.SelectedNode.Nodes.Add(aNode);
 					// after adding the new node, be sure the index is updated as well... this is not necessary
-					userControl11.MastersValue[userControl11.index] = masterNode;
+					userControl11.MasterNodes[userControl11.index] = masterNode;
 
 					// Change from Add Dialog to local members for adding name and value
 

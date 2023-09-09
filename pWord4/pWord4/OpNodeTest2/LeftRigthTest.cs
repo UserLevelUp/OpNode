@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pWordLib.dat;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,11 +22,11 @@ namespace OpNodeTest2
 
         public void AddMasterItem(string item)
         {
-            this.Masters.Add(item);
+            this.MasterNames.Add(item);
         }
         public void AddMasterValueItem(object item)
         {
-            this.MastersValue.Add(item);
+            this.MasterNodes.Add(item as pNode);
         }
 
         public void SimulateLeftClick()
