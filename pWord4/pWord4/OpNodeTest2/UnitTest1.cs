@@ -36,7 +36,7 @@ namespace OpNodeTest2
             leftRightControl.Object.AddMasterItem("Item 3");
 
             // Assert
-            Assert.AreEqual(3, leftRightControl.Object.Masters.Count);
+            Assert.AreEqual(3, leftRightControl.Object.MasterNames.Count);
         }
 
         [TestMethod]
@@ -93,10 +93,10 @@ namespace OpNodeTest2
             leftRightControl.Object.LeftClicked += (sender, e) => { eventFired = true; };
 
             // Populate the Masters and MastersValue lists
-            leftRightControl.Object.Masters.Add("Item 1");
-            leftRightControl.Object.MastersValue.Add("Value 1");
+            leftRightControl.Object.MasterNames.Add("Item 1");
+            leftRightControl.Object.MasterNodes.Add(new pWordLib.dat.pNode("Item 1", "Value 1"));
             leftRightControl.Object.Masters.Add("Item 2");
-            leftRightControl.Object.MastersValue.Add("Value 2");
+            leftRightControl.Object.MasterNodes.Add(new pWordLib.dat.pNode("Item 2", "Value 2"));
             leftRightControl.Object.index = 1;  // Set initial index to a valid value
 
             // Act
@@ -116,10 +116,10 @@ namespace OpNodeTest2
             leftRightControl.SetupGet(x => x.Controls).Returns(realUserControl.Controls);
 
             // Populate the Masters and MastersValue lists
-            leftRightControl.Object.Masters.Add("Item 1");
-            leftRightControl.Object.MastersValue.Add("Value 1");
-            leftRightControl.Object.Masters.Add("Item 2");
-            leftRightControl.Object.MastersValue.Add("Value 2");
+            leftRightControl.Object.MasterNames.Add("Item 1");
+            leftRightControl.Object.MasterNodes.Add(new pWordLib.dat.pNode("Item 1", "Value 1"));
+            leftRightControl.Object.MasterNames.Add("Item 2");
+            leftRightControl.Object.MasterNodes.Add(new pWordLib.dat.pNode("Item 2", "Value 2"));
             leftRightControl.Object.index = 1;  // Set initial index to a valid value
 
             leftRightControl.Object.LeftClicked += mock.Object;

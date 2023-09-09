@@ -93,6 +93,7 @@
     <Compile Include="dat\pNode.cs" />
     <Compile Include="dat\pNodeMode.cs" />
     <Compile Include="dat\registry\pRegistry.cs" />
+    <Compile Include="mgr\MasterNodes.cs" />
     <Compile Include="mgr\Operator.cs" />
     <Compile Include="mgr\registryMgr.cs" />
     <Compile Include="mgr\UserActivityHook.cs" />
