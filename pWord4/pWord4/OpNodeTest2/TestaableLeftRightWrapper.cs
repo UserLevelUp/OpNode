@@ -13,5 +13,17 @@ namespace OpNodeTest2
         {
             get { return base.Controls; }
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // TestableLeftRightWrapper
+            // 
+            this.Name = "TestableLeftRightWrapper";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
     }
 }
