@@ -72,12 +72,13 @@ namespace LeftRight
 		/// </summary>
 		private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LeftRight));
             this.btnLeft = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnRight = new System.Windows.Forms.Button();
             this.txtMaster = new System.Windows.Forms.TextBox();
-            this.ctxChangeName = new System.Windows.Forms.ContextMenuStrip();
+            this.ctxChangeName = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ctxItemChangeName = new System.Windows.Forms.ToolStripMenuItem();
             this.ctxChangeName.SuspendLayout();
             this.SuspendLayout();
@@ -119,7 +120,7 @@ namespace LeftRight
             this.txtMaster.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaster.Location = new System.Drawing.Point(24, 0);
             this.txtMaster.Name = "txtMaster";
-            this.txtMaster.Size = new System.Drawing.Size(128, 22);
+            this.txtMaster.Size = new System.Drawing.Size(128, 20);
             this.txtMaster.TabIndex = 2;
             this.txtMaster.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtMaster_MouseClick);
             // 
@@ -129,12 +130,12 @@ namespace LeftRight
             this.ctxChangeName.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctxItemChangeName});
             this.ctxChangeName.Name = "ctxChangeName";
-            this.ctxChangeName.Size = new System.Drawing.Size(173, 28);
+            this.ctxChangeName.Size = new System.Drawing.Size(151, 26);
             // 
             // ctxItemChangeName
             // 
             this.ctxItemChangeName.Name = "ctxItemChangeName";
-            this.ctxItemChangeName.Size = new System.Drawing.Size(172, 24);
+            this.ctxItemChangeName.Size = new System.Drawing.Size(150, 22);
             this.ctxItemChangeName.Text = "Change Name";
             this.ctxItemChangeName.Click += new System.EventHandler(this.ctxItemChangeName_Click);
             // 

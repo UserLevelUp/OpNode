@@ -1,73 +1,135 @@
-﻿using LeftRight;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
+using System.Windows.Forms;
 
 namespace OpNodeTest2
 {
     [TestClass]
     public class UnitTest1
     {
+        private TestableLeftRight realUserControl;
 
         [TestInitialize]
         public void Init()
         {
             Castle.DynamicProxy.Generators.AttributesToAvoidReplicating.Add(typeof(System.Security.Permissions.UIPermissionAttribute));
+
+            // Create a real instance of the UserControl.
+            realUserControl = new TestableLeftRight();
+
+            // Add the controls you want to test.
+            realUserControl.Controls.Add(new Button()); // left button
+            realUserControl.Controls.Add(new Button()); // right button
+            realUserControl.Controls.Add(new TextBox()); // master node
         }
 
-    [TestMethod]
+        [TestMethod]
         public void TestAddingItems()
         {
             // Arrange
-            var leftRightControl = new LeftRight.LeftRight();
-
+            var leftRightControl = new Mock<TestableLeftRightWrapper> { CallBase = true };
+            leftRightControl.SetupGet(x => x.Controls).Returns(realUserControl.Controls);
             // Act
-            leftRightControl.Masters.Add("Item 1");
-            leftRightControl.Masters.Add("Item 2");
-            leftRightControl.Masters.Add("Item 3");
+            leftRightControl.Object.AddMasterItem("Item 1");
+            leftRightControl.Object.AddMasterItem("Item 2");
+            leftRightControl.Object.AddMasterItem("Item 3");
 
             // Assert
-            Assert.AreEqual(3, leftRightControl.Masters.Count);
+            Assert.AreEqual(3, leftRightControl.Object.Masters.Count);
         }
 
         [TestMethod]
         public void TestLeftButton()
         {
             // Arrange
-            var leftRightControl = new TestableLeftRight();
-            leftRightControl.AddMasterItem("Item 1");
-            leftRightControl.AddMasterValueItem("Value 1"); // add items to MastersValue
-            leftRightControl.AddMasterItem("Item 2");
-            leftRightControl.AddMasterValueItem("Value 2"); // add items to MastersValue
-            leftRightControl.AddMasterItem("Item 3");
-            leftRightControl.AddMasterValueItem("Value 3"); // add items to MastersValue
-            leftRightControl.SetInitialIndex(2);
+            var leftRightControl = new Mock<TestableLeftRightWrapper> { CallBase = true };
+            leftRightControl.SetupGet(x => x.Controls).Returns(realUserControl.Controls);
+            leftRightControl.Object.AddMasterItem("Item 1");
+            leftRightControl.Object.AddMasterValueItem("Value 1"); // add items to MastersValue
+            leftRightControl.Object.AddMasterItem("Item 2");
+            leftRightControl.Object.AddMasterValueItem("Value 2"); // add items to MastersValue
+            leftRightControl.Object.AddMasterItem("Item 3");
+            leftRightControl.Object.AddMasterValueItem("Value 3"); // add items to MastersValue
+            leftRightControl.Object.SetInitialIndex(2);
 
             // Act
-            leftRightControl.SimulateLeftClick();
+            leftRightControl.Object.SimulateLeftClick();
 
             // Assert
-            Assert.AreEqual(1, leftRightControl.GetIndex());
+            Assert.AreEqual(1, leftRightControl.Object.GetIndex());
         }
 
         [TestMethod]
         public void TestRightButton()
         {
             // Arrange
-            var leftRightControl = new TestableLeftRight();
-            leftRightControl.AddMasterItem("Item 1");
-            leftRightControl.AddMasterValueItem("Value 1"); // add items to MastersValue
-            leftRightControl.AddMasterItem("Item 2");
-            leftRightControl.AddMasterValueItem("Value 2"); // add items to MastersValue
-            leftRightControl.AddMasterItem("Item 3");
-            leftRightControl.AddMasterValueItem("Value 3"); // add items to MastersValue
-            leftRightControl.SetInitialIndex(0);
+            var mock = new Mock<EventHandler>();
+            var leftRightControl = new Mock<TestableLeftRightWrapper> { CallBase = true };
+            leftRightControl.SetupGet(x => x.Controls).Returns(realUserControl.Controls);
+            leftRightControl.Object.AddMasterItem("Item 1");
+            leftRightControl.Object.AddMasterValueItem("Value 1"); // add items to MastersValue
+            leftRightControl.Object.AddMasterItem("Item 2");
+            leftRightControl.Object.AddMasterValueItem("Value 2"); // add items to MastersValue
+            leftRightControl.Object.AddMasterItem("Item 3");
+            leftRightControl.Object.AddMasterValueItem("Value 3"); // add items to MastersValue
+            leftRightControl.Object.SetInitialIndex(0);
 
             // Act
-            leftRightControl.SimulateRightClick();
+            leftRightControl.Object.SimulateRightClick();
 
             // Assert
-            Assert.AreEqual(1, leftRightControl.GetIndex());
+            Assert.AreEqual(1, leftRightControl.Object.GetIndex());
         }
+
+        [TestMethod]
+        public void TestLeftButtonEventFired()
+        {
+            // Arrange
+            var mock = new Mock<EventHandler>();
+            var leftRightControl = new Mock<TestableLeftRightWrapper> { CallBase = true };
+            leftRightControl.SetupGet(x => x.Controls).Returns(realUserControl.Controls);
+            bool eventFired = false;
+            leftRightControl.Object.LeftClicked += (sender, e) => { eventFired = true; };
+
+            // Populate the Masters and MastersValue lists
+            leftRightControl.Object.Masters.Add("Item 1");
+            leftRightControl.Object.MastersValue.Add("Value 1");
+            leftRightControl.Object.Masters.Add("Item 2");
+            leftRightControl.Object.MastersValue.Add("Value 2");
+            leftRightControl.Object.index = 1;  // Set initial index to a valid value
+
+            // Act
+            leftRightControl.Object.btnLeft_Click(null, EventArgs.Empty);
+
+            // Assert
+            Assert.IsTrue(eventFired);
+            Assert.AreEqual(0, leftRightControl.Object.index);
+        }
+
+        [TestMethod]
+        public void TestLeftButtonEventFiredWithMoq()
+        {
+            // Arrange
+            var mock = new Mock<EventHandler>();
+            var leftRightControl = new Mock<TestableLeftRightWrapper> { CallBase = true };
+            leftRightControl.SetupGet(x => x.Controls).Returns(realUserControl.Controls);
+
+            // Populate the Masters and MastersValue lists
+            leftRightControl.Object.Masters.Add("Item 1");
+            leftRightControl.Object.MastersValue.Add("Value 1");
+            leftRightControl.Object.Masters.Add("Item 2");
+            leftRightControl.Object.MastersValue.Add("Value 2");
+            leftRightControl.Object.index = 1;  // Set initial index to a valid value
+
+            leftRightControl.Object.LeftClicked += mock.Object;
+
+            // Act
+            leftRightControl.Object.btnLeft_Click(null, EventArgs.Empty);
+
+            // Assert
+            mock.Verify(handler => handler(It.IsAny<object>(), It.IsAny<EventArgs>()), Times.Once());
+        }
+
     }
 }
