@@ -67,6 +67,9 @@
     <Compile Include="LeftRigthTest.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="TestaableLeftRightWrapper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UnitTest1.cs" />
     <Compile Include="UnitTest_BasicNode_ops.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

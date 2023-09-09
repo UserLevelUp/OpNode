@@ -7,14 +7,6 @@ using System.Windows.Forms;
 
 namespace OpNodeTest2
 {
-    public class TestableLeftRightWrapper : TestableLeftRight
-    {
-        public virtual new Control.ControlCollection Controls
-        {
-            get { return base.Controls; }
-        }
-    }
-
     public class TestableLeftRight : LeftRight.LeftRight
     {
         public void SetInitialIndex(int value)
