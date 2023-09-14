@@ -127,7 +127,7 @@ namespace pWordLib.dat
 
         public NameSpace Namespace { get; set; }
 
-        private SortedList<String, String> attributes = null;
+        private SortedList<String, String> attributes;
 
         public IList<String> getKeys()
         {
@@ -210,7 +210,7 @@ namespace pWordLib.dat
             attributes.Add(key, value);
         }
 
-        private List<IOperate> operations = null;
+        private List<IOperate> operations;
         private int v;
 
         public virtual void AddOperation(IOperate operation)
@@ -236,11 +236,7 @@ namespace pWordLib.dat
         /// </summary>
         public void PerformOperations()
         {
-            if (operations == null)
-            {
-                return;
-                }
-            else
+            if (operations != null)
             {
                 foreach (IOperate operation in operations) //.Where(m => m.Changed == true))
                 {
@@ -369,7 +365,7 @@ namespace pWordLib.dat
                     {
                         // then get the attributes
                         MatchCollection mca = rxattr.Matches(m.Value);
-                        int matchAttrCount = mca.Count;
+                        //int matchAttrCount = mca.Count;
                         foreach (Match ma in mca)
                         {
                             this.AddAttribute(ma.Groups["attr"].ToString(), ma.Groups["value"].ToString());
@@ -415,7 +411,7 @@ namespace pWordLib.dat
         public void OperationChanged() 
         {
             // this is called when the operation is changed if 1 or mor operatins exist on current node
-            var ops = operations as List<IOperate>;
+            var ops = operations;
 			if (ops != null && ops.Count > 0)
 			{
                 ops.FirstOrDefault().Change(this);
@@ -438,66 +434,20 @@ namespace pWordLib.dat
 
         public XmlDocument CallRecursive(pNode node)
         {
-            // MessageBox.Show("getnode:" + getNode.Name);
-            // MessageBox.Show("pView top node:" + node.Text);
-            // use c# 4.0 in a nut shell to construct XmlDocument for this xml stuff
-            // page starts on 490
-
-            // TODO: Move To pWordLib
+            
             var xdoc = new XmlDocument();
 
-            // TODO: Move To pWordLib
             xdoc.AppendChild(xdoc.CreateXmlDeclaration("1.0", null, "yes"));
 
-            // TODO: Move To pWordLib
-            if (xdoc == null)  // instantiate the first time through
-            {
-                xdoc = new XmlDocument();
-                System.Xml.NameTable nt = new NameTable();
-                nt.Add(node.Text);
-                XmlNameTable xnt = (XmlNameTable)nt;
-                System.Xml.XmlNamespaceManager xnsm = new XmlNamespaceManager(xnt);
-                if (!(node.Namespace == null))
-                {
-                    if (node.Namespace.Prefix != null)
-                    {
-                        xnsm.AddNamespace(node.Namespace.Prefix, node.Namespace.URI_PREFIX);  // prefix will be like 'xs', and url will be like 'http://www.url.com/etc/'
-                    }
-                    if (node.Namespace.Suffix != null)
-                    {
-                        xnsm.AddNamespace(node.Namespace.Suffix, node.Namespace.URI_SUFFIX);
-                    }
-                }
-                // todo:  iterate through all nodes in pNode and place namespaces into the namespace manager
-                // for now only do the first one if it exists
-
-                // TODO: Move To pWordLib
-                xdoc = new XmlDocument(xnt);
-
-                // TODO: Move To pWordLib
-                xdoc.AppendChild(xdoc.CreateXmlDeclaration("1.0", null, "yes"));
-                //foreach (String key in xnsm.GetNamespacesInScope(XmlNamespaceScope.All).Keys)
-                //{
-                //    // this inserts the namespace into the xdoc from the name space manager
-                //    //xdoc.Schemas.XmlResolver resolve = 
-                //    //xdoc.Schemas.Add(key, xnsm.LookupNamespace(key));
-                //}
-            }
-
-            // TODO: Move To pWordLib
             node.getXmlName();  // fix node attributes and todo: eventually namespaces
-
-            // TODO: Move To pWordLib
+            
             XmlNode rootNode = xdoc.CreateElement(node.getXmlName());
             rootNode.InnerText = (String)node.Tag;
 
-            // TODO: Move To pWordLib
             foreach (var attrKey in node.getKeys())
             {
 
                 var val = node.getAttrValue(attrKey);
-
-                //
 
                 XmlAttribute xmlAttribute = null;
                 if (val != null)
@@ -510,7 +460,6 @@ namespace pWordLib.dat
 
             }
 
-            // TODO: Move To pWordLib
             if (node.Namespace != null)
             {
                 //rootNode = xdoc.CreateNode(XmlNodeType.Element, node.Namespace.Prefix, node.Name, node.Namespace.URI_PREFIX);
@@ -523,7 +472,6 @@ namespace pWordLib.dat
                 // it should be necessary to now recheck to see if its got attributes at this current node
             }
 
-            // TODO: Move To pWordLib
             foreach (String key in node.getKeys())
             {
                 if (key != "")
@@ -558,14 +506,12 @@ namespace pWordLib.dat
                 }
             }
 
-            // TODO: Move To pWordLib
             foreach (pNode p in node.Nodes)
             {
                 p.getXmlName();  // fix any attributes (this has been completed in pNode.DetectComplexNodeName()
                                  // todo: fix any namespace ... 
             }
 
-            // TODO: Move To pWordLib
             foreach (pNode p in node.Nodes)
             {
                 XmlNode xn;
@@ -632,26 +578,21 @@ namespace pWordLib.dat
                     }
                 }
 
-                // TODO: Move To pWordLib
                 rootNode.AppendChild(RecursiveChildren(ref xn, p.Nodes, xdoc));
             }
-            // TODO: Move To pWordLib
             xdoc.AppendChild(rootNode);
             return xdoc;
         }
 
         private XmlNode RecursiveChildren(ref XmlNode node, TreeNodeCollection pNodes, XmlDocument xdoc)
         {
-            // TODO: Move To pWordLib
             foreach (pNode p in pNodes)
             {
                 p.getXmlName();
             }
 
-            // TODO: Move To pWordLib
             foreach (pNode p in pNodes)
             {
-                // TODO: Move To pWordLib
                 XmlNode xn;
                 if (p.Namespace != null)
                 {
@@ -665,17 +606,13 @@ namespace pWordLib.dat
                     xn = xdoc.CreateNode(XmlNodeType.Element, p.getXmlName().Replace(" ", ""), "");
                 }
 
-                // TODO: Move To pWordLib
                 xn.InnerText = (String)p.Tag;
 
-                // TODO: Move To pWordLib
                 foreach (String key in p.getKeys())
                 {
-                    // TODO: Move To pWordLib
                     System.Xml.NameTable nt = new NameTable();
                     nt.Add(p.Text);
 
-                    // TODO: Move To pWordLib
                     XmlNameTable xnt = (XmlNameTable)nt;
                     System.Xml.XmlNamespaceManager xnsm = new XmlNamespaceManager(xnt);
                     if (p.Namespace != null)
@@ -691,7 +628,6 @@ namespace pWordLib.dat
 
                     }
 
-                    // TODO: Move To pWordLib
                     if (p.Namespace != null)
                     {
                         if (p.Namespace.Prefix != null)
@@ -721,7 +657,6 @@ namespace pWordLib.dat
                         xn.Attributes.Append((XmlAttribute)attr);  // attr is an xmlNode object ;)
                     }
                 }
-                // TODO: Move To pWordLib
                 node.AppendChild(RecursiveChildren(ref xn, p.Nodes, xdoc));
             }
             return node;
@@ -750,6 +685,7 @@ namespace pWordLib.dat
     // I might call this struct something like OpNodeMode.
     // I would then have a collection of OpNodeMode structs which would be used to determine what to do with the node based
     // on my last command that was applied to the node
+    // also needs to be more plugin friendly
     public enum nodeMode
     {
         addto = 1,

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace OpNodeTest2
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTest_LeftRight_UserControl
     {
         private TestableLeftRight realUserControl;
 
