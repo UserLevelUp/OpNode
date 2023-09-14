@@ -3,21 +3,8 @@ using System.Windows.Forms;
 using pWordLib.dat;
 namespace pWordLib
 {
-	/// <summary>
-	/// Summary description for Images.
-	/// </summary>
-	//	public class Images
-	//	{
-	//		public Images()
-	//		{
-	//			//
-	//			// TODO: Add constructor logic here
-	//			//
-	//		}
-	//	}
 
-
-public struct Image
+public struct Image : IEquatable<Image>
 {
 private const int groupup = 0;
 private const int groupdown = 1;
@@ -75,26 +62,16 @@ get
 return usernamedown;
 }
 }
-
-
-}
-
-	/// <summary>
-	/// Summary description for Letters.
-	/// </summary>
-	//	public class Letters
-	//	{
-	//		public Letters()
-	//		{
-	//			//
-	//			// TODO: Add constructor logic here
-	//			//
-	//		}
-	//	}
-
-	public struct TreePics
+		// Not really a user for this yet.  Not sure what I originally intended for images per node
+		// but updated IEquatable interface
+        public bool Equals(Image other)
+        {
+            return other.UsernameDown == this.UsernameDown && other.UsernameUp == this.UsernameUp && other.ScriptDown == this.ScriptDown && other.ScriptUp == this.ScriptUp && other.GroupDown == this.GroupDown && other.GroupUp == this.GroupUp;
+        }
+    }
+	public struct TreePics : IEquatable<TreePics>
 	{
-		pNode picnode;
+		private readonly pNode picnode;
 
 		public TreePics(string name,int img1,int img2)
 		{
@@ -108,9 +85,12 @@ return usernamedown;
 				return picnode;
 			}
 		}
-		
 
-	}
+        public bool Equals(TreePics other)
+        {
+            return other.PicNode.Name == this.picnode.Name && other.picnode.ImageIndex == this.picnode.ImageIndex && other.picnode.SelectedImageIndex == this.picnode.SelectedImageIndex;
+        }
+    }
 
 }
 

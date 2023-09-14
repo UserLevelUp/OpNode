@@ -95,7 +95,7 @@ namespace OpNodeTest2
             // Populate the Masters and MastersValue lists
             leftRightControl.Object.MasterNames.Add("Item 1");
             leftRightControl.Object.MasterNodes.Add(new pWordLib.dat.pNode("Item 1", "Value 1"));
-            leftRightControl.Object.Masters.Add("Item 2");
+            leftRightControl.Object.MasterNames.Add("Item 2");
             leftRightControl.Object.MasterNodes.Add(new pWordLib.dat.pNode("Item 2", "Value 2"));
             leftRightControl.Object.index = 1;  // Set initial index to a valid value
 
