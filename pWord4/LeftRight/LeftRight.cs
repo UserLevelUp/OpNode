@@ -29,8 +29,8 @@ namespace LeftRight
 		private System.ComponentModel.IContainer components;
 
 		// My vars
-		public ArrayList Masters = new ArrayList();
-		public ArrayList MastersValue = new ArrayList();
+		//public ArrayList Masters = new ArrayList();
+		//public ArrayList MastersValue = new ArrayList();
 		public System.Windows.Forms.Button btnRight;
         private ContextMenuStrip ctxChangeName;
         private ToolStripMenuItem ctxItemChangeName;
@@ -218,11 +218,11 @@ namespace LeftRight
             if (index < (MasterNames.Count - 1))
             {
                 index++;
-                this.txtMaster.Text = (string)MasterNames[index];
+                this.txtMaster.Text = MasterNames[index];
                 this.txtMaster.Tag = MasterNodes[index];
                 OnRightClicked(EventArgs.Empty);
             }
-            else if (index == Masters.Count - 1)
+            else if (index == MasterNames.Count - 1)
             {
 
                 this.txtMaster.Text = MasterNames[index];

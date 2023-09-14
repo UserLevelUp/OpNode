@@ -170,13 +170,13 @@ namespace pWordLib.dat
             return null;
         }
 
-        public void setName(string key)
+        public virtual void setName(string key)
         {
             ((TreeNode)this).Name = key;
         }
 
         // get the tag for a child with name == key
-        public void setValue( string value)
+        public virtual void setValue( string value)
         {
             ((TreeNode)this).Text = value;
         }
@@ -193,7 +193,7 @@ namespace pWordLib.dat
         }
 
         // check to see if the name for a child node with name == key exists    
-        public bool hasName(string key)
+        public virtual bool hasName(string key)
         {
             foreach (TreeNode child in this.Nodes)
             {
@@ -205,7 +205,7 @@ namespace pWordLib.dat
             return false;
         }
 
-        public void AddAttribute(String key, String value)
+        public virtual void AddAttribute(String key, String value)
         {
             attributes.Add(key, value);
         }
@@ -213,7 +213,7 @@ namespace pWordLib.dat
         private List<IOperate> operations = null;
         private int v;
 
-        public void AddOperation(IOperate operation)
+        public virtual void AddOperation(IOperate operation)
         {
             this.ClearOperations();  //  clearing for now ...
                                      //  as more operations are added, make this optional
