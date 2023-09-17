@@ -239,6 +239,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="TestDll.cs" />
     <Compile Include="UserActivityHook.cs">
       <SubType>Code</SubType>
     </Compile>

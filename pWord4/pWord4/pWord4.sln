@@ -24,6 +24,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpNodeWPF", "OpNodeWPF\OpNo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpNodeTest2", "OpNodeTest2\OpNodeTest2.csproj", "{785D6FA1-31AC-43BA-BFC4-865ED09944CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDll", "TestDll\TestDll.csproj", "{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
@@ -275,6 +277,36 @@ Global
 		{785D6FA1-31AC-43BA-BFC4-865ED09944CA}.SingleImage|Mixed Platforms.Build.0 = Debug|Any CPU
 		{785D6FA1-31AC-43BA-BFC4-865ED09944CA}.SingleImage|x86.ActiveCfg = Debug|Any CPU
 		{785D6FA1-31AC-43BA-BFC4-865ED09944CA}.SingleImage|x86.Build.0 = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.CD_ROM|Any CPU.ActiveCfg = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.CD_ROM|Any CPU.Build.0 = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.CD_ROM|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.CD_ROM|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.CD_ROM|x86.ActiveCfg = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.CD_ROM|x86.Build.0 = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.Debug|x86.Build.0 = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.DVD-5|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.DVD-5|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.DVD-5|x86.Build.0 = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.Release|x86.ActiveCfg = Release|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.Release|x86.Build.0 = Release|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.SingleImage|Any CPU.ActiveCfg = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.SingleImage|Any CPU.Build.0 = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.SingleImage|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.SingleImage|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.SingleImage|x86.ActiveCfg = Debug|Any CPU
+		{4860ABDF-60B2-4EDF-AB85-A4BEF896702A}.SingleImage|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
