@@ -20,7 +20,8 @@
 
         foreach (string filePath in Directory.GetFiles(folderPath, "*.dll"))
         {
-            Console.WriteLine($"Checking: {filePath}");
+            string fileName = Path.GetFileName(filePath);
+            Console.WriteLine($"Checking: {fileName}");
             try
             {
                 using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
@@ -38,13 +39,13 @@
                         switch (machine)
                         {
                             case 0x8664:
-                                Console.WriteLine("The DLL is 64-bit.");
+                                Console.WriteLine($"{fileName} is 64-bit.");
                                 break;
                             case 0x014c:
-                                Console.WriteLine("The DLL is 32-bit.");
+                                Console.WriteLine($"{fileName} is 32-bit.");
                                 break;
                             default:
-                                Console.WriteLine("The DLL is of an unknown architecture.");
+                                Console.WriteLine($"{fileName} is of an unknown architecture.");
                                 break;
                         }
                     }
@@ -52,7 +53,7 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred: {ex.Message}");
+                Console.WriteLine($"An error occurred while checking {fileName}: {ex.Message}");
             }
         }
     }
