@@ -1,0 +1,10 @@
+# Get all the directories containing LeftRight.dll
+$directories = Get-ChildItem -Path "." -Filter LeftRight.dll -Recurse | Select-Object -ExpandProperty Directory
+
+# Loop through each directory and run your custom command
+foreach ($dir in $directories) {
+    Write-Host "Checking DLLs in folder: $dir"
+    cd $dir
+    & "%TestDll%\TestDll" .
+    cd -
+}

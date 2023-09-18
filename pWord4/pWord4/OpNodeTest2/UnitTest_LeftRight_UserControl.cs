@@ -28,7 +28,7 @@ namespace OpNodeTest2
         public void TestAddingItems()
         {
             // Arrange
-            var leftRightControl = new Mock<TestableLeftRightWrapper> { CallBase = true };
+            Mock<TestableLeftRightWrapper> leftRightControl = new Mock<TestableLeftRightWrapper> { CallBase = true };
             leftRightControl.SetupGet(x => x.Controls).Returns(realUserControl.Controls);
             // Act
             leftRightControl.Object.AddMasterItem("Item 1");
