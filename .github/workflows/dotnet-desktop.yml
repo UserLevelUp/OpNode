@@ -36,22 +36,11 @@ jobs:
 #      with:
 #        dotnet-version: '8.0.100-rc.1.23463.5'  # Specify the exact version
 
-    - name: Install .NET SDK 8.0
-      run: |
-       $retryCount = 0
-       $maxRetries = 5
-       $url = "https://download.visualstudio.microsoft.com/download/pr/7f0f25a2-1e65-48f7-b9d4-ef40dcea62d2/6e0c7e2277a0d4a1235eb39c8b4a88affcf4d3e3/dotnet-sdk-8.0.100-rc.1.21458.32-win-x64.exe"
-       while ($retryCount -lt $maxRetries) {
-         try {
-           Invoke-WebRequest -Uri $url -OutFile "dotnet-sdk-installer.exe"
-           break
-         } catch {
-           $retryCount++
-           Start-Sleep -Seconds 15
-         }
-       }
-       Start-Process -FilePath ".\dotnet-sdk-installer.exe" -ArgumentList "/install /quiet" -Wait
-
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.0.x'
+ 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.0.2
 
