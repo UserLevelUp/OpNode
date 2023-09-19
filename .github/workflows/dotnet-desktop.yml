@@ -78,7 +78,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
 
     - name: List directory
-      run: ls -al
+      run: Get-ChildItem -Path . -Force
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
