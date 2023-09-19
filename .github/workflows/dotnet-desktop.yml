@@ -69,10 +69,15 @@ jobs:
 #      with:
 #        dotnet-version: 7.0.x
 
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.0.100-rc.1.23463.5'  # Specify the exact version
+#    - name: Install .NET Frmework 8.0
+#      uses: actions/setup-dotnet@v3
+#      with:
+#        dotnet-version: '8.0.100-rc.1.23463.5'  # Specify the exact version
+
+    - name: Install .NET SDK 8.0
+      run: |
+        Invoke-WebRequest -Uri "https://download.visualstudio.microsoft.com/download/pr/7f0f25a2-1e65-48f7-b9d4-ef40dcea62d2/6e0c7e2277a0d4a1235eb39c8b4a88affcf4d3e3/dotnet-sdk-8.0.100-rc.1.21458.32-win-x64.exe" -OutFile "dotnet-sdk-installer.exe"
+        Start-Process -FilePath ".\dotnet-sdk-installer.exe" -ArgumentList "/install /quiet" -Wait
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.0.2
