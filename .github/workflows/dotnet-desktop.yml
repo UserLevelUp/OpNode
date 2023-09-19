@@ -77,6 +77,15 @@ jobs:
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.0.2
 
+    - name: List directory
+      run: ls -al
+
+    - name: Print environment variables
+      run: Get-ChildItem Env: | Sort-Object Name
+
+    - name: Print working directory
+      run: echo "Working directory: $(Get-Location)"
+
     # Execute all unit tests in the solution
     - name: Execute unit tests
       run: dotnet test
