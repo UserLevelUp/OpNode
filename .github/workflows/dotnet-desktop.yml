@@ -80,9 +80,6 @@ jobs:
     - name: List directory
       run: ls -al
 
-    - name: Print working directory
-      run: echo "Working directory: $(Get-Location)"
-
     # Execute all unit tests in the solution
     - name: Execute unit tests
       run: dotnet test
