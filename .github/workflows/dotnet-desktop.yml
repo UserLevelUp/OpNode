@@ -1,41 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# This workflow will build, test, sign and package a WPF or Windows Forms desktop application
-# built on .NET Core.
-# To learn how to migrate your existing application to .NET Core,
-# refer to https://docs.microsoft.com/en-us/dotnet/desktop-wpf/migration/convert-project-from-net-framework
-#
-# To configure this workflow:
-#
-# 1. Configure environment variables
-# GitHub sets default environment variables for every workflow run.
-# Replace the variables relative to your project in the "env" section below.
-#
-# 2. Signing
-# Generate a signing certificate in the Windows Application
-# Packaging Project or add an existing signing certificate to the project.
-# Next, use PowerShell to encode the .pfx file using Base64 encoding
-# by running the following Powershell script to generate the output string:
-#
-# $pfx_cert = Get-Content '.\SigningCertificate.pfx' -Encoding Byte
-# [System.Convert]::ToBase64String($pfx_cert) | Out-File 'SigningCertificate_Encoded.txt'
-#
-# Open the output file, SigningCertificate_Encoded.txt, and copy the
-# string inside. Then, add the string to the repo as a GitHub secret
-# and name it "Base64_Encoded_Pfx."
-# For more information on how to configure your signing certificate for
-# this workflow, refer to https://github.com/microsoft/github-actions-for-desktop-apps#signing
-#
-# Finally, add the signing certificate password to the repo as a secret and name it "Pfx_Key".
-# See "Build the Windows Application Packaging project" below to see how the secret is used.
-#
-# For more information on GitHub Actions, refer to https://github.com/features/actions
-# For a complete CI/CD sample to get started with GitHub Action workflows for Desktop Applications,
-# refer to https://github.com/microsoft/github-actions-for-desktop-apps
-
 name: .NET Core Desktop
 
 on:
@@ -76,8 +38,19 @@ jobs:
 
     - name: Install .NET SDK 8.0
       run: |
-        Invoke-WebRequest -Uri "https://download.visualstudio.microsoft.com/download/pr/7f0f25a2-1e65-48f7-b9d4-ef40dcea62d2/6e0c7e2277a0d4a1235eb39c8b4a88affcf4d3e3/dotnet-sdk-8.0.100-rc.1.21458.32-win-x64.exe" -OutFile "dotnet-sdk-installer.exe"
-        Start-Process -FilePath ".\dotnet-sdk-installer.exe" -ArgumentList "/install /quiet" -Wait
+       $retryCount = 0
+       $maxRetries = 5
+       $url = "https://download.visualstudio.microsoft.com/download/pr/7f0f25a2-1e65-48f7-b9d4-ef40dcea62d2/6e0c7e2277a0d4a1235eb39c8b4a88affcf4d3e3/dotnet-sdk-8.0.100-rc.1.21458.32-win-x64.exe"
+       while ($retryCount -lt $maxRetries) {
+         try {
+           Invoke-WebRequest -Uri $url -OutFile "dotnet-sdk-installer.exe"
+           break
+         } catch {
+           $retryCount++
+           Start-Sleep -Seconds 15
+         }
+       }
+       Start-Process -FilePath ".\dotnet-sdk-installer.exe" -ArgumentList "/install /quiet" -Wait
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.0.2
