@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dat\behavior\Dirty.cs" />
+    <Compile Include="dat\ellipsis\EllipsisFile.cs" />
     <Compile Include="dat\IOperate.cs" />
     <Compile Include="dat\math\Divide.cs" />
     <Compile Include="dat\math\Multiply.cs" />
