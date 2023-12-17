@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PlaygroundAlpha.Services;
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -10,34 +11,37 @@ namespace PlaygroundAlpha
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine("Hello World!");
 
-            //   This line will yield control to the UI as the request
-            // from the web service is happening.
-            //
-            // The UI thread is now free to perform other work.
-            //var stringData = await _httpClient.GetStringAsync(URL);
-            //TestEvent(stringData);
+            ////   This line will yield control to the UI as the request
+            //// from the web service is happening.
+            ////
+            //// The UI thread is now free to perform other work.
+            ////var stringData = await _httpClient.GetStringAsync(URL);
+            ////TestEvent(stringData);
 
-            Counter2 counter = new Counter2(new Random().Next(20));
-            Console.WriteLine($"Threshold is {counter.Threshold}.");
-            counter.ThresholdReached +=  async(o,e) =>
-            {
-                await Task.Run(() =>
-                {
-                    Console.WriteLine("The threshold of {0} was reached at {1}.", e.Threshold, e.TimeReached);
-                    Environment.Exit(0);
-                });
-            };
+            //Counter2 counter = new Counter2(new Random().Next(20));
+            //Console.WriteLine($"Threshold is {counter.Threshold}.");
+            //counter.ThresholdReached +=  async(o,e) =>
+            //{
+            //    await Task.Run(() =>
+            //    {
+            //        Console.WriteLine("The threshold of {0} was reached at {1}.", e.Threshold, e.TimeReached);
+            //        Environment.Exit(0);
+            //    });
+            //};
 
-            counter.APressed += Counter_APressed;
+            //counter.APressed += Counter_APressed;
 
-            Console.WriteLine("press 'a' key to increase total");
-            while (Console.ReadKey(true).KeyChar == 'a')
-            {
-                Console.WriteLine("adding one");
-                counter.Add(1);
-            }
+            //Console.WriteLine("press 'a' key to increase total");
+            //while (Console.ReadKey(true).KeyChar == 'a')
+            //{
+            //    Console.WriteLine("adding one");
+            //    counter.Add(1);
+            //}
+
+            CurriculumService svc = new CurriculumService();
+            svc.DoRandom();
         }
 
         private static void Counter_APressed(object sender, EventArgs e)

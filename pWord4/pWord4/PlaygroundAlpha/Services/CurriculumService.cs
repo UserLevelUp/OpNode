@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,6 +43,16 @@ namespace PlaygroundAlpha.Services
         public Task<bool> DoWork2Seconds()
         {
             return new Task<bool>(() => false);
+        }
+
+        private static RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+
+        public void DoRandom()
+        {
+            byte[] bytes = new byte[16];
+            rng.GetBytes(bytes, 0, 16);
+            Console.WriteLine(Encoding.UTF8.GetString(bytes));
+            rng.Dispose();
         }
     }
 }
