@@ -489,7 +489,6 @@ namespace myPword
             this.chkClear = new System.Windows.Forms.CheckBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.treeView1 = new myPword.pView();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabValue = new System.Windows.Forms.TabPage();
             this.tabNamespaces = new System.Windows.Forms.TabPage();
@@ -509,6 +508,7 @@ namespace myPword
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.userControl11 = new LeftRight.LeftRight();
+            this.treeView1 = new myPword.pView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -549,9 +549,9 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 371);
+            this.statusBar1.Location = new System.Drawing.Point(0, 354);
             this.statusBar1.Name = "statusBar1";
-            this.statusBar1.Size = new System.Drawing.Size(308, 23);
+            this.statusBar1.Size = new System.Drawing.Size(308, 19);
             this.statusBar1.TabIndex = 0;
             this.statusBar1.Text = "statusBar1";
             // 
@@ -1328,7 +1328,7 @@ namespace myPword
             this.txtValue.Multiline = true;
             this.txtValue.Name = "txtValue";
             this.txtValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtValue.Size = new System.Drawing.Size(294, 151);
+            this.txtValue.Size = new System.Drawing.Size(294, 130);
             this.txtValue.TabIndex = 3;
             this.txtValue.TabStop = false;
             // 
@@ -1353,9 +1353,9 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 79);
+            this.splitter1.Location = new System.Drawing.Point(0, 94);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(308, 8);
+            this.splitter1.Size = new System.Drawing.Size(308, 7);
             this.splitter1.TabIndex = 5;
             this.splitter1.TabStop = false;
             // 
@@ -1364,9 +1364,9 @@ namespace myPword
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 74);
+            this.panel1.Location = new System.Drawing.Point(0, 70);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(308, 297);
+            this.panel1.Size = new System.Drawing.Size(308, 284);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1379,7 +1379,7 @@ namespace myPword
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(308, 110);
+            this.panel2.Size = new System.Drawing.Size(308, 95);
             this.panel2.TabIndex = 3;
             this.panel2.VisibleChanged += new System.EventHandler(this.panel2_VisibleChanged);
             // 
@@ -1389,17 +1389,18 @@ namespace myPword
             this.panel4.Controls.Add(this.txtObject);
             this.panel4.Controls.Add(this.lblValue);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 25);
+            this.panel4.Location = new System.Drawing.Point(0, 22);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(304, 43);
+            this.panel4.Size = new System.Drawing.Size(304, 37);
             this.panel4.TabIndex = 2;
             // 
             // btnFileEllipsis
             // 
+            this.btnFileEllipsis.Enabled = false;
             this.btnFileEllipsis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFileEllipsis.Location = new System.Drawing.Point(256, 2);
+            this.btnFileEllipsis.Location = new System.Drawing.Point(213, 2);
             this.btnFileEllipsis.Name = "btnFileEllipsis";
-            this.btnFileEllipsis.Size = new System.Drawing.Size(42, 39);
+            this.btnFileEllipsis.Size = new System.Drawing.Size(35, 34);
             this.btnFileEllipsis.TabIndex = 2;
             this.btnFileEllipsis.Text = "...";
             this.btnFileEllipsis.UseVisualStyleBackColor = true;
@@ -1410,11 +1411,11 @@ namespace myPword
             this.txtObject.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtObject.Location = new System.Drawing.Point(60, 0);
+            this.txtObject.Location = new System.Drawing.Point(50, 0);
             this.txtObject.Multiline = true;
             this.txtObject.Name = "txtObject";
             this.txtObject.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtObject.Size = new System.Drawing.Size(196, 42);
+            this.txtObject.Size = new System.Drawing.Size(214, 36);
             this.txtObject.TabIndex = 1;
             // 
             // lblValue
@@ -1422,7 +1423,7 @@ namespace myPword
             this.lblValue.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblValue.Location = new System.Drawing.Point(0, 0);
             this.lblValue.Name = "lblValue";
-            this.lblValue.Size = new System.Drawing.Size(60, 43);
+            this.lblValue.Size = new System.Drawing.Size(50, 37);
             this.lblValue.TabIndex = 0;
             this.lblValue.Text = "Value:";
             // 
@@ -1433,15 +1434,15 @@ namespace myPword
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(304, 25);
+            this.panel3.Size = new System.Drawing.Size(304, 22);
             this.panel3.TabIndex = 0;
             // 
             // txtName
             // 
             this.txtName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtName.Location = new System.Drawing.Point(60, 0);
+            this.txtName.Location = new System.Drawing.Point(50, 0);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(244, 22);
+            this.txtName.Size = new System.Drawing.Size(254, 20);
             this.txtName.TabIndex = 1;
             this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
             // 
@@ -1450,7 +1451,7 @@ namespace myPword
             this.lblName.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblName.Location = new System.Drawing.Point(0, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(60, 25);
+            this.lblName.Size = new System.Drawing.Size(50, 22);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name:";
             // 
@@ -1460,18 +1461,18 @@ namespace myPword
             this.panel5.Controls.Add(this.chkClear);
             this.panel5.Controls.Add(this.btnAdd);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 71);
+            this.panel5.Location = new System.Drawing.Point(0, 61);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(304, 35);
+            this.panel5.Size = new System.Drawing.Size(304, 30);
             this.panel5.TabIndex = 4;
             // 
             // chkClear
             // 
             this.chkClear.Checked = true;
             this.chkClear.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkClear.Location = new System.Drawing.Point(95, 0);
+            this.chkClear.Location = new System.Drawing.Point(79, 0);
             this.chkClear.Name = "chkClear";
-            this.chkClear.Size = new System.Drawing.Size(279, 25);
+            this.chkClear.Size = new System.Drawing.Size(233, 22);
             this.chkClear.TabIndex = 2;
             this.chkClear.TabStop = false;
             this.chkClear.Text = "Clear Name and Value fields?";
@@ -1483,7 +1484,7 @@ namespace myPword
             // 
             this.btnAdd.Location = new System.Drawing.Point(0, 0);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(82, 25);
+            this.btnAdd.Size = new System.Drawing.Size(68, 22);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -1497,40 +1498,10 @@ namespace myPword
             this.panel6.Controls.Add(this.splitter1);
             this.panel6.Controls.Add(this.tabs);
             this.panel6.Controls.Add(this.btnCancel);
-            this.panel6.Location = new System.Drawing.Point(0, 110);
+            this.panel6.Location = new System.Drawing.Point(0, 95);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(308, 273);
+            this.panel6.Size = new System.Drawing.Size(308, 263);
             this.panel6.TabIndex = 5;
-            // 
-            // treeView1
-            // 
-            this.treeView1.AllowDrop = true;
-            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeView1.ContextMenu = this.cmTree;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-            this.treeView1.FullRowSelect = true;
-            this.treeView1.HideSelection = false;
-            this.treeView1.HotTracking = true;
-            this.treeView1.ImageIndex = 0;
-            this.treeView1.ImageList = this.imageTree1;
-            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
-            this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(308, 79);
-            this.treeView1.TabIndex = 3;
-            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
-            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
-            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
-            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
-            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
-            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
-            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
-            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
-            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
             // 
             // tabs
             // 
@@ -1539,20 +1510,20 @@ namespace myPword
             this.tabs.Controls.Add(this.tabAttributes);
             this.tabs.Controls.Add(this.tabCMD);
             this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabs.Location = new System.Drawing.Point(0, 87);
+            this.tabs.Location = new System.Drawing.Point(0, 101);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(308, 186);
+            this.tabs.Size = new System.Drawing.Size(308, 162);
             this.tabs.TabIndex = 7;
             // 
             // tabValue
             // 
             this.tabValue.AllowDrop = true;
             this.tabValue.Controls.Add(this.txtValue);
-            this.tabValue.Location = new System.Drawing.Point(4, 25);
+            this.tabValue.Location = new System.Drawing.Point(4, 22);
             this.tabValue.Name = "tabValue";
             this.tabValue.Padding = new System.Windows.Forms.Padding(3);
-            this.tabValue.Size = new System.Drawing.Size(300, 157);
+            this.tabValue.Size = new System.Drawing.Size(300, 136);
             this.tabValue.TabIndex = 0;
             this.tabValue.Text = "Value";
             this.tabValue.UseVisualStyleBackColor = true;
@@ -1560,10 +1531,10 @@ namespace myPword
             // tabNamespaces
             // 
             this.tabNamespaces.Controls.Add(this.lstNamespaces);
-            this.tabNamespaces.Location = new System.Drawing.Point(4, 25);
+            this.tabNamespaces.Location = new System.Drawing.Point(4, 22);
             this.tabNamespaces.Name = "tabNamespaces";
             this.tabNamespaces.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNamespaces.Size = new System.Drawing.Size(300, 157);
+            this.tabNamespaces.Size = new System.Drawing.Size(300, 136);
             this.tabNamespaces.TabIndex = 1;
             this.tabNamespaces.Text = "Namespaces";
             this.tabNamespaces.UseVisualStyleBackColor = true;
@@ -1578,7 +1549,7 @@ namespace myPword
             this.lstNamespaces.HideSelection = false;
             this.lstNamespaces.Location = new System.Drawing.Point(3, 3);
             this.lstNamespaces.Name = "lstNamespaces";
-            this.lstNamespaces.Size = new System.Drawing.Size(294, 151);
+            this.lstNamespaces.Size = new System.Drawing.Size(294, 130);
             this.lstNamespaces.TabIndex = 0;
             this.lstNamespaces.UseCompatibleStateImageBehavior = false;
             this.lstNamespaces.View = System.Windows.Forms.View.Details;
@@ -1601,10 +1572,10 @@ namespace myPword
             // tabAttributes
             // 
             this.tabAttributes.Controls.Add(this.lstAttributes);
-            this.tabAttributes.Location = new System.Drawing.Point(4, 25);
+            this.tabAttributes.Location = new System.Drawing.Point(4, 22);
             this.tabAttributes.Name = "tabAttributes";
             this.tabAttributes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAttributes.Size = new System.Drawing.Size(300, 157);
+            this.tabAttributes.Size = new System.Drawing.Size(300, 136);
             this.tabAttributes.TabIndex = 2;
             this.tabAttributes.Text = "Attributes";
             this.tabAttributes.UseVisualStyleBackColor = true;
@@ -1618,7 +1589,7 @@ namespace myPword
             this.lstAttributes.HideSelection = false;
             this.lstAttributes.Location = new System.Drawing.Point(3, 3);
             this.lstAttributes.Name = "lstAttributes";
-            this.lstAttributes.Size = new System.Drawing.Size(294, 151);
+            this.lstAttributes.Size = new System.Drawing.Size(294, 130);
             this.lstAttributes.TabIndex = 1;
             this.lstAttributes.UseCompatibleStateImageBehavior = false;
             this.lstAttributes.View = System.Windows.Forms.View.Details;
@@ -1636,10 +1607,10 @@ namespace myPword
             // tabCMD
             // 
             this.tabCMD.Controls.Add(this.txtCMD);
-            this.tabCMD.Location = new System.Drawing.Point(4, 25);
+            this.tabCMD.Location = new System.Drawing.Point(4, 22);
             this.tabCMD.Name = "tabCMD";
             this.tabCMD.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCMD.Size = new System.Drawing.Size(300, 157);
+            this.tabCMD.Size = new System.Drawing.Size(300, 136);
             this.tabCMD.TabIndex = 3;
             this.tabCMD.Text = "Cmd";
             this.tabCMD.UseVisualStyleBackColor = true;
@@ -1657,7 +1628,7 @@ namespace myPword
             this.txtCMD.Location = new System.Drawing.Point(1, 0);
             this.txtCMD.Multiline = true;
             this.txtCMD.Name = "txtCMD";
-            this.txtCMD.Size = new System.Drawing.Size(292, 110);
+            this.txtCMD.Size = new System.Drawing.Size(294, 98);
             this.txtCMD.TabIndex = 0;
             this.txtCMD.UseWaitCursor = true;
             this.txtCMD.TextChanged += new System.EventHandler(this.txtCMD_TextChanged);
@@ -1667,7 +1638,7 @@ namespace myPword
             this.btnCancel.Enabled = false;
             this.btnCancel.Location = new System.Drawing.Point(2, -2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(82, 25);
+            this.btnCancel.Size = new System.Drawing.Size(68, 22);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.TabStop = false;
             this.btnCancel.Text = "Cancel";
@@ -1704,18 +1675,48 @@ namespace myPword
             this.userControl11.Dock = System.Windows.Forms.DockStyle.Top;
             this.userControl11.Location = new System.Drawing.Point(0, 48);
             this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(308, 26);
+            this.userControl11.Size = new System.Drawing.Size(308, 22);
             this.userControl11.TabIndex = 4;
             this.userControl11.TabStop = false;
             this.userControl11.LeftClicked += new System.EventHandler(this.userControl11_LeftClicked);
             this.userControl11.RightClicked += new System.EventHandler(this.userControl11_RightClicked);
             this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
             // 
+            // treeView1
+            // 
+            this.treeView1.AllowDrop = true;
+            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView1.ContextMenu = this.cmTree;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
+            this.treeView1.FullRowSelect = true;
+            this.treeView1.HideSelection = false;
+            this.treeView1.HotTracking = true;
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageTree1;
+            this.treeView1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
+            this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.Size = new System.Drawing.Size(308, 94);
+            this.treeView1.TabIndex = 3;
+            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
+            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
+            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop_1);
+            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
+            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+            this.treeView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.treeView1_KeyPress);
+            this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown_1);
+            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove_1);
+            this.treeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseUp_1);
+            // 
             // pWord
             // 
             this.AccessibleDescription = "Enabled to view file after xml or html export.";
-            this.AutoScaleBaseSize = new System.Drawing.Size(6, 15);
-            this.ClientSize = new System.Drawing.Size(308, 394);
+            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.ClientSize = new System.Drawing.Size(308, 373);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.toolBar1);
@@ -1724,7 +1725,7 @@ namespace myPword
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Menu = this.mainMenu1;
-            this.MinimumSize = new System.Drawing.Size(324, 211);
+            this.MinimumSize = new System.Drawing.Size(270, 183);
             this.Name = "pWord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "0_0_6B";
