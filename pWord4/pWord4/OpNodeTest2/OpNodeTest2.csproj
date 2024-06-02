@@ -72,6 +72,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Testable\TestablePNode.cs" />
+    <Compile Include="UnitTest_OpNode_Operations.cs" />
     <Compile Include="UnitTest_LeftRight_UserControl.cs" />
     <Compile Include="UnitTest_BasicNode_ops.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

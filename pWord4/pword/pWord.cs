@@ -158,7 +158,8 @@ namespace myPword
             treeview = 1,
             pNode = 2,
             treexml = 3,
-            treejson = 4
+            treejson = 4,
+            file = 5
         }
 
         // TODO: Move To pWordLib
@@ -209,6 +210,8 @@ namespace myPword
         public System.Windows.Forms.Label lblName;
         /*private*/
         public System.Windows.Forms.Panel panel4;
+        /*private*/
+        public System.Windows.Forms.Button btnFileEllipsis;
         /*private*/
         public System.Windows.Forms.TextBox txtObject;
         /*private*/
@@ -638,6 +641,7 @@ namespace myPword
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnFileEllipsis = new System.Windows.Forms.Button();
             this.txtObject = new System.Windows.Forms.TextBox();
             this.lblValue = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -1543,6 +1547,7 @@ namespace myPword
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnFileEllipsis);
             this.panel4.Controls.Add(this.txtObject);
             this.panel4.Controls.Add(this.lblValue);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1550,6 +1555,18 @@ namespace myPword
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(304, 43);
             this.panel4.TabIndex = 2;
+            // 
+            // btnFileEllipsis
+            // 
+            this.btnFileEllipsis.Enabled = false;
+            this.btnFileEllipsis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFileEllipsis.Location = new System.Drawing.Point(213, 2);
+            this.btnFileEllipsis.Name = "btnFileEllipsis";
+            this.btnFileEllipsis.Size = new System.Drawing.Size(35, 34);
+            this.btnFileEllipsis.TabIndex = 2;
+            this.btnFileEllipsis.Text = "...";
+            this.btnFileEllipsis.UseVisualStyleBackColor = true;
+            this.btnFileEllipsis.Click += new System.EventHandler(this.btnFileEllipsis_Click);
             // 
             // txtObject
             // 
@@ -4606,16 +4623,109 @@ namespace myPword
                         this.btnAdd.Focus();
                     }
 
-                    if (flag_file == true)
+					if (flag_file == true)
+					{
+						//autosave();
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Error occurred during JSON document load.");
+				}
+			}
+        }
+
+        private void btnFileEllipsis_Click(object sender, EventArgs e)
+        {
+            importMode = ImportMode.file; // what am I exporting?  XML from previous exportNode
+                                          // I'm importing into a node that i selected using import node treexml 
+
+            pNode pn = (pNode)treeView1.SelectedNode;
+
+            tmpNode = (pNode)treeView1.SelectedNode;
+            this.openFileDialog2.ShowDialog();
+            this.filename = this.openFileDialog2.FileName;
+            if ((this.filename == null) || (this.filename == ""))
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    using (WebClient client = new WebClient())
+                    using (Stream stream = client.OpenRead(filename))
                     {
-                        //autosave();
+                        byte[] buf = new byte[stream.Length];
+                        try
+                        {
+                            // read file into a byte array
+                            stream.Read(buf, 0, (int)stream.Length);
+                            // TODO: instead of setting tag to a buf... 
+                            // use a special class that will include the filename,
+                            // the file type and the byte[] etc...
+                            // this will allow for a more complete file ellipsis behavior
+                            if (treeView1.SelectedNode.Tag == null)
+                                treeView1.SelectedNode.Tag = buf;
+                        }
+                        catch (Exception ex)
+                        {
+                            // change to error message
+                            MessageBox.Show(ex.Message, "Ellipsis File Error");
+                        }
+                    }
+
+                    // TODO: Move To pWordLib
+                    if (xdoc != null && xdoc.Attributes != null && xdoc.Attributes.Count > 0)
+                    {
+                        foreach (XmlAttribute xmlAttr in xdoc)
+                        {
+                            pn.AddAttribute(xmlAttr.LocalName, xmlAttr.Value);
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error occurred during JSON document load.");
+                    MessageBox.Show("Error occurred during xml document load.");
                 }
             }
+
+
         }
+
+
+        //      private void createHistoryNodeOnMasterNode() 
+        //{
+        //	// find the history node if it exists
+        //	//this.tmpNode = treeView1.Nodes.Find("History", false).FirstOrDefault() as pNode;
+        //	//if (tmpNode == null) 
+        // //         {
+        // //             treeView1.Nodes.Add("History", "");
+        //	//	this.tmpNode = treeView1.Nodes.Find("History", false).FirstOrDefault() as pNode;
+        //	//}
+        //}
+
+        //private void ProcessCommand(string text)
+        //{
+
+        //          var proc = System.Diagnostics.Process.Start(this.treeView1.SelectedNode.Tag.ToString());
+        //	proc.WaitForExit();
+        //	// get the result
+        //	string result = proc.StandardOutput.ReadToEnd();
+        //	// add to treeview
+
+        //	// check to see if history node exists
+        //	// if not, create it
+        //	if (this.treeView1.SelectedNode.Nodes["History"] == null)
+        //	{
+        //		TreeNode history = new TreeNode("History");
+        //		this.treeView1.SelectedNode.Nodes.Add(history);
+        //	}
+        //	// TODO:  add the command to the history node
+
+        //	// TODO: and add the result to its child node
+
+
+        //}
     }
 }
