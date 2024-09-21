@@ -5,10 +5,14 @@
       "Microsoft.Data.ConnectionUI/16.10.31320.204": {
         "type": "package",
         "compile": {
-          "lib/net45/Microsoft.Data.ConnectionUI.dll": {}
+          "lib/net45/Microsoft.Data.ConnectionUI.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Microsoft.Data.ConnectionUI.dll": {}
+          "lib/net45/Microsoft.Data.ConnectionUI.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.DependencyValidation.Analyzers/0.11.0": {
@@ -33,10 +37,14 @@
           "Microsoft.VisualStudio.SDK.EmbedInteropTypes": "15.0.34"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.OLE.Interop.dll": {}
+          "lib/netstandard2.0/Microsoft.VisualStudio.OLE.Interop.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.OLE.Interop.dll": {}
+          "lib/netstandard2.0/Microsoft.VisualStudio.OLE.Interop.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.VisualStudio.SDK.EmbedInteropTypes/15.0.34": {
@@ -52,10 +60,14 @@
           "Microsoft.VisualStudio.TextManager.Interop": "16.10.31320.204"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.Shell.Interop.dll": {}
+          "lib/netstandard2.0/Microsoft.VisualStudio.Shell.Interop.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.Shell.Interop.dll": {}
+          "lib/netstandard2.0/Microsoft.VisualStudio.Shell.Interop.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.VisualStudio.TextManager.Interop/16.10.31320.204": {
@@ -65,10 +77,14 @@
           "Microsoft.VisualStudio.SDK.EmbedInteropTypes": "15.0.34"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.TextManager.Interop.dll": {}
+          "lib/netstandard2.0/Microsoft.VisualStudio.TextManager.Interop.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.TextManager.Interop.dll": {}
+          "lib/netstandard2.0/Microsoft.VisualStudio.TextManager.Interop.dll": {
+            "related": ".xml"
+          }
         }
       },
       "pWordLib/1.0.0": {
@@ -222,11 +238,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\src\\OldDev\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
+      "projectUniqueName": "C:\\Users\\marcn\\source\\repos\\User-Level-Up\\pWord2\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
       "projectName": "PnodeDataProvider",
-      "projectPath": "C:\\src\\OldDev\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
+      "projectPath": "C:\\Users\\marcn\\source\\repos\\User-Level-Up\\pWord2\\pWord4\\pWord4\\PnodeDataProvider\\PnodeDataProvider.csproj",
       "packagesPath": "C:\\Users\\marcn\\.nuget\\packages\\",
-      "outputPath": "C:\\src\\OldDev\\pword2\\pword\\pWord4\\pWord4\\PnodeDataProvider\\obj\\",
+      "outputPath": "C:\\Users\\marcn\\source\\repos\\User-Level-Up\\pWord2\\pWord4\\pWord4\\PnodeDataProvider\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -244,15 +260,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://adv-dev.pkgs.visualstudio.com/_packaging/ARTS-Packages/Nuget/v3/index.json": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\src\\OldDev\\pword2\\pword\\pWord4\\pWordLib\\pWordLib.csproj": {
-              "projectPath": "C:\\src\\OldDev\\pword2\\pword\\pWord4\\pWordLib\\pWordLib.csproj"
+            "C:\\Users\\marcn\\source\\repos\\User-Level-Up\\pWord2\\pWord4\\pWordLib\\pWordLib.csproj": {
+              "projectPath": "C:\\Users\\marcn\\source\\repos\\User-Level-Up\\pWord2\\pWord4\\pWordLib\\pWordLib.csproj"
             }
           }
         }
@@ -261,6 +277,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -282,7 +303,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -291,7 +313,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -300,7 +322,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.Data.ConnectionUI 16.10.31320.204' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.Data.ConnectionUI 16.10.31320.204' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Data.ConnectionUI",
       "targetGraphs": [
         "net5.0"
@@ -310,7 +332,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.VisualStudio.Data 16.10.31320.204' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.VisualStudio.Data 16.10.31320.204' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.VisualStudio.Data",
       "targetGraphs": [
         "net5.0"
