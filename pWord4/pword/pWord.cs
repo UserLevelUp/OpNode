@@ -27,6 +27,7 @@ namespace myPword
     /// 
     public class pWord : System.Windows.Forms.Form
     {
+        /*private*/
         private System.ComponentModel.IContainer components;
 
         /*private*/
