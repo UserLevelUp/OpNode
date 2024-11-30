@@ -321,6 +321,7 @@
     </Content>
     <None Include="Resources\Division.ico" />
     <None Include="Resources\Cos.ico" />
+    <Content Include="readme.txt" />
     <Content Include="Resources\ExpandedLink.ico" />
     <Content Include="icons\master1.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

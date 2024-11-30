@@ -27,45 +27,76 @@ namespace myPword
     /// 
     public class pWord : System.Windows.Forms.Form
     {
+        /*private*/
         private System.ComponentModel.IContainer components;
-        private System.Windows.Forms.ContextMenu contextMenuNotify;
-        private System.Windows.Forms.MenuItem menuItemExit;
-        private System.Windows.Forms.MenuItem menuItemShow;
-        private System.Windows.Forms.StatusBar statusBar1;
-        private System.Windows.Forms.ToolBar toolBar1;
-        private System.Windows.Forms.ImageList imgToolbar1;
-        private System.Windows.Forms.ToolBarButton toolBarTac;
-        private System.Windows.Forms.ContextMenu cmTree;
-        private System.Windows.Forms.MenuItem menuItemAddTo;
-        private System.Windows.Forms.MainMenu mainMenu1;
-        private System.Windows.Forms.MenuItem menuItemFile;
-        private System.Windows.Forms.MenuItem newFileMenuItem;
-        private System.Windows.Forms.MenuItem openFileMenuItem;
-        private System.Windows.Forms.MenuItem saveFileMenuItem;
-        private System.Windows.Forms.MenuItem menuItem14;
-        private System.Windows.Forms.ImageList imageTree1;
-        private System.Windows.Forms.MenuItem menuItem15;
-        private System.Windows.Forms.MenuItem exitMenuItem;
-        private System.Windows.Forms.MenuItem menuItemBlank;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.MenuItem menuItemEncryptNode;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.ToolBarButton toolBarView;
-        private System.Windows.Forms.MenuItem menuItemCopy;
-        private System.Windows.Forms.MenuItem menuItem17;
-        private System.Windows.Forms.MenuItem menuItem18;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private int searchCounter = 0;
-        private int previousSearchCounter = 0;
+
+        /*private*/
+        public System.Windows.Forms.ContextMenu contextMenuNotify;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItemExit;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItemShow;
+        /*private*/
+        public System.Windows.Forms.StatusBar statusBar1;
+        /*private*/
+        public System.Windows.Forms.ToolBar toolBar1;
+        /*private*/
+        public System.Windows.Forms.ImageList imgToolbar1;
+        /*private*/
+        public System.Windows.Forms.ToolBarButton toolBarTac;
+        /*private*/
+        public System.Windows.Forms.ContextMenu cmTree;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItemAddTo;
+        /*private*/
+        public System.Windows.Forms.MainMenu mainMenu1;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItemFile;
+        /*private*/
+        public System.Windows.Forms.MenuItem newFileMenuItem;
+        /*private*/
+        public System.Windows.Forms.MenuItem openFileMenuItem;
+        /*private*/
+        public System.Windows.Forms.MenuItem saveFileMenuItem;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem14;
+        /*private*/
+        public System.Windows.Forms.ImageList imageTree1;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem15;
+        /*private*/
+        public System.Windows.Forms.MenuItem exitMenuItem;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItemBlank;
+        /*private*/
+        public System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItemEncryptNode;
+        /*private*/
+        public System.Windows.Forms.OpenFileDialog openFileDialog1;
+        /*private*/
+        public System.Windows.Forms.ToolBarButton toolBarView;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItemCopy;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem17;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem18;
+        /*private*/
+        public System.Windows.Forms.NotifyIcon notifyIcon1;
+        /*private*/
+        public int searchCounter = 0;
+        /*private*/
+        public int previousSearchCounter = 0;
 
         pNode p = new pNode();
 
         /// <summary>
         ///   Add my VARIABLES HERE
         /// </summary>
-        
+
         /// TODO: Move To pWordLib
-        bool VIS = true;
+        public bool VIS = true;
 
         // The master list for all views
         // TODO: Move To pWordLib
@@ -74,34 +105,35 @@ namespace myPword
         // flag_file is false if it's a new file, or upon opening program.
         // If flag_file is true... it's because the current tree was saved or opened.
         // TODO: Move To pWordLib
-        bool flag_file = false;
+        public bool flag_file = false;
 
         // TODO: Move To pWordLib
-        string filename = "";
-        string filenameHTML = "";
-        string filenameJSON = "";
+        public string filename = "";
+        public string filenameHTML = "";
+        public string filenameJSON = "";
 
         // TODO: Move To pWordLib
-        pNode tmpNode = new pNode();  // used to store a tree node temporarily
+        public pNode tmpNode = new pNode();  // used to store a tree node temporarily
 
         // TODO: Move To pWordLib
-        pNode getNode = new pNode();  // used for put op
+        public pNode getNode = new pNode();  // used for put op
 
         // TODO: Move To pWordLib
         pNode moveNode = new pNode(); // moved pNode
 
         // TODO: Move To pWordLib
-        pNode xmlNode = new pNode();  // used for xml ... especially the EYE icon next to ( to the right of when active) the Pin Icon
+        public pNode xmlNode = new pNode();  // used for xml ... especially the EYE icon next to ( to the right of when active) the Pin Icon
 
         // TODO: Move To pWordLib
-        ArrayList xml = new ArrayList();
+        public ArrayList xml = new ArrayList();
 
         // TODO: Move To pWordLib
-        private Tuple<int, int> lastMousePos = new Tuple<int, int>(0, 0);
+        /*private*/
+        public Tuple<int, int> lastMousePos = new Tuple<int, int>(0, 0);
 
         // TODO: Move To pWordLib
-        int nodeIndex = 0;
-        int xmlIndex = 0;
+        public int nodeIndex = 0;
+        public int xmlIndex = 0;
 
         // TODO: Move To pWordLib
 
@@ -131,8 +163,8 @@ namespace myPword
         }
 
         // TODO: Move To pWordLib
-        ExportMode exportMode = ExportMode.treeview;
-        ImportMode importMode = ImportMode.treeview;
+        public ExportMode exportMode = ExportMode.treeview;
+        public ImportMode importMode = ImportMode.treeview;
 
         System.Drawing.Point StartPt; // Used for selecting multi nodes
         System.Drawing.Point StopPt;
@@ -140,142 +172,271 @@ namespace myPword
         // TODO: Add TREE Stuff here
         //			pNode rootNode = new pNode("Master"
 
-        private pWordLib.Image img;
-        private ArrayList Nodes = new ArrayList();
+        /*private*/
+        public pWordLib.Image img;
+        /*private*/
+        public ArrayList Nodes = new ArrayList();
 
         // TODO: decide if drag_flag needs to be used or not.
-        private bool drag_flag = false;
-        private bool autoHide_flag = false;
-        private Point mousePT;
-        private System.Windows.Forms.TextBox txtValue;
-        private LeftRight.LeftRight userControl11;
-        private System.Windows.Forms.ContextMenu cmMasters;
-        private System.Windows.Forms.MenuItem menuItem19;
-        private System.Windows.Forms.MenuItem menuItem20;
-        private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.MenuItem menuItemOpenLink;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.MenuItem menuItem12;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txtObject;
-        private System.Windows.Forms.Label lblValue;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.CheckBox chkClear;
-        private pView treeView1;
-        private System.Windows.Forms.MenuItem menuItem13;
-        private System.Windows.Forms.MenuItem menuItem21;
-        private System.Windows.Forms.MenuItem menuItem22;
-        private System.Windows.Forms.MenuItem menuItem24;
-        private System.Windows.Forms.MenuItem exportXMLMenuItem;
-        private System.Windows.Forms.MenuItem menuItem25;
-        private System.Windows.Forms.MenuItem menuItem26;
-        private System.Windows.Forms.MenuItem menuItem27;
-        private System.Windows.Forms.MenuItem menuItem28;
-        private System.Windows.Forms.MenuItem menuItem29;
-        private System.Windows.Forms.MenuItem menuItem30;
-        private System.Windows.Forms.MenuItem menuItem31;
-        private System.Windows.Forms.MenuItem menuItem32;
-        private System.Windows.Forms.SaveFileDialog saveFileDialogHTML;
-        private System.Windows.Forms.SaveFileDialog saveFileDialogJSON;
-        private System.Windows.Forms.MenuItem menuItem33;
-        private System.Windows.Forms.MenuItem menuItem34;
-        private System.Windows.Forms.MenuItem menuItemExportToXmlHtml;
-        private ToolBarButton toolBarXML;
-        private NotifyIcon notifyIcon2;
-        private MenuItem menuItemAttributes;
+        /*private*/
+        public bool drag_flag = false;
+        /*private*/
+        public bool autoHide_flag = false;
+        /*private*/
+        public Point mousePT;
+        /*private*/
+        public System.Windows.Forms.TextBox txtValue;
+        /*private*/
+        public LeftRight.LeftRight userControl11;
+        /*private*/
+        public System.Windows.Forms.ContextMenu cmMasters;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem19;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem20;
+        /*private*/
+        public System.Windows.Forms.Splitter splitter1;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItemOpenLink;
+        /*private*/
+        public System.Windows.Forms.Panel panel1;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem12;
+        /*private*/
+        public System.Windows.Forms.Panel panel2;
+        /*private*/
+        public System.Windows.Forms.Panel panel3;
+        /*private*/
+        public System.Windows.Forms.Label lblName;
+        /*private*/
+        public System.Windows.Forms.Panel panel4;
+        /*private*/
+        public System.Windows.Forms.Button btnFileEllipsis;
+        /*private*/
+        public System.Windows.Forms.TextBox txtObject;
+        /*private*/
+        public System.Windows.Forms.Label lblValue;
+        /*private*/
+        public System.Windows.Forms.TextBox txtName;
+        /*private*/
+        public System.Windows.Forms.Panel panel5;
+        /*private*/
+        public System.Windows.Forms.Button btnAdd;
+        /*private*/
+        public System.Windows.Forms.Button btnCancel;
+        /*private*/
+        public System.Windows.Forms.Panel panel6;
+        /*private*/
+        public System.Windows.Forms.CheckBox chkClear;
+        /*private*/
+        public pView treeView1;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem13;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem21;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem22;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem24;
+        /*private*/
+        public System.Windows.Forms.MenuItem exportXMLMenuItem;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem25;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem26;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem27;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem28;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem29;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem30;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem31;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem32;
+        /*private*/
+        public System.Windows.Forms.SaveFileDialog saveFileDialogHTML;
+        /*private*/
+        public System.Windows.Forms.SaveFileDialog saveFileDialogJSON;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem33;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItem34;
+        /*private*/
+        public System.Windows.Forms.MenuItem menuItemExportToXmlHtml;
+        /*private*/
+        public ToolBarButton toolBarXML;
+        /*private*/
+        public NotifyIcon notifyIcon2;
+        /*private*/
+        public MenuItem menuItemAttributes;
 
         // Import interop services
 
         pWordLib.UserActivityHook.UserActivityHook actHook;
-        private MenuItem menuItemAttributeAdd;
-        private MenuItem menuItemNamespace;
-        private MenuItem menuItem36;
-        private MenuItem menuItem37;
-        private MenuItem menuItem40;
-        private MenuItem menuItem39;
-        private MenuItem menuItem41;
-        private MenuItem menuItem42;
-        private MenuItem menuItem43;
-        private MenuItem menuItem44;
-        private MenuItem menuItem45;
-        private MenuItem menuItem46;
-        private MenuItem menuItemViewErrors;
-        private MenuItem menuItem50;
-        private MenuItem menuItem47;
-        private MenuItem menuItem48;
-        private MenuItem menuItem49;
-        private MenuItem menuItem51;
-        private MenuItem menuItem52;
-        private MenuItem menuItem53;
-        private MenuItem menuItem54;
-        private MenuItem menuItem55;
-        private MenuItem menuItem56;
-        private MenuItem menuItem57;
-        private MenuItem menuItem58;
-        private MenuItem menuItem59;
-        private MenuItem menuItem60;
-        private MenuItem menuItem61;
-        private MenuItem menuItem62;
-        private MenuItem menuItem63;
-        private MenuItem menuItem64;
-        private MenuItem menuItem65;
-        private MenuItem menuItem66;
-        private MenuItem menuItem67;
-        private MenuItem menuItem68;
-        private MenuItem menuItem69;
-        private MenuItem menuItem70;
-        private MenuItem menuItem71;
-        private MenuItem menuItem72;
-        private MenuItem menuItem73;
-        private MenuItem menuItem74;
-        private MenuItem menuItem75;
-        private MenuItem menuItem38;
-        private MenuItem menuItem76;
-        private MenuItem menuItem77;
-        private MenuItem menuItem78;
-        private MenuItem menuItem79;
-        private MenuItem menuItem81;
-        private MenuItem menuItem80;
-        private MenuItem menuItem82;
-        private MenuItem menuItem83;
-        private MenuItem menuItem84;
-        private MenuItem mnuNamespaces;
-        private MenuItem mnuAttributes;
-        private TabControl tabs;
-        private TabPage tabValue;
-        private TabPage tabNamespaces;
-        private TabPage tabAttributes;
-        private ListView lstNamespaces;
-        private ListView lstAttributes;
-        private ColumnHeader columnPrefix;
-        private ColumnHeader columnPrefixURI;
-        private ColumnHeader columnAttributeName;
-        private ColumnHeader columnAttributeValue;
-        private ColumnHeader columnSuffix;
-        private MenuItem mnuImportXML;
-        private MenuItem mnuImportNodeXML;
-        private OpenFileDialog openFileDialog2;
-        private MenuItem menuItem85;
-        private MenuItem menuItem86;
-        private MenuItem menuItem87;
-        private MenuItem menuItem88;
-        private MenuItem menuItem89;
-        private MenuItem menuItem90;
-        private MenuItem menuItemExportJson;
-        private ToolBarButton toolBarSearch;
-        private ToolBarButton toolBarCollapse;
-        private TabPage tabCMD;
-        private TextBox txtCMD;
-        private MenuItem menuItemImportJSON;
-        private Button btnFileEllipsis;
-        pWordLib.mgr.registryMgr rm = null;
+        /*private*/
+        public MenuItem menuItemAttributeAdd;
+        /*private*/
+        public MenuItem menuItemNamespace;
+        /*private*/
+        public MenuItem menuItem36;
+        /*private*/
+        public MenuItem menuItem37;
+        /*private*/
+        public MenuItem menuItem40;
+        /*private*/
+        public MenuItem menuItem39;
+        /*private*/
+        public MenuItem menuItem41;
+        /*private*/
+        public MenuItem menuItem42;
+        /*private*/
+        public MenuItem menuItem43;
+        /*private*/
+        public MenuItem menuItem44;
+        /*private*/
+        public MenuItem menuItem45;
+        /*private*/
+        public MenuItem menuItem46;
+        /*private*/
+        public MenuItem menuItemViewErrors;
+        /*private*/
+        public MenuItem menuItem50;
+        /*private*/
+        public MenuItem menuItem47;
+        /*private*/
+        public MenuItem menuItem48;
+        /*private*/
+        public MenuItem menuItem49;
+        /*private*/
+        public MenuItem menuItem51;
+        /*private*/
+        public MenuItem menuItem52;
+        /*private*/
+        public MenuItem menuItem53;
+        /*private*/
+        public MenuItem menuItem54;
+        /*private*/
+        public MenuItem menuItem55;
+        /*private*/
+        public MenuItem menuItem56;
+        /*private*/
+        public MenuItem menuItem57;
+        /*private*/
+        public MenuItem menuItem58;
+        /*private*/
+        public MenuItem menuItem59;
+        /*private*/
+        public MenuItem menuItem60;
+        /*private*/
+        public MenuItem menuItem61;
+        /*private*/
+        public MenuItem menuItem62;
+        /*private*/
+        public MenuItem menuItem63;
+        /*private*/
+        public MenuItem menuItem64;
+        /*private*/
+        public MenuItem menuItem65;
+        /*private*/
+        public MenuItem menuItem66;
+        /*private*/
+        public MenuItem menuItem67;
+        /*private*/
+        public MenuItem menuItem68;
+        /*private*/
+        public MenuItem menuItem69;
+        /*private*/
+        public MenuItem menuItem70;
+        /*private*/
+        public MenuItem menuItem71;
+        /*private*/
+        public MenuItem menuItem72;
+        /*private*/
+        public MenuItem menuItem73;
+        /*private*/
+        public MenuItem menuItem74;
+        /*private*/
+        public MenuItem menuItem75;
+        /*private*/
+        public MenuItem menuItem38;
+        /*private*/
+        public MenuItem menuItem76;
+        /*private*/
+        public MenuItem menuItem77;
+        /*private*/
+        public MenuItem menuItem78;
+        /*private*/
+        public MenuItem menuItem79;
+        /*private*/
+        public MenuItem menuItem81;
+        /*private*/
+        public MenuItem menuItem80;
+        /*private*/
+        public MenuItem menuItem82;
+        /*private*/
+        public MenuItem menuItem83;
+        /*private*/
+        public MenuItem menuItem84;
+        /*private*/
+        public MenuItem mnuNamespaces;
+        /*private*/
+        public MenuItem mnuAttributes;
+        /*private*/
+        public TabControl tabs;
+        /*private*/
+        public TabPage tabValue;
+        /*private*/
+        public TabPage tabNamespaces;
+        /*private*/
+        public TabPage tabAttributes;
+        /*private*/
+        public ListView lstNamespaces;
+        /*private*/
+        public ListView lstAttributes;
+        /*private*/
+        public ColumnHeader columnPrefix;
+        /*private*/
+        public ColumnHeader columnPrefixURI;
+        /*private*/
+        public ColumnHeader columnAttributeName;
+        /*private*/
+        public ColumnHeader columnAttributeValue;
+        /*private*/
+        public ColumnHeader columnSuffix;
+        /*private*/
+        public MenuItem mnuImportXML;
+        /*private*/
+        public MenuItem mnuImportNodeXML;
+        /*private*/
+        public OpenFileDialog openFileDialog2;
+        /*private*/
+        public MenuItem menuItem85;
+        /*private*/
+        public MenuItem menuItem86;
+        /*private*/
+        public MenuItem menuItem87;
+        /*private*/
+        public MenuItem menuItem88;
+        /*private*/
+        public MenuItem menuItem89;
+        /*private*/
+        public MenuItem menuItem90;
+        /*private*/
+        public MenuItem menuItemExportJson;
+        /*private*/
+        public ToolBarButton toolBarSearch;
+        /*private*/
+        public ToolBarButton toolBarCollapse;
+        /*private*/
+        public TabPage tabCMD;
+        /*private*/
+        public TextBox txtCMD;
+        /*private*/
+        public MenuItem menuItemImportJSON;
+        public pWordLib.mgr.registryMgr rm = null;
         public pWord()
         {
 
@@ -313,7 +474,7 @@ namespace myPword
             //actHook.OnMouseActivity += new MouseEventHandler(MouseMoved);
         }
 
-        void notifyIcon1_DoubleClick(object sender, EventArgs e)
+        public void notifyIcon1_DoubleClick(object sender, EventArgs e)
         {
             // 
             this.WindowState = FormWindowState.Normal;
@@ -354,7 +515,8 @@ namespace myPword
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        /*private*/
+        public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             System.Configuration.AppSettingsReader configurationAppSettings = new System.Configuration.AppSettingsReader();
@@ -549,9 +711,9 @@ namespace myPword
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 354);
+            this.statusBar1.Location = new System.Drawing.Point(0, 124);
             this.statusBar1.Name = "statusBar1";
-            this.statusBar1.Size = new System.Drawing.Size(308, 19);
+            this.statusBar1.Size = new System.Drawing.Size(308, 20);
             this.statusBar1.TabIndex = 0;
             this.statusBar1.Text = "statusBar1";
             // 
@@ -1353,7 +1515,7 @@ namespace myPword
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 94);
+            this.splitter1.Location = new System.Drawing.Point(0, -135);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(308, 7);
             this.splitter1.TabIndex = 5;
@@ -1366,7 +1528,7 @@ namespace myPword
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 70);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(308, 284);
+            this.panel1.Size = new System.Drawing.Size(308, 54);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1398,9 +1560,9 @@ namespace myPword
             // 
             this.btnFileEllipsis.Enabled = false;
             this.btnFileEllipsis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFileEllipsis.Location = new System.Drawing.Point(213, 2);
+            this.btnFileEllipsis.Location = new System.Drawing.Point(178, 2);
             this.btnFileEllipsis.Name = "btnFileEllipsis";
-            this.btnFileEllipsis.Size = new System.Drawing.Size(35, 34);
+            this.btnFileEllipsis.Size = new System.Drawing.Size(29, 29);
             this.btnFileEllipsis.TabIndex = 2;
             this.btnFileEllipsis.Text = "...";
             this.btnFileEllipsis.UseVisualStyleBackColor = true;
@@ -1415,7 +1577,7 @@ namespace myPword
             this.txtObject.Multiline = true;
             this.txtObject.Name = "txtObject";
             this.txtObject.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtObject.Size = new System.Drawing.Size(214, 36);
+            this.txtObject.Size = new System.Drawing.Size(254, 36);
             this.txtObject.TabIndex = 1;
             // 
             // lblValue
@@ -1500,7 +1662,7 @@ namespace myPword
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Location = new System.Drawing.Point(0, 95);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(308, 263);
+            this.panel6.Size = new System.Drawing.Size(308, 34);
             this.panel6.TabIndex = 5;
             // 
             // tabs
@@ -1510,7 +1672,7 @@ namespace myPword
             this.tabs.Controls.Add(this.tabAttributes);
             this.tabs.Controls.Add(this.tabCMD);
             this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabs.Location = new System.Drawing.Point(0, 101);
+            this.tabs.Location = new System.Drawing.Point(0, -128);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(308, 162);
@@ -1699,7 +1861,7 @@ namespace myPword
             this.treeView1.Name = "treeView1";
             this.treeView1.Scrollable = ((bool)(configurationAppSettings.GetValue("treeView1.Scrollable", typeof(bool))));
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(308, 94);
+            this.treeView1.Size = new System.Drawing.Size(308, 0);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse_1);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand_1);
@@ -1716,7 +1878,7 @@ namespace myPword
             // 
             this.AccessibleDescription = "Enabled to view file after xml or html export.";
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(308, 373);
+            this.ClientSize = new System.Drawing.Size(308, 144);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.toolBar1);
@@ -1761,8 +1923,8 @@ namespace myPword
         /// </summary>
         [STAThread]
         static void Main()
-       
-        
+
+
         {
             Application.Run(new pWord());
 #if debug
@@ -1771,14 +1933,15 @@ namespace myPword
 #endif
         }
 
-        private void menuItemExit_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItemExit_Click(object sender, System.EventArgs e)
         {
             // EXIT
             this.Dispose(true);
             this.Close();
         }
-
-        private void pWord_Load(object sender, System.EventArgs e)
+        /*private*/
+        public void pWord_Load(object sender, System.EventArgs e)
         {
             this.Dock = System.Windows.Forms.DockStyle.Bottom;
             System.Drawing.Rectangle a = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea;
@@ -1799,13 +1962,11 @@ namespace myPword
             this.DockRight(sender, e);
             //this.actHook.Stop();
         }
-
         struct Masters
         {
             string Name;
             object Value;
         }
-
 
         /// <summary>
         /// When the mouse moves checks for the bounds
@@ -1814,64 +1975,8 @@ namespace myPword
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void MouseMoved(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                if (this.WindowState == FormWindowState.Normal)
-                {
-                    notifyIcon2.Visible = true;
-                    if ((this.autoHide_flag == true) && (this.Visible == false))
-                    {
-                        if (e.X >= Screen.PrimaryScreen.Bounds.Right - 1)
-                        {
-                            if ((e.Y >= (Screen.PrimaryScreen.Bounds.Top + 64)) && (e.Y <= (Screen.PrimaryScreen.Bounds.Bottom - 80)))
-                            {
-                                this.VIS = true;
-                                this.Visible = true;
-
-                            }
-                        }
-                        else if (e.X < (Screen.PrimaryScreen.Bounds.Right - this.Width))
-                        {
-                            this.VIS = false;
-                            this.Visible = false;
-
-                        }
-                    }
-                    else if ((this.autoHide_flag == true) && (this.Visible == true))
-                    {
-                        if (e.X < (Screen.PrimaryScreen.Bounds.Right - this.Width))
-                        {
-                            this.VIS = false;
-                            this.Visible = false;
-
-                        }
-
-                    }
-                }
-                else
-                {
-                    //Console.WriteLine("How did I get here? Windows State: {0}", this.WindowState.ToString());
-                    if (e.X < (Screen.PrimaryScreen.Bounds.Right - this.Width))
-                    {
-                        this.VIS = false;
-                        this.Visible = false;
-                        notifyIcon2.Visible = false;
-                        notifyIcon1.Visible = true;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-
-        }
-
-
-        private void pWord_VisibleChanged(object sender, System.EventArgs e)
+        /*private*/
+        public void pWord_VisibleChanged(object sender, System.EventArgs e)
         {
             try
             {
@@ -1885,8 +1990,8 @@ namespace myPword
                 Debug.WriteLine("Something bad happened. " + ex.ToString());
             }
         }
-
-        private void invisible(bool vis)
+        /*private*/
+        public void invisible(bool vis)
         {
             if (VIS == true)
             {
@@ -1897,32 +2002,12 @@ namespace myPword
                 this.Hide();
             }
         }
-
-        protected Screen HostingScreen
+        public Screen HostingScreen
         {
             get { return Screen.FromRectangle(this.Bounds); }
         }
-
-        private void DockCenter(object sender, EventArgs e)
-        {
-            this.Size = this.MinimumSize; // shrink to min size
-
-            int centerX = HostingScreen.WorkingArea.Width / 2;
-            int centerY = HostingScreen.WorkingArea.Height / 2;
-
-            this.Location = new Point(
-                centerX - this.Width / 2,
-                centerY - this.Height / 2
-                );
-        }
-
-        private void DockLeft(object sender, EventArgs e)
-        {
-            this.Height = HostingScreen.WorkingArea.Height;
-            this.Location = new Point(0, 0);
-        }
-
-        private void DockRight(object sender, EventArgs e)
+        /*private*/
+        public void DockRight(object sender, EventArgs e)
         {
             this.Height = HostingScreen.WorkingArea.Height;
             this.Location = new Point(
@@ -1930,64 +2015,15 @@ namespace myPword
                 0
                 );
         }
-
-        private void DockBottom(object sender, EventArgs e)
-        {
-            this.Height = this.MinimumSize.Height;
-            this.Width = HostingScreen.WorkingArea.Width;
-
-            this.Location = new Point(
-                0,
-                HostingScreen.WorkingArea.Height - this.Height
-                );
-        }
-
-        private void DockTop(object sender, EventArgs e)
-        {
-            this.Height = this.MinimumSize.Height;
-            this.Width = HostingScreen.WorkingArea.Width;
-
-            this.Location = new Point(0, 0);
-        }
-
-        private void menuItem1_Click(object sender, System.EventArgs e)
-        {
-            VIS = true;
-            this.Visible = true;
-        }
-
-        private void menuItem2_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        //private void menuItemCopy_Click(object sender, System.EventArgs e)
-        //{
-        //    VIS = true;
-        //    this.Visible = true;
-        //}
-
-        private void UpdateTree()
+        /*private*/
+        public void UpdateTree()
         {
             // Update Treeview
 
 
-
-
         }
-
-        private void NewTree()
-        {
-            // Use NewTree when Loading a new TREEVIEW
-            //masterNode = new pNode();
-            //	subNode = new pNode();
-
-            img = new pWordLib.Image();  // contains number's representing the items contained
-            // in the image list.
-
-        }
-
-        private void menuItemNewFile_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItemNewFile_Click(object sender, System.EventArgs e)
         {
             flag_file = false;  // notice... I don't want you saving new stuff over your old refined work.
 
@@ -2017,9 +2053,8 @@ namespace myPword
             }
 
         }
-
-
-        private void autosave()
+        /*private*/
+        public void autosave()
         {
             // autosave
             try
@@ -2060,36 +2095,12 @@ namespace myPword
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void menuItemAddTo_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItemAddTo_Click(object sender, System.EventArgs e)
         {
             mode = nodeMode.addto;
             try
             {
-                //				AddItem dlg = new AddItem();
-                //				dlg.ShowDialog();
-                //				LL.List l = dlg.group;
-                //
-                //				if (dlg.DialogResult == DialogResult.OK)
-                //				{
-                //					// Add the master node to Nodes
-                //					pNode masterNode = treeView1.Nodes[0];
-                //					pNode aNode;
-                //					aNode = new pNode((string)l.RemoveFromFront());
-                //					TreePics apic = new TreePics("aNode",img.GroupUp,img.GroupDown);
-                //					aNode.Tag = l.RemoveFromFront();
-                //
-                //					treeView1.SelectedNode.Nodes.Add(aNode);
-                //
-                //					//Nodes[0] = masterNode;
-                //					userControl11.MastersValue[userControl11.index] = masterNode;
-
-                // Change from Add Dialog to local members for adding name and value
-
-                //					if (flag_file == true)
-                //					{
-                //						autosave();
-                //					}
-                //	this.tmpNode.Nodes.Clear();
                 this.tmpNode = (pNode)treeView1.SelectedNode;
                 lblName.Text = "Name:";
                 lblValue.Text = "Value:";
@@ -2115,7 +2126,8 @@ namespace myPword
 
         }
 
-        private void menuItemShow_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItemShow_Click(object sender, System.EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
             this.autoHide_flag = false;
@@ -2132,51 +2144,8 @@ namespace myPword
 
         }
 
-        private void treeView1_DragLeave(object sender, System.EventArgs e)
-        {
-
-
-        }
-
-        private void treeView1_DragDrop(object sender, System.Windows.Forms.DragEventArgs e)
-        {
-            pNode a = new pNode("test", img.GroupUp, img.GroupDown);
-            a.Tag = sender;
-
-            this.treeView1.SelectedNode.Nodes.Add(a);
-        }
-
-        private void treeView1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
-                if (e.Clicks == 1)
-                {
-
-                    try
-                    {
-                        // if left mouse is clicked then do this
-                        treeView1.DoDragDrop(treeView1.SelectedNode.Tag, DragDropEffects.Copy);
-                    }
-                    catch (Exception f)
-                    {
-
-                    }
-                    this.drag_flag = true; // ok I'm down
-                }
-        }
-
-        private void treeView1_LocationChanged(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void treeView1_CursorChanged(object sender, System.EventArgs e)
-        {
-            int a = 1;
-            int b = a;
-        }
-
-        private void menuSave_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuSave_Click(object sender, System.EventArgs e)
         {
             try
             {
@@ -2210,7 +2179,8 @@ namespace myPword
             //			}
         }
 
-        private void menuItem9_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItem9_Click(object sender, System.EventArgs e)
         {
             this.Nodes.Clear();
             this.userControl11.MasterNodes.Clear();
@@ -2233,7 +2203,8 @@ namespace myPword
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void menuItem14_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItem14_Click(object sender, System.EventArgs e)
         {
             try
             {
@@ -2260,14 +2231,8 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
-
-        private void treeView1_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
-                this.drag_flag = false;
-        }
-
-        private void toolBar1_ButtonClick(object sender, System.Windows.Forms.ToolBarButtonClickEventArgs e)
+        /*private*/
+        public void toolBar1_ButtonClick(object sender, System.Windows.Forms.ToolBarButtonClickEventArgs e)
         {
 
             this.mode = nodeMode.xmlUpdate;
@@ -2537,18 +2502,14 @@ namespace myPword
             }
 
         }
-
-        private void eventLog1_EntryWritten(object sender, System.Diagnostics.EntryWrittenEventArgs e)
+        /*private*/
+        public void pWord_MouseLeave(object sender, System.EventArgs e)
         {
 
         }
 
-        private void pWord_MouseLeave(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void pWord_Deactivate(object sender, System.EventArgs e)
+        /*private*/
+        public void pWord_Deactivate(object sender, System.EventArgs e)
         {
             if (this.autoHide_flag == true)
             {
@@ -2557,17 +2518,18 @@ namespace myPword
             }
         }
 
-        private void pWord_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        /*private*/
+        public void pWord_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
 
         }
-
-        private void contextMenu1_Popup(object sender, System.EventArgs e)
+        /*private*/
+        public void contextMenu1_Popup(object sender, System.EventArgs e)
         {
 
         }
-
-        private void menuItemCopy_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItemCopy_Click(object sender, System.EventArgs e)
         {
             lblName.Text = "Name:";
             lblValue.Text = "Value:";
@@ -2575,82 +2537,23 @@ namespace myPword
             Clipboard.SetDataObject(this.treeView1.SelectedNode.Tag, true);
             this.statusBar1.Text = "Copy Value Text Mode";
         }
-
-        private void treeView1_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            if (lastMousePos.Item1 != e.X && lastMousePos.Item2 != e.Y)
-            {
-                try
-                {
-                    pNode a = (pNode)treeView1.GetNodeAt(e.X, e.Y);
-
-                    if (a != null)
-                    {
-                        treeView1.SelectedNode = a;
-                        this.txtValue.Text = (string)a.Tag;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine("Error: " + ex);
-                }
-            }
-        }
-
-        private void menuItem17_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItem17_Click(object sender, System.EventArgs e)
         {
             frmAbout dlg = new frmAbout();
             dlg.ShowDialog();
 
         }
-
-        private void menuItem12_Click(object sender, System.EventArgs e)
-        {
-
-
-        }
-
-        private void treeView1_ItemDrag(object sender, System.Windows.Forms.ItemDragEventArgs e)
-        {
-
-        }
-
-        private void treeView1_BeforeExpand(object sender, System.Windows.Forms.TreeViewCancelEventArgs e)
-        {
-
-        }
-
-        private void treeView1_AfterExpand(object sender, System.Windows.Forms.TreeViewEventArgs e)
-        {
-            if (treeView1.SelectedNode != null)
-                treeView1.SelectedNode.SelectedImageIndex = 1;
-        }
-
-        private void treeView1_AfterCollapse(object sender, System.Windows.Forms.TreeViewEventArgs e)
-        {
-            if (treeView1.SelectedNode != null)
-                treeView1.SelectedNode.SelectedImageIndex = 0;
-        }
-
-        private void treeView1_ChangeUICues(object sender, System.Windows.Forms.UICuesEventArgs e)
-        {
-
-        }
-
-        private void treeView1_AfterSelect(object sender, System.Windows.Forms.TreeViewEventArgs e)
-        {
-            treeView1.SelectedNode.SelectedImageIndex = img.GroupDown;
-        }
-
-        private void menuItem18_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItem18_Click(object sender, System.EventArgs e)
         {
             // Help add support documentation
             // this will access the documentation portion of this project
             frmAbout dlg = new frmAbout();
             dlg.ShowDialog();
         }
-
-        private void userControl11_Load(object sender, System.EventArgs e)
+        /*private*/
+        public void userControl11_Load(object sender, System.EventArgs e)
         {
             // Load what in registry else just show a new master
             // always check registry when starting pWord
@@ -2677,10 +2580,9 @@ namespace myPword
             }
             this.tmpNode = (pNode)treeView1.Nodes[0];
             // master node should be called by Nodes[0]...
-        }			// Add the master node to Nodes
-
-
-        private void menuItem19_Click(object sender, System.EventArgs e)
+        }           // Add the master node to Nodes
+        /*private*/
+        public void menuItem19_Click(object sender, System.EventArgs e)
         {
             // Add master
             AddMaster dlg = new AddMaster();
@@ -2703,13 +2605,13 @@ namespace myPword
                 this.tmpNode = (pNode)treeView1.Nodes[0];  // Always start with master
             }
         }
-
-        private void menuItem20_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItem20_Click(object sender, System.EventArgs e)
         {
 
         }
-
-        private void userControl11_LeftClicked(object sender, System.EventArgs e)
+        /*private*/
+        public void userControl11_LeftClicked(object sender, System.EventArgs e)
         {
 
             // This is the hardest of all
@@ -2720,8 +2622,8 @@ namespace myPword
 
 
         }
-
-        private void userControl11_RightClicked(object sender, System.EventArgs e)
+        /*private*/
+        public void userControl11_RightClicked(object sender, System.EventArgs e)
         {
             // This is the hardest of all
             this.treeView1.Nodes.Clear();
@@ -2729,13 +2631,13 @@ namespace myPword
             TreePics apic = new TreePics("masterNode", img.GroupUp, img.GroupDown);
             this.treeView1.Nodes.Add(masterNode);
         }
-
-        private void menuItem16_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItem16_Click(object sender, System.EventArgs e)
         {
             this.Close();
         }
-
-        private void menuItemOpenLink_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItemOpenLink_Click(object sender, System.EventArgs e)
         {
             try
             {
@@ -2751,25 +2653,25 @@ namespace myPword
                 txtValue.Text = ex.Message;
             }
         }
-
-        private void menuItem12_Click_1(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItem12_Click_1(object sender, System.EventArgs e)
         {
             // help
 
         }
-
-        private void panel2_VisibleChanged(object sender, System.EventArgs e)
+        /*private*/
+        public void panel2_VisibleChanged(object sender, System.EventArgs e)
         {
 
         }
-
         /// <summary>
         /// This is the actual add button.  This button's name will change depending on what mode it is in
         /// So the button should be called a Modal Button b/c it may be in edit mode, or add mode, or insert mode etc...
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnAdd_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void btnAdd_Click(object sender, System.EventArgs e)
         {
             // create a switch case statement for each node mode
             // this will determine what to do with the node
@@ -3033,23 +2935,23 @@ namespace myPword
                     break;
             }
         }
-
-        private void btnCancel_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void btnCancel_Click(object sender, System.EventArgs e)
         {
             panel2.Visible = false;
         }
-
-        private void menuItem7_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItem7_Click(object sender, System.EventArgs e)
         {
 
         }
-
-        private void panel1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        /*private*/
+        public void panel1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
         {
 
         }
-
-        private void treeView1_MouseMove_1(object sender, System.Windows.Forms.MouseEventArgs e)
+        /*private*/
+        public void treeView1_MouseMove_1(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             if (lastMousePos.Item1 != e.X && lastMousePos.Item2 != e.Y)
             {
@@ -3059,7 +2961,8 @@ namespace myPword
             }
         }
 
-        private void genericCursorMoved(object sender, EventArgs e)
+        /*private*/
+        public void genericCursorMoved(object sender, EventArgs e)
         {
             //TODO: Make sure mouse move switches from keyboard state.  If user clicks a key like up or down arrow it should ignore the position the cursor is on and re-activate the mouse cursor
             Debugger.Log(1, "test", "Whats going on\n");
@@ -3077,83 +2980,82 @@ namespace myPword
             {
                 var ei = (System.Windows.Forms.MouseEventArgs)e;
                 a = (pNode)treeView1.GetNodeAt(ei.X, ei.Y);
-             }
+            }
 
-                if (a != null)
+            if (a != null)
+            {
+                treeView1.SelectedNode = a;
+
+                if (a.Text == "password")
                 {
-                    treeView1.SelectedNode = a;
-
-                    if (a.Text == "password")
+                    this.txtValue.Text = "password";
+                }
+                else
+                {
+                    this.txtValue.Text = (string)a.Tag;
+                    this.lstNamespaces.Items.Clear();
+                    this.lstAttributes.Items.Clear();
+                    // for each namespace that exists at this node
+                    pNode aParent = a;
+                    do
                     {
-                        this.txtValue.Text = "password";
-                    }
-                    else
-                    {
-                        this.txtValue.Text = (string)a.Tag;
-                        this.lstNamespaces.Items.Clear();
-                        this.lstAttributes.Items.Clear();
-                        // for each namespace that exists at this node
-                        pNode aParent = a;
-                        do
+                        if (aParent.Namespace == null)
                         {
-                            if (aParent.Namespace == null)
-                            {
-                                aParent = (pNode)aParent.Parent;
-                            }
-                            else
-                            {
-                                // show only prefixes for now
-                                ListViewItem item = new ListViewItem(aParent.Namespace.Prefix);
-                                item.SubItems.Add(aParent.Namespace.URI_PREFIX);
-                                item.SubItems.Add(aParent.Namespace.URI_SUFFIX);
-                                lstNamespaces.Items.Add(item);
-                                lstNamespaces.Refresh();
-                                break;
-                            }
-                        } while (aParent != null);
-
-
-                        // for each attribute that exists at this node
-                        IList<String> keys = a.getKeys();
-                        foreach (String key in keys)
-                        {
-                            ListViewItem item = new ListViewItem(key);
-                            item.SubItems.Add(a.getAttrValue(key));
-                            lstAttributes.Items.Add(item);
+                            aParent = (pNode)aParent.Parent;
                         }
+                        else
+                        {
+                            // show only prefixes for now
+                            ListViewItem item = new ListViewItem(aParent.Namespace.Prefix);
+                            item.SubItems.Add(aParent.Namespace.URI_PREFIX);
+                            item.SubItems.Add(aParent.Namespace.URI_SUFFIX);
+                            lstNamespaces.Items.Add(item);
+                            lstNamespaces.Refresh();
+                            break;
+                        }
+                    } while (aParent != null);
+
+
+                    // for each attribute that exists at this node
+                    IList<String> keys = a.getKeys();
+                    foreach (String key in keys)
+                    {
+                        ListViewItem item = new ListViewItem(key);
+                        item.SubItems.Add(a.getAttrValue(key));
+                        lstAttributes.Items.Add(item);
+                    }
                 }
             }
         }
-
-        private void treeView1_AfterCollapse_1(object sender, System.Windows.Forms.TreeViewEventArgs e)
+        /*private*/
+        public void treeView1_AfterCollapse_1(object sender, System.Windows.Forms.TreeViewEventArgs e)
         {
             if (treeView1.SelectedNode != null)
                 treeView1.SelectedNode.SelectedImageIndex = 0;
 
         }
-
-        private void treeView1_AfterExpand_1(object sender, System.Windows.Forms.TreeViewEventArgs e)
+        /*private*/
+        public void treeView1_AfterExpand_1(object sender, System.Windows.Forms.TreeViewEventArgs e)
         {
             if (treeView1.SelectedNode != null)
                 treeView1.SelectedNode.SelectedImageIndex = 1;
         }
-
-        private void treeView1_AfterSelect_1(object sender, System.Windows.Forms.TreeViewEventArgs e)
+        /*private*/
+        public void treeView1_AfterSelect_1(object sender, System.Windows.Forms.TreeViewEventArgs e)
         {
             treeView1.SelectedNode.SelectedImageIndex = img.GroupDown;
 
         }
-
-        private void treeView1_DragDrop_1(object sender, System.Windows.Forms.DragEventArgs e)
+        /*private*/
+        public void treeView1_DragDrop_1(object sender, System.Windows.Forms.DragEventArgs e)
         {
             pNode a = new pNode("test", img.GroupUp, img.GroupDown);
             a.Tag = sender;
 
             this.treeView1.SelectedNode.Nodes.Add(a);
         }
-
-
-        private void treeView1_MouseDown_1(object sender, System.Windows.Forms.MouseEventArgs e)
+        /*private*/
+        public void treeView1_MouseDown_1(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
@@ -3211,7 +3113,8 @@ namespace myPword
             }
 
         }
-        private void treeView1_MouseUp_1(object sender, System.Windows.Forms.MouseEventArgs e)
+        /*private*/
+        public void treeView1_MouseUp_1(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             /// TODO: Use StopPt and StartPt to select multiple nodes
             /// Place these nodes in an ArrayList and when the PutNode is used
@@ -3221,8 +3124,8 @@ namespace myPword
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
                 this.drag_flag = false;
         }
-
-        private void menuItemEdit_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItemEdit_Click(object sender, System.EventArgs e)
         {
             mode = nodeMode.edit;
             try
@@ -3253,8 +3156,8 @@ namespace myPword
             //			this.txtName.Focus();
             //			This about adding a flag called edit mode  same to Add In
         }
-
-        private void menuItem21_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItem21_Click(object sender, System.EventArgs e)
         {
             // put in
             try
@@ -3274,8 +3177,8 @@ namespace myPword
             }
 
         }
-
-        private void menuItemGetNode_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItemGetNode_Click(object sender, System.EventArgs e)
         {
 
             // get
@@ -3293,14 +3196,13 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
-
-
-        private void menuItemExportXML_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItemExportXML_Click(object sender, System.EventArgs e)
         {
 
             xml.Clear();  // clear out contents first.
             ((pNode)treeView1.SelectedNode).CallRecursive((pNode)treeView1.SelectedNode);
-			try
+            try
             {
                 exportMode = ExportMode.treeview;
                 XmlDocument xdoc = new XmlDocument();
@@ -3310,6 +3212,44 @@ namespace myPword
                 this.saveFileDialogHTML.ShowDialog();
                 filenameHTML = this.saveFileDialogHTML.FileName;
                 if (filenameHTML != null)
+                {
+                    this.toolBarView.Enabled = true;
+                }
+
+
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show("You had an error while exporting to XML. " + f.Message, "SAVE ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
+            }
+
+        }
+        /*private*/
+        public void menuItemExportJson_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                this.exportMode = ExportMode.treejson;  // what am I exporting?  A pNode
+                xml.Clear();  // clear out contents first.
+
+                //this.xmlNode = (pNode)treeView1.SelectedNode;  // xmlNode is what is being exported to xml
+                this.xmlIndex = treeView1.SelectedNode.Index; // xmlIndex is the SelectedNodes index
+                this.menuItem21.Enabled = true; // MenuItem21 is enabled... Todo: rename menuItem21
+                this.menuItem31.Enabled = true;  // MneuItem21 is enabled... Todo: rename menuItem31
+                this.nodeIndex = treeView1.SelectedNode.Index; // nodeInex is now equal to xmlIndex?
+                this.statusBar1.Text = "Export Node JSON Mode";
+                //CallRecursive(xmlNode);  // disabled CallRecursive here... need to fix Call recursive
+                // ToDo: fix CallRecursive(xmlNode)
+                xmlNode = null;
+                xmlNode = (pNode)treeView1.SelectedNode;
+                var xdoc = ((pNode)treeView1.SelectedNode).CallRecursive(xmlNode);  // treeview1 is a pView
+                this.saveFileDialogJSON.FileName = filenameJSON;
+                this.saveFileDialogJSON.Title = "Save the NODE to JSON";
+                this.saveFileDialogJSON.ShowDialog();
+                this.filenameJSON = this.saveFileDialogJSON.FileName;
+
+                if (this.filenameJSON != null)
                 {
 
                     //					IFormatter formatter = new BinaryFormatter();
@@ -3323,166 +3263,54 @@ namespace myPword
                     //					FileStream fs = new FileStream(filename,
                     //						FileMode.CreateNew, FileAccess.Write, FileShare.None);
 
-                    this.toolBarView.Enabled = true;
+                    //StreamWriter swFromFile = new StreamWriter(filenameHTML);
+
+                    // may not have to do this with XmlDocument
+                    //swFromFile.WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\" ?>"); 
+                    //for (int i=0; i<xml.Count;i++)					
+                    //{
+                    //	swFromFile.Write(xml[i]);
+                    //	//						formatter.Serialize(stream, xml[i].ToString());
+                    //}
+                    //swFromFile.Flush();
+                    //swFromFile.Close();
+                    if (xdoc != null)
+                    {
+                        // convert xdoc to JSON
+                        string json = "";
+
+                        // use JsonSerializer to convert xdoc to json with options
+
+                        json = JsonConvert.SerializeXmlNode(xdoc, Newtonsoft.Json.Formatting.Indented, false);
+                        File.WriteAllText(filenameJSON, json);
+                        //xdoc.Save(filenameHTML);
+                        xdoc.RemoveAll();
+                        xdoc = null;
+                        this.filenameHTML = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("The export was not able to save b/c it was empty.");
+                    }
                 }
 
-
+                this.toolBarView.Enabled = true;
             }
             catch (Exception f)
             {
-                MessageBox.Show("You had an error while exporting to XML. " + f.Message, "SAVE ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
+                MessageBox.Show("You had an error while exporting to JSON. " + f.Message, "SAVE ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
             }
 
+
         }
-
-		private void menuItemExportJson_Click(object sender, EventArgs e)
-		{
-
-			try
-			{
-				this.exportMode = ExportMode.treejson;  // what am I exporting?  A pNode
-				xml.Clear();  // clear out contents first.
-
-				//this.xmlNode = (pNode)treeView1.SelectedNode;  // xmlNode is what is being exported to xml
-				this.xmlIndex = treeView1.SelectedNode.Index; // xmlIndex is the SelectedNodes index
-				this.menuItem21.Enabled = true; // MenuItem21 is enabled... Todo: rename menuItem21
-				this.menuItem31.Enabled = true;  // MneuItem21 is enabled... Todo: rename menuItem31
-				this.nodeIndex = treeView1.SelectedNode.Index; // nodeInex is now equal to xmlIndex?
-				this.statusBar1.Text = "Export Node JSON Mode";
-				//CallRecursive(xmlNode);  // disabled CallRecursive here... need to fix Call recursive
-				// ToDo: fix CallRecursive(xmlNode)
-				xmlNode = null;
-				xmlNode = (pNode)treeView1.SelectedNode;
-				var xdoc = ((pNode)treeView1.SelectedNode).CallRecursive(xmlNode);  // treeview1 is a pView
-				this.saveFileDialogJSON.FileName = filenameJSON;
-				this.saveFileDialogJSON.Title = "Save the NODE to JSON";
-				this.saveFileDialogJSON.ShowDialog();
-				this.filenameJSON = this.saveFileDialogJSON.FileName;
-
-				if (this.filenameJSON != null)
-				{
-
-					//					IFormatter formatter = new BinaryFormatter();
-					//					Stream stream = new FileStream(this.saveFileDialog1.FileName,FileMode.Create,FileAccess.Write,FileShare.ReadWrite);
-					//					for (int i=0; i<xml.Count;i++)
-					//					{
-					//						formatter.Serialize(stream, xml[i].ToString());
-					//					}
-					//					this.filename = this.saveFileDialog1.FileName;
-					//					stream.Close();
-					//					FileStream fs = new FileStream(filename,
-					//						FileMode.CreateNew, FileAccess.Write, FileShare.None);
-
-					//StreamWriter swFromFile = new StreamWriter(filenameHTML);
-
-					// may not have to do this with XmlDocument
-					//swFromFile.WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\" ?>"); 
-					//for (int i=0; i<xml.Count;i++)					
-					//{
-					//	swFromFile.Write(xml[i]);
-					//	//						formatter.Serialize(stream, xml[i].ToString());
-					//}
-					//swFromFile.Flush();
-					//swFromFile.Close();
-					if (xdoc != null)
-					{
-						// convert xdoc to JSON
-						string json = "";
-
-						// use JsonSerializer to convert xdoc to json with options
-
-						json = JsonConvert.SerializeXmlNode(xdoc, Newtonsoft.Json.Formatting.Indented, false);
-						File.WriteAllText(filenameJSON, json);
-						//xdoc.Save(filenameHTML);
-						xdoc.RemoveAll();
-						xdoc = null;
-                        this.filenameHTML = null;
-					}
-					else
-					{
-						MessageBox.Show("The export was not able to save b/c it was empty.");
-					}
-				}
-
-				this.toolBarView.Enabled = true;
-			}
-			catch (Exception f)
-			{
-				MessageBox.Show("You had an error while exporting to JSON. " + f.Message, "SAVE ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
-			}
-
-
-		}
-
-
-
-		//private void PrintRecursive(pNode pNode)
-		//{
-		//    string [] split = null;
-		//    string delimStr = " ";
-		//    char [] delimiter = delimStr.ToCharArray();
-
-		//    // Print the node.
-		//    // Print each node recursively.
-		//    foreach (pNode tn in pNode.Nodes)
-		//    {
-		//        split = null;
-		//        xml.Add("<"); xml.Add(tn.Text); xml.Add(">");
-		//        xml.Add((string)tn.Tag);
-		//        PrintRecursive(tn);
-		//        split = tn.Text.Split(delimiter,2);
-		//        xml.Add("</"); xml.Add(split[0]); xml.Add(">"); 
-		//    }
-		//}
-		private XmlDocument xdoc;  // xdoc will be used to quickly load the xml content into a node
-        // the goal will be to quickly close the open dialog box.
-        // this will allow the open dialog box to close 
-        // and then the pNode tree will be generated from the xDoc after
-        // the open dialog box closes.
-
-
-        //// Call the procedure using the TreeView.
-        //private void CallRecursive(pView treeView)
-        //{
-        //    string [] split = null;
-        //    string delimStr = " ";
-        //    char [] delimiter = delimStr.ToCharArray();
-
-
-        //    // Print each node recursively.
-        //    TreeNodeCollection nodes = treeView.Nodes;
-        //    foreach (pNode n in nodes)
-        //    {
-        //        split =null;
-        //        xml.Add("<"); xml.Add(n.Text); xml.Add(">");
-        //        xml.Add((string)n.Tag);
-        //        PrintRecursive(n);
-        //        split = n.Text.Split(delimiter,2);
-        //        xml.Add("</"); xml.Add(split[0]); xml.Add(">"); 
-        //    }
-        //}
-
-        //private void CallRecursive(pNode pNode)
-        //{
-        //    string [] split = null;
-        //    string delimStr = " ";
-        //    char [] delimiter = delimStr.ToCharArray();
-
-
-        //    // Print each node recursively.
-        //    TreeNodeCollection nodes = pNode.Nodes;
-        //    foreach (pNode n in nodes)
-        //    {
-        //        split =null;
-        //        xml.Add("<"); xml.Add(n.Text); xml.Add(">");
-        //        xml.Add((string)n.Tag);
-        //        PrintRecursive(n);
-        //        split = n.Text.Split(delimiter,2);
-        //        xml.Add("</"); xml.Add(split[0]); xml.Add(">"); xml.Add("\n");
-        //    }
-        //}
-
-        private void menuItem27_Click(object sender, System.EventArgs e)
+        /*private*/
+        public XmlDocument xdoc;  // xdoc will be used to quickly load the xml content into a node
+                                  // the goal will be to quickly close the open dialog box.
+                                  // this will allow the open dialog box to close 
+                                  // and then the pNode tree will be generated from the xDoc after
+                                  // the open dialog box closes.
+        /*private*/
+        public void menuItem27_Click(object sender, System.EventArgs e)
         {
             AYS dlg = new AYS();
             dlg.label1.Text = "ARE YOU SURE???\nSorting may change your structure.";
@@ -3492,18 +3320,18 @@ namespace myPword
                 this.treeView1.Sorted = true;
             }
         }
-
-        private void menuItem28_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItem28_Click(object sender, System.EventArgs e)
         {
             this.treeView1.Sorted = false;
         }
-
-        private void treeView1_DragOver(object sender, System.Windows.Forms.DragEventArgs e)
+        /*private*/
+        public void treeView1_DragOver(object sender, System.Windows.Forms.DragEventArgs e)
         {
             //this.treeView1.Cursor = 
         }
-
-        private void menuItemInsertNode_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItemInsertNode_Click(object sender, System.EventArgs e)
         {
             lblName.Text = "Name:";
             lblValue.Text = "Value:";
@@ -3530,8 +3358,8 @@ namespace myPword
 
 
         }
-
-        private void menuItemInsertNode2_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItemInsertNode2_Click(object sender, System.EventArgs e)
         {
             // Insert next to
             try
@@ -3553,12 +3381,12 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
-
-        private void treeView1_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        /*private*/
+        public void treeView1_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
         }
-
-        private void treeView1_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        /*private*/
+        public void treeView1_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             // set the selected node as the node that is selected by the cursor keys
             pView pv = new pView();
@@ -3603,24 +3431,13 @@ namespace myPword
                 }
             }
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            // restore the cursor
-            this.Cursor = Cursors.Default;
-            this.treeView1.Cursor = Cursors.Default;
-            treeView1.HideSelection = true;
-            Cursor.Show();
-            // stop the timer
-            ((Timer)sender).Stop();
-        }
-
-        private void chkClear_CheckedChanged(object sender, System.EventArgs e)
+        /*private*/
+        public void chkClear_CheckedChanged(object sender, System.EventArgs e)
         {
 
         }
-
-        private void chkClear_CheckStateChanged(object sender, EventArgs e)
+        /*private*/
+        public void chkClear_CheckStateChanged(object sender, EventArgs e)
         {
             // FIND OUT THE STATE...  
             // CHECKED: Clear the key and value fields.
@@ -3639,9 +3456,8 @@ namespace myPword
                 chkClear.Text = "Clear Disabled";
             }
         }
-
-
-        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        /*private*/
+        public void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
             this.Nodes.Clear();
@@ -3700,8 +3516,8 @@ namespace myPword
             rm.SavePathInRegistry(pWordSettings.Default.version, filename);
 
         }
-
-        private void menuItem33_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItem33_Click(object sender, System.EventArgs e)
         {
             AYS ays = new AYS();
             ays.label1.Text = "This will load the file to the last insert, or addition only if you have saved or opened a file previously.";
@@ -3751,13 +3567,13 @@ namespace myPword
             }
 
         }
-
         /// <summary>
         /// Cuts a node only if node is not master node ie... has no parent node
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void menuCutNode_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuCutNode_Click(object sender, System.EventArgs e)
         {
             // get
             try
@@ -3785,7 +3601,8 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
-        private void saveFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        /*private*/
+        public void saveFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
             filename = this.saveFileDialog1.FileName;
@@ -3809,8 +3626,8 @@ namespace myPword
             }
             flag_file = true;
         }
-
-        private void saveFileDialogHTML_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        /*private*/
+        public void saveFileDialogHTML_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             string filenameHTML = this.saveFileDialogHTML.FileName;
             if (filenameHTML != null)
@@ -3827,8 +3644,8 @@ namespace myPword
                 swFromFile.Close();
             }
         }
-
-        private void saveFileDialogJSON_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        /*private*/
+        public void saveFileDialogJSON_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             string filenameJSON = this.saveFileDialogJSON.FileName;
             if (filenameJSON != null)
@@ -3845,9 +3662,8 @@ namespace myPword
                 swFromFile.Close();
             }
         }
-
-
-        private void menuItemToHTML_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void menuItemToHTML_Click(object sender, System.EventArgs e)
         {
 
             try
@@ -3870,7 +3686,7 @@ namespace myPword
 
                 // TODO: Move To pWordLib
                 var xdoc = ((pNode)treeView1.SelectedNode).CallRecursive(xmlNode);  // treeview1 is a pView
-                
+
                 this.saveFileDialogHTML.FileName = filenameHTML;
                 this.saveFileDialogHTML.Title = "Save the NODE to XML/HTML";
                 this.saveFileDialogHTML.ShowDialog();
@@ -3920,36 +3736,30 @@ namespace myPword
             }
 
         }
-
-        private void txtName_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        /*private*/
+        public void txtName_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             if (e.KeyCode == System.Windows.Forms.Keys.Return)
             {
-               
+
                 this.txtObject.Focus();
                 e.Handled = true;
             }
         }
-
-        private void menuItem36_Click(object sender, System.EventArgs e)
+        /*private*/
+        public void cmTree_Popup(object sender, EventArgs e)
         {
 
         }
-
-        private void cmTree_Popup(object sender, EventArgs e)
-        {
-
-        }
-
-
         // Notify Icon2 is is the one that goes on the task bar not the notification area
-        private void notifyIcon2_MouseDoubleClick(object sender, MouseEventArgs e)
+        /*private*/
+        public void notifyIcon2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             // Notify icon mouse double click
             Debug.WriteLine("Notify icon mouse double click.");
         }
-
-        private void notifyIcon2_DoubleClick(object sender, EventArgs e)
+        /*private*/
+        public void notifyIcon2_DoubleClick(object sender, EventArgs e)
         {
             // comment this doesn't really work.  When you click on this icon on the 
             // windows bar task bar, it basically does nothing when you double click it
@@ -3965,22 +3775,22 @@ namespace myPword
             notifyIcon2.Visible = false;
             notifyIcon1.Visible = true;
         }
-
-        private void notifyIcon2_MouseClick(object sender, MouseEventArgs e)
+        /*private*/
+        public void notifyIcon2_MouseClick(object sender, MouseEventArgs e)
         {
             // notify icon mouse click
             // this event does nothing.  All the logic for controlling a window opening back
             // up appears to be coming from the windows taskbar and not this event
 
         }
-
-        private void menuItemAttribute_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemAttribute_Click(object sender, EventArgs e)
         {
             // add an attribute to a node
             Debug.WriteLine(e.ToString());
         }
-
-        private void menuItemAttributeAdd_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemAttributeAdd_Click(object sender, EventArgs e)
         {
             // TODO: Move To pWordLib
             mode = nodeMode.addAttributeTo;
@@ -4015,8 +3825,8 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
-
-        private void menuItemNamespaceAddPrefix_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemNamespaceAddPrefix_Click(object sender, EventArgs e)
         {
             // TODO: Move To pWordLib
             mode = nodeMode.addNamespacePrefix;
@@ -4053,8 +3863,8 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
-
-        private void menuItemNamespaceAddSuffix_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemNamespaceAddSuffix_Click(object sender, EventArgs e)
         {
             mode = nodeMode.addNamespaceSuffix;
             try
@@ -4067,7 +3877,7 @@ namespace myPword
 
                 // TODO: Move To pWordLib (make more pWordLib friendly)
                 this.tmpNode = (pNode)treeView1.SelectedNode;
-                
+
                 this.statusBar1.Text = "Add Suffix to Node";
                 if (this.chkClear.CheckState == CheckState.Checked)
                 {
@@ -4090,8 +3900,8 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
-
-        private void menuItemMathSum_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemMathSum_Click(object sender, EventArgs e)
         {
             mode = nodeMode.sum;
             try
@@ -4116,8 +3926,8 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
-
-        private void menuItemMathMultiple_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemMathMultiple_Click(object sender, EventArgs e)
         {
             // TODO: Move To pWordLib
             mode = nodeMode.multiply;
@@ -4128,7 +3938,7 @@ namespace myPword
                 this.modeIndex = treeView1.SelectedNode.Index;
                 //				this.txtName.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
                 //				this.txtObject.Text = treeView1.SelectedNode.Nodes[modeIndex].Text;
-                
+
                 // TODO: Move To pWordLib
                 tmpNode = (pNode)treeView1.SelectedNode;
                 tmpNode.AddOperation(new Multiply(Resource1.Multiplication));
@@ -4146,8 +3956,8 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
-
-        private void menuItemMathDivide_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemMathDivide_Click(object sender, EventArgs e)
         {
             mode = nodeMode.divide;
             try
@@ -4162,7 +3972,7 @@ namespace myPword
                 tmpNode = (pNode)treeView1.SelectedNode;
                 tmpNode.AddOperation(new Divide(Resource1.Division));
                 treeView1.SelectedNode = tmpNode;
-                
+
                 this.statusBar1.Text = "Divide";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
                 this.txtName.Focus();
@@ -4174,8 +3984,8 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
-
-        private void menuItemMathSubtract_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemMathSubtract_Click(object sender, EventArgs e)
         {
             // TODO: Move To pWordLib
             mode = nodeMode.divide;
@@ -4192,7 +4002,7 @@ namespace myPword
                 tmpNode = (pNode)treeView1.SelectedNode;
                 tmpNode.AddOperation(new Subtract(Resource1.Subtraction));
                 treeView1.SelectedNode = tmpNode;
-                
+
                 this.statusBar1.Text = "Subtract";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
                 this.txtName.Focus();
@@ -4204,13 +4014,13 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
-
-        private void menuItemOperationsClear_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemOperationsClear_Click(object sender, EventArgs e)
         {
             ((pNode)treeView1.SelectedNode).ClearOperations();
         }
-
-        private void menuItemViewErrors_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemViewErrors_Click(object sender, EventArgs e)
         {
             // 
             lblName.Text = "Operations:";
@@ -4219,8 +4029,8 @@ namespace myPword
             txtName.Text = ((pNode)treeView1.SelectedNode).ListOperations();
             txtObject.Text = ((pNode)treeView1.SelectedNode).ErrorString;
         }
-
-        private void menuItemMathTrigSign_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemMathTrigSign_Click(object sender, EventArgs e)
         {
             mode = nodeMode.trig;
             try
@@ -4235,7 +4045,7 @@ namespace myPword
                 tmpNode = (pNode)treeView1.SelectedNode;
                 tmpNode.AddOperation(new Sin(Resource1.Sin));  // add new sin operation ... trying to make this a plug in.
                 treeView1.SelectedNode = tmpNode;
-                
+
                 this.statusBar1.Text = "Sin";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
                 this.txtName.Focus();
@@ -4246,8 +4056,8 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
-
-        private void menuItemMathTrigCos_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemMathTrigCos_Click(object sender, EventArgs e)
         {
             mode = nodeMode.trig;
             try
@@ -4262,7 +4072,7 @@ namespace myPword
                 tmpNode = (pNode)treeView1.SelectedNode;
                 tmpNode.AddOperation(new Cos(Resource1.Cos));  // add new sin operation ... trying to make this a plug in.
                 treeView1.SelectedNode = tmpNode;
-                
+
                 this.statusBar1.Text = "Cos";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
                 this.txtName.Focus();
@@ -4273,8 +4083,8 @@ namespace myPword
                 MessageBox.Show(f.Message);
             }
         }
-
-        private void menuItemMathTrigTan_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemMathTrigTan_Click(object sender, EventArgs e)
         {
             mode = nodeMode.trig;
             try
@@ -4289,7 +4099,7 @@ namespace myPword
                 tmpNode = (pNode)treeView1.SelectedNode;
                 tmpNode.AddOperation(new Tan(Resource1.Tan));  // add new sin operation ... trying to make this a plug in.
                 treeView1.SelectedNode = tmpNode;
-                
+
                 this.statusBar1.Text = "Tan";
                 this.txtObject.Text = (String)treeView1.SelectedNode.Tag;
                 this.txtName.Focus();
@@ -4302,7 +4112,8 @@ namespace myPword
         }
 
         // re-think
-        private void menuItemFind_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItemFind_Click(object sender, EventArgs e)
         {
             mode = nodeMode.find;
             this.modeIndex = treeView1.SelectedNode.Index;
@@ -4323,13 +4134,13 @@ namespace myPword
 
             }
         }
-
-        private void menuItem85_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItem85_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void mnuImportNodeXML_Click(object sender, EventArgs e)
+        /*private*/
+        public void mnuImportNodeXML_Click(object sender, EventArgs e)
         {
             // TODO: Move To pWordLib (Make pWordLib friendlier)
             importMode = ImportMode.treexml; // what am I exporting?  XML from previous exportNode
@@ -4385,16 +4196,17 @@ namespace myPword
                     pn.Tag = treeView1.SelectedNode.Tag;
 
                     // TODO: Move To pWordLib
-                    if (xdoc != null && xdoc.Attributes != null && xdoc.Attributes.Count > 0) {
-						foreach (XmlAttribute xmlAttr in xdoc)
-						{
-							pn.AddAttribute(xmlAttr.LocalName, xmlAttr.Value);
-						}
-					}
-                    
+                    if (xdoc != null && xdoc.Attributes != null && xdoc.Attributes.Count > 0)
+                    {
+                        foreach (XmlAttribute xmlAttr in xdoc)
+                        {
+                            pn.AddAttribute(xmlAttr.LocalName, xmlAttr.Value);
+                        }
+                    }
+
                     // TODO: Move To pWordLib
                     AddChildNodes(xdoc.ChildNodes, ref pn);
-                    
+
                     treeView1.SelectedNode = pn;
                     //                .Nodes.Add(pn);
                     //treeView1.SelectedNode.Nodes.Add(aNode);
@@ -4431,8 +4243,8 @@ namespace myPword
                 }
             }
         }
-
-        private void AddChildNodes(XmlNodeList children, ref pNode pn)
+        /*private*/
+        public void AddChildNodes(XmlNodeList children, ref pNode pn)
         {
 
 
@@ -4537,8 +4349,8 @@ namespace myPword
                 }
             }
         }
-
-        private void openFileDialog2_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        /*private*/
+        public void openFileDialog2_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             // file was accepted
             // open dialog box to import from
@@ -4583,18 +4395,18 @@ namespace myPword
                 MessageBox.Show("You had an error while exporting to XML. " + f.Message, "SAVE ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
             }
         }
-
-        private void menuItem85_Click_1(object sender, EventArgs e)
+        /*private*/
+        public void menuItem85_Click_1(object sender, EventArgs e)
         {
 
         }
-
-        private void menuItem88_Click(object sender, EventArgs e)
+        /*private*/
+        public void menuItem88_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void txtCMD_TextChanged(object sender, EventArgs e)
+        /*private*/
+        public void txtCMD_TextChanged(object sender, EventArgs e)
         {
             // hide the busy mouse icon
             this.Cursor = Cursors.Default;
@@ -4625,15 +4437,15 @@ namespace myPword
             this.txtCMD.Parent.Cursor = Cursors.Default;
             this.txtCMD.Focus();
         }
-
-
         /// <summary>
         /// Assuming one user with one thread...
         /// </summary>
-		private static int lineCount = 0;
-        private static StringBuilder output = new StringBuilder();
-
-        private void ProcessCommandText(string txt)
+        /*private*/
+        public static int lineCount = 0;
+        /*private*/
+        public static StringBuilder output = new StringBuilder();
+        /*private*/
+        public void ProcessCommandText(string txt)
         {
             // check for multiple commands
             var commands = txt.Split('\n');
@@ -4706,9 +4518,9 @@ namespace myPword
             }
 
         }
-
-		private void menuItemImportJSON_Click(object sender, EventArgs e)
-		{
+        /*private*/
+        public void menuItemImportJSON_Click(object sender, EventArgs e)
+        {
 
             // TODO: Move To pWordLib
             importMode = ImportMode.treejson; // what am I exporting?  XML from previous exportNode
@@ -4719,47 +4531,47 @@ namespace myPword
 
             // TODO: Move To pWordLib (make pWordLib friendly)
             this.xmlIndex = treeView1.SelectedNode.Index; // xmlIndex is the SelectedNodes index
-            
-			this.menuItem21.Enabled = true; // MenuItem21 is enabled... Todo: rename menuItem21
-			this.menuItem31.Enabled = true;  // MneuItem21 is enabled... Todo: rename menuItem31
-			this.nodeIndex = treeView1.SelectedNode.Index; // nodeInex is now equal to xmlIndex?
-			this.statusBar1.Text = "Import Node JSON Mode";
+
+            this.menuItem21.Enabled = true; // MenuItem21 is enabled... Todo: rename menuItem21
+            this.menuItem31.Enabled = true;  // MneuItem21 is enabled... Todo: rename menuItem31
+            this.nodeIndex = treeView1.SelectedNode.Index; // nodeInex is now equal to xmlIndex?
+            this.statusBar1.Text = "Import Node JSON Mode";
             //CallRecursive(xmlNode);  // disabled CallRecursive here... need to fix Call recursive
             // ToDo: fix CallRecursive(xmlNode)
 
             // TODO: Move To pWordLib (make pWordLib friendly)
             tmpNode = (pNode)treeView1.SelectedNode;
 
-			this.openFileDialog2.ShowDialog();
-			filenameHTML = this.openFileDialog2.FileName;
-			if ((filenameHTML == null) || (filenameHTML == ""))
-			{
-				return;
-			}
-			else
-			{
-				try
-				{
-					using (WebClient client = new WebClient())
-					using (Stream stream = client.OpenRead(filenameHTML))
-					{
-						//      byte[] buf = new byte[stream.Length];
-						//      stream.Read(buf, 0, (int)stream.Length);
-						xdoc = new XmlDocument();
-						try
-						{
-							//xdoc.Load(stream);
-							// load json with newton soft and convert to XmlDocument
-							var json = File.ReadAllText(filenameHTML);
-							//var jObject = JObject.Parse(json);
-							var xml = JsonConvert.DeserializeXmlNode(json);
-							xdoc.LoadXml(xml.InnerXml);
-						}
-						catch (Exception ex)
-						{
-							MessageBox.Show(ex.Message);
-						}
-					}
+            this.openFileDialog2.ShowDialog();
+            filenameHTML = this.openFileDialog2.FileName;
+            if ((filenameHTML == null) || (filenameHTML == ""))
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    using (WebClient client = new WebClient())
+                    using (Stream stream = client.OpenRead(filenameHTML))
+                    {
+                        //      byte[] buf = new byte[stream.Length];
+                        //      stream.Read(buf, 0, (int)stream.Length);
+                        xdoc = new XmlDocument();
+                        try
+                        {
+                            //xdoc.Load(stream);
+                            // load json with newton soft and convert to XmlDocument
+                            var json = File.ReadAllText(filenameHTML);
+                            //var jObject = JObject.Parse(json);
+                            var xml = JsonConvert.DeserializeXmlNode(json);
+                            xdoc.LoadXml(xml.InnerXml);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
 
                     // TODO: Move To pWordLib (make pWordLib friendly)
                     pNode masterNode = (pNode)treeView1.Nodes[0];
@@ -4770,46 +4582,46 @@ namespace myPword
 
                     // TODO: Move To pWordLib (make pWordLib friendly)
                     pNode pn = (pNode)treeView1.SelectedNode;
-					if (treeView1.SelectedNode.Tag == null)
-						treeView1.SelectedNode.Tag = "";
-					pn.Tag = treeView1.SelectedNode.Tag;
+                    if (treeView1.SelectedNode.Tag == null)
+                        treeView1.SelectedNode.Tag = "";
+                    pn.Tag = treeView1.SelectedNode.Tag;
 
                     // TODO: Move To pWordLib
                     if (xdoc != null && xdoc.Attributes != null && xdoc.Attributes.Count > 0)
-					{
-						foreach (XmlAttribute xmlAttr in xdoc)
-						{
-							pn.AddAttribute(xmlAttr.LocalName, xmlAttr.Value);
-						}
-					}
+                    {
+                        foreach (XmlAttribute xmlAttr in xdoc)
+                        {
+                            pn.AddAttribute(xmlAttr.LocalName, xmlAttr.Value);
+                        }
+                    }
 
                     // TODO: Move To pWordLib
                     AddChildNodes(xdoc.ChildNodes, ref pn);
-                    
-					treeView1.SelectedNode = pn;
-					//                .Nodes.Add(pn);
-					//treeView1.SelectedNode.Nodes.Add(aNode);
-					// after adding the new node, be sure the index is updated as well... this is not necessary
-					userControl11.MasterNodes[userControl11.index] = masterNode;
 
-					// Change from Add Dialog to local members for adding name and value
+                    treeView1.SelectedNode = pn;
+                    //                .Nodes.Add(pn);
+                    //treeView1.SelectedNode.Nodes.Add(aNode);
+                    // after adding the new node, be sure the index is updated as well... this is not necessary
+                    userControl11.MasterNodes[userControl11.index] = masterNode;
 
-					// check box
-					if (this.chkClear.CheckState == CheckState.Checked)
-					{
-						this.txtName.Clear();
-						this.txtObject.Clear();
-						this.txtName.Focus();
-					}
-					else if (this.chkClear.CheckState == CheckState.Indeterminate)
-					{
-						this.txtObject.Clear();
-						this.txtObject.Focus();
-					}
-					else
-					{
-						this.btnAdd.Focus();
-					}
+                    // Change from Add Dialog to local members for adding name and value
+
+                    // check box
+                    if (this.chkClear.CheckState == CheckState.Checked)
+                    {
+                        this.txtName.Clear();
+                        this.txtObject.Clear();
+                        this.txtName.Focus();
+                    }
+                    else if (this.chkClear.CheckState == CheckState.Indeterminate)
+                    {
+                        this.txtObject.Clear();
+                        this.txtObject.Focus();
+                    }
+                    else
+                    {
+                        this.btnAdd.Focus();
+                    }
 
 					if (flag_file == true)
 					{

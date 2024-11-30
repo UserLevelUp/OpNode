@@ -58,13 +58,29 @@
     <Reference Include="Moq, Version=4.1.1308.2120, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.1.1308.2120\lib\net40\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pNodeTests.cs" />
+    <Compile Include="pWordSettings.Designer.cs">
+      <DependentUpon>pWordSettings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <DependentUpon>Resource1.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Testable\TestableLeftRigth.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -78,7 +94,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="pWordSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>pWordSettings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\LeftRight\LeftRight.csproj">
@@ -89,8 +110,17 @@
       <Project>{001ac338-98c7-440e-abc3-4d0056fe6d56}</Project>
       <Name>pWordLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\pword\myPword.csproj">
+      <Project>{439D51A6-D899-4BB9-8B93-85B486673842}</Project>
+      <Name>myPword</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Testable\TestableLeftRigth.resx">
       <DependentUpon>TestableLeftRigth.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -98,6 +128,35 @@
     <EmbeddedResource Include="Testable\TestaableLeftRightWrapper.resx">
       <DependentUpon>TestaableLeftRightWrapper.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LeftRight.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%24this.Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cos.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Division.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ExpandedLink.ico" />
+    <Content Include="Resources\Sum.ico" />
+    <None Include="Resources\Tan.ico" />
+    <None Include="Resources\Subtraction.ico" />
+    <None Include="Resources\SubMinus.ico" />
+    <None Include="Resources\Sin.ico" />
+    <None Include="Resources\Plus.ico" />
+    <None Include="Resources\Multiplication.ico" />
+    <None Include="Resources\Minus.ico" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

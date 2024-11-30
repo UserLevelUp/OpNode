@@ -117,11 +117,14 @@ namespace pWordLib.dat
 
         public pNode(string name, string value) : this(name)
         {
+            this.setName(name);
             this.setValue(value);
         }
 
         public pNode(string name, object value) : this(name)
         {
+            this.setName(name);
+            this.setValue(name + "_tag");
             this.setValueObject(value);
         }
 
@@ -172,7 +175,75 @@ namespace pWordLib.dat
 
         public virtual void setName(string key)
         {
-            ((TreeNode)this).Name = key;
+            if (IsValidXmlName(key))
+            {
+                ((TreeNode)this).Name = key;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("Invalid XML name: " + key);
+            }
+        }
+
+        // verify name
+        public static bool IsValidXmlName(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                return false;
+            }
+
+            // Check if the name starts with a digit
+            if (char.IsDigit(name[0]))
+            {
+                return false;
+            }
+
+            // Check if the name contains a space
+            if (name.Contains(' '))
+            {
+                return false;
+            }
+
+            // Check if the name contains a colon
+            int colonIndex = name.IndexOf(':');
+            if (colonIndex > 0)
+            {
+                // Split the name into prefix and local name
+                string prefix = name.Substring(0, colonIndex);
+                string localName = name.Substring(colonIndex + 1);
+
+                // Check if the prefix is a valid namespace
+                if (IsValidNamespace(prefix) && IsValidLocalName(localName))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                // If no colon, just check if the name is a valid local name
+                return IsValidLocalName(name);
+            }
+        }
+
+        private static bool IsValidNamespace(string prefix)
+        {
+            // Implement your logic to check if the prefix is a valid namespace
+            // For example, you might have a list of valid namespaces
+            var validNamespaces = new List<string> { "ns", "prefix" };
+            return validNamespaces.Contains(prefix);
+        }
+
+        private static bool IsValidLocalName(string name)
+        {
+            // Implement your logic to check if the local name is valid
+            // This can include checking for invalid characters, etc.
+            // For simplicity, let's assume it checks for common invalid characters
+            return !string.IsNullOrEmpty(name) && !name.Any(c => "!@#$%^&*()+=[]{}|\\;:'\",<>/?".Contains(c));
         }
 
         // get the tag for a child with name == key
