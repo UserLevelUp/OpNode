@@ -40,8 +40,12 @@ namespace PlaygroundAlpha
             //    counter.Add(1);
             //}
 
-            CurriculumService svc = new CurriculumService();
-            svc.DoRandom();
+            // Run the IOperate interface demonstration
+            OpNodeDemonstration.RunDemo();
+            
+            // Original curriculum service
+            // CurriculumService svc = new CurriculumService();
+            // svc.DoRandom();
         }
 
         private static void Counter_APressed(object sender, EventArgs e)
