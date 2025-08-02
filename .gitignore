@@ -28,3 +28,9 @@
 /pWord4/pWord4/OpNodeWPF/obj
 /pWord4/pWord4/TestDll/bin
 /pWord4/pWord4/TestDll/obj
+
+# Temporary namespace validation test artifacts
+obj/
+bin/
+*.exe
+ValidationTest.csproj
