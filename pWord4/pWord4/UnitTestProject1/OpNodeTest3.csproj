@@ -91,6 +91,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UnitTest_OpNode_Operations.cs" />
+    <Compile Include="UnitTest_Namespace.cs" />
+    <Compile Include="UnitTest_NamespaceUsability.cs" />
+    <Compile Include="UnitTest_PrefixSuffix.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

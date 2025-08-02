@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace OpNodeTest2
+namespace UnitTestProject1
 {
     [TestClass]
     public class UnitTest_OpNode_Operations

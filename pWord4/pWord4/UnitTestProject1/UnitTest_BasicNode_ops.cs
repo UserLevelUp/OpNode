@@ -5,7 +5,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Xml;
 
-namespace OpNodeTest2
+namespace UnitTestProject1
 {
     [TestClass]
     public class UnitTest_BasicNode_ops

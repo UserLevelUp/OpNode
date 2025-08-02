@@ -1,11 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using OpNodeTest2;
+using UnitTestProject1;
 using pWordLib.dat;
 using System;
 using System.Windows.Forms;
 
-namespace OpNodeTest2
+namespace UnitTestProject1
 {
 
     public class TestableLeftRight : LeftRight.LeftRight
