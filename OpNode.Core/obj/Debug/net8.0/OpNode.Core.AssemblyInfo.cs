@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OpNode.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87b2208069d150d3f212f93fb48e12ec819f83b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86ff927788c54c3a0d7de8bc518d9bdada4763e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("OpNode.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OpNode.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

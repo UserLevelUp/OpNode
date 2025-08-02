@@ -28,3 +28,9 @@
 /pWord4/pWord4/OpNodeWPF/obj
 /pWord4/pWord4/TestDll/bin
 /pWord4/pWord4/TestDll/obj
+
+# OpNode.Core projects build artifacts
+OpNode.Core/bin/
+OpNode.Core/obj/
+OpNode.Core.Tests/bin/
+OpNode.Core.Tests/obj/
