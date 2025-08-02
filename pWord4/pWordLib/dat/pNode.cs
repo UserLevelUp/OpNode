@@ -232,10 +232,28 @@ namespace pWordLib.dat
 
         private static bool IsValidNamespace(string prefix)
         {
-            // Implement your logic to check if the prefix is a valid namespace
-            // For example, you might have a list of valid namespaces
-            var validNamespaces = new List<string> { "ns", "prefix" };
-            return validNamespaces.Contains(prefix);
+            // XML namespace prefix validation - must follow XML naming rules
+            // Cannot be empty, must start with letter or underscore, can contain letters, digits, hyphens, periods, underscores
+            if (string.IsNullOrEmpty(prefix))
+                return false;
+                
+            // Check if first character is valid (letter or underscore)
+            if (!char.IsLetter(prefix[0]) && prefix[0] != '_')
+                return false;
+                
+            // Check remaining characters
+            for (int i = 1; i < prefix.Length; i++)
+            {
+                char c = prefix[i];
+                if (!char.IsLetterOrDigit(c) && c != '-' && c != '.' && c != '_')
+                    return false;
+            }
+            
+            // Reserved prefixes in XML
+            if (prefix.ToLower().StartsWith("xml"))
+                return false;
+                
+            return true;
         }
 
         private static bool IsValidLocalName(string name)

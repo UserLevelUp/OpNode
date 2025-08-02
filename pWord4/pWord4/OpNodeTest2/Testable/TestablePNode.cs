@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OpNodeTest2
 {
-    public class TestablePNode : pNode
+    public partial class TestablePNode : pNode
     {
         public void SetNameForTesting(string key)
         {
