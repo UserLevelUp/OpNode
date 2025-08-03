@@ -94,6 +94,15 @@
     <Compile Include="dat\pNode.cs" />
     <Compile Include="dat\pNodeMode.cs" />
     <Compile Include="dat\registry\pRegistry.cs" />
+    <Compile Include="Interfaces\INodeData.cs" />
+    <Compile Include="Interfaces\INodeContainer.cs" />
+    <Compile Include="Interfaces\INodeAttributes.cs" />
+    <Compile Include="Interfaces\INodeOperations.cs" />
+    <Compile Include="Interfaces\INodeNamespace.cs" />
+    <Compile Include="Interfaces\INodeSearchable.cs" />
+    <Compile Include="Interfaces\IOpNode.cs" />
+    <Compile Include="Implementations\BasicOpNode.cs" />
+    <Compile Include="Implementations\BasicNodeOperation.cs" />
     <Compile Include="mgr\MasterNodes.cs" />
     <Compile Include="mgr\Operator.cs" />
     <Compile Include="mgr\registryMgr.cs" />
