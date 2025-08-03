@@ -1,0 +1,14 @@
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/bin/Debug/net8.0/OpNodeCore.deps.json
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/bin/Debug/net8.0/OpNodeCore.dll
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/bin/Debug/net8.0/OpNodeCore.pdb
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/bin/Debug/net8.0/OpNodeCore.xml
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/obj/Debug/net8.0/OpNodeCore.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/obj/Debug/net8.0/OpNodeCore.AssemblyInfoInputs.cache
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/obj/Debug/net8.0/OpNodeCore.AssemblyInfo.cs
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/obj/Debug/net8.0/OpNodeCore.csproj.CoreCompileInputs.cache
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/obj/Debug/net8.0/OpNodeCore.sourcelink.json
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/obj/Debug/net8.0/OpNodeCore.dll
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/obj/Debug/net8.0/refint/OpNodeCore.dll
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/obj/Debug/net8.0/OpNodeCore.xml
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/obj/Debug/net8.0/OpNodeCore.pdb
+/home/runner/work/OpNode/OpNode/pWord4/OpNodeCore/obj/Debug/net8.0/ref/OpNodeCore.dll
