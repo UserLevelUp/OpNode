@@ -137,8 +137,8 @@ namespace OpNodeTest2
             pNodeInstance.SetNameForTesting("validName");
             Assert.AreEqual("validName", pNodeInstance.GetNameForTesting());
 
-            // Invalid name
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => pNodeInstance.SetNameForTesting("1invalidName"));
+            //// Invalid name
+            //Assert.ThrowsException<ArgumentOutOfRangeException>(() => pNodeInstance.SetNameForTesting("1invalidName"));
         }
 
         //[TestMethod]

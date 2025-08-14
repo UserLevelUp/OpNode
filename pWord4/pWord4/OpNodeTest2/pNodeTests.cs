@@ -18,7 +18,7 @@ namespace pWordTests
 
             // Assert
             Assert.IsNotNull(xmlDoc);
-            Assert.AreEqual("RootNode", xmlDoc.DocumentElement.Name);
+            Assert.AreEqual("RootNode", xmlDoc.DocumentElement.Name); // assuming string
             Assert.AreEqual("RootValue", xmlDoc.DocumentElement.InnerText);
         }
 
