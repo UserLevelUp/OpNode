@@ -119,6 +119,7 @@ namespace pWordLib.dat
         {
             this.setName(name);
             this.setValue(value);
+            this.Tag = value;
         }
 
         public pNode(string name, object value) : this(name)
@@ -181,7 +182,13 @@ namespace pWordLib.dat
             }
             else
             {
-                throw new ArgumentOutOfRangeException("Invalid XML name: " + key);
+                //throw new ArgumentOutOfRangeException("Invalid XML name: " + key);
+
+                // instead try and fix the key so its xml element key name compliant
+                makeKeyComplaint(key);
+
+
+
             }
         }
 
@@ -512,7 +519,7 @@ namespace pWordLib.dat
 
             node.getXmlName();  // fix node attributes and todo: eventually namespaces
             
-            XmlNode rootNode = xdoc.CreateElement(node.getXmlName());
+            XmlNode rootNode = xdoc.CreateElement(node.Name);
             rootNode.InnerText = (String)node.Tag;
 
             foreach (var attrKey in node.getKeys())
@@ -745,6 +752,34 @@ namespace pWordLib.dat
         public string getValue()
         {
             return this.Text;
+        }
+        // Add this method to the pNode class to fix CS0103
+        private void makeKeyComplaint(string key)
+        {
+            // Attempt to sanitize the key to be XML-compliant
+            // Remove invalid characters and ensure it doesn't start with a digit or contain spaces
+            string sanitized = key;
+
+            // Remove invalid characters
+            string invalidChars = "!@#$%^&*()+=[]{}|\\;:'\",<>/? ";
+            foreach (char c in invalidChars)
+            {
+                sanitized = sanitized.Replace(c.ToString(), "");
+            }
+
+            // Remove leading digits
+            while (sanitized.Length > 0 && char.IsDigit(sanitized[0]))
+            {
+                sanitized = sanitized.Substring(1);
+            }
+
+            // If the sanitized key is empty, use a GUID
+            if (string.IsNullOrEmpty(sanitized))
+            {
+                sanitized = Guid.NewGuid().ToString();
+            }
+
+            ((TreeNode)this).Name = sanitized;
         }
     }
 

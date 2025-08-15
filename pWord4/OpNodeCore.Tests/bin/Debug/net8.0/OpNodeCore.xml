@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpNodeCore</name>
+    </assembly>
+    <members>
+        <member name="T:OpNodeCore.Implementations.BasicNodeOperation">
+            <summary>
+            Basic implementation of INodeOperation for testing purposes.
+            Provides a simple operation that can be used to validate the interface behavior.
+            </summary>
+        </member>
+        <member name="T:OpNodeCore.Implementations.SumOperation">
+            <summary>
+            Basic sum operation for testing mathematical operations on nodes.
+            </summary>
+        </member>
+        <member name="T:OpNodeCore.Implementations.BasicOpNode">
+            <summary>
+            Basic implementation of IOpNode interfaces for testing and demonstration purposes.
+            This implementation is framework-independent and follows SOLID principles.
+            </summary>
+        </member>
+        <member name="T:OpNodeCore.Interfaces.INodeAttributes">
+            <summary>
+            Interface for managing node attributes (key-value pairs).
+            Provides functionality for storing and retrieving metadata associated with nodes.
+            </summary>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeAttributes.AttributeKeys">
+            <summary>
+            Gets all attribute keys for this node.
+            </summary>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeAttributes.GetAttribute(System.String)">
+            <summary>
+            Gets the value of an attribute by key.
+            </summary>
+            <param name="key">The attribute key</param>
+            <returns>The attribute value if found, null otherwise</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeAttributes.SetAttribute(System.String,System.String)">
+            <summary>
+            Sets the value of an attribute.
+            </summary>
+            <param name="key">The attribute key</param>
+            <param name="value">The attribute value</param>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeAttributes.RemoveAttribute(System.String)">
+            <summary>
+            Removes an attribute by key.
+            </summary>
+            <param name="key">The attribute key to remove</param>
+            <returns>True if the attribute was removed, false if not found</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeAttributes.HasAttribute(System.String)">
+            <summary>
+            Checks if an attribute with the given key exists.
+            </summary>
+            <param name="key">The attribute key to check</param>
+            <returns>True if the attribute exists, false otherwise</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeAttributes.HasAttributeValue(System.String)">
+            <summary>
+            Checks if any attribute has the given value.
+            </summary>
+            <param name="value">The value to search for</param>
+            <returns>True if any attribute has that value, false otherwise</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeAttributes.GetAllAttributes">
+            <summary>
+            Gets all attributes as key-value pairs.
+            </summary>
+            <returns>Dictionary of all attributes</returns>
+        </member>
+        <member name="T:OpNodeCore.Interfaces.INodeContainer">
+            <summary>
+            Interface for managing hierarchical node relationships.
+            Provides functionality for parent-child node management.
+            </summary>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeContainer.Parent">
+            <summary>
+            Gets the parent node of this node, if any.
+            </summary>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeContainer.Children">
+            <summary>
+            Gets the collection of child nodes.
+            </summary>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeContainer.HasChildren">
+            <summary>
+            Checks if this node has any child nodes.
+            </summary>
+            <returns>True if the node has children, false otherwise</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeContainer.AddChild(OpNodeCore.Interfaces.INodeContainer)">
+            <summary>
+            Adds a child node to this node.
+            </summary>
+            <param name="child">The child node to add</param>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeContainer.RemoveChild(OpNodeCore.Interfaces.INodeContainer)">
+            <summary>
+            Removes a child node from this node.
+            </summary>
+            <param name="child">The child node to remove</param>
+            <returns>True if the child was removed, false if not found</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeContainer.GetChild(System.String)">
+            <summary>
+            Gets a child node by name.
+            </summary>
+            <param name="name">The name of the child to find</param>
+            <returns>The child node if found, null otherwise</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeContainer.GetChild(System.Int32)">
+            <summary>
+            Gets a child node by index.
+            </summary>
+            <param name="index">The index of the child</param>
+            <returns>The child node if found, null otherwise</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeContainer.HasChild(System.String)">
+            <summary>
+            Checks if a child with the given name exists.
+            </summary>
+            <param name="name">The name to check</param>
+            <returns>True if a child with that name exists, false otherwise</returns>
+        </member>
+        <member name="T:OpNodeCore.Interfaces.INodeData">
+            <summary>
+            Core interface for node data management following SOLID principles.
+            Represents a single node with key-value pair functionality independent of UI frameworks.
+            </summary>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeData.Name">
+            <summary>
+            Gets or sets the unique identifier for this node.
+            </summary>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeData.Value">
+            <summary>
+            Gets or sets the display text/value for this node.
+            </summary>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeData.Tag">
+            <summary>
+            Gets or sets the optional object data associated with this node.
+            </summary>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeData.GetXmlName">
+            <summary>
+            Gets a unique identifier for this node, generated if not set.
+            </summary>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeData.IsValidName(System.String)">
+            <summary>
+            Validates whether the given name is valid for XML/node naming conventions.
+            </summary>
+            <param name="name">The name to validate</param>
+            <returns>True if the name is valid, false otherwise</returns>
+        </member>
+        <member name="T:OpNodeCore.Interfaces.INodeNamespace">
+            <summary>
+            Interface for managing XML namespace information for nodes.
+            Provides functionality for prefix and URI management.
+            </summary>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeNamespace.Prefix">
+            <summary>
+            Gets or sets the namespace prefix.
+            </summary>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeNamespace.Suffix">
+            <summary>
+            Gets or sets the namespace suffix.
+            </summary>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeNamespace.PrefixUri">
+            <summary>
+            Gets or sets the namespace URI for the prefix.
+            </summary>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeNamespace.SuffixUri">
+            <summary>
+            Gets or sets the namespace URI for the suffix.
+            </summary>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeNamespace.HasPrefix">
+            <summary>
+            Checks if this namespace has a valid prefix.
+            </summary>
+            <returns>True if prefix is defined, false otherwise</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeNamespace.HasSuffix">
+            <summary>
+            Checks if this namespace has a valid suffix.
+            </summary>
+            <returns>True if suffix is defined, false otherwise</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeNamespace.Clone">
+            <summary>
+            Creates a copy of this namespace.
+            </summary>
+            <returns>A cloned namespace object</returns>
+        </member>
+        <member name="T:OpNodeCore.Interfaces.INodeOperations">
+            <summary>
+            Interface for managing operations on nodes.
+            Provides functionality for adding, executing and managing operations.
+            </summary>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeOperations.OperationCount">
+            <summary>
+            Gets the count of operations associated with this node.
+            </summary>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeOperations.HasChangedOperations">
+            <summary>
+            Gets information about operations that have pending changes.
+            </summary>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeOperations.AddOperation(OpNodeCore.Interfaces.INodeOperation)">
+            <summary>
+            Adds an operation to this node.
+            </summary>
+            <param name="operation">The operation to add</param>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeOperations.ClearOperations">
+            <summary>
+            Removes all operations from this node.
+            </summary>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeOperations.PerformOperations">
+            <summary>
+            Executes all operations on this node.
+            </summary>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeOperations.ListOperations">
+            <summary>
+            Gets a string representation of all operations.
+            </summary>
+            <returns>String listing all operations</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeOperations.OperationChanged">
+            <summary>
+            Notifies that an operation has changed and needs recalculation.
+            </summary>
+        </member>
+        <member name="T:OpNodeCore.Interfaces.INodeOperation">
+            <summary>
+            Interface for individual operations that can be performed on nodes.
+            Extends the existing IOperate interface for compatibility.
+            </summary>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeOperation.HasChanges">
+            <summary>
+            Gets whether this operation has pending changes.
+            </summary>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeOperation.Operate(System.Object)">
+            <summary>
+            Performs the operation on the given node.
+            </summary>
+            <param name="node">The node to operate on</param>
+            <returns>The result node after operation</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeOperation.MarkChanged(System.Object)">
+            <summary>
+            Marks the operation as having changes.
+            </summary>
+            <param name="node">The node that triggered the change</param>
+            <returns>True if change was successfully marked</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeOperation.ClearChanged(System.Object)">
+            <summary>
+            Clears the changed flag for this operation.
+            </summary>
+            <param name="node">The node to clear changes for</param>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.INodeOperation.OperationType">
+            <summary>
+            Gets the display name or type of this operation.
+            </summary>
+        </member>
+        <member name="T:OpNodeCore.Interfaces.INodeSearchable">
+            <summary>
+            Interface for searching capabilities within node structures.
+            Provides functionality for finding nodes based on various criteria.
+            </summary>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeSearchable.Find(System.String)">
+            <summary>
+            Finds all nodes that match the given search text.
+            Searches in node values, tags, and attributes.
+            </summary>
+            <param name="searchText">The text to search for</param>
+            <returns>List of nodes that match the search criteria</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeSearchable.Find(System.String,System.Int32)">
+            <summary>
+            Finds all nodes that match the given search text starting from a specific index.
+            Used for iterative searching through results.
+            </summary>
+            <param name="searchText">The text to search for</param>
+            <param name="startIndex">The index to start searching from</param>
+            <returns>List of nodes that match the search criteria</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.INodeSearchable.Matches(System.String)">
+            <summary>
+            Checks if this node matches the given search criteria.
+            Includes checking name, value, tag, and attributes.
+            </summary>
+            <param name="searchText">The text to match against</param>
+            <returns>True if this node matches the search criteria</returns>
+        </member>
+        <member name="T:OpNodeCore.Interfaces.IOpNode">
+            <summary>
+            Main composite interface that represents a complete OpNode.
+            Combines all SOLID interfaces for comprehensive node functionality.
+            This interface is designed to be platform-independent and framework-agnostic.
+            </summary>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.IOpNode.Clone">
+            <summary>
+            Creates a deep copy of this node and all its children.
+            </summary>
+            <returns>A cloned copy of this node</returns>
+        </member>
+        <member name="P:OpNodeCore.Interfaces.IOpNode.ErrorMessage">
+            <summary>
+            Gets or sets an error message associated with this node.
+            </summary>
+        </member>
+        <member name="T:OpNodeCore.Interfaces.IOpNodeBehavior">
+            <summary>
+            Interface for operations specific to OpNode functionality.
+            Provides the core operational behavior following the sequence pattern described in the documentation.
+            </summary>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.IOpNodeBehavior.HasChildren">
+            <summary>
+            Checks if this node has children that can participate in operations.
+            Part of the core OpNode operation sequence: hasChildren() -> doOperation() -> CalculateChildrenResults() -> InformParent()
+            </summary>
+            <returns>True if the node has children, false otherwise</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.IOpNodeBehavior.DoOperationOnChildren">
+            <summary>
+            Performs the operation on all child nodes.
+            Part of the core OpNode operation sequence.
+            </summary>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.IOpNodeBehavior.CalculateChildrenResults">
+            <summary>
+            Calculates the results from all child operations.
+            Part of the core OpNode operation sequence.
+            </summary>
+            <returns>The calculated result from child operations</returns>
+        </member>
+        <member name="M:OpNodeCore.Interfaces.IOpNodeBehavior.InformParentIfContainsSameOperation">
+            <summary>
+            Informs the parent node if it contains the same operation.
+            Part of the core OpNode operation sequence.
+            </summary>
+        </member>
+    </members>
+</doc>
