@@ -59,10 +59,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\pword\myPword.csproj">
-      <Project>{439D51A6-D899-4BB9-8B93-85B486673842}</Project>
-      <Name>myPword</Name>
+    <ProjectReference Include="..\..\LeftRight\LeftRight.csproj">
+      <Project>{351681a0-aa94-4bf9-855a-683d5981f90d}</Project>
+      <Name>LeftRight</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\pWordLib\pWordLib.csproj">
+      <Project>{001ac338-98c7-440e-abc3-4d0056fe6d56}</Project>
+      <Name>pWordLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\pword\myPword.csproj">
+	  <Project>{439D51A6-D899-4BB9-8B93-85B486673842}</Project>
+	  <Name>myPword</Name>
+	</ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
