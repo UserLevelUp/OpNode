@@ -6,6 +6,7 @@ using System.IO;
 using System.Windows.Forms;
 using myPword;
 using pWordLib;
+using System.Configuration;
 
 namespace Test_WindowsForms
 {
@@ -21,9 +22,15 @@ namespace Test_WindowsForms
             // Initialize Application for Windows Forms testing
             if (!Application.MessageLoop)
             {
-                // Start message loop in a separate thread if not already running
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+            }
+
+            // Verify configuration is available
+            var testValue = ConfigurationManager.AppSettings["txtValue.AcceptsReturn"];
+            if (testValue == null)
+            {
+                Console.WriteLine("Warning: app.config not found or incomplete. Some tests may fail.");
             }
 
             // Create mock configuration values that the pWord form expects
@@ -197,6 +204,18 @@ namespace Test_WindowsForms
                 // Assert
                 Assert.IsNotNull(addItemForm, "AddItem form should be created");
                 Assert.IsInstanceOfType(addItemForm, typeof(Form), "AddItem should be a Form");
+                
+                // Test that the form has expected properties and controls
+                Assert.IsNotNull(addItemForm.txtValue, "AddItem should have txtValue control");
+                
+                // Verify the configuration values were applied correctly
+                Assert.IsTrue(addItemForm.txtValue.AcceptsReturn, "txtValue should accept return characters");
+                Assert.IsTrue(addItemForm.txtValue.AcceptsTab, "txtValue should accept tab characters");
+                Assert.IsTrue(addItemForm.txtValue.Multiline, "txtValue should be multiline");
+                Assert.IsTrue(addItemForm.txtValue.Enabled, "txtValue should be enabled");
+                
+                // Test basic form functionality
+                Assert.IsFalse(addItemForm.IsDisposed, "Form should not be disposed after creation");
             }
             finally
             {

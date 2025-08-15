@@ -55,12 +55,14 @@
   <ItemGroup>
     <Compile Include="ConfigurationDetectionService.cs" />
     <Compile Include="pWordConfigurationService.cs" />
+    <Compile Include="TestConfigurationService.cs" />
     <Compile Include="ToolBarConfigurationService.cs" />
     <Compile Include="TreeViewConfigurationService.cs" />
     <Compile Include="WindowsFormsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="TESTING_GUIDE.md" />
   </ItemGroup>
