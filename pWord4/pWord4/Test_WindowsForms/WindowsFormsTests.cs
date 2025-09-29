@@ -13,15 +13,15 @@ namespace Test_WindowsForms
         {
             // TODO: Test that the main pWord form can be created
             // This test is commented out because it may not build without proper Windows Forms environment
-            /*
+
             // Arrange & Act
             var form = new pWord();
 
-            
+
             // Assert
             Assert.IsNotNull(form);
             Assert.IsInstanceOfType(form, typeof(Form));
-            */
+
             Assert.Inconclusive("TestFormCreation not implemented - requires Windows Forms environment");
         }
 
