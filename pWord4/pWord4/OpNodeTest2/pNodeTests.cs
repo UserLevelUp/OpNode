@@ -39,14 +39,27 @@ namespace pWordTests
             // Assert
             Assert.IsNotNull(xmlDoc);
             Assert.AreEqual("RootNode", xmlDoc.DocumentElement.Name);
-            Assert.AreEqual("RootValue", xmlDoc.DocumentElement.InnerText);
+            
+            // In XML, when a node has children, InnerText includes all descendant text content
+            // This is expected XML behavior - the root's InnerText includes child text
+            Assert.AreEqual("RootValueChildValue1ChildValue2", xmlDoc.DocumentElement.InnerText);
 
-            var childNodes = xmlDoc.DocumentElement.ChildNodes;
-            Assert.AreEqual(2, childNodes.Count);
-            Assert.AreEqual("ChildNode1", childNodes[0].Name);
-            Assert.AreEqual("ChildValue1", childNodes[0].InnerText);
-            Assert.AreEqual("ChildNode2", childNodes[1].Name);
-            Assert.AreEqual("ChildValue2", childNodes[1].InnerText);
+            // The issue: ChildNodes includes ALL nodes (text nodes + element nodes)
+            // We need to count only element nodes, not text nodes
+            var elementNodes = new System.Collections.Generic.List<XmlNode>();
+            foreach (XmlNode child in xmlDoc.DocumentElement.ChildNodes)
+            {
+                if (child.NodeType == XmlNodeType.Element)
+                {
+                    elementNodes.Add(child);
+                }
+            }
+            
+            Assert.AreEqual(2, elementNodes.Count);
+            Assert.AreEqual("ChildNode1", elementNodes[0].Name);
+            Assert.AreEqual("ChildValue1", elementNodes[0].InnerText);
+            Assert.AreEqual("ChildNode2", elementNodes[1].Name);
+            Assert.AreEqual("ChildValue2", elementNodes[1].InnerText);
         }
 
         // Add more tests as needed to cover different scenarios

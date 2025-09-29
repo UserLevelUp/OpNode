@@ -4,12 +4,23 @@ using pWordLib.dat;
 using System;
 using System.Runtime.CompilerServices;
 using System.Xml;
+using System.Threading;
 
 namespace OpNodeTest2
 {
     [TestClass]
     public class UnitTest_BasicNode_ops
     {
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            // Ensure we're running in STA mode for Windows Forms
+            if (Thread.CurrentThread.GetApartmentState() != ApartmentState.STA)
+            {
+                throw new InvalidOperationException("Tests must run in STA mode for Windows Forms controls");
+            }
+        }
+
         [TestMethod]
         public void Simple_Test_Without_Dependencies()
         {
@@ -65,8 +76,7 @@ namespace OpNodeTest2
             Assert.IsFalse(pNode.IsValidXmlName("@"));
         }
 
-        // COMMENTED OUT - These tests require pNode instantiation which causes issues
-        /*
+        // These tests require pNode instantiation - may have STA threading issues
         [TestMethod]
         public void Create_Root_OpNode_Simple()
         {
@@ -83,6 +93,29 @@ namespace OpNodeTest2
             pNodeInstance.setName("validName");
             Assert.AreEqual("validName", pNodeInstance.getName());
         }
-        */
+
+        // Debug test to understand what's happening
+        [TestMethod]
+        public void Debug_SetName_Issue()
+        {
+            var pNodeInstance = new pNode();
+            
+            // Check initial state
+            string initialName = pNodeInstance.getName();
+            Console.WriteLine($"Initial name: '{initialName}'");
+            
+            // Check if name is valid
+            bool isValid = pNode.IsValidXmlName("validName");
+            Console.WriteLine($"IsValidXmlName('validName'): {isValid}");
+            
+            // Set the name
+            pNodeInstance.setName("validName");
+            
+            // Check final state
+            string finalName = pNodeInstance.getName();
+            Console.WriteLine($"Final name: '{finalName}'");
+            
+            Assert.AreEqual("validName", finalName);
+        }
     }
 }
