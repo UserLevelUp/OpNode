@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <TargetFrameworkVersion>net48</TargetFrameworkVersion>
+    <ExecutionThreadApartmentState>STA</ExecutionThreadApartmentState>
+  </RunConfiguration>
+</RunSettings>
