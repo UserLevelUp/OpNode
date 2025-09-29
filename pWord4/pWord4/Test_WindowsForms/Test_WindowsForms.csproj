@@ -46,17 +46,25 @@
       <HintPath>..\packages\MSTest.TestFramework.2.2.10\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationDetectionService.cs" />
+    <Compile Include="pWordConfigurationService.cs" />
+    <Compile Include="TestConfigurationService.cs" />
+    <Compile Include="ToolBarConfigurationService.cs" />
+    <Compile Include="TreeViewConfigurationService.cs" />
     <Compile Include="WindowsFormsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="TESTING_GUIDE.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\LeftRight\LeftRight.csproj">
@@ -68,9 +76,12 @@
       <Name>pWordLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\pword\myPword.csproj">
-	  <Project>{439D51A6-D899-4BB9-8B93-85B486673842}</Project>
-	  <Name>myPword</Name>
-	</ProjectReference>
+      <Project>{439D51A6-D899-4BB9-8B93-85B486673842}</Project>
+      <Name>myPword</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TESTING_GUIDE.txt" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
